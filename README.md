@@ -23,6 +23,7 @@ Main Template
 
 item templates
 * Job
+* BLE Hosting Characteristic
 * Delegates
 	* GPS (with android config)
 	* Beacon (with android config)

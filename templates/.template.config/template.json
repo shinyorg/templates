@@ -12,6 +12,30 @@
         "language": "C#",
         "type": "project"
     },
+    "sources": [
+    {
+        "source": "./",
+        "target": "./",
+        "copyOnly": [
+            "**/*.svg",
+            "**/*.ttf",
+            "**/*.txt"
+        ],
+        "modifiers": [
+            {
+                "condition": "(push == \"None\")",
+                "exclude": "MyPushDelegate.cs"
+            },
+            {
+                "condition": "(httptransfers == false)",
+                "exclude": "MyHttpTransferDelegate.cs"
+            },
+            {
+                "condition": "(beacons == false)",
+                "exclude": "MyBeaconMonitoringDelegate.cs"
+            }
+        ]
+    }],
     "symbols":{
         "applicationId": {
             "type": "parameter",
@@ -73,6 +97,13 @@
             "defaultValue": "false",
             "description": "Add Shiny.Locations",
             "displayName": "Add and configure Shiny.Locations"
+        },
+        "httptransfers": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Net.Http",
+            "displayName": "Add and configure Shiny.Net.Http"
         },
         "nfc": {
             "type": "parameter",
