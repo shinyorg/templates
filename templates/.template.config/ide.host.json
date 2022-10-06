@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json.schemastore.org/vs-2017.3.host",
+    "icon": "shiny.png",
+    "symbolInfo": [
+        {
+            "id": "sqlite",
+            "name": {
+                "text": "Add SQLite.NET-PCL"
+            },
+            "isVisible": true
+        }
+    ]
+}

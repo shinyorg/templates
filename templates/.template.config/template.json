@@ -1,0 +1,144 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Allan Ritchie",
+    "classifications": [ "MAUI", "Shiny", "Prism", "ReactiveUI" ],
+    "identity": "ShinyApp",
+    "name": "Shiny.NET MAUI Application",
+    "shortName": "shinymaui",
+    "preferNameDirectory": true,
+    "groupIdentity": "Shiny.Templates.App",
+    "description": "A project for creating a .NET MAUI /w Shiny.NET",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "symbols":{
+        "applicationId": {
+            "type": "parameter",
+            "description": "Set the ApplicationId",
+            "datatype": "string",
+            "replaces": "com.companyname.shinyapp"
+        },
+        "sqlite": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add SQLite.NET-PCL support",
+            "displayName": "Add and configure SQLite.NET-PCL"
+        },
+        "configuration": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Option to add Shiny.Extensions.Configuration",
+            "displayName": "Add and configure Shiny.Extensions.Configuration"
+        },
+        "appcenter": {
+            "type": "parameter",
+            "description": "Your AppCenter Key (optional)",
+            "defaultValue": "",
+            "replaces":"{APPCENTER_KEY}"
+        },
+        "bluetoothle": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.BluetoothLE",
+            "displayName": "Add and configure Shiny.BluetoothLE"
+        },
+        "blehosting": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.BluetoothLE.Hosting",
+            "displayName": "Add and configure Shiny.BluetoothLE.Hosting"
+        },
+        "beacons": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Beacons",
+            "displayName": "Add and configure Shiny.Beacons"
+        },
+        "jobs": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Jobs",
+            "displayName": "Add and configure Shiny.Jobs"
+        },
+        "locations": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Locations",
+            "displayName": "Add and configure Shiny.Locations"
+        },
+        "nfc": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Nfc",
+            "displayName": "Add and configure Shiny.Nfc"
+        },
+        "notifications": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Notifications",
+            "displayName": "Add and configure Shiny.Notifications"
+        },
+        "push": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "None",
+            "description": "Option to choose the push mechanism",
+            "choices": [
+                {
+                    "choice": "None",
+                    "description": "No push library is installed"
+                },
+                {
+                    "choice": "Native",
+                    "description": ""
+                },
+                {
+                    "choice": "Firebase",
+                    "description": "Firebase Messaging Push Notifications - iOS/Android Only"
+                },
+                {
+                    "choice": "Azure Notification Hubs",
+                    "description": ""
+                }
+            ]
+        },
+        "usepushnative":{
+            "type": "computed",
+            "value": "(push == \"Native\")"
+        },
+        "usepushfirebase":{
+            "type": "computed",
+            "value": "(push == \"Firebase\")"
+        },
+        "usepushanh":{
+            "type": "computed",
+            "value": "(push == \"Azure Notification Hubs\")"
+        },
+        "useconfig":{
+            "type": "computed",
+            "value": "(configuration || push != \"None\" || appcenter != \"\")"
+        },
+        "useappcenter":{
+            "type": "computed",
+            "value": "(appcenter != \"\")"
+        },
+        "useentitlements":{
+            "type": "computed",
+            "value": "(push != \"None\" || nfc)"
+        },
+        "usemaccatalyst":{
+            "type": "computed",
+            "value": "(usepushfirebase == false)"
+        }
+    } 
+}
