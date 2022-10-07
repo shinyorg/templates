@@ -107,6 +107,20 @@
             },
             "isVisible": true,
             "defaultValue": "None"
+        },
+        {
+            "id": "startup",
+            "name": {
+                "text": "Add Startup Service (Shiny.Core)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "settings",
+            "name": {
+                "text": "Add Bound Settings Class (Shiny.Core)"
+            },
+            "isVisible": true
         }
     ]
 }

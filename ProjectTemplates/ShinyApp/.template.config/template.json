@@ -36,6 +36,10 @@
                 "exclude": "MyGpsDelegate.cs"
             },
             {
+                "condition": "(useentitlements == false)",
+                "exclude": "Entitlements.plist"
+            },
+            {
                 "condition": "(geofencing == false)",
                 "exclude": "MyGeofenceDelegate.cs"
             },
@@ -54,13 +58,21 @@
             {
                 "condition": "(sqlite == false)",
                 "exclude": "MySqliteConnection.cs"
-            }            
+            },
+            {
+                "condition": "(startup == false)",
+                "exclude": "AppStartup.cs"
+            },
+            {
+                "condition": "(settings == false)",
+                "exclude": "AppSettings.cs"
+            }
         ]
     }],
     "symbols":{
         "applicationId": {
             "type": "parameter",
-            "description": "Set the ApplicationId",
+            "description": "Set the Application Identifier",
             "datatype": "string",
             "replaces": "com.companyname.shinyapp"
         },      
@@ -154,6 +166,20 @@
             "description": "Add Local Notifications (Shiny.Notifications)",
             "displayName": "Add Local Notifications (Shiny.Notifications)"
         },
+        "startup":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Startup Service (Shiny.Core)",
+            "displayName": "Add Startup Service (Shiny.Core)"
+        },
+        "settings":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Bound Settings Class (Shiny.Core)",
+            "displayName": "Add Bound Settings Class (Shiny.Core)"
+        },        
         "push": {
             "type": "parameter",
             "datatype": "choice",

@@ -35,6 +35,12 @@ public static class MauiProgram
 
     static void RegisterServices(IServiceCollection s)
     {
+#if startup
+        s.AddShinyService<AppStartup>();
+#endif
+#if settings
+        s.AddShinyService<AppSettings>();
+#endif
 #if sqlite
         s.AddSingleton<MySqliteConnection>();
 #endif
