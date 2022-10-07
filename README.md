@@ -1,12 +1,25 @@
-# ShinyApp
+# Shiny Templates
 
-Main Template
-* If push or appcenter is used, auto inject appsettings?
+## Features
+* Creates a best practice MAUI application with best-in-class frameworks:
+    * [MAUI]()
+	* [Prism]()
+	* [ReactiveUI]()
+	* [Shiny.NET]()
+* Automatically wires up:
+	* Entitlements for iOS/MacCatalyst if necessary (ie. NFC, Push)
+	* Info.plist permissions for iOS/MacCatalyst
+	* AndroidManifest.xml Permissions & Features for Android
+	* SQLite Database Creation
+	* All of your MauiProgram.cs Dependency Injection
+
+
 
 * Other 3rd party libs
-		<PackageReference Include="UraniumUI.Material" Version="$(UraniumUIVersion)" />
-		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="$(UraniumUIVersion)" />
+
 		<!--
+				<PackageReference Include="UraniumUI.Material" Version="$(UraniumUIVersion)" />
+		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="$(UraniumUIVersion)" />
 		<PackageReference Include="Prism.Maui.Rx" Version="$(PrismLibVersion)" />
 		
 		<PackageReference Include="CompiledBindings.MAUI" Version="1.0.13" />
@@ -21,11 +34,3 @@ Main Template
 		-->
 
 
-item templates
-* Job
-* BLE Hosting Characteristic
-* Delegates
-	* GPS (with android config)
-	* Beacon (with android config)
-	* Push - created with template if push is selected though
-	* Notifications

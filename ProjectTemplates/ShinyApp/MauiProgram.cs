@@ -35,7 +35,13 @@ public static class MauiProgram
 
     static void RegisterServices(IServiceCollection s)
     {
-        // TODO: http transfers with delegate
+#if sqlite
+        s.AddSingleton<MySqliteConnection>();
+#endif
+#if jobs
+        // TODO: additional configuration in the signature
+        s.AddJob(typeof(MyJob));
+#endif
 #if bluetoothle
         s.AddBluetoothLE();
 #endif
@@ -44,7 +50,7 @@ public static class MauiProgram
 #endif
 #if beacons
         s.AddBeaconRanging();
-        // s.AddBeaconMonitoring<MyBeaconDelegate>();  // TODO
+        s.AddBeaconMonitoring<MyBeaconDelegate>();
 #endif
 #if gps
         s.AddGps<MyGpsDelegate>();
@@ -56,14 +62,15 @@ public static class MauiProgram
         s.AddMotionActivity();
 #endif
 #if usepushnative
-        s.AddPush<MyPushDelegate>(); // TODO: firebase config?
+        s.AddPush<MyPushDelegate>();
 #endif
 #if usepushanh
-        // TODO: need config
-        s.AddPushAzureNotificationHubs<MyPushDelegate>(new ("", ""));
+        // TODO: configure
+        s.AddPushAzureNotificationHubs<MyPushDelegate>(new ("YourApiKey", "YourHubName"));
 #endif
 #if usepushfirebase
-        s.AddFirebaseMessaging<MyPushDelegate>(); // TODO: firebase config?
+        // TODO: configure
+        s.AddFirebaseMessaging<MyPushDelegate>();
 #endif
 #if notifications
         s.AddNotifications();

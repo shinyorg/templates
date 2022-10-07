@@ -6,8 +6,10 @@
         <PackageId>Shiny.Templates</PackageId>
         <Title>Shiny Templates</Title>
         <Authors>Allan Ritchie</Authors>
-        <Description>Template for creating a .NET MAUI Application with Shiny.NET</Description>
+        <Owners>aritchie;shinylib</Owners>
+        <Description>Templates for creating applications with Shiny.NET</Description>
         <PackageTags>dotnet-new;templates;shiny</PackageTags>
+        <PackageIcon>shiny.png</PackageIcon>
         <TargetFramework>net6.0</TargetFramework>
         <IncludeContentInPack>true</IncludeContentInPack>
         <IncludeBuildOutput>false</IncludeBuildOutput>
@@ -16,8 +18,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Content Include="ProjectTemplates\**\*" Exclude="ProjectTemplates\**\bin\**;ProjectTemplates\**\obj\**" />
+        <Content Include="ProjectTemplates\ShinyApp\**\*" Exclude="ProjectTemplates\ShinyApp\**\bin\**;ProjectTemplates\ShinyApp\**\obj\**" />
+        <!-- <Content Include="ItemTemplates\**\*" /> -->
         <Compile Remove="**\*" />
+        <None Include="$(MSBuildThisFileDirectory)shiny.png" Pack="true" PackagePath="shiny.png" />
     </ItemGroup>
 
 </Project>

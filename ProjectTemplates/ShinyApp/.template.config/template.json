@@ -7,7 +7,8 @@
     "shortName": "shinymaui",
     "preferNameDirectory": true,
     "groupIdentity": "Shiny.Templates.App",
-    "description": "A project for creating a .NET MAUI /w Shiny.NET",
+    "description": "A project for creating a .NET MAUI /w Shiny.NET, Prism, & ReactiveUI",
+    "sourceName": "ShinyApp",
     "tags": {
         "language": "C#",
         "type": "project"
@@ -31,9 +32,29 @@
                 "exclude": "MyHttpTransferDelegate.cs"
             },
             {
+                "condition": "(gps == false)",
+                "exclude": "MyGpsDelegate.cs"
+            },
+            {
+                "condition": "(geofencing == false)",
+                "exclude": "MyGeofenceDelegate.cs"
+            },
+            {
+                "condition": "(jobs == false)",
+                "exclude": "MyJob.cs"
+            },
+            {
+                "condition": "(blehosting == false)",
+                "exclude": "MyBleGattCharacteristic.cs"
+            },            
+            {
                 "condition": "(beacons == false)",
                 "exclude": "MyBeaconMonitoringDelegate.cs"
-            }
+            },
+            {
+                "condition": "(sqlite == false)",
+                "exclude": "MySqliteConnection.cs"
+            }            
         ]
     }],
     "symbols":{
@@ -42,24 +63,24 @@
             "description": "Set the ApplicationId",
             "datatype": "string",
             "replaces": "com.companyname.shinyapp"
-        },
+        },      
         "sqlite": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add SQLite.NET-PCL support",
-            "displayName": "Add and configure SQLite.NET-PCL"
+            "description": "Add SQLite (SQLite.NET-PCL)",
+            "displayName": "Add SQLite (SQLite.NET-PCL)"
         },
         "configuration": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "true",
-            "description": "Option to add Shiny.Extensions.Configuration",
-            "displayName": "Add and configure Shiny.Extensions.Configuration"
+            "description": "Add AppSettings.json (Shiny.Extensions.Configuration)",
+            "displayName": "Add AppSettings.json (Shiny.Extensions.Configuration)"
         },
         "appcenter": {
             "type": "parameter",
-            "description": "Your AppCenter Key (optional)",
+            "description": "Your AppCenter Key (optional) - (Shiny.Logging.AppCenter)",
             "defaultValue": "",
             "replaces":"{APPCENTER_KEY}"
         },
@@ -67,71 +88,71 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Shiny.BluetoothLE",
-            "displayName": "Add and configure Shiny.BluetoothLE"
+            "description": "Add BluetoothLE Client (Shiny.BluetoothLE)",
+            "displayName": "Add BluetoothLE Client (Shiny.BluetoothLE)"
         },
         "blehosting": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Shiny.BluetoothLE.Hosting",
-            "displayName": "Add and configure Shiny.BluetoothLE.Hosting"
+            "description": "Add BluetoothLE Hosting (Shiny.BluetoothLE.Hosting)",
+            "displayName": "Add BluetoothLE Hosting (Shiny.BluetoothLE.Hosting)"
         },
         "beacons": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Shiny.Beacons",
-            "displayName": "Add and configure Shiny.Beacons"
+            "description": "Add Beacons (Shiny.Beacons)",
+            "displayName": "Add Beacons (Shiny.Beacons)"
         },
         "jobs": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Shiny.Jobs",
-            "displayName": "Add and configure Shiny.Jobs"
+            "description": "Add Background Jobs (Shiny.Jobs)",
+            "displayName": "Add Background Jobs (Shiny.Jobs)"
         },
         "gps":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Shiny.Locations",
-            "displayName": "Add and configure Shiny.Locations"
+            "description": "Add GPS (Shiny.Locations)",
+            "displayName": "Add GPS (Shiny.Locations)"
         },
         "geofencing":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Shiny.Locations",
-            "displayName": "Add and configure Shiny.Locations"            
+            "description": "Add Geofencing (Shiny.Locations)",
+            "displayName": "Add Geofencing (Shiny.Locations)"            
         },
         "motionactivity":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Shiny.Locations",
-            "displayName": "Add and configure Shiny.Locations"            
+            "description": "Add Motion Activity (Shiny.Locations)",
+            "displayName": "Add Motion Activity (Shiny.Locations)"            
         },
         "httptransfers": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Shiny.Net.Http",
-            "displayName": "Add Background HTTP Uploads & Downloads"
+            "description": "Add Background HTTP Uploads & Downloads (Shiny.Net.Http)",
+            "displayName": "Add Background HTTP Uploads & Downloads (Shiny.Net.Http)"
         },
         "nfc": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Shiny.Nfc",
-            "displayName": "NFC (iOS & Android Only)"
+            "description": "Add NFC - iOS & Android Only (Shiny.NFC)",
+            "displayName": "Add NFC - iOS & Android Only (Shiny.NFC)"
         },
         "notifications": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Shiny.Notifications",
-            "displayName": "Add and configure Shiny.Notifications"
+            "description": "Add Local Notifications (Shiny.Notifications)",
+            "displayName": "Add Local Notifications (Shiny.Notifications)"
         },
         "push": {
             "type": "parameter",
@@ -145,15 +166,15 @@
                 },
                 {
                     "choice": "Native",
-                    "description": ""
+                    "description": "Native (Shiny.Push)"
                 },
                 {
                     "choice": "Firebase",
-                    "description": "Firebase Messaging Push Notifications - iOS/Android Only"
+                    "description": "Firebase Messaging - iOS/Android Only (Shiny.Push.FirebaseMessaging)"
                 },
                 {
                     "choice": "Azure Notification Hubs",
-                    "description": ""
+                    "description": "Azure Notifications Hubs (Shiny.Push.AzureNotificationHubs)"
                 }
             ]
         },

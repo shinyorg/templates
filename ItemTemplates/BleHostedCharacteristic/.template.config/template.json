@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "aritchie",
+    "classifications": [ "MAUI", "Code" ],
+    "identity": "Shiny.Templates.BleCharacteristic",
+    "groupIdentity": "Shiny.Templates",
+    "name": "Shiny BLE Hosted Characteristic",
+    "shortName": "shinyblehostedcharacteristic",
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    },
+    "primaryOutputs": [
+        {
+            "path": "BleCharacteristic.cs"
+        }
+    ],
+    "postActions": [
+        {
+            "id": "openInEditor",
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+            "description": "Opens BleCharacteristic.cs in the editor.",
+            "manualInstructions": [],
+            "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+            "args": {
+                "files": "0"
+            },
+            "continueOnError": true
+        }
+    ],
+    "sourceName": "BleCharacteristic",
+    "defaultName": "BleCharacteristic",
+    "symbols": {
+        "namespace": {
+            "description": "namespace for the generated code",
+            "replaces": "ShinyApp",
+            "type": "parameter"
+        }
+    }
+}

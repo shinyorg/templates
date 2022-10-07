@@ -3,11 +3,110 @@
     "icon": "shiny.png",
     "symbolInfo": [
         {
-            "id": "sqlite",
+            "id": "applicationId",
             "name": {
-                "text": "Add SQLite.NET-PCL"
+                "text": "Set the ApplicationId"
             },
             "isVisible": true
+        },
+        {
+            "id": "sqlite",
+            "name": {
+                "text": "Add SQLite (SQLite.NET-PCL)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "configuration",
+            "name": {
+                "text": "Add AppSettings.json (Shiny.Extensions.Configuration)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "appcenter",
+            "name": {
+                "text": "Your AppCenter Key (optional)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "bluetoothle",
+            "name": {
+                "text": "Add BluetoothLE Client (Shiny.BluetoothLE)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "blehosting",
+            "name": {
+                "text": "Add BluetoothLE Hosting (Shiny.BluetoothLE.Hosting)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "beacons",
+            "name": {
+                "text": "Add Beacons (Shiny.Beacons)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "jobs",
+            "name": {
+                "text": "Add Background Jobs (Shiny.Jobs)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "gps",
+            "name": {
+                "text": "Add GPS (Shiny.Locations)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "geofencing",
+            "name": {
+                "text": "Add Geofencing (Shiny.Locations)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "motionactivity",
+            "name": {
+                "text": "Add Motion Activity (Shiny.Locations)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "httptransfers",
+            "name": {
+                "text": "Add Background HTTP Uploads & Downloads (Shiny.Net.Http)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "nfc",
+            "name": {
+                "text": "Add NFC - iOS & Android Only (Shiny.NFC)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "notifications",
+            "name": {
+                "text": "Add Local Notifications (Shiny.Notifications)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "push",
+            "name": {
+                "text": "Add Push Notifications"
+            },
+            "isVisible": true,
+            "defaultValue": "None"
         }
     ]
 }
