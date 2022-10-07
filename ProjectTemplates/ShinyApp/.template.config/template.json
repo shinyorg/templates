@@ -91,26 +91,40 @@
             "description": "Add Shiny.Jobs",
             "displayName": "Add and configure Shiny.Jobs"
         },
-        "locations": {
+        "gps":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Add Shiny.Locations",
             "displayName": "Add and configure Shiny.Locations"
         },
+        "geofencing":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Locations",
+            "displayName": "Add and configure Shiny.Locations"            
+        },
+        "motionactivity":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Locations",
+            "displayName": "Add and configure Shiny.Locations"            
+        },
         "httptransfers": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Add Shiny.Net.Http",
-            "displayName": "Add and configure Shiny.Net.Http"
+            "displayName": "Add Background HTTP Uploads & Downloads"
         },
         "nfc": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Add Shiny.Nfc",
-            "displayName": "Add and configure Shiny.Nfc"
+            "displayName": "NFC (iOS & Android Only)"
         },
         "notifications": {
             "type": "parameter",
@@ -154,6 +168,10 @@
         "usepushanh":{
             "type": "computed",
             "value": "(push == \"Azure Notification Hubs\")"
+        },
+        "usepush":{
+            "type": "computed",
+            "value": "(push != \"None\")"
         },
         "useconfig":{
             "type": "computed",

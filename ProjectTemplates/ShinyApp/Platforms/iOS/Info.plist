@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -27,6 +25,63 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/appicon.appiconset</string>
+	<string>Assets.xcassets/appicon.appiconset</string>	
+	<!--#if (motionactivity)-->
+	<key>NSMotionUsageDescription</key>
+	<string>Say something useful here that your users will understand</string>
+	<!--#endif-->
+	<!--#if (gps || geofencing || beacons)-->
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Say something useful here that your users will understand</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Say something useful here that your users will understand</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Say something useful here that your users will understand</string>
+	<!--#endif-->
+	<!--#if (blehosting)-->
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Say something useful here that your users will understand</string>
+	<!--#endif-->
+	<!--#if (bluetoothle)-->
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Say something useful here that your users will understand</string>	
+	<!--#endif-->
+	<key>UIBackgroundModes</key>
+	<array>
+		<!--#if (jobs || usepush)-->
+		<string>processing</string>
+		<string>fetch</string>
+		<!--#endif-->
+		<!--#if (gps || geofencing || beacons)-->
+		<string>location</string>
+		<!--#endif-->
+		<!--#if (bluetoothle || beacons)-->
+		<string>bluetooth-central</string>
+		<!--#endif-->
+		<!--#if (blehosting)-->
+		<string>bluetooth-peripheral</string>
+		<!--#endif-->
+		<!--#if (usepush)-->
+		<string>remote-notification</string>
+		<!--#endif-->
+	</array>
+	<!--#if (jobs)-->
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.shiny.job</string>
+		<string>com.shiny.jobpower</string>
+		<string>com.shiny.jobnet</string>
+		<string>com.shiny.jobpowernet</string>
+	</array>
+	<!--#endif-->
+	<!--#if (nfc)-->
+	<key>NFCReaderUsageDescription</key>
+	<string>Put your friendly message as to why here!</string>
+	<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
+	<array>
+		<string>A0000002471001</string>
+		<string>D2760000850101</string>
+	</array>
+	<!--#endif-->
 </dict>
 </plist>

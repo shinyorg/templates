@@ -46,6 +46,15 @@ public static class MauiProgram
         s.AddBeaconRanging();
         // s.AddBeaconMonitoring<MyBeaconDelegate>();  // TODO
 #endif
+#if gps
+        s.AddGps<MyGpsDelegate>();
+#endif
+#if geofencing
+        s.AddGeofencing<MyGeofenceDelegate>();
+#endif
+#if motionactivity
+        s.AddMotionActivity();
+#endif
 #if usepushnative
         s.AddPush<MyPushDelegate>(); // TODO: firebase config?
 #endif
@@ -53,7 +62,7 @@ public static class MauiProgram
         // TODO: need config
         s.AddPushAzureNotificationHubs<MyPushDelegate>(new ("", ""));
 #endif
-#if usefirebase
+#if usepushfirebase
         s.AddFirebaseMessaging<MyPushDelegate>(); // TODO: firebase config?
 #endif
 #if notifications
