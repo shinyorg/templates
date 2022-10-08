@@ -10,3 +10,6 @@ global using System.Reactive.Threading.Tasks;
 global using Prism.Navigation;
 global using Prism.Services;
 global using Microsoft.Extensions.Logging;
+#if (useconfig)
+global using Microsoft.Extensions.Configuration;
+#endif

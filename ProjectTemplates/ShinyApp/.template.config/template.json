@@ -1,20 +1,26 @@
 {
     "$schema": "http://json.schemastore.org/template",
-    "author": "Allan Ritchie",
+    "author": "Shiny .NET",
     "classifications": [ "MAUI", "Shiny", "Prism", "ReactiveUI" ],
-    "identity": "ShinyApp",
     "name": "Shiny.NET MAUI Application",
     "shortName": "shinymaui",
-    "preferNameDirectory": true,
-    "groupIdentity": "Shiny.Templates.App",
     "description": "A project for creating a .NET MAUI /w Shiny.NET, Prism, & ReactiveUI",
+    "identity": "Shiny.Maui.App",
     "sourceName": "ShinyApp",
+    "preferNameDirectory": true,    
     "tags": {
         "language": "C#",
         "type": "project"
-    },
-    "sources": [
-    {
+    },    
+    "primaryOutputs": [{
+        "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+        "path": "MauiProgram.cs"
+    }],
+    "guids": [
+        "07CD65EF-6238-4365-AF5D-F6D433967F48",
+        "8B51DC95-6D07-4C39-BC6C-3BFE96E8A7EA"
+    ],    
+    "sources": [{
         "source": "./",
         "target": "./",
         "copyOnly": [
@@ -204,6 +210,10 @@
                 }
             ]
         },
+        "HostIdentifier": {
+            "type": "bind",
+            "binding": "HostIdentifier"
+        },        
         "usepushnative":{
             "type": "computed",
             "value": "(push == \"Native\")"
