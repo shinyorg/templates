@@ -1,5 +1,7 @@
 # Shiny Templates
 
+To install: dotnet new -i Shiny.Templates
+
 ## Intro
 * Creates a best practice MAUI application with best-in-class frameworks:
     * [.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui)
