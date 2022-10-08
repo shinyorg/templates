@@ -17,8 +17,10 @@
 	* Create & auto-configure a strongly-typed settings class that can be bound to preferences or secure storage
 	* Create & auto-configure a startup service
 
+
 ---
-<img src="screenshot.png" />
+<img src="vs4win.png" />
+<img src="vs4mac.png" />
 
 * Other 3rd party libs
 
@@ -30,7 +32,6 @@
 		<PackageReference Include="CompiledBindings.MAUI" Version="1.0.13" />
 		<PackageReference Include="Humanizer" Version="2.14.1" />
 		<PackageReference Include="Plugin.Maui.Audio" Version="0.1.0-preview1" />
-		<PackageReference Include="CommunityToolkit.Maui" Version="1.3.0" />
 		
 		<PackageReference Include="Sharpnado.Tabs" Version="3.0.0" />
 		<PackageReference Include="AiForms.Maui.SettingsView" Version="0.1.10-pre" />
