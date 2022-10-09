@@ -1,7 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
+		<!--#if (usemaccatalyst)-->
+		<TargetFrameworks>{DOTNET_TFM}-android;{DOTNET_TFM}-ios;{DOTNET_TFM}-maccatalyst</TargetFrameworks>
+		<!--#else-->
+		<TargetFrameworks>{DOTNET_TFM}-android;{DOTNET_TFM}-ios</TargetFrameworks>
+		<!--#endif-->
 		<OutputType>Exe</OutputType>
 		<RootNamespace>ShinyApp</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -10,7 +14,7 @@
 		<Nullable>enable</Nullable>
 
 		<ApplicationTitle>ShinyApp</ApplicationTitle>
-		<ApplicationId>com.companyname.shinyapp</ApplicationId>
+		<ApplicationId>{APPLLICATION_ID}</ApplicationId>
 		<ApplicationIdGuid>85C81D9D-257A-496B-96D8-E4922B5D6864</ApplicationIdGuid>
 
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
