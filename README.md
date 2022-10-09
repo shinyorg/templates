@@ -1,6 +1,9 @@
 # Shiny Templates
 
-To install: dotnet new -i Shiny.Templates
+![Nuget](https://img.shields.io/nuget/v/shiny.templates?style=for-the-badge)
+
+### To Install
+> dotnet new -i Shiny.Templates
 
 ## Intro
 * Creates a best practice MAUI application with best-in-class frameworks:
@@ -23,3 +26,11 @@ To install: dotnet new -i Shiny.Templates
 ---
 <img src="vs4win.png" />
 <img src="vs4mac.png" />
+
+
+## Command Line (CLI)
+
+### Create a new project
+> dotnet new shinymaui -o MyProject
+
+TODO: Parameters
