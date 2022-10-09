@@ -3,7 +3,11 @@
 ![Nuget](https://img.shields.io/nuget/v/shiny.templates?style=for-the-badge)
 
 ### To Install
-> dotnet new -i Shiny.Templates
+> dotnet new --install Shiny.Templates
+
+or update
+
+> dotnet new --update-apply
 
 ## Intro
 * Creates a best practice MAUI application with best-in-class frameworks:

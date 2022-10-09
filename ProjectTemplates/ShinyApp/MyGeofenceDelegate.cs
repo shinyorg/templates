@@ -17,8 +17,9 @@ public partial class MyGeofenceDelegate : IGeofenceDelegate
 }
 
 
+//-:cnd:noEmit
 #if ANDROID
-public partial class MyGpsDelegate : IAndroidForegroundServiceDelegate
+public partial class MyGeofenceDelegate : IAndroidForegroundServiceDelegate
 {
     public void Configure(AndroidX.Core.App.NotificationCompat.Builder builder)
     {
@@ -26,3 +27,4 @@ public partial class MyGpsDelegate : IAndroidForegroundServiceDelegate
     }
 }
 #endif
+//+:cnd:noEmit

@@ -17,6 +17,7 @@ public partial class MyGpsDelegate : IGpsDelegate
     }
 }
 
+//-:cnd:noEmit
 #if ANDROID
 public partial class MyGpsDelegate : IAndroidForegroundServiceDelegate
 {
@@ -26,3 +27,4 @@ public partial class MyGpsDelegate : IAndroidForegroundServiceDelegate
     }
 }
 #endif
+//+:cnd:noEmit
