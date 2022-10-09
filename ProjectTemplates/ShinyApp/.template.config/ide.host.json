@@ -132,7 +132,7 @@
             "defaultValue": "None"
         },
         {
-            "id": "essentialscamera",
+            "id": "essentialsmedia",
             "name": {
                 "text": "Setup MAUI Essentials - Media Picker"
             },

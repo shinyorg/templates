@@ -91,7 +91,8 @@
             "type": "parameter",
             "description": "Set the Application Identifier",
             "datatype": "string",
-            "replaces": "{APPLLICATION_ID}"
+            "defaultValue": "",
+            "replaces": "{APPLICATION_ID}"
         },      
         "sqlite": {
             "type": "parameter",

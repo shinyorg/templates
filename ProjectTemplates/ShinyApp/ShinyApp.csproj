@@ -14,7 +14,7 @@
 		<Nullable>enable</Nullable>
 
 		<ApplicationTitle>ShinyApp</ApplicationTitle>
-		<ApplicationId>{APPLLICATION_ID}</ApplicationId>
+		<ApplicationId>{APPLICATION_ID}</ApplicationId>
 		<ApplicationIdGuid>85C81D9D-257A-496B-96D8-E4922B5D6864</ApplicationIdGuid>
 
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
