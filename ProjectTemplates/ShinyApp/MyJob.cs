@@ -3,9 +3,9 @@ using Shiny.Jobs;
 namespace ShinyApp;
 
 
-public class SampleJob : IJob
+public class MyJob : IJob
 {
-    public SampleJob()
+    public MyJob()
     {
     }
 
