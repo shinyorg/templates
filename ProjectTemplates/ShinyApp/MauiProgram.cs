@@ -37,6 +37,9 @@ public static class MauiProgram
 
     static void RegisterServices(IServiceCollection s)
     {
+#if essentialsmedia
+        s.AddSingleton(MediaPicker.Default);
+#endif
 #if startup
         s.AddShinyService<AppStartup>();
 #endif

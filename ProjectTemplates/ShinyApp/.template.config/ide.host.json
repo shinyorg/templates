@@ -110,14 +110,6 @@
             "isVisible": true
         },
         {
-            "id": "push",
-            "name": {
-                "text": "Add Push Notifications"
-            },
-            "isVisible": true,
-            "defaultValue": "None"
-        },
-        {
             "id": "startup",
             "name": {
                 "text": "Add Startup Service (Shiny.Core)"
@@ -130,6 +122,22 @@
                 "text": "Add Bound Settings Class (Shiny.Core)"
             },
             "isVisible": true
+        },        
+        {
+            "id": "push",
+            "name": {
+                "text": "Add Push Notifications"
+            },
+            "isVisible": true,
+            "defaultValue": "None"
+        },
+        {
+            "id": "essentialscamera",
+            "name": {
+                "text": "Setup MAUI Essentials - Media Picker"
+            },
+            "isVisible": true,
+            "defaultValue": "None"
         }
     ]
 }

@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <PackageType>Template</PackageType>
-        <PackageVersion>1.0-alpha3</PackageVersion>
+        <PackageVersion>1.0-alpha4</PackageVersion>
         <PackageId>Shiny.Templates</PackageId>
         <Title>Shiny Templates</Title>
         <Authors>Allan Ritchie</Authors>

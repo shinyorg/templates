@@ -17,14 +17,18 @@
 	<!--#if (blehosting)-->
 	<uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
 	<!--#endif-->
-	<!--#if (location)-->
+	<!--#if (gps || geofencing)-->
     <uses-feature android:name="android.hardware.location.gps" android:required="false" />
     <uses-feature android:name="android.hardware.location.network" android:required="false" />	
 
-	<uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />	
+	<!--#endif-->
+	<!--#if (bluetoothle || gps || geofencing || beacons)-->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<!--#endif-->
+	<!--#if (motionactivity)-->
+	<uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
 	<!--#endif-->
 	<!--#if (nfc)-->
 	<uses-feature android:name="android.hardware.nfc" android:required="false" />
@@ -33,4 +37,19 @@
 	<!--#endif-->
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+	<!--#if (essentialsmedia)-->
+	<uses-feature android:name="android.hardware.camera" android:required="false" />
+	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.CAMERA" />
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
+	<!--#endif-->
 </manifest>

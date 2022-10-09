@@ -196,7 +196,7 @@
             "defaultValue": "false",
             "description": "Add Bound Settings Class (Shiny.Core)",
             "displayName": "Add Bound Settings Class (Shiny.Core)"
-        },        
+        },
         "push": {
             "type": "parameter",
             "datatype": "choice",
@@ -221,6 +221,14 @@
                 }
             ]
         },
+        "essentialsmedia":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Setup MAUI Essentials - Media Picker",
+            "displayName": "Setup MAUI Essentials - Media Picker"
+        },
+
         "HostIdentifier": {
             "type": "bind",
             "binding": "HostIdentifier"
