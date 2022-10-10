@@ -2,6 +2,8 @@
 
 ![Nuget](https://img.shields.io/nuget/v/shiny.templates?style=for-the-badge)
 
+**Please NOTE: Shiny v3 (used by these templates) & the templates are in a preview state.  Issues are anticipated.**
+
 ### To Install
 > dotnet new --install Shiny.Templates
 
