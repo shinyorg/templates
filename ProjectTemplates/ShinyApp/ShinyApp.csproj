@@ -89,6 +89,9 @@
 		<!--#if (notifications)-->
 		<PackageReference Include="Shiny.Notifications" Version="$(ShinyVersion)" />
 		<!--#endif-->
+		<!--#if (speechrecognition)-->
+		<PackageReference Include="Shiny.SpeechRecognition" Version="$(ShinyVersion)" />
+		<!--#endif-->
 		<!--#if (usepushnative)-->
 		<PackageReference Include="Shiny.Push" Version="$(ShinyVersion)" />
 		<!--#endif-->

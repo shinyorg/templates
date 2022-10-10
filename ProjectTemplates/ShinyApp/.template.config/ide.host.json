@@ -122,6 +122,14 @@
                 "text": "Add Bound Settings Class (Shiny.Core)"
             },
             "isVisible": true
+        },
+        {
+            "id": "speechrecognition",
+            "name": {
+                "text": "Add Speech Recognition (Shiny.SpeechRecognition)"
+            },
+            "isVisible": true,
+            "defaultValue": "None"
         },        
         {
             "id": "push",

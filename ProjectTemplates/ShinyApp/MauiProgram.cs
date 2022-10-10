@@ -50,7 +50,6 @@ public static class MauiProgram
         s.AddSingleton<MySqliteConnection>();
 #endif
 #if jobs
-        // TODO: additional configuration in the signature
         s.AddJob(typeof(MyJob));
 #endif
 #if bluetoothle
@@ -85,6 +84,9 @@ public static class MauiProgram
 #endif
 #if notifications
         s.AddNotifications();
+#endif
+#if speechrecognition
+        s.AddSpeechRecognition();
 #endif
         s.AddGlobalCommandExceptionHandler(new(
 #if DEBUG

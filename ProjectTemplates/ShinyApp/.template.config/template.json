@@ -184,6 +184,13 @@
             "description": "Add Local Notifications (Shiny.Notifications)",
             "displayName": "Add Local Notifications (Shiny.Notifications)"
         },
+        "speechrecognition": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Speech Recognition (Shiny.SpeechRecognition)",
+            "displayName": "Add Speech Recognition (Shiny.SpeechRecognition)"       
+        },        
         "startup":{
             "type": "parameter",
             "datatype": "bool",
@@ -229,7 +236,6 @@
             "description": "Setup MAUI Essentials - Media Picker",
             "displayName": "Setup MAUI Essentials - Media Picker"
         },
-
         "HostIdentifier": {
             "type": "bind",
             "binding": "HostIdentifier"
