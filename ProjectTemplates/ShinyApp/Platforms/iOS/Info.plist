@@ -46,6 +46,12 @@
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>	
 	<!--#endif-->
+	<!--#if (speechrecognition)-->
+	<key>NSSpeechRecognitionUsageDescription</key>  
+	<string>Say something useful here that your users will understand</string>
+	<key>NSMicrophoneUsageDescription</key> =
+	<string>Say something useful here that your users will understand</string>
+	<!--#endif-->
 	<!--#if (essentialsmedia)-->
 	<key>NSCameraUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
