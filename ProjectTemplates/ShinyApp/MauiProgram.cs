@@ -1,4 +1,4 @@
-﻿#if framework
+﻿#if shinyframework
 using CommunityToolkit.Maui;
 using Prism.DryIoc;
 #endif
@@ -13,7 +13,7 @@ public static class MauiProgram
         var builder = MauiApp
             .CreateBuilder()
             .UseMauiApp<App>()
-#if framework            
+#if shinyframework            
             .UseMauiCommunityToolkit()
             .UseShinyFramework(
                 new DryIocContainerExtension(),
@@ -94,7 +94,7 @@ public static class MauiProgram
         s.AddFirebaseMessaging<MyPushDelegate>();
 #endif
 
-#if framework
+#if shinyframework
         s.AddGlobalCommandExceptionHandler(new(
 //-:cnd:noEmit                
 #if DEBUG
@@ -110,7 +110,7 @@ public static class MauiProgram
 
     static void RegisterViews(IServiceCollection s)
     {
-#if framework
+#if shinyframework
         s.RegisterForNavigation<MainPage, MainViewModel>();
 #else
         s.AddTransient<MainPage>();

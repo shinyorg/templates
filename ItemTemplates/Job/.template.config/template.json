@@ -2,24 +2,24 @@
     "$schema": "http://json.schemastore.org/template",
     "author": "Shiny",
     "classifications": [ "MAUI", "Code" ],
-    "identity": "Shiny.Templates.BleCharacteristic",
+    "identity": "Shiny.Templates.Job",
     "groupIdentity": "Shiny.Templates",
-    "name": "Shiny BLE Hosted Characteristic",
-    "shortName": "shinyblehostedcharacteristic",
+    "name": "Shiny Periodic Job",
+    "shortName": "shinyjob",
     "tags": {
         "language": "C#",
         "type": "item"
     },
     "primaryOutputs": [
         {
-            "path": "BleCharacteristic.cs"
+            "path": "Job.cs"
         }
     ],
     "postActions": [
         {
             "id": "openInEditor",
             "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
-            "description": "Opens BleCharacteristic.cs in the editor.",
+            "description": "Opens Job.cs in the editor.",
             "manualInstructions": [],
             "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
             "args": {
@@ -28,8 +28,8 @@
             "continueOnError": true
         }
     ],
-    "sourceName": "MyBleCharacteristic",
-    "defaultName": "MyBleCharacteristic",
+    "sourceName": "Job",
+    "defaultName": "Job",
     "symbols": {
         "namespace": {
             "type": "parameter",

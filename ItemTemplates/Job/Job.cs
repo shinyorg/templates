@@ -1,12 +1,12 @@
 using System.Threading;
 using Shiny.Jobs;
 
-namespace $rootnamespace$
+namespace ShinyApp;
 
 
-public class $safeitemname$ : Shiny.Jobs.IJob
+public class Job : IJob
 {
-    public $safeitemname$()
+    public Job()
     {
     }
 

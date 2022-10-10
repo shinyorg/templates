@@ -2,7 +2,7 @@
 
 public partial class App : Application
 {
-#if framework
+#if shinyframework
 	public App()
 	{
 		this.InitializeComponent();

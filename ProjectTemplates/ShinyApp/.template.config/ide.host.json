@@ -19,7 +19,7 @@
             "isVisible": true
         },
         {
-            "id": "framework",
+            "id": "shinyframework",
             "name": {
                 "text": "Add Shiny Framework (Shiny + ReactiveUI + Prism)"
             },

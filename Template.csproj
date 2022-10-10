@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <PackageType>Template</PackageType>
-        <PackageVersion>1.0-alpha6</PackageVersion>
+        <PackageVersion>1.0-alpha8</PackageVersion>
         <PackageId>Shiny.Templates</PackageId>
         <Title>Shiny Templates</Title>
         <Authors>Allan Ritchie</Authors>
@@ -19,7 +19,7 @@
 
     <ItemGroup>
         <Content Include="ProjectTemplates\**\*" Exclude="ProjectTemplates\**\bin\**;ProjectTemplates\**\obj\**" />
-        <!-- <Content Include="ItemTemplates\**\*" /> -->
+        <Content Include="ItemTemplates\**\*" />
         <Compile Remove="**\*" />
         <None Include="$(MSBuildThisFileDirectory)shiny.png" Pack="true" PackagePath="shiny.png" />
     </ItemGroup>

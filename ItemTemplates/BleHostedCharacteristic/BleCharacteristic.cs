@@ -1,11 +1,11 @@
 using Shiny.BluetoothLE.Hosting;
 using Shiny.BluetoothLE.Hosting.Managed;
 
-namespace $rootnamespace$
+namespace ShinyApp;
 
 
 [BleGattCharacteristic(Constants.ManagedServiceUuid, Constants.ManagedCharacteristicUuid)]
-public class $safeitemname$ : BleGattCharacteristic
+public class BleGattCharacteristic : BleGattCharacteristic
 {
 //     public override Task OnStart() => base.OnStart();
 //     public override void OnStop() => base.OnStop();

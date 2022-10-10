@@ -1,11 +1,11 @@
 using Shiny.Locations;
 
-namespace $rootnamespace$
+namespace ShinyApp;
 
 
-public partial class $safeitemname$ : IGpsDelegate
+public partial class GpsDelegate : IGpsDelegate
 {
-    public $safeitemname$()
+    public MyGpsDelegate()
     {
     }
 
@@ -16,7 +16,7 @@ public partial class $safeitemname$ : IGpsDelegate
 }
 
 #if ANDROID
-public partial class $safeitemname$ : Shiny.IAndroidForegroundServiceDelegate
+public partial class GpsDelegate : Shiny.IAndroidForegroundServiceDelegate
 {
     public void Configure(AndroidX.Core.App.NotificationCompat.Builder builder)
     {

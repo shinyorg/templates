@@ -10,7 +10,6 @@ public class MyBleGattCharacteristic : BleGattCharacteristic
     public MyBleGattCharacteristic()
     {
     }
-     
 
     // public override Task OnStart() => base.OnStart();
     // public override void OnStop() => base.OnStop();

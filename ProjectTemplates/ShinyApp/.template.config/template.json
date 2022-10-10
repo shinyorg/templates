@@ -2,10 +2,10 @@
     "$schema": "http://json.schemastore.org/template",
     "author": "Shiny .NET",
     "classifications": [ "MAUI", "Shiny", "Prism", "ReactiveUI" ],
-    "name": "Shiny Framework MAUI Application",
+    "name": "Shiny MAUI Application",
     "shortName": "shinymaui",
     "description": "A project for creating a .NET MAUI /w Shiny.NET, Prism, & ReactiveUI",
-    "identity": "Shiny.Framework.App",
+    "identity": "Shiny.Templates.App",
     "sourceName": "ShinyApp",
     "preferNameDirectory": true,    
     "tags": {
@@ -72,6 +72,10 @@
             {
                 "condition": "(settings == false)",
                 "exclude": "AppSettings.cs"
+            },
+            {
+                "condition": "(shinyframework == false)",
+                "exclude": "FodyWeavers.xml"
             }
         ]
     }],
@@ -94,7 +98,7 @@
             "defaultValue": "",
             "replaces": "{APPLICATION_ID}"
         },
-        "framework": {
+        "shinyframework": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "true",
