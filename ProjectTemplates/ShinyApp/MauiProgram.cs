@@ -1,5 +1,7 @@
-﻿using CommunityToolkit.Maui;
+﻿#if framework
+using CommunityToolkit.Maui;
 using Prism.DryIoc;
+#endif
 
 namespace ShinyApp;
 
@@ -11,11 +13,13 @@ public static class MauiProgram
         var builder = MauiApp
             .CreateBuilder()
             .UseMauiApp<App>()
+#if framework            
             .UseMauiCommunityToolkit()
             .UseShinyFramework(
                 new DryIocContainerExtension(),
                 prism => prism.OnAppStart("NavigationPage/MainPage")
             )
+#endif
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -71,6 +75,13 @@ public static class MauiProgram
 #if motionactivity
         s.AddMotionActivity();
 #endif
+#if notifications
+        s.AddNotifications();
+#endif
+#if speechrecognition
+        s.AddSpeechRecognition();
+#endif
+
 #if usepushnative
         s.AddPush<MyPushDelegate>();
 #endif
@@ -82,24 +93,28 @@ public static class MauiProgram
         // TODO: configure
         s.AddFirebaseMessaging<MyPushDelegate>();
 #endif
-#if notifications
-        s.AddNotifications();
-#endif
-#if speechrecognition
-        s.AddSpeechRecognition();
-#endif
+
+#if framework
         s.AddGlobalCommandExceptionHandler(new(
+//-:cnd:noEmit                
 #if DEBUG
             ErrorAlertType.FullError
 #else
             ErrorAlertType.NoLocalize
 #endif
+//+:cnd:noEmit
         ));
+#endif
     }
 
 
     static void RegisterViews(IServiceCollection s)
     {
+#if framework
         s.RegisterForNavigation<MainPage, MainViewModel>();
+#else
+        s.AddTransient<MainPage>();
+        s.AddTransient<MainViewModel>();
+#endif
     }
 }

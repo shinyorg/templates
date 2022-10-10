@@ -86,14 +86,21 @@
             }],
             "replaces": "{DOTNET_TFM}",
             "defaultValue": "net6.0"
-        },     
+        },
         "applicationId": {
             "type": "parameter",
             "description": "Set the Application Identifier",
             "datatype": "string",
             "defaultValue": "",
             "replaces": "{APPLICATION_ID}"
-        },      
+        },
+        "framework": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Add Shiny Framework (Shiny + ReactiveUI + Prism) which contains a lot of helpful services like navigation, zero boilerplate MVVM properties, viewmodel validation, localization, viewmodel lifecycles, dialog services, and more",
+            "displayName": "Add Shiny Framework (Shiny + ReactiveUI + Prism)"
+        },
         "sqlite": {
             "type": "parameter",
             "datatype": "bool",
