@@ -1,0 +1,11 @@
+name: Feature Request
+description: You have an idea for an enhancement within Shiny
+title: "[Feature Request]: "
+labels: [feature request, unverified]
+body:
+  - type: textarea
+    attributes:
+      label: Summary
+      description: Your summary of the feature
+    validations:
+      required: true

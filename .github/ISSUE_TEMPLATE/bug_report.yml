@@ -1,0 +1,29 @@
+name: Bug Report
+description: You have found something wrong with Shiny Templates
+title: "[Bug]: "
+labels: [bug, unverified]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for filing an issue.  Please only file issues against the LATEST STABLE version of Shiny.Templates from Nuget.  If you are a sponsor, you can discuss issues with preview releases in the SponsorConnect Discord channel
+        If you have questions, please post them in GitHub discussions
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: Steps To Reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1.
+        2.
+        3.
+  - type: textarea
+    attributes:
+      label: Issue (ie.Compiler Error)
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        Please include a screenshot of the selected options you used
