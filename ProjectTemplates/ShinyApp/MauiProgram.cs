@@ -19,6 +19,8 @@ public static class MauiProgram
                 new DryIocContainerExtension(),
                 prism => prism.OnAppStart("NavigationPage/MainPage")
             )
+#else
+            .UseShiny()
 #endif
             .ConfigureFonts(fonts =>
             {

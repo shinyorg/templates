@@ -95,7 +95,7 @@
             "type": "parameter",
             "description": "Set the Application Identifier",
             "datatype": "string",
-            "defaultValue": "",
+            "defaultValue": "com.companyname.app",
             "replaces": "{APPLICATION_ID}"
         },
         "shinyframework": {
