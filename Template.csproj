@@ -1,14 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <Description>Shiny.NET Templates - One stop shop to setup almost everything you can imagine within your .NET MAUI application</Description>
         <PackageType>Template</PackageType>
-        <PackageVersion>1.0-alpha13</PackageVersion>
-        <PackageId>Shiny.Templates</PackageId>
+        <PackageVersion>1.0-alpha14</PackageVersion>
+        <PackageId>Shiny.Templates</PackageId>        
         <Title>Shiny Templates</Title>
         <Authors>Allan Ritchie</Authors>
         <Owners>aritchie;shinylib</Owners>
-        <Description>Templates for creating applications with Shiny.NET</Description>
-        <PackageTags>dotnet-new;templates;shiny</PackageTags>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/shinyorg/templates</PackageProjectUrl>
+        <PackageTags>dotnet-new;templates;shiny</PackageTags>        
         <PackageIcon>shiny.png</PackageIcon>
         <TargetFramework>net6.0</TargetFramework>
         <IncludeContentInPack>true</IncludeContentInPack>

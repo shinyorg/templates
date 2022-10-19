@@ -19,7 +19,7 @@ or update
 	* [Shiny.NET](https://shinylib.net)
 
 ## Features
-* Entitlements for iOS/MacCatalyst if necessary (ie. NFC, Push)
+* Entitlements for iOS/MacCatalyst if necessary (ie. NFC, Push, MSAL)
 * Info.plist permissions for iOS/MacCatalyst
 * AndroidManifest.xml Permissions & Features for Android
 * Preps all of the necessary functionality for a SQLite Database	
@@ -27,7 +27,8 @@ or update
 * Create AppSettings.json
 * Create & auto-configure a strongly-typed settings class that can be bound to preferences or secure storage
 * Create & auto-configure a startup service
-
+* Setup everything needed for the .NET MAUI Essentials Media Capture service
+* Setup all the different MSAL (Microsoft Authentication Library) scenarios - Basic, Azure B2C, and Broker
 
 ---
 <img src="vs4win.png" />
@@ -38,5 +39,3 @@ or update
 
 ### Create a new project
 > dotnet new shinymaui -o MyProject
-
-TODO: Parameters
