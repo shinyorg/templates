@@ -23,7 +23,7 @@ public class MsalAuthenticationService : IAuthenticationService
 #if ANDROID
     readonly AndroidPlatform platform;
 
-    public MsalAuthenticationService(AndroidPlatform platform. IConfiguration config)
+    public MsalAuthenticationService(AndroidPlatform platform, IConfiguration config)
     {
         this.platform = platform;
 #else
