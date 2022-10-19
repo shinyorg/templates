@@ -49,13 +49,15 @@
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
 	<!--#if (essentialsmedia)-->
-	<key>NSCameraUsageDescription</key>
-	<string>Say something useful here that your users will understand</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Say something useful here that your users will understand</string>
+	<!--#endif-->
+	<!--#if (essentialsmedia || barcodes)-->
+	<key>NSCameraUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
 	<key>UIBackgroundModes</key>

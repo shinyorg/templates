@@ -29,7 +29,7 @@ or update
 * Create & auto-configure a startup service
 * Setup everything needed for the .NET MAUI Essentials Media Capture service
 * Setup all the different MSAL (Microsoft Authentication Library) scenarios - Basic, Azure B2C, and Broker
-
+* Setup all the necessary wiring for [ZXing.Net.Maui](https://github.com/Redth/ZXing.Net.Maui)
 ---
 <img src="vs4win.png" />
 <img src="vs4mac.png" />

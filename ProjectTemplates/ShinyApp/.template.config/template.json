@@ -302,6 +302,13 @@
             "description": "Setup MAUI Essentials - Media Picker",
             "displayName": "Setup MAUI Essentials - Media Picker"
         },
+        "barcodes":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Wire up all of the barcode scanning services for ZXing.Net.MAUI",
+            "displayName": "Add Barcode Scanning & Rendering (ZXing.Net.MAUI)"
+        },
         "HostIdentifier": {
             "type": "bind",
             "binding": "HostIdentifier"

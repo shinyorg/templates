@@ -109,6 +109,9 @@
 		<!--#if (usepushfirebase)-->
 		<PackageReference Include="Shiny.Push.FirebaseMessaging" Version="$(ShinyVersion)" />
 		<!--#endif-->
+		<!--#if (barcodes)-->
+		<PackageReference Include="ZXing.Net.Maui" Version="0.2.0-preview.1" />
+		<!--#endif-->
 	</ItemGroup>
 
 	<!--#if (sqlite)-->

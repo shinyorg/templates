@@ -181,6 +181,13 @@
             },
             "isVisible": true,
             "defaultValue": "None"
+        },
+        {
+            "id": "barcodes",
+            "name":{
+                "text": "Add Barcode Scanning & Rendering (ZXing.Net.MAUI)"
+            },
+            "isVisible": true
         }
     ]
 }

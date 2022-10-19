@@ -2,6 +2,9 @@
 using CommunityToolkit.Maui;
 using Prism.DryIoc;
 #endif
+#if barcodes
+using ZXing.Net.Maui;
+#endif
 
 namespace ShinyApp;
 
@@ -13,6 +16,9 @@ public static class MauiProgram
         var builder = MauiApp
             .CreateBuilder()
             .UseMauiApp<App>()
+#if barcodes
+            .UseBarcodeReader()
+#endif
 #if shinyframework            
             .UseMauiCommunityToolkit()
             .UseShinyFramework(
