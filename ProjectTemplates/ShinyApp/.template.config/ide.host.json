@@ -26,6 +26,27 @@
             "isVisible": true
         },
         {
+            "id": "msaltype",
+            "name": {
+                "text": "MSAL Setup Type"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "msalclientid",
+            "name":{
+                "text": "MSAL Client ID"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "msalservice",
+            "name":{
+                "text": "Creates a sample MSAL service to work with"
+            },
+            "isVisible": true
+        },
+        {
             "id": "sqlite",
             "name": {
                 "text": "Add SQLite (SQLite.NET-PCL)"

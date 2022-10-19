@@ -67,6 +67,9 @@
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
 		<!--#endif-->
+		<!--#if (usemsal)-->
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.47.2" />
+		<!--#endif-->
 		<!--#if (useconfig)-->
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->

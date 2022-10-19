@@ -43,6 +43,9 @@ public static class MauiProgram
 
     static void RegisterServices(IServiceCollection s)
     {
+#if usemsal && msalservice
+        s.AddSingleton<IAuthService, MsalAuthService>();
+#endif
 #if essentialsmedia
         s.AddSingleton(MediaPicker.Default);
 #endif

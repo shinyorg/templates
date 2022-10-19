@@ -6,6 +6,12 @@
 	<key>aps-environment</key>
 	<string>development</string>
     <!--#endif-->
+	<!--#if (usemsal)-->
+    <key>keychain-access-groups</key>
+    <array>
+        <string>$(AppIdentifierPrefix)com.microsoft.adalcache</string>
+    </array>
+	<!--#endif-->
     <!--#if (nfc)-->
     <key>com.apple.developer.nfc.readersession.formats</key>
 	<array>

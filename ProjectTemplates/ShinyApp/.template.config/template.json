@@ -76,7 +76,15 @@
             {
                 "condition": "(shinyframework == false)",
                 "exclude": "FodyWeavers.xml"
-            }
+            },
+            {
+                "condition": "(usemsal == false || msalservice == false)",
+                "exclude": "AuthService.cs"
+            },
+            {
+                "condition": "(usemsal == false)",
+                "exclude": "MsalActivity.cs"
+            }            
         ]
     }],
     "symbols":{
@@ -87,6 +95,9 @@
             "choices": [{
                 "choice": "net6.0",
                 "description": "Target .NET 6.0"
+            },{
+                "choice": "net7.0",
+                "description": "Target .NET 7.0"
             }],
             "replaces": "{DOTNET_TFM}",
             "defaultValue": "net6.0"
@@ -96,6 +107,7 @@
             "description": "Set the Application Identifier",
             "datatype": "string",
             "defaultValue": "com.companyname.app",
+            "isRequired": true,
             "replaces": "{APPLICATION_ID}"
         },
         "shinyframework": {
@@ -111,6 +123,38 @@
             "defaultValue": "false",
             "description": "Add SQLite (SQLite.NET-PCL)",
             "displayName": "Add SQLite (SQLite.NET-PCL)"
+        },
+        "msaltype": {
+            "type": "parameter",
+            "description": "MSAL Setup Type",
+            "datatype": "choice",
+            "choices": [{
+                "choice": "None",
+                "description": "None"
+            },{ 
+                "choice": "Basic",
+                "description": "Basic"
+            },{
+                "choice": "AzureB2C",
+                "description": "AzureAD B2C"
+            },{
+                "choice": "Broker",
+                "description": "Broker"
+            }],
+            "defaultValue": "None"
+        },
+        "msalclientid":{
+            "type": "parameter",
+            "description": "MSAL Client ID",
+            "defaultValue": "",
+            "replaces":"{MSAL_CLIENT_ID}"
+        },
+        "msalservice":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Creates a sample MSAL service to work with",
+            "displayName": "Creates a sample MSAL service to work with"
         },
         "configuration": {
             "type": "parameter",
@@ -250,6 +294,18 @@
         "HostIdentifier": {
             "type": "bind",
             "binding": "HostIdentifier"
+        },
+        "usemsal":{
+            "type": "computed",
+            "binding": "(msaltype != \"None\")"
+        },
+        "usemsalb2c":{
+            "type": "computed",
+            "binding": "(msaltype != \"AzureB2C\")"
+        },        
+        "usemsalbroker":{
+            "type": "computed",
+            "binding": "(msaltype != \"Broker\")"
         },        
         "usepushnative":{
             "type": "computed",
@@ -269,7 +325,7 @@
         },
         "useconfig":{
             "type": "computed",
-            "value": "(configuration || push != \"None\" || appcenter != \"\")"
+            "value": "(configuration || push != \"None\" || appcenter != \"\" || msaltype != \"None\")"
         },
         "useappcenter":{
             "type": "computed",
@@ -277,7 +333,7 @@
         },
         "useentitlements":{
             "type": "computed",
-            "value": "(push != \"None\" || nfc)"
+            "value": "(push != \"None\" || nfc || msaltype != \"None\")"
         },
         "usemaccatalyst":{
             "type": "computed",
