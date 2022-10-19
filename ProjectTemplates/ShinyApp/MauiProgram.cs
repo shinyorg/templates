@@ -100,6 +100,7 @@ public static class MauiProgram
 #endif
 
 #if shinyframework
+        s.AddDataAnnotationsValidation();
         s.AddGlobalCommandExceptionHandler(new(
 //-:cnd:noEmit                
 #if DEBUG
