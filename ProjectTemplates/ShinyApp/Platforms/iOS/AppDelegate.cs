@@ -20,6 +20,25 @@ public class AppDelegate : MauiUIApplicationDelegate
 
     [Export("application:didReceiveRemoteNotification:fetchCompletionHandler:")]
     public void DidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
-        => global::Shiny.Hosting.Host.Current.Lifecycle().OnDidReceiveRemoveNotification(userInfo, completionHandler);	
+        => global::Shiny.Hosting.Host.Current.Lifecycle().OnDidReceiveRemoveNotification(userInfo, completionHandler);
+
+#endif
+#if (usemsalbroker)
+    public override bool OpenUrl(UIApplication application, NSUrl url, NSDictionary options)
+    {
+        if (AuthenticationContinuationHelper.IsBrokerResponse(null))
+        {
+            // Done on different thread to allow return in no time.
+            _ = Task.Factory.StartNew(() => AuthenticationContinuationHelper.SetBrokerContinuationEventArgs(url));
+
+            return true;
+        }
+        else if (!AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs(url))
+        {
+            return false;
+        }
+
+        return true;
+    }
 #endif
 }

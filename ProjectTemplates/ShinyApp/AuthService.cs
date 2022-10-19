@@ -1,4 +1,3 @@
-//-:cnd:noEmit
 using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Client;
 
@@ -19,7 +18,7 @@ public class MsalAuthenticationService : IAuthenticationService
     static readonly string[] SCOPES = new [] { "User.Read" };
     readonly MsalOptions options;
     readonly IPublicClientApplication pca;
-
+//-:cnd:noEmit
 #if ANDROID
     readonly AndroidPlatform platform;
 
@@ -30,43 +29,51 @@ public class MsalAuthenticationService : IAuthenticationService
     public MsalAuthenticationService(IConfiguration config)
     {
 #endif
+//+:cnd:noEmit
         this.options = config.GetSection("Msal").Get<MsalOptions>();
 
         this.pca = PublicClientApplicationBuilder
             .Create(this.options.ClientId)
-            //.WithB2CAuthority(B2CConstants.AuthoritySignInSignUp)
-            //.WithIosKeychainSecurityGroup(B2CConstants.IOSKeyChainGroup)
+#if (usemsalb2c)
+            .WithB2CAuthority(this.AuthoritySignInSignUp)            
+#endif
+#if (usemsalbroker)
+            .WithTenantId(this.options.TenantId)
+            .WithBroker()
+#endif
+//-:cnd:noEmit
 #if ANDROID
             .WithRedirectUri(this.options.AndroidRedirectUri)
 #else
             .WithRedirectUri(this.options.AppleRedirectUri)
 #endif
-            .WithIosKeychainSecurityGroup("com.microsoft.adalcache")
+//+:cnd:noEmit
+            .WithIosKeychainSecurityGroup(this.options.AppleKeyChainGroup)
             .Build();
     }
 
+#if (usemsalb2c)
+    public string AuthoritySignInSignUp => $"https://{this.options.AzureADB2CHostname}/tfp/{this.options.TenantId}/{this.options.PolicySignUpSignIn}";
 
-
+#endif
     public async Task<bool> Authenticate()
     {
-        //            if (UseEmbedded)
-        //            {
-
-        //                return await PCA.AcquireTokenInteractive(scopes)
-        //                                        .WithUseEmbeddedWebView(true)
-        //                                        .WithParentActivityOrWindow(PlatformConfig.Instance.ParentWindow)
-        //                                        .ExecuteAsync()
-        //                                        .ConfigureAwait(false);
-        //            }
-
         var result = await this.pca
             .AcquireTokenInteractive(SCOPES)
+
+//-:cnd:noEmit
+#if ANDROID
+            .WithParentActivityOrWindow(this.platform.CurrentActivity)
+#elif IOS || MACCATALYST
+            .WithUseEmbeddedWebView(this.options.AppleUseEmbeddedView)
             .WithSystemWebViewOptions(new SystemWebViewOptions
             {
                 iOSHidePrivacyPrompt = true
             })
-#if ANDROID
-            .WithParentActivityOrWindow(this.platform.CurrentActivity)
+#endif
+//+:cnd:noEmit
+#if (usemsalb2c)
+            .WithB2CAuthority(this.AuthoritySignInSignUp)
 #endif
             .ExecuteAsync()
             .ConfigureAwait(false);
@@ -122,7 +129,12 @@ public class MsalAuthenticationService : IAuthenticationService
 class MsalOptions
 {
     public string ClientId { get; set; }
+    public string TenantId { get; set; }
+    public bool AppleUseEmbeddedView { get; set; }
     public string AppleRedirectUri { get; set; }
+    public string AppleKeyChainGroup { get; set; }
     public string AndroidRedirectUri { get; set; }
+
+    public string PolicySignInSignUp { get; set; }
+    public string AzureADB2CHostname { get; set; }
 }
-//+:cnd:noEmit

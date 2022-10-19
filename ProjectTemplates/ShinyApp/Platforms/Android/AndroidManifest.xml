@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 	<application android:allowBackup="true" android:icon="@mipmap/appicon" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true">
-	<!--#if (usemsal)-->
+	<!--#if (usemsalbasic || usemsalb2c)-->
 		<activity android:name="microsoft.identity.client.BrowserTabActivity" android:configChanges="orientation|screenSize" android:exported="true">
 			<intent-filter>
 				<action android:name="android.intent.action.VIEW" />
@@ -20,6 +20,7 @@
 		</activity>
 	<!--#endif-->
 	</application>
+	
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
 
@@ -73,5 +74,25 @@
             <action android:name="android.media.action.IMAGE_CAPTURE" />
         </intent>
     </queries>
+	<!--#endif-->
+
+	<!--#if (usemsalbroker)-->
+	<queries>
+		<package android:name="com.azure.authenticator" />
+		<package android:name="UserDetailsClient.Droid" />
+		<package android:name="com.microsoft.windowsintune.companyportal" />
+		<!-- Required for API Level 30 to make sure we can detect browsers
+        (that don't support custom tabs) -->
+		<intent>
+			<action android:name="android.intent.action.VIEW" />
+			<category android:name="android.intent.category.BROWSABLE" />
+			<data android:scheme="https" />
+		</intent>
+		<!-- Required for API Level 30 to make sure we can detect browsers that support custom tabs -->
+		<!-- https://developers.google.com/web/updates/2020/07/custom-tabs-android-11#detecting_browsers_that_support_custom_tabs -->
+		<intent>
+			<action android:name="android.support.customtabs.action.CustomTabsService" />
+		</intent>
+	</queries>
 	<!--#endif-->
 </manifest>

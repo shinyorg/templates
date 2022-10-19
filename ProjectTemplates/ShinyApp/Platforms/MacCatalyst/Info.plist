@@ -57,7 +57,7 @@
 	<string>Say something useful here that your users will understand</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
-	<!--#endif-->	
+	<!--#endif-->
 	<key>UIBackgroundModes</key>
 	<array>
 		<!--#if (jobs || usepush)-->
@@ -85,6 +85,27 @@
 		<string>com.shiny.jobnet</string>
 		<string>com.shiny.jobpowernet</string>
 	</array>
+	<!--#endif-->
+	<!--#if (usemsalbroker)-->
+	<key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>msauthv2</string>
+        <string>msauthv3</string>
+    </array>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLName</key>
+            <string>{APPLICATION_ID}</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>msal{MSAL_CLIENT_ID}</string>
+                <string>msauth.{APPLICATION_ID}</string>
+            </array>
+        </dict>
+    </array>
 	<!--#endif-->
 </dict>
 </plist>

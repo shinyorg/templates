@@ -82,9 +82,9 @@
                 "exclude": "AuthService.cs"
             },
             {
-                "condition": "(usemsal == false)",
+                "condition": "(usemsalbasic == false && usemsalb2c == false)",
                 "exclude": "MsalActivity.cs"
-            }            
+            }
         ]
     }],
     "symbols":{
@@ -310,13 +310,17 @@
             "type": "computed",
             "value": "(msaltype != \"None\")"
         },
+        "usemsalbasic":{
+            "type": "computed",
+            "value": "(msaltype == \"Basic\")"
+        },
         "usemsalb2c":{
             "type": "computed",
-            "value": "(msaltype != \"AzureB2C\")"
+            "value": "(msaltype == \"AzureB2C\")"
         },
         "usemsalbroker":{
             "type": "computed",
-            "value": "(msaltype != \"Broker\")"
+            "value": "(msaltype == \"Broker\")"
         },
         "usepushnative":{
             "type": "computed",
