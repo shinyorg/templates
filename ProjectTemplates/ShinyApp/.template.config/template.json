@@ -126,7 +126,8 @@
         },
         "msaltype": {
             "type": "parameter",
-            "description": "MSAL Setup Type",
+            "description": "MSAL Setup",
+            "displayName": "MSAL Setup",
             "datatype": "choice",
             "choices": [{
                 "choice": "None",
@@ -145,6 +146,7 @@
         },
         "msalclientid":{
             "type": "parameter",
+            "dataType": "string",
             "description": "MSAL Client ID",
             "defaultValue": "",
             "replaces":"{MSAL_CLIENT_ID}"
@@ -165,6 +167,7 @@
         },
         "appcenter": {
             "type": "parameter",
+            "dataType": "string",
             "description": "Your AppCenter Key (optional) - (Shiny.Logging.AppCenter)",
             "defaultValue": "",
             "replaces":"{APPCENTER_KEY}"
@@ -264,7 +267,8 @@
             "type": "parameter",
             "datatype": "choice",
             "defaultValue": "None",
-            "description": "Option to choose the push mechanism",
+            "description": "Push Notifications",
+            "displayName": "Push Notifications",
             "choices": [
                 {
                     "choice": "None",

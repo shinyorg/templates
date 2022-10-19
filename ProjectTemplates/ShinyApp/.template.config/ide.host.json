@@ -28,7 +28,7 @@
         {
             "id": "msaltype",
             "name": {
-                "text": "MSAL Setup Type"
+                "text": "MSAL Setup"
             },
             "isVisible": true
         },
