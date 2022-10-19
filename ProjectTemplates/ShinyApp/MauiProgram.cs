@@ -41,9 +41,11 @@ public static class MauiProgram
     }
 
 
-    static void RegisterServices(IServiceCollection s)
+    static void RegisterServices(MauiAppBuilder builder)
     {
-#if usemsal && msalservice
+        var s = builder.Services;
+
+#if (usemsal && msalservice)
         s.AddSingleton<IAuthService, MsalAuthService>();
 #endif
 #if essentialsmedia
@@ -86,21 +88,20 @@ public static class MauiProgram
 #if speechrecognition
         s.AddSpeechRecognition();
 #endif
-
 #if usepushnative
         s.AddPush<MyPushDelegate>();
 #endif
 #if usepushanh
-        // TODO: configure
-        s.AddPushAzureNotificationHubs<MyPushDelegate>(new ("YourApiKey", "YourHubName"));
+        s.AddPushAzureNotificationHubs<MyPushDelegate>(new (
+            builder.Configuration["AzureNotificationHubs:ListenerConnectionString"], 
+            builder.Configuration["AzureNotificationHubs:HubName"]
+        ));
 #endif
 #if usepushfirebase
-        // TODO: configure
         s.AddFirebaseMessaging<MyPushDelegate>();
 #endif
-
 #if shinyframework
-        s.AddDataAnnotationsValidation();
+        s.AddDataAnnotationValidation();
         s.AddGlobalCommandExceptionHandler(new(
 //-:cnd:noEmit                
 #if DEBUG

@@ -147,16 +147,23 @@
         "msalclientid":{
             "type": "parameter",
             "dataType": "string",
-            "description": "MSAL Client ID",
+            "description": "This is your MSAL Application (Client) ID setup within the Azure Portal",
             "defaultValue": "",
             "replaces":"{MSAL_CLIENT_ID}"
+        },
+        "msaltenantid":{
+            "type": "parameter",
+            "dataType": "string",
+            "description": "This is your MSAL Tenant ID setup within the Azure Portal.  This is required for AzureAD B2C and Broker MSAL setups",
+            "defaultValue": "",
+            "replaces":"{MSAL_TENANT_ID}"
         },
         "msalservice":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Creates a sample MSAL service to work with",
-            "displayName": "Creates a sample MSAL service to work with"
+            "displayName": "Sample MSAL Authentication Service"
         },
         "configuration": {
             "type": "parameter",
@@ -253,22 +260,22 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Startup Service (Shiny.Core)",
+            "description": "Creates a class that executes immediately after Shiny is ready for action",
             "displayName": "Add Startup Service (Shiny.Core)"
         },
         "settings":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Bound Settings Class (Shiny.Core)",
+            "description": "This creates a special reactive object that binds to the platform preferences or secure storage",
             "displayName": "Add Bound Settings Class (Shiny.Core)"
         },
         "push": {
             "type": "parameter",
             "datatype": "choice",
             "defaultValue": "None",
-            "description": "Push Notifications",
-            "displayName": "Push Notifications",
+            "description": "Add Push Notifications",
+            "displayName": "Add Push Notifications",
             "choices": [
                 {
                     "choice": "None",
@@ -301,16 +308,16 @@
         },
         "usemsal":{
             "type": "computed",
-            "binding": "(msaltype != \"None\")"
+            "value": "(msaltype != \"None\")"
         },
         "usemsalb2c":{
             "type": "computed",
-            "binding": "(msaltype != \"AzureB2C\")"
-        },        
+            "value": "(msaltype != \"AzureB2C\")"
+        },
         "usemsalbroker":{
             "type": "computed",
-            "binding": "(msaltype != \"Broker\")"
-        },        
+            "value": "(msaltype != \"Broker\")"
+        },
         "usepushnative":{
             "type": "computed",
             "value": "(push == \"Native\")"
