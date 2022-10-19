@@ -1,3 +1,4 @@
+//-:cnd:noEmit
 using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Client;
 
@@ -31,7 +32,6 @@ public class MsalAuthenticationService : IAuthenticationService
 #endif
         this.options = config.GetSection("Msal").Get<MsalOptions>();
 
- 
         this.pca = PublicClientApplicationBuilder
             .Create(this.options.ClientId)
             //.WithB2CAuthority(B2CConstants.AuthoritySignInSignUp)
@@ -123,4 +123,6 @@ class MsalOptions
 {
     public string ClientId { get; set; }
     public string AppleRedirectUri { get; set; }
+    public string AndroidRedirectUri { get; set; }
 }
+//+:cnd:noEmit
