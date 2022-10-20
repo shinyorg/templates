@@ -114,14 +114,14 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "true",
-            "description": "Add Shiny Framework (Shiny + ReactiveUI + Prism) which contains a lot of helpful services like navigation, zero boilerplate MVVM properties, viewmodel validation, localization, viewmodel lifecycles, dialog services, and more",
+            "description": "Add Shiny Framework by Allan Ritchie - Documentation: https://github.com/shinyorg/framework - Lots of helpful services like navigation, zero boilerplate MVVM properties, viewmodel validation, localization, viewmodel lifecycles, dialog services, and more",
             "displayName": "Add Shiny Framework (Shiny + ReactiveUI + Prism)"
         },
         "sqlite": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add SQLite (SQLite.NET-PCL)",
+            "description": "SQLite.NET-PCL by Frank Krueger - Documentation: https://github.com/praeclarum/sqlite-net",
             "displayName": "Add SQLite (SQLite.NET-PCL)"
         },
         "msaltype": {
@@ -306,28 +306,28 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "true",
-            "description": "Add MAUI Community Toolkit",
+            "description": "MAUI Community Toolkit - Documentation: https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
             "displayName": "Add MAUI Community Toolkit"
         },
         "barcodes":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Wire up all of the barcode scanning services for ZXing.Net.MAUI",
+            "description": "Wire up all of the barcode scanning services for ZXing.Net.MAUI by Jon Dick - For documentation, go to https://github.com/Redth/ZXing.Net.Maui",
             "displayName": "Add Barcode Scanning & Rendering (ZXing.Net.MAUI)"
         },
         "inappbilling":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add In-App Billing (Plugin.InAppBilling)",
+            "description": "In-App Billing by James Montemagno - For documentation, go to https://github.com/jamesmontemagno/InAppBillingPlugin",
             "displayName": "Add In-App Billing (Plugin.InAppBilling)"
         },
         "storereview":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Store Review (Plugin.StoreReview)",
+            "description": "Store Review Plugin by James Montemagno - For documentation, go to https://github.com/jamesmontemagno/StoreReviewPlugin",
             "displayName": "Add Store Review (Plugin.StoreReview)"
         },
         "HostIdentifier": {
