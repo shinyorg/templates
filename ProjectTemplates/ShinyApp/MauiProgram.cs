@@ -2,6 +2,12 @@
 using CommunityToolkit.Maui;
 using Prism.DryIoc;
 #endif
+#if inappbilling
+using Plugin.InAppBilling;
+#endif
+#if storereview
+using Plugin.StoreReview;
+#endif
 #if barcodes
 using ZXing.Net.Maui;
 #endif
@@ -19,8 +25,10 @@ public static class MauiProgram
 #if barcodes
             .UseBarcodeReader()
 #endif
-#if shinyframework            
+#if shinyframework || communitytoolkit
             .UseMauiCommunityToolkit()
+#endif
+#if shinyframework            
             .UseShinyFramework(
                 new DryIocContainerExtension(),
                 prism => prism.OnAppStart("NavigationPage/MainPage")
@@ -40,7 +48,7 @@ public static class MauiProgram
         builder.Logging.AddAppCenter(builder.Configuration["AppCenterKey"]);
 #endif
 #endif
-        RegisterServices(builder.Services);
+        RegisterServices(builder);
         RegisterViews(builder.Services);
 
         return builder.Build();
@@ -56,6 +64,12 @@ public static class MauiProgram
 #endif
 #if essentialsmedia
         s.AddSingleton(MediaPicker.Default);
+#endif
+#if inappbilling
+        s.AddSingleton(CrossInAppBilling.Current);
+#endif
+#if storereview
+        s.AddSingleton(CrossStoreReview.Current);
 #endif
 #if startup
         s.AddShinyService<AppStartup>();

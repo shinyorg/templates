@@ -183,9 +183,30 @@
             "defaultValue": "None"
         },
         {
+            "id": "communitytoolkit",
+            "name": {
+                "text": "Add MAUI Community Toolkit"
+            },
+            "isVisible": true
+        },
+        {
             "id": "barcodes",
             "name":{
                 "text": "Add Barcode Scanning & Rendering (ZXing.Net.MAUI)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "inappbilling",
+            "name":{
+                "text": "Add In-App Billing (Plugin.InAppBilling)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "storereview",
+            "name":{
+                "text": "Add Store Review (Plugin.StoreReview)"
             },
             "isVisible": true
         }
