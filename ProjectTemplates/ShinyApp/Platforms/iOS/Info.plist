@@ -50,7 +50,7 @@
 	<key>NSSpeechRecognitionUsageDescription</key>  
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
-	<!--#if (essentialsmedia || speechrecogntion)-->
+	<!--#if (essentialsmedia || speechrecognition)-->
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
