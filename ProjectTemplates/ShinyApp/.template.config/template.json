@@ -30,6 +30,10 @@
         ],
         "modifiers": [
             {
+                "condition": "(useconfig == false)",
+                "exclude": "appsettings.json"
+            },
+            {
                 "condition": "(push == \"None\")",
                 "exclude": "MyPushDelegate.cs"
             },
