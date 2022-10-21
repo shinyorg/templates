@@ -45,12 +45,12 @@
 	<!--#if (speechrecognition)-->
 	<key>NSSpeechRecognitionUsageDescription</key>  
 	<string>Say something useful here that your users will understand</string>
-	<key>NSMicrophoneUsageDescription</key> =
+	<!--#endif-->
+	<!--#if (essentialsmedia || speechrecognition)-->
+	<key>NSMicrophoneUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
 	<!--#if (essentialsmedia)-->
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Say something useful here that your users will understand</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<key>NSPhotoLibraryUsageDescription</key>
