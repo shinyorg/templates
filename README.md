@@ -29,7 +29,14 @@ or update
 * Create & auto-configure a startup service
 * Setup everything needed for the .NET MAUI Essentials Media Capture service
 * Setup all the different MSAL (Microsoft Authentication Library) scenarios - Basic, Azure B2C, and Broker
-* Setup all the necessary wiring for [ZXing.Net.Maui](https://github.com/Redth/ZXing.Net.Maui)
+* Full Setup for the following 3rd party components
+	* [SQLite.NET-pcl](https://github.com/praeclarum/sqlite-net) by Frank Krueger
+	* [ZXing.Net.Maui](https://github.com/Redth/ZXing.Net.Maui) by Jon Dick
+	* [Store Review Plugin](https://github.com/jamesmontemagno/StoreReviewPlugin) by James Montemagno
+	* [In-App Billing Plugin](https://github.com/jamesmontemagno/InAppBillingPlugin) by James Montemagno
+	* [MAUI Audio Plugin](https://github.com/jfversluis/Plugin.Maui.Audio) by Gerald Versluis
+	* [.NET MAUI Community Toolkit](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/)
+	* [Fingerprint Plugin](https://github.com/smstuebe/xamarin-fingerprint) by Sven-Michael Stübe
 ---
 <img src="vs4win.png" />
 <img src="vs4mac.png" />
