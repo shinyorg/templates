@@ -9,7 +9,7 @@ using Plugin.InAppBilling;
 using Plugin.StoreReview;
 #endif
 #if barcodes
-using ZXing.Net.Maui;
+using ZXing.Net.Maui.Controls;
 #endif
 
 namespace ShinyApp;

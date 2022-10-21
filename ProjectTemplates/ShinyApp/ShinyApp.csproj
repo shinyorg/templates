@@ -109,7 +109,7 @@
 		<PackageReference Include="Shiny.Push.FirebaseMessaging" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (barcodes)-->
-		<PackageReference Include="ZXing.Net.Maui" Version="0.1.0-preview.7" />
+		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.2.0-preview.2" />
 		<!--#endif-->
 		<!--#if (storereview)-->
 		<PackageReference Include="Plugin.StoreReview" Version="5.0.0-beta" />
