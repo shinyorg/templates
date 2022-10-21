@@ -11,6 +11,9 @@ using Plugin.StoreReview;
 #if barcodes
 using ZXing.Net.Maui.Controls;
 #endif
+#if audio
+using Plugin.Maui.Audio;
+#endif
 
 namespace ShinyApp;
 
@@ -59,6 +62,9 @@ public static class MauiProgram
     {
         var s = builder.Services;
 
+#if (audio)
+        s.AddSingleton(AudioManager.Current);
+#endif
 #if (usemsal && msalservice)
         s.AddSingleton<IAuthService, MsalAuthService>();
 #endif
@@ -70,6 +76,9 @@ public static class MauiProgram
 #endif
 #if storereview
         s.AddSingleton(CrossStoreReview.Current);
+#endif
+#if fingerprint
+        
 #endif
 #if startup
         s.AddShinyService<AppStartup>();

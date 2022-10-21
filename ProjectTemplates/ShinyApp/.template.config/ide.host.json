@@ -209,6 +209,20 @@
                 "text": "Add Store Review (Plugin.StoreReview)"
             },
             "isVisible": true
-        }
+        },
+        {
+            "id": "audio",
+            "name":{
+                "text": "Add Audio (Plugin.Maui.Audio)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "fingerprint",
+            "name":{
+                "text": "Add Fingerprint/Facial Recognition (Plugin.Fingerprint)"
+            },
+            "isVisible": true
+        }        
     ]
 }

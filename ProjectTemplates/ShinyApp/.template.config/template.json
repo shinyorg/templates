@@ -334,6 +334,20 @@
             "description": "Store Review Plugin by James Montemagno - For documentation, go to https://github.com/jamesmontemagno/StoreReviewPlugin",
             "displayName": "Add Store Review (Plugin.StoreReview)"
         },
+        "audio":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Audio Plugin by Gerald Versluis - For documentation, go to https://github.com/jfversluis/Plugin.Maui.Audio",
+            "displayName": "Add Audio (Plugin.Maui.Audio)"
+        }, 
+        "fingerprint":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Fingerprint Plugin by Sven-Michael Stübe - For documentation, go to https://github.com/smstuebe/xamarin-fingerprint",
+            "displayName": "Add Fingerprint/Facial Recognition (Plugin.Fingerprint)"
+        },         
         "HostIdentifier": {
             "type": "bind",
             "binding": "HostIdentifier"

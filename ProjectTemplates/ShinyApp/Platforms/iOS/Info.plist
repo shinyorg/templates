@@ -64,6 +64,10 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
+	<!--#if (fingerprint)-->
+	<key>NSFaceIDUsageDescription</key>
+	<string>Say something useful here that your users will understand</string>
+	<!--#endif-->
 	<key>UIBackgroundModes</key>
 	<array>
 		<!--#if (jobs || usepush)-->
