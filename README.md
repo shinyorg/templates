@@ -24,11 +24,16 @@ or update
 * AndroidManifest.xml Permissions & Features for Android
 * Preps all of the necessary functionality for a SQLite Database	
 * All of your MauiProgram.cs Dependency Injection
+* Setup AppCenter Logging
 * Create AppSettings.json
-* Create & auto-configure a strongly-typed settings class that can be bound to preferences or secure storage
-* Create & auto-configure a startup service
+* Create & auto-configure a strongly-typed settings class that can be bound to preferences or secure storage using Shiny
+* Create & auto-configure a Shiny startup service
 * Setup everything needed for the .NET MAUI Essentials Media Capture service
-* Setup all the different MSAL (Microsoft Authentication Library) scenarios - Basic, Azure B2C, and Broker
+* Setup all of the necessary boilerplate for the following authentication providers:
+	* MAUI Web Authentication
+	* MSAL (Microsoft Authentication Library) Basic
+	* MSAL (Microsoft Authentication Library) B2C
+	* MSAL (Microsoft Authentication Library) Broker
 * Full Setup for the following 3rd party components
 	* [SQLite.NET-pcl](https://github.com/praeclarum/sqlite-net) by Frank Krueger
 	* [ZXing.Net.Maui](https://github.com/Redth/ZXing.Net.Maui) by Jon Dick
@@ -40,9 +45,3 @@ or update
 ---
 <img src="vs4win.png" />
 <img src="vs4mac.png" />
-
-
-## Command Line (CLI)
-
-### Create a new project
-> dotnet new shinymaui -o MyProject

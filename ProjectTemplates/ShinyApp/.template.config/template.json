@@ -129,50 +129,6 @@
             "description": "Add Shiny Framework by Allan Ritchie - Documentation: https://github.com/shinyorg/framework - Lots of helpful services like navigation, zero boilerplate MVVM properties, viewmodel validation, localization, viewmodel lifecycles, dialog services, and more",
             "displayName": "Add Shiny Framework (Shiny + ReactiveUI + Prism)"
         },
-        "sqlite": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "SQLite.NET-PCL by Frank Krueger - Documentation: https://github.com/praeclarum/sqlite-net",
-            "displayName": "Add SQLite (SQLite.NET-PCL)"
-        },
-        "authtype": {
-            "type": "parameter",
-            "description": "Authentication Setup - MSAL Documentation: https://devblogs.microsoft.com/dotnet/authentication-in-dotnet-maui-apps-msal/  - MAUI WebAuthenticator: https://learn.microsoft.com/en-us/dotnet/maui/platform-integration/communication/authentication",
-            "displayName": "Authentication Setup",
-            "datatype": "choice",
-            "choices": [{
-                "choice": "None",
-                "description": "None"
-            },{ 
-                "choice": "MAUI Web Authenticator",
-                "description": "MAUI Web Authenticator"
-            },{                 
-                "choice": "MSAL Basic",
-                "description": "Basic"
-            },{
-                "choice": "MSAL AzureB2C",
-                "description": "MSAL AzureAD B2C"
-            },{
-                "choice": "MSAL Broker",
-                "description": "MSAL Broker"
-            }],
-            "defaultValue": "None"
-        }, 
-        "msalclientid":{
-            "type": "parameter",
-            "dataType": "string",
-            "description": "This is your MSAL Application (Client) ID setup within the Azure Portal",
-            "defaultValue": "",
-            "replaces":"{MSAL_CLIENT_ID}"
-        },
-        "authservice":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Creates a sample MSAL or Web authenticator service to work with",
-            "displayName": "Create Sample Authentication Service (if MSAL or Web Authenticator is selected)"
-        },
         "configuration": {
             "type": "parameter",
             "datatype": "bool",
@@ -303,6 +259,43 @@
                 }
             ]
         },
+        "authtype": {
+            "type": "parameter",
+            "description": "Authentication Setup - MSAL Documentation: https://devblogs.microsoft.com/dotnet/authentication-in-dotnet-maui-apps-msal/  - MAUI WebAuthenticator: https://learn.microsoft.com/en-us/dotnet/maui/platform-integration/communication/authentication",
+            "displayName": "Authentication Setup",
+            "datatype": "choice",
+            "choices": [{
+                "choice": "None",
+                "description": "None"
+            },{ 
+                "choice": "MAUI Web Authenticator",
+                "description": "MAUI Web Authenticator"
+            },{                 
+                "choice": "MSAL Basic",
+                "description": "Basic"
+            },{
+                "choice": "MSAL AzureB2C",
+                "description": "MSAL AzureAD B2C"
+            },{
+                "choice": "MSAL Broker",
+                "description": "MSAL Broker"
+            }],
+            "defaultValue": "None"
+        }, 
+        "msalclientid":{
+            "type": "parameter",
+            "dataType": "string",
+            "description": "This is your MSAL Application (Client) ID setup within the Azure Portal",
+            "defaultValue": "",
+            "replaces":"{MSAL_CLIENT_ID}"
+        },
+        "authservice":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Creates a sample MSAL or Web authenticator service to work with",
+            "displayName": "Create Sample Authentication Service (if MSAL or Web Authenticator is selected)"
+        },        
         "essentialsmedia":{
             "type": "parameter",
             "datatype": "bool",
@@ -317,6 +310,13 @@
             "description": "MAUI Community Toolkit - Documentation: https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
             "displayName": "Add MAUI Community Toolkit"
         },
+        "sqlite": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "SQLite.NET-PCL by Frank Krueger - Documentation: https://github.com/praeclarum/sqlite-net",
+            "displayName": "Add SQLite (SQLite.NET-PCL)"
+        },        
         "barcodes":{
             "type": "parameter",
             "datatype": "bool",

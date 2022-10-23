@@ -26,34 +26,6 @@
             "isVisible": true
         },
         {
-            "id": "authtype",
-            "name": {
-                "text": "Authentication Setup"
-            },
-            "isVisible": true
-        },
-        {
-            "id": "msalclientid",
-            "name":{
-                "text": "MSAL Client ID"
-            },
-            "isVisible": true
-        },
-        {
-            "id": "authservice",
-            "name":{
-                "text": "Create Sample Authentication Service (if MSAL or Web Authenticator is selected)"
-            },
-            "isVisible": true
-        },
-        {
-            "id": "sqlite",
-            "name": {
-                "text": "Add SQLite (SQLite.NET-PCL)"
-            },
-            "isVisible": true
-        },
-        {
             "id": "configuration",
             "name": {
                 "text": "Add AppSettings.json (Shiny.Extensions.Configuration)"
@@ -168,6 +140,27 @@
             "defaultValue": "None"
         },
         {
+            "id": "authtype",
+            "name": {
+                "text": "Authentication Setup"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "msalclientid",
+            "name":{
+                "text": "MSAL Client ID"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "authservice",
+            "name":{
+                "text": "Create Sample Authentication Service (if MSAL or Web Authenticator is selected)"
+            },
+            "isVisible": true
+        },        
+        {
             "id": "essentialsmedia",
             "name": {
                 "text": "Setup MAUI Essentials - Media Picker"
@@ -182,6 +175,13 @@
             },
             "isVisible": true
         },
+        {
+            "id": "sqlite",
+            "name": {
+                "text": "Add SQLite (SQLite.NET-PCL)"
+            },
+            "isVisible": true
+        },        
         {
             "id": "barcodes",
             "name":{

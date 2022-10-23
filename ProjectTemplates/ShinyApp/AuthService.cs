@@ -6,7 +6,7 @@ using Microsoft.Identity.Client;
 namespace ShinyApp;
 
 // THIS IS NOT MEANT TO BE A COMPLETE SERVICE.  IT IS MEANT ONLY AS A GOOD STARTING POINT
-public interface IAuthenticationService
+public interface IAuthService
 {
     #if (usemsal || usewebauthenticator)
     Task<bool> Authenticate();
@@ -19,7 +19,7 @@ public interface IAuthenticationService
 
 
 #if usewebauthenticator
-public class WebAuthenticatorAuthService : IAuthenticationService 
+public class WebAuthenticatorAuthService : IAuthService 
 {
     public async Task<bool> Authenticate()
     {
@@ -59,7 +59,7 @@ var scheme = "..."; // Apple, Microsoft, Google, Facebook, etc.
 }
 #endif
 #if usemsal
-public class MsalAuthenticationService : IAuthenticationService
+public class MsalAuthenticationService : IAuthService
 {
     static readonly string[] SCOPES = new [] { "User.Read" };
     readonly MsalOptions options;
