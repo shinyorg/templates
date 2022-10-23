@@ -26,9 +26,9 @@
             "isVisible": true
         },
         {
-            "id": "msaltype",
+            "id": "authtype",
             "name": {
-                "text": "MSAL Setup"
+                "text": "Authentication Setup"
             },
             "isVisible": true
         },
@@ -40,9 +40,9 @@
             "isVisible": true
         },
         {
-            "id": "msalservice",
+            "id": "authservice",
             "name":{
-                "text": "Sample MSAL Authentication Service"
+                "text": "Create Sample Authentication Service (if MSAL or Web Authenticator is selected)"
             },
             "isVisible": true
         },

@@ -63,7 +63,7 @@
 	<!--#if (fingerprint)-->
 	<key>NSFaceIDUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
-	<!--#endif-->	
+	<!--#endif-->
 	<key>UIBackgroundModes</key>
 	<array>
 		<!--#if (jobs || usepush)-->
@@ -92,6 +92,21 @@
 		<string>com.shiny.jobpowernet</string>
 	</array>
 	<!--#endif-->
+    <!--#if (usewebauthenticator)-->
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLName</key>
+            <string>My App</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>myapp</string>
+            </array>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+        </dict>
+    </array>    
+    <!--#endif-->	
 	<!--#if (usemsalbroker)-->
 	<key>LSApplicationQueriesSchemes</key>
     <array>

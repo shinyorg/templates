@@ -65,8 +65,12 @@ public static class MauiProgram
 #if (audio)
         s.AddSingleton(AudioManager.Current);
 #endif
-#if (usemsal && msalservice)
+#if (authservice)
+#if (usemsal)
         s.AddSingleton<IAuthService, MsalAuthService>();
+#elif (usewebauthenticator)
+        s.AddSingleton<IAuthService, WebAuthenticatorAuthService>();
+#endif
 #endif
 #if essentialsmedia
         s.AddSingleton(MediaPicker.Default);

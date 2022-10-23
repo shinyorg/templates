@@ -76,6 +76,13 @@
         </intent>
     </queries>
 	<!--#endif-->
+	<!--#if (usewebauthenticator)-->
+	<queries>
+		<intent>
+			<action android:name="android.support.customtabs.action.CustomTabsService" />
+		</intent>
+	</queries>
+	<!--#endif-->
 	<!--#if (usemsalbroker)-->
 	<queries>
 		<package android:name="com.azure.authenticator" />

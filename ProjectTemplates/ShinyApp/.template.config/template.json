@@ -82,13 +82,21 @@
                 "exclude": "FodyWeavers.xml"
             },
             {
-                "condition": "(usemsal == false || msalservice == false)",
+                "condition": "(authservice == false)",
                 "exclude": "AuthService.cs"
             },
             {
                 "condition": "(usemsalbasic == false && usemsalb2c == false)",
                 "exclude": "MsalActivity.cs"
-            }
+            },
+            {
+                "condition": "(usewebauthenticator == false)",
+                "exclude": "WebAuthenticatorActivity.cs"
+            },
+            {
+                "condition": "(notifications == false)",
+                "exclude": "notification.svg"
+            }            
         ]
     }],
     "symbols":{
@@ -128,26 +136,29 @@
             "description": "SQLite.NET-PCL by Frank Krueger - Documentation: https://github.com/praeclarum/sqlite-net",
             "displayName": "Add SQLite (SQLite.NET-PCL)"
         },
-        "msaltype": {
+        "authtype": {
             "type": "parameter",
-            "description": "MSAL Setup",
-            "displayName": "MSAL Setup",
+            "description": "Authentication Setup - MSAL Documentation: https://devblogs.microsoft.com/dotnet/authentication-in-dotnet-maui-apps-msal/  - MAUI WebAuthenticator: https://learn.microsoft.com/en-us/dotnet/maui/platform-integration/communication/authentication",
+            "displayName": "Authentication Setup",
             "datatype": "choice",
             "choices": [{
                 "choice": "None",
                 "description": "None"
             },{ 
-                "choice": "Basic",
+                "choice": "MAUI Web Authenticator",
+                "description": "MAUI Web Authenticator"
+            },{                 
+                "choice": "MSAL Basic",
                 "description": "Basic"
             },{
-                "choice": "AzureB2C",
-                "description": "AzureAD B2C"
+                "choice": "MSAL AzureB2C",
+                "description": "MSAL AzureAD B2C"
             },{
-                "choice": "Broker",
-                "description": "Broker"
+                "choice": "MSAL Broker",
+                "description": "MSAL Broker"
             }],
             "defaultValue": "None"
-        },
+        }, 
         "msalclientid":{
             "type": "parameter",
             "dataType": "string",
@@ -155,12 +166,12 @@
             "defaultValue": "",
             "replaces":"{MSAL_CLIENT_ID}"
         },
-        "msalservice":{
+        "authservice":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Creates a sample MSAL service to work with",
-            "displayName": "Sample MSAL Authentication Service"
+            "description": "Creates a sample MSAL or Web authenticator service to work with",
+            "displayName": "Create Sample Authentication Service (if MSAL or Web Authenticator is selected)"
         },
         "configuration": {
             "type": "parameter",
@@ -345,21 +356,25 @@
             "type": "bind",
             "binding": "HostIdentifier"
         },
+        "usewebauthenticator":{
+            "type": "computed",
+            "value": "(authtype == \"MAUI Web Authenticator\")"            
+        },
         "usemsal":{
             "type": "computed",
-            "value": "(msaltype != \"None\")"
+            "value": "(authtype != \"None\" && authtype != \"MAUI Web Authenticator\")"
         },
         "usemsalbasic":{
             "type": "computed",
-            "value": "(msaltype == \"Basic\")"
+            "value": "(msaltype == \"MSAL Basic\")"
         },
         "usemsalb2c":{
             "type": "computed",
-            "value": "(msaltype == \"AzureB2C\")"
+            "value": "(msaltype == \"MSAL AzureB2C\")"
         },
         "usemsalbroker":{
             "type": "computed",
-            "value": "(msaltype == \"Broker\")"
+            "value": "(msaltype == \"MSAL Broker\")"
         },
         "usepushnative":{
             "type": "computed",

@@ -1,18 +1,64 @@
+#if usemsal
 using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Client;
 
+#endif
 namespace ShinyApp;
 
-
+// THIS IS NOT MEANT TO BE A COMPLETE SERVICE.  IT IS MEANT ONLY AS A GOOD STARTING POINT
 public interface IAuthenticationService
 {
-    Task<bool> TryRefresh();
+    #if (usemsal || usewebauthenticator)
     Task<bool> Authenticate();
+    #endif
+    #if (usemsal)
     Task SignOut();
+    Task<bool> TryRefresh();
+    #endif
 }
 
 
-// THIS IS NOT MEANT TO BE A COMPLETE SERVICE.  IT IS MEANT ONLY AS A GOOD STARTING POINT
+#if usewebauthenticator
+public class WebAuthenticatorAuthService : IAuthenticationService 
+{
+    public async Task<bool> Authenticate()
+    {
+var scheme = "..."; // Apple, Microsoft, Google, Facebook, etc.
+        var authUrlRoot = "https://mysite.com/mobileauth/";
+        WebAuthenticatorResult result = null;
+
+        if (scheme.Equals("Apple")
+            && DeviceInfo.Platform == DevicePlatform.iOS
+            && DeviceInfo.Version.Major >= 13)
+        {
+            // Use Native Apple Sign In API's
+            result = await AppleSignInAuthenticator.AuthenticateAsync();
+        }
+        else
+        {
+            // Web Authentication flow
+            var authUrl = new Uri($"{authUrlRoot}{scheme}");
+            var callbackUrl = new Uri("myapp://");
+
+            result = await WebAuthenticator.Default.AuthenticateAsync(authUrl, callbackUrl);
+        }
+
+        var authToken = string.Empty;
+
+        if (result.Properties.TryGetValue("name", out string name) && !string.IsNullOrEmpty(name))
+            authToken += $"Name: {name}{Environment.NewLine}";
+
+        if (result.Properties.TryGetValue("email", out string email) && !string.IsNullOrEmpty(email))
+            authToken += $"Email: {email}{Environment.NewLine}";
+
+        // Note that Apple Sign In has an IdToken and not an AccessToken
+        authToken += result?.AccessToken ?? result?.IdToken;
+
+        return true;
+    }
+}
+#endif
+#if usemsal
 public class MsalAuthenticationService : IAuthenticationService
 {
     static readonly string[] SCOPES = new [] { "User.Read" };
@@ -138,3 +184,4 @@ class MsalOptions
     public string AndroidRedirectUri { get; set; }
     public string B2CSigninSignupAuthority { get; set; }
 }
+#endif

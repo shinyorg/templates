@@ -105,6 +105,21 @@
 		<string>D2760000850101</string>
 	</array>
 	<!--#endif-->
+    <!--#if (usewebauthenticator)-->
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLName</key>
+            <string>My App</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>myapp</string>
+            </array>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+        </dict>
+    </array>    
+    <!--#endif-->	
 	<!--#if (usemsalbroker)-->
 	<key>LSApplicationQueriesSchemes</key>
     <array>
