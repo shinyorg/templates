@@ -155,13 +155,6 @@
             "defaultValue": "",
             "replaces":"{MSAL_CLIENT_ID}"
         },
-        "msaltenantid":{
-            "type": "parameter",
-            "dataType": "string",
-            "description": "This is your MSAL Tenant ID setup within the Azure Portal.  This is required for AzureAD B2C and Broker MSAL setups",
-            "defaultValue": "",
-            "replaces":"{MSAL_TENANT_ID}"
-        },
         "msalservice":{
             "type": "parameter",
             "datatype": "bool",

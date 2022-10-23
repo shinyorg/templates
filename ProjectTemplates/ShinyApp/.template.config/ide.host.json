@@ -40,13 +40,6 @@
             "isVisible": true
         },
         {
-            "id": "msaltenantid",
-            "name":{
-                "text": "MSAL Tenant ID"
-            },
-            "isVisible": true
-        },
-        {
             "id": "msalservice",
             "name":{
                 "text": "Sample MSAL Authentication Service"

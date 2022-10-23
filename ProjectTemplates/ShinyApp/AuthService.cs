@@ -35,7 +35,7 @@ public class MsalAuthenticationService : IAuthenticationService
         this.pca = PublicClientApplicationBuilder
             .Create(this.options.ClientId)
 #if (usemsalb2c)
-            .WithB2CAuthority(this.AuthoritySignInSignUp)            
+            .WithB2CAuthority(this.options.B2CSigninSignupAuthority)            
 #endif
 #if (usemsalbroker)
             .WithTenantId(this.options.TenantId)
@@ -52,37 +52,40 @@ public class MsalAuthenticationService : IAuthenticationService
             .Build();
     }
 
-#if (usemsalb2c)
-    public string AuthoritySignInSignUp => $"https://{this.options.AzureADB2CHostname}/tfp/{this.options.TenantId}/{this.options.PolicySignUpSignIn}";
 
-#endif
     public async Task<bool> Authenticate()
     {
-        var result = await this.pca
-            .AcquireTokenInteractive(SCOPES)
+        try
+        {
+            var result = await this.pca
+                .AcquireTokenInteractive(SCOPES)
 
 //-:cnd:noEmit
 #if ANDROID
-            .WithParentActivityOrWindow(this.platform.CurrentActivity)
+                .WithParentActivityOrWindow(this.platform.CurrentActivity)
 #elif IOS || MACCATALYST
-            .WithUseEmbeddedWebView(this.options.AppleUseEmbeddedView)
-            .WithSystemWebViewOptions(new SystemWebViewOptions
-            {
-                iOSHidePrivacyPrompt = true
-            })
+                .WithSystemWebViewOptions(new SystemWebViewOptions
+                {
+                    iOSHidePrivacyPrompt = true
+                })
 #endif
 //+:cnd:noEmit
 #if (usemsalb2c)
-            .WithB2CAuthority(this.AuthoritySignInSignUp)
+                .WithB2CAuthority(this.options.B2CSigninSignupAuthority)
 #endif
-            .ExecuteAsync()
-            .ConfigureAwait(false);
+                .ExecuteAsync()
+                .ConfigureAwait(false);
 
-        if (result == null)
+            if (result == null)
+                return false;
+
+            this.SetAuth(result);
+            return true;
+        }
+        catch (Exception ex)
+        {
             return false;
-
-        this.SetAuth(result);
-        return true;
+        }
     }
 
 
@@ -130,11 +133,8 @@ class MsalOptions
 {
     public string ClientId { get; set; }
     public string TenantId { get; set; }
-    public bool AppleUseEmbeddedView { get; set; }
     public string AppleRedirectUri { get; set; }
     public string AppleKeyChainGroup { get; set; }
     public string AndroidRedirectUri { get; set; }
-
-    public string PolicySignInSignUp { get; set; }
-    public string AzureADB2CHostname { get; set; }
+    public string B2CSigninSignupAuthority { get; set; }
 }
