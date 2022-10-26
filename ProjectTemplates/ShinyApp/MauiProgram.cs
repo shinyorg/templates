@@ -1,5 +1,7 @@
-﻿#if shinyframework
+﻿#if shinyframework || communitytoolkit
 using CommunityToolkit.Maui;
+#endif
+#if shinyframework
 using Prism.DryIoc;
 #endif
 #if inappbilling
