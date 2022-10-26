@@ -26,7 +26,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<ShinyVersion>3.0.0-alpha-0376</ShinyVersion>
+		<ShinyVersion>3.0.0-alpha-0387</ShinyVersion>
 		<!--#if (sqlite)-->
 		<SqliteLibVersion>2.1.2</SqliteLibVersion>
 		<!--#endif-->
@@ -51,8 +51,6 @@
 		<MauiImage Include="Resources\Images\*" />
 		<MauiFont Include="Resources\Fonts\*" />
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-		<None Remove="Resources\Images\notification.svg" />
-		<None Remove="Resources\Images\shiny.svg" />
 		<!--#if (useconfig)-->
 		<MauiAsset Include="appsettings.json" LogicalName="appsettings.json" />
 		<!--#endif-->

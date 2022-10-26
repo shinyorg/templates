@@ -19,86 +19,7 @@
     "guids": [
         "07CD65EF-6238-4365-AF5D-F6D433967F48",
         "8B51DC95-6D07-4C39-BC6C-3BFE96E8A7EA"
-    ],    
-    "sources": [{
-        "source": "./",
-        "target": "./",
-        "copyOnly": [
-            "**/*.svg",
-            "**/*.ttf",
-            "**/*.txt"
-        ],
-        "modifiers": [
-            {
-                "condition": "(useconfig == false)",
-                "exclude": "appsettings.json"
-            },
-            {
-                "condition": "(push == \"None\")",
-                "exclude": "MyPushDelegate.cs"
-            },
-            {
-                "condition": "(httptransfers == false)",
-                "exclude": "MyHttpTransferDelegate.cs"
-            },
-            {
-                "condition": "(gps == false)",
-                "exclude": "MyGpsDelegate.cs"
-            },
-            {
-                "condition": "(useentitlements == false)",
-                "exclude": "Entitlements.plist"
-            },
-            {
-                "condition": "(geofencing == false)",
-                "exclude": "MyGeofenceDelegate.cs"
-            },
-            {
-                "condition": "(jobs == false)",
-                "exclude": "MyJob.cs"
-            },
-            {
-                "condition": "(blehosting == false)",
-                "exclude": "MyBleGattCharacteristic.cs"
-            },            
-            {
-                "condition": "(beacons == false)",
-                "exclude": "MyBeaconMonitoringDelegate.cs"
-            },
-            {
-                "condition": "(sqlite == false)",
-                "exclude": "MySqliteConnection.cs"
-            },
-            {
-                "condition": "(startup == false)",
-                "exclude": "AppStartup.cs"
-            },
-            {
-                "condition": "(settings == false)",
-                "exclude": "AppSettings.cs"
-            },
-            {
-                "condition": "(shinyframework == false)",
-                "exclude": "FodyWeavers.xml"
-            },
-            {
-                "condition": "(authservice == false)",
-                "exclude": "AuthService.cs"
-            },
-            {
-                "condition": "(usemsalbasic == false && usemsalb2c == false)",
-                "exclude": "MsalActivity.cs"
-            },
-            {
-                "condition": "(usewebauthenticator == false)",
-                "exclude": "WebAuthenticatorActivity.cs"
-            },
-            {
-                "condition": "(notifications == false)",
-                "exclude": "notification.svg"
-            }            
-        ]
-    }],
+    ],   
     "symbols":{
         "Framework": {
             "type": "parameter",
@@ -272,10 +193,10 @@
                 "description": "MAUI Web Authenticator"
             },{                 
                 "choice": "MSAL Basic",
-                "description": "Basic"
+                "description": "MSAL Basic"
             },{
                 "choice": "MSAL AzureB2C",
-                "description": "MSAL AzureAD B2C"
+                "description": "MSAL AzureB2C"
             },{
                 "choice": "MSAL Broker",
                 "description": "MSAL Broker"
@@ -358,55 +279,149 @@
         },
         "usewebauthenticator":{
             "type": "computed",
-            "value": "(authtype == \"MAUI Web Authenticator\")"            
+            "datatype": "bool",
+            "value": "(authtype == \"MAUI Web Authenticator\")"
         },
         "usemsal":{
             "type": "computed",
-            "value": "(authtype != \"None\" && authtype != \"MAUI Web Authenticator\")"
+            "datatype": "bool",
+            "value": "(authtype == \"MSAL Basic\" || authtype == \"MSAL AzureB2C\" || authtype == \"MSAL Broker\")"
         },
         "usemsalbasic":{
             "type": "computed",
-            "value": "(msaltype == \"MSAL Basic\")"
+            "datatype": "bool",
+            "value": "(authtype == \"MSAL Basic\")"
         },
         "usemsalb2c":{
             "type": "computed",
-            "value": "(msaltype == \"MSAL AzureB2C\")"
+            "datatype": "bool",
+            "value": "(authtype == \"MSAL AzureB2C\")"
         },
         "usemsalbroker":{
             "type": "computed",
-            "value": "(msaltype == \"MSAL Broker\")"
+            "datatype": "bool",
+            "value": "(authtype == \"MSAL Broker\")"
         },
         "usepushnative":{
             "type": "computed",
+            "datatype": "bool",
             "value": "(push == \"Native\")"
         },
         "usepushfirebase":{
             "type": "computed",
+            "datatype": "bool",
             "value": "(push == \"Firebase\")"
         },
         "usepushanh":{
             "type": "computed",
+            "datatype": "bool",
             "value": "(push == \"Azure Notification Hubs\")"
         },
         "usepush":{
             "type": "computed",
+            "datatype": "bool",
             "value": "(push != \"None\")"
         },
         "useconfig":{
             "type": "computed",
-            "value": "(configuration || push != \"None\" || appcenter != \"\" || msaltype != \"None\")"
+            "datatype": "bool",
+            "value": "(configuration || push != \"None\" || appcenter != \"\" || authtype != \"None\")"
         },
         "useappcenter":{
             "type": "computed",
+            "datatype": "bool",
             "value": "(appcenter != \"\")"
         },
         "useentitlements":{
             "type": "computed",
-            "value": "(push != \"None\" || nfc || msaltype != \"None\")"
+            "datatype": "bool",
+            "value": "(push != \"None\" || nfc || authtype != \"None\")"
         },
         "usemaccatalyst":{
             "type": "computed",
+            "datatype": "bool",
             "value": "(usepushfirebase == false)"
         }
-    } 
+    },
+    "sources": [{
+        "source": "./",
+        "target": "./",
+        "copyOnly": [
+            "**/*.svg",
+            "**/*.ttf",
+            "**/*.txt"
+        ],
+        "modifiers": [{
+            "condition": "(useconfig == false)",
+            "exclude": "appsettings.json"
+        },
+        {
+            "condition": "(push == \"None\")",
+            "exclude": "MyPushDelegate.cs"
+        },
+        {
+            "condition": "(httptransfers == false)",
+            "exclude": "MyHttpTransferDelegate.cs"
+        },
+        {
+            "condition": "(gps == false)",
+            "exclude": "MyGpsDelegate.cs"
+        },
+        {
+            "condition": "(useentitlements == false)",
+            "exclude": "Platforms/iOS/Entitlements.plist"
+        },
+        {
+            "condition": "(useentitlements == false)",
+            "exclude": "Platforms/MacCatalyst/Entitlements.plist"
+        },            
+        {
+            "condition": "(geofencing == false)",
+            "exclude": "MyGeofenceDelegate.cs"
+        },
+        {
+            "condition": "(jobs == false)",
+            "exclude": "MyJob.cs"
+        },
+        {
+            "condition": "(blehosting == false)",
+            "exclude": "MyBleGattCharacteristic.cs"
+        },            
+        {
+            "condition": "(beacons == false)",
+            "exclude": "MyBeaconMonitoringDelegate.cs"
+        },
+        {
+            "condition": "(sqlite == false)",
+            "exclude": "MySqliteConnection.cs"
+        },
+        {
+            "condition": "(startup == false)",
+            "exclude": "AppStartup.cs"
+        },
+        {
+            "condition": "(settings == false)",
+            "exclude": "AppSettings.cs"
+        },
+        {
+            "condition": "(shinyframework == false)",
+            "exclude": "FodyWeavers.xml"
+        },
+        {
+            "condition": "(authservice == false)",
+            "exclude": "AuthService.cs"
+        },
+        {
+            "condition": "(usemsalbasic == false && usemsalb2c == false)",
+            "exclude": "Platforms/Android/MsalActivity.cs"
+        },
+        {
+            "condition": "(usewebauthenticator == false)",
+            "exclude": "Platforms/Android/WebAuthenticatorActivity.cs"
+        },
+        {
+            "condition": "(notifications == false)",
+            "exclude": "Resources/Images/notification.svg"
+        }]
+    }]    
 }
