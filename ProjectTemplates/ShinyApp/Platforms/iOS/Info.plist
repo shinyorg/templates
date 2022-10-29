@@ -68,6 +68,7 @@
 	<key>NSFaceIDUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
+	<!--#if (jobs || usepush || gps || geofencing || beacons || bluetoothle || blehosting)-->
 	<key>UIBackgroundModes</key>
 	<array>
 		<!--#if (jobs || usepush)-->
@@ -87,6 +88,7 @@
 		<string>remote-notification</string>
 		<!--#endif-->
 	</array>
+	<!--#endif-->
 	<!--#if (jobs)-->
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
@@ -118,7 +120,7 @@
             <key>CFBundleTypeRole</key>
             <string>Editor</string>
         </dict>
-    </array>    
+    </array>
     <!--#endif-->	
 	<!--#if (usemsalbroker)-->
 	<key>LSApplicationQueriesSchemes</key>
