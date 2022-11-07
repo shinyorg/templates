@@ -69,7 +69,7 @@ public static class MauiProgram
 #endif
 #if (authservice)
 #if (usemsal)
-        s.AddSingleton<IAuthService, MsalAuthService>();
+        s.AddSingleton<IAuthService, MsalAuthenticationService>();
 #elif (usewebauthenticator)
         s.AddSingleton<IAuthService, WebAuthenticatorAuthService>();
 #endif
