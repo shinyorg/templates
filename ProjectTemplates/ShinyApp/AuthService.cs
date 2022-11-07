@@ -141,7 +141,9 @@ public class MsalAuthenticationService : IAuthService
         {
             var accts = await this.pca.GetAccountsAsync().ConfigureAwait(false);
             var acct = accts.FirstOrDefault();
-
+            if (acct == null)
+                return false;
+                
             var authResult = await this.pca
                 .AcquireTokenSilent(SCOPES, acct)
                 .ExecuteAsync()
