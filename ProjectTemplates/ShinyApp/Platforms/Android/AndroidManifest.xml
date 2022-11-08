@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 	<application android:allowBackup="true" android:icon="@mipmap/appicon" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true">
+	<!--#if (usemaps)-->
+		<meta-data android:name="com.google.android.geo.API_KEY" android:value="{MAUI_MAPS_ANDROID_KEY}" />
+	<!--#endif-->
 	<!--#if (usemsalbasic || usemsalb2c)-->
 		<activity android:name="microsoft.identity.client.BrowserTabActivity" android:configChanges="orientation|screenSize" android:exported="true">
 			<intent-filter>

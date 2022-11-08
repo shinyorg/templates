@@ -29,6 +29,7 @@ or update
 * Create & auto-configure a strongly-typed settings class that can be bound to preferences or secure storage using Shiny
 * Create & auto-configure a Shiny startup service
 * Setup everything needed for the .NET MAUI Essentials Media Capture service
+* Setup .NET MAUI Maps
 * Setup all of the necessary boilerplate for the following authentication providers:
 	* MAUI Web Authentication
 	* MSAL (Microsoft Authentication Library) Basic
@@ -45,3 +46,9 @@ or update
 ---
 <img src="vs4win.png" />
 <img src="vs4mac.png" />
+
+---
+## Roadmap
+* Shiny ASP.NET application setup for Shiny Extensions push & email tempating extensions
+	* Web Authenticator controller
+* Solution templates that brings MAUI app and ASP.NET together along with build scripts?

@@ -33,7 +33,7 @@
                 "description": "Target .NET 7.0"
             }],
             "replaces": "{DOTNET_TFM}",
-            "defaultValue": "net6.0"
+            "defaultValue": "net7.0"
         },
         "applicationId": {
             "type": "parameter",
@@ -216,7 +216,22 @@
             "defaultValue": "false",
             "description": "Creates a sample MSAL or Web authenticator service to work with",
             "displayName": "Create Sample Authentication Service (if MSAL or Web Authenticator is selected)"
-        },        
+        },
+        "maps":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Setup MAUI Maps (.NET 7 Required)",
+            "displayName": "Setup MAUI Maps (.NET 7 Required)"
+        },
+        "mapsandroidkey":{
+            "type": "parameter",
+            "dataType": "string",
+            "description": "This is your Google Maps API Key setup within the Google Cloud Platform. Documentation: https://learn.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/map/setup",
+            "displayName": "Sets your Android Maps API Key (used if MAUI Maps is selected)",
+            "defaultValue": "",
+            "replaces":"{MAUI_MAPS_ANDROID_KEY}"
+        },
         "essentialsmedia":{
             "type": "parameter",
             "datatype": "bool",
@@ -272,7 +287,7 @@
             "defaultValue": "false",
             "description": "Fingerprint Plugin by Sven-Michael Stübe - For documentation, go to https://github.com/smstuebe/xamarin-fingerprint",
             "displayName": "Add Fingerprint/Facial Recognition (Plugin.Fingerprint)"
-        },         
+        },
         "HostIdentifier": {
             "type": "bind",
             "binding": "HostIdentifier"
@@ -286,6 +301,11 @@
             "type": "computed",
             "datatype": "bool",
             "value": "(authtype == \"MSAL Basic\" || authtype == \"MSAL AzureB2C\" || authtype == \"MSAL Broker\")"
+        },
+        "usemaps":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(maps == true && Framework == \"net7.0\")"
         },
         "usemsalbasic":{
             "type": "computed",
