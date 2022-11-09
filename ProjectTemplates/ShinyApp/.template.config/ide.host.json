@@ -10,212 +10,224 @@
         "hostId": "vs", 
         "componentType": "setupComponent" 
     }],
-    "symbolInfo": [
-        {
-            "id": "applicationId",
-            "name": {
-                "text": "Set the ApplicationId"
-            },
-            "isVisible": true
+    "symbolInfo": [{
+        "id": "applicationId",
+        "name": {
+            "text": "Set the ApplicationId"
         },
-        {
-            "id": "shinyframework",
-            "name": {
-                "text": "Add Shiny Framework (Shiny + ReactiveUI + Prism)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "shinyframework",
+        "name": {
+            "text": "Add Shiny Framework (Shiny + ReactiveUI + Prism)"
         },
-        {
-            "id": "configuration",
-            "name": {
-                "text": "Add AppSettings.json (Shiny.Extensions.Configuration)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "configuration",
+        "name": {
+            "text": "Add AppSettings.json (Shiny.Extensions.Configuration)"
         },
-        {
-            "id": "appcenter",
-            "name": {
-                "text": "Your AppCenter Key (optional)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "appcenter",
+        "name": {
+            "text": "Your AppCenter Key (optional)"
         },
-        {
-            "id": "bluetoothle",
-            "name": {
-                "text": "Add BluetoothLE Client (Shiny.BluetoothLE)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "bluetoothle",
+        "name": {
+            "text": "Add BluetoothLE Client (Shiny.BluetoothLE)"
         },
-        {
-            "id": "blehosting",
-            "name": {
-                "text": "Add BluetoothLE Hosting (Shiny.BluetoothLE.Hosting)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "blehosting",
+        "name": {
+            "text": "Add BluetoothLE Hosting (Shiny.BluetoothLE.Hosting)"
         },
-        {
-            "id": "beacons",
-            "name": {
-                "text": "Add Beacons (Shiny.Beacons)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "beacons",
+        "name": {
+            "text": "Add Beacons (Shiny.Beacons)"
         },
-        {
-            "id": "jobs",
-            "name": {
-                "text": "Add Background Jobs (Shiny.Jobs)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "jobs",
+        "name": {
+            "text": "Add Background Jobs (Shiny.Jobs)"
         },
-        {
-            "id": "gps",
-            "name": {
-                "text": "Add GPS (Shiny.Locations)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "gps",
+        "name": {
+            "text": "Add GPS (Shiny.Locations)"
         },
-        {
-            "id": "geofencing",
-            "name": {
-                "text": "Add Geofencing (Shiny.Locations)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "geofencing",
+        "name": {
+            "text": "Add Geofencing (Shiny.Locations)"
         },
-        {
-            "id": "motionactivity",
-            "name": {
-                "text": "Add Motion Activity (Shiny.Locations)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "motionactivity",
+        "name": {
+            "text": "Add Motion Activity (Shiny.Locations)"
         },
-        {
-            "id": "httptransfers",
-            "name": {
-                "text": "Add Background HTTP Uploads & Downloads (Shiny.Net.Http)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "httptransfers",
+        "name": {
+            "text": "Add Background HTTP Uploads & Downloads (Shiny.Net.Http)"
         },
-        {
-            "id": "nfc",
-            "name": {
-                "text": "Add NFC - iOS & Android Only (Shiny.NFC)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "nfc",
+        "name": {
+            "text": "Add NFC - iOS & Android Only (Shiny.NFC)"
         },
-        {
-            "id": "notifications",
-            "name": {
-                "text": "Add Local Notifications (Shiny.Notifications)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "notifications",
+        "name": {
+            "text": "Add Local Notifications (Shiny.Notifications)"
         },
-        {
-            "id": "startup",
-            "name": {
-                "text": "Add Startup Service (Shiny.Core)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "startup",
+        "name": {
+            "text": "Add Startup Service (Shiny.Core)"
         },
-        {
-            "id": "settings",
-            "name": {
-                "text": "Add Bound Settings Class (Shiny.Core)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "settings",
+        "name": {
+            "text": "Add Bound Settings Class (Shiny.Core)"
         },
-        {
-            "id": "speechrecognition",
-            "name": {
-                "text": "Add Speech Recognition (Shiny.SpeechRecognition)"
-            },
-            "isVisible": true,
-            "defaultValue": "None"
-        },        
-        {
-            "id": "push",
-            "name": {
-                "text": "Add Push Notifications"
-            },
-            "isVisible": true,
-            "defaultValue": "None"
+        "isVisible": true
+    },
+    {
+        "id": "speechrecognition",
+        "name": {
+            "text": "Add Speech Recognition (Shiny.SpeechRecognition)"
         },
-        {
-            "id": "authtype",
-            "name": {
-                "text": "Authentication Setup"
-            },
-            "isVisible": true
+        "isVisible": true,
+        "defaultValue": "None"
+    },        
+    {
+        "id": "push",
+        "name": {
+            "text": "Add Push Notifications"
         },
-        {
-            "id": "msalclientid",
-            "name":{
-                "text": "MSAL Client ID"
-            },
-            "isVisible": true
+        "isVisible": true,
+        "defaultValue": "None"
+    },
+    {
+        "id": "authtype",
+        "name": {
+            "text": "Authentication Setup"
         },
-        {
-            "id": "authservice",
-            "name":{
-                "text": "Create Sample Authentication Service (if MSAL or Web Authenticator is selected)"
-            },
-            "isVisible": true
-        },        
-        {
-            "id": "essentialsmedia",
-            "name": {
-                "text": "Setup MAUI Essentials - Media Picker"
-            },
-            "isVisible": true,
-            "defaultValue": "None"
+        "isVisible": true
+    },
+    {
+        "id": "msalclientid",
+        "name":{
+            "text": "MSAL Client ID"
         },
-        {
-            "id": "communitytoolkit",
-            "name": {
-                "text": "Add MAUI Community Toolkit"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "authservice",
+        "name":{
+            "text": "Create Sample Authentication Service (if MSAL or Web Authenticator is selected)"
         },
-        {
-            "id": "sqlite",
-            "name": {
-                "text": "Add SQLite (SQLite.NET-PCL)"
-            },
-            "isVisible": true
-        },        
-        {
-            "id": "barcodes",
-            "name":{
-                "text": "Add Barcode Scanning & Rendering (ZXing.Net.MAUI)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "maps",
+        "name":{
+            "text": "Setup MAUI Maps (.NET 7 Required)"
         },
-        {
-            "id": "inappbilling",
-            "name":{
-                "text": "Add In-App Billing (Plugin.InAppBilling)"
-            },
-            "isVisible": true
+        "isVisible": true
+    },
+    {
+        "id": "mapsandroidkey",
+        "name":{
+            "text": "Android Maps API Key (MAUI Maps)"
         },
-        {
-            "id": "storereview",
-            "name":{
-                "text": "Add Store Review (Plugin.StoreReview)"
-            },
-            "isVisible": true
+        "isVisible": true
+    }, 
+    {
+        "id": "essentialsmedia",
+        "name": {
+            "text": "Setup MAUI Essentials - Media Picker"
         },
-        {
-            "id": "audio",
-            "name":{
-                "text": "Add Audio (Plugin.Maui.Audio)"
-            },
-            "isVisible": true
+        "isVisible": true,
+        "defaultValue": "None"
+    },
+    {
+        "id": "communitytoolkit",
+        "name": {
+            "text": "Add MAUI Community Toolkit"
         },
-        {
-            "id": "fingerprint",
-            "name":{
-                "text": "Add Fingerprint/Facial Recognition (Plugin.Fingerprint)"
-            },
-            "isVisible": true
-        }        
-    ]
+        "isVisible": true
+    },
+    {
+        "id": "sqlite",
+        "name": {
+            "text": "Add SQLite (SQLite.NET-PCL)"
+        },
+        "isVisible": true
+    },        
+    {
+        "id": "barcodes",
+        "name":{
+            "text": "Add Barcode Scanning & Rendering (ZXing.Net.MAUI)"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "inappbilling",
+        "name":{
+            "text": "Add In-App Billing (Plugin.InAppBilling)"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "storereview",
+        "name":{
+            "text": "Add Store Review (Plugin.StoreReview)"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "audio",
+        "name":{
+            "text": "Add Audio (Plugin.Maui.Audio)"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "fingerprint",
+        "name":{
+            "text": "Add Fingerprint/Facial Recognition (Plugin.Fingerprint)"
+        },
+        "isVisible": true
+    }]
 }

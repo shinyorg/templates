@@ -159,7 +159,7 @@
             "type": "parameter",
             "datatype": "choice",
             "defaultValue": "None",
-            "description": "Add Push Notifications",
+            "description": "This will wire up all of the necessary permissions & libraries required for the selected push option.  You will still need to configure any additional API keys within the appsettings.json or MauiProgram.cs files",
             "displayName": "Add Push Notifications",
             "choices": [
                 {
@@ -182,7 +182,7 @@
         },
         "authtype": {
             "type": "parameter",
-            "description": "Authentication Setup - MSAL Documentation: https://devblogs.microsoft.com/dotnet/authentication-in-dotnet-maui-apps-msal/  - MAUI WebAuthenticator: https://learn.microsoft.com/en-us/dotnet/maui/platform-integration/communication/authentication",
+            "description": "Authentication Setup - Microsoft Authentication Library (MSAL) - Documentation: https://devblogs.microsoft.com/dotnet/authentication-in-dotnet-maui-apps-msal/  - MAUI WebAuthenticator: https://learn.microsoft.com/en-us/dotnet/maui/platform-integration/communication/authentication",
             "displayName": "Authentication Setup",
             "datatype": "choice",
             "choices": [{
@@ -193,20 +193,20 @@
                 "description": "MAUI Web Authenticator"
             },{                 
                 "choice": "MSAL Basic",
-                "description": "MSAL Basic"
+                "description": "Microsoft Authentication Library - Basic"
             },{
                 "choice": "MSAL AzureB2C",
-                "description": "MSAL AzureB2C"
+                "description": "Microsoft Authentication Library - AzureB2C"
             },{
                 "choice": "MSAL Broker",
-                "description": "MSAL Broker"
+                "description": "Microsoft Authentication Library - Broker"
             }],
             "defaultValue": "None"
         }, 
         "msalclientid":{
             "type": "parameter",
             "dataType": "string",
-            "description": "This is your MSAL Application (Client) ID setup within the Azure Portal",
+            "description": "This is your Microsoft Authentication Library (MSAL) Application/Client ID setup within the Azure Portal",
             "defaultValue": "",
             "replaces":"{MSAL_CLIENT_ID}"
         },
@@ -214,7 +214,7 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Creates a sample MSAL or Web authenticator service to work with",
+            "description": "Creates a sample Microsoft Authentication Library (MSAL) or Web authenticator service to work with",
             "displayName": "Create Sample Authentication Service (if MSAL or Web Authenticator is selected)"
         },
         "maps":{
@@ -236,7 +236,7 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Setup MAUI Essentials - Media Picker",
+            "description": "Sets all up all the necessary boilerplate for the MAUI Essentials Media Picker",
             "displayName": "Setup MAUI Essentials - Media Picker"
         },
         "communitytoolkit":{
