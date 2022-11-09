@@ -58,7 +58,7 @@
 
 	<ItemGroup>
 		<!--#if (shinyframework || communitytoolkit)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="1.3.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="1.4.0" />
 		<!--#endif-->
 		<!--#if (usemaps)-->
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.49" />
