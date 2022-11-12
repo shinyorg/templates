@@ -26,7 +26,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<ShinyVersion>3.0.0-alpha-0391</ShinyVersion>
+		<ShinyVersion>3.0.0-alpha-0396</ShinyVersion>
 		<!--#if (sqlite)-->
 		<SqliteLibVersion>2.1.2</SqliteLibVersion>
 		<!--#endif-->
@@ -58,7 +58,11 @@
 
 	<ItemGroup>
 		<!--#if (shinyframework || communitytoolkit)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="1.4.0" />
+		<!--#if (Framework == \"net6.0\")-->
+		<PackageReference Include="CommunityToolkit.Maui" Version="2.0.0" />
+		<!--#else-->
+		<PackageReference Include="CommunityToolkit.Maui" Version="3.0.0" />
+		<!--#endif-->
 		<!--#endif-->
 		<!--#if (usemaps)-->
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.49" />
@@ -66,7 +70,7 @@
 		<!--#if (shinyframework)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
 		<PackageReference Include="ReactiveUI.Fody" Version="18.3.1" />
-		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0035" />
+		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0036" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
 		<!--#endif-->
@@ -113,16 +117,16 @@
 		<PackageReference Include="Shiny.Push.FirebaseMessaging" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (barcodes)-->
-		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.2.0-preview.2" />
+		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.3.0-preview.1" />
 		<!--#endif-->
 		<!--#if (storereview)-->
 		<PackageReference Include="Plugin.StoreReview" Version="5.0.0-beta" />
 		<!--#endif-->
 		<!--#if (inappbilling)-->
-		<PackageReference Include="Plugin.InAppBilling" Version="6.6.2-beta" />
+		<PackageReference Include="Plugin.InAppBilling" Version="6.7.0" />
 		<!--#endif-->
 		<!--#if (audio)-->
-		<PackageReference Include="Plugin.Maui.Audio" Version="0.1.0-preview1" />
+		<PackageReference Include="Plugin.Maui.Audio" Version="0.1.0-preview2" />
 		<!--#endif-->
 		<!--#if (fingerprint)-->
 		<PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
