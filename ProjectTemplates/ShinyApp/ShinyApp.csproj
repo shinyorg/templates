@@ -26,7 +26,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<ShinyVersion>3.0.0-alpha-0396</ShinyVersion>
+		<ShinyVersion>3.0.0-alpha-0399</ShinyVersion>
 		<!--#if (sqlite)-->
 		<SqliteLibVersion>2.1.2</SqliteLibVersion>
 		<!--#endif-->
@@ -70,7 +70,7 @@
 		<!--#if (shinyframework)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
 		<PackageReference Include="ReactiveUI.Fody" Version="18.3.1" />
-		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0036" />
+		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0040" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
 		<!--#endif-->
