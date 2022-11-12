@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Shiny .NET",
+    "classifications": [ "iOS" ],
+    "name": "Shiny iOS Extensions",
+    "shortName": "shinyiosextensions",
+    "description": "C",
+    "identity": "Shiny.IosExtensions",
+    "sourceName": "DeviceUnitTests",
+    "preferNameDirectory": true,    
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "symbols":{
+        "Framework": {
+            "type": "parameter",
+            "description": "The target framework for the project.",
+            "datatype": "choice",
+            "choices": [{
+                "choice": "net7.0",
+                "description": "Target .NET 7.0"
+            }],
+            "replaces": "{DOTNET_TFM}",
+            "defaultValue": "net7.0"
+        },     
+        "applicationId": {
+            "type": "parameter",
+            "description": "Set the Application Identifier",
+            "datatype": "string",
+            "defaultValue": "",
+            "replaces": "{APPLICATION_ID}"
+        },
+        "ExtensionType": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "None",
+            "description": "The type of iOS Extension",
+            "displayName": "Extension Type",
+            "choices": [{
+                "choice": "Call Directory",
+                "description": "Call Directory"
+            }]
+        }
+    } 
+}

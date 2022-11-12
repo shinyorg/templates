@@ -1,0 +1,10 @@
+Add this to your MAUI project
+---
+
+
+<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
+    <ProjectReference Include="..\IosExtension\IosExtension.csproj">
+        <IsAppExtension>true</IsAppExtension>
+        <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
+</ItemGroup>
