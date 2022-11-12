@@ -1,0 +1,109 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Shiny .NET",
+    "classifications": [ "Shiny" ],
+    "name": "Shiny ASP.NET Application",
+    "shortName": "shinyaspnet",
+    "description": "A project for creating a .NET MAUI /w Shiny.NET, Prism, & ReactiveUI",
+    "identity": "Shiny.Templates.AspNet",
+    "sourceName": "ShinyApp",
+    "preferNameDirectory": true,    
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },    
+    "primaryOutputs": [{
+        "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+        "path": "MauiProgram.cs"
+    }],
+    "guids": [
+        "07CD65EF-6238-4365-AF5D-F6D433967F48",
+        "8B51DC95-6D07-4C39-BC6C-3BFE96E8A7EA"
+    ],   
+    "symbols":{
+        "Framework": {
+            "type": "parameter",
+            "description": "The target framework for the project.",
+            "datatype": "choice",
+            "choices": [{
+                "choice": "net6.0",
+                "description": "Target .NET 6.0"
+            },{
+                "choice": "net7.0",
+                "description": "Target .NET 7.0"
+            }],
+            "replaces": "{DOTNET_TFM}",
+            "defaultValue": "net6.0"
+        },
+        "push":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "",
+            "displayName": "Add Push Notification Management (Shiny.Extensions.Push)"
+        }, 
+        "email":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "",
+            "displayName": "Add Email Templating (Shiny.Extensions.Email)"
+        },
+        "google":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "",
+            "displayName": "Google Authentication"
+        },        
+        "facebook":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "",
+            "displayName": "Facebook Authentication"
+        },
+        "msal":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "",
+            "displayName": "Microsoft Authentication (MSAL)"
+        },
+        "entityframework": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "None",
+            "description": "Add Entity Framework",
+            "displayName": "Add Entity Framework",
+            "choices": [
+                {
+                    "choice": "None",
+                    "description": "Don't use Entity Framework"
+                },
+                {
+                    "choice": "SQL Server",
+                    "description": "SQL Server"
+                },
+                {
+                    "choice": "Cosmos DB",
+                    "description": "Cosmos DB"
+                }                
+            ]
+        }            
+    },
+    "sources": [{
+        "source": "./",
+        "target": "./",
+        "copyOnly": [
+            "**/*.svg",
+            "**/*.ttf",
+            "**/*.txt"
+        ],
+        "modifiers": [
+        {
+            "condition": "(notifications == false)",
+            "exclude": "Resources/Images/notification.svg"
+        }]
+    }]    
+}

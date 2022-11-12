@@ -30,7 +30,7 @@
 	<key>NSMotionUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
-	<!--#if (gps || geofencing || beacons)-->
+	<!--#if (gps || geofencing || beacons || usemaps)-->
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
