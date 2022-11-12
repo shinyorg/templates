@@ -18,11 +18,11 @@
             "description": "The target framework for the project.",
             "datatype": "choice",
             "choices": [{
-                "choice": "net6.0",
-                "description": "Target .NET 6.0"
+                "choice": "net7.0",
+                "description": "Target .NET 7.0"
             }],
             "replaces": "{DOTNET_TFM}",
-            "defaultValue": "net6.0"
+            "defaultValue": "net7.0"
         },     
         "applicationId": {
             "type": "parameter",
