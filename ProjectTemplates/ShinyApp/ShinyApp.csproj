@@ -26,7 +26,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<ShinyVersion>3.0.0-alpha-0399</ShinyVersion>
+		<ShinyVersion>3.0.0-alpha-0402</ShinyVersion>
 		<!--#if (sqlite)-->
 		<SqliteLibVersion>2.1.2</SqliteLibVersion>
 		<!--#endif-->
