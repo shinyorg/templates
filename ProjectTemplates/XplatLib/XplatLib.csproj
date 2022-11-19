@@ -1,18 +1,20 @@
-<PropertyGroup>
+<Project Sdk="Microsoft.NET.Sdk">
+    
+    <PropertyGroup>
         <TargetFrameworks>{DOTNET_TFM}</TargetFrameworks>
-#if (ios)
+        <!--#if (ios)-->
         <TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-ios</TargetFrameworks>
-#endif
-#if (maccatalyst)
+		<!--#endif-->
+        <!--#if (maccatalyst)-->
         <TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-maccatalyst</TargetFrameworks>
-#endif
-#if (android)
+        <!--#endif-->
+        <!--#if (android)-->
         <TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-android</TargetFrameworks>
-#endif
-#if (mauilib)
+        <!--#endif-->
+        <!--#if (mauilib)-->
 		<UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
-#endif
+        <!--#endif-->
         <Nullable>enable</Nullable>
 		<Description></Description>		
 		<ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
@@ -32,6 +34,12 @@
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 
+    <!--#if (ios || maccatalyst)-->
+    <PropertyGroup Condition="$(TargetFramework.Contains('ios')) || $(TargetFramework.Contains('maccatalyst'))">
+        <DefineConstants>$(DefineConstants);APPLE</DefineConstants>
+    </PropertyGroup> 
+    <!--#endif-->
+
     <ItemGroup>
         <None Include="Platforms\**\*.cs" />
         <Compile Remove="Platforms\**\*.cs" />
@@ -44,22 +52,26 @@
         <None Include="..\..\readme.md" Pack="true" PackagePath="\" />
         -->
     </ItemGroup>
-#if (ios)
+
+    <!--#if (ios)-->
     <ItemGroup Condition="$(TargetFramework.Contains('ios'))">
         <Compile Include="Platforms\iOS\**\*.cs" />
         <Compile Include="Platforms\Shared\**\*.cs" />        
     </ItemGroup>
-#endif
-#if (maccatalyst)
+
+    <!--#endif-->
+    <!--#if (usemaccatalyst)-->
     <ItemGroup Condition="$(TargetFramework.Contains('maccatalyst'))">
         <Compile Include="Platforms\MacCatalyst\**\*.cs" />
         <Compile Include="Platforms\Shared\**\*.cs" />
     </ItemGroup> 
-#endif   
-#if (android)
+
+    <!--#endif-->
+    <!--#if (android)-->
     <ItemGroup Condition="$(TargetFramework.Contains('android'))">
         <Compile Include="Platforms\Android\**\*.cs" />
         <Compile Include="Platforms\Shared\**\*.cs" />
     </ItemGroup>
-#endif
+
+    <!--#endif-->
 </Project>
