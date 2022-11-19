@@ -8,13 +8,10 @@ namespace ShinyApp;
 // THIS IS NOT MEANT TO BE A COMPLETE SERVICE.  IT IS MEANT ONLY AS A GOOD STARTING POINT
 public interface IAuthService
 {
-    #if (usemsal || usewebauthenticator)
+    string? AuthenticationToken { get; }
     Task<bool> Authenticate();
-    #endif
-    #if (usemsal)
-    Task SignOut();
+    Task SignOut();    
     Task<bool> TryRefresh();
-    #endif
 }
 
 
@@ -23,7 +20,7 @@ public class WebAuthenticatorAuthService : IAuthService
 {
     public async Task<bool> Authenticate()
     {
-var scheme = "..."; // Apple, Microsoft, Google, Facebook, etc.
+        var scheme = "..."; // Apple, Microsoft, Google, Facebook, etc.
         var authUrlRoot = "https://mysite.com/mobileauth/";
         WebAuthenticatorResult result = null;
 
@@ -55,6 +52,19 @@ var scheme = "..."; // Apple, Microsoft, Google, Facebook, etc.
         authToken += result?.AccessToken ?? result?.IdToken;
 
         return true;
+    }
+
+
+    public Task SignOut() 
+    {
+        this.AuthenticationToken = null;
+        return Task.CompletedTask;
+    }
+
+
+    public Task<bool> TryRefresh() 
+    {
+        return Task.FromResult(false);
     }
 }
 #endif
@@ -161,6 +171,7 @@ public class MsalAuthenticationService : IAuthService
 
     public async Task SignOut()
     {
+        this.AuthenticationToken = null;
         var accounts = await this.pca
             .GetAccountsAsync()
             .ConfigureAwait(false);
@@ -172,6 +183,7 @@ public class MsalAuthenticationService : IAuthService
 
     void SetAuth(AuthenticationResult result)
     {
+        // this.AuthenticationToken = result.IdToken;
         Console.WriteLine("Token received");
     }
 }

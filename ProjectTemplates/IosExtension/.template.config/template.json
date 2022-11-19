@@ -2,11 +2,11 @@
     "$schema": "http://json.schemastore.org/template",
     "author": "Shiny .NET",
     "classifications": [ "iOS" ],
-    "name": "Shiny iOS Extensions",
+    "name": "Shiny iOS Extension",
     "shortName": "shinyiosextensions",
     "description": "C",
     "identity": "Shiny.IosExtensions",
-    "sourceName": "DeviceUnitTests",
+    "sourceName": "ShinyIosExtensions",
     "preferNameDirectory": true,    
     "tags": {
         "language": "C#",

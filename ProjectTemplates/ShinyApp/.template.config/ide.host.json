@@ -160,6 +160,13 @@
         "isVisible": true
     },
     {
+        "id": "refit",
+        "name":{
+            "text": "Add Refit API Client used with sample Authentication service"
+        },
+        "isVisible": true
+    },   
+    {
         "id": "maps",
         "name":{
             "text": "Setup MAUI Maps (.NET 7 Required)"

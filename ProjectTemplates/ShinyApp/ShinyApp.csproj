@@ -26,7 +26,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<ShinyVersion>3.0.0-alpha-0399</ShinyVersion>
+		<ShinyVersion>3.0.0-alpha-0402</ShinyVersion>
 		<!--#if (sqlite)-->
 		<SqliteLibVersion>2.1.2</SqliteLibVersion>
 		<!--#endif-->
@@ -73,6 +73,7 @@
 		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0040" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
+		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (usemsal)-->
 		<PackageReference Include="Microsoft.Identity.Client" Version="4.47.2" />
@@ -130,6 +131,9 @@
 		<!--#endif-->
 		<!--#if (fingerprint)-->
 		<PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
+		<!--#endif-->
+		<!--#if usehttp-->
+		<PackageReference Include="Refit.HttpClientFactory" Version="6.3.2" />
 		<!--#endif-->
 	</ItemGroup>
 

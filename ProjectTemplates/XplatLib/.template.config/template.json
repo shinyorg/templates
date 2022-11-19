@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Shiny .NET",
+    "classifications": [ "iOS" ],
+    "name": "Shiny Cross Platform Library",
+    "shortName": "shinycrosslib",
+    "description": "C",
+    "identity": "XplatLib",
+    "sourceName": "XplatLib",
+    "preferNameDirectory": true,    
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "symbols":{
+        "Framework": {
+            "type": "parameter",
+            "description": "The target framework for the project.",
+            "datatype": "choice",
+            "choices": [{
+                "choice": "net7.0",
+                "description": "Target .NET 7.0"
+            }],
+            "replaces": "{DOTNET_TFM}",
+            "defaultValue": "net7.0"
+        },     
+        "mauilib":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "MAUI Library",
+            "displayName": "MAUI Library"
+        },
+        "android":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Platform - Android",
+            "displayName": "Platform - Android"
+        },
+        "ios":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Platform - iOS",
+            "displayName": "Platform - iOS"
+        }, 
+        "maccatalyst":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Platform - Mac Catalyst",
+            "displayName": "Platform - Mac Catalyst"
+        }      
+    } 
+}

@@ -217,6 +217,13 @@
             "description": "Creates a sample Microsoft Authentication Library (MSAL) or Web authenticator service to work with",
             "displayName": "Create Sample Authentication Service (if MSAL or Web Authenticator is selected)"
         },
+        "refit":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Refit API Client used with sample Authentication service",
+            "displayName": "Add Refit HTTP Client with Authenication Service"
+        },
         "maps":{
             "type": "parameter",
             "datatype": "bool",
@@ -361,6 +368,11 @@
             "type": "computed",
             "datatype": "bool",
             "value": "(usepushfirebase == false)"
+        },
+        "usehttp":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(authservice && refit)"
         }
     },
     "sources": [{
@@ -431,6 +443,14 @@
             "condition": "(authservice == false)",
             "exclude": "AuthService.cs"
         },
+        {
+            "condition": "(authservice == false || refit == false)",
+            "exclude": "IApiClient.cs"
+        },   
+        {
+            "condition": "(authservice == false || refit == false)",
+            "exclude": "AuthHttpDelegatingHandler.cs"
+        },              
         {
             "condition": "(usemsalbasic == false && usemsalb2c == false)",
             "exclude": "Platforms/Android/MsalActivity.cs"

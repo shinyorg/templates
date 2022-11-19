@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    
+    <PropertyGroup>
+        <TargetFrameworks>{DOTNET_TFM}</TargetFrameworks>
+        <!--#if (ios)-->
+        <TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-ios</TargetFrameworks>
+		<!--#endif-->
+        <!--#if (maccatalyst)-->
+        <TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-maccatalyst</TargetFrameworks>
+        <!--#endif-->
+        <!--#if (android)-->
+        <TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-android</TargetFrameworks>
+        <!--#endif-->
+        <!--#if (mauilib)-->
+		<UseMaui>true</UseMaui>
+        <SingleProject>true</SingleProject>
+        <!--#endif-->
+        <Nullable>enable</Nullable>
+		<Description></Description>		
+		<ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+		<LangVersion>latest</LangVersion>
+        <Authors></Authors>
+        <Owners></Owners>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageProjectUrl></PackageProjectUrl>
+        <PackageReleaseNotes></PackageReleaseNotes>
+        <PackageTags></PackageTags>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <DesignTimeBuild>false</DesignTimeBuild>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <!--#if (ios || maccatalyst)-->
+    <PropertyGroup Condition="$(TargetFramework.Contains('ios')) || $(TargetFramework.Contains('maccatalyst'))">
+        <DefineConstants>$(DefineConstants);APPLE</DefineConstants>
+    </PropertyGroup> 
+    <!--#endif-->
+
+    <ItemGroup>
+        <None Include="Platforms\**\*.cs" />
+        <Compile Remove="Platforms\**\*.cs" />
+
+		<PackageReference Include="NerdBank.GitVersioning" Version="3.5.109" PrivateAssets="All" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+        <!--
+        <None Include="$(MSBuildThisFileDirectory)nuget.png" Pack="true" PackagePath="icon.png" />
+        <None Include="$(MSBuildThisFileDirectory)nuget.txt" Pack="true" PackagePath="readme.txt" />
+        <None Include="..\..\readme.md" Pack="true" PackagePath="\" />
+        -->
+    </ItemGroup>
+
+    <!--#if (ios)-->
+    <ItemGroup Condition="$(TargetFramework.Contains('ios'))">
+        <Compile Include="Platforms\iOS\**\*.cs" />
+        <Compile Include="Platforms\Shared\**\*.cs" />        
+    </ItemGroup>
+
+    <!--#endif-->
+    <!--#if (usemaccatalyst)-->
+    <ItemGroup Condition="$(TargetFramework.Contains('maccatalyst'))">
+        <Compile Include="Platforms\MacCatalyst\**\*.cs" />
+        <Compile Include="Platforms\Shared\**\*.cs" />
+    </ItemGroup> 
+
+    <!--#endif-->
+    <!--#if (android)-->
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <Compile Include="Platforms\Android\**\*.cs" />
+        <Compile Include="Platforms\Shared\**\*.cs" />
+    </ItemGroup>
+
+    <!--#endif-->
+</Project>
