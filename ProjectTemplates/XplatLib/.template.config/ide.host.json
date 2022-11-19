@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json.schemastore.org/vs-2017.3.host",
+    "icon": "shiny.png",
+    "unsupportedHosts": [{
+        "id": "vs",
+        "version": "(,17.3)"
+    }],
+    "requiredComponents": [{
+        "id": "Microsoft.VisualStudio.ComponentGroup.Maui.Blazor", 
+        "hostId": "vs", 
+        "componentType": "setupComponent" 
+    }],
+    "symbolInfo": [
+        {
+            "id": "mauilib",
+            "name":{
+                "text": "MAUI Library"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "android",
+            "name":{
+                "text": "Platform - Android"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "ios",
+            "name":{
+                "text": "Platform - iOS"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "maccatalyst",
+            "name":{
+                "text": "Platform - Mac Catalyst"
+            },
+            "isVisible": true
+        }        
+    ]
+}
