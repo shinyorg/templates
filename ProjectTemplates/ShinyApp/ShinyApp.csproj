@@ -132,6 +132,9 @@
 		<!--#if (fingerprint)-->
 		<PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
 		<!--#endif-->
+		<!--#if usehttp-->
+		<PackageReference Include="Refit.HttpClientFactory" Version="6.3.2" />
+		<!--#endif-->
 	</ItemGroup>
 
 	<!--#if (sqlite)-->

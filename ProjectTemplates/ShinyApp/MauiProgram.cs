@@ -72,10 +72,17 @@ public static class MauiProgram
 #endif
 #if (authservice)
 #if (usemsal)
-        s.AddSingleton<IAuthService, MsalAuthenticationService>();
+        s.AddShinyService<MsalAuthenticationService>();
 #elif (usewebauthenticator)
-        s.AddSingleton<IAuthService, WebAuthenticatorAuthService>();
+        s.AddShinyService<WebAuthenticatorAuthService>();
 #endif
+#endif
+#if (usehttp)
+        s.AddTransient<AuthHeaderHandler>();
+        s
+            .AddRefitClient<IApiClient>()
+            .ConfigureHttpClient(c => c.BaseAddress = new Uri(builder.Configuration["ApiUri"]!))
+            .AddHttpMessageHandler<AuthHttpDelegatingHandler>();
 #endif
 #if essentialsmedia
         s.AddSingleton(MediaPicker.Default);
