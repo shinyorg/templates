@@ -1,4 +1,5 @@
 ## .NET MAUI
+_Microsoft Application User Interface Library_
 
 * [Documentation](https://learn.microsoft.com/en-us/dotnet/maui/)
 * [GitHub](https://github.com/dotnet/maui)
@@ -24,6 +25,7 @@ _Framework combines the best of MVVM using Prism & ReactiveUI while also combini
 <!--#endif-->
 <!--#if (shinyframework || communitytoolkit)-->
 ## MAUI Community Toolkit
+
 _A collection of reusable elements for application development with .NET MAUI, including animations, behaviors, converters, effects, and helpers. It simplifies and demonstrates common developer tasks when building iOS, Android, macOS and WinUI applications._
 
 * [Documentation](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/)
@@ -38,23 +40,25 @@ _A collection of reusable elements for application development with .NET MAUI, i
 * [GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)
 
 <!--#endif-->
-
 <!--#if (barcodes)-->
 ## ZXing.Net MAUI
-_Scan and render barcodes - written by Jonathan Dick_
+
+_Scan and render barcodes - Written by Jonathan Dick_
 
 * [GitHub](https://github.com/Redth/ZXing.Net.Maui)
 
 <!--#endif-->
 <!--#if (storereview)-->
 ## Store Review Plugin
-_Request store reviews from your users - written by Jame Montemagno_
+
+_Request store reviews from your users - Written by Jame Montemagno_
 
 * [GitHub](https://github.com/jamesmontemagno/StoreReviewPlugin)
 
 <!--#endif-->
 <!--#if (inappbilling)-->
 ## In-App Billing
+
 _A simple In-App Purchase plugin for .NET MAUI, Xamarin, and Windows to query item information, purchase items, restore items, and more. - Written by James Montemagno_
 	
 * [GitHub](https://github.com/jamesmontemagno/InAppBillingPlugin)
@@ -62,21 +66,23 @@ _A simple In-App Purchase plugin for .NET MAUI, Xamarin, and Windows to query it
 <!--#endif-->
 <!--#if (audio)-->
 ## MAUI Audio Plugin
-_Provides the ability to play audio inside a .NET MAUI application. Written by Gerald Versluis_
+
+_Provides the ability to play audio inside a .NET MAUI application. - Written by Gerald Versluis_
 
 * [GitHub](https://github.com/jfversluis/Plugin.Maui.Audio)
 
 <!--#endif-->
-
 <!--#if (fingerprint)-->
 ## Fingerprint Plugin
-_Written by Sven-Michael Stübe_
+
+_A plugin for accessing the fingerprint, Face ID or other biometric sensors. - Written by Sven-Michael Stübe_
 
 * [Fingerprint Plugin](https://github.com/smstuebe/xamarin-fingerprint) 
 
 <!--#endif-->
 <!--#if (usehttp)-->
 ## Refit HTTP Client
+
 _The automatic type-safe REST library_
 
 * [GitHub](https://github.com/reactiveui/refit)
@@ -84,14 +90,9 @@ _The automatic type-safe REST library_
 <!--#endif-->
 <!--#if (sqlite)-->
 ## SQLite .NET PCL
-_Written by Frank Krueger_
+
+_SQLite-net is an open source, minimal library to allow .NET, .NET Core, and Mono applications to store data in SQLite 3 databases - Written by Frank Krueger_
 
 [GitHub](https://github.com/praeclarum/sqlite-net)
 
 <!--#endif-->
-
-
-APPCENTER: {APPCENTER_KEY}
-#if (appcenter != \"\")
-APPCENTER KEY NOT EMPTY
-#endregion
