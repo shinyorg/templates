@@ -25,49 +25,53 @@ namespace ShinyApp;
 
 public static class MauiProgram
 {
-    public static MauiApp CreateMauiApp()
-    {
-        var builder = MauiApp
-            .CreateBuilder()
-            .UseMauiApp<App>()
+    public static MauiApp CreateMauiApp() => MauiApp
+        .CreateBuilder()
+        .UseMauiApp<App>()
 #if barcodes
-            .UseBarcodeReader()
+        .UseBarcodeReader()
 #endif
 #if shinyframework || communitytoolkit
-            .UseMauiCommunityToolkit()
+        .UseMauiCommunityToolkit()
 #endif
 #if shinyframework            
-            .UseShinyFramework(
-                new DryIocContainerExtension(),
-                prism => prism.OnAppStart("NavigationPage/MainPage")
-            )
+        .UseShinyFramework(
+            new DryIocContainerExtension(),
+            prism => prism.OnAppStart("NavigationPage/MainPage")
+        )
 #else
-            .UseShiny()
+        .UseShiny()
 #endif
 #if usemaps
-            .UseMauiMaps()
+        .UseMauiMaps()
 #endif
-            .ConfigureFonts(fonts =>
-            {
+        .ConfigureFonts(fonts =>
+        {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold"); 
-            });
+        })
+        .RegisterInfrastructure()
+        .RegisterAppServices()
+        .RegisterViews()
+        .Build();
 
-#if useconfig
-        builder.Configuration.AddJsonPlatformBundle();
-#if useappcenter
-        builder.Logging.AddAppCenter(builder.Configuration["AppCenterKey"]);
-#endif
-#endif
-        RegisterServices(builder);
-        RegisterViews(builder.Services);
 
-        return builder.Build();
+    static MauiAppBuilder RegisterAppServices(this MauiAppBuilder builder) 
+    {
+        // register your own services here!
+        return builder;
     }
 
 
-    static void RegisterServices(MauiAppBuilder builder)
+    static MauiAppBuilder RegisterInfrastructure(this MauiAppBuilder builder)
     {
+#if useconfig
+        builder.Configuration.AddJsonPlatformBundle();
+#endif
+#if useappcenter
+        builder.Logging.AddAppCenter(builder.Configuration["AppCenterKey"]);
+#endif
+
         var s = builder.Services;
 
 #if (audio)
@@ -161,16 +165,20 @@ public static class MauiProgram
 //+:cnd:noEmit
         ));
 #endif
+        return builder;
     }
 
 
-    static void RegisterViews(IServiceCollection s)
+    static MauiAppBuilder RegisterViews(this MauiAppBuilder builder)
     {
+        var s = builder.Services;
+
 #if shinyframework
         s.RegisterForNavigation<MainPage, MainViewModel>();
 #else
         s.AddTransient<MainPage>();
         s.AddTransient<MainViewModel>();
 #endif
+        return builder;
     }
 }
