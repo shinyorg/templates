@@ -83,7 +83,7 @@ public static class MauiProgram
 #elif (usewebauthenticator)
         s.AddShinyService<WebAuthenticatorAuthService>();
 #endif
-#if (usehttptransfers)
+#if (httptransfers)
         s.AddHttpTransfers<MyHttpTransferDelegate>();
 #endif
 #if (usehttp)
@@ -104,7 +104,7 @@ public static class MauiProgram
         s.AddSingleton(CrossStoreReview.Current);
 #endif
 #if fingerprint
-        
+        // TODO: fingerprint reg
 #endif
 #if startup
         s.AddShinyService<AppStartup>();
