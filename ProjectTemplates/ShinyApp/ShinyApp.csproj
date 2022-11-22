@@ -76,7 +76,7 @@
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (usemsal)-->
-		<PackageReference Include="Microsoft.Identity.Client" Version="4.47.2" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.48.1" />
 		<!--#endif-->
 		<!--#if (useconfig)-->
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
