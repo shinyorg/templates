@@ -83,6 +83,8 @@ public static class MauiProgram
 #elif (usewebauthenticator)
         s.AddShinyService<WebAuthenticatorAuthService>();
 #endif
+#if (usehttptransfers)
+        s.AddHttpTransfers<MyHttpTransferDelegate>();
 #endif
 #if (usehttp)
         s.AddTransient<AuthHttpDelegatingHandler>();

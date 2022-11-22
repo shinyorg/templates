@@ -105,6 +105,9 @@
 		<!--#if (notifications)-->
 		<PackageReference Include="Shiny.Notifications" Version="$(ShinyVersion)" />
 		<!--#endif-->
+		<!--#if (httptransfers)-->
+		<PackageReference Include="Shiny.Net.Http" Version="$(ShinyVersion)" />
+		<!--#endif-->
 		<!--#if (speechrecognition)-->
 		<PackageReference Include="Shiny.SpeechRecognition" Version="$(ShinyVersion)" />
 		<!--#endif-->
