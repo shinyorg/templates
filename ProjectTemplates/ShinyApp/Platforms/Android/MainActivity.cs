@@ -1,5 +1,10 @@
 ﻿using Android.App;
 using Android.Content.PM;
+#if (usemsal)
+using Android.Content;
+using Android.Runtime;
+using Microsoft.Identity.Client;
+#endif
 
 namespace ShinyApp;
 

@@ -16,8 +16,17 @@ public interface IAuthService
 
 
 #if usewebauthenticator
-public class WebAuthenticatorAuthService : IAuthService 
+[Shiny.Stores.ObjectStoreBinder("secure")]
+public class WebAuthenticatorAuthService : NotifyPropertyChanged, IAuthService 
 {
+    // this looks like a viewmodel type property as shiny binds it secure storage
+    string? authToken;
+    public string? AuthenticationToken
+    {
+        get => this.authToken;
+        private set => this.Set(ref this.authToken, value);
+    }
+    
     public async Task<bool> Authenticate()
     {
         var scheme = "..."; // Apple, Microsoft, Google, Facebook, etc.
@@ -69,7 +78,8 @@ public class WebAuthenticatorAuthService : IAuthService
 }
 #endif
 #if usemsal
-public class MsalAuthenticationService : IAuthService
+[Shiny.Stores.ObjectStoreBinder("secure")]
+public class MsalAuthenticationService : NotifyPropertyChanged, IAuthService
 {
     static readonly string[] SCOPES = new [] { "User.Read" };
     readonly MsalOptions options;
@@ -108,6 +118,14 @@ public class MsalAuthenticationService : IAuthService
             .Build();
     }
 
+    // this looks like a viewmodel type property as shiny binds it secure storage
+    string? authToken;
+    public string? AuthenticationToken
+    {
+        get => this.authToken;
+        private set => this.Set(ref this.authToken, value);
+    }
+    
 
     public async Task<bool> Authenticate()
     {

@@ -16,6 +16,9 @@ using ZXing.Net.Maui.Controls;
 #if audio
 using Plugin.Maui.Audio;
 #endif
+#if fingerprint
+using Plugin.Fingerprint;
+#endif
 #if usehttp
 using Refit;
 #endif
@@ -83,7 +86,6 @@ public static class MauiProgram
 #elif (usewebauthenticator)
         s.AddShinyService<WebAuthenticatorAuthService>();
 #endif
-#endif
 #if (usehttp)
         s.AddTransient<AuthHttpDelegatingHandler>();
         s
@@ -102,7 +104,15 @@ public static class MauiProgram
         s.AddSingleton(CrossStoreReview.Current);
 #endif
 #if fingerprint
-        
+        s.AddSingleton(sp =>
+        {
+//-:cnd:noEmit
+#if ANDROID
+            CrossFingerprint.SetCurrentActivityResolver(() => sp.GetRequiredService<AndroidPlatform>().CurrentActivity);
+#endif
+//+:cnd:noEmit
+            return CrossFingerprint.Current;
+        });
 #endif
 #if startup
         s.AddShinyService<AppStartup>();
@@ -131,6 +141,9 @@ public static class MauiProgram
 #endif
 #if geofencing
         s.AddGeofencing<MyGeofenceDelegate>();
+#endif
+#if (httptransfers)
+        s.AddHttpTransfers<MyHttpTransferDelegate>();
 #endif
 #if motionactivity
         s.AddMotionActivity();

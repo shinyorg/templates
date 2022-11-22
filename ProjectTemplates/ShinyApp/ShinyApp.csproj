@@ -76,7 +76,7 @@
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (usemsal)-->
-		<PackageReference Include="Microsoft.Identity.Client" Version="4.47.2" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.48.1" />
 		<!--#endif-->
 		<!--#if (useconfig)-->
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
@@ -104,6 +104,9 @@
 		<!--#endif-->
 		<!--#if (notifications)-->
 		<PackageReference Include="Shiny.Notifications" Version="$(ShinyVersion)" />
+		<!--#endif-->
+		<!--#if (httptransfers)-->
+		<PackageReference Include="Shiny.Net.Http" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (speechrecognition)-->
 		<PackageReference Include="Shiny.SpeechRecognition" Version="$(ShinyVersion)" />

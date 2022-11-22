@@ -1,5 +1,8 @@
 ﻿using Foundation;
 using UIKit;
+#if (usemsalbroker)
+using Microsoft.Identity.Client;
+#endif
 
 namespace ShinyApp;
 
