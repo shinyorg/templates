@@ -43,6 +43,7 @@ or update
 	* MSAL (Microsoft Authentication Library) B2C
 	* MSAL (Microsoft Authentication Library) Broker
 * Full Setup for the following 3rd party components
+	* [Refit](https://github.com/reactiveui/refit)
 	* [SQLite.NET-pcl](https://github.com/praeclarum/sqlite-net) by Frank Krueger
 	* [ZXing.Net.Maui](https://github.com/Redth/ZXing.Net.Maui) by Jon Dick
 	* [Store Review Plugin](https://github.com/jamesmontemagno/StoreReviewPlugin) by James Montemagno
