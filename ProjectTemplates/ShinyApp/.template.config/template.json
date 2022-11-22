@@ -367,7 +367,7 @@
         "usemaccatalyst":{
             "type": "computed",
             "datatype": "bool",
-            "value": "(usepushfirebase == false)"
+            "value": "(usepushfirebase == false && usemsal == false)"
         },
         "usehttp":{
             "type": "computed",
