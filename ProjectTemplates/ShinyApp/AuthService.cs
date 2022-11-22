@@ -8,7 +8,7 @@ namespace ShinyApp;
 // THIS IS NOT MEANT TO BE A COMPLETE SERVICE.  IT IS MEANT ONLY AS A GOOD STARTING POINT
 public interface IAuthService
 {
-    string? AuthenticationToken { get; }
+    string? AuthenticationToken { get; set; }
     Task<bool> Authenticate();
     Task SignOut();    
     Task<bool> TryRefresh();
@@ -18,6 +18,7 @@ public interface IAuthService
 #if usewebauthenticator
 public class WebAuthenticatorAuthService : IAuthService 
 {
+    public string? AuthenticationToken { get; set; }
     public async Task<bool> Authenticate()
     {
         var scheme = "..."; // Apple, Microsoft, Google, Facebook, etc.
@@ -71,6 +72,7 @@ public class WebAuthenticatorAuthService : IAuthService
 #if usemsal
 public class MsalAuthenticationService : IAuthService
 {
+    public string? AuthenticationToken { get; set; }
     static readonly string[] SCOPES = new [] { "User.Read" };
     readonly MsalOptions options;
     readonly IPublicClientApplication pca;

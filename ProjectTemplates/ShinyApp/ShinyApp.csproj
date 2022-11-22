@@ -134,6 +134,7 @@
 		<!--#endif-->
 		<!--#if usehttp-->
 		<PackageReference Include="Refit.HttpClientFactory" Version="6.3.2" />
+		<PackageReference Include="Shiny.Net.Http" Version="$(ShinyVersion)" />
 		<!--#endif-->
 	</ItemGroup>
 
