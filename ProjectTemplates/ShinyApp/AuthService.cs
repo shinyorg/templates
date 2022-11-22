@@ -18,6 +18,8 @@ public interface IAuthService
 #if usewebauthenticator
 public class WebAuthenticatorAuthService : IAuthService 
 {
+    public string? AuthenticationToken { get; private set; }
+    
     public async Task<bool> Authenticate()
     {
         var scheme = "..."; // Apple, Microsoft, Google, Facebook, etc.
@@ -108,6 +110,7 @@ public class MsalAuthenticationService : IAuthService
             .Build();
     }
 
+    public string? AuthenticationToken { get; private set; }
 
     public async Task<bool> Authenticate()
     {
