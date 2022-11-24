@@ -1,7 +1,4 @@
-﻿#if shinyframework || communitytoolkit
-using CommunityToolkit.Maui;
-#endif
-#if shinyframework
+﻿#if shinyframework
 using Prism.DryIoc;
 #endif
 #if inappbilling
@@ -195,14 +192,14 @@ public static class MauiProgram
 #if DEBUG
         s.AddBlazorWebViewDeveloperTools();
 #endif
-#endif
 //+:cnd:noEmit
 
+#endif
 #if shinyframework
         s.RegisterForNavigation<MainPage, MainViewModel>();
 #else
         s.AddTransient<MainPage>();
-        s.AddTransient<MainViewModel>();
+        s.AddTransient<MainViewModel>();        
 #endif
         return builder;
     }
