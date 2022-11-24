@@ -504,24 +504,28 @@
             "exclude": "MainPage.cs"
         },
         {
-            "condition": "(uitype != \"Blazor\")",
+            "condition": "(useblazor == true)",
+            "exclude": "MainViewModel.cs"
+        },        
+        {
+            "condition": "(useblazor == false)",
             "exclude": "Main.razor"
         },
         {
-            "condition": "(uitype != \"Blazor\")",
+            "condition": "(useblazor == false)",
             "exclude": "_Imports.razor"
         },
         {
-            "condition": "(uitype != \"Blazor\")",
-            "exclude": "wwwroot"
+            "condition": "(useblazor == false)",
+            "exclude":[ "wwwroot/**" ]
         },
         {
-            "condition": "(uitype != \"Blazor\")",
-            "exclude": "Shared"
+            "condition": "(useblazor == false)",
+            "exclude":[ "Shared/**" ]
         },
         {
-            "condition": "(uitype != \"Blazor\")",
-            "exclude": "Pages"
+            "condition": "(uuseblazor == false)",
+            "exclude":[ "Pages/**" ]
         }]
     }]    
 }
