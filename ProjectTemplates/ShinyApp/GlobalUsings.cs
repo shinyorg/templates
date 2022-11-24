@@ -16,8 +16,8 @@ global using Prism.Navigation;
 global using Prism.Services;
 #endif
 #if shinyframework || communitytoolkit
-using CommunityToolkit.Maui;
+global using CommunityToolkit.Maui;
 #endif
 #if usecsharpmarkup
-using CommunityToolkit.Maui.Markup;
+global using CommunityToolkit.Maui.Markup;
 #endif

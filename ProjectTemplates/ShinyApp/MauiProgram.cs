@@ -83,7 +83,7 @@ public static class MauiProgram
 #if (authservice)
 #if (usemsal)
         s.AddShinyService<MsalAuthenticationService>();
-#elif (usewebauthenticator)
+#else
         s.AddShinyService<WebAuthenticatorAuthService>();
 #endif
 #if (usehttp)
@@ -130,11 +130,11 @@ public static class MauiProgram
         s.AddBluetoothLE();
 #endif
 #if blehosting
-        s.AddBluetoothLEHosting();
+        s.AddBluetoothLeHosting();
 #endif
 #if beacons
         s.AddBeaconRanging();
-        s.AddBeaconMonitoring<MyBeaconDelegate>();
+        s.AddBeaconMonitoring<MyBeaconMonitorDelegate>();
 #endif
 #if gps
         s.AddGps<MyGpsDelegate>();
@@ -199,7 +199,9 @@ public static class MauiProgram
         s.RegisterForNavigation<MainPage, MainViewModel>();
 #else
         s.AddTransient<MainPage>();
-        s.AddTransient<MainViewModel>();        
+#if !useblazor
+        s.AddTransient<MainViewModel>();
+#endif
 #endif
         return builder;
     }

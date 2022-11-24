@@ -1,5 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<!--#if (useblazor)-->
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+<!--#else-->
+<Project Sdk="Microsoft.NET.Sdk">
+<!--#endif-->
 	<PropertyGroup>
 		<!--#if (usemaccatalyst)-->
 		<TargetFrameworks>{DOTNET_TFM}-android;{DOTNET_TFM}-ios;{DOTNET_TFM}-maccatalyst</TargetFrameworks>
@@ -12,6 +15,9 @@
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<!--#if (useblazor)-->
+		<EnableDefaultCssItems>false</EnableDefaultCssItems>
+		<!--#endif-->
 
 		<ApplicationTitle>ShinyApp</ApplicationTitle>
 		<ApplicationId>{APPLICATION_ID}</ApplicationId>
