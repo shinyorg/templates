@@ -15,11 +15,20 @@
     "primaryOutputs": [{
         "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
         "path": "MauiProgram.cs"
+    },{
+        "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+        "path": "Documentation.md"
     }],
-    "guids": [
-        "07CD65EF-6238-4365-AF5D-F6D433967F48",
-        "8B51DC95-6D07-4C39-BC6C-3BFE96E8A7EA"
-    ],   
+    "postActions": [{
+        "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+        "description": "Open documentation file",
+        "manualInstructions": [],
+        "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+        "args": {
+            "files": "0;1"
+        },
+        "continueOnError": true        
+    }],
     "symbols":{
         "Framework": {
             "type": "parameter",
@@ -508,7 +517,7 @@
         {
             "condition": "(useblazor == true)",
             "exclude": "MainViewModel.cs"
-        },        
+        },
         {
             "condition": "(useblazor == false)",
             "exclude": "Main.razor"
@@ -529,5 +538,5 @@
             "condition": "(useblazor == false)",
             "exclude":[ "Pages/**" ]
         }]
-    }]    
+    }]
 }
