@@ -12,7 +12,7 @@
     }],
     "symbolInfo": [
     {
-        "id": "uitype",
+        "id": "markuptype",
         "name": {
             "text": "UI Markup Type"
         },

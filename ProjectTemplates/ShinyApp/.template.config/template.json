@@ -32,26 +32,23 @@
             "replaces": "{DOTNET_TFM}",
             "defaultValue": "net7.0"
         },
-        "uitype": {
+        "markuptype": {
             "type": "parameter",
             "datatype": "choice",
-            "defaultValue": "XAML",
-            "description": "This will wire up all of the necessary permissions & libraries required for the selected push option.  You will still need to configure any additional API keys within the appsettings.json or MauiProgram.cs files",
+            "description": "This will setup a standard XAML template, a MAUI Blazor project, or a C# powered markup using the .NET MAUI Community Toolkit",
             "displayName": "UI Markup Type",
-            "choices": [
-                {
-                    "choice": "XAML",
-                    "description": "XAML"
-                },
-                {
-                    "choice": "Blazor",
-                    "description": "Blazor"
-                },
-                {
-                    "choice": "C# Markup",
-                    "description": "C# Markup"
-                }
-            ]
+            "choices": [{
+                "choice": "XAML",
+                "description": "XAML"
+            },{
+                "choice": "Blazor",
+                "description": "Blazor"
+            },{
+                "choice": "CSharp",
+                "description": "CSharp"
+            }],
+            "defaultValue": "XAML",            
+            "replaces": "{MARKUP_TYPE}"
         },
         "applicationId": {
             "type": "parameter",
@@ -387,15 +384,20 @@
             "datatype": "bool",
             "value": "(usepushfirebase == false && usemsal == false)"
         },
+        "usexaml":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(markuptype == \"XAML\")"
+        },
         "useblazor":{
             "type": "computed",
             "datatype": "bool",
-            "value": "(uitype == \"Blazor\")"
+            "value": "(markuptype == \"Blazor\")"
         },
         "usecsharpmarkup":{
             "type": "computed",
             "datatype": "bool",
-            "value": "(uitype == \"C# Markup\")"
+            "value": "(markuptype == \"CSharp\")"
         },        
         "usehttp":{
             "type": "computed",
@@ -524,7 +526,7 @@
             "exclude":[ "Shared/**" ]
         },
         {
-            "condition": "(uuseblazor == false)",
+            "condition": "(useblazor == false)",
             "exclude":[ "Pages/**" ]
         }]
     }]    
