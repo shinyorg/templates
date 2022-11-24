@@ -31,6 +31,9 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp() => MauiApp
         .CreateBuilder()
         .UseMauiApp<App>()
+#if usecsharpmarkup
+        .UseMauiCommunityToolkitMarkup()
+#endif
 #if barcodes
         .UseBarcodeReader()
 #endif
@@ -185,6 +188,15 @@ public static class MauiProgram
     static MauiAppBuilder RegisterViews(this MauiAppBuilder builder)
     {
         var s = builder.Services;
+
+#if useblazor
+        s.AddMauiBlazorWebView();
+//-:cnd:noEmit
+#if DEBUG
+        s.AddBlazorWebViewDeveloperTools();
+#endif
+#endif
+//+:cnd:noEmit
 
 #if shinyframework
         s.RegisterForNavigation<MainPage, MainViewModel>();

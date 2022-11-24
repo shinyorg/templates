@@ -26,14 +26,32 @@
             "description": "The target framework for the project.",
             "datatype": "choice",
             "choices": [{
-                "choice": "net6.0",
-                "description": "Target .NET 6.0"
-            },{
                 "choice": "net7.0",
                 "description": "Target .NET 7.0"
             }],
             "replaces": "{DOTNET_TFM}",
             "defaultValue": "net7.0"
+        },
+        "uitype": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "XAML",
+            "description": "This will wire up all of the necessary permissions & libraries required for the selected push option.  You will still need to configure any additional API keys within the appsettings.json or MauiProgram.cs files",
+            "displayName": "UI Markup Type",
+            "choices": [
+                {
+                    "choice": "XAML",
+                    "description": "XAML"
+                },
+                {
+                    "choice": "Blazor",
+                    "description": "Blazor"
+                },
+                {
+                    "choice": "C# Markup",
+                    "description": "C# Markup"
+                }
+            ]
         },
         "applicationId": {
             "type": "parameter",
@@ -369,6 +387,16 @@
             "datatype": "bool",
             "value": "(usepushfirebase == false && usemsal == false)"
         },
+        "useblazor":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(uitype == \"Blazor\")"
+        },
+        "usecsharpmarkup":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(uitype == \"C# Markup\")"
+        },        
         "usehttp":{
             "type": "computed",
             "datatype": "bool",
@@ -406,7 +434,7 @@
         {
             "condition": "(useentitlements == false)",
             "exclude": "Platforms/MacCatalyst/Entitlements.plist"
-        },            
+        },
         {
             "condition": "(geofencing == false)",
             "exclude": "MyGeofenceDelegate.cs"
@@ -418,7 +446,7 @@
         {
             "condition": "(blehosting == false)",
             "exclude": "MyBleGattCharacteristic.cs"
-        },            
+        },
         {
             "condition": "(beacons == false)",
             "exclude": "MyBeaconMonitoringDelegate.cs"
@@ -446,11 +474,11 @@
         {
             "condition": "(authservice == false || refit == false)",
             "exclude": "IApiClient.cs"
-        },   
+        },
         {
             "condition": "(authservice == false || refit == false)",
             "exclude": "AuthHttpDelegatingHandler.cs"
-        },              
+        },
         {
             "condition": "(usemsalbasic == false && usemsalb2c == false)",
             "exclude": "Platforms/Android/MsalActivity.cs"
@@ -462,6 +490,38 @@
         {
             "condition": "(notifications == false)",
             "exclude": "Resources/Images/notification.svg"
+        },
+        {
+            "condition": "(usecsharpmarkup == true)",
+            "exclude": "MainPage.xaml"
+        },
+        {
+            "condition": "(usecsharpmarkup == true)",
+            "exclude": "MainPage.xaml.cs"
+        },
+        {
+            "condition": "(usecsharpmarkup == false)",
+            "exclude": "MainPage.cs"
+        },
+        {
+            "condition": "(uitype != \"Blazor\")",
+            "exclude": "Main.razor"
+        },
+        {
+            "condition": "(uitype != \"Blazor\")",
+            "exclude": "_Imports.razor"
+        },
+        {
+            "condition": "(uitype != \"Blazor\")",
+            "exclude": "wwwroot"
+        },
+        {
+            "condition": "(uitype != \"Blazor\")",
+            "exclude": "Shared"
+        },
+        {
+            "condition": "(uitype != \"Blazor\")",
+            "exclude": "Pages"
         }]
     }]    
 }

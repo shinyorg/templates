@@ -10,7 +10,15 @@
         "hostId": "vs", 
         "componentType": "setupComponent" 
     }],
-    "symbolInfo": [{
+    "symbolInfo": [
+    {
+        "id": "uitype",
+        "name": {
+            "text": "UI Markup Type"
+        },
+        "isVisible": true
+    },
+    {
         "id": "applicationId",
         "name": {
             "text": "Set the ApplicationId"
