@@ -27,7 +27,7 @@
         "args": {
             "files": "0;1"
         },
-        "continueOnError": true        
+        "continueOnError": true
     }],
     "symbols":{
         "Framework": {

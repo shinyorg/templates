@@ -12,6 +12,20 @@
         "language": "C#",
         "type": "project"
     },
+    "primaryOutputs": [{
+        "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+        "path": "UnitTests1.cs"
+    }],
+    "postActions": [{
+        "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+        "description": "Open UnitTests1.cs file",
+        "manualInstructions": [],
+        "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+        "args": {
+            "files": "0"
+        },
+        "continueOnError": true
+    }],
     "symbols":{
         "Framework": {
             "type": "parameter",
