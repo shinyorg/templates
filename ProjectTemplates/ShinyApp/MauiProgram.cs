@@ -76,15 +76,15 @@ public static class MauiProgram
 #endif
 
         var s = builder.Services;
-
 #if (audio)
         s.AddSingleton(AudioManager.Current);
 #endif
 #if (authservice)
 #if (usemsal)
         s.AddShinyService<MsalAuthenticationService>();
-#else
+#elif (usewebauthenticator)
         s.AddShinyService<WebAuthenticatorAuthService>();
+#endif
 #endif
 #if (usehttp)
         s.AddTransient<AuthHttpDelegatingHandler>();
@@ -195,11 +195,12 @@ public static class MauiProgram
 //+:cnd:noEmit
 
 #endif
+
+#if usexaml || usecsharpmarkup
 #if shinyframework
         s.RegisterForNavigation<MainPage, MainViewModel>();
 #else
         s.AddTransient<MainPage>();
-#if !useblazor
         s.AddTransient<MainViewModel>();
 #endif
 #endif
