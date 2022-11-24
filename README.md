@@ -24,6 +24,10 @@ or update
 	* [Prism](https://prismlibrary.com/)
 	* [ReactiveUI](https://reactiveui.net/)
 	* [Shiny.NET](https://shinylib.net)
+* Select your markup type
+	* XAML
+	* Blazor
+	* C# (courtesy of .NET MAUI Community Toolkit) [Documentation](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup)
 * Entitlements for iOS/MacCatalyst if necessary (ie. NFC, Push, MSAL)
 * Info.plist & Entitlements.plist permissions for iOS/MacCatalyst
 * AndroidManifest.xml Permissions & Features for Android
