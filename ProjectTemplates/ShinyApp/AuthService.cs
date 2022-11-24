@@ -24,7 +24,7 @@ public class WebAuthenticatorAuthService : NotifyPropertyChanged, IAuthService
     public string? AuthenticationToken
     {
         get => this.authToken;
-        private set => this.Set(ref this.authToken, value);
+        set => this.Set(ref this.authToken, value);
     }
     
     public async Task<bool> Authenticate()
@@ -123,7 +123,7 @@ public class MsalAuthenticationService : NotifyPropertyChanged, IAuthService
     public string? AuthenticationToken
     {
         get => this.authToken;
-        private set => this.Set(ref this.authToken, value);
+        set => this.Set(ref this.authToken, value);
     }
     
 
