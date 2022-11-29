@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 	<application android:allowBackup="true" android:icon="@mipmap/appicon" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true">
-	<!--#if (usemaps)-->
+	<!--#if (maps)-->
 		<meta-data android:name="com.google.android.geo.API_KEY" android:value="{MAUI_MAPS_ANDROID_KEY}" />
 	<!--#endif-->
 	<!--#if (usemsalbasic || usemsalb2c)-->
@@ -25,7 +25,7 @@
 	</application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<!--#if (usemaps || essentialsmedia)-->
+	<!--#if (maps || essentialsmedia)-->
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<!--#endif-->
 	<!--#if (bluetoothle || blehosting || beacons)-->
@@ -44,11 +44,11 @@
 	<!--#if (gps || geofencing)-->
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 	<!--#endif-->
-	<!--#if (gps || geofencing || usemaps)-->
+	<!--#if (gps || geofencing || maps)-->
     <uses-feature android:name="android.hardware.location.gps" android:required="false" />
     <uses-feature android:name="android.hardware.location.network" android:required="false" />	
 	<!--#endif-->	
-	<!--#if (bluetoothle || gps || geofencing || beacons || usemaps)-->
+	<!--#if (bluetoothle || gps || geofencing || beacons || maps)-->
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	<!--#endif-->

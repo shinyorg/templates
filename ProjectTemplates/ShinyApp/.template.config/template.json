@@ -41,6 +41,14 @@
             "replaces": "{DOTNET_TFM}",
             "defaultValue": "net7.0"
         },
+        "applicationId": {
+            "type": "parameter",
+            "description": "Set the Application Identifier",
+            "datatype": "string",
+            "defaultValue": "com.companyname.app",
+            "isRequired": true,
+            "replaces": "{APPLICATION_ID}"
+        },
         "markuptype": {
             "type": "parameter",
             "datatype": "choice",
@@ -58,15 +66,7 @@
             }],
             "defaultValue": "XAML",            
             "replaces": "{MARKUP_TYPE}"
-        },
-        "applicationId": {
-            "type": "parameter",
-            "description": "Set the Application Identifier",
-            "datatype": "string",
-            "defaultValue": "com.companyname.app",
-            "isRequired": true,
-            "replaces": "{APPLICATION_ID}"
-        },
+        },        
         "shinyframework": {
             "type": "parameter",
             "datatype": "bool",
@@ -232,12 +232,15 @@
             "dataType": "string",
             "description": "This is your Microsoft Authentication Library (MSAL) Application/Client ID setup within the Azure Portal",
             "defaultValue": "",
+            "isEnabled": "authtype != \"None\" && authtype != \"MAUI Web Authenticator\"",
+            "isRequired": "authtype != \"None\" && authtype != \"MAUI Web Authenticator\"",
             "replaces":"{MSAL_CLIENT_ID}"
         },
         "authservice":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
+            "isEnabled": "authtype != \"None\"",
             "description": "Creates a sample Microsoft Authentication Library (MSAL) or Web authenticator service to work with",
             "displayName": "Create Sample Authentication Service (if MSAL or Web Authenticator is selected)"
         },
@@ -245,6 +248,7 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
+            "isEnabled": "authservice == true",
             "description": "Add Refit API Client used with sample Authentication service",
             "displayName": "Add Refit HTTP Client with Authenication Service"
         },
@@ -261,6 +265,8 @@
             "description": "This is your Google Maps API Key setup within the Google Cloud Platform. Documentation: https://learn.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/map/setup",
             "displayName": "Sets your Android Maps API Key (used if MAUI Maps is selected)",
             "defaultValue": "",
+            "isEnabled": "maps == true",
+            "isRequired": "maps == true",
             "replaces":"{MAUI_MAPS_ANDROID_KEY}"
         },
         "essentialsmedia":{
@@ -332,11 +338,6 @@
             "type": "computed",
             "datatype": "bool",
             "value": "(authtype == \"MSAL Basic\" || authtype == \"MSAL AzureB2C\" || authtype == \"MSAL Broker\")"
-        },
-        "usemaps":{
-            "type": "computed",
-            "datatype": "bool",
-            "value": "(maps == true && Framework == \"net7.0\")"
         },
         "usemsalbasic":{
             "type": "computed",

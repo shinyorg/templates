@@ -45,7 +45,7 @@ public static class MauiProgram
 #else
         .UseShiny()
 #endif
-#if usemaps
+#if maps
         .UseMauiMaps()
 #endif
         .ConfigureFonts(fonts =>
