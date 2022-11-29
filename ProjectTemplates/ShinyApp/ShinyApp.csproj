@@ -74,8 +74,8 @@
 		<!--#endif-->
 		<!--#if (shinyframework)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
-		<PackageReference Include="ReactiveUI.Fody" Version="18.3.1" />
-		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0040" />
+		<PackageReference Include="ReactiveUI.Fody" Version="18.4.1" />
+		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0044" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
@@ -132,7 +132,7 @@
 		<PackageReference Include="Plugin.InAppBilling" Version="6.7.0" />
 		<!--#endif-->
 		<!--#if (audio)-->
-		<PackageReference Include="Plugin.Maui.Audio" Version="0.1.0-preview2" />
+		<PackageReference Include="Plugin.Maui.Audio" Version="1.0.0" />
 		<!--#endif-->
 		<!--#if (fingerprint)-->
 		<PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
