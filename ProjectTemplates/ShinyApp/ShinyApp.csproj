@@ -98,9 +98,6 @@
 		<!--#if (beacons)-->
 		<PackageReference Include="Shiny.Beacons" Version="$(ShinyVersion)" />
 		<!--#endif-->
-		<!--#if (nfc)-->
-		<PackageReference Include="Shiny.Nfc" Version="$(ShinyVersion)" />
-		<!--#endif-->
 		<!--#if (jobs)-->
 		<PackageReference Include="Shiny.Jobs" Version="$(ShinyVersion)" />
 		<!--#endif-->

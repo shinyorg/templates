@@ -103,13 +103,6 @@
         "isVisible": true
     },
     {
-        "id": "nfc",
-        "name": {
-            "text": "Add NFC - iOS & Android Only (Shiny.NFC)"
-        },
-        "isVisible": true
-    },
-    {
         "id": "notifications",
         "name": {
             "text": "Add Local Notifications (Shiny.Notifications)"

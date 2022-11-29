@@ -98,15 +98,6 @@
 		<string>com.shiny.jobpowernet</string>
 	</array>
 	<!--#endif-->
-	<!--#if (nfc)-->
-	<key>NFCReaderUsageDescription</key>
-	<string>Put your friendly message as to why here!</string>
-	<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
-	<array>
-		<string>A0000002471001</string>
-		<string>D2760000850101</string>
-	</array>
-	<!--#endif-->
     <!--#if (usewebauthenticator)-->
     <key>CFBundleURLTypes</key>
     <array>

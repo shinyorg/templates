@@ -144,13 +144,6 @@
             "description": "Add Background HTTP Uploads & Downloads (Shiny.Net.Http)",
             "displayName": "Add Background HTTP Uploads & Downloads (Shiny.Net.Http)"
         },
-        "nfc": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add NFC - iOS & Android Only (Shiny.NFC)",
-            "displayName": "Add NFC - iOS & Android Only (Shiny.NFC)"
-        },
         "notifications": {
             "type": "parameter",
             "datatype": "bool",
@@ -386,7 +379,7 @@
         "useentitlements":{
             "type": "computed",
             "datatype": "bool",
-            "value": "(push != \"None\" || nfc || authtype != \"None\")"
+            "value": "(push != \"None\" || authtype != \"None\")"
         },
         "usemaccatalyst":{
             "type": "computed",

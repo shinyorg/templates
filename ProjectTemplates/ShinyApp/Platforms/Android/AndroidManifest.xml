@@ -55,10 +55,6 @@
 	<!--#if (motionactivity)-->
 	<uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
 	<!--#endif-->
-	<!--#if (nfc)-->
-	<uses-feature android:name="android.hardware.nfc" android:required="false" />
-	<uses-permission android:name="android.permission.NFC" />
-	<!--#endif-->
 	<!--#if (speechrecognition)-->
 	<uses-permission android:name="android.permission.RECORD_AUDIO" />
 	<!--#endif-->

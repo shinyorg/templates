@@ -12,12 +12,5 @@
         <string>$(AppIdentifierPrefix)com.microsoft.adalcache</string>
     </array>
 	<!--#endif-->
-    <!--#if (nfc)-->
-    <key>com.apple.developer.nfc.readersession.formats</key>
-	<array>
-		<string>TAG</string>
-		<string>NDEF</string>
-	</array>
-    <!--#endif-->
 </dict>
 </plist>
