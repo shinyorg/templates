@@ -58,6 +58,9 @@
 	<!--#if (speechrecognition)-->
 	<uses-permission android:name="android.permission.RECORD_AUDIO" />
 	<!--#endif-->
+	<!--#if (notifications || usepush)-->
+	<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+	<!--#endif-->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 	<!--#if (essentialsmedia || barcodes)-->
 	<uses-feature android:name="android.hardware.camera" android:required="false" />
