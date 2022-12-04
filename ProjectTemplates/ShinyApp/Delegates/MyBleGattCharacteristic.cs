@@ -1,7 +1,7 @@
 using Shiny.BluetoothLE.Hosting;
 using Shiny.BluetoothLE.Hosting.Managed;
 
-namespace ShinyApp;
+namespace ShinyApp.Delegates;
 
 
 [BleGattCharacteristic("SERVICE UUID", "CHARCATERISTIC UUID")]

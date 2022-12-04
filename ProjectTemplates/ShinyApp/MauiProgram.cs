@@ -124,7 +124,7 @@ public static class MauiProgram
         s.AddSingleton<MySqliteConnection>();
 #endif
 #if jobs
-        s.AddJob(typeof(MyJob));
+        s.AddJob(typeof(ShinyApp.Delegates.MyJob));
 #endif
 #if bluetoothle
         s.AddBluetoothLE();
@@ -134,16 +134,16 @@ public static class MauiProgram
 #endif
 #if beacons
         s.AddBeaconRanging();
-        s.AddBeaconMonitoring<MyBeaconMonitorDelegate>();
+        s.AddBeaconMonitoring<ShinyApp.Delegates.MyBeaconMonitorDelegate>();
 #endif
 #if gps
-        s.AddGps<MyGpsDelegate>();
+        s.AddGps<ShinyApp.Delegates.MyGpsDelegate>();
 #endif
 #if geofencing
-        s.AddGeofencing<MyGeofenceDelegate>();
+        s.AddGeofencing<ShinyApp.Delegates.MyGeofenceDelegate>();
 #endif
 #if (httptransfers)
-        s.AddHttpTransfers<MyHttpTransferDelegate>();
+        s.AddHttpTransfers<ShinyApp.Delegates.MyHttpTransferDelegate>();
 #endif
 #if motionactivity
         s.AddMotionActivity();
@@ -155,16 +155,16 @@ public static class MauiProgram
         s.AddSpeechRecognition();
 #endif
 #if usepushnative
-        s.AddPush<MyPushDelegate>();
+        s.AddPush<ShinyApp.Delegates.MyPushDelegate>();
 #endif
 #if usepushanh
-        s.AddPushAzureNotificationHubs<MyPushDelegate>(new (
+        s.AddPushAzureNotificationHubs<ShinyApp.Delegates.MyPushDelegate>(new (
             builder.Configuration["AzureNotificationHubs:ListenerConnectionString"], 
             builder.Configuration["AzureNotificationHubs:HubName"]
         ));
 #endif
 #if usepushfirebase
-        s.AddFirebaseMessaging<MyPushDelegate>();
+        s.AddFirebaseMessaging<ShinyApp.Delegates.MyPushDelegate>();
 #endif
 #if shinyframework
         s.AddDataAnnotationValidation();

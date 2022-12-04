@@ -1,6 +1,6 @@
 using Shiny.Locations;
 
-namespace ShinyApp;
+namespace ShinyApp.Delegates;
 
 
 public partial class MyGeofenceDelegate : IGeofenceDelegate

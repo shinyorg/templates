@@ -1,6 +1,6 @@
 using Shiny.Jobs;
 
-namespace ShinyApp;
+namespace ShinyApp.Delegates;
 
 
 public class MyJob : IJob

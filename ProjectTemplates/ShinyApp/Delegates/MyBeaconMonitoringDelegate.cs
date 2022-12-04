@@ -1,6 +1,6 @@
 using Shiny.Beacons;
 
-namespace ShinyApp;
+namespace ShinyApp.Delegates;
 
 
 public partial class MyBeaconMonitorDelegate : IBeaconMonitorDelegate

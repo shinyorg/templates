@@ -420,40 +420,52 @@
             "exclude": "appsettings.json"
         },
         {
-            "condition": "(push == \"None\")",
-            "exclude": "MyPushDelegate.cs"
-        },
-        {
-            "condition": "(httptransfers == false)",
-            "exclude": "MyHttpTransferDelegate.cs"
-        },
-        {
-            "condition": "(gps == false)",
-            "exclude": "MyGpsDelegate.cs"
-        },
-        {
-            "condition": "(useentitlements == false)",
-            "exclude": "Platforms/iOS/Entitlements.plist"
-        },
-        {
             "condition": "(useentitlements == false)",
             "exclude": "Platforms/MacCatalyst/Entitlements.plist"
         },
         {
+            "condition": "(usemsalbasic == false && usemsalb2c == false)",
+            "exclude": "Platforms/Android/MsalActivity.cs"
+        },
+        {
+            "condition": "(usewebauthenticator == false)",
+            "exclude": "Platforms/Android/WebAuthenticatorActivity.cs"
+        },
+        {
+            "condition": "(notifications == false)",
+            "exclude": "Resources/Images/notification.svg"
+        },     
+        {
+            "condition": "(push == \"None\")",
+            "exclude": "Delegates/MyPushDelegate.cs"
+        },
+        {
+            "condition": "(httptransfers == false)",
+            "exclude": "Delegates/MyHttpTransferDelegate.cs"
+        },
+        {
+            "condition": "(gps == false)",
+            "exclude": "Delegates/MyGpsDelegate.cs"
+        },
+        {
+            "condition": "(useentitlements == false)",
+            "exclude": "Platforms/iOS/Entitlements.plist"
+        },           
+        {
             "condition": "(geofencing == false)",
-            "exclude": "MyGeofenceDelegate.cs"
+            "exclude": "Delegates/MyGeofenceDelegate.cs"
         },
         {
             "condition": "(jobs == false)",
-            "exclude": "MyJob.cs"
+            "exclude": "Delegates/MyJob.cs"
         },
         {
             "condition": "(blehosting == false)",
-            "exclude": "MyBleGattCharacteristic.cs"
+            "exclude": "Delegates/MyBleGattCharacteristic.cs"
         },
         {
             "condition": "(beacons == false)",
-            "exclude": "MyBeaconMonitoringDelegate.cs"
+            "exclude": "Delegates/MyBeaconMonitoringDelegate.cs"
         },
         {
             "condition": "(sqlite == false)",
@@ -483,18 +495,7 @@
             "condition": "(authservice == false || refit == false)",
             "exclude": "AuthHttpDelegatingHandler.cs"
         },
-        {
-            "condition": "(usemsalbasic == false && usemsalb2c == false)",
-            "exclude": "Platforms/Android/MsalActivity.cs"
-        },
-        {
-            "condition": "(usewebauthenticator == false)",
-            "exclude": "Platforms/Android/WebAuthenticatorActivity.cs"
-        },
-        {
-            "condition": "(notifications == false)",
-            "exclude": "Resources/Images/notification.svg"
-        },
+
         {
             "condition": "(usecsharpmarkup == true)",
             "exclude": "MainPage.xaml"

@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Shiny.Net.Http;
 
-namespace ShinyApp;
+namespace ShinyApp.Delegates;
 
 
 public partial class MyHttpTransferDelegate : IHttpTransferDelegate

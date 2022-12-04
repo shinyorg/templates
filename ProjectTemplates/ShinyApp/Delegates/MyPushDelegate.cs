@@ -1,6 +1,6 @@
 ﻿using Shiny.Push;
 
-namespace ShinyApp;
+namespace ShinyApp.Delegates;
 
 
 public class MyPushDelegate : IPushDelegate
