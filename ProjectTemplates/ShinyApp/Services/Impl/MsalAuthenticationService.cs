@@ -1,11 +1,10 @@
-using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Client;
 
 namespace ShinyApp.Services.Impl;
 
 
 [Shiny.Stores.ObjectStoreBinder("secure")]
-public class MsalAuthenticationService : NotifyPropertyChanged, IAuthService
+public class MsalAuthenticationService : NotifyPropertyChanged, IAuthenticationService
 {
     static readonly string[] SCOPES = new [] { "User.Read" };
     readonly MsalOptions options;
@@ -142,4 +141,3 @@ class MsalOptions
     public string AndroidRedirectUri { get; set; }
     public string B2CSigninSignupAuthority { get; set; }
 }
-#endif

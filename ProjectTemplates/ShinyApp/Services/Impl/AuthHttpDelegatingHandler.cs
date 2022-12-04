@@ -5,8 +5,8 @@ namespace ShinyApp.Services.Impl;
 
 public class AuthHttpDelegatingHandler : DelegatingHandler
 {
-	readonly IAuthService authService;
-	public AuthHttpDelegatingHandler(IAuthService authService)
+	readonly IAuthenticationService authService;
+	public AuthHttpDelegatingHandler(IAuthenticationService authService)
 		=> this.authService = authService;
 
 

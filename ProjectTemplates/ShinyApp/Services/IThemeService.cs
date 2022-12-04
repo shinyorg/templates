@@ -1,4 +1,6 @@
-namespace ShinyWish.Services;
+using System.ComponentModel;
+
+namespace ShinyApp.Services;
 
 
 public interface IThemeService : INotifyPropertyChanged

@@ -2,7 +2,7 @@ namespace ShinyApp.Services.Impl;
 
 
 [Shiny.Stores.ObjectStoreBinder("secure")]
-public class WebAuthenticatorAuthService : NotifyPropertyChanged, IAuthentcationService 
+public class WebAuthenticatorAuthService : NotifyPropertyChanged, IAuthenticationService 
 {
     // this looks like a viewmodel type property as shiny binds it secure storage
     string? authToken;
