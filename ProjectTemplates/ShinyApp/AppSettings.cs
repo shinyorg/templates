@@ -12,9 +12,8 @@ public class AppSettings : ReactiveObject
         get => Application.Current!.UserAppTheme;
         set
         {
-            var theme = Application.Current!.UserAppTheme;
-            this.RaiseAndSetIfChanged(ref theme, value);
             Application.Current!.UserAppTheme = value;
+            this.RaisePropertyChanged(nameof(CurrentTheme));
         }
     } 
 }
@@ -36,9 +35,8 @@ public class AppSettings : NotifyPropertyChanged
         get => Application.Current!.UserAppTheme;
         set
         {
-            var theme = Application.Current!.UserAppTheme;
-            if (this.Set(ref theme, value))
-                Application.Current!.UserAppTheme = value;
+            Application.Current!.UserAppTheme = value;
+            this.RaisePropertyChanged(nameof(CurrentTheme));
         }
     }
 }
