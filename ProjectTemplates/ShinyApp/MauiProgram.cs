@@ -76,22 +76,24 @@ public static class MauiProgram
 #endif
 
         var s = builder.Services;
+
+        s.AddShinyService<ShinyApp.Services.Impl.ThemeService>();
 #if (audio)
         s.AddSingleton(AudioManager.Current);
 #endif
 #if (authservice)
 #if (usemsal)
-        s.AddShinyService<MsalAuthenticationService>();
+        s.AddShinyService<ShinyApp.Services.Impl.MsalAuthenticationService>();
 #elif (usewebauthenticator)
-        s.AddShinyService<WebAuthenticatorAuthService>();
+        s.AddShinyService<ShinyApp.Services.Impl.WebAuthenticatorAuthService>();
 #endif
 #endif
 #if (usehttp)
-        s.AddTransient<AuthHttpDelegatingHandler>();
+        s.AddTransient<ShinyApp.Services.Impl.AuthHttpDelegatingHandler>();
         s
-            .AddRefitClient<IApiClient>()
+            .AddRefitClient<ShinyApp.Services.Impl.IApiClient>()
             .ConfigureHttpClient(c => c.BaseAddress = new Uri(builder.Configuration["ApiUri"]!))
-            .AddHttpMessageHandler<AuthHttpDelegatingHandler>();
+            .AddHttpMessageHandler<ShinyApp.Services.Impl.AuthHttpDelegatingHandler>();
             
 #endif
 #if essentialsmedia
@@ -121,7 +123,7 @@ public static class MauiProgram
         s.AddShinyService<AppSettings>();
 #endif
 #if sqlite
-        s.AddSingleton<MySqliteConnection>();
+        s.AddSingleton<ShinyApp.Services.MySqliteConnection>();
 #endif
 #if jobs
         s.AddJob(typeof(ShinyApp.Delegates.MyJob));

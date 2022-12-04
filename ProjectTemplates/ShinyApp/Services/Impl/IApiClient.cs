@@ -1,6 +1,6 @@
 using Refit;
 
-namespace ShinyApp;
+namespace ShinyApp.Services.Impl;
 
 
 public interface IApiClient

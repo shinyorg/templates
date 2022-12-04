@@ -1,6 +1,6 @@
 using System.Net.Http.Headers;
 
-namespace ShinyApp;
+namespace ShinyApp.Services.Impl;
 
 
 public class AuthHttpDelegatingHandler : DelegatingHandler

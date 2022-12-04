@@ -1,6 +1,6 @@
 using SQLite;
 
-namespace ShinyApp;
+namespace ShinyApp.Services;
 
 
 public class MySqliteConnection : SQLiteAsyncConnection

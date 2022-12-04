@@ -420,6 +420,14 @@
             "exclude": "appsettings.json"
         },
         {
+            "condition": "(startup == false)",
+            "exclude": "AppStartup.cs"
+        },
+        {
+            "condition": "(settings == false)",
+            "exclude": "AppSettings.cs"
+        },        
+        {
             "condition": "(useentitlements == false)",
             "exclude": "Platforms/MacCatalyst/Entitlements.plist"
         },
@@ -466,18 +474,10 @@
         {
             "condition": "(beacons == false)",
             "exclude": "Delegates/MyBeaconMonitoringDelegate.cs"
-        },
+        }, 
         {
             "condition": "(sqlite == false)",
-            "exclude": "MySqliteConnection.cs"
-        },
-        {
-            "condition": "(startup == false)",
-            "exclude": "AppStartup.cs"
-        },
-        {
-            "condition": "(settings == false)",
-            "exclude": "AppSettings.cs"
+            "exclude": "Services/MySqliteConnection.cs"
         },
         {
             "condition": "(shinyframework == false)",
@@ -485,17 +485,24 @@
         },
         {
             "condition": "(authservice == false)",
-            "exclude": "AuthService.cs"
+            "exclude": "Services/IAuthenticationService.cs"
+        },
+        {
+            "condition": "(authservice == false || usemsal == false)",
+            "exclude": "Services/Impl/MsalAuthenticationService.cs"
+        },    
+        {
+            "condition": "(authservice == false || usewebauthenticator == false)",
+            "exclude": "Services/Impl/WebAuthenticatorAuthenticationService.cs"
+        },             
+        {
+            "condition": "(authservice == false || refit == false)",
+            "exclude": "Services/Impl/IApiClient.cs"
         },
         {
             "condition": "(authservice == false || refit == false)",
-            "exclude": "IApiClient.cs"
+            "exclude": "Services/Impl/AuthHttpDelegatingHandler.cs"
         },
-        {
-            "condition": "(authservice == false || refit == false)",
-            "exclude": "AuthHttpDelegatingHandler.cs"
-        },
-
         {
             "condition": "(usecsharpmarkup == true)",
             "exclude": "MainPage.xaml"
