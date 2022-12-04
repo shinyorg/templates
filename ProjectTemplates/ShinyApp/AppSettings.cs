@@ -2,43 +2,40 @@ namespace ShinyApp;
 
 #if shinyframework
 //[Shiny.Stores.ObjectStoreBinder("secure")] // defaults to standard platform preferences
-public class AppSettings : ReactiveObject
+// any public get/set values marked with [Reactive] will automatically be saved to the configured store
+public class AppSettings : ReactiveObject, IShinyStartupTask
 {
-    // any public get/set values marked with [Reactive] will automatically be saved to the configured store
-    [Reactive] public string MySetting { get; set; }
+    [Reactive] public AppTheme CurrentTheme { get; set; } = AppTheme.Unspecified;
 
-    public AppTheme CurrentTheme
+
+    public void Start()
     {
-        get => Application.Current!.UserAppTheme;
-        set
-        {
-            Application.Current!.UserAppTheme = value;
-            this.RaisePropertyChanged(nameof(CurrentTheme));
-        }
-    } 
+        Application.Current!.UserAppTheme = this.CurrentTheme;
+        this.WhenAnyValue(x => this.CurrentTheme)
+            .Skip(1)
+            .Subscribe(x => this.CurrentTheme = x);
+    }
 }
 #else
 //[Shiny.Stores.ObjectStoreBinder("secure")] // defaults to standard platform preferences
-public class AppSettings : NotifyPropertyChanged
+// any public get/set values that notify will automatically be saved to the configured store
+public class AppSettings : NotifyPropertyChanged, IShinyStartupTask
 {
-    // any public get/set values that notify will automatically be saved to the configured store
-    string mySetting;
-    public string MySetting 
-    { 
-        get => this.mySetting;
-        set => this.Set(ref this.mySetting, value);
-    }
-
-
+    AppTheme currentTheme;
     public AppTheme CurrentTheme
     {
-        get => Application.Current!.UserAppTheme;
-        set
-        {
-            Application.Current!.UserAppTheme = value;
-            this.RaisePropertyChanged(nameof(CurrentTheme));
-        }
+        get => this.currentTheme;
+        set => this.Set(ref this.currentTheme, value);
+    }
+
+
+    public void Start()
+    {
+        Application.Current!.UserAppTheme = this.CurrentTheme;
+
+        this.WhenAnyProperty(x => x.CurrentTheme)
+            .Skip(1)
+            .Subscribe(x => Application.Current!.UserAppTheme = x);
     }
 }
-
 #endif
