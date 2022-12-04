@@ -50,8 +50,8 @@ public static class MauiProgram
 #endif
         .ConfigureFonts(fonts =>
         {
-                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold"); 
+            fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+            fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold"); 
         })
         .RegisterInfrastructure()
         .RegisterAppServices()
@@ -76,8 +76,6 @@ public static class MauiProgram
 #endif
 
         var s = builder.Services;
-
-        s.AddShinyService<ShinyApp.Services.Impl.ThemeService>();
 #if (audio)
         s.AddSingleton(AudioManager.Current);
 #endif
