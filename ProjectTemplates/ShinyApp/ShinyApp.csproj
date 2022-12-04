@@ -32,10 +32,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<ShinyVersion>3.0.0-alpha-0402</ShinyVersion>
-		<!--#if (sqlite)-->
-		<SqliteLibVersion>2.1.2</SqliteLibVersion>
-		<!--#endif-->
+		<ShinyVersion>3.0.0-alpha-0423</ShinyVersion>
 	</PropertyGroup>
 
 	<!--#if (useentitlements)-->
@@ -82,7 +79,7 @@
 		<!--#if (shinyframework)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
 		<PackageReference Include="ReactiveUI.Fody" Version="18.4.1" />
-		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0044" />
+		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0045" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
@@ -147,15 +144,8 @@
 		<!--#if usehttp-->
 		<PackageReference Include="Refit.HttpClientFactory" Version="6.3.2" />
 		<!--#endif-->
+		<!--#if (sqlite)-->
+		<PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta" />
+		<!--#endif-->		
 	</ItemGroup>
-
-	<!--#if (sqlite)-->
-	<ItemGroup>
-		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
-		<PackageReference Include="SQLitePCLRaw.core" Version="$(SqliteLibVersion)" />
-		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="$(SqliteLibVersion)" />
-		<PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="$(SqliteLibVersion)" />
-		<PackageReference Include="SQLitePCLRaw.provider.sqlite3" Version="$(SqliteLibVersion)" />
-	</ItemGroup>
-	<!--#endif-->
 </Project>
