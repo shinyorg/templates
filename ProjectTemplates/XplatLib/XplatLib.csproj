@@ -35,7 +35,7 @@
     </PropertyGroup>
 
     <!--#if (ios || maccatalyst)-->
-    <PropertyGroup Condition="$(TargetFramework.Contains('ios')) || $(TargetFramework.Contains('maccatalyst'))">
+    <PropertyGroup Condition="$(TargetFramework.Contains('ios')) OR $(TargetFramework.Contains('maccatalyst'))">
         <DefineConstants>$(DefineConstants);APPLE</DefineConstants>
     </PropertyGroup> 
     <!--#endif-->
