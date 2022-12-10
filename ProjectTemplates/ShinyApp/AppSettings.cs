@@ -11,7 +11,7 @@ public class AppSettings : ReactiveObject, IShinyStartupTask
     public void Start()
     {
         Application.Current!.UserAppTheme = this.CurrentTheme;
-        this.WhenAnyValue(x => this.CurrentTheme)
+        this.WhenAnyValue(x => x.CurrentTheme)
             .Skip(1)
             .Subscribe(x => this.CurrentTheme = x);
     }
