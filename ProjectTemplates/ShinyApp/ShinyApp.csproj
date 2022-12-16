@@ -32,7 +32,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<ShinyVersion>3.0.0-alpha-0427</ShinyVersion>
+		<ShinyVersion>3.0.0-alpha-0470</ShinyVersion>
 	</PropertyGroup>
 
 	<!--#if (useentitlements)-->

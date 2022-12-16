@@ -10,13 +10,13 @@ public partial class MyHttpTransferDelegate : IHttpTransferDelegate
     {
     }
 
-    public Task OnError(HttpTransfer transfer, Exception ex)
+    public Task OnError(IHttpTransfer transfer, Exception ex)
     {
         throw new NotImplementedException();
     }
 
 
-    public Task OnCompleted(HttpTransfer transfer)
+    public Task OnCompleted(IHttpTransfer transfer)
     {
         throw new NotImplementedException();
     }

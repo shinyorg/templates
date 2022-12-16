@@ -164,7 +164,7 @@ public static class MauiProgram
         ));
 #endif
 #if usepushfirebase
-        s.AddFirebaseMessaging<ShinyApp.Delegates.MyPushDelegate>();
+        s.AddPushFirebaseMessaging<ShinyApp.Delegates.MyPushDelegate>();
 #endif
 #if shinyframework
         s.AddDataAnnotationValidation();
