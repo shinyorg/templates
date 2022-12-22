@@ -33,13 +33,11 @@ public class MsalAuthenticationService : NotifyPropertyChanged, IAuthenticationS
             .WithBroker()
 #endif
 //-:cnd:noEmit
-#if ANDROID
-            .WithRedirectUri(this.options.AndroidRedirectUri)
-#else
-            .WithRedirectUri(this.options.AppleRedirectUri)
+#if APPLE
+            .WithIosKeychainSecurityGroup(this.options.KeyChainGroup)            
 #endif
 //+:cnd:noEmit
-            .WithIosKeychainSecurityGroup(this.options.AppleKeyChainGroup)
+            .WithRedirectUri(this.options.RedirectUri)            
             .Build();
     }
 
@@ -136,8 +134,7 @@ class MsalOptions
 {
     public string ClientId { get; set; }
     public string TenantId { get; set; }
-    public string AppleRedirectUri { get; set; }
-    public string AppleKeyChainGroup { get; set; }
-    public string AndroidRedirectUri { get; set; }
+    public string KeyChainGroup { get; set; }
+    public string RedirectUri { get; set; }
     public string B2CSigninSignupAuthority { get; set; }
 }
