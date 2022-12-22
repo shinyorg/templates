@@ -25,7 +25,8 @@
 
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
-
+		
+    	<UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
@@ -47,12 +48,14 @@
 	<!--#endif-->
 	<!--#endif-->
 
-    <!--
-    vs4mac occasionally gives an error about missing ios-arm64 when deploying to phone.  Uncomment this as necessary
-    <PropertyGroup Condition="$(TargetFramework.Contains('-ios'))">
+	<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Debug'">
 		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
-    </PropertyGroup>
-	-->
+		<RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Release'">
+		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
+	</PropertyGroup>
 
 	<ItemGroup>
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
