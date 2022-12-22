@@ -63,6 +63,8 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 		<!--#if (useconfig)-->
 		<MauiAsset Include="appsettings.json" LogicalName="appsettings.json" />
+		<MauiAsset Include="appsettings.android.json" LogicalName="appsettings.android.json" />
+		<MauiAsset Include="appsettings.apple.json" LogicalName="appsettings.apple.json" />
 		<!--#endif-->
 	</ItemGroup>
 

@@ -420,6 +420,14 @@
             "exclude": "appsettings.json"
         },
         {
+            "condition": "(useconfig == false)",
+            "exclude": "appsettings.android.json"
+        },
+        {
+            "condition": "(useconfig == false)",
+            "exclude": "appsettings.apple.json"
+        },                
+        {
             "condition": "(startup == false)",
             "exclude": "AppStartup.cs"
         },
