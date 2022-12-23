@@ -30,7 +30,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<ShinyVersion>3.0.0-alpha-0470</ShinyVersion>
+		<ShinyVersion>3.0.0-alpha-0489</ShinyVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
@@ -78,18 +78,18 @@
 		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.1.0" />
 		<!--#endif-->
 		<!--#if (maps)-->
-		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.49" />
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.52" />
 		<!--#endif-->
 		<!--#if (shinyframework)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
 		<PackageReference Include="ReactiveUI.Fody" Version="18.4.1" />
-		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0045" />
+		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0046" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (usemsal)-->
-		<PackageReference Include="Microsoft.Identity.Client" Version="4.48.1" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.49.1" />
 		<!--#endif-->
 		<!--#if (useconfig)-->
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
