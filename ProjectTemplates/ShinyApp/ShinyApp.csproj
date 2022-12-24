@@ -30,16 +30,17 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<ShinyVersion>3.0.0-alpha-0489</ShinyVersion>
+		<ShinyVersion>3.0.0-alpha-0491</ShinyVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
+	<DefineConstants>$(DefineConstants);PLATFORM</DefineConstants>
 		<SupportedOSPlatformVersion>26.0</SupportedOSPlatformVersion>
     </PropertyGroup>
 	
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
 		<SupportedOSPlatformVersion>14.2</SupportedOSPlatformVersion>
-		<DefineConstants>$(DefineConstants);APPLE</DefineConstants>
+		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>
 		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
 		<RuntimeIdentifier Condition= "'$(Configuration)' == 'Debug'">iossimulator-x64</RuntimeIdentifier>		
 		<!--#if (useentitlements)-->
@@ -50,7 +51,7 @@
 	<!--#if (usemaccatalyst)-->
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
 		<SupportedOSPlatformVersion>14.0</SupportedOSPlatformVersion>
-		<DefineConstants>$(DefineConstants);APPLE</DefineConstants>
+		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>
 		<!--#if (useentitlements)-->
 		<CodesignEntitlements>Platforms\MacCatalyst\Entitlements.plist</CodesignEntitlements>
 		<!--#endif-->
