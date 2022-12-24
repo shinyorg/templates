@@ -39,6 +39,7 @@
 	
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
 		<SupportedOSPlatformVersion>14.2</SupportedOSPlatformVersion>
+		<DefineConstants>$(DefineConstants);APPLE</DefineConstants>
 		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
 		<RuntimeIdentifier Condition= "'$(Configuration)' == 'Debug'">iossimulator-x64</RuntimeIdentifier>		
 		<!--#if (useentitlements)-->
@@ -49,6 +50,7 @@
 	<!--#if (usemaccatalyst)-->
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
 		<SupportedOSPlatformVersion>14.0</SupportedOSPlatformVersion>
+		<DefineConstants>$(DefineConstants);APPLE</DefineConstants>
 		<!--#if (useentitlements)-->
 		<CodesignEntitlements>Platforms\MacCatalyst\Entitlements.plist</CodesignEntitlements>
 		<!--#endif-->
