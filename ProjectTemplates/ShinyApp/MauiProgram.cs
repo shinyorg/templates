@@ -169,7 +169,7 @@ public static class MauiProgram
 #if shinyframework
         s.AddDataAnnotationValidation();
         s.AddGlobalCommandExceptionHandler(new(
-//-:cnd:noEmit                
+//-:cnd:noEmit
 #if DEBUG
             ErrorAlertType.FullError
 #else

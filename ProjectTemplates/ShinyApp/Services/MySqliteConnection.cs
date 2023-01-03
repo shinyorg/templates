@@ -9,6 +9,14 @@ public class MySqliteConnection : SQLiteAsyncConnection
     {
         var conn = this.GetConnection();
         // conn.CreateTable<YourModel>();
+
+        conn.EnableWriteAheadLogging();
+//-:cnd:noEmit
+#if DEBUG
+        conn.Trace = true;
+        conn.Tracer = sql => Console.WriteLine(sql);
+#endif
+//+:cnd:noEmit
     }
 
 
