@@ -30,7 +30,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<ShinyVersion>3.0.0-alpha-0491</ShinyVersion>
+		<ShinyVersion>3.0.0-alpha-0495</ShinyVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
@@ -79,6 +79,9 @@
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
 		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.1.0" />
+		<!--#endif-->
+		<!--#if (mediaelement)-->
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="1.0.0" />
 		<!--#endif-->
 		<!--#if (maps)-->
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.52" />

@@ -270,6 +270,13 @@
             "description": "MAUI Community Toolkit - Documentation: https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
             "displayName": "Add MAUI Community Toolkit"
         },
+        "mediaelement":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "MAUI Community Toolkit - Documentation: https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
+            "displayName": "Add MAUI Community Toolkit Media Element"            
+        },
         "sqlite": {
             "type": "parameter",
             "datatype": "bool",

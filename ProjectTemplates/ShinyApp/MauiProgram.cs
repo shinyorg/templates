@@ -37,6 +37,9 @@ public static class MauiProgram
 #if shinyframework || communitytoolkit
         .UseMauiCommunityToolkit()
 #endif
+#if mediaelement
+        .UseMauiCommunityToolkitMediaElement()
+#endif
 #if shinyframework            
         .UseShinyFramework(
             new DryIocContainerExtension(),
