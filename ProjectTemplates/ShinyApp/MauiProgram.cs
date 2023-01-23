@@ -28,9 +28,6 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp() => MauiApp
         .CreateBuilder()
         .UseMauiApp<App>()
-#if usecsharpmarkup
-        .UseMauiCommunityToolkitMarkup()
-#endif
 #if barcodes
         .UseBarcodeReader()
 #endif
@@ -39,6 +36,9 @@ public static class MauiProgram
 #endif
 #if mediaelement
         .UseMauiCommunityToolkitMediaElement()
+#endif
+#if usecsharpmarkup
+        .UseMauiCommunityToolkitMarkup()
 #endif
 #if shinyframework            
         .UseShinyFramework(

@@ -75,7 +75,7 @@
 
 	<ItemGroup>
 		<!--#if (shinyframework || communitytoolkit)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="3.1.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="4.0.0" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
 		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.1.0" />
@@ -89,7 +89,7 @@
 		<!--#if (shinyframework)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
 		<PackageReference Include="ReactiveUI.Fody" Version="18.4.1" />
-		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0048" />
+		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0056" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />

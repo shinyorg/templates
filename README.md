@@ -28,7 +28,7 @@ or update
 	* XAML
 	* Blazor
 	* C# (courtesy of .NET MAUI Community Toolkit) [Documentation](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup)
-* Entitlements for iOS/MacCatalyst if necessary (ie. NFC, Push, MSAL)
+* Entitlements for iOS/MacCatalyst if necessary (ie. Push, MSAL)
 * Info.plist & Entitlements.plist permissions for iOS/MacCatalyst
 * AndroidManifest.xml Permissions & Features for Android
 * Preps all of the necessary functionality for a SQLite Database	
@@ -73,8 +73,6 @@ _The Microsoft iOS Extension template is currently broken on VS4win & VS4mac, so
 * Push Notification Setup
 * Entity Framework Basic Setup
 * MSAL & WebAuthenticator Setup /w Google & Facebook
-
-#### Cross Platform Library
 
 
 ### Item Templates

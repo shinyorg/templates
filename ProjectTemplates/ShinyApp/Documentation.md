@@ -34,13 +34,22 @@ _A collection of reusable elements for application development with .NET MAUI, i
 * [GitHub](https://github.com/CommunityToolkit/Maui)
 
 <!--#endif-->
+<!--#if (mediaelement)-->
+## MAUI Community Toolkit - Media Element
+
+MediaElement is a view for playing video and audio in your .NET MAUI app.
+
+* [Documentation](https://learn.microsoft.com/en-ca/dotnet/communitytoolkit/maui/views/mediaelement)
+* [GitHub](https://github.com/CommunityToolkit/Maui)
+
+<!--#endif>
 <!--#if (usecsharpmarkup)-->
 ## .NET MAUI Community Toolkit - C# Markup
 
 _The C# Markup Extensions for .NET MAUI Community Toolkit is a set of extensions that allow you to write XAML in C#._
 
 * [Documentation](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup)
-* [GitHub](https://)
+* [GitHub](https://github.com/CommunityToolkit/Maui)
 
 <!--#endif-->
 <!--#if (usemsal)-->
