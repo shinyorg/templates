@@ -34,6 +34,22 @@ _A collection of reusable elements for application development with .NET MAUI, i
 * [GitHub](https://github.com/CommunityToolkit/Maui)
 
 <!--#endif-->
+<!--#if (sharpnadovc)-->
+## Sharpnado CollectionView
+
+_A performant and feature rich collection view by Jean-Marie Alfonsi_
+
+* [GitHub](https://github.com/roubachof/Sharpnado.CollectionView)
+
+<!--#endif-->
+<!--#if (sharpnadotabs)-->
+## Sharpnado Tabs
+
+_Feature rich tab control by Jean-Marie Alfonsi_
+
+* [GitHub](https://github.com/roubachof/Sharpnado.Tabs)
+
+<!--#endif-->
 <!--#if (mediaelement)-->
 ## MAUI Community Toolkit - Media Element
 

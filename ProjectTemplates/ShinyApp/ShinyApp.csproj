@@ -156,6 +156,12 @@
 		<!--#endif-->
 		<!--#if (sqlite)-->
 		<PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta" />
-		<!--#endif-->		
+		<!--#endif-->
+		<!--#if (sharpnadotabs)-->
+		<PackageReference Include="Sharpnado.Tabs.Maui" Version="3.0.1" />
+		<!--#endif-->
+		<!--#if (sharpnadocv)-->
+		<PackageReference Include="Sharpnado.CollectionView.Maui" Version="3.0.0" />
+		<!--#endif-->
 	</ItemGroup>
 </Project>

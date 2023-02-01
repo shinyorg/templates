@@ -19,6 +19,12 @@ using Plugin.Fingerprint;
 #if usehttp
 using Refit;
 #endif
+#if sharpnadocv
+using Sharpnado.CollectionView;
+#endif
+#if sharpnadotabs
+using Sharpnado.Tabs;
+#endif
 
 namespace ShinyApp;
 
@@ -39,6 +45,12 @@ public static class MauiProgram
 #endif
 #if usecsharpmarkup
         .UseMauiCommunityToolkitMarkup()
+#endif
+#if sharpnadotabs
+        .UseSharpnadoTabs(false)
+#endif
+#if sharpnadocv
+        .UseSharpnadoCollectionView(false)
 #endif
 #if shinyframework            
         .UseShinyFramework(

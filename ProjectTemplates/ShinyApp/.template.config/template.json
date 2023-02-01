@@ -71,7 +71,7 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "true",
-            "description": "Add Shiny Framework by Allan Ritchie - Documentation: https://github.com/shinyorg/framework - Lots of helpful services like navigation, zero boilerplate MVVM properties, viewmodel validation, localization, viewmodel lifecycles, dialog services, and more",
+            "description": "Add Shiny Framework by Allan Ritchie - Documentation https://github.com/shinyorg/framework - Lots of helpful services like navigation, zero boilerplate MVVM properties, viewmodel validation, localization, viewmodel lifecycles, dialog services, and more",
             "displayName": "Add Shiny Framework (Shiny + ReactiveUI + Prism)"
         },
         "configuration": {
@@ -128,14 +128,14 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Add Geofencing (Shiny.Locations)",
-            "displayName": "Add Geofencing (Shiny.Locations)"            
+            "displayName": "Add Geofencing (Shiny.Locations)"
         },
         "motionactivity":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Add Motion Activity (Shiny.Locations)",
-            "displayName": "Add Motion Activity (Shiny.Locations)"            
+            "displayName": "Add Motion Activity (Shiny.Locations)"
         },
         "httptransfers": {
             "type": "parameter",
@@ -199,7 +199,7 @@
         },
         "authtype": {
             "type": "parameter",
-            "description": "Authentication Setup - Microsoft Authentication Library (MSAL) - Documentation: https://devblogs.microsoft.com/dotnet/authentication-in-dotnet-maui-apps-msal/  - MAUI WebAuthenticator: https://learn.microsoft.com/en-us/dotnet/maui/platform-integration/communication/authentication",
+            "description": "Authentication Setup - Microsoft Authentication Library (MSAL) - Documentation https://devblogs.microsoft.com/dotnet/authentication-in-dotnet-maui-apps-msal/  - MAUI WebAuthenticator: https://learn.microsoft.com/en-us/dotnet/maui/platform-integration/communication/authentication",
             "displayName": "Authentication Setup",
             "datatype": "choice",
             "choices": [{
@@ -251,7 +251,7 @@
         "mapsandroidkey":{
             "type": "parameter",
             "dataType": "string",
-            "description": "This is your Google Maps API Key setup within the Google Cloud Platform. Documentation: https://learn.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/map/setup",
+            "description": "This is your Google Maps API Key setup within the Google Cloud Platform. Documentation https://learn.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/map/setup",
             "displayName": "Sets your Android Maps API Key (used if MAUI Maps is selected)",
             "defaultValue": "",
             "replaces":"{MAUI_MAPS_ANDROID_KEY}"
@@ -267,23 +267,37 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "true",
-            "description": "MAUI Community Toolkit - Documentation: https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
+            "description": "MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
             "displayName": "Add MAUI Community Toolkit"
         },
         "mediaelement":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "MAUI Community Toolkit - Documentation: https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
+            "description": "MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
             "displayName": "Add MAUI Community Toolkit Media Element"            
+        },
+        "sharpnadocv":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Sharpnado CollectionView by Jean-Marie Alfonsi - Documentation https://github.com/roubachof/Sharpnado.CollectionView",
+            "displayName": "Add Sharpnado CollectionView"
+        },
+        "sharpnadotabs":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Sharpnado Tabs by Jean-Marie Alfonsi - Documentation https://github.com/roubachof/Sharpnado.Tabs",
+            "displayName": "Add Sharpnado Tabs"
         },
         "sqlite": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "SQLite.NET-PCL by Frank Krueger - Documentation: https://github.com/praeclarum/sqlite-net",
+            "description": "SQLite.NET-PCL by Frank Krueger - Documentation https://github.com/praeclarum/sqlite-net",
             "displayName": "Add SQLite (SQLite.NET-PCL)"
-        },        
+        },
         "barcodes":{
             "type": "parameter",
             "datatype": "bool",
@@ -295,28 +309,28 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "In-App Billing by James Montemagno - For documentation, go to https://github.com/jamesmontemagno/InAppBillingPlugin",
+            "description": "In-App Billing by James Montemagno - Documentation https://github.com/jamesmontemagno/InAppBillingPlugin",
             "displayName": "Add In-App Billing (Plugin.InAppBilling)"
         },
         "storereview":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Store Review Plugin by James Montemagno - For documentation, go to https://github.com/jamesmontemagno/StoreReviewPlugin",
+            "description": "Store Review Plugin by James Montemagno - Documentation https://github.com/jamesmontemagno/StoreReviewPlugin",
             "displayName": "Add Store Review (Plugin.StoreReview)"
         },
         "audio":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Audio Plugin by Gerald Versluis - For documentation, go to https://github.com/jfversluis/Plugin.Maui.Audio",
+            "description": "Audio Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.Audio",
             "displayName": "Add Audio (Plugin.Maui.Audio)"
         }, 
         "fingerprint":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Fingerprint Plugin by Sven-Michael Stübe - For documentation, go to https://github.com/smstuebe/xamarin-fingerprint",
+            "description": "Fingerprint Plugin by Sven-Michael Stübe - Documentation https://github.com/smstuebe/xamarin-fingerprint",
             "displayName": "Add Fingerprint/Facial Recognition (Plugin.Fingerprint)"
         },
         "HostIdentifier": {

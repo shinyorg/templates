@@ -202,7 +202,21 @@
             "text": "Add MAUI Community Toolkit Media Element"
         },
         "isVisible": true
-    },    
+    },
+    {
+        "id": "sharpnadocv",
+        "name":{
+            "text": "Add Sharpnado CollectionView"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "sharpnadotabs",
+        "name":{
+            "text": "Add Sharpnado Tabs"
+        },
+        "isVisible": true
+    }, 
     {
         "id": "sqlite",
         "name": {
