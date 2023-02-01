@@ -10,8 +10,8 @@ public class MyJob : IJob
     }
 
 
-    public Task Run(JobInfo jobInfo, CancellationToken cancelToken)
+    public Task Run(JobInfo jobInfo, CancellationToken cancelToken) 
     {
-        throw new NotImplementedException();
+        return Task.CompletedTask;
     }
 }

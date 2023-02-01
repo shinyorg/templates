@@ -12,7 +12,7 @@ public partial class MyBeaconMonitorDelegate : IBeaconMonitorDelegate
 
     public Task OnStatusChanged(BeaconRegionState newStatus, BeaconRegion region) 
     {
-        throw new NotImplementedException();
+        return Task.CompletedTask;
     }
 }
 

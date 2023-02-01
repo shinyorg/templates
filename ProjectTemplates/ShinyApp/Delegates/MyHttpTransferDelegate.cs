@@ -12,13 +12,13 @@ public partial class MyHttpTransferDelegate : IHttpTransferDelegate
 
     public Task OnError(IHttpTransfer transfer, Exception ex)
     {
-        throw new NotImplementedException();
+        return Task.CompletedTask;
     }
 
 
     public Task OnCompleted(IHttpTransfer transfer)
     {
-        throw new NotImplementedException();
+        return Task.CompletedTask;
     }
 }
 
