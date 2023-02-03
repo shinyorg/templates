@@ -78,7 +78,7 @@
 		<PackageReference Include="CommunityToolkit.Maui" Version="4.0.0" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
-		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.1.0" />
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.0.0" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="1.0.1" />
