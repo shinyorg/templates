@@ -140,6 +140,13 @@
         "defaultValue": "None"
     },
     {
+        "id": "samples",
+        "name":{
+            "text": "Add Samples for Selected Shiny Libraries"
+        },
+        "isVisible": "true"
+    },   
+    {
         "id": "authtype",
         "name": {
             "text": "Authentication Setup"

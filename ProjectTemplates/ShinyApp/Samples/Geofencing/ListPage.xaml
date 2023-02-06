@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sample="clr-namespace:Sample.Geofencing"
+             x:Class="Sample.Geofencing.ListPage"
+             x:DataType="sample:ListViewModel"
+             Title="Geofences">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Create"
+                     Command="{Binding Create}" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="*, Auto">
+            <CollectionView ItemsSource="{Binding Geofences}"
+                            Grid.Row="0">
+
+                <CollectionView.EmptyView>
+                    <Label Text="No Geofences"
+                           Style="{StaticResource NoDataLabel}" />
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="sample:GeofenceRegionViewModel">
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItem Text="Current State"
+                                               Command="{Binding RequestCurrentState}" />
+
+                                    <SwipeItem Text="Remove"
+                                               BackgroundColor="Red"
+                                               Command="{Binding Remove}" />
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Text}"
+                                       FontSize="Medium"
+                                       FontAttributes="Bold" />
+
+                                <Label Text="{Binding Detail}"
+                                       FontSize="Small"
+                                       FontAttributes="Italic" />
+
+                                <BoxView Style="{StaticResource HR}" />
+                            </VerticalStackLayout>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Clear"
+                    Command="{Binding DropAllFences}"
+                    Grid.Row="1" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

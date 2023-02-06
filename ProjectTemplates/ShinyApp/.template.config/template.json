@@ -157,7 +157,7 @@
             "defaultValue": "false",
             "description": "Add Speech Recognition (Shiny.SpeechRecognition)",
             "displayName": "Add Speech Recognition (Shiny.SpeechRecognition)"       
-        },        
+        },
         "startup":{
             "type": "parameter",
             "datatype": "bool",
@@ -171,6 +171,13 @@
             "defaultValue": "false",
             "description": "This creates a special reactive object that binds to the platform preferences or secure storage",
             "displayName": "Add Bound Settings Class (Shiny.Core)"
+        },
+        "samples":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Samples for any Shiny library installed above (They will compile, but will not be linked in any navigation)",
+            "displayName": "Add Samples for Selected Shiny Libraries"
         },
         "push": {
             "type": "parameter",
@@ -225,7 +232,10 @@
             "dataType": "string",
             "description": "This is your Microsoft Authentication Library (MSAL) Application/Client ID setup within the Azure Portal",
             "defaultValue": "",
-            "replaces":"{MSAL_CLIENT_ID}"
+            "replaces":"{MSAL_CLIENT_ID}",
+            "onlyIf": {
+                "authType": "MSAL Basic"
+            }
         },
         "authservice":{
             "type": "parameter",
@@ -254,7 +264,10 @@
             "description": "This is your Google Maps API Key setup within the Google Cloud Platform. Documentation https://learn.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/map/setup",
             "displayName": "Sets your Android Maps API Key (used if MAUI Maps is selected)",
             "defaultValue": "",
-            "replaces":"{MAUI_MAPS_ANDROID_KEY}"
+            "replaces":"{MAUI_MAPS_ANDROID_KEY}",
+            "onlyIf": {
+                "maps": "true"
+            }
         },
         "essentialsmedia":{
             "type": "parameter",
@@ -567,6 +580,9 @@
         {
             "condition": "(useblazor == false)",
             "exclude":[ "Pages/**" ]
+        },{
+            "condition": "(!samples || !notifications)",
+            "exclude": "Samples/Notifications/*.*"
         }]
     }]
 }
