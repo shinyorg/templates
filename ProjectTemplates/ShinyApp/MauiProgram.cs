@@ -87,7 +87,11 @@ public static class MauiProgram
         builder.Configuration.AddJsonPlatformBundle();
 #endif
 #if useappcenter
+//-:cnd:noEmit
+#if !MACCATALYST
         builder.Logging.AddAppCenter(builder.Configuration["AppCenterKey"]);
+#endif
+//+:cnd:noEmit
 #endif
 
         var s = builder.Services;
