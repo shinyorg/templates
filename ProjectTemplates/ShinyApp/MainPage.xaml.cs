@@ -3,7 +3,7 @@
 
 public partial class MainPage : ContentPage
 {
-#if framework
+#if shinyframework
 	public MainPage()
 	{
 		this.InitializeComponent();
