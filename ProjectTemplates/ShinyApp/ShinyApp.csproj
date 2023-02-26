@@ -26,7 +26,7 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<ShinyVersion>3.0.0-alpha-0498</ShinyVersion>
+		<ShinyVersion>3.0.0-alpha-0513</ShinyVersion>
 		<UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
 	</PropertyGroup>
 
@@ -88,8 +88,8 @@
 		<!--#endif-->
 		<!--#if (shinyframework)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
-		<PackageReference Include="ReactiveUI.Fody" Version="18.4.20" />
-		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0057" />
+		<PackageReference Include="ReactiveUI.Fody" Version="18.4.22" />
+		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0058" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
