@@ -175,9 +175,9 @@
         "isVisible": true
     },   
     {
-        "id": "maps",
+        "id": "maptype",
         "name":{
-            "text": "Setup MAUI Maps (.NET 7 Required)"
+            "text": "Maps (.NET 7 Required)"
         },
         "isVisible": true
     },

@@ -25,6 +25,9 @@ using Sharpnado.CollectionView;
 #if sharpnadotabs
 using Sharpnado.Tabs;
 #endif
+#if usegooglemaps
+using Maui.GoogleMaps.Hosting;
+#endif
 
 namespace ShinyApp;
 
@@ -60,8 +63,17 @@ public static class MauiProgram
 #else
         .UseShiny()
 #endif
-#if usemaps
+#if usemauimaps
         .UseMauiMaps()
+#endif
+#if usegooglemaps
+//-:cnd:noEmit
+#if ANDROID
+        .UseGoogleMaps()
+#elif IOS
+        .UseGoogleMaps("YOUR_IOS_GOOGLE_MAPS_KEY")
+#endif
+//+:cnd:noEmit
 #endif
         .ConfigureFonts(fonts =>
         {

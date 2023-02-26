@@ -42,6 +42,18 @@ _A performant and feature rich collection view by Jean-Marie Alfonsi_
 * [GitHub](https://github.com/roubachof/Sharpnado.CollectionView)
 
 <!--#endif-->
+<!--#if (usemauimaps)-->
+## .NET MAUI Maps
+
+* [Documentation](https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/map?view=net-maui-7.0)
+<!--#endif-->
+<!--#if (usegooglemaps)-->
+## Maui.GoogleMaps
+
+_A port of the wonderful Xamarin.Forms.GoogleMaps to .NET MAUI by Pavlo Lukianets_
+
+* [GitHub](https://github.com/themronion/Maui.GoogleMaps/tree/maui)
+<!--#endif-->
 <!--#if (sharpnadotabs)-->
 ## Sharpnado Tabs
 

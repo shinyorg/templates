@@ -26,15 +26,12 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
+		<ShinyVersion>3.0.0-alpha-0498</ShinyVersion>
 		<UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
 	</PropertyGroup>
 
-	<PropertyGroup>
-		<ShinyVersion>3.0.0-alpha-0496</ShinyVersion>
-	</PropertyGroup>
-
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
-	<DefineConstants>$(DefineConstants);PLATFORM</DefineConstants>
+		<DefineConstants>$(DefineConstants);PLATFORM</DefineConstants>
 		<SupportedOSPlatformVersion>26.0</SupportedOSPlatformVersion>
     </PropertyGroup>
 	
@@ -83,8 +80,11 @@
 		<!--#if (mediaelement)-->
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="1.0.1" />
 		<!--#endif-->
-		<!--#if (maps)-->
+		<!--#if (usemauimaps)-->
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.59" />
+		<!--#endif-->
+		<!--#if (usegooglemaps)-->
+		<PackageReference Include="Maui.GoogleMaps" Version="5.0.0" />
 		<!--#endif-->
 		<!--#if (shinyframework)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />

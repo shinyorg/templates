@@ -251,23 +251,29 @@
             "description": "Add Refit API Client used with sample Authentication service",
             "displayName": "Add Refit HTTP Client with Authenication Service"
         },
-        "maps":{
+        "maptype": {
             "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Setup MAUI Maps (.NET 7 Required)",
-            "displayName": "Setup MAUI Maps (.NET 7 Required)"
+            "description": "Maps",
+            "displayName": "Maps",
+            "datatype": "choice",
+            "choices": [{
+                "choice": "None",
+                "description": "None"
+            },{
+                "choice": "MAUI",
+                "description": "MAUI"                
+            },{
+                "choice": "Google Maps",
+                "description": "For use on Android & iOS"
+            }]
         },
         "mapsandroidkey":{
             "type": "parameter",
             "dataType": "string",
             "description": "This is your Google Maps API Key setup within the Google Cloud Platform. Documentation https://learn.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/map/setup",
-            "displayName": "Sets your Android Maps API Key (used if MAUI Maps is selected)",
+            "displayName": "Sets your Android Maps API Key (used 'Mapping Choice' is selected)",
             "defaultValue": "",
-            "replaces":"{MAUI_MAPS_ANDROID_KEY}",
-            "onlyIf": {
-                "maps": "true"
-            }
+            "replaces":"{MAUI_MAPS_ANDROID_KEY}"
         },
         "essentialsmedia":{
             "type": "parameter",
@@ -363,7 +369,17 @@
         "usemaps":{
             "type": "computed",
             "datatype": "bool",
-            "value": "(maps == true && Framework == \"net7.0\")"
+            "value": "(maptype != \"None\")"
+        },
+        "usemauimaps":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(maptype == \"MAUI\")"
+        },        
+        "usegooglemaps":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(maptype == \"Google Maps\")"
         },
         "usemsalbasic":{
             "type": "computed",
@@ -468,6 +484,10 @@
         {
             "condition": "(settings == false)",
             "exclude": "AppSettings.cs"
+        },
+        {
+            "condition": "(useentitlements == false)",
+            "exclude": "Platforms/iOS/Entitlements.plist"
         },        
         {
             "condition": "(useentitlements == false)",
@@ -496,11 +516,7 @@
         {
             "condition": "(gps == false)",
             "exclude": "Delegates/MyGpsDelegate.cs"
-        },
-        {
-            "condition": "(useentitlements == false)",
-            "exclude": "Platforms/iOS/Entitlements.plist"
-        },           
+        },        
         {
             "condition": "(geofencing == false)",
             "exclude": "Delegates/MyGeofenceDelegate.cs"
