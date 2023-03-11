@@ -7,7 +7,7 @@
     "description": "A project for creating a .NET MAUI /w Shiny.NET, Prism, & ReactiveUI",
     "identity": "Shiny.Templates.App",
     "sourceName": "ShinyApp",
-    "preferNameDirectory": true,    
+    "preferNameDirectory": true,
     "tags": {
         "language": "C#",
         "type": "project"
@@ -56,7 +56,7 @@
                 "choice": "CSharp",
                 "description": "CSharp"
             }],
-            "defaultValue": "XAML",            
+            "defaultValue": "XAML",
             "replaces": "{MARKUP_TYPE}"
         },
         "applicationId": {
@@ -156,7 +156,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Add Speech Recognition (Shiny.SpeechRecognition)",
-            "displayName": "Add Speech Recognition (Shiny.SpeechRecognition)"       
+            "displayName": "Add Speech Recognition (Shiny.SpeechRecognition)"
         },
         "startup":{
             "type": "parameter",
@@ -261,7 +261,7 @@
                 "description": "None"
             },{
                 "choice": "MAUI",
-                "description": "MAUI"                
+                "description": "MAUI"
             },{
                 "choice": "Google Maps",
                 "description": "For use on Android & iOS"
@@ -294,7 +294,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
-            "displayName": "Add MAUI Community Toolkit Media Element"            
+            "displayName": "Add MAUI Community Toolkit Media Element"
         },
         "sharpnadocv":{
             "type": "parameter",
