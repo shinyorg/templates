@@ -62,7 +62,7 @@
             "defaultValue": "false",
             "description": "",
             "displayName": "Google Authentication"
-        },        
+        },
         "facebook":{
             "type": "parameter",
             "datatype": "bool",
@@ -70,14 +70,28 @@
             "description": "",
             "displayName": "Facebook Authentication"
         },
-        "msal":{
+        "apple":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "",
-            "displayName": "Microsoft Authentication (MSAL)"
+            "displayName": "Apple Authentication"
         },
-        "entityframework": {
+        "mobileauth": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "",
+            "displayName": "Mobile Sign-In"
+        },
+        "signalr":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add SignalR",
+            "displayName": "Add SignalR"
+        },
+        "ef": {
             "type": "parameter",
             "datatype": "choice",
             "defaultValue": "None",
@@ -85,19 +99,23 @@
             "displayName": "Add Entity Framework",
             "choices": [
                 {
-                    "choice": "None",
-                    "description": "Don't use Entity Framework"
-                },
-                {
                     "choice": "SQL Server",
                     "description": "SQL Server"
-                },
-                {
-                    "choice": "Cosmos DB",
-                    "description": "Cosmos DB"
-                }                
+                }
             ]
-        }            
+        },
+        "connectionstring": {
+            "type": "parameter",
+            "dataType": "string",
+            "description": "Your Database Connection String",
+            "defaultValue": "",
+            "replaces":"{CONNECTION_STRING}"
+        },        
+        "efsql":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(ef != \"SQL Server\")"
+        }
     },
     "sources": [{
         "source": "./",
@@ -109,8 +127,19 @@
         ],
         "modifiers": [
         {
-            "condition": "(notifications == false)",
-            "exclude": "Resources/Images/notification.svg"
+            "condition": "(mobileauth == false)",
+            "exclude": "Endpoints/Auth"
+        },
+        {
+            "condition": "(mobileauth == false)",
+            "exclude": "Endpoints/Profile"
+        },
+        {
+            "condition": "(signalr == false)",
+            "exclude": "Hubs"
+        },{
+            "condition": "(push == false)",
+            "exclude": "Endpoints/Profile/RegisterPushEndpoint.cs"            
         }]
     }]    
 }

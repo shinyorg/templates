@@ -4,19 +4,35 @@
         <TargetFramework>{DOTNET_TFM}</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <ShinyExtensionsVersion>1.3.0-preview-0027</ShinyExtensionsVersion>
         <MicrosoftVersion>7.0.0</MicrosoftVersion>
+        <FastEndpointsVersion>5.8.0</FastEndpointsVersion>
+        <!--#if (email || push)-->
+        <ShinyExtensionsVersion>1.3.0-preview-0027</ShinyExtensionsVersion>
+        <!--#endif-->
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-        <PackageReference Include="Microsoft.Identity.Web" Version="1.25.3" />
-        <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.25.3" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MicrosoftVersion)" /> 
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(MicrosoftVersion)" />
+        <!--#if (efsql)-->
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MicrosoftVersion)" /> 
+        <!--#endif-->
+        <!--#if (facebook)-->
         <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="$(MicrosoftVersion)" />
+        <!--#endif-->
+        <!--#if (facebook)-->
         <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="$(MicrosoftVersion)" />
+        <!--#endif-->
+        <!--#if (apple)-->
+        <PackageReference Include="AspNet.Security.OAuth.Apple" Version="7.0.0" />
+        <!--#endif-->
+        <!--#if (push)-->
         <PackageReference Include="Shiny.Extensions.Push.Ef" Version="$(ShinyExtensionsVersion)" />
+        <!--#endif-->
+        <!--#if (email)-->
         <PackageReference Include="Shiny.Extensions.Mail" Version="$(ShinyExtensionsVersion)" />
+        <!--#endif-->
+        <PackageReference Include="FastEndpoints" Version="$(FastEndpointsVersion)" />
+        <PackageReference Include="FastEndpoints.Swagger" Version="$(FastEndpointsVersion)" />
+        <PackageReference Include="FastEndpoints.ClientGen" Version="$(FastEndpointsVersion)" />
     </ItemGroup>
 </Project>
