@@ -144,33 +144,3 @@ _SQLite-net is an open source, minimal library to allow .NET, .NET Core, and Mon
 [GitHub](https://github.com/praeclarum/sqlite-net)
 
 <!--#endif-->
-
-SELECTED UI TYPE: {MARKUP_TYPE}
-
-<!--#if (markuptype == \"XAML\")-->
-UI Type: XAML
-<!--#endif-->
-<!--#if (markuptype == \"CSharp\")-->
-UI Type: C# Markup
-<!--#endif-->
-<!--#if (markuptype == \"Blazor\")-->
-UI Type: Blazor
-<!--#endif-->
-
-<!--#if (usexaml)-->
-USE XAML: TRUE
-<!--#else-->
-USE XAML: FALSE
-<!--#endif-->
-
-<!--#if (useblazor)-->
-USE BLAZOR: TRUE
-<!--#else-->
-USE BLAZOR: FALSE
-<!--#endif-->
-
-<!--#if (usecsharpmarkup)-->
-USE CSHARP MARKUP: TRUE
-<!--#else-->
-USE CSHARP MARKUP: FALSE
-<!--#endif-->
