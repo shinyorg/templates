@@ -68,6 +68,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" Condition="'$(Configuration)' == 'Debug'" />
+
 		<!--#if (shinyframework || communitytoolkit)-->
 		<PackageReference Include="CommunityToolkit.Maui" Version="5.0.0" />
 		<!--#endif-->
@@ -85,7 +87,7 @@
 		<!--#endif-->
 		<!--#if (shinyframework)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
-		<PackageReference Include="ReactiveUI.Fody" Version="18.4.22" />
+		<PackageReference Include="ReactiveUI.Fody" Version="18.4.26" />
 		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0058" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />

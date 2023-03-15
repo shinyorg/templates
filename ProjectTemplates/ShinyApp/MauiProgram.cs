@@ -105,7 +105,11 @@ public static class MauiProgram
 #endif
 //+:cnd:noEmit
 #endif
-
+//-:cnd:noEmit
+#if DEBUG
+        builder.Logging.AddConsole();
+#endif
+//+:cnd:noEmit
         var s = builder.Services;
 #if (audio)
         s.AddSingleton(AudioManager.Current);
