@@ -1,4 +1,7 @@
-﻿namespace ShinyAspNet.Endpoints.Profile;
+﻿using Shiny.Extensions.Push;
+
+namespace ShinyAspNet.Endpoints.Profile;
+
 
 public class RegisterPushRequest
 {

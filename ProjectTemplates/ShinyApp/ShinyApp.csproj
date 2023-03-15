@@ -26,7 +26,7 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<ShinyVersion>3.0.0-alpha-0513</ShinyVersion>
+		<ShinyVersion>3.0.0-alpha-0533</ShinyVersion>
 		<UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
 	</PropertyGroup>
 
@@ -38,8 +38,6 @@
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
 		<SupportedOSPlatformVersion>14.2</SupportedOSPlatformVersion>
 		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>
-		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
-		<RuntimeIdentifier Condition= "'$(Configuration)' == 'Debug'">iossimulator-x64</RuntimeIdentifier>		
 		<!--#if (useentitlements)-->
 		<CodesignEntitlements>Platforms\iOS\Entitlements.plist</CodesignEntitlements>
 		<!--#endif-->
@@ -53,9 +51,8 @@
 		<CodesignEntitlements>Platforms\MacCatalyst\Entitlements.plist</CodesignEntitlements>
 		<!--#endif-->
 	</PropertyGroup>
-	<!--#endif-->
 	
-
+	<!--#endif-->
 	<ItemGroup>
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
@@ -72,7 +69,7 @@
 
 	<ItemGroup>
 		<!--#if (shinyframework || communitytoolkit)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="4.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="5.0.0" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
 		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.0.0" />
@@ -164,4 +161,13 @@
 		<PackageReference Include="Sharpnado.CollectionView.Maui" Version="3.0.0" />
 		<!--#endif-->
 	</ItemGroup>
+
+	<!--#if (samples)-->
+	<ItemGroup>
+		<None Remove="Samples/**" />
+		<Compile Remove="Samples/**" />
+		<MauiXaml Remove="Samples/**" />
+		<Content Include="Samples/**" />
+    </ItemGroup>
+	<!--#endif-->
 </Project>

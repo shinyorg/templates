@@ -14,7 +14,7 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(MicrosoftVersion)" />
         <!--#if (efsql)-->
-        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MicrosoftVersion)" /> 
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MicrosoftVersion)" />        
         <!--#endif-->
         <!--#if (facebook)-->
         <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="$(MicrosoftVersion)" />
@@ -26,13 +26,16 @@
         <PackageReference Include="AspNet.Security.OAuth.Apple" Version="7.0.0" />
         <!--#endif-->
         <!--#if (push)-->
+        <PackageReference Include="Shiny.Extensions.Push" Version="$(ShinyExtensionsVersion)" />
         <PackageReference Include="Shiny.Extensions.Push.Ef" Version="$(ShinyExtensionsVersion)" />
         <!--#endif-->
         <!--#if (email)-->
         <PackageReference Include="Shiny.Extensions.Mail" Version="$(ShinyExtensionsVersion)" />
         <!--#endif-->
         <PackageReference Include="FastEndpoints" Version="$(FastEndpointsVersion)" />
+        <!--#if (swagger)-->
         <PackageReference Include="FastEndpoints.Swagger" Version="$(FastEndpointsVersion)" />
         <PackageReference Include="FastEndpoints.ClientGen" Version="$(FastEndpointsVersion)" />
+        <!--#endif-->
     </ItemGroup>
 </Project>

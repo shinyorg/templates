@@ -36,8 +36,8 @@ public class SignOutEndpoint : Endpoint<SignOutRequest>
     public override async Task HandleAsync(SignOutRequest req, CancellationToken ct)
     {
         //#if (push)
-        if (!String.IsNullOrWhiteSpace(message.PushToken))
-            await push.UnRegister(PushPlatforms.All, message.PushToken);
+        if (!String.IsNullOrWhiteSpace(req.PushToken))
+            await push.UnRegister(PushPlatforms.All, req.PushToken);
         //#endif
 
         var userId = this.User.UserId();

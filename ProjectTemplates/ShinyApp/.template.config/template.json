@@ -176,7 +176,7 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Samples for any Shiny library installed above (They will compile, but will not be linked in any navigation)",
+            "description": "Add Samples for any Shiny library installed above (They are removed from compiling by default - they are here for example only)",
             "displayName": "Add Samples for Selected Shiny Libraries"
         },
         "push": {
@@ -597,8 +597,41 @@
             "condition": "(useblazor == false)",
             "exclude":[ "Pages/**" ]
         },{
-            "condition": "(!samples || !notifications)",
-            "exclude": "Samples/Notifications/*.*"
+            "condition": "(beacons == false)",
+            "exclude": "Samples/Beacons/**"
+        },{
+            "condition": "(bluetoothle == false)",
+            "exclude": "Samples/BleClient/**"
+        },{
+            "condition": "(bluetoothle == false)",
+            "exclude": "Samples/BleManaged/**"
+        },{
+            "condition": "(blehosting == false)",
+            "exclude": "Samples/BleHosting/**"
+        },{
+            "condition": "(jobs == false)",
+            "exclude": "Samples/Jobs/**"
+        },{
+            "condition": "(geofencing == false)",
+            "exclude": "Samples/Geofencing/**"
+        },{
+            "condition": "(gps == false)",
+            "exclude": "Samples/Gps/**"
+        },{
+            "condition": "(httptransfers == false)",
+            "exclude": "Samples/HttpTransfers/**"
+        },{
+            "condition": "(motionactivity == false)",
+            "exclude": "Samples/MotionActivity/**"
+        },{
+            "condition": "(notifications == false)",
+            "exclude": "Samples/Notifications/**"
+        },{
+            "condition": "(speechrecognition == false)",
+            "exclude": "Samples/SpeechRecognition/**"
+        },{
+            "condition": "(usepush == false)",
+            "exclude": "Samples/Push/**"
         },{
             "condition": "(samples == false)",
             "exclude": "Samples/**"

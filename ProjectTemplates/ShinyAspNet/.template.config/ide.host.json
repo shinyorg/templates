@@ -12,11 +12,74 @@
     }],
     "symbolInfo": [
         {
-            "id": "applicationId",
+            "id": "ef",
             "name": {
-                "text": "Set the ApplicationId"
+                "text": "Add Entity Framework"
             },
             "isVisible": true
-        }    
+        },
+        {
+            "id": "connectionstring",
+            "name": {
+                "text": "Your database connection string"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "push",
+            "name": {
+                "text": "Push Notification Management (Shiny.Extensions.Push)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "email",
+            "name": {
+                "text": "Email Templating (Shiny.Extensions.Email)"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "signalr",
+            "name": {
+                "text": "SignalR"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "google",
+            "name": {
+                "text": "Google Authentication"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "facebook",
+            "name": {
+                "text": "Facebook Authentication"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "apple",
+            "name": {
+                "text": "Apple Authentication"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "mobileauth",
+            "name": {
+                "text": "Mobile Authentication Endpoints"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "swagger",
+            "name": {
+                "text": "Swagger"
+            },
+            "isVisible": true
+        }
     ]
 }

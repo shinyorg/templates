@@ -1,5 +1,4 @@
 
-using System.Security.Claims;
 using Microsoft.AspNetCore.SignalR;
 
 namespace ShinyAspNet.Hubs;
@@ -8,5 +7,5 @@ namespace ShinyAspNet.Hubs;
 public class UserIdProvider : IUserIdProvider
 {
     public string? GetUserId(HubConnectionContext connection)
-        => connection.User?.UserId();
+        => connection.User?.UserId().ToString();
 }

@@ -40,9 +40,7 @@ public class AppDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        Map(modelBuilder.Entity<CodeVerification>());
         Map(modelBuilder.Entity<User>());
-        Map(modelBuilder.Entity<DispatchRequest>());
         Map(modelBuilder.Entity<RefreshToken>());
     }
 

@@ -4,9 +4,9 @@
     "classifications": [ "Shiny" ],
     "name": "Shiny ASP.NET Application",
     "shortName": "shinyaspnet",
-    "description": "A project for creating a .NET MAUI /w Shiny.NET, Prism, & ReactiveUI",
+    "description": "A project for creating a good starting templates for ASP.NET",
     "identity": "Shiny.Templates.AspNet",
-    "sourceName": "ShinyApp",
+    "sourceName": "ShinyAspNet",
     "preferNameDirectory": true,    
     "tags": {
         "language": "C#",
@@ -42,61 +42,12 @@
             "replaces": "{DOTNET_TFM}",
             "defaultValue": "net7.0"
         },
-        "push":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "",
-            "displayName": "Add Push Notification Management (Shiny.Extensions.Push)"
-        }, 
-        "email":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "",
-            "displayName": "Add Email Templating (Shiny.Extensions.Email)"
-        },
-        "google":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "",
-            "displayName": "Google Authentication"
-        },
-        "facebook":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "",
-            "displayName": "Facebook Authentication"
-        },
-        "apple":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "",
-            "displayName": "Apple Authentication"
-        },
-        "mobileauth": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "",
-            "displayName": "Mobile Sign-In"
-        },
-        "signalr":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add SignalR",
-            "displayName": "Add SignalR"
-        },
         "ef": {
             "type": "parameter",
             "datatype": "choice",
-            "defaultValue": "None",
-            "description": "Add Entity Framework",
-            "displayName": "Add Entity Framework",
+            "defaultValue": "SQL Server",
+            "description": "Entity Framework",
+            "displayName": "Entity Framework",
             "choices": [
                 {
                     "choice": "SQL Server",
@@ -110,11 +61,67 @@
             "description": "Your Database Connection String",
             "defaultValue": "",
             "replaces":"{CONNECTION_STRING}"
-        },        
+        },
+        "signalr":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "SignalR",
+            "displayName": "SignalR"
+        },
+        "push":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "",
+            "displayName": "Push Notification Management (Shiny.Extensions.Push)"
+        }, 
+        "email":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "",
+            "displayName": "Email Templating (Shiny.Extensions.Email)"
+        },
+        "google":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Google Authentication",
+            "displayName": "Google Authentication"
+        },
+        "facebook":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Facebook Authentication",
+            "displayName": "Facebook Authentication"
+        },
+        "apple":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Apple Authentication",
+            "displayName": "Apple Authentication"
+        },
+        "mobileauth": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Mobile Authentication Endpoints",
+            "displayName": "Mobile Authentication Endpoints"
+        },
+        "swagger": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Swagger",
+            "displayName": "Swagger"
+        },
         "efsql":{
             "type": "computed",
             "datatype": "bool",
-            "value": "(ef != \"SQL Server\")"
+            "value": "(ef == \"SQL Server\")"
         }
     },
     "sources": [{
@@ -136,7 +143,7 @@
         },
         {
             "condition": "(signalr == false)",
-            "exclude": "Hubs"
+            "exclude": "Hubs/**"
         },{
             "condition": "(push == false)",
             "exclude": "Endpoints/Profile/RegisterPushEndpoint.cs"            
