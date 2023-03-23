@@ -28,6 +28,9 @@ using Sharpnado.Tabs;
 #if usegooglemaps
 using Maui.GoogleMaps.Hosting;
 #endif
+#if uraniumui
+using UraniumUI;
+#endif
 
 namespace ShinyApp;
 
@@ -40,6 +43,8 @@ public static class MauiProgram
 #if barcodes
         .UseBarcodeReader()
 #endif
+#if uraniumui
+#endif
 #if shinyframework || communitytoolkit
         .UseMauiCommunityToolkit()
 #endif
@@ -48,6 +53,10 @@ public static class MauiProgram
 #endif
 #if usecsharpmarkup
         .UseMauiCommunityToolkitMarkup()
+#endif
+#if uraniumui
+        .UseUraniumUI()
+        .UseUraniumUIMaterial()
 #endif
 #if sharpnadotabs
         .UseSharpnadoTabs(false)
@@ -75,10 +84,13 @@ public static class MauiProgram
 #endif
 //+:cnd:noEmit
 #endif
-        .ConfigureFonts(fonts =>
+.ConfigureFonts(fonts =>
         {
             fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-            fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold"); 
+            fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+#if uraniumui
+            fonts.AddMaterialIconFonts();
+#endif
         })
         .RegisterInfrastructure()
         .RegisterAppServices()

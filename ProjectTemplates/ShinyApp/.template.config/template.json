@@ -296,6 +296,13 @@
             "description": "MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
             "displayName": "Add MAUI Community Toolkit Media Element"
         },
+        "uraniumui":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Uranium UI by Enis Necipoglu - Documentation https://enisn-projects.io/docs/en/uranium/latest",
+            "displayName": "Add Uranium UI"
+        },
         "sharpnadocv":{
             "type": "parameter",
             "datatype": "bool",

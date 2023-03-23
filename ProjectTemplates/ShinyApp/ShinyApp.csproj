@@ -162,6 +162,10 @@
 		<!--#if (sharpnadocv)-->
 		<PackageReference Include="Sharpnado.CollectionView.Maui" Version="3.0.0" />
 		<!--#endif-->
+		<!--#if (uraniumui)-->
+		<PackageReference Include="UraniumUI.Material" Version="2.3.1" />
+		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.3.1" />		
+		<!--#endif-->
 	</ItemGroup>
 
 	<!--#if (samples)-->
