@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 //#if (signalr)
@@ -67,34 +68,39 @@ builder.Services.AddAuthentication().AddApple(options =>
 //#endif
 
 #if (push)
-builder.Services.AddPushManagement(push => 
-{
-    var apple = builder.Configuration.GetSection("Push:Apple");
-    push.AddApplePush(new AppleConfiguration
-    {
-        IsProduction = apple.GetValue("Production", true),
-        TeamId = apple["TeamId"],
-        AppBundleIdentifier = apple["AppBundleIdentifier"],
-        Key = apple["Key"],
-        KeyId = apple["KeyId"]
-    });
+var appleCfg = builder.Configuration.GetSection("Push:Apple");
+var googleCfg = builder.Configuration.GetSection("Push:Google");
 
-    var google = builder.Configuration.GetSection("Push:Google");
-    push.AddGooglePush(new GoogleConfiguration
+builder.Services.AddPushManagement(x => x
+    .AddApple(new AppleConfiguration
     {
-        SenderId = cfg["SenderId"],
-        ServerKey = cfg["ServerKey"],
-        DefaultChannelId = cfg["DefaultChannelId"];
-    });
-
-   //push.UseEfRepository<AppDbContext>() // must implement Shiny.Extensions.Push.IPushDbContext
-});
+        AppBundleIdentifier = appleCfg["AppBundleIdentifier"]!,
+        TeamId = appleCfg["TeamId"]!,
+        Key = appleCfg["Key"]!,
+        KeyId = appleCfg["KeyId"]!,
+        IsProduction = false
+        //JwtExpiryMinutes
+    })
+    .AddGoogleFirebase(new GoogleConfiguration
+    {
+        ServerKey = googleCfg["ServerKey"]!,
+        SenderId = googleCfg["SenderId"]!,
+        DefaultChannelId = googleCfg["DefaultChannelId"]!
+    })
+    .UseAdoNetRepository<Microsoft.Data.SqlClient.SqlConnection>(new DbRepositoryConfig(
+        builder.Configuration.GetConnectionString("Main"),
+        "@",
+        "PushRegistrations",
+        true
+    ))
+    .AddShinyAndroidClickAction()
+);
 
 #endif
 #if (email)
 builder.Services.AddMail(mail =>
 {
-    var cfg = builder.Configuration.GetSection("Mail");    
+    var cfg = builder.Configuration.GetSection("Mail");
     mail
         .UseSmtpSender(new SmtpConfig
         {
@@ -104,8 +110,12 @@ builder.Services.AddMail(mail =>
         })
         //.UseSendGridSender("SendGridApiKey")
         //.UseFileTemplateLoader("File Path to templates")
-        //.UseAdoNetTemplateLoader<AdoConnectionType>(builder.Configuration.GetConnectionString("ConnectionString"))
-        .UseSqlServerTemplateLoader(builder.Configuration.GetConnectionString("ConnectionString"));
+        .UseAdoNetTemplateLoader<Microsoft.Data.SqlClient.SqlConnection>(
+            builder.Configuration.GetConnectionString("Main")!,
+            "@",
+            "MailTemplates",
+            true
+        );
 });
 #endif
 
@@ -129,6 +139,9 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+//#if (push)
+app.MapPushEndpoints("push", true, x => x.User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+//#endif
 app.UseFastEndpoints();
 //#if (signalr)
 app.MapHub<BizHub>("/biz");
