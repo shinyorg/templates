@@ -4,13 +4,15 @@ using Shiny.Extensions.Push;
 namespace ShinyAspNet.Endpoints.Profile;
 
 
-public class SignOutRequest
-{
-    public string RefreshToken { get; set; } = null!;
+public record SignOutRequest(
     //#if (push)
-    public string? PushToken { get; set; }
+    string RefreshToken,
+    string? Platform,
+    string? PushToken
+    //#else
+    string RefreshToken
     //#endif
-}
+);
 
 public class SignOutEndpoint : Endpoint<SignOutRequest>
 {
@@ -37,7 +39,7 @@ public class SignOutEndpoint : Endpoint<SignOutRequest>
     {
         //#if (push)
         if (!String.IsNullOrWhiteSpace(req.PushToken))
-            await push.UnRegister(PushPlatforms.All, req.PushToken);
+            await push.UnRegister(req.Platform, req.PushToken);
         //#endif
 
         var userId = this.User.UserId();

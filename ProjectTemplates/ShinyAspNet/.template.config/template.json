@@ -144,9 +144,6 @@
         {
             "condition": "(signalr == false)",
             "exclude": "Hubs/**"
-        },{
-            "condition": "(push == false)",
-            "exclude": "Endpoints/Profile/RegisterPushEndpoint.cs"            
         }]
     }]    
 }

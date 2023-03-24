@@ -26,7 +26,7 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<ShinyVersion>3.0.0-alpha-0533</ShinyVersion>
+		<ShinyVersion>3.0.0-alpha-0543</ShinyVersion>
 		<UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
 	</PropertyGroup>
 
@@ -88,7 +88,7 @@
 		<!--#if (shinyframework)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
 		<PackageReference Include="ReactiveUI.Fody" Version="18.4.26" />
-		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0058" />
+		<PackageReference Include="Shiny.Framework" Version="3.0.0-alpha-0065" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
@@ -163,8 +163,8 @@
 		<PackageReference Include="Sharpnado.CollectionView.Maui" Version="3.0.0" />
 		<!--#endif-->
 		<!--#if (uraniumui)-->
-		<PackageReference Include="UraniumUI.Material" Version="2.3.1" />
-		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.3.1" />		
+		<PackageReference Include="UraniumUI.Material" Version="2.3.2" />
+		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.3.2" />		
 		<!--#endif-->
 	</ItemGroup>
 

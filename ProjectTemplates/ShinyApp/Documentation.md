@@ -34,6 +34,15 @@ _A collection of reusable elements for application development with .NET MAUI, i
 * [GitHub](https://github.com/CommunityToolkit/Maui)
 
 <!--#endif-->
+<!--#if (uraniumui)-->
+## Uranium UI
+
+_Uranium is a Free & Open-Source UI Kit for .NET MAUI. It provides a set of controls and utilities to build modern applications. It is built on top of the .NET MAUI infrastructure and provides a set of controls and layouts to build modern UIs. It also provides infrastructure for building custom controls and themes on it._
+
+* [Documentation](https://enisn-projects.io/docs/en/uranium/latest)
+* [GitHub](https://github.com/enisn/UraniumUI)
+
+<!--#endif>
 <!--#if (sharpnadovc)-->
 ## Sharpnado CollectionView
 

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 //#if (signalr)
 using ShinyAspNet.Hubs;
+using Microsoft.AspNetCore.SignalR;
 //#endif
 #if (swagger)
 using FastEndpoints.Swagger;
