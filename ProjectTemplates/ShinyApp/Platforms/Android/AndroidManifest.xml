@@ -59,7 +59,7 @@
 	<!--#if (speechrecognition)-->
 	<uses-permission android:name="android.permission.RECORD_AUDIO" />
 	<!--#endif-->
-	<!--#if (notifications || usepush)-->
+	<!--#if (notifications || usepush || gps || bluetooth || beacons || httptransfers)-->
 	<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 	<!--#endif-->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
