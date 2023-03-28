@@ -130,13 +130,6 @@
             "description": "Add Geofencing (Shiny.Locations)",
             "displayName": "Add Geofencing (Shiny.Locations)"
         },
-        "motionactivity":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add Motion Activity (Shiny.Locations)",
-            "displayName": "Add Motion Activity (Shiny.Locations)"
-        },
         "httptransfers": {
             "type": "parameter",
             "datatype": "bool",
@@ -627,9 +620,6 @@
         },{
             "condition": "(httptransfers == false)",
             "exclude": "Samples/HttpTransfers/**"
-        },{
-            "condition": "(motionactivity == false)",
-            "exclude": "Samples/MotionActivity/**"
         },{
             "condition": "(notifications == false)",
             "exclude": "Samples/Notifications/**"

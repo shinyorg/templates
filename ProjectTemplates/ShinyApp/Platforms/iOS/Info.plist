@@ -26,10 +26,6 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>	
-	<!--#if (motionactivity)-->
-	<key>NSMotionUsageDescription</key>
-	<string>Say something useful here that your users will understand</string>
-	<!--#endif-->
 	<!--#if (gps || geofencing || beacons || usemaps)-->
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>

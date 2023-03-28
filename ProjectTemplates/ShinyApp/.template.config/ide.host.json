@@ -89,13 +89,6 @@
         "isVisible": true
     },
     {
-        "id": "motionactivity",
-        "name": {
-            "text": "Add Motion Activity (Shiny.Locations)"
-        },
-        "isVisible": true
-    },
-    {
         "id": "httptransfers",
         "name": {
             "text": "Add Background HTTP Uploads & Downloads (Shiny.Net.Http)"
