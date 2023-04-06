@@ -192,9 +192,6 @@ public static class MauiProgram
 #if (httptransfers)
         s.AddHttpTransfers<ShinyApp.Delegates.MyHttpTransferDelegate>();
 #endif
-#if motionactivity
-        s.AddMotionActivity();
-#endif
 #if notifications
         s.AddNotifications();
 #endif
