@@ -12,7 +12,9 @@ public class AppDelegate : MauiUIApplicationDelegate
 {
     protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
 
-#if flipper
+#if (flipper)
+//-:cnd:noEmit
+#if DEBUG
     public override void OnCreate()
     {
         base.OnCreate();
@@ -22,9 +24,10 @@ public class AppDelegate : MauiUIApplicationDelegate
         androidClient.AddPlugin(flipperPlugin);
         androidClient.Start();
     }
-    
+#endif  
+//+:cnd:noEmit 
 #endif
-#if usepush
+#if (usepush)
     [Export("application:didRegisterForRemoteNotificationsWithDeviceToken:")]
     public void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
         => global::Shiny.Hosting.Host.Current.Lifecycle().OnRegisteredForRemoteNotifications(deviceToken);
