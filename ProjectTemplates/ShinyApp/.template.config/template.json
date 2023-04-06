@@ -352,6 +352,12 @@
             "description": "Fingerprint Plugin by Sven-Michael Stübe - Documentation https://github.com/smstuebe/xamarin-fingerprint",
             "displayName": "Add Fingerprint/Facial Recognition (Plugin.Fingerprint)"
         },
+        "androidauto":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Android Auto Support"
+        },
         "HostIdentifier": {
             "type": "bind",
             "binding": "HostIdentifier"
@@ -626,6 +632,12 @@
         },{
             "condition": "(speechrecognition == false)",
             "exclude": "Samples/SpeechRecognition/**"
+        },{
+            "condition": "(androidauto == false)",
+            "exclude": "Platforms/Android/Auto/**"
+            },{
+                "condition": "(androidauto == false)",
+                "exclude": "Platforms/Android/Resources/xml/**"            
         },{
             "condition": "(usepush == false)",
             "exclude": "Samples/Push/**"

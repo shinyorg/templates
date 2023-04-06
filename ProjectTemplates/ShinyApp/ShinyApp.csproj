@@ -168,6 +168,12 @@
 		<!--#endif-->
 	</ItemGroup>
 
+	<!--#if (androidauto)-->
+	<ItemGroup Condition="$(TargetFramework.Contains('android'))">
+		<PackageReference Include="Xamarin.AndroidX.Car.App.App" Version="1.2.0.1" />
+    </ItemGroup>
+	<!--#endif-->
+
 	<!--#if (samples)-->
 	<ItemGroup>
 		<None Remove="Samples/**" />

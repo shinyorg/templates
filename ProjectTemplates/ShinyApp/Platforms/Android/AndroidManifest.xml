@@ -4,6 +4,10 @@
 	<!--#if (usemaps)-->
 		<meta-data android:name="com.google.android.geo.API_KEY" android:value="{MAUI_MAPS_ANDROID_KEY}" />
 	<!--#endif-->
+	<!--#if (androidauto)-->
+		<meta-data android:name="com.google.android.gms.car.application" android:resource="@xml/automotive_app_desc" />
+		<meta-data android:name="androidx.car.app.minCarApiLevel" android:value="1" />
+	<!--#endif-->
 	<!--#if (usemsalbasic || usemsalb2c)-->
 		<activity android:name="microsoft.identity.client.BrowserTabActivity" android:configChanges="orientation|screenSize" android:exported="true">
 			<intent-filter>
