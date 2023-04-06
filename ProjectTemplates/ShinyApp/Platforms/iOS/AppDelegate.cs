@@ -10,8 +10,20 @@ namespace ShinyApp;
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate
 {
-	protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
+    protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
 
+#if flipper
+    public override void OnCreate()
+    {
+        base.OnCreate();
+        Com.Facebook.Soloader.SoLoader.Init(this.ApplicationContext, false);
+        var androidClient = Com.Facebook.Flipper.Android.AndroidFlipperClient.GetInstance(this.ApplicationContext);
+        var flipperPlugin = new Com.Facebook.Flipper.Plugins.Inspector.InspectorFlipperPlugin(this.ApplicationContext, Com.Facebook.Flipper.Plugins.Inspector.DescriptorMapping.WithDefaults());
+        androidClient.AddPlugin(flipperPlugin);
+        androidClient.Start();
+    }
+    
+#endif
 #if usepush
     [Export("application:didRegisterForRemoteNotificationsWithDeviceToken:")]
     public void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)

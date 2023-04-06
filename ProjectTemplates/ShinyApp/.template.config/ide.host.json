@@ -265,5 +265,17 @@
             "text": "Add Fingerprint/Facial Recognition (Plugin.Fingerprint)"
         },
         "isVisible": true
+    },{
+        "id": "androidauto",
+        "name":{
+            "text": "Add Android Auto Support"
+        },
+        "isVisible": true    
+    },{
+        "id": "flipper",
+        "name":{
+            "text": "Add Drastic Flipper"
+        },
+        "isVisible": true
     }]
 }

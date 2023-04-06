@@ -166,6 +166,9 @@
 		<PackageReference Include="UraniumUI.Material" Version="2.3.2" />
 		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.3.2" />		
 		<!--#endif-->
+		<!--#if (flipper)-->
+		<PackageReference Include="Drastic.Flipper" Version="1.0.6" Condition="'$(Configuration)' == 'Debug'" />
+		<!--#endif-->
 	</ItemGroup>
 
 	<!--#if (androidauto)-->

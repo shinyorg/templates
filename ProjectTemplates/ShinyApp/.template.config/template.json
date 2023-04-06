@@ -352,6 +352,13 @@
             "description": "Fingerprint Plugin by Sven-Michael Stübe - Documentation https://github.com/smstuebe/xamarin-fingerprint",
             "displayName": "Add Fingerprint/Facial Recognition (Plugin.Fingerprint)"
         },
+        "flipper":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Drastic.Flipper - An amazing tool for your MAUI application by Tim Miller - Documentation: https://github.com/drasticactions/Drastic.Flipper",
+            "displayName": "Add Drastic Flipper"
+        },
         "androidauto":{
             "type": "parameter",
             "datatype": "bool",
@@ -635,9 +642,9 @@
         },{
             "condition": "(androidauto == false)",
             "exclude": "Platforms/Android/Auto/**"
-            },{
-                "condition": "(androidauto == false)",
-                "exclude": "Platforms/Android/Resources/xml/**"            
+        },{
+            "condition": "(androidauto == false)",
+            "exclude": "Platforms/Android/Resources/xml/**"
         },{
             "condition": "(usepush == false)",
             "exclude": "Samples/Push/**"
