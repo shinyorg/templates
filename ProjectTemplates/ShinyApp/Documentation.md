@@ -153,3 +153,12 @@ _SQLite-net is an open source, minimal library to allow .NET, .NET Core, and Mon
 [GitHub](https://github.com/praeclarum/sqlite-net)
 
 <!--#endif-->
+<!--#if (androidauto)-->
+## Android Auto
+
+_Build apps that help users connect on the road through Android Automotive OS and Android Auto. Users who have a vehicle with Android Automotive OS can install your app onto their vehicle's infotainment system. Android Auto lets users connect their phone, Android 6.0 or higher, to a compatible vehicle to display a driver-optimized version of your app directly on the console._
+
+* [How to implement in MAUI - YouTube](https://www.youtube.com/watch?v=nNkVxegb2oU) - An awesome video by Christian Strydom on how to implement Android Auto in .NET MAUI. This video is the reason this feature exists in this template.
+* [Android for Cars Documentation](https://developer.android.com/cars)
+
+<!--#endif-->
