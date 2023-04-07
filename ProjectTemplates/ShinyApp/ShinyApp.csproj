@@ -26,7 +26,7 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<ShinyVersion>3.0.0-alpha-0560</ShinyVersion>
+		<ShinyVersion>3.0.0-alpha-0593</ShinyVersion>
 		<UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
 	</PropertyGroup>
 
@@ -166,11 +166,14 @@
 		<PackageReference Include="UraniumUI.Material" Version="2.3.2" />
 		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.3.2" />		
 		<!--#endif-->
-		<!--#if (flipper)-->
-		<PackageReference Include="Drastic.Flipper" Version="1.0.6" Condition="'$(Configuration)' == 'Debug'" />
-		<!--#endif-->
 	</ItemGroup>
-			
+
+	<!--#if (flipper)-->
+	<ItemGroup Condition="$(TargetFramework.Contains('android')) OR $(TargetFramework.Contains('ios'))">
+		<PackageReference Include="Drastic.Flipper" Version="1.0.6" Condition="'$(Configuration)' == 'Debug'" />
+	</ItemGroup>
+
+	<!--#endif-->
 	<!--#if (androidauto)-->
 	<ItemGroup Condition="$(TargetFramework.Contains('android'))">
 		<PackageReference Include="Xamarin.AndroidX.Car.App.App" Version="1.2.0.1" />

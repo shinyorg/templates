@@ -11,13 +11,13 @@ namespace ShinyApp.Platforms.Android.Auto;
 	new[] { "androidx.car.app.CarAppService" },
 	Categories = new[] { "androidx.car.app.category.POI" }
 )]
-public class AndroidAutoService : CarAppService
+public class AutoService : CarAppService
 {
     public override HostValidator CreateHostValidator()
         => HostValidator.AllowAllHostsValidator;
 
 
 	public override Session OnCreateSession()
-		=> new AndroidAutoSession();
+		=> new AutoSession();
 }
 

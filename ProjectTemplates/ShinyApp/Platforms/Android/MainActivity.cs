@@ -38,6 +38,22 @@ namespace ShinyApp;
 #endif
 public class MainActivity : MauiAppCompatActivity
 {
+#if (flipper)
+//-:cnd:noEmit
+#if DEBUG
+    public override void OnCreate()
+    {
+        base.OnCreate();
+        Com.Facebook.Soloader.SoLoader.Init(this.ApplicationContext, false);
+        var androidClient = Com.Facebook.Flipper.Android.AndroidFlipperClient.GetInstance(this.ApplicationContext);
+        var flipperPlugin = new Com.Facebook.Flipper.Plugins.Inspector.InspectorFlipperPlugin(this.ApplicationContext, Com.Facebook.Flipper.Plugins.Inspector.DescriptorMapping.WithDefaults());
+        androidClient.AddPlugin(flipperPlugin);
+        androidClient.Start();
+    }
+    
+#endif  
+//+:cnd:noEmit 
+#endif
 #if (usemsal)
         // TODO: this should move to DI section
         /// <summary>
