@@ -20,6 +20,22 @@ namespace ShinyApp;
         ConfigChanges.SmallestScreenSize | 
         ConfigChanges.Density
 )]
+#if (usepush && notifications)
+[IntentFilter(
+    new[] {
+        ShinyPushIntents.NotificationClickAction,
+        ShinyNotificationIntents.NotificationClickAction
+    }
+)]
+#elif (usepush)
+[IntentFilter(
+    new[] { ShinyPushIntents.NotificationClickAction }
+)]
+#elif (notifications)
+[IntentFilter(
+    new[] { ShinyNotificationIntents.NotificationClickAction }
+)]
+#endif
 public class MainActivity : MauiAppCompatActivity
 {
 #if (usemsal)
