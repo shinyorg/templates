@@ -114,7 +114,7 @@
 		<!--#if (jobs)-->
 		<PackageReference Include="Shiny.Jobs" Version="$(ShinyVersion)" />
 		<!--#endif-->
-		<!--#if (gps || geofencing || motionactivity)-->
+		<!--#if (gps || geofencing)-->
 		<PackageReference Include="Shiny.Locations" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (notifications)-->
@@ -170,7 +170,7 @@
 		<PackageReference Include="Drastic.Flipper" Version="1.0.6" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#endif-->
 	</ItemGroup>
-
+			
 	<!--#if (androidauto)-->
 	<ItemGroup Condition="$(TargetFramework.Contains('android'))">
 		<PackageReference Include="Xamarin.AndroidX.Car.App.App" Version="1.2.0.1" />
