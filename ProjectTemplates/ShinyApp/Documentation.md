@@ -43,6 +43,14 @@ _Uranium is a Free & Open-Source UI Kit for .NET MAUI. It provides a set of cont
 * [GitHub](https://github.com/enisn/UraniumUI)
 
 <!--#endif>
+<!--#if (sharpnadotabs)-->
+## Sharpnado Tabs
+
+_Feature rich tab control by Jean-Marie Alfonsi_
+
+* [GitHub](https://github.com/roubachof/Sharpnado.Tabs)
+
+<!--#endif-->
 <!--#if (sharpnadovc)-->
 ## Sharpnado CollectionView
 
@@ -62,14 +70,6 @@ _A performant and feature rich collection view by Jean-Marie Alfonsi_
 _A port of the wonderful Xamarin.Forms.GoogleMaps to .NET MAUI by Pavlo Lukianets_
 
 * [GitHub](https://github.com/themronion/Maui.GoogleMaps/tree/maui)
-<!--#endif-->
-<!--#if (sharpnadotabs)-->
-## Sharpnado Tabs
-
-_Feature rich tab control by Jean-Marie Alfonsi_
-
-* [GitHub](https://github.com/roubachof/Sharpnado.Tabs)
-
 <!--#endif-->
 <!--#if (mediaelement)-->
 ## MAUI Community Toolkit - Media Element
