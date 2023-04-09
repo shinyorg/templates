@@ -28,6 +28,9 @@ or update
 	* XAML
 	* Blazor
 	* C# (courtesy of .NET MAUI Community Toolkit) [Documentation](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup)
+* [.NET MAUI Community Toolkit](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/) Setup Including:
+	* [Media Element](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/)
+	* [C# Markup](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup))
 * Entitlements for iOS/MacCatalyst if necessary (ie. Push, MSAL)
 * Info.plist & Entitlements.plist permissions for iOS/MacCatalyst
 * AndroidManifest.xml Permissions & Features for Android
@@ -47,14 +50,19 @@ or update
 	* MSAL (Microsoft Authentication Library) B2C
 	* MSAL (Microsoft Authentication Library) Broker
 * Full Setup for the following 3rd party components
+	* [Uranium UI](https://github.com/enisn/UraniumUI) by Enis Necipoglu	
+	* [Sharpnado Tabs](https://github.com/roubachof/Sharpnado.Tabs) by Jean-Marie Alfonsi
+	* [Sharpnado CollectionView](https://github.com/roubachof/Sharpnado.CollectionView) by Jean-Marie Alfonsi
+	* [MAUI Google Maps](https://github.com/themronion/Maui.GoogleMaps/tree/maui) by Pavlo Lukianets_
 	* [Refit](https://github.com/reactiveui/refit)
 	* [SQLite.NET-pcl](https://github.com/praeclarum/sqlite-net) by Frank Krueger
 	* [ZXing.Net.Maui](https://github.com/Redth/ZXing.Net.Maui) by Jon Dick
 	* [Store Review Plugin](https://github.com/jamesmontemagno/StoreReviewPlugin) by James Montemagno
 	* [In-App Billing Plugin](https://github.com/jamesmontemagno/InAppBillingPlugin) by James Montemagno
 	* [MAUI Audio Plugin](https://github.com/jfversluis/Plugin.Maui.Audio) by Gerald Versluis
-	* [.NET MAUI Community Toolkit](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/)
 	* [Fingerprint Plugin](https://github.com/smstuebe/xamarin-fingerprint) by Sven-Michael Stübe
+	* [Drastic Flipper](https://github.com/drasticactions/Drastic.Flipper) by Tim Miller
+
 
 <img src="vs4win.png" />
 <img src="vs4mac.png" />
@@ -67,7 +75,7 @@ _Sets up a platform unit test project using [Shiny.Xunit.Runners.Maui](https://g
 	
 _The Microsoft iOS Extension template is currently broken on VS4win & VS4mac, so this is in place for now. Instructions on how to wire this up to your MAUI project_
 
-#### Shiny.NET Server Extensions (Work In Progress)
+#### Shiny.NET Server Extensions
 
 * Email Templating
 * Push Notification Setup
@@ -78,12 +86,3 @@ _The Microsoft iOS Extension template is currently broken on VS4win & VS4mac, so
 ### Item Templates
 * Shiny BluetoothLE Hosted Managed Characteristic
 * Shiny Job
-
----
-
-
----
-## Roadmap
-* Shiny ASP.NET application setup for Shiny Extensions push & email tempating extensions
-	* Web Authenticator controller
-* Solution templates that brings MAUI app and ASP.NET together along with build scripts?
