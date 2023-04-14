@@ -478,17 +478,16 @@
             "**/*.ttf",
             "**/*.txt"
         ],
-        "modifiers": [{
-            "condition": "(useconfig == false)",
-            "exclude": "appsettings.json"
-        },
+        "modifiers": [
         {
             "condition": "(useconfig == false)",
-            "exclude": "appsettings.android.json"
-        },
-        {
-            "condition": "(useconfig == false)",
-            "exclude": "appsettings.apple.json"
+            "exclude": [
+                "appsettings.json",
+                "appsettings.android.json",
+                "appsettings.apple.json",
+                "appsettings.ios.json",
+                "appsettings.maccatalyst.json"
+            ]
         },                
         {
             "condition": "(startup == false)",
@@ -500,11 +499,10 @@
         },
         {
             "condition": "(useentitlements == false)",
-            "exclude": "Platforms/iOS/Entitlements.plist"
-        },        
-        {
-            "condition": "(useentitlements == false)",
-            "exclude": "Platforms/MacCatalyst/Entitlements.plist"
+            "exclude":[
+                "Platforms/iOS/Entitlements.plist",
+                "Platforms/MacCatalyst/Entitlements.plist"
+            ]
         },
         {
             "condition": "(usemsalbasic == false && usemsalb2c == false)",
@@ -576,11 +574,10 @@
         },
         {
             "condition": "(usecsharpmarkup == true)",
-            "exclude": "MainPage.xaml"
-        },
-        {
-            "condition": "(usecsharpmarkup == true)",
-            "exclude": "MainPage.xaml.cs"
+            "exclude": [
+                "MainPage.xaml",
+                "MainPage.xaml.cs"
+            ]
         },
         {
             "condition": "(usecsharpmarkup == false)",
@@ -592,32 +589,22 @@
         },
         {
             "condition": "(useblazor == false)",
-            "exclude": "Main.razor"
-        },
-        {
-            "condition": "(useblazor == false)",
-            "exclude": "_Imports.razor"
-        },
-        {
-            "condition": "(useblazor == false)",
-            "exclude":[ "wwwroot/**" ]
-        },
-        {
-            "condition": "(useblazor == false)",
-            "exclude":[ "Shared/**" ]
-        },
-        {
-            "condition": "(useblazor == false)",
-            "exclude":[ "Pages/**" ]
+            "exclude":[ 
+                "Main.razor",
+                "_Imports.razor",
+                "Pages/**" ,
+                "Shared/**",
+                "wwwroot/**" 
+            ]
         },{
             "condition": "(beacons == false)",
             "exclude": "Samples/Beacons/**"
         },{
             "condition": "(bluetoothle == false)",
-            "exclude": "Samples/BleClient/**"
-        },{
-            "condition": "(bluetoothle == false)",
-            "exclude": "Samples/BleManaged/**"
+            "exclude":[
+                "Samples/BleClient/**",
+                "Samples/BleManaged/**"
+            ]
         },{
             "condition": "(blehosting == false)",
             "exclude": "Samples/BleHosting/**"
