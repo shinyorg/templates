@@ -208,10 +208,10 @@ public static class MauiProgram
         s.AddPush<ShinyApp.Delegates.MyPushDelegate>();
 #endif
 #if usepushanh
-        s.AddPushAzureNotificationHubs<ShinyApp.Delegates.MyPushDelegate>(new (
+        s.AddPushAzureNotificationHubs<ShinyApp.Delegates.MyPushDelegate>(                                   
             builder.Configuration["AzureNotificationHubs:ListenerConnectionString"], 
             builder.Configuration["AzureNotificationHubs:HubName"]
-        ));
+        );
 #endif
 #if usepushfirebase
         s.AddPushFirebaseMessaging<ShinyApp.Delegates.MyPushDelegate>();
