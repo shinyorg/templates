@@ -210,6 +210,7 @@ public static class MauiProgram
         s.AddPush<ShinyApp.Delegates.MyPushDelegate>();
 #endif
 #if usepushanh
+        // TODO: Please make sure to add your proper connection string and hub name to appsettings.json or this will error on startup
         s.AddPushAzureNotificationHubs<ShinyApp.Delegates.MyPushDelegate>(                                   
             builder.Configuration["AzureNotificationHubs:ListenerConnectionString"], 
             builder.Configuration["AzureNotificationHubs:HubName"]
