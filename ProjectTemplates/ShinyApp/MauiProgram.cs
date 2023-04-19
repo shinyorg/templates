@@ -107,11 +107,13 @@ public static class MauiProgram
 
     static MauiAppBuilder RegisterInfrastructure(this MauiAppBuilder builder)
     {
+#if flipper
 //-:cnd:noEmit
 #if IOS && DEBUG
         global::Flipper.FlipperProxy.Shared.InitializeProxy();
 #endif
 //+:cnd:noEmit
+#endif
 
 #if useconfig
         builder.Configuration.AddJsonPlatformBundle();
