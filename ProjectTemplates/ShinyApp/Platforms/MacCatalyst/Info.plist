@@ -10,6 +10,9 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>arm64</string>
+		<!--#if (bluetoothle || blehosting)-->
+		<string>bluetooth-le</string>
+		<!--#endif-->
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
@@ -34,7 +37,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
-	<!--#if (blehosting)-->
+	<!--#if (bluetoothle || blehosting)-->
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
