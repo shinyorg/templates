@@ -27,12 +27,13 @@
 		</activity>
 	<!--#endif-->
 	</application>
+	<uses-permission android:name="android.permission.BATTERY_STATS" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<!--#if (usemaps || essentialsmedia)-->
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<!--#endif-->
-<!--#if (bluetoothle || blehosting || beacons)-->
+	<!--#if (bluetoothle || blehosting || beacons)-->
 	<uses-feature android:name="android.hardware.bluetooth_le" android:required="false" /> 	
 
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
@@ -48,14 +49,14 @@
 	<!--#if (blehosting)-->
 	<uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
 	<!--#endif-->
-	<!--#if (gps || geofencing)-->
+	<!--#if (notifications || gps || geofencing)-->
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 	<!--#endif-->
-	<!--#if (gps || geofencing || usemaps)-->
+	<!--#if (notifications || gps || geofencing || usemaps)-->
     <uses-feature android:name="android.hardware.location.gps" android:required="false" />
     <uses-feature android:name="android.hardware.location.network" android:required="false" />	
 	<!--#endif-->	
-	<!--#if (bluetoothle || gps || geofencing || beacons || usemaps)-->
+	<!--#if (notifications || bluetoothle || gps || geofencing || beacons || usemaps)-->
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	<!--#endif-->
@@ -65,7 +66,7 @@
 	<!--#if (notifications || usepush || gps || bluetoothle || beacons || httptransfers)-->
 	<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 	<!--#endif-->
-	<!-- if (gps || bluetoothle || beacons || httptransfers)-->
+	<!-- if (notifications || gps || bluetoothle || beacons || httptransfers)-->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 	<!--#endif-->	
 	<!--#if (essentialsmedia || barcodes)-->
