@@ -63,10 +63,10 @@
 	<!--#if (speechrecognition)-->
 	<uses-permission android:name="android.permission.RECORD_AUDIO" />
 	<!--#endif-->
-	<!--#if (notifications || usepush || gps || bluetoothle || beacons || httptransfers)-->
+	<!--#if (notifications || usepush || gps || beacons || httptransfers)-->
 	<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 	<!--#endif-->
-	<!--#if (notifications || gps || bluetoothle || beacons || httptransfers)-->
+	<!--#if (gps || beacons || httptransfers)-->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 	<!--#endif-->	
 	<!--#if (essentialsmedia || barcodes)-->
