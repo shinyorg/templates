@@ -165,13 +165,6 @@
             "description": "This creates a special reactive object that binds to the platform preferences or secure storage",
             "displayName": "Add Bound Settings Class (Shiny.Core)"
         },
-        "samples":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add Samples for any Shiny library installed above (They are removed from compiling by default - they are here for example only)",
-            "displayName": "Add Samples for Selected Shiny Libraries"
-        },
         "push": {
             "type": "parameter",
             "datatype": "choice",
@@ -597,48 +590,6 @@
                 "Shared/**",
                 "wwwroot/**" 
             ]
-        },{
-            "condition": "(beacons == false)",
-            "exclude": "Samples/Beacons/**"
-        },{
-            "condition": "(bluetoothle == false)",
-            "exclude":[
-                "Samples/BleClient/**",
-                "Samples/BleManaged/**"
-            ]
-        },{
-            "condition": "(blehosting == false)",
-            "exclude": "Samples/BleHosting/**"
-        },{
-            "condition": "(jobs == false)",
-            "exclude": "Samples/Jobs/**"
-        },{
-            "condition": "(geofencing == false)",
-            "exclude": "Samples/Geofencing/**"
-        },{
-            "condition": "(gps == false)",
-            "exclude": "Samples/Gps/**"
-        },{
-            "condition": "(httptransfers == false)",
-            "exclude": "Samples/HttpTransfers/**"
-        },{
-            "condition": "(notifications == false)",
-            "exclude": "Samples/Notifications/**"
-        },{
-            "condition": "(speechrecognition == false)",
-            "exclude": "Samples/SpeechRecognition/**"
-        },{
-            "condition": "(androidauto == false)",
-            "exclude": "Platforms/Android/Auto/**"
-        },{
-            "condition": "(androidauto == false)",
-            "exclude": "Platforms/Android/Resources/xml/**"
-        },{
-            "condition": "(usepush == false)",
-            "exclude": "Samples/Push/**"
-        },{
-            "condition": "(samples == false)",
-            "exclude": "Samples/**"
         }]
     }]
 }

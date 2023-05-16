@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.OS;
 using Android.Content.PM;
 #if (usemsal)
 using Android.Content;
@@ -41,9 +42,9 @@ public class MainActivity : MauiAppCompatActivity
 #if (flipper)
 //-:cnd:noEmit
 #if DEBUG
-    public override void OnCreate()
+    protected override void OnCreate(Bundle? savedInstanceState)
     {
-        base.OnCreate();
+        base.OnCreate(savedInstanceState);
         Com.Facebook.Soloader.SoLoader.Init(this.ApplicationContext, false);
         var androidClient = Com.Facebook.Flipper.Android.AndroidFlipperClient.GetInstance(this.ApplicationContext);
         var flipperPlugin = new Com.Facebook.Flipper.Plugins.Inspector.InspectorFlipperPlugin(this.ApplicationContext, Com.Facebook.Flipper.Plugins.Inspector.DescriptorMapping.WithDefaults());
@@ -55,18 +56,18 @@ public class MainActivity : MauiAppCompatActivity
 //+:cnd:noEmit 
 #endif
 #if (usemsal)
-        // TODO: this should move to DI section
-        /// <summary>
-        /// This is a callback to continue with the broker base authentication
-        /// Info abour redirect URI: https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-client-application-configuration#redirect-uri
-        /// </summary>
-        /// <param name="requestCode">request code </param>
-        /// <param name="resultCode">result code</param>
-        /// <param name="data">intent of the actvity</param>
-        protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
-        {
-            base.OnActivityResult(requestCode, resultCode, data);
-            AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs(requestCode, resultCode, data);
-        }
+    // TODO: this should move to DI section
+    /// <summary>
+    /// This is a callback to continue with the broker base authentication
+    /// Info abour redirect URI: https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-client-application-configuration#redirect-uri
+    /// </summary>
+    /// <param name="requestCode">request code </param>
+    /// <param name="resultCode">result code</param>
+    /// <param name="data">intent of the actvity</param>
+    protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
+    {
+        base.OnActivityResult(requestCode, resultCode, data);
+        AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs(requestCode, resultCode, data);
+    }
 #endif
 }
