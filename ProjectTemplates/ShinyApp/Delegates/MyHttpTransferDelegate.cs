@@ -10,13 +10,14 @@ public partial class MyHttpTransferDelegate : IHttpTransferDelegate
     {
     }
 
-    public Task OnError(IHttpTransfer transfer, Exception ex)
+
+    public Task OnCompleted(HttpTransferRequest request)
     {
         return Task.CompletedTask;
     }
 
 
-    public Task OnCompleted(IHttpTransfer transfer)
+    public Task OnError(HttpTransferRequest request, Exception ex)
     {
         return Task.CompletedTask;
     }
