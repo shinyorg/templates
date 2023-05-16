@@ -258,7 +258,8 @@
             },{
                 "choice": "Google Maps",
                 "description": "For use on Android & iOS"
-            }]
+            }],
+            "defaultValue": "None"
         },
         "mapsandroidkey":{
             "type": "parameter",
