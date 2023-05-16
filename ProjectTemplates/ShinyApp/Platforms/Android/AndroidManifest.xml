@@ -66,7 +66,7 @@
 	<!--#if (notifications || usepush || gps || bluetoothle || beacons || httptransfers)-->
 	<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 	<!--#endif-->
-	<!-- if (notifications || gps || bluetoothle || beacons || httptransfers)-->
+	<!--#if (notifications || gps || bluetoothle || beacons || httptransfers)-->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 	<!--#endif-->	
 	<!--#if (essentialsmedia || barcodes)-->
