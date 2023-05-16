@@ -127,7 +127,8 @@ public static class MauiProgram
 #endif
 //-:cnd:noEmit
 #if DEBUG
-        builder.Logging.AddConsole();
+        builder.Logging.SetMinimumLevel(LogLevel.Trace);
+        builder.Logging.AddDebug();
 #endif
 //+:cnd:noEmit
         var s = builder.Services;
