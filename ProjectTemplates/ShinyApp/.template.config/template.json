@@ -507,10 +507,6 @@
             "exclude": "Platforms/Android/WebAuthenticatorActivity.cs"
         },
         {
-            "condition": "(notifications == false)",
-            "exclude": "Resources/Images/notification.svg"
-        },     
-        {
             "condition": "(push == \"None\")",
             "exclude": "Delegates/MyPushDelegate.cs"
         },
@@ -549,6 +545,10 @@
         {
             "condition": "(authservice == false)",
             "exclude": "Services/IAuthenticationService.cs"
+        },
+        {
+            "condition": "(androidauto == false)",
+            "exclude": "Platforms/Android/Auto/**"
         },
         {
             "condition": "(authservice == false || usemsal == false)",
