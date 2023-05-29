@@ -47,6 +47,13 @@
         "isVisible": true
     },
     {
+        "id": "sentry",
+        "name": {
+            "text": "Sentry.IO Logging"
+        },
+        "isVisible": true
+    },    
+    {
         "id": "sqlitelogging",
         "name": {
             "text": "SQLite Logging"

@@ -96,10 +96,18 @@
             "defaultValue": "",
             "replaces":"{APPCENTER_KEY}"
         },
+        "sentry": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Sentry.IO logging to your application",
+            "displayName": "Sentry.IO Logging"
+        },        
         "sqlitelogging": {
             "type": "parameter",
             "dataType": "bool",
-            "description": "SQLite Logging - (Shiny.Logging.Sqlite)",
+            "description": "SQLite Logging - (Shiny.Logging.Sqlite) - Great for logging local tests especially for background services in Shiny",
+            "displayName": "SQLite Logging - (Shiny.Logging.Sqlite)",
             "defaultValue": "false"
         },
         "bluetoothle": {
