@@ -75,6 +75,25 @@ public static class MauiProgram
 #if usemauimaps
         .UseMauiMaps()
 #endif
+#if sentry
+        .UseSentry(options =>
+        {
+            // The DSN is the only required setting.
+            options.Dsn = "https://examplePublicKey@o0.ingest.sentry.io/0";
+
+            // Use debug mode if you want to see what the SDK is doing.
+            // Debug messages are written to stdout with Console.Writeline,
+            // and are viewable in your IDE's debug console or with 'adb logcat', etc.
+            // This option is not recommended when deploying your application.
+            options.Debug = true;
+
+            // Set TracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
+            // We recommend adjusting this value in production.
+            options.TracesSampleRate = 1.0;
+
+            // Other Sentry options can be set here.
+        })
+#endif
 #if usegooglemaps
 //-:cnd:noEmit
 #if ANDROID

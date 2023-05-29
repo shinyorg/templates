@@ -36,7 +36,7 @@ or update
 * AndroidManifest.xml Permissions & Features for Android
 * Preps all of the necessary functionality for a SQLite Database	
 * All of your MauiProgram.cs Dependency Injection
-* Setup Logging Options with AppCenter & SQLite
+* Setup Logging Options with AppCenter, SQLite, & Sentry.IO
 * Create AppSettings.json
 * Create & auto-configure a strongly-typed settings class that can be bound to preferences or secure storage using Shiny
 * Create & auto-configure a Shiny startup service

@@ -90,8 +90,12 @@
 		<!--#if (usemsal)-->
 		<PackageReference Include="Microsoft.Identity.Client" Version="4.54.0" />
 		<!--#endif-->
+
 		<!--#if (useconfig)-->
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
+		<!--#endif-->
+		<!--#if (sentry)-->
+		<PackageReference Include="Sentry.Maui" Version="3.33.0" />
 		<!--#endif-->
 		<!--#if (useappcenter)-->
 		<PackageReference Include="Shiny.Logging.AppCenter" Version="$(ShinyVersion)" />

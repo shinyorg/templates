@@ -13,6 +13,22 @@ _A cross platform framework designed to make working with device services and ba
 * [Documentation](https://shinylib.net/)
 * [GitHub](https://github.com/shinyorg/shiny)
 
+<!--#if (sentry)-->
+## Sentry for MAUI
+* Easy MAUI integration by calling UseSentry on your MauiAppBuilder
+* All the features of our main .NET SDK, for your managed code
+* Native crash reporting for Android, leveraging our Android SDK
+* Native crash reporting for iOS and Mac Catalyst, leveraging our Cocoa SDK for iOS
+* Managed crash reporting (unhandled exceptions), on all MAUI platforms (iOS, Android, Windows, Mac Catalyst, and Tizen)
+* Line numbers for your .NET stack traces when PDBs are uploaded to Sentry
+* Automatic breadcrumbs for MAUI app lifecycle and UI events
+* Detailed device and runtime information passed on every event
+* Automatic session tracking enabled, to support release health
+
+* [Documentation](https://docs.sentry.io/platforms/dotnet/guides/maui/)
+
+<!--#endif-->
+
 <!--#if (shinyframework)-->
 ## Shiny Framework
 
