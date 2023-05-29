@@ -67,6 +67,14 @@
             "isRequired": true,
             "replaces": "{APPLICATION_ID}"
         },
+        "applicationIdGuid":{
+            "type": "generated",
+            "generator": "guid",
+            "replaces": "{APPLICATION_ID_GUID}",
+            "parameters": {
+                "format": "D"
+            }
+        },
         "shinyframework": {
             "type": "parameter",
             "datatype": "bool",
