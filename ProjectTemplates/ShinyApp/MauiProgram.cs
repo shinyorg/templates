@@ -44,6 +44,9 @@ public static class MauiProgram
         .UseBarcodeReader()
 #endif
 #if uraniumui
+        .UseUraniumUI()
+        .UseUraniumUIMaterial()
+        .UseUraniumUIBlurs()
 #endif
 #if shinyframework || communitytoolkit
         .UseMauiCommunityToolkit()
@@ -53,10 +56,6 @@ public static class MauiProgram
 #endif
 #if usecsharpmarkup
         .UseMauiCommunityToolkitMarkup()
-#endif
-#if uraniumui
-        .UseUraniumUI()
-        .UseUraniumUIMaterial()
 #endif
 #if sharpnadotabs
         .UseSharpnadoTabs(false)
