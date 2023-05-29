@@ -36,10 +36,11 @@ or update
 * AndroidManifest.xml Permissions & Features for Android
 * Preps all of the necessary functionality for a SQLite Database	
 * All of your MauiProgram.cs Dependency Injection
-* Setup AppCenter Logging
+* Setup Logging Options with AppCenter & SQLite
 * Create AppSettings.json
 * Create & auto-configure a strongly-typed settings class that can be bound to preferences or secure storage using Shiny
 * Create & auto-configure a Shiny startup service
+* Setup Android Auto & iOS CarPlay
 * Good practice setup for MSAL or Web Authenticator authentication service
 	* Include a custom Refit HTTP client with authentication wired for best practices
 * Setup everything needed for the .NET MAUI Essentials Media Capture service
