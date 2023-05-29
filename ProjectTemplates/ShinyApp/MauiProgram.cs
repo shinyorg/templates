@@ -118,6 +118,9 @@ public static class MauiProgram
 #if useconfig
         builder.Configuration.AddJsonPlatformBundle();
 #endif
+#if sqlitelogging
+        builder.Logging.AddSqlite(Path.Combine(FileSystem.AppDataDirectory, "logging.db"));
+#endif
 #if useappcenter
 //-:cnd:noEmit
 #if !MACCATALYST

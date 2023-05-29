@@ -47,6 +47,13 @@
         "isVisible": true
     },
     {
+        "id": "sqlitelogging",
+        "name": {
+            "text": "SQLite Logging"
+        },
+        "isVisible": true
+    },
+    {
         "id": "bluetoothle",
         "name": {
             "text": "Add BluetoothLE Client (Shiny.BluetoothLE)"

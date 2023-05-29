@@ -96,6 +96,9 @@
 		<!--#if (useappcenter)-->
 		<PackageReference Include="Shiny.Logging.AppCenter" Version="$(ShinyVersion)" />
 		<!--#endif-->
+		<!--#if (sqlitelogging)-->
+		<PackageReference Include="Shiny.Logging.Sqlite" Version="$(ShinyVersion)" />
+		<!--#endif-->
 		<!--#if (bluetoothle)-->
 		<PackageReference Include="Shiny.BluetoothLE" Version="$(ShinyVersion)" />
 		<!--#endif-->

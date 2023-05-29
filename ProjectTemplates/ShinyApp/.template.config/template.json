@@ -88,6 +88,12 @@
             "defaultValue": "",
             "replaces":"{APPCENTER_KEY}"
         },
+        "sqlitelogging": {
+            "type": "parameter",
+            "dataType": "bool",
+            "description": "SQLite Logging - (Shiny.Logging.Sqlite)",
+            "defaultValue": "false"
+        },
         "bluetoothle": {
             "type": "parameter",
             "datatype": "bool",
