@@ -359,6 +359,12 @@
             "defaultValue": "false",
             "description": "Add Android Auto Support"
         },
+        "carplay":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add iOS CarPlay Support"
+        },
         "HostIdentifier": {
             "type": "bind",
             "binding": "HostIdentifier"
@@ -436,7 +442,7 @@
         "useentitlements":{
             "type": "computed",
             "datatype": "bool",
-            "value": "(push != \"None\" || authtype != \"None\")"
+            "value": "(push != \"None\" || authtype != \"None\" || carplay == true)"
         },
         "usemaccatalyst":{
             "type": "computed",
@@ -549,6 +555,10 @@
         {
             "condition": "(androidauto == false)",
             "exclude": "Platforms/Android/Auto/**"
+        },
+        {
+            "condition": "(carplay == false)",
+            "exclude": "Platforms/iOS/CarPlayImplementation/**"
         },
         {
             "condition": "(authservice == false || usemsal == false)",

@@ -162,6 +162,15 @@ _Build apps that help users connect on the road through Android Automotive OS an
 * [Android for Cars Documentation](https://developer.android.com/cars)
 
 <!--#endif-->
+<!--#if (androidauto)-->
+## CarPlay
+
+_CarPlay provides a user interface, generated and hosted by the system, that you customize to display content from your app. The framework maintains control over UI elements — such as touch target size, font size and color, and highlights — while enabling your app to display custom map tiles, trip and routing information, and more_
+
+* [How to implement in MAUI - YouTube](https://www.youtube.com/watch?v=Yg2I6NbHZp8) - An awesome video by Christian Strydom on how to implement CarPlay in .NET MAUI. This video is the reason this feature exists in this template.
+* [CarPlay Documentation](https://developer.apple.com/documentation/carplay)
+
+<!--#endif-->
 <!--#if (flipper)-->
 ## Drastic Flipper
 

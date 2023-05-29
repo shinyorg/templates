@@ -263,7 +263,13 @@
         "name":{
             "text": "Add Android Auto Support"
         },
-        "isVisible": true    
+        "isVisible": true
+    },{
+        "id": "carplay",
+        "name":{
+            "text": "Add iOS CarPlay Support"
+        },
+        "isVisible": true
     },{
         "id": "flipper",
         "name":{
