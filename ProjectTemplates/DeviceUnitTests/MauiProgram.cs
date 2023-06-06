@@ -1,4 +1,7 @@
-﻿namespace DeviceUnitTests;
+﻿using Xunit.Runners.Maui;
+
+namespace DeviceUnitTests;
+
 
 public static class MauiProgram
 {
