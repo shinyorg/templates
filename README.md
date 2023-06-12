@@ -19,6 +19,11 @@ or update
 
 #### MAUI Shiny.NET App Project Template
 
+* Creates all the necessary permissions, boilerplate, & setup you'll need to get your .NET MAUI app up and running with Shiny & many other great community libraries
+* Easy setup and choice for push notifications
+	* Full Native
+	* Azure Notification Hubs
+	* Firebase (Coming Soon)
 * Creates a best practice MAUI application with best-in-class frameworks:
     * [.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui)
 	* [Prism](https://prismlibrary.com/)
