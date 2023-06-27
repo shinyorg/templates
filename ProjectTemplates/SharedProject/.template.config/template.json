@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Shiny .NET",
+    "classifications": [ "Cross Platform" ],
+    "name": "Shared Project",
+    "shortName": "shinyshared",
+    "description": "A replacement for VS4MAC removing shared projects",
+    "identity": "Shiny.Templates.SharedProject",
+    "sourceName": "SharedProject",
+    "preferNameDirectory": true,
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    }    
+}
