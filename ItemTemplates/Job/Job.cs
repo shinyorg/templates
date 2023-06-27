@@ -4,14 +4,14 @@ using Shiny.Jobs;
 namespace ShinyApp;
 
 
-public class Job : IJob
+public class Job : Shiny.Jobs.Job
 {
     public Job()
     {
     }
 
 
-    public async Task Run(JobInfo jobInfo, CancellationToken cancelToken)
+    public override async Task Run(CancellationToken cancelToken)
     {
     } 
 }

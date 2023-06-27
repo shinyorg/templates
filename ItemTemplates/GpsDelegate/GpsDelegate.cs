@@ -3,15 +3,14 @@ using Shiny.Locations;
 namespace ShinyApp;
 
 
-public partial class GpsDelegate : IGpsDelegate
+public partial class GpsDelegate : Shiny.Locations.GpsDelegate
 {
     public MyGpsDelegate()
     {
     }
 
-    public async Task OnReading(GpsReading reading)
+    public override async Task OnGpsReading(GpsReading reading)
     {
-        throw new NotImplementedException();
     }
 }
 
