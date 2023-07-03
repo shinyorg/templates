@@ -82,9 +82,16 @@
 	<!--#if (fingerprint)-->
 	<uses-permission android:name="android.permission.USE_FINGERPRINT" />
 	<!--#endif-->
+
+	<!--#if (essentialsmedia || essentialsfilepicker)-->
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+	<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+	<!--#endif-->
+	<!--#if (essentialsfilepicker)-->
+	<uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+	<uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+	<!--#endif-->
 	<!--#if (essentialsmedia)-->
-	<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />	
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <queries>
         <intent>

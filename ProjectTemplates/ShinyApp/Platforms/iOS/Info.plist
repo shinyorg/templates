@@ -69,6 +69,20 @@
 	<key>NSFaceIDUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
+	<!--#if (essentialsfilepicker)-->
+	<key>com.apple.security.assets.movies.read-only</key>
+	<true/>
+	<key>com.apple.security.assets.music.read-only</key>
+	<true/>
+	<key>com.apple.security.assets.pictures.read-only</key>
+	<true/>
+	<key>com.apple.security.files.downloads.read-only</key>
+	<true/>
+	<key>com.apple.security.files.user-selected.read-only</key>
+	<true/>
+	<key>com.apple.security.personal-information.photos-library</key>
+	<true/>	
+	<!--#endif-->
 	<!--#if (jobs || usepush || gps || geofencing || beacons || bluetoothle || blehosting)-->
 	<key>UIBackgroundModes</key>
 	<array>

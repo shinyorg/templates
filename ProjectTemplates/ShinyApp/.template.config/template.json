@@ -291,6 +291,13 @@
             "description": "Sets all up all the necessary boilerplate for the MAUI Essentials Media Picker",
             "displayName": "Setup MAUI Essentials - Media Picker"
         },
+        "essentialsfilepicker":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Sets all up all the necessary boilerplate for the MAUI Essentials File Picker",
+            "displayName": "Setup MAUI Essentials - File Picker"            
+        },
         "communitytoolkit":{
             "type": "parameter",
             "datatype": "bool",

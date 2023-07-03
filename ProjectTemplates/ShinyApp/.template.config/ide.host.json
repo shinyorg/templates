@@ -197,6 +197,14 @@
         "defaultValue": "None"
     },
     {
+        "id": "essentialsfilepicker",
+        "name": {
+            "text": "Setup MAUI Essentials - File Picker"
+        },
+        "isVisible": true,
+        "defaultValue": "None"
+    },    
+    {
         "id": "communitytoolkit",
         "name": {
             "text": "Add MAUI Community Toolkit"
