@@ -61,6 +61,37 @@
 		<!--#endif-->
 	</ItemGroup>
 
+	<!--#if (usemsal)-->
+	<ItemGroup Condition="$(RuntimeIdentifier.Contains('iossimulator'))">
+		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="ShinyApp;$(AppIdentifierPrefix)com.microsoft.adalcache" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(RuntimeIdentifier.Contains('ios-')) AND $(TargetFramework.Contains('maccatalyst')) OR $(TargetFramework.Contains('ios'))">
+		<CustomEntitlements Include="keychain-access-groups" Type="String" Value="$(AppIdentifierPrefix)com.microsoft.adalcache" />
+	</ItemGroup>
+	<!--#else-->
+	<ItemGroup Condition="$(RuntimeIdentifier.Contains('iossimulator'))">
+		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="ShinyApp" />
+	</ItemGroup>
+	<!--#endif-->
+
+	<!--#if (usepush)-->
+	<ItemGroup Condition="$(TargetFramework.Contains('maccatalyst')) OR $(TargetFramework.Contains('ios')) AND '$(Configuration)' == 'Debug'">
+		<CustomEntitlements Include="aps-environment" Type="String" Value="development" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework.Contains('maccatalyst')) OR $(TargetFramework.Contains('ios')) AND '$(Configuration)' == 'Release'">
+		<CustomEntitlements Include="aps-environment" Type="String" Value="production" />
+	</ItemGroup>	
+	<!--#endif-->
+
+    <!--#if (carplay)-->
+	<ItemGroup Condition="$(TargetFramework.Contains('ios'))">
+		<CustomEntitlements Include="com.apple.developer.carplay-driving-task" Value="boolean" Value="true" />
+    <true />
+	</ItemGroup>
+    <!--#endif-->
+
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" Condition="'$(Configuration)' == 'Debug'" />
 
