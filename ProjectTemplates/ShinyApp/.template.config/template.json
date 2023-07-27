@@ -240,10 +240,7 @@
             "dataType": "string",
             "description": "This is your Microsoft Authentication Library (MSAL) Application/Client ID setup within the Azure Portal",
             "defaultValue": "",
-            "replaces":"{MSAL_CLIENT_ID}",
-            "onlyIf": {
-                "authType": "MSAL Basic"
-            }
+            "replaces":"{MSAL_CLIENT_ID}"
         },
         "authservice":{
             "type": "parameter",
@@ -468,11 +465,6 @@
             "datatype": "bool",
             "value": "(appcenter != \"\")"
         },
-        "useentitlements":{
-            "type": "computed",
-            "datatype": "bool",
-            "value": "(push != \"None\" || authtype != \"None\" || carplay == true)"
-        },
         "usemaccatalyst":{
             "type": "computed",
             "datatype": "bool",
@@ -525,13 +517,6 @@
         {
             "condition": "(settings == false)",
             "exclude": "AppSettings.cs"
-        },
-        {
-            "condition": "(useentitlements == false)",
-            "exclude":[
-                "Platforms/iOS/Entitlements.plist",
-                "Platforms/MacCatalyst/Entitlements.plist"
-            ]
         },
         {
             "condition": "(usemsalbasic == false && usemsalb2c == false)",

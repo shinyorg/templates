@@ -26,7 +26,7 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<ShinyVersion>3.0.0-beta-0179</ShinyVersion>
+		<ShinyVersion>3.0.0-beta-0231</ShinyVersion>
 		<UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
 	</PropertyGroup>
 
@@ -67,7 +67,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$(RuntimeIdentifier.Contains('ios-')) AND $(TargetFramework.Contains('maccatalyst')) OR $(TargetFramework.Contains('ios'))">
-		<CustomEntitlements Include="keychain-access-groups" Type="String" Value="$(AppIdentifierPrefix)com.microsoft.adalcache" />
+		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="$(AppIdentifierPrefix)com.microsoft.adalcache" />
 	</ItemGroup>
 	<!--#else-->
 	<ItemGroup Condition="$(RuntimeIdentifier.Contains('iossimulator'))">
