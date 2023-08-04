@@ -118,7 +118,7 @@
 		<!--#endif-->
 		<!--#if (shinyframework)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
-		<PackageReference Include="ReactiveUI.Fody" Version="18.4.44" />
+		<PackageReference Include="ReactiveUI.Fody" Version="19.4.1" />
 		<PackageReference Include="Shiny.Framework" Version="3.0.0-beta-0008" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
