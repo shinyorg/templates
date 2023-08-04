@@ -69,7 +69,7 @@
 	<!--#endif-->
 	<!--#if (usemsal)-->
 	<ItemGroup Condition="$(RuntimeIdentifier.Contains('iossimulator'))">
-		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="ShinyApp;$(AppIdentifierPrefix)com.microsoft.adalcache" />
+		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="{APPLICATION_ID};$(AppIdentifierPrefix)com.microsoft.adalcache" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(RuntimeIdentifier.Contains('ios-')) OR $(TargetFramework.Contains('maccatalyst'))">
@@ -78,7 +78,7 @@
 
 	<!--#else-->
 	<ItemGroup Condition="$(RuntimeIdentifier.Contains('iossimulator'))">
-		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="ShinyApp" />
+		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="{APPLICATION_ID}" />
 	</ItemGroup>
 
 	<!--#endif-->	
