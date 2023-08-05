@@ -39,7 +39,18 @@
 		<SupportedOSPlatformVersion>14.2</SupportedOSPlatformVersion>
 		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>
 	</PropertyGroup>
+
+	<!--#if (essentialsfilepicker)-->
+	<PropertyGroup Condition="$(TargetFramework.Contains('maccatalyst')) OR $(TargetFramework.Contains('ios'))">
+		<CustomEntitlements Include="com.apple.security.assets.movies.read-only" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.assets.music.read-only" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.assets.pictures.read-only" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.files.user-selected.read-only" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.files.downloads.read-only" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.personal-information.photos-library" Type="boolean" Value="true" />
+	</PropertyGroup>
 	
+	<!--#endif-->
 	<!--#if (usemaccatalyst)-->
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
 		<SupportedOSPlatformVersion>14.0</SupportedOSPlatformVersion>

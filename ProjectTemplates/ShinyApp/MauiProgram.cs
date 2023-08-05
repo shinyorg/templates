@@ -174,6 +174,9 @@ public static class MauiProgram
 #if essentialsmedia
         s.AddSingleton(MediaPicker.Default);
 #endif
+#if essentialsfilepicker
+        s.AddSingleton(FilePicker.Default);
+#endif
 #if inappbilling
         s.AddSingleton(CrossInAppBilling.Current);
 #endif
