@@ -30,11 +30,15 @@ namespace ShinyApp;
 )]
 #elif (usepush)
 [IntentFilter(
-    new[] { ShinyPushIntents.NotificationClickAction }
+    new[] { 
+        ShinyPushIntents.NotificationClickAction 
+    }
 )]
 #elif (notifications)
 [IntentFilter(
-    new[] { ShinyNotificationIntents.NotificationClickAction }
+    new[] { 
+        ShinyNotificationIntents.NotificationClickAction 
+    }
 )]
 #endif
 public class MainActivity : MauiAppCompatActivity

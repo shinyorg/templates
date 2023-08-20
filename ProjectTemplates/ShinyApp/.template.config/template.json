@@ -37,6 +37,9 @@
             "choices": [{
                 "choice": "net7.0",
                 "description": "Target .NET 7.0"
+            },{
+                "choice": "net8.0",
+                "description": "Target .NET 8.0"
             }],
             "replaces": "{DOTNET_TFM}",
             "defaultValue": "net7.0"
@@ -394,6 +397,11 @@
         "HostIdentifier": {
             "type": "bind",
             "binding": "HostIdentifier"
+        },
+        "usenet8":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(Framework == \"net8.0\")"
         },
         "usewebauthenticator":{
             "type": "computed",
