@@ -85,6 +85,13 @@
             "description": "Add Shiny Framework by Allan Ritchie - Documentation https://github.com/shinyorg/framework - Lots of helpful services like navigation, zero boilerplate MVVM properties, viewmodel validation, localization, viewmodel lifecycles, dialog services, and more",
             "displayName": "Add Shiny Framework (Shiny + ReactiveUI + Prism)"
         },
+        "localization":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Add Localization (Microsoft.Extensions.Localization)",
+            "displayName": "Add Localization (Microsoft.Extensions.Localization)"
+        },
         "configuration": {
             "type": "parameter",
             "datatype": "bool",
@@ -525,6 +532,10 @@
         {
             "condition": "(settings == false)",
             "exclude": "AppSettings.cs"
+        },
+        {
+            "condition": "(localization == false)",
+            "exclude": "MainViewModel.resx"
         },
         {
             "condition": "(usemsalbasic == false && usemsalb2c == false)",

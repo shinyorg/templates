@@ -15,6 +15,9 @@ global using ReactiveUI.Fody.Helpers;
 global using Prism.Navigation;
 global using Prism.Services;
 #endif
+#if shinyframework || localization
+global using Microsoft.Extensions.Localization;
+#endif
 #if shinyframework || communitytoolkit
 global using CommunityToolkit.Maui;
 #endif

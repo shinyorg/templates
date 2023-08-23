@@ -11,10 +11,15 @@ public class MainViewModel : ViewModel
 #else
 public class MainViewModel : NotifyPropertyChanged
 {
+#if localization
+    public MainViewModel(IStringLocalizer<MainViewModel> localizer) 
+    {
+    }
+#else
     public MainViewModel() 
     {
     }
-
+#endif
 
     string property;
     public string Property 

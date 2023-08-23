@@ -4,10 +4,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 <!--#endif-->
 	<PropertyGroup>
+		<TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-ios</TargetFrameworks>
+		<TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-android</TargetFrameworks>
 		<!--#if (usemaccatalyst)-->
-		<TargetFrameworks>{DOTNET_TFM}-android;{DOTNET_TFM}-ios;{DOTNET_TFM}-maccatalyst</TargetFrameworks>
+		<TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-maccatalyst</TargetFrameworks>
 		<!--#else-->
-		<TargetFrameworks>{DOTNET_TFM}-android;{DOTNET_TFM}-ios</TargetFrameworks>
+		
 		<!--#endif-->
 		<OutputType>Exe</OutputType>
 		<RootNamespace>ShinyApp</RootNamespace>
@@ -26,7 +28,7 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<ShinyVersion>3.0.0-beta-0273</ShinyVersion>
+		<ShinyVersion>3.0.0-beta-0277</ShinyVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
@@ -141,7 +143,7 @@
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="2.0.0" />
 		<!--#endif-->
 		<!--#if (usemauimaps)-->
-		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.86" />
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.92" />
 		<!--#endif-->
 		<!--#if (usegooglemaps)-->
 		<PackageReference Include="Maui.GoogleMaps" Version="5.0.0" />
@@ -149,10 +151,13 @@
 		<!--#if (shinyframework)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
 		<PackageReference Include="ReactiveUI.Fody" Version="19.4.1" />
-		<PackageReference Include="Shiny.Framework" Version="3.0.0-beta-0008" />
+		<PackageReference Include="Shiny.Framework" Version="3.0.0-beta-0009" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
+		<!--#endif-->
+		<!--#if (localization)-->
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.10" />
 		<!--#endif-->
 		<!--#if (usemsal)-->
 		<PackageReference Include="Microsoft.Identity.Client" Version="4.54.0" />

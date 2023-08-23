@@ -33,6 +33,13 @@
         "isVisible": true
     },
     {
+        "id": "localization",
+        "name":{
+            "text": "Add Localization (Microsoft.Extensions.Localization)"
+        },
+        "isVisible": true
+    },
+    {
         "id": "configuration",
         "name": {
             "text": "Add AppSettings.json (Shiny.Extensions.Configuration)"
