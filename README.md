@@ -19,6 +19,7 @@ or update
 
 #### MAUI Shiny.NET App Project Template
 
+* Supports Visual Studio for Windows 2022 and Visual Studio for Mac 2022
 * Creates all the necessary permissions, boilerplate, & setup you'll need to get your .NET MAUI app up and running with Shiny & many other great community libraries
 * Easy setup and choice for push notifications
 	* Full Native
@@ -39,7 +40,8 @@ or update
 * Entitlements for iOS/MacCatalyst if necessary (ie. Push, MSAL)
 * Info.plist & Entitlements.plist permissions for iOS/MacCatalyst
 * AndroidManifest.xml Permissions & Features for Android
-* Preps all of the necessary functionality for a SQLite Database	
+* Preps all of the necessary functionality for a SQLite Database
+* Setup proper localization	
 * All of your MauiProgram.cs Dependency Injection
 * Setup Logging Options with AppCenter, SQLite, & Sentry.IO
 * Create AppSettings.json
@@ -66,11 +68,11 @@ or update
 	* [Store Review Plugin](https://github.com/jamesmontemagno/StoreReviewPlugin) by James Montemagno
 	* [In-App Billing Plugin](https://github.com/jamesmontemagno/InAppBillingPlugin) by James Montemagno
 	* [MAUI Audio Plugin](https://github.com/jfversluis/Plugin.Maui.Audio) by Gerald Versluis
+	* [MAUI Calendar Store Plugin](https://github.com/jfversluis/Plugin.Maui.CalendarStore) by Gerald Versluis	
 	* [Fingerprint Plugin](https://github.com/smstuebe/xamarin-fingerprint) by Sven-Michael Stübe
 	* [Drastic Flipper](https://github.com/drasticactions/Drastic.Flipper) by Tim Miller
 
 
-<img src="vs4win.png" />
 <img src="vs4mac.png" />
 
 #### MAUI XUnit Device Runner Project
