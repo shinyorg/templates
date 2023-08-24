@@ -88,7 +88,7 @@
         "localization":{
             "type": "parameter",
             "datatype": "bool",
-            "defaultValue": "true",
+            "defaultValue": "false",
             "description": "Add Localization (Microsoft.Extensions.Localization)",
             "displayName": "Add Localization (Microsoft.Extensions.Localization)"
         },
