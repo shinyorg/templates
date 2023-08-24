@@ -10,7 +10,7 @@ using Plugin.StoreReview;
 #if barcodes
 using ZXing.Net.Maui.Controls;
 #endif
-#if audio
+#if calendar
 using Plugin.Maui.CalendarStore;
 #endif
 #if audio
