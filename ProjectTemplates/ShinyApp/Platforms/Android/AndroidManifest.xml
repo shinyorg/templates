@@ -83,7 +83,9 @@
 	<!--#if (fingerprint)-->
 	<uses-permission android:name="android.permission.USE_FINGERPRINT" />
 	<!--#endif-->
-
+	<!--#if (calendar)-->
+	<uses-permission android:name="android.permission.READ_CALENDAR" />
+	<!--#endif-->
 	<!--#if (essentialsmedia || essentialsfilepicker)-->
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
 	<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />

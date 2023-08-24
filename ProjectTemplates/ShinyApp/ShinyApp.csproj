@@ -117,12 +117,18 @@
 	</ItemGroup>
 
 	<!--#endif-->
-    <!--#if (carplay)-->
+    
 	<ItemGroup Condition="$(TargetFramework.Contains('ios'))">
+		<!--#if (carplay)-->
 		<CustomEntitlements Include="com.apple.developer.carplay-driving-task" Value="boolean" Value="true" />
+		<!--#endif-->
+		<!--#if (calendar)-->
+		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.personal-information.calendar" Type="boolean" Value="true" />
+		<!--#endif-->
 	</ItemGroup>
 
-    <!--#endif-->
+    
 	<!--#if (usenet8)-->
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
@@ -157,7 +163,7 @@
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (localization)-->
-		<PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.10" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.0" />
 		<!--#endif-->
 		<!--#if (usemsal)-->
 		<PackageReference Include="Microsoft.Identity.Client" Version="4.54.0" />
@@ -215,6 +221,9 @@
 		<!--#endif-->
 		<!--#if (inappbilling)-->
 		<PackageReference Include="Plugin.InAppBilling" Version="6.7.0" />
+		<!--#endif-->
+		<!--#if (calendar)-->
+		<PackageReference Include="Plugin.Maui.CalendarStore" Version="1.0.0-preview1" />
 		<!--#endif-->
 		<!--#if (audio)-->
 		<PackageReference Include="Plugin.Maui.Audio" Version="1.0.0" />

@@ -368,6 +368,13 @@
             "description": "Store Review Plugin by James Montemagno - Documentation https://github.com/jamesmontemagno/StoreReviewPlugin",
             "displayName": "Add Store Review (Plugin.StoreReview)"
         },
+        "calendar":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Calendar Store Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.Calendar",
+            "displayName": "Add Calendar Store (Plugin.Maui.CalendarStore)"
+        },
         "audio":{
             "type": "parameter",
             "datatype": "bool",

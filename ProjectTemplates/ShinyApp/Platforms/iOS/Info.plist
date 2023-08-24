@@ -69,6 +69,10 @@
 	<key>NSFaceIDUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
+	<!--#if (calendar)-->
+	<key>NSCalendarsUsageDescription</key>
+	<string>Say something useful here that your users will understand</string>	
+	<!--#endif-->
 	<!--#if (essentialsfilepicker)-->
 	<key>com.apple.security.assets.movies.read-only</key>
 	<true/>

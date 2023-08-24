@@ -11,6 +11,9 @@ using Plugin.StoreReview;
 using ZXing.Net.Maui.Controls;
 #endif
 #if audio
+using Plugin.Maui.CalendarStore;
+#endif
+#if audio
 using Plugin.Maui.Audio;
 #endif
 #if fingerprint
@@ -155,6 +158,9 @@ public static class MauiProgram
         var s = builder.Services;
 #if (audio)
         s.AddSingleton(AudioManager.Current);
+#endif
+#if (calendar)
+        s.AddSingleton(Calendars.Default);
 #endif
 #if (authservice)
 #if (usemsal)

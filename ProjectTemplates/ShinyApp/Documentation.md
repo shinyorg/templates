@@ -50,6 +50,9 @@ _A collection of reusable elements for application development with .NET MAUI, i
 * [GitHub](https://github.com/CommunityToolkit/Maui)
 
 <!--#endif-->
+<!--#if (localize)-->
+
+<!--#endif-->
 <!--#if (uraniumui)-->
 ## Uranium UI
 
@@ -135,6 +138,14 @@ _Request store reviews from your users - Written by Jame Montemagno_
 _A simple In-App Purchase plugin for .NET MAUI, Xamarin, and Windows to query item information, purchase items, restore items, and more. - Written by James Montemagno_
 	
 * [GitHub](https://github.com/jamesmontemagno/InAppBillingPlugin)
+
+<!--#endif-->
+<!--#if (calendar)-->
+## MAUI Calendar Store Plugin
+
+_Plugin.Maui.CalendarStore provides the ability to access the device calendar information in your .NET MAUI application - Written by Gerald Versluis_
+
+* [GitHub](https://github.com/jfversluis/Plugin.Maui.CalendarStore)
 
 <!--#endif-->
 <!--#if (audio)-->
