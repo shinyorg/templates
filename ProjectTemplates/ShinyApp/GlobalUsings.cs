@@ -2,6 +2,7 @@
 global using System;
 global using System.Windows.Input;
 global using System.Collections.ObjectModel;
+global using System.Collections.Generic;
 global using System.Reactive;
 global using System.Reactive.Linq;
 global using System.Reactive.Threading.Tasks;
