@@ -206,3 +206,24 @@ Drastic.Flipper is a .NET binding of [Flipper](https://fbflipper.com/), a librar
 * [GitHub](https://github.com/drasticactions/Drastic.Flipper)
 
 <!--#endif-->
+<!--#if (skiamaui)-->
+## SkipSharp Extended MAUI Controls
+
+SkiaSharp.Extended is a collection some cool libraries that may be useful to some apps. 
+
+* [LottieFiles](https://lottiefiles.com/)
+* [GitHub](https://github.com/mono/SkiaSharp.Extended)
+
+Add the following to your XAML declaration
+
+> xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+
+```xml
+<skia:SKLottieView
+      RepeatCount="-1"
+      RepeatMode="Reverse"
+      Source="Girl.json" 
+      HeightRequest="400"
+      WidthRequest="400" />
+```
+<!--#endif-->

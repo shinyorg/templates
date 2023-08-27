@@ -66,6 +66,9 @@ public static class MauiProgram
 #if sharpnadocv
         .UseSharpnadoCollectionView(false)
 #endif
+#if skaipmaui
+        .UseSkiaSharp()
+#endif
 #if shinyframework            
         .UseShinyFramework(
             new DryIocContainerExtension(),

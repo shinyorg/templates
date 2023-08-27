@@ -312,5 +312,11 @@
             "text": "Add Drastic Flipper"
         },
         "isVisible": true
+    },{
+        "id": "skiamaui",
+        "name":{
+            "text": "Add SkipSharp Extended MAUI (Lottie)"
+        },
+        "isVisible": true        
     }]
 }
