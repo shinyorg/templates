@@ -253,6 +253,9 @@ public static class MauiProgram
 #if usepushfirebase
         s.AddPushFirebaseMessaging<ShinyApp.Delegates.MyPushDelegate>();
 #endif
+#if health
+        s.AddHealthIntegration();
+#endif
 #if shinyframework
         s.AddDataAnnotationValidation();
         s.AddGlobalCommandExceptionHandler(new(
