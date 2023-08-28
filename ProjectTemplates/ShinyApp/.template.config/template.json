@@ -183,6 +183,13 @@
             "description": "Add Speech Recognition (Shiny.SpeechRecognition)",
             "displayName": "Add Speech Recognition (Shiny.SpeechRecognition)"
         },
+        "health":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Speech Recognition (Shiny.Health - Apple Health and Google Fit - https://github.com/shinyorg/health)",
+            "displayName": "Add Health (Shiny.Health)"            
+        },
         "startup":{
             "type": "parameter",
             "datatype": "bool",

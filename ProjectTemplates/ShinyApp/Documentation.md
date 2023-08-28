@@ -41,6 +41,14 @@ _Framework combines the best of MVVM using Prism & ReactiveUI while also combini
     * [DryIoc](https://github.com/dadhi/DryIoc)
 
 <!--#endif-->
+<!--#if (health)-->
+## Shiny Health
+
+_Apple Health & Google Fit for your .NET MAUI apps - Written by Allan Ritchie_
+
+* [GitHub](https://github.com/shinyorg/health)
+
+<!--#endif-->
 <!--#if (shinyframework || communitytoolkit)-->
 ## MAUI Community Toolkit
 

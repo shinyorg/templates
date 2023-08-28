@@ -144,7 +144,14 @@
         },
         "isVisible": true,
         "defaultValue": "None"
-    },        
+    },
+    {
+        "id": "speechrecognition",
+        "name": {
+            "text": "Add Health (Shiny.Health - Apple Health & Google Fit)"
+        },
+        "isVisible": true
+    },
     {
         "id": "push",
         "name": {

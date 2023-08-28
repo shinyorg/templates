@@ -14,7 +14,10 @@
 		<string>arm64</string>
 		<!--#if (bluetoothle || blehosting)-->
 		<string>bluetooth-le</string>
-		<!--#endif-->		
+		<!--#endif-->
+		<!--#if (health)-->
+		<string>healthkithealthkit</string>
+		<!--#endif-->
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
@@ -72,6 +75,12 @@
 	<!--#if (calendar)-->
 	<key>NSCalendarsUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>	
+	<!--#endif-->
+	<!--#if (health)-->
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>We need to say something useful here</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>We need to say something useful here</string>	
 	<!--#endif-->
 	<!--#if (essentialsfilepicker)-->
 	<key>com.apple.security.assets.movies.read-only</key>

@@ -117,7 +117,6 @@
 	</ItemGroup>
 
 	<!--#endif-->
-    
 	<ItemGroup Condition="$(TargetFramework.Contains('ios'))">
 		<!--#if (carplay)-->
 		<CustomEntitlements Include="com.apple.developer.carplay-driving-task" Value="boolean" Value="true" />
@@ -126,10 +125,13 @@
 		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" />
 		<CustomEntitlements Include="com.apple.security.personal-information.calendar" Type="boolean" Value="true" />
 		<!--#endif-->
+		<!--#if (health)-->
+		<CustomEntitlements Include="com.apple.developer.healthkit" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.developer.healthkit.background-delivery" Type="boolean" Value="true" />
+		<!--#endif-->
 	</ItemGroup>
-
-    
 	<!--#if (usenet8)-->
+
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />	
@@ -212,6 +214,9 @@
 		<!--#endif-->
 		<!--#if (usepushfirebase)-->
 		<PackageReference Include="Shiny.Push.FirebaseMessaging" Version="$(ShinyVersion)" />
+		<!--#endif-->
+		<!--#if (health)-->
+		<PackageReference Include="Shiny.Health" Version="1.0.0-beta-0001" />
 		<!--#endif-->
 		<!--#if (barcodes)-->
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.3.0-preview.1" />
