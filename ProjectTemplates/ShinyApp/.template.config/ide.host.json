@@ -146,7 +146,7 @@
         "defaultValue": "None"
     },
     {
-        "id": "speechrecognition",
+        "id": "health",
         "name": {
             "text": "Add Health (Shiny.Health - Apple Health & Google Fit)"
         },

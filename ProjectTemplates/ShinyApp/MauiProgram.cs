@@ -254,7 +254,11 @@ public static class MauiProgram
         s.AddPushFirebaseMessaging<ShinyApp.Delegates.MyPushDelegate>();
 #endif
 #if health
+//-:cnd:noEmit
+#if !MACCATALYST
         s.AddHealthIntegration();
+#endif
+//+:cnd:noEmit
 #endif
 #if shinyframework
         s.AddDataAnnotationValidation();
