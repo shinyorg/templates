@@ -53,24 +53,25 @@
 	
 	<!--#endif-->
 	<!--#if (usemaccatalyst)-->
-	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
+	<PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst'))">
 		<SupportedOSPlatformVersion>14.0</SupportedOSPlatformVersion>
 		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>
 	</PropertyGroup>
 	
-	<!--#if (usenet8)-->
 	<PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst')) and '$(Configuration)' == 'Release'">
 		<UseHardenedRuntime>true</UseHardenedRuntime>
-		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.network.client" Type="boolean" Value="true" />
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst')) and '$(Configuration)' == 'Debug'">
-		<CustomEntitlements Include="com.apple.security.get-task-allow" Type="boolean" Value="true" />
 		<RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers>
 	</PropertyGroup>
+
+	<ItemGroup Condition="$(TargetFramework.Contains('-maccatalyst'))">	
+		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.get-task-allow" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.network.client" Type="boolean" Value="true" />			
+	</ItemGroup>
 	
-	<!--#endif-->
 	<!--#endif-->
 	<ItemGroup>
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
