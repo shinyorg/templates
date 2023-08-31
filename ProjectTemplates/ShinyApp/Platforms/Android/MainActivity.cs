@@ -26,18 +26,27 @@ namespace ShinyApp;
     new[] {
         ShinyPushIntents.NotificationClickAction,
         ShinyNotificationIntents.NotificationClickAction
+    },
+    Categories = new[] { 
+        "android.intent.category.DEFAULT" 
     }
 )]
 #elif (usepush)
 [IntentFilter(
     new[] { 
         ShinyPushIntents.NotificationClickAction 
+    },
+    Categories = new[] { 
+        "android.intent.category.DEFAULT" 
     }
 )]
 #elif (notifications)
 [IntentFilter(
     new[] { 
         ShinyNotificationIntents.NotificationClickAction 
+    },
+    Categories = new[] { 
+        "android.intent.category.DEFAULT" 
     }
 )]
 #endif
