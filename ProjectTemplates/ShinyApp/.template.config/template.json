@@ -410,12 +410,19 @@
             "description": "Add Drastic.Flipper - An amazing tool for your MAUI application by Tim Miller - Documentation: https://github.com/drasticactions/Drastic.Flipper",
             "displayName": "Add Drastic Flipper"
         },
-        "skiamaui":{
+        "skia":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add SkipSharp Extended MAUI (Lottie) - Documentation: https://github.com/mono/SkiaSharp.Extended",
-            "displayName": "Add SkipSharp Extended MAUI (Lottie)"            
+            "description": "Add SkiaSharp - Documentation: https://github.com/mono/SkiaSharp",
+            "displayName": "Add SkiaSharp"
+        },
+        "skiaextended":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add SkiaSharp Extended (Lottie) - Documentation: https://github.com/mono/SkiaSharp.Extended",
+            "displayName": "Add SkiaSharp Extended (Lottie)"         
         },
         "androidauto":{
             "type": "parameter",

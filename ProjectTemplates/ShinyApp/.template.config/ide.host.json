@@ -325,9 +325,15 @@
         },
         "isVisible": true
     },{
-        "id": "skiamaui",
+        "id": "skia",
         "name":{
-            "text": "Add SkipSharp Extended MAUI (Lottie)"
+            "text": "Add SkiaSharp"
+        },
+        "isVisible": true  
+    },{
+        "id": "skiaextended",
+        "name":{
+            "text": "Add SkiaSharp Extended (Lottie)"
         },
         "isVisible": true        
     }]

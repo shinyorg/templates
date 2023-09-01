@@ -257,7 +257,10 @@
 		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.5.4" />
 		<PackageReference Include="UraniumUI.Blurs" Version="2.5.4" />
 		<!--#endif-->
-		<!--#skiamaui-->
+		<!--#if (skia)-->
+		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.5" />
+		<!--#endif-->
+		<!--#skiaextended-->
 		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0-preview.80" />
 		<!--#endif-->
 	</ItemGroup>

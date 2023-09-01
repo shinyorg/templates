@@ -227,10 +227,19 @@ Drastic.Flipper is a .NET binding of [Flipper](https://fbflipper.com/), a librar
 * [GitHub](https://github.com/drasticactions/Drastic.Flipper)
 
 <!--#endif-->
-<!--#if (skiamaui)-->
-## SkipSharp Extended MAUI Controls
+<!--#if (skia)-->
+## SkiaSharp
 
-SkiaSharp.Extended is a collection some cool libraries that may be useful to some apps. 
+_SkiaSharp is a cross-platform 2D graphics API for .NET platforms based on Google's Skia Graphics Library (skia.org). It provides a comprehensive 2D API that can be used across mobile, server and desktop models to render images._
+
+* [GitHub](https://github.com/mono/SkiaSharp)
+* [Skia](https://skia.org/docs/)
+
+<!--#endif-->
+<!--#if (skiaextended)-->
+## SkiaSharp Extended MAUI Controls
+
+_SkiaSharp.Extended is a collection some cool libraries that may be useful to some apps.  This package includes support for Lottie in your MAUI apps_
 
 * [LottieFiles](https://lottiefiles.com/)
 * [GitHub](https://github.com/mono/SkiaSharp.Extended)

@@ -31,6 +31,12 @@ using Sharpnado.Tabs;
 #if usegooglemaps
 using Maui.GoogleMaps.Hosting;
 #endif
+#if skia || skiaextended
+using SkiaSharp.Views.Maui.Controls.Hosting;
+#endif
+#if pureween
+using Maui.FixesAndWorkarounds;
+#endif
 #if uraniumui
 using UraniumUI;
 #endif
@@ -66,7 +72,7 @@ public static class MauiProgram
 #if sharpnadocv
         .UseSharpnadoCollectionView(false)
 #endif
-#if skaipmaui
+#if skia || skiaextended
         .UseSkiaSharp()
 #endif
 #if shinyframework            
