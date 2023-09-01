@@ -309,8 +309,15 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Sets all up all the necessary boilerplate for the MAUI Essentials File Picker",
+            "description": "Setup all the necessary boilerplate for the MAUI Essentials File Picker",
             "displayName": "Setup MAUI Essentials - File Picker"            
+        },
+        "pureween": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add MAUI Workarounds from Shane Neuville (MAUI Engineer) - Documentation: https://github.com/PureWeen/ShanedlerSamples",
+            "displayName": "Add MAUI Workarounds (PureWeen.Maui.FixesAndWorkarounds)"  
         },
         "communitytoolkit":{
             "type": "parameter",

@@ -58,7 +58,20 @@ _A collection of reusable elements for application development with .NET MAUI, i
 * [GitHub](https://github.com/CommunityToolkit/Maui)
 
 <!--#endif-->
+<!--#if (pureween)-->
+## MAUI Fixes & Workarounds
+
+_Several key fixes and workarounds for .NET MAUI by Shane Neuville (MAUI Engineer)_
+
+* [GitHub](https://github.com/PureWeen/ShanedlerSamples)
+
+<!--#endif-->
 <!--#if (localize)-->
+## Microsoft.Extensions.Localization
+
+_Localization is an essential part of any application.  This template will auto wire some basic localization setup for you_
+
+* [Documentation](https://learn.microsoft.com/en-us/dotnet/core/extensions/localization)
 
 <!--#endif-->
 <!--#if (uraniumui)-->

@@ -207,16 +207,21 @@
         "name": {
             "text": "Setup MAUI Essentials - Media Picker"
         },
-        "isVisible": true,
-        "defaultValue": "None"
+        "isVisible": true
     },
     {
         "id": "essentialsfilepicker",
         "name": {
             "text": "Setup MAUI Essentials - File Picker"
         },
-        "isVisible": true,
-        "defaultValue": "None"
+        "isVisible": true
+    },
+    {
+        "id": "pureween",
+        "name": {
+            "text": "Add MAUI Workarounds (PureWeen.Maui.FixesAndWorkarounds)"
+        },
+        "isVisible": true
     },    
     {
         "id": "communitytoolkit",

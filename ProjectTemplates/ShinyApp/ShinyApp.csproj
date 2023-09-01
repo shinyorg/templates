@@ -151,6 +151,9 @@
 		<!--#if (mediaelement)-->
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="2.0.0" />
 		<!--#endif-->
+		<!--#if (pureween)-->
+		<PackageReference Include="PureWeen.Maui.FixesAndWorkarounds" Version="1.4.9" />
+		<!--#endif-->
 		<!--#if (usemauimaps)-->
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.92" />
 		<!--#endif-->

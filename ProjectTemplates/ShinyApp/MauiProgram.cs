@@ -138,7 +138,21 @@ public static class MauiProgram
 #endif
 //+:cnd:noEmit
 #endif
+#if pureween
+        builder.ConfigureMauiWorkarounds();
 
+        // OR optional picks
+        // builder.ConfigureShellWorkarounds();
+        // builder.ConfigureTabbedPageWorkarounds();
+        // builder.ConfigureEntryNextWorkaround();
+        // builder.ConfigureKeyboardAutoScroll();
+        // builder.ConfigureFlyoutPageWorkarounds();
+//-:cnd:noEmit
+        // #if ANDROID
+        // builder.ConfigureEntryFocusOpensKeyboard();
+        // #endif
+//+:cnd:noEmit
+#endif
 #if useconfig
         builder.Configuration.AddJsonPlatformBundle();
 #endif
