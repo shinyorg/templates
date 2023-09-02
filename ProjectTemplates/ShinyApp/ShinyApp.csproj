@@ -114,6 +114,7 @@
 	</ItemGroup>
 
 	<!--#endif-->
+	<!--#if (carplay || calendar || health)-->
 	<ItemGroup Condition="$(TargetFramework.Contains('ios'))">
 		<!--#if (carplay)-->
 		<CustomEntitlements Include="com.apple.developer.carplay-driving-task" Value="boolean" Value="true" />
@@ -127,8 +128,8 @@
 		<CustomEntitlements Include="com.apple.developer.healthkit.background-delivery" Type="boolean" Value="true" />
 		<!--#endif-->
 	</ItemGroup>
+	<!--#endif-->
 	<!--#if (usenet8)-->
-
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />	
