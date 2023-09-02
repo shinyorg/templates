@@ -75,6 +75,13 @@
             "isVisible": true
         },
         {
+            "id": "orleans",
+            "name": {
+                "text": "Microsoft Orleans"
+            },
+            "isVisible": true
+        },        
+        {
             "id": "swagger",
             "name": {
                 "text": "Swagger"

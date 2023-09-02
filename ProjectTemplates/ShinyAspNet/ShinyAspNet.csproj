@@ -4,8 +4,11 @@
         <TargetFramework>{DOTNET_TFM}</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <MicrosoftVersion>7.0.0</MicrosoftVersion>
-        <FastEndpointsVersion>5.15.0</FastEndpointsVersion>
+        <MicrosoftVersion>7.0.10</MicrosoftVersion>
+        <FastEndpointsVersion>5.16.0</FastEndpointsVersion>
+        <!--#if (orleans)-->
+        <OrleansVersion>7.2.1</OrleansVersion>
+        <!--#endif-->
         <!--#if (email || push)-->
         <ShinyExtensionsVersion>2.0.0-preview-0009</ShinyExtensionsVersion>
         <!--#endif-->
@@ -24,6 +27,11 @@
         <!--#endif-->
         <!--#if (apple)-->
         <PackageReference Include="AspNet.Security.OAuth.Apple" Version="7.0.0" />
+        <!--#endif-->
+        <!--#if (orleans)-->
+        <PackageReference Include="Microsoft.Orleans.Server" Version="$(OrleansVersion)" />
+        <PackageReference Include="Microsoft.Orleans.Sdk" Version="$(OrleansVersion)" />
+        <PackageReference Include="Microsoft.Orleans.BroadcastChannel" Version="$(OrleansVersion)" />
         <!--#endif-->
         <!--#if (push)-->
         <PackageReference Include="Shiny.Extensions.Push" Version="$(ShinyExtensionsVersion)" />

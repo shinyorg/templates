@@ -111,6 +111,13 @@
             "description": "Mobile Authentication Endpoints",
             "displayName": "Mobile Authentication Endpoints"
         },
+        "orleans": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Microsoft Orleans",
+            "displayName": "Microsoft Orleans"            
+        },
         "swagger": {
             "type": "parameter",
             "datatype": "bool",
@@ -141,6 +148,10 @@
             "condition": "(mobileauth == false)",
             "exclude": "Endpoints/Profile"
         },
+        {
+            "condition": "(orleans == false)",
+            "exclude": "Grains/**"
+        },        
         {
             "condition": "(signalr == false)",
             "exclude": "Hubs/**"

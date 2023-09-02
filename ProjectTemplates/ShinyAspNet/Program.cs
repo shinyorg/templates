@@ -129,13 +129,20 @@ builder.Services.AddSingleton<IUserIdProvider, UserIdProvider>();
 //#endif
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddFastEndpoints();
-#if (swagger)
+//#if (swagger)
 builder.Services.AddSwaggerDoc(x =>
 {
     x.DocumentName = "v1";
 }, shortSchemaNames: true);
+//#endif
+//#if (olreans)
+builder.Host.UseOrleans(x => x
+    .UseLocalhostClustering()
+    .AddBroadcastChannel("myapp", cfg => cfg.FireAndForgetDelivery = true)
+    .AddMemoryGrainStorage("myapp")
+);
+//#endif
 
-#endif
 var app = builder.Build();
 app.UseHttpsRedirection();
 app.UseAuthentication();
@@ -144,6 +151,7 @@ app.UseAuthorization();
 app.MapPushEndpoints("push", true, x => x.User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 //#endif
 app.UseFastEndpoints();
+
 //#if (signalr)
 app.MapHub<BizHub>("/biz");
 //#endif
