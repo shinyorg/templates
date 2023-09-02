@@ -256,8 +256,8 @@
 		<!--#if (skia)-->
 		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.5" />
 		<!--#endif-->
-		<!--if (#skiaextended)-->
-		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0-preview.80" />
+		<!--#if (skiaextended)-->
+		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0-preview.83" />
 		<!--#endif-->
 	</ItemGroup>
 
