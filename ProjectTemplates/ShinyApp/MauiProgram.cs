@@ -240,6 +240,7 @@ public static class MauiProgram
 #endif
 #if blehosting
         s.AddBluetoothLeHosting();
+        s.AddBleHostedCharacteristic<MyBleGattCharacteristic>();
 #endif
 #if beacons
         s.AddBeaconRanging();

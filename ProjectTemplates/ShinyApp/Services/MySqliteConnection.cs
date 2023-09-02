@@ -1,5 +1,4 @@
 using SQLite;
-using System.IO;
 
 namespace ShinyApp.Services;
 

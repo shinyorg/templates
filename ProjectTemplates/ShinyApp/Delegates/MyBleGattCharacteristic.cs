@@ -1,4 +1,3 @@
-using Shiny.BluetoothLE.Hosting;
 using Shiny.BluetoothLE.Hosting.Managed;
 
 namespace ShinyApp.Delegates;

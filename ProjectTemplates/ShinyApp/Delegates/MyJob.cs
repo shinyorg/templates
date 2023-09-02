@@ -3,14 +3,14 @@ using Shiny.Jobs;
 namespace ShinyApp.Delegates;
 
 
-public class MyJob : IJob
+public class MyJob : Job
 {
-    public MyJob()
+    public MyJob(ILogger<MyJob> logger) : base(logger)
     {
     }
 
 
-    public Task Run(JobInfo jobInfo, CancellationToken cancelToken) 
+    protected override Task Run(CancellationToken cancelToken)
     {
         return Task.CompletedTask;
     }
