@@ -254,6 +254,12 @@ public static class MauiProgram
 #endif
 #if (httptransfers)
         s.AddHttpTransfers<ShinyApp.Delegates.MyHttpTransferDelegate>();
+//-:cnd:noEmit
+#if ANDROID
+        // if you want http transfers to also show up as progress notifications, include this
+        s.AddShinyService<Shiny.Net.Http.PerTransferNotificationStrategy>();
+#endif
+//+:cnd:noEmit
 #endif
 #if notifications
         s.AddNotifications();
