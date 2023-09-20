@@ -257,3 +257,23 @@ Add the following to your XAML declaration
       WidthRequest="400" />
 ```
 <!--#endif-->
+<!--#if (embedio)-->
+Embed.IO 
+
+A tiny, cross-platform, module based, MIT-licensed web server for .NET Framework and .NET Core.
+* Network operations use the async/await pattern: Responses are handled asynchronously
+* Multiple implementations support: EmbedIO can use Microsoft HttpListener or internal Http Listener based on Mono/websocket-sharp projects
+* Cross-platform: tested on multiple OS and runtimes. From Windows .NET Framework to Linux MONO.
+* Extensible: Write your own modules -- For example, video streaming, UPnP, etc. Check out EmbedIO Extras for additional modules
+* Small memory footprint
+* Create REST APIs quickly with the out-of-the-box Web API module
+* Serve static or embedded files with 1 line of code (also out-of-the-box)
+* Handle sessions with the built-in LocalSessionWebModule
+* WebSockets support
+* CORS support. Origin, Header and Method validation with OPTIONS preflight
+* HTTP 206 Partial Content support
+
+* [Documentation](https://unosquare.github.io/embedio/)
+* [GitHub](https://github.com/unosquare/embedio/)
+
+<!--#endif-->

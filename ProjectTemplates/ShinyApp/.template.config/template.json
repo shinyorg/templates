@@ -386,7 +386,7 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Calendar Store Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.Calendar",
+            "description": "Calendar Store Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.CalendarStore",
             "displayName": "Add Calendar Store (Plugin.Maui.CalendarStore)"
         },
         "audio":{
@@ -423,6 +423,13 @@
             "defaultValue": "false",
             "description": "Add SkiaSharp Extended (Lottie) - Documentation: https://github.com/mono/SkiaSharp.Extended",
             "displayName": "Add SkiaSharp Extended (Lottie)"         
+        },
+        "embedio": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add EmbedIO Tiny Web Server - Documentation: https://unosquare.github.io/embedio/",
+            "displayName": "Add EmbedIO Tiny Web Server"  
         },
         "androidauto":{
             "type": "parameter",

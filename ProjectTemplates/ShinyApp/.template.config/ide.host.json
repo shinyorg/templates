@@ -329,12 +329,18 @@
         "name":{
             "text": "Add SkiaSharp"
         },
-        "isVisible": true  
+        "isVisible": true
     },{
         "id": "skiaextended",
         "name":{
             "text": "Add SkiaSharp Extended (Lottie)"
         },
-        "isVisible": true        
+        "isVisible": true
+    },{
+        "id": "embedio",
+        "name":{
+            "text": "Add EmbedIO Tiny Web Server"
+        },
+        "isVisible": true
     }]
 }
