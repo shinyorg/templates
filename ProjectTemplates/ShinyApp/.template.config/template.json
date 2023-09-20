@@ -660,6 +660,10 @@
             "exclude": "MainViewModel.cs"
         },
         {
+            "condition": "(storereview == true)",
+            "exclude": "Platforms/Android/proguard.cfg"
+        },        
+        {
             "condition": "(useblazor == false)",
             "exclude":[ 
                 "Main.razor",

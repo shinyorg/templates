@@ -28,12 +28,16 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<ShinyVersion>3.0.0</ShinyVersion>
+		<ShinyVersion>3.0.1</ShinyVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<DefineConstants>$(DefineConstants);PLATFORM</DefineConstants>
 		<SupportedOSPlatformVersion>26.0</SupportedOSPlatformVersion>
+		<!--
+		<AndroidLinkTool>r8</AndroidLinkTool>
+		<AndroidLinkTool>proguard</AndroidLinkTool>
+		-->
     </PropertyGroup>
 	
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
@@ -272,5 +276,11 @@
 	<ItemGroup Condition="$(TargetFramework.Contains('android'))">
 		<PackageReference Include="Xamarin.AndroidX.Car.App.App" Version="1.2.0.2" />
     </ItemGroup>
+	<!--#endif-->
+
+	<!--#if (storereview)-->
+	<ItemGroup>
+		<ProguardConfiguration Include="proguard.cfg" />
+	</ItemGroup>
 	<!--#endif-->
 </Project>
