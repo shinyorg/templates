@@ -183,7 +183,7 @@ public static class MauiProgram
         s.AddSingleton(AudioManager.Current);
 #endif
 #if (calendar)
-        s.AddSingleton(Calendars.Default);
+        s.AddSingleton(CalendarStore.Default);
 #endif
 #if (authservice)
 #if (usemsal)

@@ -191,7 +191,7 @@
     {
         "id": "maptype",
         "name":{
-            "text": "Maps (.NET 7 Required)"
+            "text": "Maps"
         },
         "isVisible": true
     },

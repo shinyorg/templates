@@ -232,7 +232,7 @@
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.3.0-preview.1" />
 		<!--#endif-->
 		<!--#if (storereview)-->
-		<PackageReference Include="Plugin.StoreReview" Version="5.0.1" />
+		<PackageReference Include="Plugin.StoreReview" Version="6.0.0" />
 		<!--#endif-->
 		<!--#if (inappbilling)-->
 		<PackageReference Include="Plugin.InAppBilling" Version="6.7.0" />
