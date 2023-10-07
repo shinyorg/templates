@@ -44,6 +44,10 @@
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
 		<SupportedOSPlatformVersion>14.2</SupportedOSPlatformVersion>
 		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>
+		<!--#if (useentitlements)-->
+		<CodesignEntitlements Condition="'$(Configuration)' == 'Release'">Platforms/iOS/Entitlements.release.plist</CodesignEntitlements>
+		<CodesignEntitlements Condition="'$(Configuration)' == 'Debug'">Platforms/iOS/Entitlements.debug.plist</CodesignEntitlements>
+		<!--#endif-->
 	</PropertyGroup>
 
 
@@ -54,15 +58,12 @@
 
 		<UseHardenedRuntime Condition="'$(Configuration)' == 'Release'">true</UseHardenedRuntime>
 		<RuntimeIdentifiers Condition="'$(Configuration)' == 'Debug'">maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers>
+		<!--#if (useentitlements)-->
+		<CodesignEntitlements Condition="'$(Configuration)' == 'Release'">Platforms/MacCatalyst/Entitlements.release.plist</CodesignEntitlements>
+		<CodesignEntitlements Condition="'$(Configuration)' == 'Debug'">Platforms/MacCatalyst/Entitlements.debug.plist</CodesignEntitlements>
+		<!--#endif-->
 	</PropertyGroup>
 	
-	<!--#endif-->
-	<!--#if (useentitlements)-->
-	<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) OR $(TargetFramework.Contains('-maccatalyst'))">
-		<CodesignEntitlements Condition="'$(Configuration)' == 'Release'">Entitlements.release.plist</CodesignEntitlements>
-		<CodesignEntitlements Condition="'$(Configuration)' == 'Debug'">Entitlements.debug.plist</CodesignEntitlements>
-	</PropertyGroup>
-
 	<!--#endif-->
 	<ItemGroup>
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -89,10 +90,10 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" Condition="'$(Configuration)' == 'Debug'" />
 
 		<!--#if (shinyframework || communitytoolkit)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="5.3.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="6.0.0" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
-		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.2.0" />
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.3.0" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="2.0.0" />
@@ -108,7 +109,7 @@
 		<!--#endif-->
 		<!--#endif-->
 		<!--#if (usegooglemaps)-->
-		<PackageReference Include="Maui.GoogleMaps" Version="5.0.0" />
+		<PackageReference Include="Onion.Maui.GoogleMaps" Version="5.0.1" />
 		<!--#endif-->
 		<!--#if (shinyframework)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
@@ -122,13 +123,13 @@
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.0" />
 		<!--#endif-->
 		<!--#if (usemsal)-->
-		<PackageReference Include="Microsoft.Identity.Client" Version="4.54.0" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.56.0" />
 		<!--#endif-->
 		<!--#if (useconfig)-->
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="3.33.0" />
+		<PackageReference Include="Sentry.Maui" Version="3.39.1" />
 		<!--#endif-->
 		<!--#if (useappcenter)-->
 		<PackageReference Include="Shiny.Logging.AppCenter" Version="$(ShinyVersion)" />
@@ -170,7 +171,7 @@
 		<PackageReference Include="Shiny.Push.FirebaseMessaging" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (health)-->
-		<PackageReference Include="Shiny.Health" Version="1.0.0-beta-0006" />
+		<PackageReference Include="Shiny.Health" Version="1.0.0-beta-0013" />
 		<!--#endif-->
 		<!--#if (barcodes)-->
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.3.0-preview.1" />
@@ -191,7 +192,7 @@
 		<PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
 		<!--#endif-->
 		<!--#if usehttp-->
-		<PackageReference Include="Refit.HttpClientFactory" Version="6.3.2" />
+		<PackageReference Include="Refit.HttpClientFactory" Version="7.0.0" />
 		<!--#endif-->
 		<!--#if (sqlite)-->
 		<PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta" />
