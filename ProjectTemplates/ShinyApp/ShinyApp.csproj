@@ -10,7 +10,7 @@
 		<TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-maccatalyst</TargetFrameworks>
 		<!--#endif-->
 		<!--#if (usenet8)-->
-		<MauiVersion>8.0.0-rc.1.9171</MauiVersion>
+		<!--<MauiVersion>8.0.0-rc.1.9171</MauiVersion>-->
 		<!--#endif-->
 		<OutputType>Exe</OutputType>
 		<RootNamespace>ShinyApp</RootNamespace>
@@ -46,37 +46,23 @@
 		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>
 	</PropertyGroup>
 
-	<!--#if (essentialsfilepicker)-->
-	<PropertyGroup Condition="$(TargetFramework.Contains('maccatalyst')) OR $(TargetFramework.Contains('ios'))">
-		<CustomEntitlements Include="com.apple.security.assets.movies.read-only" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.assets.music.read-only" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.assets.pictures.read-only" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.files.user-selected.read-only" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.files.downloads.read-only" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.personal-information.photos-library" Type="boolean" Value="true" />
-	</PropertyGroup>
-	
-	<!--#endif-->
+
 	<!--#if (usemaccatalyst)-->
 	<PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst'))">
 		<SupportedOSPlatformVersion>14.0</SupportedOSPlatformVersion>
 		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>
+
+		<UseHardenedRuntime Condition="'$(Configuration)' == 'Release'">true</UseHardenedRuntime>
+		<RuntimeIdentifiers Condition="'$(Configuration)' == 'Debug'">maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers>
 	</PropertyGroup>
 	
-	<PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst')) and '$(Configuration)' == 'Release'">
-		<UseHardenedRuntime>true</UseHardenedRuntime>
+	<!--#endif-->
+	<!--#if (useentitlements)-->
+	<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) OR $(TargetFramework.Contains('-maccatalyst'))">
+		<CodesignEntitlements Condition="'$(Configuration)' == 'Release'">Entitlements.release.plist</CodesignEntitlements>
+		<CodesignEntitlements Condition="'$(Configuration)' == 'Debug'">Entitlements.debug.plist</CodesignEntitlements>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst')) and '$(Configuration)' == 'Debug'">
-		<RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers>
-	</PropertyGroup>
-
-	<ItemGroup Condition="$(TargetFramework.Contains('-maccatalyst'))">	
-		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.get-task-allow" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.network.client" Type="boolean" Value="true" />			
-	</ItemGroup>
-	
 	<!--#endif-->
 	<ItemGroup>
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -92,48 +78,6 @@
 		<!--#endif-->
 	</ItemGroup>
 
-	<!--#if (useblazor)-->
-	<ItemGroup Condition="$(TargetFramework.Contains('maccatalyst')) OR $(TargetFramework.Contains('ios')) AND '$(Configuration)' == 'Debug'">
-		<CustomEntitlements Include="com.apple.security.get-task-allow" Type="boolean" Value="true" />
-	</ItemGroup>
-
-	<!--#endif-->
-	<!--#if (usemsal)-->
-	<ItemGroup Condition="$(TargetFramework.Contains('ios-')) OR $(TargetFramework.Contains('maccatalyst'))">
-		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="{APPLICATION_ID};$(AppIdentifierPrefix)com.microsoft.adalcache" />
-	</ItemGroup>
-
-	<!--#else-->
-	<ItemGroup Condition="$(TargetFramework.Contains('ios-')) AND '$(Configuration)' == 'Debug'">
-		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="{APPLICATION_ID}" />
-	</ItemGroup>
-
-	<!--#endif-->	
-	<!--#if (usepush)-->
-	<ItemGroup Condition="$(TargetFramework.Contains('maccatalyst')) OR $(TargetFramework.Contains('ios')) AND '$(Configuration)' == 'Debug'">
-		<CustomEntitlements Include="aps-environment" Type="String" Value="development" />
-	</ItemGroup>
-
-	<ItemGroup Condition="$(TargetFramework.Contains('maccatalyst')) OR $(TargetFramework.Contains('ios')) AND '$(Configuration)' == 'Release'">
-		<CustomEntitlements Include="aps-environment" Type="String" Value="production" />
-	</ItemGroup>
-
-	<!--#endif-->
-	<!--#if (carplay || calendar || health)-->
-	<ItemGroup Condition="$(TargetFramework.Contains('ios'))">
-		<!--#if (carplay)-->
-		<CustomEntitlements Include="com.apple.developer.carplay-driving-task" Value="boolean" Value="true" />
-		<!--#endif-->
-		<!--#if (calendar)-->
-		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.personal-information.calendar" Type="boolean" Value="true" />
-		<!--#endif-->
-		<!--#if (health)-->
-		<CustomEntitlements Include="com.apple.developer.healthkit" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.developer.healthkit.background-delivery" Type="boolean" Value="true" />
-		<!--#endif-->
-	</ItemGroup>
-	<!--#endif-->
 	<!--#if (usenet8)-->
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
@@ -167,8 +111,8 @@
 		<PackageReference Include="Maui.GoogleMaps" Version="5.0.0" />
 		<!--#endif-->
 		<!--#if (shinyframework)-->
-		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
-		<PackageReference Include="ReactiveUI.Fody" Version="19.4.1" />
+		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.264-pre" />
+		<PackageReference Include="ReactiveUI.Fody" Version="19.5.1" />
 		<PackageReference Include="Shiny.Framework" Version="3.0.0-beta-0012" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
@@ -235,7 +179,7 @@
 		<PackageReference Include="Plugin.StoreReview" Version="6.0.0" />
 		<!--#endif-->
 		<!--#if (inappbilling)-->
-		<PackageReference Include="Plugin.InAppBilling" Version="6.7.0" />
+		<PackageReference Include="Plugin.InAppBilling" Version="7.0.5" />
 		<!--#endif-->
 		<!--#if (calendar)-->
 		<PackageReference Include="Plugin.Maui.CalendarStore" Version="1.0.0-preview6" />
@@ -259,15 +203,15 @@
 		<PackageReference Include="Sharpnado.CollectionView.Maui" Version="3.0.0" />
 		<!--#endif-->
 		<!--#if (uraniumui)-->
-		<PackageReference Include="UraniumUI.Material" Version="2.5.4" />
-		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.5.4" />
-		<PackageReference Include="UraniumUI.Blurs" Version="2.5.4" />
+		<PackageReference Include="UraniumUI.Material" Version="2.5.6" />
+		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.5.6" />
+		<PackageReference Include="UraniumUI.Blurs" Version="2.5.6" />
 		<!--#endif-->
 		<!--#if (skia)-->
-		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.5" />
+		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.6" />
 		<!--#endif-->
 		<!--#if (skiaextended)-->
-		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0-preview.83" />
+		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0-preview.86" />
 		<!--#endif-->
 		<!--#if (embedio)-->
 		<PackageReference Include="EmbedIO" Version="3.5.2" />
@@ -287,7 +231,7 @@
 	<!--#endif-->
 
 	<!--#if (storereview)-->
-	<ItemGroup>
+	<ItemGroup Condition="$(TargetFramework.Contains('android'))">
 		<ProguardConfiguration Include="proguard.cfg" />
 	</ItemGroup>
 	<!--#endif-->

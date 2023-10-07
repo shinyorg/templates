@@ -50,6 +50,9 @@
 	<!--#if (blehosting)-->
 	<uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
 	<!--#endif-->
+	<!--#if (notifications)-->
+	<uses-permission android:name="android.permission.SET_ALARM" />
+	<!--#endif-->
 	<!--#if (notifications || gps || geofencing)-->
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 	<!--#endif-->
@@ -67,7 +70,7 @@
 	<!--#if (notifications || usepush || gps || beacons || httptransfers)-->
 	<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 	<!--#endif-->
-	<!--#if (notifications || gps || beacons || httptransfers)-->
+	<!--#if (gps || beacons || httptransfers)-->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 	<!--#endif-->	
 	<!--#if (essentialsmedia || barcodes)-->

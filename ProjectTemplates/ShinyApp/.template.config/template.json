@@ -546,6 +546,11 @@
             "type": "computed",
             "datatype": "bool",
             "value": "(authservice && refit)"
+        },
+        "useentitlements":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(usepush || usemsal || calendar || health || carplay)"
         }
     },
     "sources": [{
@@ -566,7 +571,11 @@
                 "appsettings.ios.json",
                 "appsettings.maccatalyst.json"
             ]
-        },                
+        },
+        {
+            "condition": "(useentitlements == false)",
+            "exclude": "Platforms/**/Entitlements.*.plist"
+        },
         {
             "condition": "(startup == false)",
             "exclude": "AppStartup.cs"
