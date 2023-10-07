@@ -182,10 +182,10 @@
 		<PackageReference Include="Plugin.InAppBilling" Version="7.0.5" />
 		<!--#endif-->
 		<!--#if (calendar)-->
-		<PackageReference Include="Plugin.Maui.CalendarStore" Version="1.0.0-preview6" />
+		<PackageReference Include="Plugin.Maui.CalendarStore" Version="1.0.1" />
 		<!--#endif-->
 		<!--#if (audio)-->
-		<PackageReference Include="Plugin.Maui.Audio" Version="1.0.0" />
+		<PackageReference Include="Plugin.Maui.Audio" Version="2.0.0" />
 		<!--#endif-->
 		<!--#if (fingerprint)-->
 		<PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />

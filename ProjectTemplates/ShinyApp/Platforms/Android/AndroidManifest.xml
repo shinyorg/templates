@@ -31,7 +31,8 @@
 	<uses-permission android:name="android.permission.BATTERY_STATS" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<!--#if (usemaps || essentialsmedia)-->
+	<!--#if (audio || usemaps || essentialsmedia)-->
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<!--#endif-->
 	<!--#if (bluetoothle || blehosting || beacons)-->
@@ -64,8 +65,11 @@
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	<!--#endif-->
-	<!--#if (speechrecognition)-->
+	<!--#if (audio || speechrecognition)-->
 	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+	<!--#endif-->
+	<!--#if (audio)-->
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />	
 	<!--#endif-->
 	<!--#if (notifications || usepush || gps || beacons || httptransfers)-->
 	<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
