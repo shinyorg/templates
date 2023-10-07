@@ -111,7 +111,7 @@
 		<PackageReference Include="Maui.GoogleMaps" Version="5.0.0" />
 		<!--#endif-->
 		<!--#if (shinyframework)-->
-		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.264-pre" />
+		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
 		<PackageReference Include="ReactiveUI.Fody" Version="19.5.1" />
 		<PackageReference Include="Shiny.Framework" Version="3.0.0-beta-0012" />
 		<!--#else-->
