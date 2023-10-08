@@ -4,8 +4,8 @@
         <TargetFramework>{DOTNET_TFM}</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <MicrosoftVersion>7.0.10</MicrosoftVersion>
-        <FastEndpointsVersion>5.16.0</FastEndpointsVersion>
+        <MicrosoftVersion>7.0.11</MicrosoftVersion>
+        <FastEndpointsVersion>5.18.0</FastEndpointsVersion>
         <!--#if (orleans)-->
         <OrleansVersion>7.2.1</OrleansVersion>
         <!--#endif-->
@@ -26,7 +26,7 @@
         <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="$(MicrosoftVersion)" />
         <!--#endif-->
         <!--#if (apple)-->
-        <PackageReference Include="AspNet.Security.OAuth.Apple" Version="7.0.0" />
+        <PackageReference Include="AspNet.Security.OAuth.Apple" Version="7.0.4" />
         <!--#endif-->
         <!--#if (orleans)-->
         <PackageReference Include="Microsoft.Orleans.Server" Version="$(OrleansVersion)" />

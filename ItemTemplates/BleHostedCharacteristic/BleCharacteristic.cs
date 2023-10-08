@@ -5,7 +5,7 @@ namespace ShinyApp;
 
 
 [BleGattCharacteristic(Constants.ManagedServiceUuid, Constants.ManagedCharacteristicUuid)]
-public class BleGattCharacteristic : BleGattCharacteristic
+public class MyBleGattCharacteristic : BleGattCharacteristic
 {
 //     public override Task OnStart() => base.OnStart();
 //     public override void OnStop() => base.OnStop();

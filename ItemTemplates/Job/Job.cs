@@ -1,12 +1,13 @@
 using System.Threading;
 using Shiny.Jobs;
+using Microsoft.Extensions.Logging;
 
 namespace ShinyApp;
 
 
-public class Job : Shiny.Jobs.Job
+public class MyJob : Job
 {
-    public Job()
+    public MyJob(ILogger<MyJob> logger) : base(logger)
     {
     }
 

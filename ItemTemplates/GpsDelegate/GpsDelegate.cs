@@ -1,11 +1,12 @@
 using Shiny.Locations;
+using Microsoft.Extensions.Logging;
 
 namespace ShinyApp;
 
 
-public partial class GpsDelegate : Shiny.Locations.GpsDelegate
+public partial class MyGpsDelegate : GpsDelegate
 {
-    public MyGpsDelegate()
+    public MyGpsDelegate(ILogger<MyGpsDelegate> logger) : base(logger)
     {
     }
 
@@ -15,7 +16,7 @@ public partial class GpsDelegate : Shiny.Locations.GpsDelegate
 }
 
 #if ANDROID
-public partial class GpsDelegate : Shiny.IAndroidForegroundServiceDelegate
+public partial class MyGpsDelegate : Shiny.IAndroidForegroundServiceDelegate
 {
     public void Configure(AndroidX.Core.App.NotificationCompat.Builder builder)
     {
