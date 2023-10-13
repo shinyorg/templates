@@ -9,13 +9,13 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!--#if (uraniumui)-->
+                <ResourceDictionary x:Name="appColors" Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary x:Name="appStyles" Source="Resources/Styles/Styles.xaml" />
+                <material:StyleResource BasedOn="{x:Reference appStyles}" ColorsOverride="{x:Reference appColors}" />
+                <!--#else-->
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <!--#if (uraniumui)-->
-                <material:ColorResource />
-                <!--#endif-->
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
-                <!--#if (uraniumui)-->
-                <material:StyleResource />
                 <!--#endif-->
                 <ResourceDictionary Source="Resources/Styles/Templates.xaml" />
             </ResourceDictionary.MergedDictionaries>
