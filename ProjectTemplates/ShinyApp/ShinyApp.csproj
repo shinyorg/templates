@@ -29,7 +29,7 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<ShinyVersion>3.0.1</ShinyVersion>
+		<ShinyVersion>3.1.1</ShinyVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
@@ -82,7 +82,7 @@
 	<!--#if (usenet8)-->
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />	
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 	</ItemGroup>
 
 	<!--#endif-->
@@ -130,9 +130,6 @@
 		<!--#endif-->
 		<!--#if (sentry)-->
 		<PackageReference Include="Sentry.Maui" Version="3.39.1" />
-		<!--#endif-->
-		<!--#if (useappcenter)-->
-		<PackageReference Include="Shiny.Logging.AppCenter" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sqlitelogging)-->
 		<PackageReference Include="Shiny.Logging.Sqlite" Version="$(ShinyVersion)" />
@@ -192,7 +189,7 @@
 		<PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
 		<!--#endif-->
 		<!--#if usehttp-->
-		<PackageReference Include="Refit.HttpClientFactory" Version="7.0.0" />
+		<PackageReference Include="Refit" Version="7.0.0" />
 		<!--#endif-->
 		<!--#if (sqlite)-->
 		<PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta" />
@@ -219,9 +216,14 @@
 		<!--#endif-->
 	</ItemGroup>
 
-	<!--#if (flipper)-->
+	<!--#if (flipper || useappcenter)-->
 	<ItemGroup Condition="$(TargetFramework.Contains('android')) OR $(TargetFramework.Contains('ios'))">
+		<!--#if (flipper)-->
 		<PackageReference Include="Drastic.Flipper" Version="1.0.6" Condition="'$(Configuration)' == 'Debug'" />
+		<!--#endif-->
+		<!--#if (useappcenter)-->
+		<PackageReference Include="Shiny.Logging.AppCenter" Version="$(ShinyVersion)" />
+		<!--#endif-->
 	</ItemGroup>
 
 	<!--#endif-->
