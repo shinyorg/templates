@@ -114,6 +114,13 @@ public static class MauiProgram
 #endif
 //+:cnd:noEmit
 #endif
+#if appactions
+        .ConfigureEssentials(x => x
+        //     .AddAppAction("app_info", "App Info", "Subtitle", "app_info_action_icon")
+        //     .AddAppAction("battery_info", "Battery Info")
+            .OnAppAction(y => Shiny.Hosting.Host.GetService<AppActionDelegate>().Handle(y))
+        )
+#endif
         .ConfigureFonts(fonts =>
         {
             fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -184,6 +191,9 @@ public static class MauiProgram
 #endif
 #if (calendar)
         s.AddSingleton(CalendarStore.Default);
+#endif
+#if appaction
+        s.AddSingleton<AppActionDelegate>();
 #endif
 #if (authservice)
 #if (usemsal)
@@ -262,7 +272,7 @@ public static class MauiProgram
 //+:cnd:noEmit
 #endif
 #if notifications
-        s.AddNotifications();
+        s.AddNotifications<ShinyApp.Delegates.MyLocalNotificationDelegate>();
 #endif
 #if speechrecognition
         s.AddSpeechRecognition();

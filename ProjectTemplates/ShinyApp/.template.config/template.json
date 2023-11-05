@@ -310,7 +310,14 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Setup all the necessary boilerplate for the MAUI Essentials File Picker",
-            "displayName": "Setup MAUI Essentials - File Picker"            
+            "displayName": "Setup MAUI Essentials - File Picker"
+        },
+        "appactions":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Sets all up all the necessary boilerplate for the MAUI App Actions",
+            "displayName": "Setup MAUI Essentials - App Actions"
         },
         "pureween": {
             "type": "parameter",
@@ -621,9 +628,17 @@
             "exclude": "Delegates/MyBleGattCharacteristic.cs"
         },
         {
+            "condition": "(notifications == false)",
+            "exclude": "Delegates/MyLocalNotificationDelegate.cs"
+        },         
+        {
             "condition": "(beacons == false)",
             "exclude": "Delegates/MyBeaconMonitoringDelegate.cs"
         }, 
+        {
+            "condition": "(appactions == false)",
+            "exclude": "Delegates/AppActionDelegate.cs"
+        },         
         {
             "condition": "(sqlite == false)",
             "exclude": "Services/MySqliteConnection.cs"

@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.OS;
 using Android.Content.PM;
+using Microsoft.Maui.ApplicationModel;
 #if (usemsal)
 using Android.Content;
 using Android.Runtime;
@@ -21,35 +22,19 @@ namespace ShinyApp;
         ConfigChanges.SmallestScreenSize | 
         ConfigChanges.Density
 )]
-#if (usepush && notifications)
-[IntentFilter(
-    new[] {
-        ShinyPushIntents.NotificationClickAction,
-        ShinyNotificationIntents.NotificationClickAction
-    },
-    Categories = new[] { 
-        "android.intent.category.DEFAULT" 
-    }
-)]
-#elif (usepush)
 [IntentFilter(
     new[] { 
-        ShinyPushIntents.NotificationClickAction 
-    },
-    Categories = new[] { 
-        "android.intent.category.DEFAULT" 
-    }
-)]
-#elif (notifications)
-[IntentFilter(
-    new[] { 
-        ShinyNotificationIntents.NotificationClickAction 
-    },
-    Categories = new[] { 
-        "android.intent.category.DEFAULT" 
-    }
-)]
+        Platform.Intent.ActionAppAction
+#elif (usepush)        
+        , ShinyPushIntents.NotificationClickAction 
 #endif
+#if (notifications)
+        , ShinyNotificationIntents.NotificationClickAction
+#endif
+    Categories = new[] { 
+        global::Android.Content.Intent.CategoryDefault
+    }
+)]
 public class MainActivity : MauiAppCompatActivity
 {
 #if (flipper)
