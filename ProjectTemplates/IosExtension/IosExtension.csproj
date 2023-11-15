@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>net7.0-ios</TargetFrameworks>
+        <TargetFrameworks>net8.0-ios</TargetFrameworks>
         <OutputType>Library</OutputType>
         <ApplicationId>YOUR-APPLICATION-ID-FROM-INFO.PLIST</ApplicationId>
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>

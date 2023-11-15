@@ -4,10 +4,10 @@
         <TargetFramework>{DOTNET_TFM}</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <MicrosoftVersion>7.0.11</MicrosoftVersion>
-        <FastEndpointsVersion>5.18.0</FastEndpointsVersion>
+        <MicrosoftVersion>8.0.0</MicrosoftVersion>
+        <FastEndpointsVersion>5.18.2</FastEndpointsVersion>
         <!--#if (orleans)-->
-        <OrleansVersion>7.2.1</OrleansVersion>
+        <OrleansVersion>7.2.3</OrleansVersion>
         <!--#endif-->
         <!--#if (email || push)-->
         <ShinyExtensionsVersion>2.0.0-preview-0009</ShinyExtensionsVersion>
@@ -26,7 +26,7 @@
         <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="$(MicrosoftVersion)" />
         <!--#endif-->
         <!--#if (apple)-->
-        <PackageReference Include="AspNet.Security.OAuth.Apple" Version="7.0.4" />
+        <PackageReference Include="AspNet.Security.OAuth.Apple" Version="8.0.0" />
         <!--#endif-->
         <!--#if (orleans)-->
         <PackageReference Include="Microsoft.Orleans.Server" Version="$(OrleansVersion)" />
