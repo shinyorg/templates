@@ -9,12 +9,9 @@
 		<!--#if (usemaccatalyst)-->
 		<TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-maccatalyst</TargetFrameworks>
 		<!--#endif-->
-		<!--#if (usenet8)-->
-		<MauiVersion>8.0.0-rc.2.9511</MauiVersion>
-		<!--#endif-->
+		<MauiVersion>8.0.3</MauiVersion>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>ShinyApp</RootNamespace>
-		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
@@ -29,7 +26,7 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<ShinyVersion>3.1.1</ShinyVersion>
+		<ShinyVersion>3.1.2</ShinyVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
@@ -79,54 +76,39 @@
 		<!--#endif-->
 	</ItemGroup>
 
-	<!--#if (usenet8)-->
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 	</ItemGroup>
 
-	<!--#endif-->
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" Condition="'$(Configuration)' == 'Debug'" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" Condition="'$(Configuration)' == 'Debug'" />
 
 		<!--#if (shinyframework || communitytoolkit)-->
 		<PackageReference Include="CommunityToolkit.Maui" Version="6.1.0" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
-		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.3.0" />
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.3.1" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="2.0.0" />
 		<!--#endif-->
-		<!--#if (pureween)-->
-		<PackageReference Include="PureWeen.Maui.FixesAndWorkarounds" Version="1.4.9" />
-		<!--#endif-->
 		<!--#if (usemauimaps)-->
-		<!--#if (usenet8)-->
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
-		<!--#else-->
-		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.92" />
-		<!--#endif-->
 		<!--#endif-->
 		<!--#if (usegooglemaps)-->
 		<PackageReference Include="Onion.Maui.GoogleMaps" Version="5.0.1" />
 		<!--#endif-->
 		<!--#if (shinyframework)-->
-		<!--#if (net8)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.271-pre" />
 		<PackageReference Include="ReactiveUI.Fody" Version="19.5.1" />
-		<PackageReference Include="Shiny.Framework" Version="4.0.0-beta-0010" />		
-		<!--#else-->
-		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
-		<PackageReference Include="ReactiveUI.Fody" Version="19.5.1" />
-		<PackageReference Include="Shiny.Framework" Version="3.0.0-beta-0012" />
-		<!--#endif-->
+		<PackageReference Include="Shiny.Framework" Version="4.0.0-beta-0013" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (localization)-->
-		<PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.0" />
 		<!--#endif-->
 		<!--#if (usemsal)-->
 		<PackageReference Include="Microsoft.Identity.Client" Version="4.56.0" />
@@ -177,7 +159,7 @@
 		<PackageReference Include="Shiny.Health" Version="1.0.0-beta-0013" />
 		<!--#endif-->
 		<!--#if (barcodes)-->
-		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.3.0-preview.1" />
+		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
 		<!--#endif-->
 		<!--#if (storereview)-->
 		<PackageReference Include="Plugin.StoreReview" Version="6.0.0" />

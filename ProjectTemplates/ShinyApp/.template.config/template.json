@@ -35,14 +35,11 @@
             "description": "The target framework for the project.",
             "datatype": "choice",
             "choices": [{
-                "choice": "net7.0",
-                "description": "Target .NET 7.0"
-            },{
                 "choice": "net8.0",
                 "description": "Target .NET 8.0"
             }],
             "replaces": "{DOTNET_TFM}",
-            "defaultValue": "net7.0"
+            "defaultValue": "net8.0"
         },
         "markuptype": {
             "type": "parameter",
@@ -319,13 +316,6 @@
             "description": "Sets all up all the necessary boilerplate for the MAUI App Actions",
             "displayName": "Setup MAUI Essentials - App Actions"
         },
-        "pureween": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add MAUI Workarounds from Shane Neuville (MAUI Engineer) - Documentation: https://github.com/PureWeen/ShanedlerSamples",
-            "displayName": "Add MAUI Workarounds (PureWeen.Maui.FixesAndWorkarounds)"  
-        },
         "communitytoolkit":{
             "type": "parameter",
             "datatype": "bool",
@@ -429,7 +419,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "Add SkiaSharp Extended (Lottie) - Documentation: https://github.com/mono/SkiaSharp.Extended",
-            "displayName": "Add SkiaSharp Extended (Lottie)"         
+            "displayName": "Add SkiaSharp Extended (Lottie)" 
         },
         "embedio": {
             "type": "parameter",
@@ -453,11 +443,6 @@
         "HostIdentifier": {
             "type": "bind",
             "binding": "HostIdentifier"
-        },
-        "usenet8":{
-            "type": "computed",
-            "datatype": "bool",
-            "value": "(Framework == \"net8.0\")"
         },
         "usewebauthenticator":{
             "type": "computed",

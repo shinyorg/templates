@@ -34,9 +34,6 @@ using Maui.GoogleMaps.Hosting;
 #if skia || skiaextended
 using SkiaSharp.Views.Maui.Controls.Hosting;
 #endif
-#if pureween
-using Maui.FixesAndWorkarounds;
-#endif
 #if uraniumui
 using UraniumUI;
 #endif
@@ -149,21 +146,6 @@ public static class MauiProgram
 #if IOS && DEBUG
         global::Flipper.FlipperProxy.Shared.InitializeProxy();
 #endif
-//+:cnd:noEmit
-#endif
-#if pureween
-        builder.ConfigureMauiWorkarounds();
-
-        // OR optional picks
-        // builder.ConfigureShellWorkarounds();
-        // builder.ConfigureTabbedPageWorkarounds();
-        // builder.ConfigureEntryNextWorkaround();
-        // builder.ConfigureKeyboardAutoScroll();
-        // builder.ConfigureFlyoutPageWorkarounds();
-//-:cnd:noEmit
-        // #if ANDROID
-        // builder.ConfigureEntryFocusOpensKeyboard();
-        // #endif
 //+:cnd:noEmit
 #endif
 #if useconfig
