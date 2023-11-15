@@ -222,14 +222,7 @@
             "text": "Setup MAUI Essentials - App Actions"
         },
         "isVisible": true
-    },    
-    {
-        "id": "pureween",
-        "name": {
-            "text": "Add MAUI Workarounds (PureWeen.Maui.FixesAndWorkarounds)"
-        },
-        "isVisible": true
-    },    
+    },   
     {
         "id": "communitytoolkit",
         "name": {

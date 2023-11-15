@@ -117,7 +117,7 @@
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="3.39.1" />
+		<PackageReference Include="Sentry.Maui" Version="3.41.0" />
 		<!--#endif-->
 		<!--#if (sqlitelogging)-->
 		<PackageReference Include="Shiny.Logging.Sqlite" Version="$(ShinyVersion)" />
@@ -165,10 +165,10 @@
 		<PackageReference Include="Plugin.StoreReview" Version="6.0.0" />
 		<!--#endif-->
 		<!--#if (inappbilling)-->
-		<PackageReference Include="Plugin.InAppBilling" Version="7.0.5" />
+		<PackageReference Include="Plugin.InAppBilling" Version="7.1.0" />
 		<!--#endif-->
 		<!--#if (calendar)-->
-		<PackageReference Include="Plugin.Maui.CalendarStore" Version="1.0.1" />
+		<PackageReference Include="Plugin.Maui.CalendarStore" Version="1.0.2" />
 		<!--#endif-->
 		<!--#if (audio)-->
 		<PackageReference Include="Plugin.Maui.Audio" Version="2.0.0" />

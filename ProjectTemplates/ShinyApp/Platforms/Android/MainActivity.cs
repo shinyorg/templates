@@ -25,12 +25,13 @@ namespace ShinyApp;
 [IntentFilter(
     new[] { 
         Platform.Intent.ActionAppAction
-#elif (usepush)        
+#if (usepush)        
         , ShinyPushIntents.NotificationClickAction 
 #endif
 #if (notifications)
         , ShinyNotificationIntents.NotificationClickAction
 #endif
+    },
     Categories = new[] { 
         global::Android.Content.Intent.CategoryDefault
     }

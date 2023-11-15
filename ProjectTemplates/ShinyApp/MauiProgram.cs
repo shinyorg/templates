@@ -1,7 +1,4 @@
-﻿#if shinyframework
-using Prism.DryIoc;
-#endif
-#if inappbilling
+﻿#if inappbilling
 using Plugin.InAppBilling;
 #endif
 #if storereview
@@ -75,7 +72,16 @@ public static class MauiProgram
 #if shinyframework            
         .UseShinyFramework(
             new DryIocContainerExtension(),
-            prism => prism.OnAppStart("NavigationPage/MainPage")
+            prism => prism.OnAppStart("NavigationPage/MainPage"),
+            new(
+                //-:cnd:noEmit
+                #if DEBUG
+                ErrorAlertType.FullError
+                #else
+                ErrorAlertType.NoLocalize
+                #endif
+                //+:cnd:noEmit
+            )
         )
 #else
         .UseShiny()
@@ -115,7 +121,7 @@ public static class MauiProgram
         .ConfigureEssentials(x => x
         //     .AddAppAction("app_info", "App Info", "Subtitle", "app_info_action_icon")
         //     .AddAppAction("battery_info", "Battery Info")
-            .OnAppAction(y => Shiny.Hosting.Host.GetService<AppActionDelegate>().Handle(y))
+            .OnAppAction(y => Shiny.Hosting.Host.GetService<ShinyApp.Delegates.AppActionDelegate>().Handle(y))
         )
 #endif
         .ConfigureFonts(fonts =>
@@ -185,11 +191,21 @@ public static class MauiProgram
 #endif
 #endif
 #if (usehttp)
-        s.AddTransient<ShinyApp.Services.Impl.AuthHttpDelegatingHandler>();
-        s
-            .AddRefitClient<ShinyApp.Services.Impl.IApiClient>()
-            .ConfigureHttpClient(c => c.BaseAddress = new Uri(builder.Configuration["ApiUri"]!))
-            .AddHttpMessageHandler<ShinyApp.Services.Impl.AuthHttpDelegatingHandler>();
+        s.AddSingleton(sp =>
+        {
+            var auth = sp.GetRequiredService<ShinyApp.Services.IAuthenticationService>();
+            return RestService.For<ShinyApp.Services.Impl.IApiClient>(
+                builder.Configuration["ApiUri"]!,
+                new RefitSettings()
+                {
+                    AuthorizationHeaderValueGetter = async (req, ct) =>
+                    {
+                        await auth.TryRefresh();
+                        return auth.AuthenticationToken!;
+                    }
+                }
+            );
+        });
             
 #endif
 #if essentialsmedia
@@ -281,15 +297,6 @@ public static class MauiProgram
 #endif
 #if shinyframework
         s.AddDataAnnotationValidation();
-        s.AddGlobalCommandExceptionHandler(new(
-//-:cnd:noEmit
-#if DEBUG
-            ErrorAlertType.FullError
-#else
-            ErrorAlertType.NoLocalize
-#endif
-//+:cnd:noEmit
-        ));
 #endif
         return builder;
     }

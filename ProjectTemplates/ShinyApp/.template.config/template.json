@@ -657,10 +657,6 @@
             "exclude": "Services/Impl/IApiClient.cs"
         },
         {
-            "condition": "(authservice == false || refit == false)",
-            "exclude": "Services/Impl/AuthHttpDelegatingHandler.cs"
-        },
-        {
             "condition": "(usecsharpmarkup == true)",
             "exclude": [
                 "MainPage.xaml",
