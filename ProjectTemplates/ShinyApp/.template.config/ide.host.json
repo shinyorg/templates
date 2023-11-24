@@ -222,7 +222,14 @@
             "text": "Setup MAUI Essentials - App Actions"
         },
         "isVisible": true
-    },   
+    },
+    {
+        "id": "deeplinks",
+        "name": {
+            "text": "Setup Deep Linking Support"
+        },
+        "isVisible": true
+    },
     {
         "id": "communitytoolkit",
         "name": {

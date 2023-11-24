@@ -181,7 +181,10 @@ public static class MauiProgram
         s.AddSingleton(CalendarStore.Default);
 #endif
 #if appaction
-        s.AddSingleton<AppActionDelegate>();
+        s.AddSingleton<ShinyApp.Delegates.AppActionDelegate>();
+#endif
+#if (deeplink)
+        s.AddShinyService<ShinyApp.Delegates.DeepLinkDelegate>();
 #endif
 #if (authservice)
 #if (usemsal)

@@ -14,6 +14,9 @@ namespace ShinyApp;
 [Activity(
     Theme = "@style/Maui.SplashTheme", 
     MainLauncher = true, 
+#if (deeplink)
+    Exported = true,
+#endif
     ConfigurationChanges = 
         ConfigChanges.ScreenSize | 
         ConfigChanges.Orientation | 
@@ -23,8 +26,14 @@ namespace ShinyApp;
         ConfigChanges.Density
 )]
 [IntentFilter(
+#if (deeplink)
+    AutoVerify = true,
+    DataScheme = "https",
+    DataHost = "{DEEPLINK_HOST}",
+#endif    
     new[] { 
-        Platform.Intent.ActionAppAction
+        Platform.Intent.ActionAppAction,
+        Intent.ActionView
 #if (usepush)        
         , ShinyPushIntents.NotificationClickAction 
 #endif
@@ -33,7 +42,8 @@ namespace ShinyApp;
 #endif
     },
     Categories = new[] { 
-        global::Android.Content.Intent.CategoryDefault
+        global::Android.Content.Intent.CategoryDefault,
+        global::Android.Content.Intent.CategoryBrowsable
     }
 )]
 public class MainActivity : MauiAppCompatActivity
@@ -55,7 +65,6 @@ public class MainActivity : MauiAppCompatActivity
 //+:cnd:noEmit 
 #endif
 #if (usemsal)
-    // TODO: this should move to DI section
     /// <summary>
     /// This is a callback to continue with the broker base authentication
     /// Info abour redirect URI: https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-client-application-configuration#redirect-uri

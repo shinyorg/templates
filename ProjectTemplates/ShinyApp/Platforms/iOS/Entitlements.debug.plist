@@ -43,5 +43,11 @@
 	<key>aps-environment</key>
 	<string>development</string>
     <!--#endif-->
+    <!--#if (deeplinks)-->
+    <key>com.apple.developer.associated-domains</key>
+    <array>
+        <string>applinks:{DEEPLINK_HOST}</string>
+    </array>
+    <!--#endif-->
 </dict>
 </plist>
