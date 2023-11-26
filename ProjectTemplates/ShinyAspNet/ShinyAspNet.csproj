@@ -5,7 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <MicrosoftVersion>8.0.0</MicrosoftVersion>
-        <FastEndpointsVersion>5.18.2</FastEndpointsVersion>
+        <FastEndpointsVersion>5.20.0-rc2</FastEndpointsVersion>
         <!--#if (orleans)-->
         <OrleansVersion>7.2.3</OrleansVersion>
         <!--#endif-->

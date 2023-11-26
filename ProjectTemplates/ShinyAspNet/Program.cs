@@ -156,6 +156,16 @@ app.UseFastEndpoints();
 app.MapHub<BizHub>("/biz");
 //#endif
 
+#if DEBUG
+// easier debugging
+app.UseCors(x => x
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowAnyOrigin()
+    //.AllowCredentials()
+);
+#endif
+
 if (app.Environment.IsDevelopment())
 {
     // if (app.Configuration.GetValue<bool>("EnsureDatabase", false))
