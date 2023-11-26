@@ -38,6 +38,8 @@ builder
         };
     });
 
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+
 //#if (google)
 builder.Services.AddAuthentication().AddGoogle(options =>
 {
