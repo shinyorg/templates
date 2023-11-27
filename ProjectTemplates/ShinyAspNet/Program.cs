@@ -121,7 +121,11 @@ builder.Services.AddMail(mail =>
         );
 });
 #endif
-
+//-:cnd:noEmit
+#if DEBUG
+builder.Services.AddCors();
+#endif
+//+:cnd:noEmit
 builder.Services.AddDbContext<AppDbContext>(
     opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("Main"))
 );
@@ -132,10 +136,11 @@ builder.Services.AddSingleton<IUserIdProvider, UserIdProvider>();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddFastEndpoints();
 //#if (swagger)
-builder.Services.AddSwaggerDoc(x =>
+builder.Services.AddSwaggerDocument(x =>
 {
     x.DocumentName = "v1";
-}, shortSchemaNames: true);
+    //shortSchemaNames: true
+});
 //#endif
 //#if (olreans)
 builder.Host.UseOrleans(x => x
@@ -152,12 +157,16 @@ app.UseAuthorization();
 //#if (push)
 app.MapPushEndpoints("push", true, x => x.User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 //#endif
-app.UseFastEndpoints();
+app.UseFastEndpoints(x => x.Endpoints.Configurator = ep =>
+{
+    ep.PostProcessors(Order.After, new EmptyResponseGlobalPostProcessor());
+});
 
 //#if (signalr)
 app.MapHub<BizHub>("/biz");
 //#endif
 
+//-:cnd:noEmit
 #if DEBUG
 // easier debugging
 app.UseCors(x => x
@@ -167,6 +176,7 @@ app.UseCors(x => x
     //.AllowCredentials()
 );
 #endif
+//+:cnd:noEmit
 
 if (app.Environment.IsDevelopment())
 {
@@ -176,7 +186,7 @@ if (app.Environment.IsDevelopment())
     //         scope.ServiceProvider.GetRequiredService<AppDbContext>().Database.EnsureCreated();
     // }
     #if (swagger)
-    app.UseSwaggerGen();
+    app.UseSwaggerGen(); 
     app.MapCSharpClientEndpoint("/cs-client", "v1", s =>
     {
         s.ClassName = "ApiClient";

@@ -26,7 +26,7 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<ShinyVersion>3.1.2</ShinyVersion>
+		<ShinyVersion>3.2.-beta-0019</ShinyVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
@@ -156,7 +156,7 @@
 		<PackageReference Include="Shiny.Push.FirebaseMessaging" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (health)-->
-		<PackageReference Include="Shiny.Health" Version="1.0.0-beta-0013" />
+		<PackageReference Include="Shiny.Health" Version="1.0.0-beta-0018" />
 		<!--#endif-->
 		<!--#if (barcodes)-->
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
