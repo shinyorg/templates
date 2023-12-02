@@ -85,13 +85,13 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" Condition="'$(Configuration)' == 'Debug'" />
 
 		<!--#if (shinyframework || communitytoolkit)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="6.1.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="7.0.0" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
-		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.3.1" />
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="2.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.0.0" />
 		<!--#endif-->
 		<!--#if (usemauimaps)-->
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
@@ -189,15 +189,18 @@
 		<PackageReference Include="Sharpnado.CollectionView.Maui" Version="3.0.0" />
 		<!--#endif-->
 		<!--#if (uraniumui)-->
-		<PackageReference Include="UraniumUI.Material" Version="2.5.6" />
-		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.5.6" />
-		<PackageReference Include="UraniumUI.Blurs" Version="2.5.6" />
+		<PackageReference Include="UraniumUI.Material" Version="2.7.2" />
+		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.7.2" />
+		<PackageReference Include="UraniumUI.Blurs" Version="2.7.2" />
 		<!--#endif-->
 		<!--#if (skia)-->
 		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.6" />
 		<!--#endif-->
 		<!--#if (skiaextended)-->
 		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0-preview.86" />
+		<!--#endif-->
+		<!--#if (ffimageloading)-->
+		<PackageReference Include="FFImageLoading.Maui" Version="1.0.3" />
 		<!--#endif-->
 		<!--#if (embedio)-->
 		<PackageReference Include="EmbedIO" Version="3.5.2" />

@@ -428,6 +428,13 @@
             "description": "Add SkiaSharp Extended (Lottie) - Documentation: https://github.com/mono/SkiaSharp.Extended",
             "displayName": "Add SkiaSharp Extended (Lottie)" 
         },
+        "ffimageloading":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add FFImageLoading MAUI - Documentation: https://github.com/microspaze/FFImageLoading.Maui",
+            "displayName": "Add FFImageLoading MAUI" 
+        },
         "embedio": {
             "type": "parameter",
             "datatype": "bool",

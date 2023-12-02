@@ -31,6 +31,9 @@ using Maui.GoogleMaps.Hosting;
 #if skia || skiaextended
 using SkiaSharp.Views.Maui.Controls.Hosting;
 #endif
+#if ffimageloading
+using FFImageLoading.Maui;
+#endif
 #if uraniumui
 using UraniumUI;
 #endif
@@ -65,6 +68,9 @@ public static class MauiProgram
 #endif
 #if sharpnadocv
         .UseSharpnadoCollectionView(false)
+#endif
+#if ffimageloading
+        .UseFFImageLoading()
 #endif
 #if skia || skiaextended
         .UseSkiaSharp()

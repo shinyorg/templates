@@ -306,8 +306,13 @@
             "text": "Add Audio (Plugin.Maui.Audio)"
         },
         "isVisible": true
-    },
-    {
+    },{
+        "id": "ffimageloading",
+        "name":{
+            "text": "Add FFImageLoading MAUI (FFImageLoading.Maui)"
+        },
+        "isVisible": true
+    },{        
         "id": "fingerprint",
         "name":{
             "text": "Add Fingerprint/Facial Recognition (Plugin.Fingerprint)"
