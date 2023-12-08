@@ -76,7 +76,10 @@
 	<!--#endif-->
 	<!--#if (gps || beacons || httptransfers)-->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-	<!--#endif-->	
+	<!--#endif-->
+	<!--#if (gps)-->
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+	<!--#endif-->
 	<!--#if (essentialsmedia || barcodes)-->
 	<uses-feature android:name="android.hardware.camera" android:required="false" />
 	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
