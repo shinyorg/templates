@@ -26,21 +26,21 @@ namespace ShinyApp;
         ConfigChanges.Density
 )]
 [IntentFilter(
-#if (usedeeplinks)
-    AutoVerify = true,
-    DataScheme = "https",
-    DataHost = "{DEEPLINK_HOST}",
-#endif    
     new[] { 
         Platform.Intent.ActionAppAction,
-        Intent.ActionView
+        global::Android.Content.Intent.ActionView
 #if (usepush)        
         , ShinyPushIntents.NotificationClickAction 
 #endif
 #if (notifications)
         , ShinyNotificationIntents.NotificationClickAction
 #endif
-    },
+    },    
+#if (usedeeplinks)
+    AutoVerify = true,
+    DataScheme = "https",
+    DataHost = "{DEEPLINK_HOST}",
+#endif
     Categories = new[] { 
         global::Android.Content.Intent.CategoryDefault,
         global::Android.Content.Intent.CategoryBrowsable

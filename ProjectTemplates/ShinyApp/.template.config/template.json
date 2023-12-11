@@ -562,7 +562,7 @@
         "useentitlements":{
             "type": "computed",
             "datatype": "bool",
-            "value": "(usepush || usemsal || calendar || health || carplay)"
+            "value": "(usepush || usemsal || calendar || health || carplay || usedeeplinks)"
         }
     },
     "sources": [{
