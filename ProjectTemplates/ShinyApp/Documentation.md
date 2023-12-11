@@ -58,14 +58,6 @@ _A collection of reusable elements for application development with .NET MAUI, i
 * [GitHub](https://github.com/CommunityToolkit/Maui)
 
 <!--#endif-->
-<!--#if (pureween)-->
-## MAUI Fixes & Workarounds
-
-_Several key fixes and workarounds for .NET MAUI by Shane Neuville (MAUI Engineer)_
-
-* [GitHub](https://github.com/PureWeen/ShanedlerSamples)
-
-<!--#endif-->
 <!--#if (localize)-->
 ## Microsoft.Extensions.Localization
 
@@ -260,7 +252,7 @@ Add the following to your XAML declaration
 <!--#if (embedio)-->
 Embed.IO 
 
-A tiny, cross-platform, module based, MIT-licensed web server for .NET Framework and .NET Core.
+A tiny, cross-platform, module based, MIT-licensed web server for .NET Framework and .NET Core by Unosquare
 * Network operations use the async/await pattern: Responses are handled asynchronously
 * Multiple implementations support: EmbedIO can use Microsoft HttpListener or internal Http Listener based on Mono/websocket-sharp projects
 * Cross-platform: tested on multiple OS and runtimes. From Windows .NET Framework to Linux MONO.

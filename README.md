@@ -2,14 +2,9 @@
 
 ![Nuget](https://img.shields.io/nuget/v/shiny.templates?style=for-the-badge)
 
-**Please NOTE: Shiny v3 (used by these templates) & the templates are in a preview state.  Issues are anticipated.**
 
 ### To Install
-> dotnet new --install Shiny.Templates
-
-or update
-
-> dotnet new --update-apply
+> dotnet new install Shiny.Templates
 
 ---
 
@@ -58,10 +53,14 @@ or update
 	* MSAL (Microsoft Authentication Library) B2C
 	* MSAL (Microsoft Authentication Library) Broker
 * Full Setup for the following 3rd party components
+	* [Prism](https://prismlibrary.com) by Brian Lagunas & Dan Siegel
+	* [ReactiveUI](https://reactiveui.net) from many contributors
+	* [MAUI Community Toolkit](https://github.com/CommunityToolkit/Maui) from many contributors
 	* [Uranium UI](https://github.com/enisn/UraniumUI) by Enis Necipoglu	
+	* [FFImageLoading MAUI]() 
 	* [Sharpnado Tabs](https://github.com/roubachof/Sharpnado.Tabs) by Jean-Marie Alfonsi
 	* [Sharpnado CollectionView](https://github.com/roubachof/Sharpnado.CollectionView) by Jean-Marie Alfonsi
-	* [MAUI Google Maps](https://github.com/themronion/Maui.GoogleMaps/tree/maui) by Pavlo Lukianets_
+	* [MAUI Google Maps](https://github.com/themronion/Maui.GoogleMaps/tree/maui) by Pavlo Lukianets
 	* [Refit](https://github.com/reactiveui/refit)
 	* [SQLite.NET-pcl](https://github.com/praeclarum/sqlite-net) by Frank Krueger
 	* [ZXing.Net.Maui](https://github.com/Redth/ZXing.Net.Maui) by Jon Dick
@@ -71,15 +70,17 @@ or update
 	* [MAUI Calendar Store Plugin](https://github.com/jfversluis/Plugin.Maui.CalendarStore) by Gerald Versluis	
 	* [Fingerprint Plugin](https://github.com/smstuebe/xamarin-fingerprint) by Sven-Michael Stübe
 	* [Drastic Flipper](https://github.com/drasticactions/Drastic.Flipper) by Tim Miller
+	* [Embed.IO](https://unosquare.github.io/embedio/) by Unosquare
+	* [SkiaSharp](https://github.com/mono/SkiaSharp) by Matthew Leibowitz
 
-
+<img src="vs4win.png" />
 <img src="vs4mac.png" />
 
 #### MAUI XUnit Device Runner Project
 
 _Sets up a platform unit test project using [Shiny.Xunit.Runners.Maui](https://github.com/shinyorg/xunit-maui)_
 
-#### iOS Extension for .NET 7
+#### iOS Extension for .NET 8
 	
 _The Microsoft iOS Extension template is currently broken on VS4win & VS4mac, so this is in place for now. Instructions on how to wire this up to your MAUI project_
 
@@ -87,6 +88,7 @@ _The Microsoft iOS Extension template is currently broken on VS4win & VS4mac, so
 
 * Email Templating
 * Push Notification Setup
+* .NET Orleans
 * Entity Framework Basic Setup
 * MSAL & WebAuthenticator Setup /w Google & Facebook
 

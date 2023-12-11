@@ -117,7 +117,8 @@
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="3.41.0" />
+		<PackageReference Include="Sentry.Maui" Version="3.41.3" />
+		<PackageReference Include="Sentry.Extensions.Logging" Version="3.41.3" />
 		<!--#endif-->
 		<!--#if (sqlitelogging)-->
 		<PackageReference Include="Shiny.Logging.Sqlite" Version="$(ShinyVersion)" />
@@ -171,7 +172,7 @@
 		<PackageReference Include="Plugin.Maui.CalendarStore" Version="1.0.2" />
 		<!--#endif-->
 		<!--#if (audio)-->
-		<PackageReference Include="Plugin.Maui.Audio" Version="2.0.0" />
+		<PackageReference Include="Plugin.Maui.Audio" Version="2.1.0" />
 		<!--#endif-->
 		<!--#if (fingerprint)-->
 		<PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
@@ -189,9 +190,9 @@
 		<PackageReference Include="Sharpnado.CollectionView.Maui" Version="3.0.0" />
 		<!--#endif-->
 		<!--#if (uraniumui)-->
-		<PackageReference Include="UraniumUI.Material" Version="2.7.2" />
-		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.7.2" />
-		<PackageReference Include="UraniumUI.Blurs" Version="2.7.2" />
+		<PackageReference Include="UraniumUI.Material" Version="2.7.3" />
+		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.7.3" />
+		<PackageReference Include="UraniumUI.Blurs" Version="2.7.3" />
 		<!--#endif-->
 		<!--#if (skia)-->
 		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.6" />

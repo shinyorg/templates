@@ -321,7 +321,6 @@
             "description": "Sets up initial deep link support",
             "displayName": "Setup Deep Linking Support",
             "datatype": "string",
-            "isRequired": true,
             "replaces": "{DEEPLINK_HOST}"
         },
         "communitytoolkit":{
