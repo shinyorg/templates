@@ -26,7 +26,7 @@ namespace ShinyApp;
         ConfigChanges.Density
 )]
 [IntentFilter(
-#if (deeplink)
+#if (usedeeplinks)
     AutoVerify = true,
     DataScheme = "https",
     DataHost = "{DEEPLINK_HOST}",
