@@ -318,10 +318,11 @@
         },
         "deeplinks":{
             "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
             "description": "Sets up initial deep link support",
-            "displayName": "Setup Deep Linking Support" 
+            "displayName": "Setup Deep Linking Support",
+            "datatype": "string",
+            "isRequired": true,
+            "replaces": "{DEEPLINK_HOST}"
         },
         "communitytoolkit":{
             "type": "parameter",
@@ -528,6 +529,11 @@
             "datatype": "bool",
             "value": "(appcenter != \"\")"
         },
+        "usedeeplinks":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(deeplinks != \"\")"
+        },        
         "usemaccatalyst":{
             "type": "computed",
             "datatype": "bool",

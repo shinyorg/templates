@@ -33,7 +33,7 @@
 	<key>aps-environment</key>
 	<string>production</string>
     <!--#endif-->
-    <!--#if (deeplinks)-->
+    <!--#if (usedeeplinks)-->
     <key>com.apple.developer.associated-domains</key>
     <array>
         <string>applinks:{DEEPLINK_HOST}</string>
