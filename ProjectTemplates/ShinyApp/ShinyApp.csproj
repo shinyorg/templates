@@ -15,6 +15,7 @@
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<UseMaui>true</UseMaui>
 		<!--#if (useblazor)-->
 		<EnableDefaultCssItems>false</EnableDefaultCssItems>
 		<!--#endif-->
