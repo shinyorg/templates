@@ -161,6 +161,7 @@ app.UseFastEndpoints(x => x.Endpoints.Configurator = ep =>
 {
     ep.PostProcessors(Order.After, new EmptyResponseGlobalPostProcessor());
 });
+app.UseExceptionHandler();
 
 //#if (signalr)
 app.MapHub<BizHub>("/biz");

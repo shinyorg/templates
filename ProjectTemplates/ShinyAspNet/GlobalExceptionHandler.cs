@@ -15,6 +15,8 @@ public class GlobalExceptionHandler : IExceptionHandler
     public ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
     {
         this.logger.LogError(exception, "Error processing request");
+        httpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+        //httpContext.Response.WriteAsJsonAsync(null);        
         return ValueTask.FromResult(false);
     }
 }
