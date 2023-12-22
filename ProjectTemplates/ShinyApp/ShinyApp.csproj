@@ -38,28 +38,55 @@
 		<AndroidLinkTool>proguard</AndroidLinkTool>
 		-->
     </PropertyGroup>
-	
-	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
+
+	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios' OR $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
 		<SupportedOSPlatformVersion>14.2</SupportedOSPlatformVersion>
 		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>
-		<!--#if (useentitlements)-->
-		<CodesignEntitlements Condition="'$(Configuration)' == 'Release'">Platforms/iOS/Entitlements.release.plist</CodesignEntitlements>
-		<CodesignEntitlements Condition="'$(Configuration)' == 'Debug'">Platforms/iOS/Entitlements.debug.plist</CodesignEntitlements>
-		<!--#endif-->
-	</PropertyGroup>
 
+		<!--if (usemsal)-->
+		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="$(AppIdentifierPrefix){APPLICATION_ID};$(AppIdentifierPrefix)com.microsoft.adalcache" />
+		<!--#else-->
+		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="$(AppIdentifierPrefix){APPLICATION_ID}" />
+		<!--#endif-->
+		<!--#if (usedeeplinks)-->
+		<CustomEntitlements Include="com.apple.developer.associated-domains" Type="StringArray" Value="applinks:{DEEPLINK_HOST}?mode=developer" Condition="'$(Condition)' == 'Debug'" />
+		<CustomEntitlements Include="com.apple.developer.associated-domains" Type="StringArray" Value="applinks:{DEEPLINK_HOST}" Condition="'$(Condition)' == 'Release'" />
+		<!--#endif-->
+		<!--#if (usepush)-->
+		<CustomEntitlements Include="aps-environment" Type="string" Value="development" Condition="'$(Condition)' == 'Debug'" />
+		<CustomEntitlements Include="aps-environment" Type="string" Value="production" Condition="'$(Condition)' == 'Release'" />
+		<!--#endif-->
+		<!--#if (essentialsfilepicker)-->
+		<CustomEntitlements Include="com.apple.security.assets.movies.read-only" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.assets.music.read-only" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.assets.pictures.read-only" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.files.user-selected.read-only" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.files.downloads.read-only" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.personal-information.photos-library" Type="boolean" Value="true" />
+		<!--#endif-->
+		<!--#if (health)-->
+		<CustomEntitlements Include="com.apple.developer.healthkit" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.developer.healthkit.background-delivery" Type="boolean" Value="true" />
+		<!--#endif-->
+		<!--#if (carplay)-->
+		<CustomEntitlements Include="com.apple.developer.carplay-driving-task" Type="boolean" Value="true" />
+		<!--#endif-->
+		<!--#if (calendar)-->
+		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.personal-information.calendar" Type="boolean" Value="true" />
+		<!--#endif-->	
+	</PropertyGroup>
 
 	<!--#if (usemaccatalyst)-->
 	<PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst'))">
 		<SupportedOSPlatformVersion>14.0</SupportedOSPlatformVersion>
 		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>
+		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.get-task-allow" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.network.client" Type="boolean" Value="true" />
 
 		<UseHardenedRuntime Condition="'$(Configuration)' == 'Release'">true</UseHardenedRuntime>
 		<RuntimeIdentifiers Condition="'$(Configuration)' == 'Debug'">maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers>
-		<!--#if (useentitlements)-->
-		<CodesignEntitlements Condition="'$(Configuration)' == 'Release'">Platforms/MacCatalyst/Entitlements.release.plist</CodesignEntitlements>
-		<CodesignEntitlements Condition="'$(Configuration)' == 'Debug'">Platforms/MacCatalyst/Entitlements.debug.plist</CodesignEntitlements>
-		<!--#endif-->
 	</PropertyGroup>
 	
 	<!--#endif-->
@@ -86,13 +113,13 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" Condition="'$(Configuration)' == 'Debug'" />
 
 		<!--#if (shinyframework || communitytoolkit)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="7.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="7.0.1" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
 		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.0.1" />
 		<!--#endif-->
 		<!--#if (usemauimaps)-->
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
@@ -220,15 +247,14 @@
 	</ItemGroup>
 
 	<!--#endif-->
-	<!--#if (androidauto)-->
+	<!--#if (androidauto || storereview)-->
 	<ItemGroup Condition="$(TargetFramework.Contains('android'))">
+		<!--#if (androidauto)-->
 		<PackageReference Include="Xamarin.AndroidX.Car.App.App" Version="1.2.0.2" />
+		<!--#endif-->
+		<!--#if (storereview)-->
+		<ProguardConfiguration Include="Platforms/Android/proguard.cfg" />
+		<!--#endif-->
     </ItemGroup>
-	<!--#endif-->
-
-	<!--#if (storereview)-->
-	<ItemGroup Condition="$(TargetFramework.Contains('android'))">
-		<ProguardConfiguration Include="proguard.cfg" />
-	</ItemGroup>
 	<!--#endif-->
 </Project>
