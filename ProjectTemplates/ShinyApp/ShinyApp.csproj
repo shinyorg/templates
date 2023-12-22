@@ -129,7 +129,7 @@
 		<!--#endif-->
 		<!--#if (shinyframework)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.271-pre" />
-		<PackageReference Include="ReactiveUI.Fody" Version="19.5.1" />
+		<PackageReference Include="ReactiveUI.Fody" Version="19.5.31" />
 		<PackageReference Include="Shiny.Framework" Version="4.0.0" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
@@ -197,7 +197,7 @@
 		<PackageReference Include="Plugin.InAppBilling" Version="7.1.0" />
 		<!--#endif-->
 		<!--#if (calendar)-->
-		<PackageReference Include="Plugin.Maui.CalendarStore" Version="1.0.2" />
+		<PackageReference Include="Plugin.Maui.CalendarStore" Version="2.0.0" />
 		<!--#endif-->
 		<!--#if (audio)-->
 		<PackageReference Include="Plugin.Maui.Audio" Version="2.1.0" />
@@ -229,7 +229,7 @@
 		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0-preview.86" />
 		<!--#endif-->
 		<!--#if (ffimageloading)-->
-		<PackageReference Include="FFImageLoading.Maui" Version="1.0.3" />
+		<PackageReference Include="FFImageLoading.Maui" Version="1.0.6" />
 		<!--#endif-->
 		<!--#if (embedio)-->
 		<PackageReference Include="EmbedIO" Version="3.5.2" />

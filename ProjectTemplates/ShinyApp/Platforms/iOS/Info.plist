@@ -77,7 +77,9 @@
 	<!--#endif-->
 	<!--#if (calendar)-->
 	<key>NSCalendarsUsageDescription</key>
-	<string>Say something useful here that your users will understand</string>	
+	<string>We need to say something useful here</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>We need to say something useful here</string>
 	<!--#endif-->
 	<!--#if (health)-->
 	<key>NSHealthUpdateUsageDescription</key>
