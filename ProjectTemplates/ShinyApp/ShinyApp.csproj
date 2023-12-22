@@ -43,7 +43,7 @@
 		<SupportedOSPlatformVersion>14.2</SupportedOSPlatformVersion>
 		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>
 
-		<!--if (usemsal)-->
+		<!--#if (usemsal)-->
 		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="$(AppIdentifierPrefix){APPLICATION_ID};$(AppIdentifierPrefix)com.microsoft.adalcache" />
 		<!--#else-->
 		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="$(AppIdentifierPrefix){APPLICATION_ID}" />
@@ -139,7 +139,7 @@
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.0" />
 		<!--#endif-->
 		<!--#if (usemsal)-->
-		<PackageReference Include="Microsoft.Identity.Client" Version="4.56.0" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.58.1" />
 		<!--#endif-->
 		<!--#if (useconfig)-->
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
