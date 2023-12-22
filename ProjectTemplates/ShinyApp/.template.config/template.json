@@ -320,6 +320,7 @@
             "type": "parameter",
             "description": "Sets up initial deep link support",
             "displayName": "Setup Deep Linking Support",
+            "defaultValue": "",
             "datatype": "string",
             "replaces": "{DEEPLINK_HOST}"
         },
@@ -557,11 +558,6 @@
             "type": "computed",
             "datatype": "bool",
             "value": "(authservice && refit)"
-        },
-        "useentitlements":{
-            "type": "computed",
-            "datatype": "bool",
-            "value": "(usepush || usemsal || calendar || health || carplay || usedeeplinks)"
         }
     },
     "sources": [{
@@ -582,10 +578,6 @@
                 "appsettings.ios.json",
                 "appsettings.maccatalyst.json"
             ]
-        },
-        {
-            "condition": "(useentitlements == false)",
-            "exclude": "Platforms/**/Entitlements.*.plist"
         },
         {
             "condition": "(startup == false)",
@@ -695,7 +687,7 @@
             "exclude": "MainViewModel.cs"
         },
         {
-            "condition": "(storereview == true)",
+            "condition": "(storereview == false)",
             "exclude": "Platforms/Android/proguard.cfg"
         },        
         {
