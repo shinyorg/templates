@@ -116,7 +116,7 @@
             "datatype": "bool",
             "defaultValue": "true",
             "description": "Microsoft Orleans",
-            "displayName": "Microsoft Orleans"            
+            "displayName": "Microsoft Orleans" 
         },
         "swagger": {
             "type": "parameter",
@@ -125,6 +125,13 @@
             "description": "Swagger",
             "displayName": "Swagger"
         },
+        "appledomain": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Include Apple Domain Association File",
+            "displayName": "Include Apple Domain Association File" 
+        },        
         "efsql":{
             "type": "computed",
             "datatype": "bool",
@@ -151,7 +158,11 @@
         {
             "condition": "(orleans == false)",
             "exclude": "Grains/**"
-        },        
+        },
+        {
+            "condition": "(appledomain == false)",
+            "exclude": "wwwroot/**"
+        },
         {
             "condition": "(signalr == false)",
             "exclude": "Hubs/**"

@@ -161,7 +161,7 @@ app.UseFastEndpoints(x => x.Endpoints.Configurator = ep =>
 {
     ep.PostProcessors(Order.After, new EmptyResponseGlobalPostProcessor());
 });
-app.UseExceptionHandler();
+// app.UseExceptionHandler();
 
 //#if (signalr)
 app.MapHub<BizHub>("/biz");
@@ -174,6 +174,7 @@ app.UseCors(x => x
     .AllowAnyHeader()
     .AllowAnyMethod()
     .AllowAnyOrigin()
+    // .WithOrigins("https://localhost:1234")
     //.AllowCredentials()
 );
 #endif
@@ -201,5 +202,16 @@ if (app.Environment.IsDevelopment())
     });
     #endif
 }
+#if (appledomain)
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/.well-known")
+    ),
+    RequestPath = "/.well-known",
+    ServeUnknownFileTypes = true,
+    DefaultContentType = "text/plain"
+});
+#endif
 
 app.Run();
