@@ -354,5 +354,11 @@
             "text": "Add EmbedIO Tiny Web Server"
         },
         "isVisible": true
+    },{
+        "id": "mudblazor",
+        "name":{
+            "text": "BLAZOR - Add MudBlazor"
+        },
+        "isVisible": true
     }]
 }

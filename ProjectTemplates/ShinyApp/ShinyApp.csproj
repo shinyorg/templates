@@ -238,6 +238,9 @@
 		<!--#if (embedio)-->
 		<PackageReference Include="EmbedIO" Version="3.5.2" />
 		<!--#endif-->
+		<!--#if (useblazor && mudblazor)-->
+		<PackageReference Include="MudBlazor" Version="6.11.2" />
+		<!--#endif-->
 	</ItemGroup>
 
 	<!--#if (flipper || useappcenter)-->

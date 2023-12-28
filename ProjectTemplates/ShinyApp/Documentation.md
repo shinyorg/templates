@@ -250,7 +250,7 @@ Add the following to your XAML declaration
 ```
 <!--#endif-->
 <!--#if (embedio)-->
-Embed.IO 
+## Embed.IO 
 
 A tiny, cross-platform, module based, MIT-licensed web server for .NET Framework and .NET Core by Unosquare
 * Network operations use the async/await pattern: Responses are handled asynchronously
@@ -267,5 +267,15 @@ A tiny, cross-platform, module based, MIT-licensed web server for .NET Framework
 
 * [Documentation](https://unosquare.github.io/embedio/)
 * [GitHub](https://github.com/unosquare/embedio/)
+
+<!--#endif-->
+<!--#if (useblazor && mudblazor)-->
+## MudBlazor
+
+_The Blazor Component Library You always wanted_
+
+Trusted by thousands of users, from hobby developers to large enterprises. Use MudBlazor to rapidly build amazing web applications without leaving your loved C# language and toolchain.
+
+[Documentation](https://mudblazor.com/)
 
 <!--#endif-->

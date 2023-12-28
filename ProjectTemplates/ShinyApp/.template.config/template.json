@@ -443,6 +443,13 @@
             "description": "Add EmbedIO Tiny Web Server - Documentation: https://unosquare.github.io/embedio/",
             "displayName": "Add EmbedIO Tiny Web Server"  
         },
+        "mudblazor": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "BLAZOR - Add MudBlazor",
+            "displayName": "BLAZOR - Add MudBlazor"  
+        },
         "androidauto":{
             "type": "parameter",
             "datatype": "bool",
@@ -689,12 +696,11 @@
         {
             "condition": "(storereview == false)",
             "exclude": "Platforms/Android/proguard.cfg"
-        },        
+        },
         {
             "condition": "(useblazor == false)",
             "exclude":[ 
-                "Main.razor",
-                "_Imports.razor",
+                "*.razor",
                 "Pages/**" ,
                 "Shared/**",
                 "wwwroot/**" 

@@ -37,6 +37,9 @@ using FFImageLoading.Maui;
 #if uraniumui
 using UraniumUI;
 #endif
+#if useblazor && mudblazor
+using MudBlazor.Services;
+#endif
 
 namespace ShinyApp;
 
@@ -317,6 +320,10 @@ public static class MauiProgram
 
 #if useblazor
         s.AddMauiBlazorWebView();
+
+        #if mudblazor
+        builder.Services.AddMudServices();
+        #endif
 //-:cnd:noEmit
 #if DEBUG
         s.AddBlazorWebViewDeveloperTools();
