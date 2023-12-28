@@ -72,6 +72,7 @@
 	* [Drastic Flipper](https://github.com/drasticactions/Drastic.Flipper) by Tim Miller
 	* [Embed.IO](https://unosquare.github.io/embedio/) by Unosquare
 	* [SkiaSharp](https://github.com/mono/SkiaSharp) by Matthew Leibowitz
+	* [MudBlazor](https://mudblazor.com)
 
 <img src="vs4win.png" />
 <img src="vs4mac.png" />
@@ -91,6 +92,8 @@ _The Microsoft iOS Extension template is currently broken on VS4win & VS4mac, so
 * .NET Orleans
 * Entity Framework Basic Setup
 * MSAL & WebAuthenticator Setup /w Google & Facebook
+* Apple Domain Association Setup
+* Exception Handler Setup
 
 
 ### Item Templates
