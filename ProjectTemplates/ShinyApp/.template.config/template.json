@@ -701,8 +701,7 @@
             "condition": "(useblazor == false)",
             "exclude":[ 
                 "*.razor",
-                "Pages/**" ,
-                "Shared/**",
+                "Components/**",
                 "wwwroot/**" 
             ]
         }]
