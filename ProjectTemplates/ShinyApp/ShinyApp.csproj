@@ -93,10 +93,10 @@
 		<!--#if (calendar)-->
 		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" />
 		<CustomEntitlements Include="com.apple.security.personal-information.calendar" Type="boolean" Value="true" />
-		<!--#endif-->		
+		<!--#endif-->
 	</ItemGroup>
 
-	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios' OR $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
+	<ItemGroup>
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
 
