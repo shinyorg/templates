@@ -643,7 +643,7 @@
             "exclude": "Delegates/AppActionDelegate.cs"
         }, 
         {
-            "condition": "(deeplinks == false)",
+            "condition": "(usedeeplinks == false)",
             "exclude": "Delegates/DeepLinkDelegate.cs"
         }, 
         {
