@@ -43,7 +43,7 @@
         <PackageReference Include="FastEndpoints" Version="$(FastEndpointsVersion)" />
         <!--#if (swagger)-->
         <PackageReference Include="FastEndpoints.Swagger" Version="$(FastEndpointsVersion)" />
-        <PackageReference Include="FastEndpoints.ClientGen" Version="$(FastEndpointsVersion)" />
+        <PackageReference Include="FastEndpoints.ClientGen.Kiota" Version="$(FastEndpointsVersion)" />
         <!--#endif-->
     </ItemGroup>
 </Project>

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.SignalR;
 //#endif
 #if (swagger)
 using FastEndpoints.Swagger;
-using FastEndpoints.ClientGen;
+using FastEndpoints.ClientGen.Kiota;
 #endif
 #if (push)
 using Shiny.Extensions.Push;
@@ -136,10 +136,14 @@ builder.Services.AddSingleton<IUserIdProvider, UserIdProvider>();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddFastEndpoints();
 //#if (swagger)
-builder.Services.AddSwaggerDocument(x =>
+builder.Services.SwaggerDocument(x =>
 {
-    x.DocumentName = "v1";
-    //shortSchemaNames: true
+    x.ShortSchemaNames = true;
+    x.ExcludeNonFastEndpoints = true;
+    x.DocumentSettings = y =>
+    {
+        y.DocumentName = "v1";
+    };
 });
 //#endif
 //#if (olreans)
@@ -161,6 +165,7 @@ app.UseFastEndpoints(x => x.Endpoints.Configurator = ep =>
 {
     ep.PostProcessors(Order.After, new EmptyResponseGlobalPostProcessor());
 });
+
 // app.UseExceptionHandler();
 
 //#if (signalr)
@@ -189,17 +194,20 @@ if (app.Environment.IsDevelopment())
     // }
     #if (swagger)
     app.UseSwaggerGen(); 
-    app.MapCSharpClientEndpoint("/cs-client", "v1", s =>
-    {
-        s.ClassName = "ApiClient";
-        s.GenerateClientClasses = true;
-        s.GenerateBaseUrlProperty = true;
-        s.GenerateDtoTypes = true;
-        s.GenerateExceptionClasses = true;
-        s.CSharpGeneratorSettings.Namespace = "ShinyAspNet.Services";
-        s.CSharpGeneratorSettings.JsonLibrary = NJsonSchema.CodeGeneration.CSharp.CSharpJsonLibrary.SystemTextJson;
-        s.CSharpGeneratorSettings.ClassStyle = NJsonSchema.CodeGeneration.CSharp.CSharpClassStyle.Record;
-    });
+    app.MapApiClientEndpoint(
+        "/cs-client",
+        c =>
+        {
+            c.SwaggerDocumentName = "v1"; //must match document name set above
+            c.Language = Kiota.Builder.GenerationLanguage.CSharp;
+            c.ClientNamespaceName = "ShinyWish.Services";
+            c.ClientClassName = "ApiClient";
+        },
+        o =>
+        {
+            o.ExcludeFromDescription();
+        }
+    );
     #endif
 }
 #if (appledomain)
