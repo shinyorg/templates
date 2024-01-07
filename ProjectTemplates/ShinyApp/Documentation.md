@@ -269,6 +269,18 @@ A tiny, cross-platform, module based, MIT-licensed web server for .NET Framework
 * [GitHub](https://github.com/unosquare/embedio/)
 
 <!--#endif-->
+<!--#if (ffimageloading)-->
+## FFImageLoading
+_Fast & Furious Image Loading for .NET MAUI_
+
+Forked from the amazingly popular original FFImageLoading Library, this Compat version FFImageLoading.Compat aims to ease your migration from Xamarin.Forms to .NET MAUI with a compatible implementation to get you up and running without rewriting the parts of your app that relied on the original library.
+
+This Maui version which merges all Transformations & SVG library parts into ONE and is migrated from FFImageLoading.Compat aims to fix some critical bugs and gives you a place to submit Maui releated issues.
+
+The Google webp format image support. (It works in Xamarin.Forms version, but not in FFImageLoading.Compat)
+Thanks to the Original Authors: Daniel Luberda, Fabien Molinet & Redth.
+
+<!--#endif-->
 <!--#if (useblazor && mudblazor)-->
 ## MudBlazor
 

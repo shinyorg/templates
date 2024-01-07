@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Security.Claims;
+using ShinyAspNet;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 //#if (signalr)
@@ -193,23 +194,21 @@ if (app.Environment.IsDevelopment())
     //         scope.ServiceProvider.GetRequiredService<AppDbContext>().Database.EnsureCreated();
     // }
     #if (swagger)
-    app.UseSwaggerGen(); 
-    app.MapApiClientEndpoint(
-        "/cs-client",
-        c =>
-        {
-            c.SwaggerDocumentName = "v1"; //must match document name set above
-            c.Language = Kiota.Builder.GenerationLanguage.CSharp;
-            c.ClientNamespaceName = "ShinyWish.Services";
-            c.ClientClassName = "ApiClient";
-        },
-        o =>
-        {
-            o.ExcludeFromDescription();
-        }
-    );
+    app.UseSwaggerGen();
     #endif
 }
+#if (swagger)
+await app.GenerateApiClientsAndExitAsync(c =>
+{
+    c.SwaggerDocumentName = "v1"; //must match document name set above
+    c.Language = Kiota.Builder.GenerationLanguage.CSharp;
+    c.ClientNamespaceName = "ShinyAspNet.Services";
+    c.ClientClassName = "ApiClient";
+    c.CreateZipArchive = false;
+    c.OutputPath = Path.Combine(app.Environment.ContentRootPath, "../ApiClient");
+});
+#endif
+
 #if (appledomain)
 app.UseStaticFiles(new StaticFileOptions
 {
