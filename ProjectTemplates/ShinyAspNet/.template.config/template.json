@@ -152,6 +152,10 @@
             "exclude": "Endpoints/Auth"
         },
         {
+            "condition": "(swagger == false)",
+            "exclude": "GuidToUuidSchemaProcessor.cs"
+        },        
+        {
             "condition": "(mobileauth == false)",
             "exclude": "Endpoints/Profile"
         },

@@ -1,3 +1,4 @@
+using System.Net;
 using Microsoft.AspNetCore.Diagnostics;
 
 namespace ShinyAspNet;

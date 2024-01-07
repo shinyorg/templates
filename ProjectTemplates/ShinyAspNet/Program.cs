@@ -144,6 +144,7 @@ builder.Services.SwaggerDocument(x =>
     x.DocumentSettings = y =>
     {
         y.DocumentName = "v1";
+        y.SchemaSettings.SchemaProcessors.Add(new GuidToUuidSchemaProcessor());
     };
 });
 //#endif
