@@ -31,8 +31,8 @@
 	<uses-permission android:name="android.permission.BATTERY_STATS" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<!--#if (audio || usemaps || essentialsmedia)-->
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<!--#if (audio || usemaps || essentialsmedia || essentialsfilepicker)-->
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<!--#endif-->
 	<!--#if (bluetoothle || blehosting || beacons)-->
@@ -98,7 +98,6 @@
 	<uses-permission android:name="android.permission.WRITE_CALENDAR" />
 	<!--#endif-->
 	<!--#if (essentialsmedia || essentialsfilepicker)-->
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
 	<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 	<!--#endif-->
 	<!--#if (essentialsfilepicker)-->
@@ -106,7 +105,6 @@
 	<uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
 	<!--#endif-->
 	<!--#if (essentialsmedia)-->
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <queries>
         <intent>
             <action android:name="android.media.action.IMAGE_CAPTURE" />
