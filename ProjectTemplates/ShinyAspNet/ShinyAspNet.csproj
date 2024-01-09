@@ -45,5 +45,8 @@
         <PackageReference Include="FastEndpoints.Swagger" Version="$(FastEndpointsVersion)" />
         <PackageReference Include="FastEndpoints.ClientGen.Kiota" Version="$(FastEndpointsVersion)" />
         <!--#endif-->
+        <!--#if (email && orleans)-->
+        <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.8.0" />
+        <!--#endif-->
     </ItemGroup>
 </Project>
