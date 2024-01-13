@@ -80,6 +80,9 @@
 	<!--#if (gps)-->
 	<uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
 	<!--#endif-->
+	<!--#if (httptransfers)-->
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+	<!--#endif-->
 	<!--#if (essentialsmedia || barcodes)-->
 	<uses-feature android:name="android.hardware.camera" android:required="false" />
 	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
