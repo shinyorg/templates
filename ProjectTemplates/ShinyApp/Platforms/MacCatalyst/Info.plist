@@ -56,9 +56,11 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
-	<!--#if (essentialsmedia)-->
+	<!--#if (essentialsmedia || screenrecord)-->
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
+	<!--#endif-->
+	<!--#if (essentialsmedia)-->
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
