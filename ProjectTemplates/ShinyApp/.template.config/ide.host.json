@@ -307,6 +307,12 @@
         },
         "isVisible": true
     },{
+        "id": "screenrecord",
+        "name":{
+            "text": "Add Screen Recording (Plugin.Maui.ScreenRecording)"
+        },
+        "isVisible": true
+    },{        
         "id": "ffimageloading",
         "name":{
             "text": "Add FFImageLoading MAUI (FFImageLoading.Maui)"

@@ -401,6 +401,13 @@
             "description": "Audio Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.Audio",
             "displayName": "Add Audio (Plugin.Maui.Audio)"
         }, 
+        "screenrecord":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Screen Recording Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.ScreenRecording",
+            "displayName": "Add Screen Recording (Plugin.Maui.ScreenRecording)"
+        },         
         "fingerprint":{
             "type": "parameter",
             "datatype": "bool",

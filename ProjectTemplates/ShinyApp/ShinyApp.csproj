@@ -9,7 +9,7 @@
 		<!--#if (usemaccatalyst)-->
 		<TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-maccatalyst</TargetFrameworks>
 		<!--#endif-->
-		<MauiVersion>8.0.3</MauiVersion>
+		<MauiVersion>8.0.6</MauiVersion>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>ShinyApp</RootNamespace>
 		<SingleProject>true</SingleProject>
@@ -27,12 +27,13 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<ShinyVersion>3.2.1</ShinyVersion>
+		<ShinyVersion>3.2.3</ShinyVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<DefineConstants>$(DefineConstants);PLATFORM</DefineConstants>
 		<SupportedOSPlatformVersion>26.0</SupportedOSPlatformVersion>
+		<TargetPlatformVersion>34</TargetPlatformVersion>
 		<!--
 		<AndroidLinkTool>r8</AndroidLinkTool>
 		<AndroidLinkTool>proguard</AndroidLinkTool>
@@ -224,9 +225,12 @@
 		<PackageReference Include="Sharpnado.CollectionView.Maui" Version="3.0.0" />
 		<!--#endif-->
 		<!--#if (uraniumui)-->
-		<PackageReference Include="UraniumUI.Material" Version="2.7.3" />
-		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.7.3" />
-		<PackageReference Include="UraniumUI.Blurs" Version="2.7.3" />
+		<PackageReference Include="UraniumUI.Material" Version="2.7.4" />
+		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.7.4" />
+		<PackageReference Include="UraniumUI.Blurs" Version="2.7.4" />
+		<!--#endif-->
+		<!--#if (screenrecord)-->
+		<PackageReference Include="Plugin.Maui.ScreenRecording" Version="1.0.0-preview1" />
 		<!--#endif-->
 		<!--#if (skia)-->
 		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.6" />

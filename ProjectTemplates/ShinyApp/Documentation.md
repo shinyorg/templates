@@ -169,6 +169,14 @@ _Provides the ability to play audio inside a .NET MAUI application. - Written by
 * [GitHub](https://github.com/jfversluis/Plugin.Maui.Audio)
 
 <!--#endif-->
+<!--#if (screenrecord)-->
+## MAUI Screen Recording Plugin
+
+_Provides the ability to record the screen from within your .NET MAUI app - Written by Gerald Versluis_
+
+* [GitHub](https://github.com/jfversluis/Plugin.Maui.ScreenRecording)
+
+<!--#endif-->
 <!--#if (fingerprint)-->
 ## Fingerprint Plugin
 

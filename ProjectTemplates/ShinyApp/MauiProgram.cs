@@ -13,6 +13,9 @@ using Plugin.Maui.CalendarStore;
 #if audio
 using Plugin.Maui.Audio;
 #endif
+#if screenrecord
+using Plugin.Maui.ScreenRecording;
+#endif
 #if fingerprint
 using Plugin.Fingerprint;
 #endif
@@ -56,6 +59,9 @@ public static class MauiProgram
         .UseUraniumUI()
         .UseUraniumUIMaterial()
         .UseUraniumUIBlurs()
+#endif
+#if screenrecord
+        .UseScreenRecording() 
 #endif
 #if shinyframework || communitytoolkit
         .UseMauiCommunityToolkit()
@@ -188,6 +194,9 @@ public static class MauiProgram
 #endif
 #if (calendar)
         s.AddSingleton(CalendarStore.Default);
+#endif
+#if (screenrecord)
+        s.AddSingleton(ScreenRecording.Default);
 #endif
 #if appaction
         s.AddSingleton<ShinyApp.Delegates.AppActionDelegate>();
