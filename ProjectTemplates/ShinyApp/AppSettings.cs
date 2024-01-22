@@ -10,10 +10,17 @@ public class AppSettings : ReactiveObject, IShinyStartupTask
 
     public void Start()
     {
-        Application.Current!.UserAppTheme = this.CurrentTheme;
+        if (Application.Current != null)
+        {
+            Observable
+                .Interval(TimeSpan.FromSeconds(1))
+                .Where(_ => Application.Current != null)
+                .Take(1)
+                .Subscribe(_ => Application.Current!.UserAppTheme = this.CurrentTheme);
+        }        
         this.WhenAnyValue(x => x.CurrentTheme)
             .Skip(1)
-            .Subscribe(x => this.CurrentTheme = x);
+            .Subscribe(x => Application.Current!.UserAppTheme = x);
     }
 }
 #else
@@ -31,8 +38,6 @@ public class AppSettings : NotifyPropertyChanged, IShinyStartupTask
 
     public void Start()
     {
-        Application.Current!.UserAppTheme = this.CurrentTheme;
-
         this.WhenAnyProperty(x => x.CurrentTheme)
             .Skip(1)
             .Subscribe(x => Application.Current!.UserAppTheme = x);
