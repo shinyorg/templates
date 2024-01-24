@@ -149,16 +149,12 @@
         "modifiers": [
         {
             "condition": "(mobileauth == false)",
-            "exclude": "Endpoints/Auth"
+            "exclude": "Controllers/AuthController.cs"
         },
-        {
-            "condition": "(swagger == false)",
-            "exclude": "GuidToUuidSchemaProcessor.cs"
-        },        
         {
             "condition": "(mobileauth == false)",
-            "exclude": "Endpoints/Profile"
-        },
+            "exclude": "Controllers/ProfileController.cs"
+        },        
         {
             "condition": "(orleans == false)",
             "exclude": "Grains/**"

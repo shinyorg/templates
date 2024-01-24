@@ -5,16 +5,20 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <MicrosoftVersion>8.0.0</MicrosoftVersion>
-        <FastEndpointsVersion>5.20.1</FastEndpointsVersion>
+        <LangVersion>preview</LangVersion>
         <!--#if (orleans)-->
-        <OrleansVersion>7.2.3</OrleansVersion>
+        <OrleansVersion>8.0.0</OrleansVersion>
         <!--#endif-->
         <!--#if (email || push)-->
-        <ShinyExtensionsVersion>2.0.0-preview-0013</ShinyExtensionsVersion>
+        <ShinyExtensionsVersion>2.0.0-preview-0014</ShinyExtensionsVersion>
         <!--#endif-->
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="MediatR" Version="12.2.0" />
+        <!--#if (openapi)-->
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+        <!--#endif-->
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(MicrosoftVersion)" />
         <!--#if (efsql)-->
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MicrosoftVersion)" />        
@@ -39,11 +43,6 @@
         <!--#endif-->
         <!--#if (email)-->
         <PackageReference Include="Shiny.Extensions.Mail" Version="$(ShinyExtensionsVersion)" />
-        <!--#endif-->
-        <PackageReference Include="FastEndpoints" Version="$(FastEndpointsVersion)" />
-        <!--#if (swagger)-->
-        <PackageReference Include="FastEndpoints.Swagger" Version="$(FastEndpointsVersion)" />
-        <PackageReference Include="FastEndpoints.ClientGen.Kiota" Version="$(FastEndpointsVersion)" />
         <!--#endif-->
         <!--#if (email && orleans)-->
         <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.8.0" />

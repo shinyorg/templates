@@ -4,11 +4,16 @@
 ## Entity Framework
 * [Documentation](https://learn.microsoft.com/en-us/ef/core/)
 
-## Fast Endpoints
-_ASP.NET minimal APIs done right.  This also includes the ability to generate client code_
+## MediatR
+_Simple mediator implementation in .NET_
+_In-process messaging with no dependencies._
+_Supports request/response, commands, queries, notifications and events, synchronous and async with intelligent dispatching via C# generic variance._
 
-* [Documentation](https://fast-endpoints.com/)
-* [GitHub](https://github.com/FastEndpoints/FastEndpoints)
+Created by [Jimmy Bogard](https://github.com/jbogard)
+
+[Documentation](https://github.com/jbogard/MediatR)
+
+
 
 <!--#if (orleans)-->
 ## Microsoft Orleans
@@ -59,4 +64,10 @@ _Powerful email templates for your apps_
 * [Documentation](http://shinylib.net/extensions/email.html)
 * [GitHub](https://github.com/shinyorg/apiservices)
 
+<!--#endif-->
+<!--#if (mediatr)-->
+## MediatR
+_MediatR is a simple, unambitious mediator implementation in .NET_
+
+* [Documentation](https://github.com/jbogard/MediatR)
 <!--#endif-->

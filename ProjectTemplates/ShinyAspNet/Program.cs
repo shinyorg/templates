@@ -7,10 +7,6 @@ using Microsoft.IdentityModel.Tokens;
 using ShinyAspNet.Hubs;
 using Microsoft.AspNetCore.SignalR;
 //#endif
-#if (swagger)
-using FastEndpoints.Swagger;
-using FastEndpoints.ClientGen.Kiota;
-#endif
 #if (push)
 using Shiny.Extensions.Push;
 #endif
@@ -19,6 +15,28 @@ using Shiny.Extensions.Mail;
 #endif
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllers();
+builder.Services.AddScoped<JwtService>();
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+#if (swagger)
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+#endif
+builder.Services.AddDbContext<AppDbContext>(
+    opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("Main"))
+);
+//#if (mediatr)
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
+//#endif
+//#if (signalr)
+builder.Services.AddSignalR();
+builder.Services.AddSingleton<IUserIdProvider, UserIdProvider>();
+//#endif
+//-:cnd:noEmit
+#if DEBUG
+builder.Services.AddCors();
+#endif
+//+:cnd:noEmit
 builder
     .Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -38,9 +56,7 @@ builder
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt["Key"]!))
         };
     });
-
-builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
-
+    
 //#if (google)
 builder.Services.AddAuthentication().AddGoogle(options =>
 {
@@ -122,33 +138,9 @@ builder.Services.AddMail(mail =>
         );
 });
 #endif
-//-:cnd:noEmit
-#if DEBUG
-builder.Services.AddCors();
-#endif
-//+:cnd:noEmit
-builder.Services.AddDbContext<AppDbContext>(
-    opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("Main"))
-);
-//#if (signalr)
-builder.Services.AddSignalR();
-builder.Services.AddSingleton<IUserIdProvider, UserIdProvider>();
-//#endif
-builder.Services.AddScoped<JwtService>();
-builder.Services.AddFastEndpoints();
-//#if (swagger)
-builder.Services.SwaggerDocument(x =>
-{
-    x.ShortSchemaNames = true;
-    x.ExcludeNonFastEndpoints = true;
-    x.DocumentSettings = y =>
-    {
-        y.DocumentName = "v1";
-        y.SchemaSettings.SchemaProcessors.Add(new GuidToUuidSchemaProcessor());
-    };
-});
-//#endif
-//#if (olreans)
+
+
+//#if (orleans)
 builder.Host.UseOrleans(x => x
     .UseLocalhostClustering()
     .AddBroadcastChannel("myapp", cfg => cfg.FireAndForgetDelivery = true)
@@ -160,16 +152,12 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+
 //#if (push)
 app.MapPushEndpoints("push", true, x => x.User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 //#endif
-app.UseFastEndpoints(x => x.Endpoints.Configurator = ep =>
-{
-    ep.PostProcessors(Order.After, new EmptyResponseGlobalPostProcessor());
-});
-
+app.UseControllers();
 // app.UseExceptionHandler();
-
 //#if (signalr)
 app.MapHub<BizHub>("/biz");
 //#endif
@@ -195,20 +183,10 @@ if (app.Environment.IsDevelopment())
     //         scope.ServiceProvider.GetRequiredService<AppDbContext>().Database.EnsureCreated();
     // }
     #if (swagger)
-    app.UseSwaggerGen();
+    app.UseSwagger();
+    app.UseSwaggerUI();
     #endif
 }
-#if (swagger)
-await app.GenerateApiClientsAndExitAsync(c =>
-{
-    c.SwaggerDocumentName = "v1"; //must match document name set above
-    c.Language = Kiota.Builder.GenerationLanguage.CSharp;
-    c.ClientNamespaceName = "ShinyAspNet.Services";
-    c.ClientClassName = "ApiClient";
-    c.CreateZipArchive = false;
-    c.OutputPath = Path.Combine(app.Environment.ContentRootPath, "../ApiClient");
-});
-#endif
 
 #if (appledomain)
 app.UseStaticFiles(new StaticFileOptions
