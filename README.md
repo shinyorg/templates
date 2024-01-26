@@ -1,6 +1,6 @@
 # Shiny Templates
 
-![Nuget](https://img.shields.io/nuget/v/shiny.templates?style=for-the-badge)
+[![Nuget](https://img.shields.io/nuget/v/shiny.templates?style=for-the-badge)](https://www.nuget.org/packages/Shiny.Templates/)
 
 
 ### To Install
