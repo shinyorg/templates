@@ -104,13 +104,6 @@
             "description": "Apple Authentication",
             "displayName": "Apple Authentication"
         },
-        "mobileauth": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "true",
-            "description": "Mobile Authentication Endpoints",
-            "displayName": "Mobile Authentication Endpoints"
-        },
         "orleans": {
             "type": "parameter",
             "datatype": "bool",
@@ -147,14 +140,6 @@
             "**/*.txt"
         ],
         "modifiers": [
-        {
-            "condition": "(mobileauth == false)",
-            "exclude": "Controllers/AuthController.cs"
-        },
-        {
-            "condition": "(mobileauth == false)",
-            "exclude": "Controllers/ProfileController.cs"
-        },        
         {
             "condition": "(orleans == false)",
             "exclude": "Grains/**"

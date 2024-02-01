@@ -1,23 +1,28 @@
 ﻿using System.Text;
 using System.Security.Claims;
-using ShinyAspNet;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-//#if (signalr)
-using ShinyAspNet.Hubs;
-using Microsoft.AspNetCore.SignalR;
-//#endif
+using ShinyAspNet;
+using ShinyAspNet.Services;
+using ShinyAspNet.Services.Impl;
 #if (push)
 using Shiny.Extensions.Push;
 #endif
 #if (email)
 using Shiny.Extensions.Mail;
 #endif
+//#if (signalr)
+using ShinyAspNet.Hubs;
+using Microsoft.AspNetCore.SignalR;
+//#endif
+
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddScoped<JwtService>();
-builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
+
 #if (swagger)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -25,9 +30,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(
     opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("Main"))
 );
-//#if (mediatr)
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
-//#endif
 //#if (signalr)
 builder.Services.AddSignalR();
 builder.Services.AddSingleton<IUserIdProvider, UserIdProvider>();
@@ -157,7 +159,6 @@ app.UseAuthorization();
 app.MapPushEndpoints("push", true, x => x.User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 //#endif
 app.UseControllers();
-// app.UseExceptionHandler();
 //#if (signalr)
 app.MapHub<BizHub>("/biz");
 //#endif
