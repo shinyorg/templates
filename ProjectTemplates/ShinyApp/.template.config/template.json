@@ -319,7 +319,7 @@
         "deeplinks":{
             "type": "parameter",
             "description": "Sets up initial deep link support",
-            "displayName": "Setup Deep Linking Support",
+            "displayName": "Setup Deep Linking Support URI",
             "defaultValue": "",
             "datatype": "string",
             "replaces": "{DEEPLINK_HOST}"

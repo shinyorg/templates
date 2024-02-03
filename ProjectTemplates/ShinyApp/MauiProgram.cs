@@ -91,14 +91,14 @@ public static class MauiProgram
         .UseShinyFramework(
             new DryIocContainerExtension(),
             prism => prism.OnAppStart("NavigationPage/MainPage"),
-            new(
-                //-:cnd:noEmit
-                #if DEBUG
+            new (
+//-:cnd:noEmit
+#if DEBUG
                 ErrorAlertType.FullError
-                #else
+#else
                 ErrorAlertType.NoLocalize
-                #endif
-                //+:cnd:noEmit
+#endif
+//+:cnd:noEmit
             )
         )
 #else

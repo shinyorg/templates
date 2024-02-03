@@ -33,16 +33,16 @@
         "isVisible": true
     },
     {
-        "id": "localization",
-        "name":{
-            "text": "Add Localization (Microsoft.Extensions.Localization)"
-        },
-        "isVisible": true
-    },
-    {
         "id": "configuration",
         "name": {
             "text": "Add AppSettings.json (Shiny.Extensions.Configuration)"
+        },
+        "isVisible": true
+    },    
+    {
+        "id": "localization",
+        "name":{
+            "text": "Add Localization (Microsoft.Extensions.Localization)"
         },
         "isVisible": true
     },
@@ -245,7 +245,7 @@
         "isVisible": true
     },
     {
-        "id": "virtualist",
+        "id": "virtuallist",
         "name":{
             "text": "Add MAUI Virtual List View"
         },
