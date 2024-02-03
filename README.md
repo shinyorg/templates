@@ -55,9 +55,11 @@
 * Full Setup for the following 3rd party components
 	* [Prism](https://prismlibrary.com) by Brian Lagunas & Dan Siegel
 	* [ReactiveUI](https://reactiveui.net) from many contributors
+	* 
 	* [MAUI Community Toolkit](https://github.com/CommunityToolkit/Maui) from many contributors
+	* [Virtual List View](https://github.com/Redth/Maui.VirtualListView) by Jon Dick
 	* [Uranium UI](https://github.com/enisn/UraniumUI) by Enis Necipoglu	
-	* [FFImageLoading MAUI]() 
+	* [FFImageLoading MAUI](https://github.com/microspaze/FFImageLoading.Maui) 
 	* [Sharpnado Tabs](https://github.com/roubachof/Sharpnado.Tabs) by Jean-Marie Alfonsi
 	* [Sharpnado CollectionView](https://github.com/roubachof/Sharpnado.CollectionView) by Jean-Marie Alfonsi
 	* [MAUI Google Maps](https://github.com/themronion/Maui.GoogleMaps/tree/maui) by Pavlo Lukianets
@@ -66,6 +68,7 @@
 	* [ZXing.Net.Maui](https://github.com/Redth/ZXing.Net.Maui) by Jon Dick
 	* [Store Review Plugin](https://github.com/jamesmontemagno/StoreReviewPlugin) by James Montemagno
 	* [In-App Billing Plugin](https://github.com/jamesmontemagno/InAppBillingPlugin) by James Montemagno
+	* [MAUI Screen Recording Plugin](https://github.com/jfversluis/Plugin.Maui.ScreenRecording) by Gerald Versluis
 	* [MAUI Audio Plugin](https://github.com/jfversluis/Plugin.Maui.Audio) by Gerald Versluis
 	* [MAUI Calendar Store Plugin](https://github.com/jfversluis/Plugin.Maui.CalendarStore) by Gerald Versluis	
 	* [Fingerprint Plugin](https://github.com/smstuebe/xamarin-fingerprint) by Sven-Michael Stübe
