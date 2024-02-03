@@ -66,6 +66,14 @@ _Localization is an essential part of any application.  This template will auto 
 * [Documentation](https://learn.microsoft.com/en-us/dotnet/core/extensions/localization)
 
 <!--#endif-->
+<!--#if (virtuallist)-->
+## VirtualListView for .NET MAUI
+
+_This is an experiment in creating a virtualized ListView control for .NET MAUI to support simple, fast, multi-templated, uneven item sized lists by not adding too many bells and whistles and using an adapter pattern data source._  Created by Jon Dick (Redth)
+
+* [GitHub](https://github.com/Redth/Maui.VirtualListView)
+
+<!--#endif-->
 <!--#if (uraniumui)-->
 ## Uranium UI
 

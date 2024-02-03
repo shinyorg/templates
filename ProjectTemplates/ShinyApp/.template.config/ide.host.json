@@ -245,6 +245,13 @@
         "isVisible": true
     },
     {
+        "id": "virtualist",
+        "name":{
+            "text": "Add MAUI Virtual List View"
+        },
+        "isVisible": true
+    },     
+    {
         "id": "uraniumui",
         "name":{
             "text": "Add Uranium UI"

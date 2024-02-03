@@ -338,6 +338,13 @@
             "description": "MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
             "displayName": "Add MAUI Community Toolkit Media Element"
         },
+        "virtuallist":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "MAUI Virtual List View by Jon Dick (Redth) - Documentation https://github.com/Redth/Maui.VirtualListView",
+            "displayName": "Add MAUI Virtual List View"            
+        },
         "uraniumui":{
             "type": "parameter",
             "datatype": "bool",

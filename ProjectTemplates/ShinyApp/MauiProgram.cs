@@ -52,6 +52,9 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp() => MauiApp
         .CreateBuilder()
         .UseMauiApp<App>()
+#if virtuallist
+        .UseVirtualListView()
+#endif
 #if barcodes
         .UseBarcodeReader()
 #endif

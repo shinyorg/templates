@@ -200,6 +200,9 @@
 		<!--#if (health)-->
 		<PackageReference Include="Shiny.Health" Version="1.0.0-beta-0018" />
 		<!--#endif-->
+		<!--#if (virtuallist)-->
+		<PackageReference Include="Redth.Maui.VirtualListView" Version="0.3.1" />
+		<!--#endif-->
 		<!--#if (barcodes)-->
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
 		<!--#endif-->
