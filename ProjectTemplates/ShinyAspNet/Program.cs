@@ -21,6 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
 
 #if (swagger)
@@ -175,6 +176,7 @@ app.UseCors(x => x
 );
 #endif
 //+:cnd:noEmit
+app.MapControllers();
 
 if (app.Environment.IsDevelopment())
 {

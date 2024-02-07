@@ -55,6 +55,10 @@
 		<RuntimeIdentifiers Condition="'$(Configuration)' == 'Debug'">maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers>
 	</PropertyGroup>
 
+	<ItemGroup Condition="'$(Configuration)' == 'Release'">
+		<TrimmerRootDescriptor Include="Linker.xml" />
+    </ItemGroup>	
+
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
 		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" />
 		<CustomEntitlements Include="com.apple.security.get-task-allow" Type="boolean" Value="true" />

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<linker>
+</linker>
+<!--
+https://learn.microsoft.com/en-us/dotnet/maui/ios/linking?view=net-maui-8.0&tabs=vs
+<linker>
+  <assembly fullname="MyAssembly">
+    <type fullname="MyAssembly.MyClass">
+      <method name="DynamicallyAccessedMethod" />
+    </type>
+  </assembly>
+</linker>
+-->
