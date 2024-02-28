@@ -91,7 +91,7 @@ _Feature rich tab control by Jean-Marie Alfonsi_
 * [GitHub](https://github.com/roubachof/Sharpnado.Tabs)
 
 <!--#endif-->
-<!--#if (sharpnadovc)-->
+<!--#if (sharpnadocv)-->
 ## Sharpnado CollectionView
 
 _A performant and feature rich collection view by Jean-Marie Alfonsi_
@@ -295,6 +295,8 @@ This Maui version which merges all Transformations & SVG library parts into ONE 
 
 The Google webp format image support. (It works in Xamarin.Forms version, but not in FFImageLoading.Compat)
 Thanks to the Original Authors: Daniel Luberda, Fabien Molinet & Redth.
+
+* [GitHub](https://github.com/microspaze/FFImageLoading.Maui)
 
 <!--#endif-->
 <!--#if (useblazor && mudblazor)-->
