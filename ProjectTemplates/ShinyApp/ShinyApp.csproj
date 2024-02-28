@@ -9,7 +9,9 @@
 		<!--#if (usemaccatalyst)-->
 		<TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-maccatalyst</TargetFrameworks>
 		<!--#endif-->
-		<MauiVersion>8.0.6</MauiVersion>
+		<IosSimulatorBuild Condition="'$(Configuration)' == 'Debug'">False</IosSimulatorBuild>
+
+		<MauiVersion>8.0.7</MauiVersion>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>ShinyApp</RootNamespace>
 		<SingleProject>true</SingleProject>
@@ -35,6 +37,8 @@
 		<SupportedOSPlatformVersion>26.0</SupportedOSPlatformVersion>
 		<TargetPlatformVersion>34</TargetPlatformVersion>
 		<!--
+		<EmbedAssembliesIntoApk Condition="'$(Configuration)' == 'Debug'">true</EmbedAssembliesIntoApk>
+		<AndroidPackageFormats Condition="'$(Configuration)' == 'Release'">aab</AndroidPackageFormats>
 		<AndroidLinkTool>r8</AndroidLinkTool>
 		<AndroidLinkTool>proguard</AndroidLinkTool>
 		-->
@@ -42,9 +46,19 @@
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios' OR $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
 		<SupportedOSPlatformVersion>14.2</SupportedOSPlatformVersion>
-		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>
+		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>	
 	</PropertyGroup>
 	
+	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
+		<RuntimeIdentifier Condition="'$(IosSimulator)' != 'true'">ios-arm64</RuntimeIdentifier>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios' AND '$(IosSimulatorBuild)' == 'true'">
+		<RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
+		<EnableCodeSigning>true</EnableCodeSigning>
+		<CodesignRequireProvisioningProfile>true</CodesignRequireProvisioningProfile>
+		<DisableCodesignVerification>true</DisableCodesignVerification>	
+	</PropertyGroup>
 
 	<!--#if (usemaccatalyst)-->
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
@@ -68,9 +82,9 @@
 	<!--#endif-->
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios' OR $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
 		<!--#if (usemsal)-->
-		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="$(AppIdentifierPrefix){APPLICATION_ID};$(AppIdentifierPrefix)com.microsoft.adalcache" />
+		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="%24(AppIdentifierPrefix){APPLICATION_ID};%24(AppIdentifierPrefix)com.microsoft.adalcache" />
 		<!--#else-->
-		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="$(AppIdentifierPrefix){APPLICATION_ID}" />
+		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="%24(AppIdentifierPrefix){APPLICATION_ID}" />
 		<!--#endif-->
 		<!--#if (usedeeplinks)-->
 		<CustomEntitlements Include="com.apple.developer.associated-domains" Type="StringArray" Value="applinks:{DEEPLINK_HOST}?mode=developer" Condition="'$(Condition)' == 'Debug'" />
@@ -146,7 +160,7 @@
 		<!--#endif-->
 		<!--#if (shinyframework)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.271-pre" />
-		<PackageReference Include="ReactiveUI.Fody" Version="19.5.31" />
+		<PackageReference Include="ReactiveUI.Fody" Version="19.5.41" />
 		<PackageReference Include="Shiny.Framework" Version="4.0.0" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
@@ -235,7 +249,7 @@
 		<PackageReference Include="Sharpnado.Tabs.Maui" Version="3.0.1" />
 		<!--#endif-->
 		<!--#if (sharpnadocv)-->
-		<PackageReference Include="Sharpnado.CollectionView.Maui" Version="3.0.0" />
+		<PackageReference Include="Sharpnado.CollectionView.Maui" Version="3.1.2" />
 		<!--#endif-->
 		<!--#if (uraniumui)-->
 		<PackageReference Include="UraniumUI.Material" Version="2.7.4" />
@@ -252,7 +266,7 @@
 		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0-preview.86" />
 		<!--#endif-->
 		<!--#if (ffimageloading)-->
-		<PackageReference Include="FFImageLoading.Maui" Version="1.0.6" />
+		<PackageReference Include="FFImageLoading.Maui" Version="1.0.9" />
 		<!--#endif-->
 		<!--#if (embedio)-->
 		<PackageReference Include="EmbedIO" Version="3.5.2" />
