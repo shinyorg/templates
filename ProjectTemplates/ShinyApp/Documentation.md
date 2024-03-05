@@ -309,3 +309,15 @@ Trusted by thousands of users, from hobby developers to large enterprises. Use M
 [Documentation](https://mudblazor.com/)
 
 <!--#endif-->
+<!--#if (useblazor && mudblazor)-->
+## Radzen Blazor
+
+_Rapid Application Development for Blazor_
+
+A set of 70+ free and open source native Blazor UI controls
+
+* [Getting Started](https://blazor.radzen.com/get-started)
+* [Documentation](https://blazor.radzen.com/)]
+* [GitHub](https://github.com/radzenhq/radzen-blazor)
+
+<!--#endif-->

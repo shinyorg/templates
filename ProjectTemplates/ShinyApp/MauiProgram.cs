@@ -43,6 +43,9 @@ using UraniumUI;
 #if useblazor && mudblazor
 using MudBlazor.Services;
 #endif
+#if useblazor && radzen
+using Radzen;
+#endif
 
 namespace ShinyApp;
 
@@ -335,6 +338,9 @@ public static class MauiProgram
 
         #if mudblazor
         builder.Services.AddMudServices();
+        #endif
+        #if radzen
+        builder.Services.AddRadzenComponents();
         #endif
 //-:cnd:noEmit
 #if DEBUG

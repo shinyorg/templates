@@ -464,6 +464,13 @@
             "description": "BLAZOR - Add MudBlazor",
             "displayName": "BLAZOR - Add MudBlazor"  
         },
+        "radzen": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "BLAZOR - Add Radzen.Blazor",
+            "displayName": "BLAZOR - Add Radzen.Blazor"  
+        },        
         "androidauto":{
             "type": "parameter",
             "datatype": "bool",

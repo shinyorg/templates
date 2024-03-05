@@ -30,6 +30,9 @@
 		<ApplicationVersion>1</ApplicationVersion>
 		
 		<ShinyVersion>3.3.0</ShinyVersion>
+
+		<!--slower build, faster runtime in DEBUG-->
+		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
@@ -91,8 +94,8 @@
 		<CustomEntitlements Include="com.apple.developer.associated-domains" Type="StringArray" Value="applinks:{DEEPLINK_HOST}" Condition="'$(Condition)' == 'Release'" />
 		<!--#endif-->
 		<!--#if (usepush)-->
-		<CustomEntitlements Include="aps-environment" Type="string" Value="development" Condition="'$(Condition)' == 'Debug'" />
-		<CustomEntitlements Include="aps-environment" Type="string" Value="production" Condition="'$(Condition)' == 'Release'" />
+		<CustomEntitlements Include="aps-environment" Type="string" Value="development" Condition="'$(Configuration)' == 'Debug'" />
+		<CustomEntitlements Include="aps-environment" Type="string" Value="production" Condition="'$(Configuration)' == 'Release'" />
 		<!--#endif-->
 		<!--#if (notifications)-->
 		<!--
@@ -274,6 +277,9 @@
 		<!--#if (useblazor && mudblazor)-->
 		<PackageReference Include="MudBlazor" Version="6.11.2" />
 		<!--#endif-->
+		<!--#if (useblazor && radzen)-->
+		<PackageReference Include="Radzen.Blazor" Version="4.25.10" />
+		<!--#endif-->		
 	</ItemGroup>
 
 	<!--#if (flipper || useappcenter)-->
