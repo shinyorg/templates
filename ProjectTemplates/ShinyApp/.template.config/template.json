@@ -677,6 +677,10 @@
             "exclude": "Platforms/Android/Auto/**"
         },
         {
+            "condition": "(androidauto == false)",
+            "exclude": "Platforms/Android/Resources/xml/automotive_app_desc.xml"
+        },        
+        {
             "condition": "(carplay == false)",
             "exclude": "Platforms/iOS/CarPlayImplementation/**"
         },
