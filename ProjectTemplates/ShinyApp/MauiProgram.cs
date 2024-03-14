@@ -181,13 +181,6 @@ public static class MauiProgram
 #if sqlitelogging
         builder.Logging.AddSqlite(Path.Combine(FileSystem.AppDataDirectory, "logging.db"));
 #endif
-#if useappcenter
-//-:cnd:noEmit
-#if !MACCATALYST
-        builder.Logging.AddAppCenter(builder.Configuration["AppCenterKey"]);
-#endif
-//+:cnd:noEmit
-#endif
 //-:cnd:noEmit
 #if DEBUG
         builder.Logging.SetMinimumLevel(LogLevel.Trace);

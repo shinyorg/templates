@@ -3,9 +3,21 @@
 namespace ShinyApp.Delegates;
 
 
-public class MyPushDelegate : IPushDelegate
+public class MyPushDelegate : PushDelegate
 {
-    public Task OnEntry(PushNotification data) => Task.CompletedTask;
-    public Task OnReceived(PushNotification data) => Task.CompletedTask;
-    public Task OnTokenRefreshed(string token) => Task.CompletedTask;
+    public override async Task OnEntry(PushNotification notification)
+    {
+    }
+
+    public override async Task OnReceived(PushNotification notification)
+    {
+    }
+
+    public override async Task OnNewToken(string token)
+    {
+    }
+
+    public override async Task OnUnRegistered(string token)
+    {
+    }
 }

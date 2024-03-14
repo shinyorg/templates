@@ -96,13 +96,6 @@
             "description": "Add AppSettings.json (Shiny.Extensions.Configuration)",
             "displayName": "Add AppSettings.json (Shiny.Extensions.Configuration)"
         },
-        "appcenter": {
-            "type": "parameter",
-            "dataType": "string",
-            "description": "Your AppCenter Key (optional) - (Shiny.Logging.AppCenter)",
-            "defaultValue": "",
-            "replaces":"{APPCENTER_KEY}"
-        },
         "sentry": {
             "type": "parameter",
             "dataType": "bool",
