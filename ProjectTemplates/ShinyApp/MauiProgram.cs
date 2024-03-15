@@ -93,7 +93,7 @@ public static class MauiProgram
 #if shinyframework            
         .UseShinyFramework(
             new DryIocContainerExtension(),
-            prism => prism.OnAppStart("NavigationPage/MainPage"),
+            prism => prism.CreateWindow("NavigationPage/MainPage"),
             new (
 //-:cnd:noEmit
 #if DEBUG

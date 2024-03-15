@@ -140,7 +140,7 @@
     {
         "id": "speechrecognition",
         "name": {
-            "text": "Add Speech Recognition (Shiny.SpeechRecognition)"
+            "text": "Setup Community Toolkit Speech-to-Text"
         },
         "isVisible": true,
         "defaultValue": "None"

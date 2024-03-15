@@ -166,13 +166,6 @@
             "description": "Add Local Notifications (Shiny.Notifications)",
             "displayName": "Add Local Notifications (Shiny.Notifications)"
         },
-        "speechrecognition": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add Speech Recognition (Shiny.SpeechRecognition)",
-            "displayName": "Add Speech Recognition (Shiny.SpeechRecognition)"
-        },
         "health":{
             "type": "parameter",
             "datatype": "bool",
@@ -324,6 +317,13 @@
             "description": "MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
             "displayName": "Add MAUI Community Toolkit"
         },
+        "speechrecognition": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Setup Community Toolkit Speech-to-Text",
+            "displayName": "Setup Community Toolkit Speech-to-Text"
+        },        
         "mediaelement":{
             "type": "parameter",
             "datatype": "bool",

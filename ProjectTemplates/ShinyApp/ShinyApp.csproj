@@ -146,14 +146,14 @@
 		<!--#endif-->
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" Condition="'$(Configuration)' == 'Debug'" />
 
-		<!--#if (shinyframework || communitytoolkit)-->
+		<!--#if (shinyframework || communitytoolkit || speechrecognition)-->
 		<PackageReference Include="CommunityToolkit.Maui" Version="7.0.1" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
 		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.0.1" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.1.0" />
 		<!--#endif-->
 		<!--#if (usemauimaps)-->
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
@@ -162,9 +162,9 @@
 		<PackageReference Include="Onion.Maui.GoogleMaps" Version="5.0.1" />
 		<!--#endif-->
 		<!--#if (shinyframework)-->
-		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.271-pre" />
+		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.401-pre" />
 		<PackageReference Include="ReactiveUI.Fody" Version="19.5.41" />
-		<PackageReference Include="Shiny.Framework" Version="4.0.0" />
+		<PackageReference Include="Shiny.Framework" Version="4.1.0" />
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
@@ -205,9 +205,6 @@
 		<!--#endif-->
 		<!--#if (httptransfers)-->
 		<PackageReference Include="Shiny.Net.Http" Version="$(ShinyVersion)" />
-		<!--#endif-->
-		<!--#if (speechrecognition)-->
-		<PackageReference Include="Shiny.SpeechRecognition" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (usepushnative)-->
 		<PackageReference Include="Shiny.Push" Version="$(ShinyVersion)" />
