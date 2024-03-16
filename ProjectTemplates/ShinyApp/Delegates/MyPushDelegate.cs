@@ -3,7 +3,7 @@
 namespace ShinyApp.Delegates;
 
 
-public class MyPushDelegate : PushDelegate
+public partial class MyPushDelegate : PushDelegate
 {
     public override async Task OnEntry(PushNotification notification)
     {
@@ -21,3 +21,12 @@ public class MyPushDelegate : PushDelegate
     {
     }
 }
+
+#if APPLE
+public partial class MyPushDelegate : IApplePushDelegate
+{
+    public UNNotificationPresentationOptions? GetPresentationOptions(PushNotification notification) => null;
+
+    public UIBackgroundFetchResult? GetFetchResult(PushNotification notification) => null;
+}
+#endif

@@ -179,8 +179,7 @@
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="3.41.3" />
-		<PackageReference Include="Sentry.Extensions.Logging" Version="3.41.3" />
+		<PackageReference Include="Sentry.Extensions.Logging" Version="4.2.1" />
 		<!--#endif-->
 		<!--#if (sqlitelogging)-->
 		<PackageReference Include="Shiny.Logging.Sqlite" Version="$(ShinyVersion)" />
