@@ -53,7 +53,7 @@
 	</PropertyGroup>
 	
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
-		<RuntimeIdentifier Condition="'$(IosSimulator)' != 'true'">ios-arm64</RuntimeIdentifier>
+		<RuntimeIdentifier Condition="'$(IosSimulator)' != 'true'">ios-arm64</RuntimeIdentifier>	
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios' AND '$(IosSimulatorBuild)' == 'true'">
@@ -84,6 +84,8 @@
 	
 	<!--#endif-->
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios' OR $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
+		<BundleResource Include="Platforms\iOS\PrivacyInfo.xcprivacy" LogicalName="PrivacyInfo.xcprivacy" />
+		
 		<!--#if (usemsal)-->
 		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="%24(AppIdentifierPrefix){APPLICATION_ID};%24(AppIdentifierPrefix)com.microsoft.adalcache" />
 		<!--#else-->
@@ -140,7 +142,6 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<!--#if (useblazor)-->
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
 		<!--#endif-->
