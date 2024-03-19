@@ -96,82 +96,59 @@
             "description": "Add AppSettings.json (Shiny.Extensions.Configuration)",
             "displayName": "Add AppSettings.json (Shiny.Extensions.Configuration)"
         },
-        "sentry": {
+        "logging":{
+            "displayName": "Logging Providers",
             "type": "parameter",
-            "dataType": "bool",
-            "defaultValue": "false",
-            "description": "Add Sentry.IO logging to your application",
-            "displayName": "Sentry.IO Logging"
-        },        
-        "sqlitelogging": {
-            "type": "parameter",
-            "dataType": "bool",
-            "description": "SQLite Logging - (Shiny.Logging.Sqlite) - Great for logging local tests especially for background services in Shiny",
-            "displayName": "SQLite Logging - (Shiny.Logging.Sqlite)",
-            "defaultValue": "false"
+            "datatype": "choice",
+            "allowMultipleValues": true,
+            "choices": [{
+                "choice": "sentry",
+                "displayName": "Sentry.IO"
+            },{
+                "choice": "sqlite",
+                "description": "SQLite Logging - (Shiny.Logging.Sqlite) - Great for logging local tests especially for background services in Shiny",
+                "displayName": "SQLite (Shiny.Logging.Sqlite)"
+            }],
+            "defaultValue": "sentry|sqlite"
         },
-        "bluetoothle": {
+        "shiny":{
+            "displayName": "Shiny Modules",
             "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add BluetoothLE Client (Shiny.BluetoothLE)",
-            "displayName": "Add BluetoothLE Client (Shiny.BluetoothLE)"
-        },
-        "blehosting": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add BluetoothLE Hosting (Shiny.BluetoothLE.Hosting)",
-            "displayName": "Add BluetoothLE Hosting (Shiny.BluetoothLE.Hosting)"
-        },
-        "beacons": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add Beacons (Shiny.Beacons)",
-            "displayName": "Add Beacons (Shiny.Beacons)"
-        },
-        "jobs": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add Background Jobs (Shiny.Jobs)",
-            "displayName": "Add Background Jobs (Shiny.Jobs)"
-        },
-        "gps":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add GPS (Shiny.Locations)",
-            "displayName": "Add GPS (Shiny.Locations)"
-        },
-        "geofencing":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add Geofencing (Shiny.Locations)",
-            "displayName": "Add Geofencing (Shiny.Locations)"
-        },
-        "httptransfers": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add Background HTTP Uploads & Downloads (Shiny.Net.Http)",
-            "displayName": "Add Background HTTP Uploads & Downloads (Shiny.Net.Http)"
-        },
-        "notifications": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add Local Notifications (Shiny.Notifications)",
-            "displayName": "Add Local Notifications (Shiny.Notifications)"
-        },
-        "health":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add Health (Shiny.Health - Apple Health and Google Fit - https://github.com/shinyorg/health)",
-            "displayName": "Add Health (Shiny.Health)"            
+            "datatype": "choice",
+            "allowMultipleValues": true,
+            "choices": [{
+                "choice": "bluetoothle",
+                "description": "BluetoothLE Client (Shiny.BluetoothLE)",
+                "displayName": "BluetoothLE Client (Shiny.BluetoothLE)"
+            },{
+                "choice": "blehosting",
+                "description": "BluetoothLE Hosting (Shiny.BluetoothLE.Hosting)",
+                "displayName": "BluetoothLE Hosting (Shiny.BluetoothLE.Hosting)"
+            },{
+                "choice": "beacons",
+                "description": "Beacons (Shiny.Beacons)",
+                "displayName": "Beacons (Shiny.Beacons)"
+            },{
+                "choice": "jobs",                
+                "description": "Background Jobs (Shiny.Jobs)",
+                "displayName": "Background Jobs (Shiny.Jobs)"
+            },{
+                "choice": "gps",
+                "description": "GPS/Geolocation (Shiny.Locations)",
+                "displayName": "GPS/Geolocation (Shiny.Locations)"
+            },{
+                "choice": "geofencing",
+                "description": "Geofencing (Shiny.Locations)",
+                "displayName": "Geofencing (Shiny.Locations)"
+            },{
+                "choice": "httptransfers",
+                "description": "Background HTTP Uploads & Downloads (Shiny.Net.Http)",
+                "displayName": "Background HTTP Uploads & Downloads (Shiny.Net.Http)"                
+            },{
+                "choice": "notifications",
+                "description": "Local Notifications (Shiny.Notifications)",
+                "displayName": "Local Notifications (Shiny.Notifications)"                
+            }]
         },
         "startup":{
             "type": "parameter",
@@ -192,7 +169,7 @@
             "datatype": "choice",
             "defaultValue": "None",
             "description": "This will wire up all of the necessary permissions & libraries required for the selected push option.  You will still need to configure any additional API keys within the appsettings.json or MauiProgram.cs files",
-            "displayName": "Add Push Notifications",
+            "displayName": "Shiny Push Notifications",
             "choices": [
                 {
                     "choice": "None",
@@ -281,26 +258,24 @@
             "defaultValue": "",
             "replaces":"{MAUI_MAPS_ANDROID_KEY}"
         },
-        "essentialsmedia":{
+        "mauiessentials":{
+            "displayName": "MAUI Essential Setup",
             "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Sets all up all the necessary boilerplate for the MAUI Essentials Media Picker",
-            "displayName": "Setup MAUI Essentials - Media Picker"
-        },
-        "essentialsfilepicker":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Setup all the necessary boilerplate for the MAUI Essentials File Picker",
-            "displayName": "Setup MAUI Essentials - File Picker"
-        },
-        "appactions":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Sets all up all the necessary boilerplate for the MAUI App Actions",
-            "displayName": "Setup MAUI Essentials - App Actions"
+            "datatype": "choice",
+            "allowMultipleValues": true,
+            "choices": [{
+                "choice": "media",
+                "description": "Sets all up all the necessary boilerplate for the MAUI Essentials Media Picker",
+                "displayName": "Media Picker"                
+            },{
+                "choice": "filepicker",
+                "description": "Setup all the necessary boilerplate for the MAUI Essentials File Picker",
+                "displayName": "File Picker"
+            },{
+                "choice": "appactions",
+                "description": "Sets all up all the necessary boilerplate for the MAUI App Actions",
+                "displayName": "App Actions"
+            }]
         },
         "deeplinks":{
             "type": "parameter",
@@ -310,6 +285,45 @@
             "datatype": "string",
             "replaces": "{DEEPLINK_HOST}"
         },
+        "mauicontrols": {
+            "displayName": "MAUI 3rd Party Controls",
+            "type": "parameter",
+            "datatype": "choice",
+            "allowMultipleValues": true,
+            "choices": [{
+                "choice": "mediaelement",
+                "description": "MAUI Community Toolki Media Element - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
+                "displayName": "MAUI Community Toolkit Media Element"
+            },{
+                "choice": "virtuallist",
+                "description": "MAUI Virtual List View by Jon Dick (Redth) - Documentation https://github.com/Redth/Maui.VirtualListView",
+                "displayName": "MAUI Virtual List View"
+            },{
+                "choice": "uraniumui",
+                "description": "Uranium UI by Enis Necipoglu - Documentation https://enisn-projects.io/docs/en/uranium/latest",
+                "displayName": "Uranium UI"
+            },{
+                "choice": "sharpnadocv",
+                "description": "Sharpnado CollectionView by Jean-Marie Alfonsi - Documentation https://github.com/roubachof/Sharpnado.CollectionView",
+                "displayName": "Sharpnado CollectionView"
+            },{
+                "choice": "sharpnadotabs",
+                "description": "Sharpnado Tabs by Jean-Marie Alfonsi - Documentation https://github.com/roubachof/Sharpnado.Tabs",
+                "displayName": "Sharpnado Tabs"
+            },{
+                "choice": "ffimageloading",
+                "description": "FFImageLoading MAUI - Documentation: https://github.com/microspaze/FFImageLoading.Maui",
+                "displayName": "FFImageLoading MAUI"
+            },{
+                "choice": "skia",
+                "description": "SkiaSharp - Documentation: https://github.com/mono/SkiaSharp",
+                "displayName": "SkiaSharp"
+            },{
+                "choice": "skiaextended",
+                "description": "SkiaSharp Extended (Lottie) - Documentation: https://github.com/mono/SkiaSharp.Extended",
+                "displayName": "SkiaSharp Extended (Lottie)"
+            }]
+        },        
         "communitytoolkit":{
             "type": "parameter",
             "datatype": "bool",
@@ -323,97 +337,64 @@
             "defaultValue": "false",
             "description": "Setup Community Toolkit Speech-to-Text",
             "displayName": "Setup Community Toolkit Speech-to-Text"
-        },        
-        "mediaelement":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
-            "displayName": "Add MAUI Community Toolkit Media Element"
         },
-        "virtuallist":{
+        "blazorcontrols":{
+            "displayName": "Blazor Controls",
             "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "MAUI Virtual List View by Jon Dick (Redth) - Documentation https://github.com/Redth/Maui.VirtualListView",
-            "displayName": "Add MAUI Virtual List View"            
+            "datatype": "choice",
+            "allowMultipleValues": true,
+            "choices": [{
+                "choice": "mudblazor",
+                "description": "MudBlazor - Documentation: https://mudblazor.com/",
+                "displayName": "MudBlazor"  
+            },{
+                "choice": "radzen",
+                "description": "Radzen.Blazor - Documentation: https://blazor.radzen.com/",
+                "displayName": "Radzen"
+            }]
         },
-        "uraniumui":{
+        "appservices":{
+            "displayName": "Application Services",
             "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Uranium UI by Enis Necipoglu - Documentation https://enisn-projects.io/docs/en/uranium/latest",
-            "displayName": "Add Uranium UI"
-        },
-        "sharpnadocv":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Sharpnado CollectionView by Jean-Marie Alfonsi - Documentation https://github.com/roubachof/Sharpnado.CollectionView",
-            "displayName": "Add Sharpnado CollectionView"
-        },
-        "sharpnadotabs":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Sharpnado Tabs by Jean-Marie Alfonsi - Documentation https://github.com/roubachof/Sharpnado.Tabs",
-            "displayName": "Add Sharpnado Tabs"
-        },
-        "sqlite": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "SQLite.NET-PCL by Frank Krueger - Documentation https://github.com/praeclarum/sqlite-net",
-            "displayName": "Add SQLite (SQLite.NET-PCL)"
-        },
-        "barcodes":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Wire up all of the barcode scanning services for ZXing.Net.MAUI by Jon Dick - For documentation, go to https://github.com/Redth/ZXing.Net.Maui",
-            "displayName": "Add Barcode Scanning & Rendering (ZXing.Net.MAUI)"
-        },
-        "inappbilling":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "In-App Billing by James Montemagno - Documentation https://github.com/jamesmontemagno/InAppBillingPlugin",
-            "displayName": "Add In-App Billing (Plugin.InAppBilling)"
-        },
-        "storereview":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Store Review Plugin by James Montemagno - Documentation https://github.com/jamesmontemagno/StoreReviewPlugin",
-            "displayName": "Add Store Review (Plugin.StoreReview)"
-        },
-        "calendar":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Calendar Store Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.CalendarStore",
-            "displayName": "Add Calendar Store (Plugin.Maui.CalendarStore)"
-        },
-        "audio":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Audio Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.Audio",
-            "displayName": "Add Audio (Plugin.Maui.Audio)"
-        }, 
-        "screenrecord":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Screen Recording Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.ScreenRecording",
-            "displayName": "Add Screen Recording (Plugin.Maui.ScreenRecording)"
-        },         
-        "fingerprint":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Fingerprint Plugin by Sven-Michael Stübe - Documentation https://github.com/smstuebe/xamarin-fingerprint",
-            "displayName": "Add Fingerprint/Facial Recognition (Plugin.Fingerprint)"
+            "datatype": "choice",
+            "allowMultipleValues": true,
+            "choices": [{
+                "choice": "sqlite",
+                "description": "SQLite.NET-PCL by Frank Krueger - Documentation https://github.com/praeclarum/sqlite-net",
+                "displayName": "Add SQLite (SQLite.NET-PCL)"
+            },{
+                "choice": "barcodes",
+                "description": "Wire up all of the barcode scanning services for ZXing.Net.MAUI by Jon Dick - For documentation, go to https://github.com/Redth/ZXing.Net.Maui",
+                "displayName": "Barcode Scanning & Rendering (ZXing.Net.MAUI)"
+            },{
+                "choice": "inappbilling",
+                "description": "In-App Billing by James Montemagno - Documentation https://github.com/jamesmontemagno/InAppBillingPlugin",
+                "displayName": "In-App Billing (Plugin.InAppBilling)"
+            },{
+                "choice": "storereview",
+                "description": "Store Review Plugin by James Montemagno - Documentation https://github.com/jamesmontemagno/StoreReviewPlugin",
+                "displayName": "Store Review (Plugin.StoreReview)"
+            },{
+                "choice": "calendar",
+                "description": "Calendar Store Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.CalendarStore",
+                "displayName": "Calendar Store (Plugin.Maui.CalendarStore)"
+            },{
+                "choice": "audio",
+                "description": "Audio Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.Audio",
+                "displayName": "Audio (Plugin.Maui.Audio)"
+            },{
+                "choice": "screenrecording",
+                "description": "Screen Recording Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.ScreenRecording",
+                "displayName": "Screen Recording (Plugin.Maui.ScreenRecording)"
+            },{
+                "choice": "fingerprint",
+                "description": "Fingerprint Plugin by Sven-Michael Stübe - Documentation https://github.com/smstuebe/xamarin-fingerprint",
+                "displayName": "Fingerprint/Facial Recognition (Plugin.Fingerprint)"
+            },{
+                "choice": "embedio",
+                "description": "EmbedIO Tiny Web Server - Documentation: https://unosquare.github.io/embedio/",
+                "displayName": "EmbedIO Tiny Web Server"
+            }]
         },
         "flipper":{
             "type": "parameter",
@@ -421,49 +402,7 @@
             "defaultValue": "false",
             "description": "Add Drastic.Flipper - An amazing tool for your MAUI application by Tim Miller - Documentation: https://github.com/drasticactions/Drastic.Flipper",
             "displayName": "Add Drastic Flipper"
-        },
-        "skia":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add SkiaSharp - Documentation: https://github.com/mono/SkiaSharp",
-            "displayName": "Add SkiaSharp"
-        },
-        "skiaextended":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add SkiaSharp Extended (Lottie) - Documentation: https://github.com/mono/SkiaSharp.Extended",
-            "displayName": "Add SkiaSharp Extended (Lottie)" 
-        },
-        "ffimageloading":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add FFImageLoading MAUI - Documentation: https://github.com/microspaze/FFImageLoading.Maui",
-            "displayName": "Add FFImageLoading MAUI" 
-        },
-        "embedio": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add EmbedIO Tiny Web Server - Documentation: https://unosquare.github.io/embedio/",
-            "displayName": "Add EmbedIO Tiny Web Server"  
-        },
-        "mudblazor": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "BLAZOR - Add MudBlazor",
-            "displayName": "BLAZOR - Add MudBlazor"  
-        },
-        "radzen": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "BLAZOR - Add Radzen.Blazor",
-            "displayName": "BLAZOR - Add Radzen.Blazor"  
-        },        
+        }, 
         "androidauto":{
             "type": "parameter",
             "datatype": "bool",
@@ -480,6 +419,118 @@
             "type": "bind",
             "binding": "HostIdentifier"
         },
+        "sqlite": {
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(appservices == \"sqlite\")"
+        },
+        "barcodes":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(appservices == \"barcodes\")"
+        },
+        "inappbilling":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(appservices == \"inappbilling\")"
+        },
+        "storereview":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(appservices == \"storereview\")"
+        },
+        "calendar":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(appservices == \"calendar\")"
+        },
+        "audio":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(appservices == \"audio\")"
+        }, 
+        "screenrecord":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(appservices == \"screenrecording\")"
+        },
+        "fingerprint":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(appservices == \"fingerprint\")"
+        },
+        "embedio": {
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(appservices == \"embedio\")"
+        },        
+        "mudblazor": {
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(blazorcontrols == \"mudblazor\")" 
+        },
+        "radzen": {
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(blazorcontrols == \"radzen\")"
+        },        
+        "essentialsmedia":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(mauiessentials == \"media\")"
+        },
+        "essentialsfilepicker":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(mauiessentials == \"filepicker\")"
+        },
+        "appactions":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(mauiessentials == \"appactions\")"
+        },  
+        "mediaelement":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(mauicontrols == \"mediaelement\")"
+        },
+        "virtuallist":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(mauicontrols == \"virtuallist\")"
+        },
+        "uraniumui":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(mauicontrols == \"uraniumui\")"
+        },
+        "sharpnadocv":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(mauicontrols == \"sharpnadocv\")"
+        },
+        "sharpnadotabs":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(mauicontrols == \"sharpnadotabs\")"
+        },
+        "skia":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(mauicontrols == \"skia\")"
+        },
+        "skiaextended":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(mauicontrols == \"skiaextended\")"
+        },
+        "ffimageloading":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add FFImageLoading MAUI - Documentation: https://github.com/microspaze/FFImageLoading.Maui",
+            "displayName": "Add FFImageLoading MAUI" 
+        },              
         "usewebauthenticator":{
             "type": "computed",
             "datatype": "bool",
@@ -490,6 +541,56 @@
             "datatype": "bool",
             "value": "(authtype == \"MSAL Basic\" || authtype == \"MSAL AzureB2C\" || authtype == \"MSAL Broker\")"
         },
+        "sentry": {
+            "type": "computed",
+            "dataType": "bool",
+            "description": "(logging == \"sentry\")"
+        },        
+        "sqlitelogging": {
+            "type": "computed",
+            "dataType": "bool",
+            "description": "(logging == \"sqlite\")"
+        },
+        "bluetoothle": {
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(shiny == \"bluetoothle\")"
+        },
+        "blehosting": {
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(shiny == \"blehosting\")"
+        },
+        "beacons": {
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(shiny == \"beacons\")"  
+        },
+        "jobs": {
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(shiny == \"jobs\")"
+        },
+        "gps":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(shiny == \"gps\")"
+        },
+        "geofencing":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(shiny == \"geofencing\")"
+        },
+        "httptransfers": {
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(shiny == \"httptransfers\")"
+        },
+        "notifications": {
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(shiny == \"notifications\")"
+        },        
         "usemaps":{
             "type": "computed",
             "datatype": "bool",

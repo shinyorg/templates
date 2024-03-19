@@ -47,79 +47,16 @@
         "isVisible": true
     },
     {
-        "id": "appcenter",
+        "id": "logging",
         "name": {
-            "text": "Your AppCenter Key (optional)"
+            "text": "Logging"
         },
         "isVisible": true
     },
     {
-        "id": "sentry",
+        "id": "shiny",
         "name": {
-            "text": "Sentry.IO Logging"
-        },
-        "isVisible": true
-    },    
-    {
-        "id": "sqlitelogging",
-        "name": {
-            "text": "SQLite Logging"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "bluetoothle",
-        "name": {
-            "text": "Add BluetoothLE Client (Shiny.BluetoothLE)"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "blehosting",
-        "name": {
-            "text": "Add BluetoothLE Hosting (Shiny.BluetoothLE.Hosting)"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "beacons",
-        "name": {
-            "text": "Add Beacons (Shiny.Beacons)"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "jobs",
-        "name": {
-            "text": "Add Background Jobs (Shiny.Jobs)"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "gps",
-        "name": {
-            "text": "Add GPS (Shiny.Locations)"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "geofencing",
-        "name": {
-            "text": "Add Geofencing (Shiny.Locations)"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "httptransfers",
-        "name": {
-            "text": "Add Background HTTP Uploads & Downloads (Shiny.Net.Http)"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "notifications",
-        "name": {
-            "text": "Add Local Notifications (Shiny.Notifications)"
+            "text": "Shiny Modules"
         },
         "isVisible": true
     },
@@ -138,24 +75,9 @@
         "isVisible": true
     },
     {
-        "id": "speechrecognition",
-        "name": {
-            "text": "Setup Community Toolkit Speech-to-Text"
-        },
-        "isVisible": true,
-        "defaultValue": "None"
-    },
-    {
-        "id": "health",
-        "name": {
-            "text": "Add Health (Shiny.Health - Apple Health & Google Fit)"
-        },
-        "isVisible": true
-    },
-    {
         "id": "push",
         "name": {
-            "text": "Add Push Notifications"
+            "text": "Shiny Push Notifications"
         },
         "isVisible": true,
         "defaultValue": "None"
@@ -203,26 +125,12 @@
         "isVisible": true
     }, 
     {
-        "id": "essentialsmedia",
+        "id": "mauiessentials",
         "name": {
-            "text": "Setup MAUI Essentials - Media Picker"
+            "text": "Setup MAUI Essentials"
         },
         "isVisible": true
-    },
-    {
-        "id": "essentialsfilepicker",
-        "name": {
-            "text": "Setup MAUI Essentials - File Picker"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "appactions",
-        "name": {
-            "text": "Setup MAUI Essentials - App Actions"
-        },
-        "isVisible": true
-    },
+    },   
     {
         "id": "deeplinks",
         "name": {
@@ -238,97 +146,16 @@
         "isVisible": true
     },
     {
-        "id": "mediaelement",
+        "id": "mauicontrols",
         "name": {
-            "text": "Add MAUI Community Toolkit Media Element"
+            "text": "MAUI 3rd Party Controls"
         },
         "isVisible": true
     },
     {
-        "id": "virtuallist",
-        "name":{
-            "text": "Add MAUI Virtual List View"
-        },
-        "isVisible": true
-    },     
-    {
-        "id": "uraniumui",
-        "name":{
-            "text": "Add Uranium UI"
-        },
-        "isVisible": true
-    },    
-    {
-        "id": "sharpnadocv",
-        "name":{
-            "text": "Add Sharpnado CollectionView"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "sharpnadotabs",
-        "name":{
-            "text": "Add Sharpnado Tabs"
-        },
-        "isVisible": true
-    }, 
-    {
-        "id": "sqlite",
+        "id": "appservices",
         "name": {
-            "text": "Add SQLite (SQLite.NET-PCL)"
-        },
-        "isVisible": true
-    },        
-    {
-        "id": "barcodes",
-        "name":{
-            "text": "Add Barcode Scanning & Rendering (ZXing.Net.MAUI)"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "inappbilling",
-        "name":{
-            "text": "Add In-App Billing (Plugin.InAppBilling)"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "storereview",
-        "name":{
-            "text": "Add Store Review (Plugin.StoreReview)"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "calendar",
-        "name":{
-            "text": "Add Calendar Store (Plugin.Maui.CalendarStore)"
-        },
-        "isVisible": true
-    },    
-    {
-        "id": "audio",
-        "name":{
-            "text": "Add Audio (Plugin.Maui.Audio)"
-        },
-        "isVisible": true
-    },{
-        "id": "screenrecord",
-        "name":{
-            "text": "Add Screen Recording (Plugin.Maui.ScreenRecording)"
-        },
-        "isVisible": true
-    },{        
-        "id": "ffimageloading",
-        "name":{
-            "text": "Add FFImageLoading MAUI (FFImageLoading.Maui)"
-        },
-        "isVisible": true
-    },{        
-        "id": "fingerprint",
-        "name":{
-            "text": "Add Fingerprint/Facial Recognition (Plugin.Fingerprint)"
+            "text": "Application Services"
         },
         "isVisible": true
     },{
@@ -350,33 +177,9 @@
         },
         "isVisible": true
     },{
-        "id": "skia",
+        "id": "blazorcontrols",
         "name":{
-            "text": "Add SkiaSharp"
-        },
-        "isVisible": true
-    },{
-        "id": "skiaextended",
-        "name":{
-            "text": "Add SkiaSharp Extended (Lottie)"
-        },
-        "isVisible": true
-    },{
-        "id": "embedio",
-        "name":{
-            "text": "Add EmbedIO Tiny Web Server"
-        },
-        "isVisible": true
-    },{
-        "id": "mudblazor",
-        "name":{
-            "text": "BLAZOR - Add MudBlazor"
-        },
-        "isVisible": true
-    },{
-        "id": "radzen",
-        "name":{
-            "text": "BLAZOR - Add Radzen.Blazor"
+            "text": "Blazor Controls"
         },
         "isVisible": true
     }]
