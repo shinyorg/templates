@@ -174,7 +174,7 @@
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.0" />
 		<!--#endif-->
 		<!--#if (usemsal)-->
-		<PackageReference Include="Microsoft.Identity.Client" Version="4.58.1" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.59.0" />
 		<!--#endif-->
 		<!--#if (useconfig)-->
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
@@ -225,7 +225,7 @@
 		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
 		<!--#endif-->
 		<!--#if (storereview)-->
-		<PackageReference Include="Plugin.StoreReview" Version="6.0.0" />
+		<PackageReference Include="Plugin.StoreReview" Version="6.2.0" />
 		<!--#endif-->
 		<!--#if (inappbilling)-->
 		<PackageReference Include="Plugin.InAppBilling" Version="7.1.0" />
@@ -252,21 +252,21 @@
 		<PackageReference Include="Sharpnado.CollectionView.Maui" Version="3.1.2" />
 		<!--#endif-->
 		<!--#if (uraniumui)-->
-		<PackageReference Include="UraniumUI.Material" Version="2.7.4" />
-		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.7.4" />
-		<PackageReference Include="UraniumUI.Blurs" Version="2.7.4" />
+		<PackageReference Include="UraniumUI.Material" Version="2.8.0" />
+		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.8.0" />
+		<PackageReference Include="UraniumUI.Blurs" Version="2.8.0" />
 		<!--#endif-->
 		<!--#if (screenrecord)-->
-		<PackageReference Include="Plugin.Maui.ScreenRecording" Version="1.0.0-preview1" />
+		<PackageReference Include="Plugin.Maui.ScreenRecording" Version="1.0.0-preview2" />
 		<!--#endif-->
 		<!--#if (skia)-->
-		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.6" />
+		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.7" />
 		<!--#endif-->
 		<!--#if (skiaextended)-->
-		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0-preview.86" />
+		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0-preview.92" />
 		<!--#endif-->
 		<!--#if (ffimageloading)-->
-		<PackageReference Include="FFImageLoading.Maui" Version="1.0.9" />
+		<PackageReference Include="FFImageLoading.Maui" Version="1.1.0" />
 		<!--#endif-->
 		<!--#if (embedio)-->
 		<PackageReference Include="EmbedIO" Version="3.5.2" />

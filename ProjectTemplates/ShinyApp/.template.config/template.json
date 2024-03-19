@@ -166,13 +166,6 @@
             "description": "Add Local Notifications (Shiny.Notifications)",
             "displayName": "Add Local Notifications (Shiny.Notifications)"
         },
-        "health":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Add Health (Shiny.Health - Apple Health and Google Fit - https://github.com/shinyorg/health)",
-            "displayName": "Add Health (Shiny.Health)"            
-        },
         "startup":{
             "type": "parameter",
             "datatype": "bool",
