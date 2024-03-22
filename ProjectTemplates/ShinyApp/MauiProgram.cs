@@ -40,11 +40,13 @@ using FFImageLoading.Maui;
 #if uraniumui
 using UraniumUI;
 #endif
-#if useblazor && mudblazor
+#if useblazor
+#if mudblazor
 using MudBlazor.Services;
 #endif
-#if useblazor && radzen
+#if radzen
 using Radzen;
+#endif
 #endif
 
 namespace ShinyApp;
@@ -343,13 +345,11 @@ public static class MauiProgram
 
 #endif
 
-#if usexaml || usecsharpmarkup
 #if shinyframework
         s.RegisterForNavigation<MainPage, MainViewModel>();
 #else
         s.AddTransient<MainPage>();
         s.AddTransient<MainViewModel>();
-#endif
 #endif
         return builder;
     }
