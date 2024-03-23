@@ -12,6 +12,9 @@ namespace ShinyApp;
 
 
 [Activity(
+#if (usepush || notifications)
+    LaunchMode = LaunchMode.SingleTop,
+#endif
     Theme = "@style/Maui.SplashTheme", 
     MainLauncher = true, 
 #if (deeplink)
