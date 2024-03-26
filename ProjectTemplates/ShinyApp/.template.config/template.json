@@ -556,7 +556,7 @@
         "useconfig":{
             "type": "computed",
             "datatype": "bool",
-            "value": "(configuration || push != \"None\" || appcenter != \"\" || authtype != \"None\")"
+            "value": "(configuration || push != \"None\" || authtype != \"None\")"
         },
         "useappcenter":{
             "type": "computed",
