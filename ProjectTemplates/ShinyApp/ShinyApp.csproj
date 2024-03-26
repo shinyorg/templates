@@ -11,7 +11,7 @@
 		<!--#endif-->
 		<IosSimulatorBuild Condition="'$(Configuration)' == 'Debug'">False</IosSimulatorBuild>
 
-		<MauiVersion>8.0.10</MauiVersion>
+		<MauiVersion>8.0.14</MauiVersion>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>ShinyApp</RootNamespace>
 		<SingleProject>true</SingleProject>
@@ -29,7 +29,7 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<ShinyVersion>3.3.0</ShinyVersion>
+		<ShinyVersion>3.3.2</ShinyVersion>
 
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
