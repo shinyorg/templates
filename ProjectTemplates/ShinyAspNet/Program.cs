@@ -140,9 +140,8 @@ builder.Services.AddMail(mail =>
             true
         );
 });
+
 #endif
-
-
 //#if (orleans)
 builder.Host.UseOrleans(x => x
     .UseLocalhostClustering()
@@ -159,7 +158,6 @@ app.UseAuthorization();
 //#if (push)
 app.MapPushEndpoints("push", true, x => x.User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 //#endif
-app.UseControllers();
 //#if (signalr)
 app.MapHub<BizHub>("/biz");
 //#endif
