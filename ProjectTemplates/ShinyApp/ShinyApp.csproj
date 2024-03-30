@@ -148,7 +148,7 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" Condition="'$(Configuration)' == 'Debug'" />
 
 		<!--#if (shinyframework || communitytoolkit || speechrecognition)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="7.0.1" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="8.0.0" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
 		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
@@ -163,7 +163,7 @@
 		<PackageReference Include="Onion.Maui.GoogleMaps" Version="5.0.1" />
 		<!--#endif-->
 		<!--#if (shinyframework)-->
-		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.401-pre" />
+		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.436-pre" />
 		<PackageReference Include="ReactiveUI.Fody" Version="19.5.41" />
 		<PackageReference Include="Shiny.Framework" Version="4.1.0" />
 		<!--#else-->
@@ -180,7 +180,7 @@
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Extensions.Logging" Version="4.2.1" />
+		<PackageReference Include="Sentry.Maui" Version="4.2.1" />
 		<!--#endif-->
 		<!--#if (sqlitelogging)-->
 		<PackageReference Include="Shiny.Logging.Sqlite" Version="$(ShinyVersion)" />
@@ -243,7 +243,7 @@
 		<PackageReference Include="Refit" Version="7.0.0" />
 		<!--#endif-->
 		<!--#if (sqlite)-->
-		<PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
 		<!--#endif-->
 		<!--#if (sharpnadotabs)-->
 		<PackageReference Include="Sharpnado.Tabs.Maui" Version="3.0.1" />
@@ -272,10 +272,10 @@
 		<PackageReference Include="EmbedIO" Version="3.5.2" />
 		<!--#endif-->
 		<!--#if (useblazor && mudblazor)-->
-		<PackageReference Include="MudBlazor" Version="6.11.2" />
+		<PackageReference Include="MudBlazor" Version="6.19.1" />
 		<!--#endif-->
 		<!--#if (useblazor && radzen)-->
-		<PackageReference Include="Radzen.Blazor" Version="4.25.10" />
+		<PackageReference Include="Radzen.Blazor" Version="4.29.1" />
 		<!--#endif-->		
 	</ItemGroup>
 
