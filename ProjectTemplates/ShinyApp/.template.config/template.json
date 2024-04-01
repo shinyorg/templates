@@ -37,7 +37,25 @@
                     "evaluator": "C++"
                 }
             }]
-        }
+        },
+        "**.xcprivacy": {
+            "operations": [{
+                "type": "conditional",
+                "configuration": {
+                    "if": [ "@*#if" ],
+                    "else": [ "@*#else" ],
+                    "elseif": [ "@*#elseif" ],
+                    "endif": [ "#endif*@" ],
+                    "actionableIf": [ "@*#if" ],
+                    "actionableElse": [ "@*#else" ],
+                    "actionableElseif": [ "@*#elseif" ],
+                    "actions": [ "cStyleUncomment", "cStyleReduceComment" ],
+                    "trim": true,
+                    "wholeLine": true,
+                    "evaluator": "C++"
+                }
+            }]
+        }        
     },
     "postActions": [{
         "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",

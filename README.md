@@ -19,7 +19,7 @@
 * Easy setup and choice for push notifications
 	* Full Native
 	* Azure Notification Hubs
-	* Firebase (Coming Soon)
+	* Firebase
 * Creates a best practice MAUI application with best-in-class frameworks:
     * [.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui)
 	* [Prism](https://prismlibrary.com/)
@@ -33,7 +33,8 @@
 	* [Media Element](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/)
 	* [C# Markup](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup))
 * Entitlements for iOS/MacCatalyst if necessary (ie. Push, MSAL)
-* Info.plist & Entitlements.plist permissions for iOS/MacCatalyst
+* Info.plist & Entitlement permissions for iOS/MacCatalyst
+* Helps generate Apple's "fun" xcframework
 * AndroidManifest.xml Permissions & Features for Android
 * Preps all of the necessary functionality for a SQLite Database
 * Setup proper localization	
@@ -76,6 +77,9 @@
 	* [Embed.IO](https://unosquare.github.io/embedio/) by Unosquare
 	* [SkiaSharp](https://github.com/mono/SkiaSharp) by Matthew Leibowitz
 	* [MudBlazor](https://mudblazor.com)
+	* [Radzen Blazor](https://blazor.radzen.com/)
+	* [ACR User Dialogs](https://github.com/aritchie/userdialogs) by Allan Ritchie
+	* [Debug Rainbows](https://github.com/sthewissen/Plugin.Maui.DebugRainbows) by Steven Thewissen
 
 <img src="vs4win.png" />
 <img src="vs4mac.png" />

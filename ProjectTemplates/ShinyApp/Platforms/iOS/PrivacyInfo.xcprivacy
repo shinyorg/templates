@@ -78,7 +78,7 @@
             <array>
                 <string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
             </array>
-        </dict>        
+        </dict>
         <dict>
             <key>NSPrivacyCollectedDataTypeName</key>
             <string>NSPrivacyCollectedDataTypeLocation</string>
@@ -90,9 +90,8 @@
             <array>
                 <string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
             </array>
-        </dict>        
-
-        <!--geofencing or gps-->
+        </dict>
+        <!--#if (gps || geofencing)-->
         <dict>
             <key>NSPrivacyCollectedDataType</key>
             <string>NSPrivacyCollectedDataTypeCoarseLocation</string>
@@ -116,9 +115,9 @@
             <array>
                 <string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
             </array>
-        </dict> 
-
-        <!--sentry or analytics-->
+        </dict>
+        <!--#endif-->
+        <!--crashlytics/analytics-->
         <dict>
             <key>NSPrivacyCollectedDataType</key>
             <string>NSPrivacyCollectedDataTypeOtherDiagnosticData</string>
@@ -141,9 +140,7 @@
                 <string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
             </array>
         </dict>
-
-
-        <!--camera or photo or audio plugin-->
+        <!--#if (audio || essentialsmedia)-->
         <dict>
             <key>NSPrivacyCollectedDataType</key>
             <string>NSPrivacyCollectedDataTypeAudio</string>
@@ -155,6 +152,8 @@
                 <string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
             </array>
         </dict>
+        <!--#endif-->
+        <!--#if (essentialsmedia)-->
         <dict>
             <key>NSPrivacyCollectedDataType</key>
             <string>NSPrivacyCollectedDataTypePhotosorVideos</string>
@@ -166,6 +165,7 @@
                 <string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
             </array>
         </dict>
+        <!--#endif-->
     </array>
 </dict>
 </plist>
