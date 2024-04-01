@@ -321,3 +321,19 @@ A set of 70+ free and open source native Blazor UI controls
 * [GitHub](https://github.com/radzenhq/radzen-blazor)
 
 <!--#endif-->
+<!--#if (userdialogs)-->
+## ACR User Dialogs
+
+_A cross platform library that allows you to call for standard user dialogs from a shared/portable library that supports Android & iOS by Allan Ritchie_
+
+* [GitHub](https://github.com/aritchie/userdialogs)
+
+<!--#endif-->
+<!--#if (debugrainbow)-->
+## Debug Rainbow
+
+_Have you ever had a piece of XAML code that didn't produce the layout you expected? Did you change the background colors on certain elements to get an idea of where they are positioned? Admit it, you have and pretty much all of us have at some point. Either way, this is the package for you! It adds some nice colorful debug modes to your ContentPages or specific visual elements that let you immediately see where all of your elements are located! by Steven Thewissen_
+
+[GitHub](https://github.com/sthewissen/Plugin.Maui.DebugRainbows)
+
+<!--#endif-->

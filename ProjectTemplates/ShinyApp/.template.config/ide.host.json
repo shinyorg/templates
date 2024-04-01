@@ -305,6 +305,18 @@
             "text": "Add Screen Recording (Plugin.Maui.ScreenRecording)"
         },
         "isVisible": true
+    },{
+        "id": "userdialogs",
+        "name":{
+            "text": "Add ACR User Dialogs (Acr.UserDialogs)"
+        },
+        "isVisible": true
+    },{
+        "id": "debugrainbows",
+        "name":{
+            "text": "Add Debug Rainbows (Plugin.Maui.DebugRainbows)"
+        },
+        "isVisible": true
     },{        
         "id": "ffimageloading",
         "name":{

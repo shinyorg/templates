@@ -1,26 +1,14 @@
-﻿#if inappbilling
-using Plugin.InAppBilling;
-#endif
-#if storereview
-using Plugin.StoreReview;
+﻿#if debugrainbows
+using Plugin.Maui.DebugRainbows;
 #endif
 #if barcodes
 using ZXing.Net.Maui.Controls;
 #endif
-#if calendar
-using Plugin.Maui.CalendarStore;
-#endif
-#if audio
-using Plugin.Maui.Audio;
-#endif
-#if screenrecord
-using Plugin.Maui.ScreenRecording;
-#endif
-#if fingerprint
-using Plugin.Fingerprint;
-#endif
 #if usehttp
 using Refit;
+#endif
+#if screenrecord
+using Plugin.Maui.Audio;
 #endif
 #if sharpnadocv
 using Sharpnado.CollectionView;
@@ -68,9 +56,6 @@ public static class MauiProgram
         .UseUraniumUIMaterial()
         .UseUraniumUIBlurs()
 #endif
-#if screenrecord
-        .UseScreenRecording() 
-#endif
 #if shinyframework || communitytoolkit
         .UseMauiCommunityToolkit()
 #endif
@@ -86,6 +71,15 @@ public static class MauiProgram
 #if sharpnadocv
         .UseSharpnadoCollectionView(false)
 #endif
+#if (userdialogs)
+        .ConfigureLifecycleEvents(events =>
+        {
+//-:cnd:noEmit
+#if ANDROID
+            events.AddAndroid(android => android.OnApplicationCreate(app => Acr.UserDialogs.UserDialogs.Init(app)));
+#endif
+//+:cnd:noEmit
+        })
 #if ffimageloading
         .UseFFImageLoading()
 #endif
@@ -147,6 +141,24 @@ public static class MauiProgram
             .OnAppAction(y => Shiny.Hosting.Host.GetService<ShinyApp.Delegates.AppActionDelegate>().Handle(y))
         )
 #endif
+#if debugrainbows
+//-:cnd:noEmit
+#if DEBUG
+        .UseDebugRainbows(
+        //     new DebugRainbowOptions{
+        //         ShowRainbows = true,
+        //         ShowGrid = true,
+        //         HorizontalItemSize = 20,
+        //         VerticalItemSize = 20,
+        //         MajorGridLineInterval = 4,
+        //         MajorGridLines = new GridLineOptions { Color = Color.FromRgb(255, 0, 0), Opacity = 1, Width = 4 },
+        //         MinorGridLines = new GridLineOptions { Color = Color.FromRgb(255, 0, 0), Opacity = 1, Width = 1 },
+        //         GridOrigin = DebugGridOrigin.TopLeft,
+        //     }
+        )
+#endif
+//+:cnd:noEmit  
+#endif
         .ConfigureFonts(fonts =>
         {
             fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -190,15 +202,6 @@ public static class MauiProgram
 #endif
 //+:cnd:noEmit
         var s = builder.Services;
-#if (audio)
-        s.AddSingleton(AudioManager.Current);
-#endif
-#if (calendar)
-        s.AddSingleton(CalendarStore.Default);
-#endif
-#if (screenrecord)
-        s.AddSingleton(ScreenRecording.Default);
-#endif
 #if appaction
         s.AddSingleton<ShinyApp.Delegates.AppActionDelegate>();
 #endif
@@ -235,23 +238,6 @@ public static class MauiProgram
 #endif
 #if essentialsfilepicker
         s.AddSingleton(FilePicker.Default);
-#endif
-#if inappbilling
-        s.AddSingleton(CrossInAppBilling.Current);
-#endif
-#if storereview
-        s.AddSingleton(CrossStoreReview.Current);
-#endif
-#if fingerprint
-        s.AddSingleton(sp =>
-        {
-//-:cnd:noEmit
-#if ANDROID
-            CrossFingerprint.SetCurrentActivityResolver(() => sp.GetRequiredService<AndroidPlatform>().CurrentActivity);
-#endif
-//+:cnd:noEmit
-            return CrossFingerprint.Current;
-        });
 #endif
 #if startup
         s.AddShinyService<AppStartup>();
@@ -294,9 +280,6 @@ public static class MauiProgram
 #if notifications
         s.AddNotifications<ShinyApp.Delegates.MyLocalNotificationDelegate>();
 #endif
-#if speechrecognition
-        s.AddSpeechRecognition();
-#endif
 #if usepushnative
         s.AddPush<ShinyApp.Delegates.MyPushDelegate>();
 #endif
@@ -310,12 +293,43 @@ public static class MauiProgram
 #if usepushfirebase
         s.AddPushFirebaseMessaging<ShinyApp.Delegates.MyPushDelegate>();
 #endif
-#if health
+#if speechrecognition
+        s.AddSingleton(CommunityToolkit.Maui.Media.SpeechToText.Default);
+#endif
+#if (audio)
+#if screenrecord
+        builder.UseScreenRecording();
+        s.AddSingleton(AudioManager.Current);
+#endif
+#if (calendar)
+        s.AddSingleton(Plugin.Maui.CalendarStore.CalendarStore.Default);
+#endif
+#if (screenrecord)
+        s.AddSingleton(Plugin.Maui.ScreenRecording.ScreenRecording.Default);
+#endif
+#if inappbilling
+        s.AddSingleton(Plugin.InAppBilling.CrossInAppBilling.Current);
+#endif
+#if storereview
+        s.AddSingleton(Plugin.StoreReview.CrossStoreReview.Current);
+#endif
+#if fingerprint
+        s.AddSingleton(sp =>
+        {
 //-:cnd:noEmit
-#if !MACCATALYST
-        s.AddHealthIntegration();
+#if ANDROID
+            Plugin.Fingerprint.CrossFingerprint.SetCurrentActivityResolver(() => sp.GetRequiredService<AndroidPlatform>().CurrentActivity);
 #endif
 //+:cnd:noEmit
+            return Plugin.Fingerprint.CrossFingerprint.Current;
+        });
+#endif
+#if userdialogs
+        s.AddSingleton(sp => 
+        {
+            Acr.UserDialogs.UserDialogs.Init(() => sp.GetRequiredService<AndroidPlatform>().CurrentActivity);
+            return Acr.UserDialogs.UserDialogs.Instance;
+        });
 #endif
 #if shinyframework
         s.AddDataAnnotationValidation();

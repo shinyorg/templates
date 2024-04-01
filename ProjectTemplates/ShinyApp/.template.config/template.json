@@ -449,6 +449,20 @@
             "description": "Add SkiaSharp Extended (Lottie) - Documentation: https://github.com/mono/SkiaSharp.Extended",
             "displayName": "Add SkiaSharp Extended (Lottie)" 
         },
+        "userdialogs": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add ACR User Dialogs - Documentation: https://github.com/aritchie/userdialogs",
+            "displayName": "Add ACR User Dialogs" 
+        },
+        "debugrainbows": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Debug Rainbows - Documentation: https://github.com/sthewissen/Plugin.Maui.DebugRainbows",
+            "displayName": "Add Debug Rainbows" 
+        },
         "ffimageloading":{
             "type": "parameter",
             "datatype": "bool",
