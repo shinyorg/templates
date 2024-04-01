@@ -8,7 +8,7 @@ using ZXing.Net.Maui.Controls;
 using Refit;
 #endif
 #if screenrecord
-using Plugin.Maui.Audio;
+using Plugin.Maui.ScreenRecording;
 #endif
 #if sharpnadocv
 using Sharpnado.CollectionView;
@@ -71,15 +71,6 @@ public static class MauiProgram
 #if sharpnadocv
         .UseSharpnadoCollectionView(false)
 #endif
-#if (userdialogs)
-        .ConfigureLifecycleEvents(events =>
-        {
-//-:cnd:noEmit
-#if ANDROID
-            events.AddAndroid(android => android.OnApplicationCreate(app => Acr.UserDialogs.UserDialogs.Init(app)));
-#endif
-//+:cnd:noEmit
-        })
 #if ffimageloading
         .UseFFImageLoading()
 #endif
@@ -138,7 +129,7 @@ public static class MauiProgram
         .ConfigureEssentials(x => x
         //     .AddAppAction("app_info", "App Info", "Subtitle", "app_info_action_icon")
         //     .AddAppAction("battery_info", "Battery Info")
-            .OnAppAction(y => Shiny.Hosting.Host.GetService<ShinyApp.Delegates.AppActionDelegate>().Handle(y))
+            .OnAppAction(y => Shiny.Hosting.Host.GetService<ShinyApp.Delegates.AppActionDelegate>()!.Handle(y))
         )
 #endif
 #if debugrainbows
@@ -298,13 +289,13 @@ public static class MauiProgram
 #endif
 #if (audio)
 #if screenrecord
-        builder.UseScreenRecording();
-        s.AddSingleton(AudioManager.Current);
+        s.AddSingleton(Plugin.Maui.AudioManager.Current);
 #endif
 #if (calendar)
         s.AddSingleton(Plugin.Maui.CalendarStore.CalendarStore.Default);
 #endif
 #if (screenrecord)
+        builder.UseScreenRecording();
         s.AddSingleton(Plugin.Maui.ScreenRecording.ScreenRecording.Default);
 #endif
 #if inappbilling
@@ -327,7 +318,11 @@ public static class MauiProgram
 #if userdialogs
         s.AddSingleton(sp => 
         {
+//-:cnd:noEmit
+#if ANDROID
             Acr.UserDialogs.UserDialogs.Init(() => sp.GetRequiredService<AndroidPlatform>().CurrentActivity);
+#endif
+//+:cnd:noEmit            
             return Acr.UserDialogs.UserDialogs.Instance;
         });
 #endif
