@@ -19,7 +19,7 @@
         "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
         "path": "Documentation.md"
     }],
-    "SpecialCustomOperations": {
+    "specialCustomOperations": {
         "**.razor": {
             "operations": [{
                 "type": "conditional",
@@ -42,14 +42,13 @@
             "operations": [{
                 "type": "conditional",
                 "configuration": {
-                    "if": [ "@*#if" ],
-                    "else": [ "@*#else" ],
-                    "elseif": [ "@*#elseif" ],
-                    "endif": [ "#endif*@" ],
-                    "actionableIf": [ "@*#if" ],
-                    "actionableElse": [ "@*#else" ],
-                    "actionableElseif": [ "@*#elseif" ],
-                    "actions": [ "cStyleUncomment", "cStyleReduceComment" ],
+                    "if": [ "<!--#if" ],
+                    "else": [ "<!--#else" ],
+                    "elseif": [ "<!--#elseif", "#elif", "<!--#elif" ],                    
+                    "endif": [ "<!--#endif" ],
+                    "actionableIf": [ "<!--#if" ],
+                    "actionableElse": [ "<!--#else" ],
+                    "actionableElseif": [ "<!--#elseif", "#elif", "<!--#elif" ],
                     "trim": true,
                     "wholeLine": true,
                     "evaluator": "C++"
@@ -589,11 +588,6 @@
             "type": "computed",
             "datatype": "bool",
             "value": "(configuration || push != \"None\" || authtype != \"None\")"
-        },
-        "useappcenter":{
-            "type": "computed",
-            "datatype": "bool",
-            "value": "(appcenter != \"\")"
         },
         "usedeeplinks":{
             "type": "computed",

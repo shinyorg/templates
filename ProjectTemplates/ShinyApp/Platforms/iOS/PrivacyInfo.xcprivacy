@@ -76,19 +76,8 @@
                 <string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
             </array>
         </dict>
-        <dict>
-            <key>NSPrivacyCollectedDataTypeName</key>
-            <string>NSPrivacyCollectedDataTypeLocation</string>
-            <key>NSPrivacyCollectedDataTypeLinked</key>
-            <true />
-            <key>NSPrivacyCollectedDataTypeTracking</key>
-            <false />
-            <key>NSPrivacyCollectedDataTypePurposes</key>
-            <array>
-                <string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
-            </array>
-        </dict>
         <!--#if (gps || geofencing || beacons)-->
+        <!--location-->
         <dict>
             <key>NSPrivacyCollectedDataType</key>
             <string>NSPrivacyCollectedDataTypeCoarseLocation</string>
