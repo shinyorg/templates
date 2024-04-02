@@ -34,7 +34,7 @@
 	* [C# Markup](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup))
 * Entitlements for iOS/MacCatalyst if necessary (ie. Push, MSAL)
 * Info.plist & Entitlement permissions for iOS/MacCatalyst
-* Helps generate Apple's "fun" xcframework
+* Helps generate Apple's "fun" PrivacyInfo.xcprivacy
 * AndroidManifest.xml Permissions & Features for Android
 * Preps all of the necessary functionality for a SQLite Database
 * Setup proper localization	

@@ -259,7 +259,7 @@ public static class MauiProgram
 #if geofencing
         s.AddGeofencing<ShinyApp.Delegates.MyGeofenceDelegate>();
 #endif
-#if (httptransfers)
+#if httptransfers
         s.AddHttpTransfers<ShinyApp.Delegates.MyHttpTransferDelegate>();
 //-:cnd:noEmit
 #if ANDROID
@@ -288,7 +288,6 @@ public static class MauiProgram
         s.AddSingleton(CommunityToolkit.Maui.Media.SpeechToText.Default);
 #endif
 #if (audio)
-#if screenrecord
         s.AddSingleton(Plugin.Maui.AudioManager.Current);
 #endif
 #if (calendar)
