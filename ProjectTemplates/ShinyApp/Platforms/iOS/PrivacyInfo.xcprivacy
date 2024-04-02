@@ -37,9 +37,6 @@
             </array>
         </dict>
     </array>
-
-
-
     <key>NSPrivacyCollectedDataTypes</key>
     <array>
         <!--user info-->
@@ -91,7 +88,7 @@
                 <string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
             </array>
         </dict>
-        <!--#if (gps || geofencing)-->
+        <!--#if (gps || geofencing || beacons)-->
         <dict>
             <key>NSPrivacyCollectedDataType</key>
             <string>NSPrivacyCollectedDataTypeCoarseLocation</string>
