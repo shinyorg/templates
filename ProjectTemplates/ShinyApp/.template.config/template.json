@@ -99,6 +99,7 @@
         "applicationId": {
             "type": "parameter",
             "description": "Set the Application Identifier",
+            "displayName": "Set the Application Identifier",
             "datatype": "string",
             "defaultValue": "com.companyname.app",
             "isRequired": true,
@@ -268,7 +269,8 @@
         "msalclientid":{
             "type": "parameter",
             "dataType": "string",
-            "description": "This is your Microsoft Authentication Library (MSAL) Application/Client ID setup within the Azure Portal",
+            "description": "Microsoft Authentication Library (MSAL) Client It",
+            "displayName": "Microsoft Authentication Library (MSAL) Client ID",
             "defaultValue": "",
             "replaces":"{MSAL_CLIENT_ID}"
         },
@@ -512,13 +514,15 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Android Auto Support"
+            "description": "Add Android Auto Support",
+            "displayName": "Add Android Auto Support"
         },
         "carplay":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add iOS CarPlay Support"
+            "description": "Add iOS CarPlay Support",
+            "displayName": "Add iOS CarPlay Support"
         },
         "HostIdentifier": {
             "type": "bind",

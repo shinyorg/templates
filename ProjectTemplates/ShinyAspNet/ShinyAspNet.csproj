@@ -7,7 +7,7 @@
         <MicrosoftVersion>8.0.0</MicrosoftVersion>
         <LangVersion>preview</LangVersion>
         <!--#if (orleans)-->
-        <OrleansVersion>8.0.0</OrleansVersion>
+        <OrleansVersion>8.1.0</OrleansVersion>
         <!--#endif-->
         <!--#if (email || push)-->
         <ShinyExtensionsVersion>2.0.0-preview-0014</ShinyExtensionsVersion>
@@ -16,7 +16,7 @@
 
     <ItemGroup>
         <PackageReference Include="MediatR" Version="12.2.0" />
-        <!--#if (openapi)-->
+        <!--#if (swagger)-->
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
         <!--#endif-->
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(MicrosoftVersion)" />

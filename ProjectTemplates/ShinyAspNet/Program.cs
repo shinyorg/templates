@@ -2,6 +2,7 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.FileProviders;
 using ShinyAspNet;
 using ShinyAspNet.Services;
 using ShinyAspNet.Services.Impl;
@@ -15,7 +16,6 @@ using Shiny.Extensions.Mail;
 using ShinyAspNet.Hubs;
 using Microsoft.AspNetCore.SignalR;
 //#endif
-
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
