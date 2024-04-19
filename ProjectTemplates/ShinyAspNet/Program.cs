@@ -3,19 +3,19 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.FileProviders;
-using ShinyAspNet;
-using ShinyAspNet.Services;
-using ShinyAspNet.Services.Impl;
+//#if (signalr)
+using Microsoft.AspNetCore.SignalR;
+using ShinyAspNet.Hubs;
+//#endif
 #if (push)
 using Shiny.Extensions.Push;
 #endif
 #if (email)
 using Shiny.Extensions.Mail;
 #endif
-//#if (signalr)
-using ShinyAspNet.Hubs;
-using Microsoft.AspNetCore.SignalR;
-//#endif
+using ShinyAspNet;
+using ShinyAspNet.Services;
+using ShinyAspNet.Services.Impl;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
