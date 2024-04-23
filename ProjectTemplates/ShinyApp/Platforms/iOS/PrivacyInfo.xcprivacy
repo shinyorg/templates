@@ -111,6 +111,7 @@
             <false />
             <key>NSPrivacyCollectedDataTypeTracking</key>
             <false />
+            <key>NSPrivacyCollectedDataTypePurposes</key>
             <array>
                 <string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
             </array>            
@@ -122,6 +123,7 @@
             <true />
             <key>NSPrivacyCollectedDataTypeTracking</key>
             <false />
+            <key>NSPrivacyCollectedDataTypePurposes</key>
             <array>
                 <string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
             </array>
@@ -134,6 +136,7 @@
             <true />
             <key>NSPrivacyCollectedDataTypeTracking</key>
             <false />
+            <key>NSPrivacyCollectedDataTypePurposes</key>
             <array>
                 <string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
             </array>
@@ -147,6 +150,7 @@
             <true />
             <key>NSPrivacyCollectedDataTypeTracking</key>
             <false />
+            <key>NSPrivacyCollectedDataTypePurposes</key>
             <array>
                 <string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
             </array>
