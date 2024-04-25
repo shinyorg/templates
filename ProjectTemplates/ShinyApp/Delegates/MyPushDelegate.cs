@@ -1,4 +1,8 @@
 ﻿using Shiny.Push;
+#if APPLE
+using UIKit;
+using UserNotifications;
+#endif
 
 namespace ShinyApp.Delegates;
 
