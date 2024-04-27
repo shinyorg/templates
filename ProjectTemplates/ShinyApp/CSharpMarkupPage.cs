@@ -1,8 +1,8 @@
 using static CommunityToolkit.Maui.Markup.GridRowsColumns;
 
-class MainPage : ContentPage
+public class CSharpMarkupPage : ContentPage
 {
-    public MainPage()
+    public CSharpMarkupPage()
     {
         //Content = new Grid
         //{

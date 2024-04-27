@@ -78,23 +78,19 @@
             "replaces": "{DOTNET_TFM}",
             "defaultValue": "net8.0"
         },
-        "markuptype": {
+        "useblazor":{
             "type": "parameter",
-            "datatype": "choice",
-            "description": "This will setup a standard XAML template, a MAUI Blazor project, or a C# powered markup using the .NET MAUI Community Toolkit",
-            "displayName": "UI Markup Type",
-            "choices": [{
-                "choice": "XAML",
-                "description": "XAML"
-            },{
-                "choice": "Blazor",
-                "description": "Blazor"
-            },{
-                "choice": "CSharp",
-                "description": "CSharp"
-            }],
-            "defaultValue": "XAML",
-            "replaces": "{MARKUP_TYPE}"
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Blazor Hybrid Support",
+            "displayName": "Add Blazor Hybrid Support"
+        },
+        "usecsharpmarkup":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add C# Markup - MAUI Community Toolkit",
+            "displayName": "Add C# Markup - MAUI Community Toolkit"
         },
         "applicationId": {
             "type": "parameter",
@@ -602,22 +598,7 @@
             "type": "computed",
             "datatype": "bool",
             "value": "(usepushfirebase == false && usemsal == false)"
-        },
-        "usexaml":{
-            "type": "computed",
-            "datatype": "bool",
-            "value": "(markuptype == \"XAML\")"
-        },
-        "useblazor":{
-            "type": "computed",
-            "datatype": "bool",
-            "value": "(markuptype == \"Blazor\")"
-        },
-        "usecsharpmarkup":{
-            "type": "computed",
-            "datatype": "bool",
-            "value": "(markuptype == \"CSharp\")"
-        },        
+        },    
         "usehttp":{
             "type": "computed",
             "datatype": "bool",
@@ -740,16 +721,9 @@
             "exclude": "Services/Impl/IApiClient.cs"
         },
         {
-            "condition": "(usecsharpmarkup == true)",
-            "exclude": [
-                "MainPage.xaml",
-                "MainPage.xaml.cs"
-            ]
-        },
-        {
             "condition": "(usecsharpmarkup == false)",
-            "exclude": "MainPage.cs"
-        },
+            "exclude": "CSharpMarkupPage.cs"
+        },        
         {
             "condition": "(storereview == false)",
             "exclude": "Platforms/Android/proguard.cfg"
@@ -757,6 +731,7 @@
         {
             "condition": "(useblazor == false)",
             "exclude":[ 
+                "BlazorPage.*",
                 "*.razor",
                 "Components/**",
                 "wwwroot/**" 
