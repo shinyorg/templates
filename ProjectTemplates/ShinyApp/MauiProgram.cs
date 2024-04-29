@@ -2,7 +2,7 @@
 using Plugin.Maui.DebugRainbows;
 #endif
 #if barcodes
-using ZXing.Net.Maui.Controls;
+using BarcodeScanning;
 #endif
 #if usehttp
 using Refit;
@@ -49,7 +49,7 @@ public static class MauiProgram
         .UseVirtualListView()
 #endif
 #if barcodes
-        .UseBarcodeReader()
+        .UseBarcodeScanning()
 #endif
 #if uraniumui
         .UseUraniumUI()

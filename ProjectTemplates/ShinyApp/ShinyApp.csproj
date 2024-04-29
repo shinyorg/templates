@@ -222,7 +222,7 @@
 		<PackageReference Include="Redth.Maui.VirtualListView" Version="0.3.1" />
 		<!--#endif-->
 		<!--#if (barcodes)-->
-		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
+		<PackageReference Include="BarcodeScanning.Native.Maui" Version="1.5.0" />
 		<!--#endif-->
 		<!--#if (storereview)-->
 		<PackageReference Include="Plugin.StoreReview" Version="6.2.0" />
