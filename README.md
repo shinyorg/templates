@@ -25,10 +25,10 @@
 	* [Prism](https://prismlibrary.com/)
 	* [ReactiveUI](https://reactiveui.net/)
 	* [Shiny.NET](https://shinylib.net)
-* Select your markup type
+* Select mutliple platform UI Markup types
 	* XAML
 	* Blazor
-	* C# (courtesy of .NET MAUI Community Toolkit) [Documentation](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup)
+	* C# Markup (courtesy of .NET MAUI Community Toolkit) [Documentation](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup)
 * [.NET MAUI Community Toolkit](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/) Setup Including:
 	* [Media Element](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/)
 	* [C# Markup](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup))
@@ -39,7 +39,7 @@
 * Preps all of the necessary functionality for a SQLite Database
 * Setup proper localization	
 * All of your MauiProgram.cs Dependency Injection
-* Setup Logging Options with AppCenter, SQLite, & Sentry.IO
+* Setup Logging Options with Local SQLite & Sentry.IO
 * Create AppSettings.json
 * Create & auto-configure a strongly-typed settings class that can be bound to preferences or secure storage using Shiny
 * Create & auto-configure a Shiny startup service
@@ -56,7 +56,6 @@
 * Full Setup for the following 3rd party components
 	* [Prism](https://prismlibrary.com) by Brian Lagunas & Dan Siegel
 	* [ReactiveUI](https://reactiveui.net) from many contributors
-	* 
 	* [MAUI Community Toolkit](https://github.com/CommunityToolkit/Maui) from many contributors
 	* [Virtual List View](https://github.com/Redth/Maui.VirtualListView) by Jon Dick
 	* [Uranium UI](https://github.com/enisn/UraniumUI) by Enis Necipoglu	
@@ -66,7 +65,7 @@
 	* [MAUI Google Maps](https://github.com/themronion/Maui.GoogleMaps/tree/maui) by Pavlo Lukianets
 	* [Refit](https://github.com/reactiveui/refit)
 	* [SQLite.NET-pcl](https://github.com/praeclarum/sqlite-net) by Frank Krueger
-	* [ZXing.Net.Maui](https://github.com/Redth/ZXing.Net.Maui) by Jon Dick
+	* [BarcodeScanning.Native.Maui](https://github.com/afriscic/BarcodeScanning.Native.Maui) by afriscic
 	* [Store Review Plugin](https://github.com/jamesmontemagno/StoreReviewPlugin) by James Montemagno
 	* [In-App Billing Plugin](https://github.com/jamesmontemagno/InAppBillingPlugin) by James Montemagno
 	* [MAUI Screen Recording Plugin](https://github.com/jfversluis/Plugin.Maui.ScreenRecording) by Gerald Versluis
@@ -96,11 +95,12 @@ _The Microsoft iOS Extension template is currently broken on VS4win & VS4mac, so
 
 * Email Templating
 * Push Notification Setup
+* Minimal APIs
+* MediatR Setup
 * .NET Orleans
 * Entity Framework Basic Setup
 * MSAL & WebAuthenticator Setup /w Google & Facebook
 * Apple Domain Association Setup
-* Exception Handler Setup
 
 
 ### Item Templates
