@@ -138,8 +138,8 @@
 		<MauiAsset Include="appsettings.android.json" LogicalName="appsettings.android.json" />
 		<MauiAsset Include="appsettings.apple.json" LogicalName="appsettings.apple.json" />
 
-		<Content Remove="\appsettings.json" />
-        <Content Remove="\appsettings.*.json" />
+		<Content Remove="**\appsettings.json" />
+        <Content Remove="**\appsettings.*.json" />
 		<!--#endif-->
 	</ItemGroup>
 
