@@ -268,7 +268,7 @@
     {
         "id": "barcodes",
         "name":{
-            "text": "Add Barcode Scanning & Rendering (ZXing.Net.MAUI)"
+            "text": "Add Native Barcode Scanning (BarcodeScanning.Native.Maui)"
         },
         "isVisible": true
     },

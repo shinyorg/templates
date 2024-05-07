@@ -398,8 +398,8 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Wire up all of the barcode scanning services for ZXing.Net.MAUI by Jon Dick - For documentation, go to https://github.com/Redth/ZXing.Net.Maui",
-            "displayName": "Add Barcode Scanning & Rendering (ZXing.Net.MAUI)"
+            "description": "Wire up native barcode scanning services - For documentation, go to https://github.com/afriscic/BarcodeScanning.Native.Maui",
+            "displayName": "Add Native Barcode Scanning (BarcodeScanning.Native.Maui)"
         },
         "inappbilling":{
             "type": "parameter",

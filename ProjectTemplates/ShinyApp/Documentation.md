@@ -150,11 +150,11 @@ _The C# Markup Extensions for .NET MAUI Community Toolkit is a set of extensions
 
 <!--#endif-->
 <!--#if (barcodes)-->
-## ZXing.Net MAUI
+## Native Barcode Scanner (MAUI)
 
-_Scan and render barcodes - Written by Jonathan Dick_
+_Native barcode scanning using ML and on-device APIs_
 
-* [GitHub](https://github.com/Redth/ZXing.Net.Maui)
+* [GitHub](https://github.com/afriscic/BarcodeScanning.Native.Maui)
 
 <!--#endif-->
 <!--#if (storereview)-->
