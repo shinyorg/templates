@@ -6,6 +6,18 @@ _Microsoft Application User Interface Library_
 * [Documentation](https://learn.microsoft.com/en-us/dotnet/maui/)
 * [GitHub](https://github.com/dotnet/maui)
 
+<!--#if (useblazor)-->
+## .NET Blazor
+Blazor is a .NET frontend web framework that supports both server-side rendering and client interactivity in a single programming model:
+
+* Create rich interactive UIs using C#.
+* Share server-side and client-side app logic written in .NET.
+* Render the UI as HTML and CSS for wide browser support, including mobile browsers.
+* Build hybrid desktop and mobile apps with .NET and Blazor.
+
+* [Documentation](https://learn.microsoft.com/en-us/aspnet/core/blazor/)
+
+<!--#endif-->
 ## Shiny
 
 _A cross platform framework designed to make working with device services and background processes easy, testable, and consistent while bringing things like dependency injection & logging in a structured way to your code! - Written by Allan Ritchie_
