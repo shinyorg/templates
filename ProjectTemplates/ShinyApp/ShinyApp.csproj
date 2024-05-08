@@ -240,7 +240,7 @@
 		<PackageReference Include="Plugin.Maui.Audio" Version="2.1.0" />
 		<!--#endif-->
 		<!--#if (fingerprint)-->
-		<PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
+		<PackageReference Include="Oscore.Maui.Biometric" Version="1.0.0" />
 		<!--#endif-->
 		<!--#if usehttp-->
 		<PackageReference Include="Refit" Version="7.0.0" />

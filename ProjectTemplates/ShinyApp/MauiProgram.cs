@@ -132,6 +132,9 @@ public static class MauiProgram
             .OnAppAction(y => Shiny.Hosting.Host.GetService<ShinyApp.Delegates.AppActionDelegate>()!.Handle(y))
         )
 #endif
+#if fingerprint
+        .UseBiometricAuthentication()
+#endif
 #if debugrainbows
 //-:cnd:noEmit
 #if DEBUG
@@ -302,17 +305,6 @@ public static class MauiProgram
 #endif
 #if storereview
         s.AddSingleton(Plugin.StoreReview.CrossStoreReview.Current);
-#endif
-#if fingerprint
-        s.AddSingleton(sp =>
-        {
-//-:cnd:noEmit
-#if ANDROID
-            Plugin.Fingerprint.CrossFingerprint.SetCurrentActivityResolver(() => sp.GetRequiredService<AndroidPlatform>().CurrentActivity);
-#endif
-//+:cnd:noEmit
-            return Plugin.Fingerprint.CrossFingerprint.Current;
-        });
 #endif
 #if userdialogs
         s.AddSingleton(sp => 

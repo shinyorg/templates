@@ -198,11 +198,11 @@ _Provides the ability to record the screen from within your .NET MAUI app - Writ
 
 <!--#endif-->
 <!--#if (fingerprint)-->
-## Fingerprint Plugin
+## MAUI Biometric Plugin
 
-_A plugin for accessing the fingerprint, Face ID or other biometric sensors. - Written by Sven-Michael Stübe_
+_Provides a cross-platform implementation of biometric authentication. Continuation of the abandoned Plugin.Fingerprint in the MAUI ecosystem.. - Written by Konstantin S & Sven-Michael Stübe_
 
-* [Fingerprint Plugin](https://github.com/smstuebe/xamarin-fingerprint) 
+* [GitHub](https://github.com/oscoreio/Maui.Biometric) 
 
 <!--#endif-->
 <!--#if (usehttp)-->

@@ -326,7 +326,7 @@
     },{        
         "id": "fingerprint",
         "name":{
-            "text": "Add Fingerprint/Facial Recognition (Plugin.Fingerprint)"
+            "text": "Add Fingerprint/Facial Recognition (Maui.Biometric)"
         },
         "isVisible": true
     },{

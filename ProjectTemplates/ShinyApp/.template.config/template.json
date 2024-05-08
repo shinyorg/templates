@@ -440,8 +440,8 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Fingerprint Plugin by Sven-Michael Stübe - Documentation https://github.com/smstuebe/xamarin-fingerprint",
-            "displayName": "Add Fingerprint/Facial Recognition (Plugin.Fingerprint)"
+            "description": "Fingerprint Plugin by Konstantin S & Sven-Michael Stübe - Documentation https://github.com/oscoreio/Maui.Biometric",
+            "displayName": "Add Biometric Recognition (Maui.Biometric)"
         },
         "flipper":{
             "type": "parameter",
