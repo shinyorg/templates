@@ -157,13 +157,13 @@
 		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.1.0" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.1.1" />
 		<!--#endif-->
 		<!--#if (usemauimaps)-->
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
 		<!--#endif-->
 		<!--#if (usegooglemaps)-->
-		<PackageReference Include="Onion.Maui.GoogleMaps" Version="5.0.1" />
+		<PackageReference Include="Onion.Maui.GoogleMaps" Version="5.0.3" />
 		<!--#endif-->
 		<!--#if (shinyframework)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.401-pre" />
@@ -177,13 +177,13 @@
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.3" />
 		<!--#endif-->
 		<!--#if (usemsal)-->
-		<PackageReference Include="Microsoft.Identity.Client" Version="4.59.0" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.60.3" />
 		<!--#endif-->
 		<!--#if (useconfig)-->
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="4.3.0" />
+		<PackageReference Include="Sentry.Maui" Version="4.5.0" />
 		<!--#endif-->
 		<!--#if (sqlitelogging)-->
 		<PackageReference Include="Shiny.Logging.Sqlite" Version="$(ShinyVersion)" />
@@ -222,7 +222,7 @@
 		<PackageReference Include="Shiny.Health" Version="1.0.0-beta-0018" />
 		<!--#endif-->
 		<!--#if (virtuallist)-->
-		<PackageReference Include="Redth.Maui.VirtualListView" Version="0.3.1" />
+		<PackageReference Include="Redth.Maui.VirtualListView" Version="0.3.2" />
 		<!--#endif-->
 		<!--#if (barcodes)-->
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="1.5.0" />
@@ -240,7 +240,7 @@
 		<PackageReference Include="Plugin.Maui.Audio" Version="2.1.0" />
 		<!--#endif-->
 		<!--#if (fingerprint)-->
-		<PackageReference Include="Oscore.Maui.Biometric" Version="1.0.0" />
+		<PackageReference Include="Oscore.Maui.Biometric" Version="1.0.1" />
 		<!--#endif-->
 		<!--#if usehttp-->
 		<PackageReference Include="Refit" Version="7.0.0" />
@@ -263,7 +263,7 @@
 		<PackageReference Include="Plugin.Maui.ScreenRecording" Version="1.0.0-preview2" />
 		<!--#endif-->
 		<!--#if (skia)-->
-		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.7" />
+		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.8" />
 		<!--#endif-->
 		<!--#if (skiaextended)-->
 		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0" />
@@ -275,7 +275,7 @@
 		<PackageReference Include="Plugin.Maui.DebugRainbows" Version="1.2.0" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#endif-->
 		<!--#if (ffimageloading)-->
-		<PackageReference Include="FFImageLoading.Maui" Version="1.1.0" />
+		<PackageReference Include="FFImageLoading.Maui" Version="1.2.3" />
 		<!--#endif-->
 		<!--#if (embedio)-->
 		<PackageReference Include="EmbedIO" Version="3.5.2" />
@@ -297,7 +297,7 @@
 	<!--#if (androidauto || storereview)-->
 	<ItemGroup Condition="$(TargetFramework.Contains('android'))">
 		<!--#if (androidauto)-->
-		<PackageReference Include="Xamarin.AndroidX.Car.App.App" Version="1.2.0.2" />
+		<PackageReference Include="Xamarin.AndroidX.Car.App.App" Version="1.2.0.8" />
 		<!--#endif-->
 		<!--#if (storereview)-->
 		<ProguardConfiguration Include="Platforms/Android/proguard.cfg" />

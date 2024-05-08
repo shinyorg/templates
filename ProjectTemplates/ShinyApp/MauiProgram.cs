@@ -1,23 +1,26 @@
 ﻿#if debugrainbows
 using Plugin.Maui.DebugRainbows;
 #endif
+#if screenrecord
+using Plugin.Maui.ScreenRecording;
+#endif
+#if fingerprint
+using Maui.Biometric;
+#endif
 #if barcodes
 using BarcodeScanning;
 #endif
+#if usegooglemaps
+using Maui.GoogleMaps.Hosting;
+#endif
 #if usehttp
 using Refit;
-#endif
-#if screenrecord
-using Plugin.Maui.ScreenRecording;
 #endif
 #if sharpnadocv
 using Sharpnado.CollectionView;
 #endif
 #if sharpnadotabs
 using Sharpnado.Tabs;
-#endif
-#if usegooglemaps
-using Maui.GoogleMaps.Hosting;
 #endif
 #if skia || skiaextended
 using SkiaSharp.Views.Maui.Controls.Hosting;
@@ -64,6 +67,9 @@ public static class MauiProgram
 #endif
 #if usecsharpmarkup
         .UseMauiCommunityToolkitMarkup()
+#endif
+#if fingerprint
+        .UseBiometricAuthentication()
 #endif
 #if sharpnadotabs
         .UseSharpnadoTabs(false)
@@ -131,9 +137,6 @@ public static class MauiProgram
         //     .AddAppAction("battery_info", "Battery Info")
             .OnAppAction(y => Shiny.Hosting.Host.GetService<ShinyApp.Delegates.AppActionDelegate>()!.Handle(y))
         )
-#endif
-#if fingerprint
-        .UseBiometricAuthentication()
 #endif
 #if debugrainbows
 //-:cnd:noEmit
