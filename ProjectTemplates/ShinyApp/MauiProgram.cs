@@ -294,7 +294,7 @@ public static class MauiProgram
         s.AddSingleton(CommunityToolkit.Maui.Media.SpeechToText.Default);
 #endif
 #if (audio)
-        s.AddSingleton(Plugin.Maui.AudioManager.Current);
+        s.AddSingleton(Plugin.Maui.Audio.AudioManager.Current);
 #endif
 #if (calendar)
         s.AddSingleton(Plugin.Maui.CalendarStore.CalendarStore.Default);
