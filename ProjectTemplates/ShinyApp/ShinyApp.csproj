@@ -262,6 +262,9 @@
 		<!--#if (screenrecord)-->
 		<PackageReference Include="Plugin.Maui.ScreenRecording" Version="1.0.0-preview2" />
 		<!--#endif-->
+		<!--#if (screenbrightness)-->
+		<PackageReference Include="Plugin.Maui.ScreenBrightness" Version="1.0.0-preview3" />
+		<!--#endif-->
 		<!--#if (skia)-->
 		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.8" />
 		<!--#endif-->

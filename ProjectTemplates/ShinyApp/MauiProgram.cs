@@ -303,6 +303,9 @@ public static class MauiProgram
         builder.UseScreenRecording();
         s.AddSingleton(Plugin.Maui.ScreenRecording.ScreenRecording.Default);
 #endif
+#if (screenbrightness)
+        s.AddSingleton(Plugin.Maui.ScreenBrightness.ScreenBrightness.Default);
+#endif
 #if inappbilling
         s.AddSingleton(Plugin.InAppBilling.CrossInAppBilling.Current);
 #endif

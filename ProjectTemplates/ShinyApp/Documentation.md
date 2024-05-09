@@ -181,6 +181,14 @@ _Plugin.Maui.CalendarStore provides the ability to access the device calendar in
 * [GitHub](https://github.com/jfversluis/Plugin.Maui.CalendarStore)
 
 <!--#endif-->
+<!--#if (calendar)-->
+## MAUI Screen Brightness Plugin
+
+_Plugin.Maui.ScreenBrightness provides the ability to get or set the screen brightness inside a .NET MAUI application. - Written by Gerald Versluis_
+
+* [GitHub](https://github.com/jfversluis/Plugin.Maui.ScreenBrightness)
+
+<!--#endif-->
 <!--#if (audio)-->
 ## MAUI Audio Plugin
 
