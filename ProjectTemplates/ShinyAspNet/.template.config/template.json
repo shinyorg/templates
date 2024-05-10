@@ -52,7 +52,11 @@
                 {
                     "choice": "SQL Server",
                     "description": "SQL Server"
-                }
+                },
+                {
+                    "choice": "PostgreSQL",
+                    "description": "PostgreSQL"
+                }                
             ]
         },
         "connectionstring": {
@@ -62,6 +66,13 @@
             "defaultValue": "",
             "replaces":"{CONNECTION_STRING}"
         },
+        "efspatial":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Entity Framework Spatial",
+            "displayName": "Entity Framework Spatial"
+        },        
         "signalr":{
             "type": "parameter",
             "datatype": "bool",
@@ -124,12 +135,17 @@
             "defaultValue": "true",
             "description": "Include Apple Domain Association File",
             "displayName": "Include Apple Domain Association File" 
-        },        
-        "efsql":{
+        },
+        "efmssql":{
             "type": "computed",
             "datatype": "bool",
             "value": "(ef == \"SQL Server\")"
-        }
+        },
+        "efpostgres":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(ef == \"PostgreSQL\")"
+        }        
     },
     "sources": [{
         "source": "./",

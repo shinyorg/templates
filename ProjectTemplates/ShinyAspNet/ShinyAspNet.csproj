@@ -10,18 +10,32 @@
         <OrleansVersion>8.1.0</OrleansVersion>
         <!--#endif-->
         <!--#if (email || push)-->
-        <ShinyExtensionsVersion>2.0.0-preview-0014</ShinyExtensionsVersion>
+        <ShinyExtensionsVersion>2.0.0-preview-0018</ShinyExtensionsVersion>
         <!--#endif-->
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="MediatR" Version="12.2.0" />
+        <PackageReference Include="Shiny.Extensions.WebHosting" Version="$(ShinyExtensionsVersion)" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(MicrosoftVersion)" />
         <!--#if (swagger)-->
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
         <!--#endif-->
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(MicrosoftVersion)" />
-        <!--#if (efsql)-->
-        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MicrosoftVersion)" />        
+        
+        <!--#if (efsql || efpostgres)-->
+        <PackageReference Include="Shiny.Extensions.EntityFramework" Version="$(ShinyExtensionsVersion)" />
+        <!--#endif-->
+        <!--#if (efmssql)-->
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MicrosoftVersion)" />
+        <!--#if (efgeometry)-->
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="$(MicrosoftVersion)" />
+        <!--#endif-->
+        <!--#endif-->
+        <!--#if (efpostgres)-->
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.2" />
+        <!--#if (efgeometry)-->
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="8.0.2" />
+        <!--#endif-->
         <!--#endif-->
         <!--#if (facebook)-->
         <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="$(MicrosoftVersion)" />

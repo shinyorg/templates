@@ -7,3 +7,4 @@ global using Microsoft.AspNetCore.Authorization;
 global using Microsoft.AspNetCore.Mvc;
 global using ShinyAspNet.Data;
 global using ShinyAspNet.Services;
+global using Shiny;

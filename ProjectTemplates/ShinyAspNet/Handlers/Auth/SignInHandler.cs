@@ -4,13 +4,6 @@ using Microsoft.AspNetCore.Authentication;
 namespace ShinyAspNet.Handlers.Auth;
 
 
-public record SignInRequest(string Scheme) : IRequest<SignInResponse> { }
-public record SignInResponse(bool Success, string? Uri = null)
-{
-    public static SignInResponse Fail { get; } = new(false);
-    public static SignInResponse Sucessful(string uri) => new(true, uri!);
-}
-
 public class SignInHandler(AppDbContext data, JwtService jwtService, IHttpContextAccessor httpAccessor) : IRequestHandler<SignInRequest, SignInResponse>
 {
     public async Task<SignInResponse> Handle(SignInRequest request, CancellationToken cancellationToken)

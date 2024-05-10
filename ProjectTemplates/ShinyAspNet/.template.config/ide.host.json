@@ -26,6 +26,13 @@
             "isVisible": true
         },
         {
+            "id": "efspatial",
+            "name": {
+                "text": "Entity Framework Spatial"
+            },
+            "isVisible": true
+        }, 
+        {
             "id": "push",
             "name": {
                 "text": "Add Push Notification Management (Shiny.Extensions.Push)"
