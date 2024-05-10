@@ -21,8 +21,7 @@
         <!--#if (swagger)-->
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
         <!--#endif-->
-        
-        <!--#if (efsql || efpostgres)-->
+        <!--#if (efmssql || efpostgres)-->
         <PackageReference Include="Shiny.Extensions.EntityFramework" Version="$(ShinyExtensionsVersion)" />
         <!--#endif-->
         <!--#if (efmssql)-->
