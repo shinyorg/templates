@@ -34,7 +34,7 @@
         "Framework": {
             "type": "parameter",
             "description": "The target framework for the project.",
-            "datatype": "choice",
+            "dataType": "choice",
             "choices": [{
                 "choice": "net8.0",
                 "description": "Target .NET 8.0"
@@ -44,7 +44,7 @@
         },
         "ef": {
             "type": "parameter",
-            "datatype": "choice",
+            "dataType": "choice",
             "defaultValue": "SQL Server",
             "description": "Entity Framework",
             "displayName": "Entity Framework",
@@ -68,82 +68,82 @@
         },
         "efspatial":{
             "type": "parameter",
-            "datatype": "bool",
+            "dataType": "bool",
             "defaultValue": "false",
             "description": "Entity Framework Spatial",
             "displayName": "Entity Framework Spatial"
         },        
         "signalr":{
             "type": "parameter",
-            "datatype": "bool",
+            "dataType": "bool",
             "defaultValue": "false",
             "description": "SignalR",
             "displayName": "SignalR"
         },
         "push":{
             "type": "parameter",
-            "datatype": "bool",
+            "dataType": "bool",
             "defaultValue": "false",
             "description": "",
             "displayName": "Push Notification Management (Shiny.Extensions.Push)"
         }, 
         "email":{
             "type": "parameter",
-            "datatype": "bool",
+            "dataType": "bool",
             "defaultValue": "false",
             "description": "",
             "displayName": "Email Templating (Shiny.Extensions.Email)"
         },
         "google":{
             "type": "parameter",
-            "datatype": "bool",
+            "dataType": "bool",
             "defaultValue": "false",
             "description": "Google Authentication",
             "displayName": "Google Authentication"
         },
         "facebook":{
             "type": "parameter",
-            "datatype": "bool",
+            "dataType": "bool",
             "defaultValue": "false",
             "description": "Facebook Authentication",
             "displayName": "Facebook Authentication"
         },
         "apple":{
             "type": "parameter",
-            "datatype": "bool",
+            "dataType": "bool",
             "defaultValue": "false",
             "description": "Apple Authentication",
             "displayName": "Apple Authentication"
         },
         "orleans": {
             "type": "parameter",
-            "datatype": "bool",
+            "dataType": "bool",
             "defaultValue": "true",
             "description": "Microsoft Orleans",
             "displayName": "Microsoft Orleans" 
         },
         "swagger": {
             "type": "parameter",
-            "datatype": "bool",
+            "dataType": "bool",
             "defaultValue": "true",
             "description": "Swagger",
             "displayName": "Swagger"
         },
         "appledomain": {
             "type": "parameter",
-            "datatype": "bool",
+            "dataType": "bool",
             "defaultValue": "true",
             "description": "Include Apple Domain Association File",
             "displayName": "Include Apple Domain Association File" 
         },
         "efmssql":{
             "type": "computed",
-            "datatype": "bool",
+            "dataType": "bool",
             "value": "(ef == \"SQL Server\")"
         },
         "efpostgres":{
             "type": "computed",
-            "datatype": "bool",
+            "dataType": "bool",
             "value": "(ef == \"PostgreSQL\")"
         }        
     },
