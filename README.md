@@ -14,7 +14,7 @@
 
 #### MAUI Shiny.NET App Project Template
 
-* Supports Visual Studio for Windows 2022 and Visual Studio for Mac 2022
+* Supports Visual Studio for Windows 2022, Visual Studio for Mac 2022, & JetBrains Rider 2024+
 * Creates all the necessary permissions, boilerplate, & setup you'll need to get your .NET MAUI app up and running with Shiny & many other great community libraries
 * Easy setup and choice for push notifications
 	* Full Native
@@ -25,6 +25,7 @@
 	* [Prism](https://prismlibrary.com/)
 	* [ReactiveUI](https://reactiveui.net/)
 	* [Shiny.NET](https://shinylib.net)
+	* [Shiny Mediator](https://github.com/shinyorg/mediator)
 * Select mutliple platform UI Markup types
 	* XAML
 	* Blazor
@@ -70,8 +71,10 @@
 	* [In-App Billing Plugin](https://github.com/jamesmontemagno/InAppBillingPlugin) by James Montemagno
 	* [MAUI Screen Recording Plugin](https://github.com/jfversluis/Plugin.Maui.ScreenRecording) by Gerald Versluis
 	* [MAUI Audio Plugin](https://github.com/jfversluis/Plugin.Maui.Audio) by Gerald Versluis
-	* [MAUI Calendar Store Plugin](https://github.com/jfversluis/Plugin.Maui.CalendarStore) by Gerald Versluis	
+	* [MAUI Calendar Store Plugin](https://github.com/jfversluis/Plugin.Maui.CalendarStore) by Gerald Versluis
+	* [MAUI OCR Plugin](https://github.com/kfrancis/ocr) by Kori Francis
 	* [MAUI Biometric Plugin](https://github.com/oscoreio/Maui.Biometric) by Konstantin S & Sven-Michael Stübe
+	* [CardsView MAUI](https://github.com/AndreiMisiukevich/CardView.MAUI) by Andrei Misiukevich
 	* [Drastic Flipper](https://github.com/drasticactions/Drastic.Flipper) by Tim Miller
 	* [Embed.IO](https://unosquare.github.io/embedio/) by Unosquare
 	* [SkiaSharp](https://github.com/mono/SkiaSharp) by Matthew Leibowitz

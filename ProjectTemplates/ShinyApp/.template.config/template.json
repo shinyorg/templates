@@ -116,6 +116,13 @@
             "description": "Add Shiny Framework by Allan Ritchie - Documentation https://github.com/shinyorg/framework - Lots of helpful services like navigation, zero boilerplate MVVM properties, viewmodel validation, localization, viewmodel lifecycles, dialog services, and more",
             "displayName": "Add Shiny Framework (Shiny + ReactiveUI + Prism)"
         },
+        "shinymediator":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Add Shiny Mediator - Documentation https://github.com/shinyorg/mediator",
+            "displayName": "Add Shiny Mediator"
+        },
         "localization":{
             "type": "parameter",
             "datatype": "bool",
@@ -387,6 +394,13 @@
             "description": "Sharpnado Tabs by Jean-Marie Alfonsi - Documentation https://github.com/roubachof/Sharpnado.Tabs",
             "displayName": "Add Sharpnado Tabs"
         },
+        "cards":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "CardsView.Maui by Andrei Misiukevich - Documentation https://www.nuget.org/packages/CardsView.Maui",
+            "displayName": "Add CardsView.Maui"
+        },
         "sqlite": {
             "type": "parameter",
             "datatype": "bool",
@@ -429,6 +443,13 @@
             "description": "Audio Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.Audio",
             "displayName": "Add Audio (Plugin.Maui.Audio)"
         }, 
+        "ocr":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "OCR Plugin by Kori Francis - Documentation https://github.com/kfrancis/ocr",
+            "displayName": "Add OCR (Plugin.Maui.OCR)"
+        },         
         "screenrecord":{
             "type": "parameter",
             "datatype": "bool",
@@ -732,7 +753,6 @@
             "condition": "(useblazor == false)",
             "exclude":[ 
                 "BlazorPage.*",
-                "*.razor",
                 "Components/**",
                 "wwwroot/**" 
             ]

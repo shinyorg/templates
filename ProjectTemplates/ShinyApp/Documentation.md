@@ -25,6 +25,14 @@ _A cross platform framework designed to make working with device services and ba
 * [Documentation](https://shinylib.net/)
 * [GitHub](https://github.com/shinyorg/shiny)
 
+<!--#if (shinymediator)-->
+## Shiny Mediator
+
+_A simple mediator pattern for .NET applications - Written by Allan Ritchie_
+
+* [GitHub](https://github.com/shinyorg/mediator)
+
+<!--#endif-->
 <!--#if (sentry)-->
 ## Sentry for MAUI
 * Easy MAUI integration by calling UseSentry on your MauiAppBuilder
@@ -109,6 +117,14 @@ _Feature rich tab control by Jean-Marie Alfonsi_
 _A performant and feature rich collection view by Jean-Marie Alfonsi_
 
 * [GitHub](https://github.com/roubachof/Sharpnado.CollectionView)
+
+<!--#endif-->
+<!--#if (cards)-->
+## CardsView MAUI
+
+_CardsView is a view for presenting a stack of cards in a carousel-like view. It supports swiping to dismiss, dragging and dropping, and more. - Written by Andrei Misiukevich_
+
+* [GitHub](https://github.com/AndreiMisiukevich/CardView.MAUI)
 
 <!--#endif-->
 <!--#if (usemauimaps)-->
@@ -203,6 +219,14 @@ _Provides the ability to play audio inside a .NET MAUI application. - Written by
 _Provides the ability to record the screen from within your .NET MAUI app - Written by Gerald Versluis_
 
 * [GitHub](https://github.com/jfversluis/Plugin.Maui.ScreenRecording)
+
+<!--#endif-->
+<!--#if (ocr)-->
+## MAUI OCR Plugin
+
+_Provides the ability to perform OCR (Optical Character Recognition) on images in your .NET MAUI app - Written by Kori Francis_
+
+* [GitHub](https://github.com/kfrancis/ocr)
 
 <!--#endif-->
 <!--#if (fingerprint)-->

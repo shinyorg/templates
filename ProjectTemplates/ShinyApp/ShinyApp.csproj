@@ -11,7 +11,7 @@
 		<!--#endif-->
 		<IosSimulatorBuild Condition="'$(Configuration)' == 'Debug'">False</IosSimulatorBuild>
 
-		<MauiVersion>8.0.21</MauiVersion>
+		<MauiVersion>8.0.40</MauiVersion>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>ShinyApp</RootNamespace>
 		<SingleProject>true</SingleProject>
@@ -145,6 +145,9 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<!--#if (usemauimaps)-->
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
+		<!--#endif-->		
 		<!--#if (useblazor)-->
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
 		<!--#endif-->
@@ -159,9 +162,6 @@
 		<!--#if (mediaelement)-->
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.1.1" />
 		<!--#endif-->
-		<!--#if (usemauimaps)-->
-		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
-		<!--#endif-->
 		<!--#if (usegooglemaps)-->
 		<PackageReference Include="Onion.Maui.GoogleMaps" Version="5.0.3" />
 		<!--#endif-->
@@ -172,6 +172,13 @@
 		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
+		<!--#endif-->
+		<!--#if (shinymediator)-->
+		<PackageReference Include="Shiny.Mediator" Version="1.0.0-alpha-0034" />
+		<PackageReference Include="Shiny.Mediator.Maui" Version="1.0.0-alpha-0034" />
+		<!--#if (useblazor)-->
+		<PackageReference Include="Shiny.Mediator.Blazor" Version="1.0.0-alpha-0034" />
+		<!--#endif-->
 		<!--#endif-->
 		<!--#if (localization)-->
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.3" />
@@ -239,6 +246,9 @@
 		<!--#if (audio)-->
 		<PackageReference Include="Plugin.Maui.Audio" Version="2.1.0" />
 		<!--#endif-->
+		<!--#if (ocr)-->
+		<PackageReference Include="Plugin.Maui.OCR" Version="1.0.11" />
+		<!--#endif-->
 		<!--#if (fingerprint)-->
 		<PackageReference Include="Oscore.Maui.Biometric" Version="1.0.1" />
 		<!--#endif-->
@@ -253,6 +263,9 @@
 		<!--#endif-->
 		<!--#if (sharpnadocv)-->
 		<PackageReference Include="Sharpnado.CollectionView.Maui" Version="3.1.2" />
+		<!--#endif-->
+		<!--#if (cards)-->
+		<PackageReference Include="CardsView.Maui" Version="0.0.6" />
 		<!--#endif-->
 		<!--#if (uraniumui)-->
 		<PackageReference Include="UraniumUI.Material" Version="2.8.1" />
@@ -278,7 +291,7 @@
 		<PackageReference Include="Plugin.Maui.DebugRainbows" Version="1.2.0" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#endif-->
 		<!--#if (ffimageloading)-->
-		<PackageReference Include="FFImageLoading.Maui" Version="1.2.3" />
+		<PackageReference Include="FFImageLoading.Maui" Version="1.2.5" />
 		<!--#endif-->
 		<!--#if (embedio)-->
 		<PackageReference Include="EmbedIO" Version="3.5.2" />

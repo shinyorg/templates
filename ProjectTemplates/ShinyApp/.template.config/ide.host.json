@@ -12,12 +12,19 @@
     }],
     "symbolInfo": [
     {
-        "id": "markuptype",
-        "name": {
-            "text": "UI Markup Type"
+        "id": "useblazor",
+        "name":{
+            "text": "Add Blazor Hybrid Support"
+        },
+        "isVisible": true        
+    }, 
+    {
+        "id": "usecsharpmarkup",
+        "name":{
+            "text": "Add C# Markup - MAUI Community Toolkit"
         },
         "isVisible": true
-    },
+    }, 
     {
         "id": "applicationId",
         "name": {
@@ -29,6 +36,13 @@
         "id": "shinyframework",
         "name": {
             "text": "Add Shiny Framework (Shiny + ReactiveUI + Prism)"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "shinymediator",
+        "name": {
+            "text": "Add Shiny Mediator"
         },
         "isVisible": true
     },
@@ -259,6 +273,13 @@
         "isVisible": true
     }, 
     {
+        "id": "cards",
+        "name":{
+            "text": "Add CardsView.Maui"
+        },
+        "isVisible": true        
+    },
+    {
         "id": "sqlite",
         "name": {
             "text": "Add SQLite (SQLite.NET-PCL)"
@@ -292,8 +313,7 @@
             "text": "Add Calendar Store (Plugin.Maui.CalendarStore)"
         },
         "isVisible": true
-    },    
-    {
+    },{
         "id": "audio",
         "name":{
             "text": "Add Audio (Plugin.Maui.Audio)"
@@ -305,6 +325,12 @@
             "text": "Add Screen Recording (Plugin.Maui.ScreenRecording)"
         },
         "isVisible": true
+    },{
+        "id": "ocr",
+        "name":{
+            "text": "Add OCR  (Plugin.Maui.OCR)"
+        },
+        "isVisible": true        
     },{
         "id": "userdialogs",
         "name":{

@@ -1,8 +1,14 @@
-﻿#if debugrainbows
+﻿#if shinymediator
+using Shiny.Mediator;
+#endif
+#if debugrainbows
 using Plugin.Maui.DebugRainbows;
 #endif
 #if screenrecord
 using Plugin.Maui.ScreenRecording;
+#endif
+#if ocr
+using Plugin.Maui.OCR;
 #endif
 #if fingerprint
 using Maui.Biometric;
@@ -21,6 +27,9 @@ using Sharpnado.CollectionView;
 #endif
 #if sharpnadotabs
 using Sharpnado.Tabs;
+#endif
+#if cards
+using PanCardView;
 #endif
 #if skia || skiaextended
 using SkiaSharp.Views.Maui.Controls.Hosting;
@@ -103,6 +112,9 @@ public static class MauiProgram
 #if usemauimaps
         .UseMauiMaps()
 #endif
+#if cards
+        .UseCardsView()
+#endif
 #if sentry
         .UseSentry(options =>
         {
@@ -156,6 +168,9 @@ public static class MauiProgram
 #endif
 //+:cnd:noEmit  
 #endif
+#if ocr
+        .UseOcr()
+#endif
         .ConfigureFonts(fonts =>
         {
             fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -199,6 +214,15 @@ public static class MauiProgram
 #endif
 //+:cnd:noEmit
         var s = builder.Services;
+#if shinymediator
+        s.AddShinyMediator(cfg => 
+        {
+            cfg.UseMaui();
+#if useblazor
+            cfg.UseBlazor();
+#endif
+        });
+#endif
 #if appaction
         s.AddSingleton<ShinyApp.Delegates.AppActionDelegate>();
 #endif
