@@ -1,4 +1,7 @@
 ﻿global using Shiny;
+#if (shinymediator)
+global using Shiny.MediatR;
+#endif
 global using System;
 global using System.Windows.Input;
 global using System.Collections.ObjectModel;
