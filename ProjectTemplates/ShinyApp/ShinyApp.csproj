@@ -9,8 +9,6 @@
 		<!--#if (usemaccatalyst)-->
 		<TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-maccatalyst</TargetFrameworks>
 		<!--#endif-->
-		<IosSimulatorBuild Condition="'$(Configuration)' == 'Debug'">False</IosSimulatorBuild>
-
 		<MauiVersion>8.0.40</MauiVersion>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>ShinyApp</RootNamespace>
@@ -51,17 +49,6 @@
 		<SupportedOSPlatformVersion>14.2</SupportedOSPlatformVersion>
 		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>	
 	</PropertyGroup>
-	
-	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
-		<RuntimeIdentifier Condition="'$(IosSimulator)' != 'true'">ios-arm64</RuntimeIdentifier>	
-	</PropertyGroup>
-
-	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios' AND '$(IosSimulatorBuild)' == 'true'">
-		<RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
-		<EnableCodeSigning>true</EnableCodeSigning>
-		<CodesignRequireProvisioningProfile>true</CodesignRequireProvisioningProfile>
-		<DisableCodesignVerification>true</DisableCodesignVerification>	
-	</PropertyGroup>
 
 	<!--#if (usemaccatalyst)-->
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
@@ -69,7 +56,6 @@
 		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>
 
 		<UseHardenedRuntime Condition="'$(Configuration)' == 'Release'">true</UseHardenedRuntime>
-		<RuntimeIdentifiers Condition="'$(Configuration)' == 'Debug'">maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers>
 	</PropertyGroup>
 
 	<ItemGroup Condition="'$(Configuration)' == 'Release'">
