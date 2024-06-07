@@ -28,10 +28,13 @@ using Sharpnado.CollectionView;
 #if sharpnadotabs
 using Sharpnado.Tabs;
 #endif
+#if settingsview
+using AiForms.Settings;
+#endif
 #if cards
 using PanCardView;
 #endif
-#if skia || skiaextended
+#if skia || skiaextended || livecharts
 using SkiaSharp.Views.Maui.Controls.Hosting;
 #endif
 #if ffimageloading
@@ -80,6 +83,9 @@ public static class MauiProgram
 #if fingerprint
         .UseBiometricAuthentication()
 #endif
+#if (settingsview)
+        .UseSettingsView()
+#endif
 #if sharpnadotabs
         .UseSharpnadoTabs(false)
 #endif
@@ -89,7 +95,7 @@ public static class MauiProgram
 #if ffimageloading
         .UseFFImageLoading()
 #endif
-#if skia || skiaextended
+#if skia || skiaextended || livecharts
         .UseSkiaSharp()
 #endif
 #if shinyframework            

@@ -3,6 +3,8 @@
 [![Nuget](https://img.shields.io/nuget/v/shiny.templates?style=for-the-badge)](https://www.nuget.org/packages/Shiny.Templates/)
 
 
+Works with Visual Studio 2022 & JetBrains Rider 2024+
+
 ### To Install
 > dotnet new install Shiny.Templates
 
@@ -59,12 +61,12 @@
 	* [ReactiveUI](https://reactiveui.net) from many contributors
 	* [MAUI Community Toolkit](https://github.com/CommunityToolkit/Maui) from many contributors
 	* [Virtual List View](https://github.com/Redth/Maui.VirtualListView) by Jon Dick
-	* [Uranium UI](https://github.com/enisn/UraniumUI) by Enis Necipoglu	
+	* [Uranium UI](https://github.com/enisn/UraniumUI) by Enis Necipoglu
 	* [FFImageLoading MAUI](https://github.com/microspaze/FFImageLoading.Maui) 
 	* [Sharpnado Tabs](https://github.com/roubachof/Sharpnado.Tabs) by Jean-Marie Alfonsi
 	* [Sharpnado CollectionView](https://github.com/roubachof/Sharpnado.CollectionView) by Jean-Marie Alfonsi
 	* [MAUI Google Maps](https://github.com/themronion/Maui.GoogleMaps/tree/maui) by Pavlo Lukianets
-	* [Refit](https://github.com/reactiveui/refit)
+	* [Refit](https://github.com/reactiveui/refit) by ReactiveUI Maintainers
 	* [SQLite.NET-pcl](https://github.com/praeclarum/sqlite-net) by Frank Krueger
 	* [BarcodeScanning.Native.Maui](https://github.com/afriscic/BarcodeScanning.Native.Maui) by afriscic
 	* [Store Review Plugin](https://github.com/jamesmontemagno/StoreReviewPlugin) by James Montemagno
@@ -72,6 +74,7 @@
 	* [MAUI Screen Recording Plugin](https://github.com/jfversluis/Plugin.Maui.ScreenRecording) by Gerald Versluis
 	* [MAUI Audio Plugin](https://github.com/jfversluis/Plugin.Maui.Audio) by Gerald Versluis
 	* [MAUI Calendar Store Plugin](https://github.com/jfversluis/Plugin.Maui.CalendarStore) by Gerald Versluis
+	* [MAUI Screen Brightness Plugin](https://github.com/jfversluis/Plugin.Maui.ScreenBrightness) by Gerald Versluis
 	* [MAUI OCR Plugin](https://github.com/kfrancis/ocr) by Kori Francis
 	* [MAUI Biometric Plugin](https://github.com/oscoreio/Maui.Biometric) by Konstantin S & Sven-Michael Stübe
 	* [CardsView MAUI](https://github.com/AndreiMisiukevich/CardView.MAUI) by Andrei Misiukevich
@@ -82,9 +85,12 @@
 	* [Radzen Blazor](https://blazor.radzen.com/)
 	* [ACR User Dialogs](https://github.com/aritchie/userdialogs) by Allan Ritchie
 	* [Debug Rainbows](https://github.com/sthewissen/Plugin.Maui.DebugRainbows) by Steven Thewissen
+	* [Live Charts](https://livecharts.dev/) by Alberto Rodríguez
+	* [Compiled Bindings](https://github.com/levitali/CompiledBindings) by Vitali Lesheniuk
+	* [Settings View](https://github.com/muak/AiForms.Maui.SettingsView) by Satoshi NaKamura
+	* [AlohaKit Animations](https://github.com/jsuarezruiz/AlohaKit.Animations) by Javier Suárez
 
 <img src="vs4win.png" />
-<img src="vs4mac.png" />
 
 #### MAUI XUnit Device Runner Project
 

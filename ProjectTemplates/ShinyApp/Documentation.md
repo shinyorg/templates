@@ -381,3 +381,36 @@ _Have you ever had a piece of XAML code that didn't produce the layout you expec
 [GitHub](https://github.com/sthewissen/Plugin.Maui.DebugRainbows)
 
 <!--#endif-->
+<!--#if (compiledbindings)-->
+## Compiled Bindings
+
+_This library provides {x:Bind} Markup Extension for WPF, MAUI and Xamarin Forms. You can read about {x:Bind} Markup Extension for UWP here. Most functionality of {x:Bind} for UWP and also many other features are supported. by Vitali Lesheniuk_
+
+* [GitHub](https://github.com/levitali/CompiledBindings)
+
+<!--#endif-->
+<!--#if (livechats)-->
+## Live Charts
+
+_Beautiful, animated, mv* friendly, automatically updated, cross-platform and easy to use by Alberto Rodríguez_
+
+* [GitHub](https://github.com/beto-rodriguez/LiveCharts2)
+* [Documentation](https://livecharts.dev/)
+
+<!--#endif-->
+<!--#if (alohakitanimations)-->
+## AlohaKit Animations
+
+_AlohaKit.Animations is a library designed for .NET MAUI that aims to facilitate the use of animations to developers. Very simple use from C# and XAML code by Javier Suárez_
+
+* [GitHub](https://github.com/jsuarezruiz/AlohaKit.Animations)
+
+<!--#endif-->
+<!--#if (settingsview)-->
+## Settings View
+
+_This is a flexible TableView specialized in settings for Android / iOS by Satoshi NaKamura_
+
+* [GitHub](https://github.com/muak/AiForms.Maui.SettingsView)
+
+<!--#endif-->

@@ -345,6 +345,13 @@
             "datatype": "string",
             "replaces": "{DEEPLINK_HOST}"
         },
+        "compiledbindings":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Compiled Bindings by Vitali Lesheniuk - Documentation https://github.com/levitali/CompiledBindings",
+            "displayName": "Add Compiled Bindings"
+        },        
         "communitytoolkit":{
             "type": "parameter",
             "datatype": "bool",
@@ -393,6 +400,27 @@
             "defaultValue": "false",
             "description": "Sharpnado Tabs by Jean-Marie Alfonsi - Documentation https://github.com/roubachof/Sharpnado.Tabs",
             "displayName": "Add Sharpnado Tabs"
+        },
+        "alohakitanimations":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "AlohaKit Animations by Javier Suárez - Documentation https://github.com/jsuarezruiz/AlohaKit.Animations/",
+            "displayName": "Add AlohaKit Animations"
+        },
+        "livecharts":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Live Charts by Alberto Rodríguez - Documentation https://livecharts.dev/",
+            "displayName": "Add Live Charts"
+        },
+        "settingsview":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Settings View by by Satoshi NaKamura - Documentation https://github.com/muak/AiForms.Maui.SettingsView",
+            "displayName": "Add Settings View"
         },
         "cards":{
             "type": "parameter",

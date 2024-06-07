@@ -99,10 +99,6 @@
 		<CustomEntitlements Include="com.apple.security.files.downloads.read-only" Type="boolean" Value="true" />
 		<CustomEntitlements Include="com.apple.security.personal-information.photos-library" Type="boolean" Value="true" />
 		<!--#endif-->
-		<!--#if (health)-->
-		<CustomEntitlements Include="com.apple.developer.healthkit" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.developer.healthkit.background-delivery" Type="boolean" Value="true" />
-		<!--#endif-->
 		<!--#if (carplay)-->
 		<CustomEntitlements Include="com.apple.developer.carplay-driving-task" Type="boolean" Value="true" />
 		<!--#endif-->
@@ -138,7 +134,6 @@
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
 		<!--#endif-->
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" Condition="'$(Configuration)' == 'Debug'" />
-
 		<!--#if (shinyframework || communitytoolkit || speechrecognition)-->
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.0" />
 		<!--#endif-->
@@ -160,10 +155,10 @@
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (shinymediator)-->
-		<PackageReference Include="Shiny.Mediator" Version="1.0.0-alpha-0034" />
-		<PackageReference Include="Shiny.Mediator.Maui" Version="1.0.0-alpha-0034" />
+		<PackageReference Include="Shiny.Mediator" Version="1.0.0-alpha-0042" />
+		<PackageReference Include="Shiny.Mediator.Maui" Version="1.0.0-alpha-0042" />
 		<!--#if (useblazor)-->
-		<PackageReference Include="Shiny.Mediator.Blazor" Version="1.0.0-alpha-0034" />
+		<PackageReference Include="Shiny.Mediator.Blazor" Version="1.0.0-alpha-0042" />
 		<!--#endif-->
 		<!--#endif-->
 		<!--#if (localization)-->
@@ -215,7 +210,7 @@
 		<PackageReference Include="Shiny.Health" Version="1.0.0-beta-0018" />
 		<!--#endif-->
 		<!--#if (virtuallist)-->
-		<PackageReference Include="Redth.Maui.VirtualListView" Version="0.3.2" />
+		<PackageReference Include="Redth.Maui.VirtualListView" Version="0.4.0" />
 		<!--#endif-->
 		<!--#if (barcodes)-->
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="1.5.3" />
@@ -249,6 +244,18 @@
 		<!--#endif-->
 		<!--#if (sharpnadocv)-->
 		<PackageReference Include="Sharpnado.CollectionView.Maui" Version="3.1.2" />
+		<!--#endif-->
+		<!--#if (settingsview)-->
+		<PackageReference Include="AiForms.Maui.SettingsView" Version="1.0.11" />
+		<!--#endif-->
+		<!--#if (livecharts)-->
+		<PackageReference Include="LiveChartsCore.SkiaSharpView.Maui" Version="2.0.0-rc2" />
+		<!--#endif-->
+		<!--#if (compiledbindings)-->
+		<PackageReference Include="CompiledBindings.MAUI" Version="1.0.18" />
+		<!--#endif-->
+		<!--#if (alohakitanimations)-->
+		<PackageReference Include="AlohaKit.Animations" Version="1.1.0" />
 		<!--#endif-->
 		<!--#if (cards)-->
 		<PackageReference Include="CardsView.Maui" Version="0.0.6" />

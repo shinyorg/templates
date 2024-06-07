@@ -1,6 +1,6 @@
 ﻿global using Shiny;
 #if (shinymediator)
-global using Shiny.MediatR;
+global using Shiny.Mediator;
 #endif
 global using System;
 global using System.Windows.Input;

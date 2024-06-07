@@ -231,6 +231,13 @@
         "isVisible": true
     },
     {
+        "id": "compiledbindings",
+        "name": {
+            "text": "Add Compiled Bindings"
+        },
+        "isVisible": true
+    },
+    {
         "id": "communitytoolkit",
         "name": {
             "text": "Add MAUI Community Toolkit"
@@ -272,6 +279,27 @@
         },
         "isVisible": true
     }, 
+    {
+        "id": "alohakitanimations",
+        "name":{
+            "text": "Add AlohaKit Animations"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "livecharts",
+        "name":{
+            "text": "Add Live Charts"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "settingsview",
+        "name":{
+            "text": "Add Settings View"
+        },
+        "isVisible": true
+    },   
     {
         "id": "cards",
         "name":{
