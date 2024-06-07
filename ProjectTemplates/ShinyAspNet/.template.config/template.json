@@ -50,11 +50,11 @@
             "displayName": "Entity Framework",
             "choices": [
                 {
-                    "choice": "SQL Server",
+                    "choice": "sqlserver",
                     "description": "SQL Server"
                 },
                 {
-                    "choice": "PostgreSQL",
+                    "choice": "postgresql",
                     "description": "PostgreSQL"
                 }                
             ]
@@ -139,13 +139,13 @@
         "efmssql":{
             "type": "computed",
             "dataType": "bool",
-            "value": "(ef == \"SQL Server\")"
+            "value": "(ef == \"sqlserver\")"
         },
         "efpostgres":{
             "type": "computed",
             "dataType": "bool",
-            "value": "(ef == \"PostgreSQL\")"
-        }        
+            "value": "(ef == \"postgresql\")"
+        }
     },
     "sources": [{
         "source": "./",
