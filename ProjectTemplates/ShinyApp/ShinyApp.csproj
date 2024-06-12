@@ -9,7 +9,7 @@
 		<!--#if (usemaccatalyst)-->
 		<TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-maccatalyst</TargetFrameworks>
 		<!--#endif-->
-		<MauiVersion>8.0.40</MauiVersion>
+		<MauiVersion>8.0.60</MauiVersion>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>ShinyApp</RootNamespace>
 		<SingleProject>true</SingleProject>
@@ -155,10 +155,10 @@
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (shinymediator)-->
-		<PackageReference Include="Shiny.Mediator" Version="1.0.0-alpha-0042" />
-		<PackageReference Include="Shiny.Mediator.Maui" Version="1.0.0-alpha-0042" />
+		<PackageReference Include="Shiny.Mediator" Version="1.0.0-alpha-0053" />
+		<PackageReference Include="Shiny.Mediator.Maui" Version="1.0.0-alpha-0053" />
 		<!--#if (useblazor)-->
-		<PackageReference Include="Shiny.Mediator.Blazor" Version="1.0.0-alpha-0042" />
+		<PackageReference Include="Shiny.Mediator.Blazor" Version="1.0.0-alpha-0053" />
 		<!--#endif-->
 		<!--#endif-->
 		<!--#if (localization)-->
