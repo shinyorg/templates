@@ -96,9 +96,9 @@
             "isVisible": true
         },
         {
-            "id": "appledomain",
+            "id": "deeplinks",
             "name": {
-                "text": "Include Apple Domain Association Fil"
+                "text": "Include Sample Apple Domain Association File and Android Asset Links"
             },
             "isVisible": true
         }       

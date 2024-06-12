@@ -189,7 +189,7 @@ if (app.Environment.IsDevelopment())
     #endif
 }
 
-#if (appledomain)
+#if (deeplinks)
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(

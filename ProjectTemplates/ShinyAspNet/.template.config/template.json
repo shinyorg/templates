@@ -129,12 +129,12 @@
             "description": "Swagger",
             "displayName": "Swagger"
         },
-        "appledomain": {
+        "deeplinks": {
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "true",
-            "description": "Include Apple Domain Association File",
-            "displayName": "Include Apple Domain Association File" 
+            "description": "Include Sample Apple Domain Association File and Android Asset Links",
+            "displayName": "Include Sample Apple Domain Association File and Android Asset Links" 
         },
         "efmssql":{
             "type": "computed",
@@ -161,7 +161,7 @@
             "exclude": "Grains/**"
         },
         {
-            "condition": "(appledomain == false)",
+            "condition": "(deeplinks == false)",
             "exclude": "wwwroot/**"
         },
         {
