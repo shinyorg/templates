@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.Versioning;
 using CarPlay;
 using Foundation;
 using UIKit;
@@ -6,6 +7,9 @@ using UIKit;
 namespace ShinyApp.iOS.CarPlayImplementation;
 
 
+[SupportedOSPlatform("ios16.0")]
+[UnsupportedOSPlatform("macos")]
+[UnsupportedOSPlatform("maccatalyst")]
 [Register("CarPlaySceneDelegate")]
 public class CarPlaySceneDelegate : CPTemplateApplicationSceneDelegate
 {

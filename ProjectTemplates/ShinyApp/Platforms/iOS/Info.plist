@@ -177,7 +177,7 @@
 					<key>UISceneClassName</key>
 					<string>CPTemplateApplicationScene</string>
 					<key>UISceneConfigurationName</key>
-					<string>ShinyApp</string>
+					<string>ShinyApp-Car</string>
 					<key>UISceneDelegateClassName</key>
 					<string>CarPlaySceneDelegate</string>
 				</dict>

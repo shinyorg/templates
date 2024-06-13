@@ -11,13 +11,7 @@ namespace ShinyApp;
 public class AppDelegate : MauiUIApplicationDelegate
 {
     protected override MauiApp CreateMauiApp() 
-    {
-//#if (useappcenter)
-        ObjCRuntime.Runtime.MarshalManagedException += (s, a) =>
-            a.ExceptionMode = ObjCRuntime.MarshalManagedExceptionMode.UnwindNativeCode;
-//#endif
-        return MauiProgram.CreateMauiApp();
-    }
+        => MauiProgram.CreateMauiApp();
 
 #if (usepush)
     [Export("application:didRegisterForRemoteNotificationsWithDeviceToken:")]
