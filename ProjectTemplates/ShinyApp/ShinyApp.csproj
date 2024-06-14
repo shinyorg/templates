@@ -73,9 +73,9 @@
 		<BundleResource Include="Platforms\iOS\PrivacyInfo.xcprivacy" LogicalName="PrivacyInfo.xcprivacy" />
 		
 		<!--#if (usemsal)-->
-		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="%24(AppIdentifierPrefix){APPLICATION_ID};%24(AppIdentifierPrefix)com.microsoft.adalcache" />
+		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="%24(AppIdentifierPrefix)$(ApplicationId);%24(AppIdentifierPrefix)com.microsoft.adalcache" />
 		<!--#else-->
-		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="%24(AppIdentifierPrefix){APPLICATION_ID}" />
+		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="%24(AppIdentifierPrefix)$(ApplicationId)" />
 		<!--#endif-->
 		<!--#if (usedeeplinks)-->
 		<CustomEntitlements Include="com.apple.developer.associated-domains" Type="StringArray" Value="applinks:{DEEPLINK_HOST}?mode=developer" Condition="'$(Condition)' == 'Debug'" />
