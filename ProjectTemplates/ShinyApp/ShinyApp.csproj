@@ -58,10 +58,6 @@
 		<UseHardenedRuntime Condition="'$(Configuration)' == 'Release'">true</UseHardenedRuntime>
 	</PropertyGroup>
 
-	<ItemGroup Condition="'$(Configuration)' == 'Release'">
-		<TrimmerRootDescriptor Include="Linker.xml" />
-    </ItemGroup>	
-
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
 		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" />
 		<CustomEntitlements Include="com.apple.security.get-task-allow" Type="boolean" Value="true" />
@@ -109,6 +105,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<TrimmerRootDescriptor Include="Linker.xml" Condition="'$(Configuration)' == 'Release'" />
+
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
 
@@ -155,10 +153,10 @@
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (shinymediator)-->
-		<PackageReference Include="Shiny.Mediator" Version="1.0.0-alpha-0053" />
-		<PackageReference Include="Shiny.Mediator.Maui" Version="1.0.0-alpha-0053" />
+		<PackageReference Include="Shiny.Mediator" Version="1.0.0" />
+		<PackageReference Include="Shiny.Mediator.Maui" Version="1.0.0" />
 		<!--#if (useblazor)-->
-		<PackageReference Include="Shiny.Mediator.Blazor" Version="1.0.0-alpha-0053" />
+		<PackageReference Include="Shiny.Mediator.Blazor" Version="1.0.0" />
 		<!--#endif-->
 		<!--#endif-->
 		<!--#if (localization)-->

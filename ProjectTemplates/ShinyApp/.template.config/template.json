@@ -752,7 +752,11 @@
         {
             "condition": "(androidauto == false)",
             "exclude": "Platforms/Android/Resources/xml/automotive_app_desc.xml"
-        },        
+        },
+        {
+            "condition": "(androidauto == false)",
+            "exclude": "RunAndroidAuto.cmd"
+        },
         {
             "condition": "(carplay == false)",
             "exclude": "Platforms/iOS/CarPlayImplementation/**"
@@ -760,11 +764,11 @@
         {
             "condition": "(authservice == false || usemsal == false)",
             "exclude": "Services/Impl/MsalAuthenticationService.cs"
-        },    
+        },
         {
             "condition": "(authservice == false || usewebauthenticator == false)",
             "exclude": "Services/Impl/WebAuthenticatorAuthenticationService.cs"
-        },             
+        },
         {
             "condition": "(authservice == false || refit == false)",
             "exclude": "Services/Impl/IApiClient.cs"
@@ -772,7 +776,7 @@
         {
             "condition": "(usecsharpmarkup == false)",
             "exclude": "CSharpMarkupPage.cs"
-        },        
+        },
         {
             "condition": "(storereview == false)",
             "exclude": "Platforms/Android/proguard.cfg"
