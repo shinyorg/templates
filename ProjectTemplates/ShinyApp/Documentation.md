@@ -148,6 +148,23 @@ MediaElement is a view for playing video and audio in your .NET MAUI app.
 * [GitHub](https://github.com/CommunityToolkit/Maui)
 
 <!--#endif>
+<!--#if (cameraview)-->
+## MAUI Community Toolkit - Camera View
+
+The CameraView provides the ability to connect to a camera, display a preview from the camera and take photos. The CameraView also offers features to support taking photos, controlling the flash, saving captured media to a file, and offering different hooks for events.
+
+* [Documentation](https://learn.microsoft.com/en-ca/dotnet/communitytoolkit/maui/views/camera-view)
+* [GitHub](https://github.com/CommunityToolkit/Maui)
+
+<!--#endif-->
+<!--#if (camera)-->
+## Camera.MAUI
+
+_A Camera View control and a Barcode Endode/Decode control (based on ZXing.Net) for .NET MAUI applications by Hector (hjam40)_
+
+* [GitHub](https://github.com/hjam40/Camera.MAUI)
+
+<!--#endif-->
 <!--#if (usecsharpmarkup)-->
 ## .NET MAUI Community Toolkit - C# Markup
 

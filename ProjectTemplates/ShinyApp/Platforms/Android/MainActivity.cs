@@ -12,8 +12,11 @@ namespace ShinyApp;
 
 
 [Activity(
-#if (usepush || notifications)
+#if (usepush || notifications || mediaelement)
     LaunchMode = LaunchMode.SingleTop,
+#endif
+#if (mediaelement)
+    ResizeableActivity = true,
 #endif
     Theme = "@style/Maui.SplashTheme", 
     MainLauncher = true, 

@@ -373,6 +373,20 @@
             "description": "MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
             "displayName": "Add MAUI Community Toolkit Media Element"
         },
+        "cameraview":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
+            "displayName": "Add MAUI Community Toolkit Camera"
+        },
+        "camera":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "Camera.MAUI - Documentation https://github.com/hjam40/Camera.MAUI",
+            "displayName": "Add Camera.MAUI"
+        },
         "virtuallist":{
             "type": "parameter",
             "datatype": "bool",

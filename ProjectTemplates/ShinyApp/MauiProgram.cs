@@ -1,7 +1,4 @@
-﻿#if shinymediator
-using Shiny.Mediator;
-#endif
-#if debugrainbows
+﻿#if debugrainbows
 using Plugin.Maui.DebugRainbows;
 #endif
 #if screenrecord
@@ -43,6 +40,9 @@ using FFImageLoading.Maui;
 #if uraniumui
 using UraniumUI;
 #endif
+#if camera
+using Camera.MAUI;
+#endif
 #if useblazor
 #if mudblazor
 using MudBlazor.Services;
@@ -57,149 +57,149 @@ namespace ShinyApp;
 
 public static class MauiProgram
 {
-    public static MauiApp CreateMauiApp() => MauiApp
-        .CreateBuilder()
-        .UseMauiApp<App>()
+    public static MauiApp CreateMauiApp()
+    {
+        var builder = MauiApp
+            .CreateBuilder()
+            .UseMauiApp<App>()
 #if virtuallist
-        .UseVirtualListView()
+            .UseVirtualListView()
 #endif
 #if barcodes
-        .UseBarcodeScanning()
+            .UseBarcodeScanning()
 #endif
 #if uraniumui
-        .UseUraniumUI()
-        .UseUraniumUIMaterial()
-        .UseUraniumUIBlurs()
+            .UseUraniumUI()
+            .UseUraniumUIMaterial()
+            .UseUraniumUIBlurs()
 #endif
 #if shinyframework || communitytoolkit
-        .UseMauiCommunityToolkit()
+            .UseMauiCommunityToolkit()
 #endif
 #if mediaelement
-        .UseMauiCommunityToolkitMediaElement()
+            .UseMauiCommunityToolkitMediaElement()
 #endif
 #if usecsharpmarkup
-        .UseMauiCommunityToolkitMarkup()
+            .UseMauiCommunityToolkitMarkup()
+#endif
+#if cameraview
+            .UseMauiCommunityToolkitCamera()
+#endif
+#if camera
+            .UseMauiCameraView()
 #endif
 #if fingerprint
-        .UseBiometricAuthentication()
+            .UseBiometricAuthentication()
 #endif
 #if (settingsview)
-        .UseSettingsView()
+            .UseSettingsView()
 #endif
 #if sharpnadotabs
-        .UseSharpnadoTabs(false)
+            .UseSharpnadoTabs(false)
 #endif
 #if sharpnadocv
-        .UseSharpnadoCollectionView(false)
+            .UseSharpnadoCollectionView(false)
 #endif
 #if ffimageloading
-        .UseFFImageLoading()
+            .UseFFImageLoading()
 #endif
 #if skia || skiaextended || livecharts
-        .UseSkiaSharp()
+            .UseSkiaSharp()
 #endif
 #if shinyframework            
-        .UseShinyFramework(
-            new DryIocContainerExtension(),
-            prism => prism.CreateWindow("NavigationPage/MainPage"),
-            new (
+            .UseShinyFramework(
+                new DryIocContainerExtension(),
+                prism => prism.CreateWindow("NavigationPage/MainPage"),
+                new (
 //-:cnd:noEmit
 #if DEBUG
-                ErrorAlertType.FullError
+                    ErrorAlertType.FullError
 #else
-                ErrorAlertType.NoLocalize
+                    ErrorAlertType.NoLocalize
 #endif
 //+:cnd:noEmit
+                )
             )
-        )
 #else
-        .UseShiny()
+            .UseShiny()
+#endif
+#if screenrecord
+            .UseScreenRecording()
 #endif
 #if usemauimaps
-        .UseMauiMaps()
+            .UseMauiMaps()
 #endif
 #if cards
-        .UseCardsView()
+            .UseCardsView()
+#endif
+#if ocr
+            .UseOcr()
 #endif
 #if sentry
-        .UseSentry(options =>
-        {
-            // The DSN is the only required setting.
-            options.Dsn = "https://examplePublicKey@o0.ingest.sentry.io/0";
+            .UseSentry(options =>
+            {
+                // The DSN is the only required setting.
+                options.Dsn = "https://examplePublicKey@o0.ingest.sentry.io/0";
 
-            // Use debug mode if you want to see what the SDK is doing.
-            // Debug messages are written to stdout with Console.Writeline,
-            // and are viewable in your IDE's debug console or with 'adb logcat', etc.
-            // This option is not recommended when deploying your application.
-            options.Debug = true;
+                // Use debug mode if you want to see what the SDK is doing.
+                // Debug messages are written to stdout with Console.Writeline,
+                // and are viewable in your IDE's debug console or with 'adb logcat', etc.
+                // This option is not recommended when deploying your application.
+                options.Debug = true;
 
-            // Set TracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
-            // We recommend adjusting this value in production.
-            options.TracesSampleRate = 1.0;
+                // Set TracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
+                // We recommend adjusting this value in production.
+                options.TracesSampleRate = 1.0;
 
-            // Other Sentry options can be set here.
-        })
+                // Other Sentry options can be set here.
+            })
 #endif
 #if usegooglemaps
 //-:cnd:noEmit
 #if ANDROID
-        .UseGoogleMaps()
+            .UseGoogleMaps()
 #elif IOS
-        .UseGoogleMaps("YOUR_IOS_GOOGLE_MAPS_KEY")
+            .UseGoogleMaps("YOUR_IOS_GOOGLE_MAPS_KEY")
 #endif
 //+:cnd:noEmit
 #endif
 #if appactions
-        .ConfigureEssentials(x => x
-        //     .AddAppAction("app_info", "App Info", "Subtitle", "app_info_action_icon")
-        //     .AddAppAction("battery_info", "Battery Info")
-            .OnAppAction(y => Shiny.Hosting.Host.GetService<ShinyApp.Delegates.AppActionDelegate>()!.Handle(y))
-        )
+            .ConfigureEssentials(x => x
+                //     .AddAppAction("app_info", "App Info", "Subtitle", "app_info_action_icon")
+                //     .AddAppAction("battery_info", "Battery Info")
+                .OnAppAction(y => Shiny.Hosting.Host.GetService<ShinyApp.Delegates.AppActionDelegate>()!.Handle(y))
+            )
 #endif
 #if debugrainbows
 //-:cnd:noEmit
 #if DEBUG
-        .UseDebugRainbows(
-        //     new DebugRainbowOptions{
-        //         ShowRainbows = true,
-        //         ShowGrid = true,
-        //         HorizontalItemSize = 20,
-        //         VerticalItemSize = 20,
-        //         MajorGridLineInterval = 4,
-        //         MajorGridLines = new GridLineOptions { Color = Color.FromRgb(255, 0, 0), Opacity = 1, Width = 4 },
-        //         MinorGridLines = new GridLineOptions { Color = Color.FromRgb(255, 0, 0), Opacity = 1, Width = 1 },
-        //         GridOrigin = DebugGridOrigin.TopLeft,
-        //     }
-        )
+            .UseDebugRainbows(
+                //     new DebugRainbowOptions{
+                //         ShowRainbows = true,
+                //         ShowGrid = true,
+                //         HorizontalItemSize = 20,
+                //         VerticalItemSize = 20,
+                //         MajorGridLineInterval = 4,
+                //         MajorGridLines = new GridLineOptions { Color = Color.FromRgb(255, 0, 0), Opacity = 1, Width = 4 },
+                //         MinorGridLines = new GridLineOptions { Color = Color.FromRgb(255, 0, 0), Opacity = 1, Width = 1 },
+                //         GridOrigin = DebugGridOrigin.TopLeft,
+                //     }
+            )
 #endif
 //+:cnd:noEmit  
 #endif
-#if ocr
-        .UseOcr()
-#endif
-        .ConfigureFonts(fonts =>
-        {
-            fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-            fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+            .ConfigureFonts(fonts =>
+            {
+                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 #if uraniumui
-            fonts.AddMaterialIconFonts();
+                fonts.AddMaterialIconFonts();
 #endif
-        })
-        .RegisterInfrastructure()
-        .RegisterAppServices()
-        .RegisterViews()
-        .Build();
+            });
 
-
-    static MauiAppBuilder RegisterAppServices(this MauiAppBuilder builder) 
-    {
-        // register your own services here!
-        return builder;
-    }
-
-
-    static MauiAppBuilder RegisterInfrastructure(this MauiAppBuilder builder)
-    {
+#if ocr
+        builder.Services.AddSingleton(OcrPlugin.Default);
+#endif
 #if flipper
 //-:cnd:noEmit
 #if IOS && DEBUG
@@ -219,9 +219,24 @@ public static class MauiProgram
         builder.Logging.AddDebug();
 #endif
 //+:cnd:noEmit
-        var s = builder.Services;
+#if useblazor
+        builder.Services.AddMauiBlazorWebView();
+
+        #if mudblazor
+        builder.Services.AddMudServices();
+        #endif
+        #if radzen
+        builder.Services.AddRadzenComponents();
+        #endif
+//-:cnd:noEmit
+#if DEBUG
+        builder.Services.AddBlazorWebViewDeveloperTools();
+#endif
+//+:cnd:noEmit
+#endif
+
 #if shinymediator
-        s.AddShinyMediator(cfg => 
+        builder.Services.AddShinyMediator(cfg => 
         {
             cfg.UseMaui();
 #if useblazor
@@ -230,20 +245,20 @@ public static class MauiProgram
         });
 #endif
 #if appaction
-        s.AddSingleton<ShinyApp.Delegates.AppActionDelegate>();
+        builder.Services.AddSingleton<ShinyApp.Delegates.AppActionDelegate>();
 #endif
 #if (deeplink)
-        s.AddShinyService<ShinyApp.Delegates.DeepLinkDelegate>();
+        builder.Services.AddShinyService<ShinyApp.Delegates.DeepLinkDelegate>();
 #endif
 #if (authservice)
 #if (usemsal)
-        s.AddShinyService<ShinyApp.Services.Impl.MsalAuthenticationService>();
+        builder.Services.AddShinyService<ShinyApp.Services.Impl.MsalAuthenticationService>();
 #elif (usewebauthenticator)
-        s.AddShinyService<ShinyApp.Services.Impl.WebAuthenticatorAuthService>();
+        builder.Services.AddShinyService<ShinyApp.Services.Impl.WebAuthenticatorAuthService>();
 #endif
 #endif
 #if (usehttp)
-        s.AddSingleton(sp =>
+        builder.Services.AddSingleton(sp =>
         {
             var auth = sp.GetRequiredService<ShinyApp.Services.IAuthenticationService>();
             return RestService.For<ShinyApp.Services.Impl.IApiClient>(
@@ -258,135 +273,111 @@ public static class MauiProgram
                 }
             );
         });
-            
 #endif
 #if essentialsmedia
-        s.AddSingleton(MediaPicker.Default);
+        builder.Services.AddSingleton(MediaPicker.Default);
 #endif
 #if essentialsfilepicker
-        s.AddSingleton(FilePicker.Default);
+        builder.Services.AddSingleton(FilePicker.Default);
 #endif
 #if startup
-        s.AddShinyService<AppStartup>();
+        builder.Services.AddShinyService<AppStartup>();
 #endif
 #if settings
-        s.AddShinyService<AppSettings>();
+        builder.Services.AddShinyService<AppSettings>();
 #endif
 #if sqlite
-        s.AddSingleton<ShinyApp.Services.MySqliteConnection>();
+        builder.Services.AddSingleton<ShinyApp.Services.MySqliteConnection>();
 #endif
 #if jobs
-        s.AddJob(typeof(ShinyApp.Delegates.MyJob));
+        builder.Services.AddJob(typeof(ShinyApp.Delegates.MyJob));
 #endif
 #if bluetoothle
-        s.AddBluetoothLE();
+        builder.Services.AddBluetoothLE();
 #endif
 #if blehosting
-        s.AddBluetoothLeHosting();
-        s.AddBleHostedCharacteristic<ShinyApp.Delegates.MyBleGattCharacteristic>();
+        builder.Services.AddBluetoothLeHosting();
+        builder.Services.AddBleHostedCharacteristic<ShinyApp.Delegates.MyBleGattCharacteristic>();
 #endif
 #if beacons
-        s.AddBeaconRanging();
-        s.AddBeaconMonitoring<ShinyApp.Delegates.MyBeaconMonitorDelegate>();
+        builder.Services.AddBeaconRanging();
+        builder.Services.AddBeaconMonitoring<ShinyApp.Delegates.MyBeaconMonitorDelegate>();
 #endif
 #if gps
-        s.AddGps<ShinyApp.Delegates.MyGpsDelegate>();
+        builder.Services.AddGps<ShinyApp.Delegates.MyGpsDelegate>();
 #endif
 #if geofencing
-        s.AddGeofencing<ShinyApp.Delegates.MyGeofenceDelegate>();
+        builder.Services.AddGeofencing<ShinyApp.Delegates.MyGeofenceDelegate>();
 #endif
 #if httptransfers
-        s.AddHttpTransfers<ShinyApp.Delegates.MyHttpTransferDelegate>();
+        builder.Services.AddHttpTransfers<ShinyApp.Delegates.MyHttpTransferDelegate>();
 //-:cnd:noEmit
 #if ANDROID
         // if you want http transfers to also show up as progress notifications, include this
-        s.AddShinyService<Shiny.Net.Http.PerTransferNotificationStrategy>();
+        builder.Services.AddShinyService<Shiny.Net.Http.PerTransferNotificationStrategy>();
 #endif
 //+:cnd:noEmit
 #endif
 #if notifications
-        s.AddNotifications<ShinyApp.Delegates.MyLocalNotificationDelegate>();
+        builder.Services.AddNotifications<ShinyApp.Delegates.MyLocalNotificationDelegate>();
 #endif
 #if usepushnative
-        s.AddPush<ShinyApp.Delegates.MyPushDelegate>();
+        builder.Services.AddPush<ShinyApp.Delegates.MyPushDelegate>();
 #endif
 #if usepushanh
         // TODO: Please make sure to add your proper connection string and hub name to appsettings.json or this will error on startup
-        s.AddPushAzureNotificationHubs<ShinyApp.Delegates.MyPushDelegate>(                                   
+        builder.Services.AddPushAzureNotificationHubs<ShinyApp.Delegates.MyPushDelegate>(                                   
             builder.Configuration["AzureNotificationHubs:ListenerConnectionString"], 
             builder.Configuration["AzureNotificationHubs:HubName"]
         );
 #endif
 #if usepushfirebase
-        s.AddPushFirebaseMessaging<ShinyApp.Delegates.MyPushDelegate>();
+        builder.Services.AddPushFirebaseMessaging<ShinyApp.Delegates.MyPushDelegate>();
 #endif
 #if speechrecognition
-        s.AddSingleton(CommunityToolkit.Maui.Media.SpeechToText.Default);
-#endif
-#if (audio)
-        s.AddSingleton(Plugin.Maui.Audio.AudioManager.Current);
-#endif
-#if (calendar)
-        s.AddSingleton(Plugin.Maui.CalendarStore.CalendarStore.Default);
+        builder.Services.AddSingleton(CommunityToolkit.Maui.Media.SpeechToText.Default);
 #endif
 #if (screenrecord)
-        builder.UseScreenRecording();
-        s.AddSingleton(Plugin.Maui.ScreenRecording.ScreenRecording.Default);
+        builder.Services.AddSingleton(ScreenRecording.Default);
+#endif
+#if (audio)
+        builder.Services.AddSingleton(Plugin.Maui.Audio.AudioManager.Current);
+#endif
+#if (calendar)
+        builder.Services.AddSingleton(Plugin.Maui.CalendarStore.CalendarStore.Default);
 #endif
 #if (screenbrightness)
-        s.AddSingleton(Plugin.Maui.ScreenBrightness.ScreenBrightness.Default);
+        builder.Services.AddSingleton(Plugin.Maui.ScreenBrightness.ScreenBrightness.Default);
 #endif
 #if inappbilling
-        s.AddSingleton(Plugin.InAppBilling.CrossInAppBilling.Current);
+        builder.Services.AddSingleton(Plugin.InAppBilling.CrossInAppBilling.Current);
 #endif
 #if storereview
-        s.AddSingleton(Plugin.StoreReview.CrossStoreReview.Current);
+        builder.Services.AddSingleton(Plugin.StoreReview.CrossStoreReview.Current);
 #endif
 #if userdialogs
-        s.AddSingleton(sp => 
+        builder.Services.AddSingleton(sp => 
         {
 //-:cnd:noEmit
 #if ANDROID
             Acr.UserDialogs.UserDialogs.Init(() => sp.GetRequiredService<AndroidPlatform>().CurrentActivity);
 #endif
-//+:cnd:noEmit            
+//+:cnd:noEmit
             return Acr.UserDialogs.UserDialogs.Instance;
         });
 #endif
 #if shinyframework
-        s.AddDataAnnotationValidation();
-#endif
-        return builder;
-    }
-
-
-    static MauiAppBuilder RegisterViews(this MauiAppBuilder builder)
-    {
-        var s = builder.Services;
-
-#if useblazor
-        s.AddMauiBlazorWebView();
-
-        #if mudblazor
-        builder.Services.AddMudServices();
-        #endif
-        #if radzen
-        builder.Services.AddRadzenComponents();
-        #endif
-//-:cnd:noEmit
-#if DEBUG
-        s.AddBlazorWebViewDeveloperTools();
-#endif
-//+:cnd:noEmit
-
+        builder.Services.AddDataAnnotationValidation();
 #endif
 
 #if shinyframework
-        s.RegisterForNavigation<MainPage, MainViewModel>();
+        builder.Services.RegisterForNavigation<MainPage, MainViewModel>();
 #else
-        s.AddTransient<MainPage>();
-        s.AddTransient<MainViewModel>();
+        builder.Services.AddTransient<MainPage>();
+        builder.Services.AddTransient<MainViewModel>();
 #endif
-        return builder;
+        var app = builder.Build();
+
+        return app;
     }
 }

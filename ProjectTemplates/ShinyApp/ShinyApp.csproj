@@ -139,7 +139,13 @@
 		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.1.1" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.0.0" />
+		<!--#endif-->
+		<!--#if (cameraview)-->
+		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.0.0" />
+		<!--#endif-->
+		<!--#if (camera)-->
+		<PackageReference Include="Camera.Maui" Version="1.5.1" />
 		<!--#endif-->
 		<!--#if (usegooglemaps)-->
 		<PackageReference Include="Onion.Maui.GoogleMaps" Version="5.0.3" />
@@ -153,10 +159,10 @@
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (shinymediator)-->
-		<PackageReference Include="Shiny.Mediator" Version="1.0.0" />
-		<PackageReference Include="Shiny.Mediator.Maui" Version="1.0.0" />
+		<PackageReference Include="Shiny.Mediator" Version="1.2.0" />
+		<PackageReference Include="Shiny.Mediator.Maui" Version="1.2.0" />
 		<!--#if (useblazor)-->
-		<PackageReference Include="Shiny.Mediator.Blazor" Version="1.0.0" />
+		<PackageReference Include="Shiny.Mediator.Blazor" Version="1.2.0" />
 		<!--#endif-->
 		<!--#endif-->
 		<!--#if (localization)-->
@@ -205,7 +211,7 @@
 		<PackageReference Include="Shiny.Push.FirebaseMessaging" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (health)-->
-		<PackageReference Include="Shiny.Health" Version="1.0.0-beta-0018" />
+		<!-- <PackageReference Include="Shiny.Health" Version="1.0.0-beta-0018" /> -->
 		<!--#endif-->
 		<!--#if (virtuallist)-->
 		<PackageReference Include="Redth.Maui.VirtualListView" Version="0.4.0" />

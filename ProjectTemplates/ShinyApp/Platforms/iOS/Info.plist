@@ -57,7 +57,7 @@
 	<key>NSSpeechRecognitionUsageDescription</key>  
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
-	<!--#if (audio || essentialsmedia || speechrecognition)-->
+	<!--#if (audio || essentialsmedia || speechrecognition || camera || cameraview)-->
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
@@ -69,7 +69,7 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
-	<!--#if (essentialsmedia || barcodes)-->
+	<!--#if (essentialsmedia || barcodes || camera || cameraview)-->
 	<key>NSCameraUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
@@ -89,7 +89,7 @@
 	<key>NSHealthShareUsageDescription</key>
 	<string>We need to say something useful here</string>
 	<!--#endif-->
-	<!--#if (jobs || usepush || gps || geofencing || beacons || bluetoothle || blehosting)-->
+	<!--#if (jobs || usepush || gps || geofencing || beacons || bluetoothle || blehosting || mediaelement)-->
 	<key>UIBackgroundModes</key>
 	<array>
 		<!--#if (jobs || usepush)-->
@@ -107,6 +107,9 @@
 		<!--#endif-->
 		<!--#if (usepush)-->
 		<string>remote-notification</string>
+		<!--#endif-->
+		<!--#if (mediaelement)-->
+		<string>audio</string>
 		<!--#endif-->
 	</array>
 	<!--#endif-->
@@ -156,7 +159,7 @@
     </array>
 	<!--#endif-->
 	<!--#if (carplay)-->
-<key>UIApplicationSceneManifest</key>
+	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UISceneConfigurations</key>
 		<dict>

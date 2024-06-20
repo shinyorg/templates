@@ -29,18 +29,37 @@
 	<!--#if (screenrecord)-->
 		<service android:name="Plugin.Maui.ScreenRecording.ScreenRecordingImplementation.ScreenRecordingService" android:exported="false" android:foregroundServiceType="mediaProjection" />
 	<!--#endif-->
+	<!--#if (mediaelement)-->
+		<service android:name="CommunityToolkit.Maui.Media.Services" android:exported="false" android:enabled="true" android:foregroundServiceType="mediaPlayback">
+			<intent-filter>
+				<action android:name="android.intent.action.MEDIA_BUTTON" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="androidx.media3.session.MediaSessionService"/>
+			</intent-filter>
+		</service>
+	<!--#endif-->
 	</application>
+	<!--#if (notifications || gps || geofencing || usemaps)-->
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+    <uses-feature android:name="android.hardware.location.network" android:required="false" />	
+	<!--#endif-->
+	<!--#if (bluetoothle || blehosting || beacons)-->
+	<uses-feature android:name="android.hardware.bluetooth_le" android:required="false" /> 	
+	<!--#endif-->
+	<!--#if (essentialsmedia || barcodes || camera || cameraview)-->
+	<uses-feature android:name="android.hardware.camera" android:required="false" />
+	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+	<!--#endif-->
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 	<uses-permission android:name="android.permission.BATTERY_STATS" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<!--#if (audio || usemaps || essentialsmedia || essentialsfilepicker || screenrecord)-->
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+	<!--#if (audio || usemaps || essentialsmedia || essentialsfilepicker || screenrecord || mediaelement)-->
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<!--#endif-->
 	<!--#if (bluetoothle || blehosting || beacons)-->
-	<uses-feature android:name="android.hardware.bluetooth_le" android:required="false" /> 	
-
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
     <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />	
 	<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
@@ -60,28 +79,27 @@
 	<!--#if (notifications || gps || geofencing)-->
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 	<!--#endif-->
-	<!--#if (notifications || gps || geofencing || usemaps)-->
-    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
-    <uses-feature android:name="android.hardware.location.network" android:required="false" />	
-	<!--#endif-->	
 	<!--#if (notifications || bluetoothle || gps || geofencing || beacons || usemaps)-->
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	<!--#endif-->
-	<!--#if (audio || speechrecognition || screenrecord)-->
+	<!--#if (audio || speechrecognition || screenrecord || camera || cameraview)-->
 	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+	<!--#endif-->
+	<!--#if (camera || cameraview)-->
+	<uses-permission android:name="android.permission.RECORD_VIDEO" />
 	<!--#endif-->
 	<!--#if (audio)-->
 	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />	
 	<!--#endif-->
-	<!--#if (notifications || usepush || gps || beacons || httptransfers)-->
+	<!--#if (notifications || usepush || gps || beacons || httptransfers || mediaelement)-->
 	<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 	<!--#endif-->
 	<!--#if (notifications)-->
 	<uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" android:maxSdkVersion="32" />
 	<uses-permission android:name="android.permission.USE_EXACT_ALARM" />
 	<!--#endif-->
-	<!--#if (gps || beacons || httptransfers || screenrecord)-->
+	<!--#if (gps || beacons || httptransfers || screenrecord || mediaelement)-->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 	<!--#endif-->
 	<!--#if (gps)-->
@@ -93,10 +111,7 @@
 	<!--#if (screenrecord)-->
 	<uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
 	<!--#endif-->
-	<!--#if (essentialsmedia || barcodes)-->
-	<uses-feature android:name="android.hardware.camera" android:required="false" />
-	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
-
+	<!--#if (essentialsmedia || barcodes || camera || cameraview)-->
 	<uses-permission android:name="android.permission.CAMERA" />
 	<uses-permission android:name="android.permission.FLASHLIGHT" />
 	<!--#endif-->
@@ -115,6 +130,10 @@
 	<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 	<uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
 	<uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+	<!--#endif-->
+	<!--#if (mediaelement)-->
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+	<uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />	
 	<!--#endif-->
 	<!--#if (essentialsmedia)-->
     <queries>

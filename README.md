@@ -34,7 +34,8 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* C# Markup (courtesy of .NET MAUI Community Toolkit) [Documentation](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup)
 * [.NET MAUI Community Toolkit](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/) Setup Including:
 	* [Media Element](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/)
-	* [C# Markup](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup))
+	* [C# Markup](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup)
+	* [Camera View](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/camera-view)
 * Entitlements for iOS/MacCatalyst if necessary (ie. Push, MSAL)
 * Info.plist & Entitlement permissions for iOS/MacCatalyst
 * Helps generate Apple's "fun" PrivacyInfo.xcprivacy
@@ -50,7 +51,9 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 * Good practice setup for MSAL or Web Authenticator authentication service
 	* Include a custom Refit HTTP client with authentication wired for best practices
 * Setup everything needed for the .NET MAUI Essentials Media Capture service
-* Setup .NET MAUI Maps
+* Mapping
+	* Setup .NET MAUI Maps
+	* Setup Google Maps
 * Setup all of the necessary boilerplate for the following authentication providers:
 	* MAUI Web Authentication
 	* MSAL (Microsoft Authentication Library) Basic
@@ -66,6 +69,7 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [Sharpnado Tabs](https://github.com/roubachof/Sharpnado.Tabs) by Jean-Marie Alfonsi
 	* [Sharpnado CollectionView](https://github.com/roubachof/Sharpnado.CollectionView) by Jean-Marie Alfonsi
 	* [MAUI Google Maps](https://github.com/themronion/Maui.GoogleMaps/tree/maui) by Pavlo Lukianets
+	* [Camera.MAUI](https://github.com/hjam40/Camera.MAUI) by Hector (hjam40)
 	* [Refit](https://github.com/reactiveui/refit) by ReactiveUI Maintainers
 	* [SQLite.NET-pcl](https://github.com/praeclarum/sqlite-net) by Frank Krueger
 	* [BarcodeScanning.Native.Maui](https://github.com/afriscic/BarcodeScanning.Native.Maui) by afriscic

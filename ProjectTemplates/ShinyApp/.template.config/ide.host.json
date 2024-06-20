@@ -252,6 +252,20 @@
         "isVisible": true
     },
     {
+        "id": "cameraview",
+        "name": {
+            "text": "Add MAUI Community Toolkit Camera"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "camera",
+        "name": {
+            "text": "Add Camera.MAUI"
+        },
+        "isVisible": true
+    },
+    {
         "id": "virtuallist",
         "name":{
             "text": "Add MAUI Virtual List View"
