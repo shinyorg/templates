@@ -30,7 +30,6 @@ public class CarPlaySceneDelegate : CPTemplateApplicationSceneDelegate
 
     public override void DidConnect(CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController)
     {
-        base.DidConnect(templateApplicationScene, interfaceController);
         this.controller = interfaceController;
         this.controller.SetRootTemplate(this.tabBarTemplate, true);
     }
@@ -38,7 +37,6 @@ public class CarPlaySceneDelegate : CPTemplateApplicationSceneDelegate
 
     public override void DidDisconnect(CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController)
     {
-        base.DidDisconnect(templateApplicationScene, interfaceController);
         this.controller?.Dispose();
     }
 }
