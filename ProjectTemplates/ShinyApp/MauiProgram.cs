@@ -236,14 +236,14 @@ public static class MauiProgram
 #endif
 
 #if shinymediator
-        builder.Services.AddShinyMediator(cfg => 
-        {
-            cfg.AddMemoryCaching();
-            cfg.UseMaui();
+        builder.Services.AddShinyMediator(x => x
+        
+            .AddMemoryCaching(x => {})
+            .UseMaui();
 #if useblazor
-            cfg.UseBlazor();
+            .UseBlazor()
 #endif
-        });
+        );
 #endif
 #if appaction
         builder.Services.AddSingleton<ShinyApp.Delegates.AppActionDelegate>();
