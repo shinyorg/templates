@@ -31,6 +31,8 @@ _A cross platform framework designed to make working with device services and ba
 _A simple mediator pattern for .NET applications - Written by Allan Ritchie_
 
 * [GitHub](https://github.com/shinyorg/mediator)
+* [Documentation](https://shinylib.net/client/mediator/)
+* [Quick Start](https://shinylib.net/client/mediator/quick-start/)
 
 <!--#endif-->
 <!--#if (sentry)-->

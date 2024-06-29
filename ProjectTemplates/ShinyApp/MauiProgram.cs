@@ -238,6 +238,7 @@ public static class MauiProgram
 #if shinymediator
         builder.Services.AddShinyMediator(cfg => 
         {
+            cfg.AddMemoryCaching();
             cfg.UseMaui();
 #if useblazor
             cfg.UseBlazor();
