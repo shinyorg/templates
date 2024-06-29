@@ -238,7 +238,7 @@ public static class MauiProgram
 #if shinymediator
         builder.Services.AddShinyMediator(x => x
         
-            .AddMemoryCaching(x => {})
+            .AddMemoryCaching()
             .UseMaui();
 #if useblazor
             .UseBlazor()
