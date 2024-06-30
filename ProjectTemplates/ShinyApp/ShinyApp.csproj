@@ -161,15 +161,15 @@
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (shinymediator)-->
-		<PackageReference Include="Shiny.Mediator" Version="1.3.1" />
-		<PackageReference Include="Shiny.Mediator.Maui" Version="1.3.1" />
-		<PackageReference Include="Shiny.Mediator.Caching" Version="1.3.1" />
-		<!-- <PackageReference Include="Shiny.Mediator.Resilience" Version="1.3.1" /> -->
+		<PackageReference Include="Shiny.Mediator" Version="1.4.0" />
+		<PackageReference Include="Shiny.Mediator.Maui" Version="1.4.0" />
+		<PackageReference Include="Shiny.Mediator.Caching" Version="1.4.0" />
+		<!-- <PackageReference Include="Shiny.Mediator.Resilience" Version="1.4.0" /> -->
 		<!--#if (shinyframework || prism)-->
-		<PackageReference Include="Shiny.Mediator.Prism" Version="1.3.1" />
+		<PackageReference Include="Shiny.Mediator.Prism" Version="1.4.0" />
 		<!--#endif-->
 		<!--#if (useblazor)-->
-		<PackageReference Include="Shiny.Mediator.Blazor" Version="1.3.1" />
+		<PackageReference Include="Shiny.Mediator.Blazor" Version="1.4.0" />
 		<!--#endif-->
 		<!--#endif-->
 		<!--#if (localization)-->
