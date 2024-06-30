@@ -150,8 +150,10 @@
 		<!--#if (usegooglemaps)-->
 		<PackageReference Include="Onion.Maui.GoogleMaps" Version="5.0.3" />
 		<!--#endif-->
-		<!--#if (shinyframework)-->
+		<!--#if (shinyframework || prism)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.401-pre" />
+		<!--#endif-->
+		<!--#if (shinyframework)-->
 		<PackageReference Include="ReactiveUI.Fody" Version="19.5.41" />
 		<PackageReference Include="Shiny.Framework" Version="4.1.0" />
 		<!--#else-->
@@ -163,6 +165,9 @@
 		<PackageReference Include="Shiny.Mediator.Maui" Version="1.3.1" />
 		<PackageReference Include="Shiny.Mediator.Caching" Version="1.3.1" />
 		<!-- <PackageReference Include="Shiny.Mediator.Resilience" Version="1.3.1" /> -->
+		<!--#if (shinyframework || prism)-->
+		<PackageReference Include="Shiny.Mediator.Prism" Version="1.3.1" />
+		<!--#endif-->
 		<!--#if (useblazor)-->
 		<PackageReference Include="Shiny.Mediator.Blazor" Version="1.3.1" />
 		<!--#endif-->

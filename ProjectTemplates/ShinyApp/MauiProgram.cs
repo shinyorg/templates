@@ -106,7 +106,7 @@ public static class MauiProgram
 #if skia || skiaextended || livecharts
             .UseSkiaSharp()
 #endif
-#if shinyframework            
+#if shinyframework         
             .UseShinyFramework(
                 new DryIocContainerExtension(),
                 prism => prism.CreateWindow("NavigationPage/MainPage"),
@@ -119,6 +119,11 @@ public static class MauiProgram
 #endif
 //+:cnd:noEmit
                 )
+            )
+#elif prism
+            .UsePrism(
+                new DryIocContainerExtension(),
+                prism => prism.CreateWindow("NavigationPage/MainPage")                
             )
 #else
             .UseShiny()
@@ -239,6 +244,9 @@ public static class MauiProgram
         builder.Services.AddShinyMediator(x => x
         
             .AddMemoryCaching()
+#if shinyframework
+            .AddPrismSupport()
+#endif
             .UseMaui();
 #if useblazor
             .UseBlazor()
