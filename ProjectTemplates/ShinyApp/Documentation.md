@@ -52,7 +52,7 @@ _A simple mediator pattern for .NET applications - Written by Allan Ritchie_
 <!--#endif-->
 
 <!--#if (shinyframework)-->
-## Shiny Framework
+## Prism Library
 
 _Framework combines the best of MVVM using Prism & ReactiveUI while also combining Shiny. - Written by Allan Ritchie_
 
@@ -61,6 +61,14 @@ _Framework combines the best of MVVM using Prism & ReactiveUI while also combini
     * [ReactiveUI](https://reactiveui.net)
     * [Prism](https://prismlibrary.com)
     * [DryIoc](https://github.com/dadhi/DryIoc)
+<!--#endif-->
+<!--#if (shinyframework || prism)-->
+## Prism Library
+
+_Empower Your XAML Applications. Leverage the power of the Prism Library to build robust and maintainable WPF, Uno Platform, .NET MAUI and Xamarin.Forms applications with ease.  Written by Dan Siegel & Brian Lagunas_
+
+* [Documentation](https://prismlibrary.com)
+* [Container Extension Library - DryIoc](https://github.com/dadhi/DryIoc)
 
 <!--#endif-->
 <!--#if (health)-->

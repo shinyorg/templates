@@ -40,6 +40,13 @@
         "isVisible": true
     },
     {
+        "id": "prism",
+        "name": {
+            "text": "Add Prism"
+        },
+        "isVisible": true
+    },    
+    {
         "id": "shinymediator",
         "name": {
             "text": "Add Shiny Mediator"

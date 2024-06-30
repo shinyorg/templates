@@ -116,13 +116,20 @@
             "description": "Add Shiny Framework by Allan Ritchie - Documentation https://github.com/shinyorg/framework - Lots of helpful services like navigation, zero boilerplate MVVM properties, viewmodel validation, localization, viewmodel lifecycles, dialog services, and more",
             "displayName": "Add Shiny Framework (Shiny + ReactiveUI + Prism)"
         },
-        "shinymediator":{
+        "prism":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "true",
+            "description": "Add Prism - Documentation https://prismlibrary.com",
+            "displayName": "Add Prism"
+        },
+        "shinymediator":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
             "description": "Add Shiny Mediator - Documentation https://github.com/shinyorg/mediator",
             "displayName": "Add Shiny Mediator"
-        },
+        },           
         "localization":{
             "type": "parameter",
             "datatype": "bool",
@@ -376,14 +383,14 @@
         "cameraview":{
             "type": "parameter",
             "datatype": "bool",
-            "defaultValue": "true",
+            "defaultValue": "false",
             "description": "MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
             "displayName": "Add MAUI Community Toolkit Camera"
         },
         "camera":{
             "type": "parameter",
             "datatype": "bool",
-            "defaultValue": "true",
+            "defaultValue": "false",
             "description": "Camera.MAUI - Documentation https://github.com/hjam40/Camera.MAUI",
             "displayName": "Add Camera.MAUI"
         },
