@@ -28,7 +28,9 @@
 		
 		<MauiVersion>8.0.60</MauiVersion>
 		<ShinyVersion>3.3.3</ShinyVersion>
-
+		<!--#if (shinymediator)-->
+		<MediatorVersion>1.4.1</MediatorVersion>
+		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
 	</PropertyGroup>
@@ -133,7 +135,7 @@
 		<!--#endif-->
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#if (shinyframework || communitytoolkit || speechrecognition)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.1" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
 		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
@@ -161,15 +163,15 @@
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (shinymediator)-->
-		<PackageReference Include="Shiny.Mediator" Version="1.4.0" />
-		<PackageReference Include="Shiny.Mediator.Maui" Version="1.4.0" />
-		<PackageReference Include="Shiny.Mediator.Caching" Version="1.4.0" />
-		<!-- <PackageReference Include="Shiny.Mediator.Resilience" Version="1.4.0" /> -->
+		<PackageReference Include="Shiny.Mediator" Version="$(MediatorVersion)" />
+		<PackageReference Include="Shiny.Mediator.Maui" Version="$(MediatorVersion)" />
+		<PackageReference Include="Shiny.Mediator.Caching" Version="$(MediatorVersion)" />
+		<!-- <PackageReference Include="Shiny.Mediator.Resilience" Version="$(MediatorVersion)" /> -->
 		<!--#if (shinyframework || prism)-->
-		<PackageReference Include="Shiny.Mediator.Prism" Version="1.4.0" />
+		<PackageReference Include="Shiny.Mediator.Prism" Version="$(MediatorVersion)" />
 		<!--#endif-->
 		<!--#if (useblazor)-->
-		<PackageReference Include="Shiny.Mediator.Blazor" Version="1.4.0" />
+		<PackageReference Include="Shiny.Mediator.Blazor" Version="$(MediatorVersion)" />
 		<!--#endif-->
 		<!--#endif-->
 		<!--#if (localization)-->
