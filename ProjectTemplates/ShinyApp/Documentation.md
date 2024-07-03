@@ -35,6 +35,20 @@ _A simple mediator pattern for .NET applications - Written by Allan Ritchie_
 * [Quick Start](https://shinylib.net/client/mediator/quick-start/)
 
 <!--#endif-->
+<!--#if (ctmvvm)-->
+## Community Toolkit MVVM
+
+The CommunityToolkit.Mvvm package (aka MVVM Toolkit, formerly named Microsoft.Toolkit.Mvvm) is a modern, fast, and modular MVVM library. It is part of the .NET Community Toolkit and is built around the following principles:
+
+Platform and Runtime Independent - .NET Standard 2.0, .NET Standard 2.1 and .NET 6 🚀 (UI Framework Agnostic)
+Simple to pick-up and use - No strict requirements on Application structure or coding-paradigms (outside of 'MVVM'ness), i.e., flexible usage.
+À la carte - Freedom to choose which components to use.
+Reference Implementation - Lean and performant, providing implementations for interfaces that are included in the Base Class Library, but lack concrete types to use them directly.
+
+* [Documentation](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm/)
+* [GitHub](https://github.com/CommunityToolkit/dotnet)
+
+<!--#endif-->
 <!--#if (sentry)-->
 ## Sentry for MAUI
 * Easy MAUI integration by calling UseSentry on your MauiAppBuilder
@@ -113,6 +127,14 @@ _Uranium is a Free & Open-Source UI Kit for .NET MAUI. It provides a set of cont
 * [GitHub](https://github.com/enisn/UraniumUI)
 
 <!--#endif>
+<!--#if (skeleton)-->
+## Skeleton for Xamarin and MAUI apps
+
+The Skeleton control is a popular approach to loading content in mobile apps that provides one or more visual placeholders while content is being loaded. This technique is particularly useful for improving user experience, as it reduces perceived load times and provides a more engaging experience.  By Horus Software
+
+* [GitHub](https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton)
+
+<!--#endif-->
 <!--#if (sharpnadotabs)-->
 ## Sharpnado Tabs
 
@@ -127,6 +149,22 @@ _Feature rich tab control by Jean-Marie Alfonsi_
 _A performant and feature rich collection view by Jean-Marie Alfonsi_
 
 * [GitHub](https://github.com/roubachof/Sharpnado.CollectionView)
+
+<!--#endif-->
+<!--#if (bottomsheet)-->
+## BottomSheet for .NET MAUI
+
+Maui.BottomSheet is a .NET MAUI library used to display pages as Bottom Sheets by The 49 Ltd
+
+* [GitHub](https://github.com/the49ltd/The49.Maui.BottomSheet)
+
+<!--#endif-->
+<!--#if ()-->
+## Context Menu for .NET MAUI
+
+Maui.ContextMenu is a .NET MAUI library for Android and iOS used to open a native context menu on long press by The 49 Ltd
+
+* [GitHub](https://github.com/the49ltd/The49.Maui.ContextMenu)
 
 <!--#endif-->
 <!--#if (cards)-->

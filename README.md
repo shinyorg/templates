@@ -36,6 +36,7 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [Media Element](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/)
 	* [C# Markup](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup)
 	* [Camera View](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/camera-view)
+	* [MVVM](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm)
 * Entitlements for iOS/MacCatalyst if necessary (ie. Push, MSAL)
 * Info.plist & Entitlement permissions for iOS/MacCatalyst
 * Helps generate Apple's "fun" PrivacyInfo.xcprivacy
@@ -93,6 +94,9 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [Compiled Bindings](https://github.com/levitali/CompiledBindings) by Vitali Lesheniuk
 	* [Settings View](https://github.com/muak/AiForms.Maui.SettingsView) by Satoshi NaKamura
 	* [AlohaKit Animations](https://github.com/jsuarezruiz/AlohaKit.Animations) by Javier Suárez
+	* [Skeleton](https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton) by Horus Software
+	* [The 49 Bottom Sheet](https://github.com/the49ltd/The49.Maui.BottomSheet) by The 49 Ltd
+	* [The 49 Context Menu](hhttps://github.com/the49ltd/The49.Maui.ContextMenu) by The 49 Ltd
 
 <img src="vs4win.png" />
 

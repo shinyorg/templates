@@ -123,6 +123,13 @@
             "description": "Add Prism - Documentation https://prismlibrary.com",
             "displayName": "Add Prism"
         },
+        "ctmvvm":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Community Toolkit MVVM - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm/",
+            "displayName": "Add Community Toolkit MVVM"
+        },
         "shinymediator":{
             "type": "parameter",
             "datatype": "bool",
@@ -407,6 +414,27 @@
             "defaultValue": "false",
             "description": "Uranium UI by Enis Necipoglu - Documentation https://enisn-projects.io/docs/en/uranium/latest",
             "displayName": "Add Uranium UI"
+        },
+        "skeleton":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Skeleton by Horus Software - Documentation https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton",
+            "displayName": "Add Skeleton"
+        },
+        "bottomsheet":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Bottom Sheet by The 49 Ltd - Documentation https://github.com/the49ltd/The49.Maui.BottomSheet",
+            "displayName": "Add Bottom Sheet"
+        },
+        "contextmenu":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Context Menu by The 49 Ltd - Documentation https://github.com/the49ltd/The49.Maui.ContextMenu",
+            "displayName": "Add Context Menu"
         },
         "sharpnadocv":{
             "type": "parameter",

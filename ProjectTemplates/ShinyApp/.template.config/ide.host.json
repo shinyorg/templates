@@ -45,7 +45,14 @@
             "text": "Add Prism"
         },
         "isVisible": true
-    },    
+    },
+    {
+        "id": "ctmvvm",
+        "name": {
+            "text": "Add Community Toolkit MVVM"
+        },
+        "isVisible": true
+    },
     {
         "id": "shinymediator",
         "name": {
@@ -285,7 +292,28 @@
             "text": "Add Uranium UI"
         },
         "isVisible": true
-    },    
+    },
+    {
+        "id": "skeleton",
+        "name":{
+            "text": "Add Skeleton"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "bottomsheet",
+        "name":{
+            "text": "Add Bottom Sheet"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "contextmenu",
+        "name":{
+            "text": "Add Context Menu"
+        },
+        "isVisible": true
+    },
     {
         "id": "sharpnadocv",
         "name":{

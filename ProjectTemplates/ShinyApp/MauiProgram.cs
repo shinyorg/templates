@@ -40,6 +40,12 @@ using FFImageLoading.Maui;
 #if uraniumui
 using UraniumUI;
 #endif
+#if bottomsheet
+using The49.Maui.BottomSheet;
+#endif
+#if contextmenu
+using The49.Maui.ContextMenu;
+#endif
 #if camera
 using Camera.MAUI;
 #endif
@@ -85,6 +91,12 @@ public static class MauiProgram
 #if cameraview
             .UseMauiCommunityToolkitCamera()
 #endif
+#if bottomsheet
+            .UseBottomSheet()
+#endif
+#if contextmenu
+            .UseContextMenu()
+#endif
 #if camera
             .UseMauiCameraView()
 #endif
@@ -125,6 +137,7 @@ public static class MauiProgram
                 new DryIocContainerExtension(),
                 prism => prism.CreateWindow("NavigationPage/MainPage")                
             )
+            .UseShiny()
 #else
             .UseShiny()
 #endif
@@ -239,7 +252,10 @@ public static class MauiProgram
 #endif
 //+:cnd:noEmit
 #endif
-
+#if (!shinyframework)
+        builder.Services.AddConnectivity();
+        builder.Services.AddBattery();
+#endif
 #if shinymediator
         builder.Services.AddShinyMediator(x => x
         
