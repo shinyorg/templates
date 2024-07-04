@@ -183,6 +183,10 @@
 		<PackageReference Include="Shiny.Mediator.Blazor" Version="$(MediatorVersion)" />
 		<!--#endif-->
 		<!--#endif-->
+		<!--#if (remoteconfig)-->
+		<PackageReference Include="Shiny.Extensions.Configuration.Remote.Maui" Version="1.0.0-pre-0006" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
+		<!--#endif-->
 		<!--#if (bindablegenerator)-->
 		<PackageReference Include="M.BindableProperty.Generator" Version="0.11.1" />
 		<!--#endif-->

@@ -158,6 +158,13 @@
             "description": "Add AppSettings.json (Shiny.Extensions.Configuration)",
             "displayName": "Add AppSettings.json (Shiny.Extensions.Configuration)"
         },
+        "remoteconfig": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Remote Configuration (Shiny.Extensions.Configuration.Remote.Maui)",
+            "displayName": "Add Remote Configuration (Shiny.Extensions.Configuration.Remote.Maui)"
+        },        
         "sentry": {
             "type": "parameter",
             "dataType": "bool",

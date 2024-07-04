@@ -215,9 +215,6 @@ public static class MauiProgram
 #endif
             });
 
-#if ocr
-        builder.Services.AddSingleton(OcrPlugin.Default);
-#endif
 #if flipper
 //-:cnd:noEmit
 #if IOS && DEBUG
@@ -227,6 +224,10 @@ public static class MauiProgram
 #endif
 #if useconfig
         builder.Configuration.AddJsonPlatformBundle();
+#endif
+#if (remoteconfig)
+        builder.AddRemoteConfigurationMaui();
+        // builder.Services.AddOptions<MyConfig>().BindConfiguration("");
 #endif
 #if sqlitelogging
         builder.Logging.AddSqlite(Path.Combine(FileSystem.AppDataDirectory, "logging.db"));
@@ -298,6 +299,9 @@ public static class MauiProgram
                 }
             );
         });
+#endif
+#if ocr
+        builder.Services.AddSingleton(OcrPlugin.Default);
 #endif
 #if essentialsmedia
         builder.Services.AddSingleton(MediaPicker.Default);
