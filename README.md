@@ -26,6 +26,7 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
     * [.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui)
 	* [Prism](https://prismlibrary.com/)
 	* [ReactiveUI](https://reactiveui.net/)
+	* [MVVM Community Toolkit](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm)
 	* [Shiny.NET](https://shinylib.net)
 	* [Shiny Mediator](https://github.com/shinyorg/mediator)
 * Select mutliple platform UI Markup types
@@ -97,6 +98,7 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [Skeleton](https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton) by Horus Software
 	* [The 49 Bottom Sheet](https://github.com/the49ltd/The49.Maui.BottomSheet) by The 49 Ltd
 	* [The 49 Context Menu](hhttps://github.com/the49ltd/The49.Maui.ContextMenu) by The 49 Ltd
+	* [Bindable Property Generator](https://github.com/rrmanzano/maui-bindableproperty-generator) by rrmanzano
 
 <img src="vs4win.png" />
 

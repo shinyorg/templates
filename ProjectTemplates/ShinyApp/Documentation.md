@@ -85,6 +85,15 @@ _Empower Your XAML Applications. Leverage the power of the Prism Library to buil
 * [Container Extension Library - DryIoc](https://github.com/dadhi/DryIoc)
 
 <!--#endif-->
+<!--#if (reactiveui || shinyframework)-->
+## ReactiveUI
+
+ReactiveUI is a composable, cross-platform model-view-viewmodel framework for all .NET platforms that is inspired by functional reactive programming, which is a paradigm that allows you to abstract mutable state away from your user interfaces and express the idea around a feature in one readable place and improve the testability of your application.
+
+* [Documentation](https://reactiveui.net)
+* [GitHub](https://github.com/reactiveui/ReactiveUI)
+
+<!--#endif-->
 <!--#if (health)-->
 ## Shiny Health
 
@@ -300,6 +309,14 @@ _Provides the ability to perform OCR (Optical Character Recognition) on images i
 _Provides a cross-platform implementation of biometric authentication. Continuation of the abandoned Plugin.Fingerprint in the MAUI ecosystem.. - Written by Konstantin S & Sven-Michael Stübe_
 
 * [GitHub](https://github.com/oscoreio/Maui.Biometric) 
+
+<!--#endif-->
+<!--#if (bindablegenerator)-->
+## Bindable Property Generator
+
+Source generator that automatically transforms fields into BindableProperties that can be used in MAUI.  By rrmanzano
+
+* [GitHub](https://github.com/rrmanzano/maui-bindableproperty-generator)
 
 <!--#endif-->
 <!--#if (usehttp)-->

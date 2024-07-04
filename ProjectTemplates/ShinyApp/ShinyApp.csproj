@@ -155,6 +155,14 @@
 		<!--#if (shinyframework || prism)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.401-pre" />
 		<!--#endif-->
+		<!--#if (reactiveui)-->
+		<PackageReference Include="ReactiveUI" Version="20.1.1" />
+		<PackageReference Include="ReactiveUI.Maui" Version="20.1.1" />
+		<PackageReference Include="ReactiveUI.Fody" Version="19.5.41" />
+		<!--#if (useblazor)-->
+		<PackageReference Include="ReactiveUI.Blazor" Version="20.1.1" />
+		<!--#endif-->
+		<!--#endif-->
 		<!--#if (shinyframework)-->
 		<PackageReference Include="ReactiveUI.Fody" Version="19.5.41" />
 		<PackageReference Include="Shiny.Framework" Version="4.1.0" />
@@ -174,6 +182,9 @@
 		<!--#if (useblazor)-->
 		<PackageReference Include="Shiny.Mediator.Blazor" Version="$(MediatorVersion)" />
 		<!--#endif-->
+		<!--#endif-->
+		<!--#if (bindablegenerator)-->
+		<PackageReference Include="M.BindableProperty.Generator" Version="0.11.1" />
 		<!--#endif-->
 		<!--#if (localization)-->
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.6" />

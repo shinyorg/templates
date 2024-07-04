@@ -47,6 +47,13 @@
         "isVisible": true
     },
     {
+        "id": "reactiveui",
+        "name": {
+            "text": "Add ReactiveUI"
+        },
+        "isVisible": true
+    },
+    {
         "id": "ctmvvm",
         "name": {
             "text": "Add Community Toolkit MVVM"
@@ -248,6 +255,13 @@
         "id": "compiledbindings",
         "name": {
             "text": "Add Compiled Bindings"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "binablegenerator",
+        "name": {
+            "text": "Add Bindable Property Generator"
         },
         "isVisible": true
     },

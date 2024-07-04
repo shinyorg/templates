@@ -123,6 +123,13 @@
             "description": "Add Prism - Documentation https://prismlibrary.com",
             "displayName": "Add Prism"
         },
+        "reactiveui":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add ReactiveUI - Documentation https://reactiveui.net",
+            "displayName": "Add ReactiveUI"
+        },
         "ctmvvm":{
             "type": "parameter",
             "datatype": "bool",
@@ -358,6 +365,13 @@
             "defaultValue": "",
             "datatype": "string",
             "replaces": "{DEEPLINK_HOST}"
+        },
+        "binablegenerator":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Add Maui.BindableProperty.Generator by rrmanzano - Documentation: https://github.com/rrmanzano/maui-bindableproperty-generator",
+            "displayName": "Add Maui.BindableProperty.Generator"
         },
         "compiledbindings":{
             "type": "parameter",
