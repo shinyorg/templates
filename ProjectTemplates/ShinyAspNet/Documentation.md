@@ -4,14 +4,17 @@
 ## Entity Framework
 * [Documentation](https://learn.microsoft.com/en-us/ef/core/)
 
-## MediatR
-_Simple mediator implementation in .NET_
-_In-process messaging with no dependencies._
-_Supports request/response, commands, queries, notifications and events, synchronous and async with intelligent dispatching via C# generic variance._
+## Shiny Mediator
+Mediator is a behavioral design pattern that lets you reduce chaotic dependencies between objects. The pattern restricts direct communications between the objects and forces them to collaborate only via a mediator object.
 
-Created by [Jimmy Bogard](https://github.com/jbogard)
+Shiny Mediator is a mediator pattern implementation, works for server, but also works great for apps.  Apps have pages with lifecycles that don't necessarily participate in the standard
+dependency injection lifecycle.  .NET MAUI generally tends to favor the Messenger pattern.  We hate this pattern for many reasons which we won't get into.  That being said, we do offer a messenger subscription in our Mediator for where interfacesand dependency injection can't reach.
 
-[Documentation](https://github.com/jbogard/MediatR)
+
+Created by [Allan Ritchie](https://github.com/aritchie)
+
+* [GitHub](https://github.com/shinyorg/mediator)
+* [Documentation](https://shinylib.net/client/mediator)
 
 
 

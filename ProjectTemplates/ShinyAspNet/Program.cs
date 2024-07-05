@@ -22,7 +22,8 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
+builder.Services.ShinyMediator();
+// builder.Services.AddDiscoveredMediatorHandlersFrom____
 
 #if (swagger)
 builder.Services.AddEndpointsApiExplorer();
