@@ -3,10 +3,13 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.FileProviders;
-//#if (signalr)
+#if (signalr)
 using Microsoft.AspNetCore.SignalR;
 using ShinyAspNet.Hubs;
-//#endif
+#endif
+#if (efpostgres)
+using Npgsql;
+#endif
 #if (push)
 using Shiny.Extensions.Push;
 #endif
@@ -22,15 +25,32 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddHttpContextAccessor();
-builder.Services.ShinyMediator();
-// builder.Services.AddDiscoveredMediatorHandlersFrom____
+builder.Services.AddShinyMediator();
+// builder.Services.AddDiscoveredMediatorHandlersFromShinyApp();
 
 #if (swagger)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 #endif
+
+#if (efpostgres)
+var dataSourceBuilder = new NpgsqlDataSourceBuilder(builder.Configuration.GetConnectionString("Main"));
+#if (efspatial)
+dataSourceBuilder.UseNetTopologySuite();
+#endif
+var dataSource = dataSourceBuilder.Build();
+#endif
+
 builder.Services.AddDbContext<AppDbContext>(
+#if (efpostgres)
+#if (efspatial) 
+    opts => opts.UseNpgsql(dataSource)
+#else
+    opts => opts.UseNpgsql(dataSource, o => o.UseNetTopologySuite())
+#endif
+#else
     opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("Main"))
+#endif
 );
 //#if (signalr)
 builder.Services.AddSignalR();
@@ -111,12 +131,12 @@ builder.Services.AddPushManagement(x => x
         SenderId = googleCfg["SenderId"]!,
         DefaultChannelId = googleCfg["DefaultChannelId"]!
     })
-    .UseAdoNetRepository<Microsoft.Data.SqlClient.SqlConnection>(new DbRepositoryConfig(
-        builder.Configuration.GetConnectionString("Main"),
-        "@",
-        "PushRegistrations",
-        true
-    ))
+    // .UseAdoNetRepository<Microsoft.Data.SqlClient.SqlConnection>(new DbRepositoryConfig(
+    //     builder.Configuration.GetConnectionString("Main"),
+    //     "@",
+    //     "PushRegistrations",
+    //     true
+    // ))
     .AddShinyAndroidClickAction()
 );
 
@@ -131,15 +151,15 @@ builder.Services.AddMail(mail =>
             EnableSsl = cfg.GetValue("EnableSsl", true),
             Host = cfg["Host"],
             Port = cfg.GetValue("Port", 587)
-        })
+        });
         //.UseSendGridSender("SendGridApiKey")
         //.UseFileTemplateLoader("File Path to templates")
-        .UseAdoNetTemplateLoader<Microsoft.Data.SqlClient.SqlConnection>(
-            builder.Configuration.GetConnectionString("Main")!,
-            "@",
-            "MailTemplates",
-            true
-        );
+        // .UseAdoNetTemplateLoader<Microsoft.Data.SqlClient.SqlConnection>(
+        //     builder.Configuration.GetConnectionString("Main")!,
+        //     "@",
+        //     "MailTemplates",
+        //     true
+        // );
 });
 
 #endif

@@ -135,16 +135,16 @@
 		<!--#endif-->
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#if (shinyframework || communitytoolkit || speechrecognition)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.1" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.2" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
 		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.0.1" />
 		<!--#endif-->
 		<!--#if (cameraview)-->
-		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.0.3" />
 		<!--#endif-->
 		<!--#if (camera)-->
 		<PackageReference Include="Camera.Maui" Version="1.5.1" />
@@ -200,7 +200,7 @@
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="4.7.0" />
+		<PackageReference Include="Sentry.Maui" Version="4.8.1" />
 		<!--#endif-->
 		<!--#if (sqlitelogging)-->
 		<PackageReference Include="Shiny.Logging.Sqlite" Version="$(ShinyVersion)" />
@@ -242,7 +242,7 @@
 		<PackageReference Include="Redth.Maui.VirtualListView" Version="0.4.0" />
 		<!--#endif-->
 		<!--#if (barcodes)-->
-		<PackageReference Include="BarcodeScanning.Native.Maui" Version="1.5.3" />
+		<PackageReference Include="BarcodeScanning.Native.Maui" Version="1.5.6" />
 		<!--#endif-->
 		<!--#if (storereview)-->
 		<PackageReference Include="Plugin.StoreReview" Version="6.2.0" />
@@ -263,7 +263,7 @@
 		<PackageReference Include="Oscore.Maui.Biometric" Version="1.0.1" />
 		<!--#endif-->
 		<!--#if usehttp-->
-		<PackageReference Include="Refit" Version="7.0.0" />
+		<PackageReference Include="Refit" Version="7.1.2" />
 		<!--#endif-->
 		<!--#if (sqlite)-->
 		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
@@ -287,7 +287,7 @@
 		<PackageReference Include="AlohaKit.Animations" Version="1.1.0" />
 		<!--#endif-->
 		<!--#if (cards)-->
-		<PackageReference Include="CardsView.Maui" Version="0.0.6" />
+		<PackageReference Include="CardsView.Maui" Version="0.0.9" />
 		<!--#endif-->
 		<!--#if (uraniumui)-->
 		<PackageReference Include="UraniumUI.Material" Version="2.8.1" />
@@ -325,16 +325,16 @@
 		<PackageReference Include="Plugin.Maui.DebugRainbows" Version="1.2.1" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#endif-->
 		<!--#if (ffimageloading)-->
-		<PackageReference Include="FFImageLoading.Maui" Version="1.2.5" />
+		<PackageReference Include="FFImageLoading.Maui" Version="1.2.6" />
 		<!--#endif-->
 		<!--#if (embedio)-->
 		<PackageReference Include="EmbedIO" Version="3.5.2" />
 		<!--#endif-->
 		<!--#if (useblazor && mudblazor)-->
-		<PackageReference Include="MudBlazor" Version="6.20.0" />
+		<PackageReference Include="MudBlazor" Version="7.0.0" />
 		<!--#endif-->
 		<!--#if (useblazor && radzen)-->
-		<PackageReference Include="Radzen.Blazor" Version="4.32.4" />
+		<PackageReference Include="Radzen.Blazor" Version="4.33.3" />
 		<!--#endif-->
 	</ItemGroup>
 

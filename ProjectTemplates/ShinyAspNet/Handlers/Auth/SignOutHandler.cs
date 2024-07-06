@@ -1,7 +1,8 @@
 namespace ShinyAspNet.Handlers.Auth;
 
 
-[MediatorHttpPost("/auth/signin/mobile", RequiresAuthentication = true)]
+[ScopedHandler]
+[MediatorHttpPost("/auth/signin/mobile", RequiresAuthorization = true)]
 public class SignOutHandler(AppDbContext data, IUserService user) : IRequestHandler<SignOutRequest>
 {
     public async Task Handle(SignOutRequest request, CancellationToken cancellationToken)

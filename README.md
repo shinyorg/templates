@@ -115,7 +115,7 @@ _The Microsoft iOS Extension template is currently broken on VS4win & VS4mac, so
 * Email Templating
 * Push Notification Setup
 * Minimal APIs
-* MediatR Setup
+* Shiny Mediator Endpoint Setup
 * .NET Orleans
 * Entity Framework Basic Setup
 * MSAL & WebAuthenticator Setup /w Google & Facebook

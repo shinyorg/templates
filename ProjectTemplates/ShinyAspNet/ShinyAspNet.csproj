@@ -4,7 +4,7 @@
         <TargetFramework>{DOTNET_TFM}</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <MicrosoftVersion>8.0.0</MicrosoftVersion>
+        <MicrosoftVersion>8.0.6</MicrosoftVersion>
         <LangVersion>preview</LangVersion>
         <!--#if (orleans)-->
         <OrleansVersion>8.1.0</OrleansVersion>
@@ -37,13 +37,13 @@
         <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="$(MicrosoftVersion)" />
         <!--#endif-->
         <!--#if (apple)-->
-        <PackageReference Include="AspNet.Security.OAuth.Apple" Version="8.0.0" />
+        <PackageReference Include="AspNet.Security.OAuth.Apple" Version="8.1.0" />
         <!--#endif-->        
         <!--#if (efpostgres)-->
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.2" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
         <!--#endif-->
         <!--#if (efpostgres && efspatial)-->
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="8.0.2" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="8.0.4" />
         <!--#endif-->              
         <PackageReference Include="Shiny.Mediator" Version="1.5.0" />
         <PackageReference Include="Shiny.Mediator.AspNet" Version="1.5.0" />
@@ -59,7 +59,7 @@
         <PackageReference Include="Shiny.Extensions.Mail" Version="$(ShinyExtensionsVersion)" />
         <!--#endif-->
         <!--#if (swagger)-->
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
         <!--#endif-->        
     </ItemGroup>
 </Project>
