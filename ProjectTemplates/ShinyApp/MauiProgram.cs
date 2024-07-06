@@ -264,7 +264,7 @@ public static class MauiProgram
 #if shinyframework
             .AddPrismSupport()
 #endif
-            .UseMaui();
+            .UseMaui()
 #if useblazor
             .UseBlazor()
 #endif
