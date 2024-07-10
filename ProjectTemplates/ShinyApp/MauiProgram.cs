@@ -49,6 +49,9 @@ using The49.Maui.ContextMenu;
 #if camera
 using Camera.MAUI;
 #endif
+if shinyframework || communitytoolkit || mediaelement
+using CommunityToolkit.Maui;
+#endif
 #if useblazor
 #if mudblazor
 using MudBlazor.Services;
