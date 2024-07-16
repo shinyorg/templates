@@ -16,9 +16,11 @@ global using Microsoft.Extensions.Configuration;
 #if (localization)
 global using Microsoft.Extensions.Localization;
 #endif
-#if shinyframework
+#if shinyframework || reactiveui
 global using ReactiveUI;
 global using ReactiveUI.Fody.Helpers;
+#endif
+#if shinyframework || prism
 global using Prism.Navigation;
 global using Prism.Services;
 #endif
@@ -30,4 +32,8 @@ global using CommunityToolkit.Maui;
 #endif
 #if usecsharpmarkup
 global using CommunityToolkit.Maui.Markup;
+#endif
+#if (ctmvvm)
+global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Mvvm.Input;
 #endif

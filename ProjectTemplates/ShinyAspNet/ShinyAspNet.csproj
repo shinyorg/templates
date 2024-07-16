@@ -7,7 +7,7 @@
         <MicrosoftVersion>8.0.6</MicrosoftVersion>
         <LangVersion>latest</LangVersion>
         <!--#if (orleans)-->
-        <OrleansVersion>8.1.0</OrleansVersion>
+        <OrleansVersion>8.2.0</OrleansVersion>
         <!--#endif-->
         <!--#if (email || push)-->
         <ShinyExtensionsVersion>2.0.0-preview-0018</ShinyExtensionsVersion>

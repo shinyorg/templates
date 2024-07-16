@@ -402,7 +402,7 @@ public static class MauiProgram
         builder.Services.AddDataAnnotationValidation();
 #endif
 
-#if shinyframework
+#if (shinyframework || prism)
         builder.Services.RegisterForNavigation<MainPage, MainViewModel>();
 #else
         builder.Services.AddTransient<MainPage>();

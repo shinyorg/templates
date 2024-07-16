@@ -8,19 +8,20 @@ public class MainViewModel : ViewModel
 
     [Reactive] public string Property { get; set; }
 }
+#elif ctmvvm
+public partial class MainViewModel : ObservableObject
+{
+    [ObservableProperty] string property;
+
+    [RelayCommand]
+    async Task DoSomething()
+    {
+        
+    }
+}
 #else
 public class MainViewModel : NotifyPropertyChanged
 {
-#if localization
-    public MainViewModel(IStringLocalizer<MainViewModel> localizer) 
-    {
-    }
-#else
-    public MainViewModel() 
-    {
-    }
-#endif
-
     string property;
     public string Property 
     { 

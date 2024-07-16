@@ -1,51 +1,51 @@
-using System.Runtime.CompilerServices;
 using Shiny.Hosting;
 
 namespace ShinyApp.Controls;
 
+
 public partial class ConnectivityView : ContentView
 {
-	IDisposable? sub;
+    readonly IConnectivity connectivity;
 
 
-	public ConnectivityView()
-	{
-		this.InitializeComponent();
+    public ConnectivityView()
+    {
+        this.InitializeComponent();
+        this.connectivity = Host
+            .Current
+            .Services
+            .GetRequiredService<IConnectivity>();
+        
+        this.Loaded += (_, _) =>
+        {
+            this.connectivity.ConnectivityChanged += this.OnConnectivityChanged;
+            this.SetInternet();
+        };
 
-        // if not using Shiny.Framework or Shiny.Jobs, you must add shiny's connectivity stub using services.AddConnectivity()
-        this.Loaded += (sender, args) =>
-		{
-            var conn = Host
-				.Current
-                .Services
-                .GetRequiredService<Shiny.Net.IConnectivity>();
-
-            this.SetInternet(conn);
-            this.sub = conn
-				.WhenChanged()
-				.SubOnMainThread(x => this.SetInternet(x));
-		};
-
-        this.Unloaded += (sender, args) => this.sub?.Dispose();
-	}
+        this.Unloaded += (_, _) => this.connectivity.ConnectivityChanged -= this.OnConnectivityChanged;
+    }
 
 
-	void SetInternet(Shiny.Net.IConnectivity conn)
-	{
-		var result = conn.IsInternetAvailable();
-		this.IsVisible = !result;
-	}
+    void OnConnectivityChanged(object _, ConnectivityChangedEventArgs __) 
+        => this.SetInternet();
+    
+    void SetInternet()
+    {
+        var result = this.connectivity.NetworkAccess == NetworkAccess.Internet || this.connectivity.NetworkAccess == NetworkAccess.ConstrainedInternet;
+        this.IsVisible = !result;
+    }
 
 
     public static readonly BindableProperty OfflineTextProperty = BindableProperty.Create(
-		nameof(OfflineText),
-		typeof(string),
-		typeof(ConnectivityView),
-		"There is no internet connection detected"
-	);
-	public string OfflineText
-	{
-		get => (string)this.GetValue(OfflineTextProperty);
-		set => this.SetValue(OfflineTextProperty, value);
-	}	
+        nameof(OfflineText),
+        typeof(string),
+        typeof(ConnectivityView),
+        "There is no internet connection detected"
+    );
+
+    public string OfflineText
+    {
+        get => (string)this.GetValue(OfflineTextProperty);
+        set => this.SetValue(OfflineTextProperty, value);
+    }
 }
