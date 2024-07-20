@@ -264,6 +264,7 @@ public static class MauiProgram
         builder.Services.AddShinyMediator(x => x
         
             .AddMemoryCaching()
+            .AddDataAnnotations()
 #if shinyframework
             .AddPrismSupport()
 #endif
