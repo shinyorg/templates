@@ -29,7 +29,7 @@
 		<MauiVersion>8.0.70</MauiVersion>
 		<ShinyVersion>3.3.3</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>1.7.0</MediatorVersion>
+		<MediatorVersion>1.7.1</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -200,7 +200,7 @@
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="4.8.1" />
+		<PackageReference Include="Sentry.Maui" Version="4.9.0" />
 		<!--#endif-->
 		<!--#if (sqlitelogging)-->
 		<PackageReference Include="Shiny.Logging.Sqlite" Version="$(ShinyVersion)" />
@@ -242,7 +242,7 @@
 		<PackageReference Include="Redth.Maui.VirtualListView" Version="0.4.0" />
 		<!--#endif-->
 		<!--#if (barcodes)-->
-		<PackageReference Include="BarcodeScanning.Native.Maui" Version="1.5.6" />
+		<PackageReference Include="BarcodeScanning.Native.Maui" Version="1.5.7" />
 		<!--#endif-->
 		<!--#if (storereview)-->
 		<PackageReference Include="Plugin.StoreReview" Version="6.2.0" />
@@ -257,7 +257,7 @@
 		<PackageReference Include="Plugin.Maui.Audio" Version="3.0.0" />
 		<!--#endif-->
 		<!--#if (ocr)-->
-		<PackageReference Include="Plugin.Maui.OCR" Version="1.0.11" />
+		<PackageReference Include="Plugin.Maui.OCR" Version="1.0.12" />
 		<!--#endif-->
 		<!--#if (fingerprint)-->
 		<PackageReference Include="Oscore.Maui.Biometric" Version="1.0.1" />
@@ -275,7 +275,7 @@
 		<PackageReference Include="Sharpnado.CollectionView.Maui" Version="3.1.2" />
 		<!--#endif-->
 		<!--#if (settingsview)-->
-		<PackageReference Include="AiForms.Maui.SettingsView" Version="1.0.11" />
+		<PackageReference Include="AiForms.Maui.SettingsView" Version="1.0.12" />
 		<!--#endif-->
 		<!--#if (livecharts)-->
 		<PackageReference Include="LiveChartsCore.SkiaSharpView.Maui" Version="2.0.0-rc2" />
@@ -290,9 +290,9 @@
 		<PackageReference Include="CardsView.Maui" Version="0.0.9" />
 		<!--#endif-->
 		<!--#if (uraniumui)-->
-		<PackageReference Include="UraniumUI.Material" Version="2.8.1" />
-		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.8.1" />
-		<PackageReference Include="UraniumUI.Blurs" Version="2.8.1" />
+		<PackageReference Include="UraniumUI.Material" Version="2.9.1" />
+		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.9.1" />
+		<PackageReference Include="UraniumUI.Blurs" Version="2.9.1" />
 		<!--#endif-->
 		<!--#if (ctmvvm)-->
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
