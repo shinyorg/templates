@@ -1,10 +1,10 @@
 {
     "$schema": "http://json.schemastore.org/template",
     "author": "Shiny .NET",
-    "classifications": [ "MAUI", "Shiny", "Prism", "ReactiveUI" ],
+    "classifications": [ "MAUI", "Shiny" ],
     "name": "Shiny MAUI Application",
     "shortName": "shinymaui",
-    "description": "A project for creating a .NET MAUI /w Shiny.NET, Prism, & ReactiveUI",
+    "description": ".NET MAUI Template containing a ton of useful communinity libraries",
     "identity": "Shiny.Templates.App",
     "sourceName": "ShinyApp",
     "preferNameDirectory": true,
@@ -112,7 +112,7 @@
         "shinyframework": {
             "type": "parameter",
             "datatype": "bool",
-            "defaultValue": "true",
+            "defaultValue": "false",
             "description": "Add Shiny Framework by Allan Ritchie - Documentation https://github.com/shinyorg/framework - Lots of helpful services like navigation, zero boilerplate MVVM properties, viewmodel validation, localization, viewmodel lifecycles, dialog services, and more",
             "displayName": "Add Shiny Framework (Shiny + ReactiveUI + Prism)"
         },
@@ -133,7 +133,7 @@
         "ctmvvm":{
             "type": "parameter",
             "datatype": "bool",
-            "defaultValue": "false",
+            "defaultValue": "true",
             "description": "Add Community Toolkit MVVM - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm/",
             "displayName": "Add Community Toolkit MVVM"
         },
