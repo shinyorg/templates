@@ -595,7 +595,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "UTILITY - Add Debug Rainbows - Documentation: https://github.com/sthewissen/Plugin.Maui.DebugRainbows",
-            "displayName": "UTILITY -  Add Debug Rainbows" 
+            "displayName": "UTILITY - Add Debug Rainbows" 
         },
         "ffimageloading":{
             "type": "parameter",

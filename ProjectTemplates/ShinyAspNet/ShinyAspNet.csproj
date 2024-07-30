@@ -44,7 +44,7 @@
         <!--#endif-->
         <!--#if (efpostgres && efspatial)-->
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="8.0.4" />
-        <!--#endif-->              
+        <!--#endif-->
         <PackageReference Include="Shiny.Mediator" Version="1.7.2" />
         <PackageReference Include="Shiny.Mediator.AspNet" Version="1.7.2" />
         <PackageReference Include="Shiny.Extensions.WebHosting" Version="$(ShinyExtensionsVersion)" />
@@ -60,6 +60,11 @@
         <!--#endif-->
         <!--#if (swagger)-->
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-        <!--#endif-->        
+        <!--#endif-->
+
+        <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.9.0" />
+        <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.9.0" />
+        <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.9.0" />
+        <!-- <PackageReference Include="Azure.Monitor.OpenTelemetry.Exporter" Version="1.3.0" /> -->
     </ItemGroup>
 </Project>

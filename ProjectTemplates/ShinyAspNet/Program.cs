@@ -3,6 +3,8 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.FileProviders;
+using OpenTelemetry.Exporter;
+using OpenTelemetry.Logs;
 #if (signalr)
 using Microsoft.AspNetCore.SignalR;
 using ShinyAspNet.Hubs;
@@ -21,12 +23,31 @@ using ShinyAspNet.Services;
 using ShinyAspNet.Services.Impl;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllers();
+
+builder.Logging.AddOpenTelemetry(options =>
+{
+    // options.SetResourceBuilder(ResourceBuilder
+    //     .CreateEmpty()
+    //     .AddService(builder.Environment.ApplicationName)
+    //     .AddAttributes(new Dictionary<string, object>
+    //     {
+    //         ["environment"] = builder.Environment.EnvironmentName
+    //     })
+    // );
+    options.AddConsoleExporter();
+    options.AddOtlpExporter(x => 
+    {
+        x.Endpoint = new Uri("http://localhost:4317/ingest/otlp/v1/logs");
+        x.Protocol = OtlpExportProtocol.HttpProtobuf;
+        x.Headers = "X-Seq-ApiKey=123";
+    });
+});
+
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddShinyMediator();
-// builder.Services.AddDiscoveredMediatorHandlersFromShinyApp();
+builder.Services.AddDiscoveredMediatorHandlersFromShinyApp();
 
 #if (swagger)
 builder.Services.AddEndpointsApiExplorer();
@@ -172,6 +193,8 @@ builder.Host.UseOrleans(x => x
 //#endif
 
 var app = builder.Build();
+
+app.UseShinyMediatorEndpointHandlers(builder.Services);
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
@@ -195,8 +218,6 @@ app.UseCors(x => x
 );
 #endif
 //+:cnd:noEmit
-app.MapControllers();
-
 if (app.Environment.IsDevelopment())
 {
     // if (app.Configuration.GetValue<bool>("EnsureDatabase", false))
