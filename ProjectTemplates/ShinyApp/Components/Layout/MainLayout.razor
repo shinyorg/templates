@@ -1,13 +1,22 @@
 ﻿@inherits LayoutComponentBase
 @*#if (mudblazor)
 <MudThemeProvider/>
+<MudPopoverProvider/>
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 #endif*@
 @*#if (radzen)
-<RadzenComponents />
+<RadzenTheme Theme="material" @rendermode="new InteractiveAutoRenderMode()" />
+<RadzenComponents @rendermode="new InteractiveAutoRenderMode()" />
 #endif*@
 
+@*
+<MudLayout>
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>
+*@
 <div class="page">
     <div class="sidebar">
         <NavMenu />

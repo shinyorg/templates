@@ -330,11 +330,11 @@
 		<!--#if (embedio)-->
 		<PackageReference Include="EmbedIO" Version="3.5.2" />
 		<!--#endif-->
-		<!--#if (useblazor && mudblazor)-->
-		<PackageReference Include="MudBlazor" Version="7.0.0" />
+		<!--#if (mudblazor)-->
+		<PackageReference Include="MudBlazor" Version="7.4.0" />
 		<!--#endif-->
-		<!--#if (useblazor && radzen)-->
-		<PackageReference Include="Radzen.Blazor" Version="4.33.3" />
+		<!--#if (radzen)-->
+		<PackageReference Include="Radzen.Blazor" Version="5.0.4" />
 		<!--#endif-->
 	</ItemGroup>
 

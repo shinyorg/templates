@@ -78,19 +78,19 @@
             "replaces": "{DOTNET_TFM}",
             "defaultValue": "net8.0"
         },
-        "useblazor":{
+        "blazor":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Blazor Hybrid Support",
-            "displayName": "Add Blazor Hybrid Support"
+            "description": "MARKUP - Add Blazor Hybrid Support",
+            "displayName": "MARKUP - Add Blazor Hybrid Support"
         },
         "usecsharpmarkup":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add C# Markup - MAUI Community Toolkit",
-            "displayName": "Add C# Markup - MAUI Community Toolkit"
+            "description": "MARKUP - Add C# Markup - MAUI Community Toolkit",
+            "displayName": "MARKUP - Add C# Markup - MAUI Community Toolkit"
         },
         "applicationId": {
             "type": "parameter",
@@ -113,141 +113,141 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Shiny Framework by Allan Ritchie - Documentation https://github.com/shinyorg/framework - Lots of helpful services like navigation, zero boilerplate MVVM properties, viewmodel validation, localization, viewmodel lifecycles, dialog services, and more",
-            "displayName": "Add Shiny Framework (Shiny + ReactiveUI + Prism)"
+            "description": "FRAMEWORK - Add Shiny Framework by Allan Ritchie - Documentation https://github.com/shinyorg/framework - Lots of helpful services like navigation, zero boilerplate MVVM properties, viewmodel validation, localization, viewmodel lifecycles, dialog services, and more",
+            "displayName": "FRAMEWORK - Add Shiny Framework (Shiny + ReactiveUI + Prism)"
         },
         "prism":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "true",
-            "description": "Add Prism - Documentation https://prismlibrary.com",
-            "displayName": "Add Prism"
+            "description": "FRAMEWORK - Add Prism - Documentation https://prismlibrary.com",
+            "displayName": "FRAMEWORK - Add Prism"
         },
         "reactiveui":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add ReactiveUI - Documentation https://reactiveui.net",
-            "displayName": "Add ReactiveUI"
+            "description": "FRAMEWORK - Add ReactiveUI - Documentation https://reactiveui.net",
+            "displayName": "FRAMEWORK - Add ReactiveUI"
         },
         "ctmvvm":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "true",
-            "description": "Add Community Toolkit MVVM - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm/",
-            "displayName": "Add Community Toolkit MVVM"
+            "description": "FRAMEWORK - Add Community Toolkit MVVM - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm/",
+            "displayName": "FRAMEWORK - Add Community Toolkit MVVM"
         },
         "shinymediator":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Shiny Mediator - Documentation https://github.com/shinyorg/mediator",
-            "displayName": "Add Shiny Mediator"
+            "description": "FRAMEWORK - Add Shiny Mediator - Documentation https://github.com/shinyorg/mediator",
+            "displayName": "FRAMEWORK - Add Shiny Mediator"
         },           
         "localization":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Localization (Microsoft.Extensions.Localization)",
-            "displayName": "Add Localization (Microsoft.Extensions.Localization)"
+            "description": "CONFIGURATION - Add Localization (Microsoft.Extensions.Localization)",
+            "displayName": "CONFIGURATION - Add Localization (Microsoft.Extensions.Localization)"
         },
         "configuration": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "true",
-            "description": "Add AppSettings.json (Shiny.Extensions.Configuration)",
-            "displayName": "Add AppSettings.json (Shiny.Extensions.Configuration)"
+            "description": "CONFIGURATION - Add AppSettings.json (Shiny.Extensions.Configuration)",
+            "displayName": "CONFIGURATION - Add AppSettings.json (Shiny.Extensions.Configuration)"
         },
         "remoteconfig": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Remote Configuration (Shiny.Extensions.Configuration.Remote.Maui)",
-            "displayName": "Add Remote Configuration (Shiny.Extensions.Configuration.Remote.Maui)"
+            "description": "CONFIGURATION - Add Remote Configuration (Shiny.Extensions.Configuration.Remote.Maui)",
+            "displayName": "CONFIGURATION - Add Remote Configuration (Shiny.Extensions.Configuration.Remote.Maui)"
         },        
         "sentry": {
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "false",
-            "description": "Add Sentry.IO logging to your application",
-            "displayName": "Sentry.IO Logging"
+            "description": "LOGGING - Add Sentry.IO logging to your application",
+            "displayName": "LOGGING - Sentry.IO"
         },        
         "sqlitelogging": {
             "type": "parameter",
             "dataType": "bool",
-            "description": "SQLite Logging - (Shiny.Logging.Sqlite) - Great for logging local tests especially for background services in Shiny",
-            "displayName": "SQLite Logging - (Shiny.Logging.Sqlite)",
+            "description": "LOGGING - SQLite - (Shiny.Logging.Sqlite) - Great for logging local tests especially for background services in Shiny",
+            "displayName": "LOGGING - SQLite - (Shiny.Logging.Sqlite)",
             "defaultValue": "false"
         },
         "bluetoothle": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add BluetoothLE Client (Shiny.BluetoothLE)",
-            "displayName": "Add BluetoothLE Client (Shiny.BluetoothLE)"
+            "description": "SERVICE - Add BluetoothLE Client (Shiny.BluetoothLE)",
+            "displayName": "SERVICE - Add BluetoothLE Client (Shiny.BluetoothLE)"
         },
         "blehosting": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add BluetoothLE Hosting (Shiny.BluetoothLE.Hosting)",
-            "displayName": "Add BluetoothLE Hosting (Shiny.BluetoothLE.Hosting)"
+            "description": "SERVICE - Add BluetoothLE Hosting (Shiny.BluetoothLE.Hosting)",
+            "displayName": "SERVICE - Add BluetoothLE Hosting (Shiny.BluetoothLE.Hosting)"
         },
         "beacons": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Beacons (Shiny.Beacons)",
-            "displayName": "Add Beacons (Shiny.Beacons)"
+            "description": "SERVICE - Add Beacons (Shiny.Beacons)",
+            "displayName": "SERVICE - Add Beacons (Shiny.Beacons)"
         },
         "jobs": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Background Jobs (Shiny.Jobs)",
-            "displayName": "Add Background Jobs (Shiny.Jobs)"
+            "description": "SERVICE - Add Background Jobs (Shiny.Jobs)",
+            "displayName": "SERVICE - Add Background Jobs (Shiny.Jobs)"
         },
         "gps":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add GPS (Shiny.Locations)",
-            "displayName": "Add GPS (Shiny.Locations)"
+            "description": "SERVICE - Add GPS (Shiny.Locations)",
+            "displayName": "SERVICE - Add GPS (Shiny.Locations)"
         },
         "geofencing":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Geofencing (Shiny.Locations)",
-            "displayName": "Add Geofencing (Shiny.Locations)"
+            "description": "SERVICE - Add Geofencing (Shiny.Locations)",
+            "displayName": "SERVICE - Add Geofencing (Shiny.Locations)"
         },
         "httptransfers": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Background HTTP Uploads & Downloads (Shiny.Net.Http)",
-            "displayName": "Add Background HTTP Uploads & Downloads (Shiny.Net.Http)"
+            "description": "SERVICE - Add Background HTTP Uploads & Downloads (Shiny.Net.Http)",
+            "displayName": "SERVICE - Add Background HTTP Uploads & Downloads (Shiny.Net.Http)"
         },
         "notifications": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Local Notifications (Shiny.Notifications)",
-            "displayName": "Add Local Notifications (Shiny.Notifications)"
+            "description": "SERVICE - Add Local Notifications (Shiny.Notifications)",
+            "displayName": "SERVICE - Add Local Notifications (Shiny.Notifications)"
         },
         "startup":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Creates a class that executes immediately after Shiny is ready for action",
-            "displayName": "Add Startup Service (Shiny.Core)"
+            "description": "CODE - Creates a class that executes immediately after Shiny is ready for action",
+            "displayName": "CODE - Add Startup Service (Shiny.Core)"
         },
         "settings":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "This creates a special reactive object that binds to the platform preferences or secure storage",
-            "displayName": "Add Bound Settings Class (Shiny.Core)"
+            "description": "CODE - This creates a special reactive object that binds to the platform preferences or secure storage",
+            "displayName": "CODE - Add Bound Settings Class (Shiny.Core)"
         },
         "push": {
             "type": "parameter",
@@ -309,15 +309,15 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Creates a sample Microsoft Authentication Library (MSAL) or Web authenticator service to work with",
-            "displayName": "Create Sample Authentication Service (if MSAL or Web Authenticator is selected)"
+            "description": "CODE - Creates a sample Microsoft Authentication Library (MSAL) or Web authenticator service to work with",
+            "displayName": "CODE - Create Sample Authentication Service (if MSAL or Web Authenticator is selected)"
         },
         "refit":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Refit API Client used with sample Authentication service",
-            "displayName": "Add Refit HTTP Client with Authenication Service"
+            "description": "CODE - Add Refit API Client used with sample Authentication service",
+            "displayName": "CODE - Add Refit HTTP Client with Authenication Service"
         },
         "maptype": {
             "type": "parameter",
@@ -348,27 +348,27 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Sets all up all the necessary boilerplate for the MAUI Essentials Media Picker",
-            "displayName": "Setup MAUI Essentials - Media Picker"
+            "description": "SETUP all up all the necessary boilerplate for the MAUI Essentials Media Picker",
+            "displayName": "SETUP MAUI Essentials - Media Picker"
         },
         "essentialsfilepicker":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Setup all the necessary boilerplate for the MAUI Essentials File Picker",
-            "displayName": "Setup MAUI Essentials - File Picker"
+            "description": "SETUP all the necessary boilerplate for the MAUI Essentials File Picker",
+            "displayName": "SETUP MAUI Essentials - File Picker"
         },
         "appactions":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Sets all up all the necessary boilerplate for the MAUI App Actions",
-            "displayName": "Setup MAUI Essentials - App Actions"
+            "description": "SETUP all up all the necessary boilerplate for the MAUI App Actions",
+            "displayName": "SETUP MAUI Essentials - App Actions"
         },
         "deeplinks":{
             "type": "parameter",
-            "description": "Sets up initial deep link support",
-            "displayName": "Setup Deep Linking Support URI",
+            "description": "SETUP initial deep link support",
+            "displayName": "SETUP Deep Linking Support URI",
             "defaultValue": "",
             "datatype": "string",
             "replaces": "{DEEPLINK_HOST}"
@@ -377,239 +377,239 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Maui.BindableProperty.Generator by rrmanzano - Documentation: https://github.com/rrmanzano/maui-bindableproperty-generator",
-            "displayName": "Add Maui.BindableProperty.Generator"
+            "description": "UTILITY - Add Maui.BindableProperty.Generator by rrmanzano - Documentation: https://github.com/rrmanzano/maui-bindableproperty-generator",
+            "displayName": "UTILITY - Add Maui.BindableProperty.Generator"
         },
         "compiledbindings":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Compiled Bindings by Vitali Lesheniuk - Documentation https://github.com/levitali/CompiledBindings",
-            "displayName": "Add Compiled Bindings"
+            "description": "UTILITY - Compiled Bindings by Vitali Lesheniuk - Documentation https://github.com/levitali/CompiledBindings",
+            "displayName": "UTILITY - Add Compiled Bindings"
         },        
         "communitytoolkit":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "true",
-            "description": "MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
-            "displayName": "Add MAUI Community Toolkit"
+            "description": "UI - MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
+            "displayName": "UI - Add MAUI Community Toolkit"
         },
         "speechrecognition": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Setup Community Toolkit Speech-to-Text",
-            "displayName": "Setup Community Toolkit Speech-to-Text"
+            "description": "SETUP Community Toolkit Speech-to-Text",
+            "displayName": "SETUP Community Toolkit Speech-to-Text"
         },        
         "mediaelement":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
-            "displayName": "Add MAUI Community Toolkit Media Element"
+            "description": "UI - MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
+            "displayName": "UI - Add MAUI Community Toolkit Media Element"
         },
         "cameraview":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
-            "displayName": "Add MAUI Community Toolkit Camera"
+            "description": "UI - MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
+            "displayName": "UI - Add MAUI Community Toolkit Camera"
         },
         "camera":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Camera.MAUI - Documentation https://github.com/hjam40/Camera.MAUI",
-            "displayName": "Add Camera.MAUI"
+            "description": "UI - Camera.MAUI - Documentation https://github.com/hjam40/Camera.MAUI",
+            "displayName": "UI - Add Camera.MAUI"
         },
         "virtuallist":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "MAUI Virtual List View by Jon Dick (Redth) - Documentation https://github.com/Redth/Maui.VirtualListView",
-            "displayName": "Add MAUI Virtual List View"            
+            "description": "UI - MAUI Virtual List View by Jon Dick (Redth) - Documentation https://github.com/Redth/Maui.VirtualListView",
+            "displayName": "UI - Add MAUI Virtual List View"            
         },
         "uraniumui":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Uranium UI by Enis Necipoglu - Documentation https://enisn-projects.io/docs/en/uranium/latest",
-            "displayName": "Add Uranium UI"
+            "description": "UI - Uranium UI by Enis Necipoglu - Documentation https://enisn-projects.io/docs/en/uranium/latest",
+            "displayName": "UI - Add Uranium UI"
         },
         "skeleton":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Skeleton by Horus Software - Documentation https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton",
-            "displayName": "Add Skeleton"
+            "description": "UI - Skeleton by Horus Software - Documentation https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton",
+            "displayName": "UI - Add Skeleton"
         },
         "bottomsheet":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Bottom Sheet by The 49 Ltd - Documentation https://github.com/the49ltd/The49.Maui.BottomSheet",
-            "displayName": "Add Bottom Sheet"
+            "description": "UI - Bottom Sheet by The 49 Ltd - Documentation https://github.com/the49ltd/The49.Maui.BottomSheet",
+            "displayName": "UI - Add Bottom Sheet"
         },
         "contextmenu":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Context Menu by The 49 Ltd - Documentation https://github.com/the49ltd/The49.Maui.ContextMenu",
-            "displayName": "Add Context Menu"
+            "description": "UI - Context Menu by The 49 Ltd - Documentation https://github.com/the49ltd/The49.Maui.ContextMenu",
+            "displayName": "UI - Add Context Menu"
         },
         "sharpnadocv":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Sharpnado CollectionView by Jean-Marie Alfonsi - Documentation https://github.com/roubachof/Sharpnado.CollectionView",
-            "displayName": "Add Sharpnado CollectionView"
+            "description": "UI - Sharpnado CollectionView by Jean-Marie Alfonsi - Documentation https://github.com/roubachof/Sharpnado.CollectionView",
+            "displayName": "UI - Add Sharpnado CollectionView"
         },
         "sharpnadotabs":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Sharpnado Tabs by Jean-Marie Alfonsi - Documentation https://github.com/roubachof/Sharpnado.Tabs",
-            "displayName": "Add Sharpnado Tabs"
+            "description": "UI - Sharpnado Tabs by Jean-Marie Alfonsi - Documentation https://github.com/roubachof/Sharpnado.Tabs",
+            "displayName": "UI - Add Sharpnado Tabs"
         },
         "alohakitanimations":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "AlohaKit Animations by Javier Suárez - Documentation https://github.com/jsuarezruiz/AlohaKit.Animations/",
-            "displayName": "Add AlohaKit Animations"
+            "description": "UI - AlohaKit Animations by Javier Suárez - Documentation https://github.com/jsuarezruiz/AlohaKit.Animations/",
+            "displayName": "UI - Add AlohaKit Animations"
         },
         "livecharts":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Live Charts by Alberto Rodríguez - Documentation https://livecharts.dev/",
-            "displayName": "Add Live Charts"
+            "description": "UI - Live Charts by Alberto Rodríguez - Documentation https://livecharts.dev/",
+            "displayName": "UI - Add Live Charts"
         },
         "settingsview":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Settings View by by Satoshi NaKamura - Documentation https://github.com/muak/AiForms.Maui.SettingsView",
-            "displayName": "Add Settings View"
+            "description": "UI - Settings View by by Satoshi NaKamura - Documentation https://github.com/muak/AiForms.Maui.SettingsView",
+            "displayName": "UI - Add Settings View"
         },
         "cards":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "CardsView.Maui by Andrei Misiukevich - Documentation https://www.nuget.org/packages/CardsView.Maui",
-            "displayName": "Add CardsView.Maui"
+            "description": "UI - CardsView.Maui by Andrei Misiukevich - Documentation https://www.nuget.org/packages/CardsView.Maui",
+            "displayName": "UI - Add CardsView.Maui"
         },
         "sqlite": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "SQLite.NET-PCL by Frank Krueger - Documentation https://github.com/praeclarum/sqlite-net",
-            "displayName": "Add SQLite (SQLite.NET-PCL)"
+            "description": "SERVICE - SQLite.NET-PCL by Frank Krueger - Documentation https://github.com/praeclarum/sqlite-net",
+            "displayName": "SERVICE - Add SQLite (SQLite.NET-PCL)"
         },
         "barcodes":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Wire up native barcode scanning services - For documentation, go to https://github.com/afriscic/BarcodeScanning.Native.Maui",
-            "displayName": "Add Native Barcode Scanning (BarcodeScanning.Native.Maui)"
+            "description": "SERVICE - Wire up native barcode scanning services - For documentation, go to https://github.com/afriscic/BarcodeScanning.Native.Maui",
+            "displayName": "SERVICE - Add Native Barcode Scanning (BarcodeScanning.Native.Maui)"
         },
         "inappbilling":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "In-App Billing by James Montemagno - Documentation https://github.com/jamesmontemagno/InAppBillingPlugin",
-            "displayName": "Add In-App Billing (Plugin.InAppBilling)"
+            "description": "SERVICE - In-App Billing by James Montemagno - Documentation https://github.com/jamesmontemagno/InAppBillingPlugin",
+            "displayName": "SERVICE - Add In-App Billing (Plugin.InAppBilling)"
         },
         "storereview":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Store Review Plugin by James Montemagno - Documentation https://github.com/jamesmontemagno/StoreReviewPlugin",
-            "displayName": "Add Store Review (Plugin.StoreReview)"
+            "description": "SERVICE - Store Review Plugin by James Montemagno - Documentation https://github.com/jamesmontemagno/StoreReviewPlugin",
+            "displayName": "SERVICE - Add Store Review (Plugin.StoreReview)"
         },
         "calendar":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Calendar Store Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.CalendarStore",
-            "displayName": "Add Calendar Store (Plugin.Maui.CalendarStore)"
+            "description": "SERVICE - Calendar Store Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.CalendarStore",
+            "displayName": "SERVICE - Add Calendar Store (Plugin.Maui.CalendarStore)"
         },
         "audio":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Audio Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.Audio",
-            "displayName": "Add Audio (Plugin.Maui.Audio)"
+            "description": "SERVICE - Audio Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.Audio",
+            "displayName": "SERVICE - Add Audio (Plugin.Maui.Audio)"
         }, 
         "ocr":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "OCR Plugin by Kori Francis - Documentation https://github.com/kfrancis/ocr",
-            "displayName": "Add OCR (Plugin.Maui.OCR)"
+            "description": "SERVICE - OCR Plugin by Kori Francis - Documentation https://github.com/kfrancis/ocr",
+            "displayName": "SERVICE - Add OCR (Plugin.Maui.OCR)"
         },         
         "screenrecord":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Screen Recording Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.ScreenRecording",
-            "displayName": "Add Screen Recording (Plugin.Maui.ScreenRecording)"
+            "description": "SERVICE - Screen Recording Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.ScreenRecording",
+            "displayName": "SERVICE - Add Screen Recording (Plugin.Maui.ScreenRecording)"
         },         
         "fingerprint":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Fingerprint Plugin by Konstantin S & Sven-Michael Stübe - Documentation https://github.com/oscoreio/Maui.Biometric",
-            "displayName": "Add Biometric Recognition (Maui.Biometric)"
+            "description": "SERVICE - Fingerprint Plugin by Konstantin S & Sven-Michael Stübe - Documentation https://github.com/oscoreio/Maui.Biometric",
+            "displayName": "SERVICE - Add Biometric Recognition (Maui.Biometric)"
         },
         "flipper":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Drastic.Flipper - An amazing tool for your MAUI application by Tim Miller - Documentation: https://github.com/drasticactions/Drastic.Flipper",
-            "displayName": "Add Drastic Flipper"
+            "description": "UTILITY - Add Drastic.Flipper - An amazing tool for your MAUI application by Tim Miller - Documentation: https://github.com/drasticactions/Drastic.Flipper",
+            "displayName": "UTILITY - Add Drastic Flipper"
         },
         "skia":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add SkiaSharp - Documentation: https://github.com/mono/SkiaSharp",
-            "displayName": "Add SkiaSharp"
+            "description": "UI - Add SkiaSharp - Documentation: https://github.com/mono/SkiaSharp",
+            "displayName": "UI - Add SkiaSharp"
         },
         "skiaextended":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add SkiaSharp Extended (Lottie) - Documentation: https://github.com/mono/SkiaSharp.Extended",
-            "displayName": "Add SkiaSharp Extended (Lottie)" 
+            "description": "UI - Add SkiaSharp Extended (Lottie) - Documentation: https://github.com/mono/SkiaSharp.Extended",
+            "displayName": "UI - Add SkiaSharp Extended (Lottie)" 
         },
         "userdialogs": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add ACR User Dialogs - Documentation: https://github.com/aritchie/userdialogs",
-            "displayName": "Add ACR User Dialogs" 
+            "description": "SERVICE - Add ACR User Dialogs - Documentation: https://github.com/aritchie/userdialogs",
+            "displayName": "SERVICE - Add ACR User Dialogs" 
         },
         "debugrainbows": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Debug Rainbows - Documentation: https://github.com/sthewissen/Plugin.Maui.DebugRainbows",
-            "displayName": "Add Debug Rainbows" 
+            "description": "UTILITY - Add Debug Rainbows - Documentation: https://github.com/sthewissen/Plugin.Maui.DebugRainbows",
+            "displayName": "UTILITY -  Add Debug Rainbows" 
         },
         "ffimageloading":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add FFImageLoading MAUI - Documentation: https://github.com/microspaze/FFImageLoading.Maui",
-            "displayName": "Add FFImageLoading MAUI" 
+            "description": "UI - Add FFImageLoading MAUI - Documentation: https://github.com/microspaze/FFImageLoading.Maui",
+            "displayName": "UI - Add FFImageLoading MAUI" 
         },
         "embedio": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add EmbedIO Tiny Web Server - Documentation: https://unosquare.github.io/embedio/",
-            "displayName": "Add EmbedIO Tiny Web Server"  
+            "description": "SERVICE - Add EmbedIO Tiny Web Server - Documentation: https://unosquare.github.io/embedio/",
+            "displayName": "SERVICE - Add EmbedIO Tiny Web Server"  
         },
         "mudblazor": {
             "type": "parameter",
@@ -629,15 +629,15 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add Android Auto Support",
-            "displayName": "Add Android Auto Support"
+            "description": "AUTO - Add Android Auto Support",
+            "displayName": "AUTO - Add Android Auto Support"
         },
         "carplay":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "Add iOS CarPlay Support",
-            "displayName": "Add iOS CarPlay Support"
+            "description": "AUTO - Add iOS CarPlay Support",
+            "displayName": "AUTO - Add iOS CarPlay Support"
         },
         "HostIdentifier": {
             "type": "bind",
@@ -722,6 +722,11 @@
             "type": "computed",
             "datatype": "bool",
             "value": "(authservice && refit)"
+        },
+        "useblazor":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(blazor || radzen || mudblazor)"
         }
     },
     "sources": [{
