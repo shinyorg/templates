@@ -319,7 +319,7 @@
 		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0" />
 		<!--#endif-->
 		<!--#if (userdialogs)-->
-		<PackageReference Include="Acr.UserDialogs" Version="9.0.0" />
+		<PackageReference Include="Acr.UserDialogs.Maui" Version="9.1.0" />
 		<!--#endif-->
 		<!--#if (debugrainbows)-->
 		<PackageReference Include="Plugin.Maui.DebugRainbows" Version="1.2.1" Condition="'$(Configuration)' == 'Debug'" />

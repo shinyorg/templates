@@ -1,4 +1,7 @@
-﻿#if debugrainbows
+﻿#if userdialogs
+using Acr.UserDialogs;
+#endif
+#if debugrainbows
 using Plugin.Maui.DebugRainbows;
 #endif
 #if screenrecord
@@ -71,6 +74,9 @@ public static class MauiProgram
         var builder = MauiApp
             .CreateBuilder()
             .UseMauiApp<App>()
+#if userdialogs
+            .UseUserDialogs()
+#endif
 #if virtuallist
             .UseVirtualListView()
 #endif
@@ -387,17 +393,6 @@ public static class MauiProgram
 #endif
 #if storereview
         builder.Services.AddSingleton(Plugin.StoreReview.CrossStoreReview.Current);
-#endif
-#if userdialogs
-        builder.Services.AddSingleton(sp => 
-        {
-//-:cnd:noEmit
-#if ANDROID
-            Acr.UserDialogs.UserDialogs.Init(() => sp.GetRequiredService<AndroidPlatform>().CurrentActivity);
-#endif
-//+:cnd:noEmit
-            return Acr.UserDialogs.UserDialogs.Instance;
-        });
 #endif
 #if shinyframework
         builder.Services.AddDataAnnotationValidation();
