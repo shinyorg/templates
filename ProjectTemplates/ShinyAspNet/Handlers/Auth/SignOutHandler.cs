@@ -14,6 +14,6 @@ public class SignOutHandler(AppDbContext data, IUserService user) : IRequestHand
                 x.UserId == userId &&
                 x.Id == request.RefreshToken
             )
-            .ExecuteDeleteAsync();
+            .ExecuteDeleteAsync(cancellationToken);
     }
 }

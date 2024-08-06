@@ -43,6 +43,10 @@ builder.Logging.AddOpenTelemetry(options =>
     });
 });
 
+builder.Services
+    .AddHealthChecks()
+    .AddDbContextCheck<AppDbContext>();
+
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddHttpContextAccessor();
@@ -243,4 +247,8 @@ app.UseStaticFiles(new StaticFileOptions
 });
 #endif
 
+app
+    .MapHealthChecks("/health")
+    .RequireHost("*:5001");
+    
 app.Run();

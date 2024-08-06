@@ -15,7 +15,9 @@ Created by [Allan Ritchie](https://github.com/aritchie)
 * [GitHub](https://github.com/shinyorg/mediator)
 * [Documentation](https://shinylib.net/client/mediator)
 
+## ASP.NET Health Checks
 
+* [Documentation](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/health-checks?view=aspnetcore-8.0)
 
 <!--#if (orleans)-->
 ## Microsoft Orleans

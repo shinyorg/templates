@@ -14,9 +14,9 @@ public class RefreshHandler(AppDbContext data, JwtService jwtService) : IRequest
         var refreshToken = await data
             .RefreshTokens
             .Include(x => x.User)
-            .FirstOrDefaultAsync(x => x.Id == request.Token);
+            .FirstOrDefaultAsync(x => x.Id == request.Token, cancellationToken);
 
-        var tokens = await jwtService.CreateJwt(refreshToken.User);
+        var tokens = await jwtService.CreateJwt(refreshToken.User, cancellationToken);
 
         return RefreshResponse.Successful(tokens.Jwt, tokens.RefreshToken);
     }
