@@ -3,7 +3,7 @@ namespace ShinyAspNet.Handlers.Auth;
 public record SignOutRequest(
     string RefreshToken,
     string? PushToken
-) : IRequest;
+) : Shiny.Mediator.IRequest;
 
 
 public record SignInRequest(string Scheme) : IRequest<SignInResponse> { }

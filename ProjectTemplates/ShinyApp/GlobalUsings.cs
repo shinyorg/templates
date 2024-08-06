@@ -21,6 +21,7 @@ global using ReactiveUI;
 global using ReactiveUI.Fody.Helpers;
 #endif
 #if shinyframework || prism
+global using Prism.AppModel;
 global using Prism.Navigation;
 global using Prism.Services;
 #endif

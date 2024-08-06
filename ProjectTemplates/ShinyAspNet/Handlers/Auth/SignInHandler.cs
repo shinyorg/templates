@@ -19,7 +19,7 @@ public class SignInHandler(AppDbContext data, JwtService jwtService, IHttpContex
             if (user1 == null)
                 return SignInResponse.Fail;
 
-            var uritest = await this.CreateTokenToApp(user1!, false);
+            var uritest = await this.CreateTokenToApp(user1!, false, cancellationToken);
             return SignInResponse.Sucessful(uritest);
         }
 #endif
@@ -33,9 +33,9 @@ public class SignInHandler(AppDbContext data, JwtService jwtService, IHttpContex
             return SignInResponse.Fail;
 
         var newUser = false;
-        var claims = auth.Principal.Identities.FirstOrDefault()?.Claims;
+        var claims = auth.Principal.Identities.FirstOrDefault()?.Claims.ToList();
         var email = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-        var user = await data.Users.FirstOrDefaultAsync(x => x.Email == email);
+        var user = await data.Users.FirstOrDefaultAsync(x => x.Email == email, cancellationToken);
 
         if (user == null)
         {
@@ -51,7 +51,7 @@ public class SignInHandler(AppDbContext data, JwtService jwtService, IHttpContex
         user.LastName = claims!.First(x => x.Type == ClaimTypes.Surname).Value;
         await data.SaveChangesAsync();
 
-        var uri = await this.CreateTokenToApp(user, newUser);
+        var uri = await this.CreateTokenToApp(user, newUser, cancellationToken);
         return SignInResponse.Sucessful(uri);
     }
 

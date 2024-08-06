@@ -28,18 +28,18 @@ public class JwtService
     }
 
 
-    public async Task<(string Jwt, string RefreshToken)> CreateJwt(User user)
+    public async Task<(string Jwt, string RefreshToken)> CreateJwt(User user, CancellationToken cancellationToken)
     {
         var jwtString = this.CreateJwtString(
             TimeSpan.FromMinutes(this.tokenExpiryMins),
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
         );
-        var rtoken = await this.CreateRefreshToken(user);
+        var rtoken = await this.CreateRefreshToken(user, cancellationToken);
         return (jwtString, rtoken);
     }
 
 
-    public async Task<bool> ValidateRefreshToken(string token)
+    public async Task<bool> ValidateRefreshToken(string token, CancellationToken cancellationToken)
     {
         try
         {
@@ -60,7 +60,10 @@ public class JwtService
             var storeToken = await this.data
                 .RefreshTokens
                 .Include(x => x.User)
-                .FirstOrDefaultAsync(x => x.Id == token);
+                .FirstOrDefaultAsync(
+                    x => x.Id == token,
+                    cancellationToken
+                );
 
             if (storeToken == null)
                 return false;
@@ -97,7 +100,7 @@ public class JwtService
     }
 
 
-    async Task<string> CreateRefreshToken(User user)
+    async Task<string> CreateRefreshToken(User user, CancellationToken cancellationToken)
     {
         var jwtString = this.CreateJwtString(
             TimeSpan.FromHours(this.refreshExpiryHours),
@@ -110,11 +113,11 @@ public class JwtService
             DateCreated = DateTimeOffset.UtcNow,
             UserId = user.Id
         });
-        await data.SaveChangesAsync();
+        await data.SaveChangesAsync(cancellationToken);
         return jwtString;
     }
 
 
-    SymmetricSecurityKey GetSigningKey() => new SymmetricSecurityKey(Encoding.UTF8.GetBytes(this.signingKey));
-    SigningCredentials GetJwtKey() => new SigningCredentials(this.GetSigningKey(), SecurityAlgorithms.HmacSha256);
+    SymmetricSecurityKey GetSigningKey() => new(Encoding.UTF8.GetBytes(this.signingKey));
+    SigningCredentials GetJwtKey() => new(this.GetSigningKey(), SecurityAlgorithms.HmacSha256);
 }
