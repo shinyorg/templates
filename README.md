@@ -102,13 +102,6 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 
 <img src="vs4win.png" />
 
-#### MAUI XUnit Device Runner Project
-
-_Sets up a platform unit test project using [Shiny.Xunit.Runners.Maui](https://github.com/shinyorg/xunit-maui)_
-
-#### iOS Extension for .NET 8
-	
-_The Microsoft iOS Extension template is currently broken on VS4win & VS4mac, so this is in place for now. Instructions on how to wire this up to your MAUI project_
 
 #### Shiny.NET Server Extensions
 
