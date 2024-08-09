@@ -26,10 +26,10 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<MauiVersion>8.0.71</MauiVersion>
+		<MauiVersion>8.0.80</MauiVersion>
 		<ShinyVersion>3.3.3</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>1.7.3</MediatorVersion>
+		<MediatorVersion>1.7.4</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
