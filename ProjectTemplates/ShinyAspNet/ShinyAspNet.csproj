@@ -10,7 +10,7 @@
         <OrleansVersion>8.2.0</OrleansVersion>
         <!--#endif-->
         <!--#if (email || push)-->
-        <ShinyExtensionsVersion>2.0.0-preview-0018</ShinyExtensionsVersion>
+        <ShinyExtensionsVersion>2.0.0-preview-0034</ShinyExtensionsVersion>
         <!--#endif-->
     </PropertyGroup>
 
