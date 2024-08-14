@@ -47,6 +47,13 @@
 		-->
     </PropertyGroup>
 
+	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android' AND '$(Configuration)' == 'Debug'">
+		<!--these help speed up android builds-->
+		<RuntimeIdentifier>android-arm64</RuntimeIdentifier>
+		<AndroidEnableProfiler>true</AndroidEnableProfiler>
+		<AndroidPackageFormat>aab</AndroidPackageFormat>
+	</PropertyGroup>
+
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios' OR $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
 		<SupportedOSPlatformVersion>14.2</SupportedOSPlatformVersion>
 		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>	
@@ -335,6 +342,15 @@
 		<!--#endif-->
 		<!--#if (radzen)-->
 		<PackageReference Include="Radzen.Blazor" Version="5.0.4" />
+		<!--#endif-->
+		<!--#if (syslinqasync)-->
+		<PackageReference Include="System.Linq.Async" Version="6.0.1" />
+		<!--#endif-->
+		<!--#if (unitsnet)-->
+		<PackageReference Include="UnitsNet" Version="5.56.0" />
+		<!--#endif-->
+		<!--#if (humanizer)-->
+		<PackageReference Include="Humanizer" Version="2.14.1" />
 		<!--#endif-->
 	</ItemGroup>
 
