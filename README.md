@@ -99,6 +99,10 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [The 49 Bottom Sheet](https://github.com/the49ltd/The49.Maui.BottomSheet) by The 49 Ltd
 	* [The 49 Context Menu](hhttps://github.com/the49ltd/The49.Maui.ContextMenu) by The 49 Ltd
 	* [Bindable Property Generator](https://github.com/rrmanzano/maui-bindableproperty-generator) by rrmanzano
+	* [System.Linq.Async](https://github.com/dotnet/reactive)
+	* [Humanizer](https://github.com/Humanizr/Humanizer)
+	* [Units .NET](https://github.com/angularsen/UnitsNet) by Andreas Gullberg Larsen
+
 
 <img src="vs4win.png" />
 
@@ -110,6 +114,9 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 * Minimal APIs
 * Shiny Mediator Endpoint Setup
 * .NET Orleans
+* OpenAPI
+* DB UP
+* OpenTelemetry
 * Entity Framework Basic Setup
 * MSAL & WebAuthenticator Setup /w Google & Facebook
 * Apple Domain Association Setup

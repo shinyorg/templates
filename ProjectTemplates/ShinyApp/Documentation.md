@@ -496,3 +496,36 @@ _This is a flexible TableView specialized in settings for Android / iOS by Satos
 * [GitHub](https://github.com/muak/AiForms.Maui.SettingsView)
 
 <!--#endif-->
+<!--#if (syslinqasync)-->
+## System.Linq.Async
+
+IAsyncEnumerable<T>, and the associated version C# (8.0) added intrinsic support for this interface with its await foreach construct.
+
+Although .NET Core 3.0 defined IAsyncEnumerable<T>, it did not add any corresponding LINQ implementation. Whereas IEnumerable<T> supports all the standard operators such as Where, GroupBy, and SelectMany, .NET does not have built-in implementations of any of these for IAsyncEnumerable<T>. However, Ix had provided LINQ operators for its prototype version of IAsyncEnumerable<T> from the start, so when .NET Core 3.0 shipped, it was a relatively straightforward task to update all those existing LINQ operators to work with the new, official IAsyncEnumerable<T>.
+
+Thus, the System.Linq.Async NuGet package was created, providing a LINQ to Objects implementation for IAsyncEnumerable<T> to match the one already built into .NET for IEnumerable<T>.
+
+Since all of the relevant code was already part of the Ix project (with IAsyncEnumerable<T> also originally having been defined by this project), the System.Linq.Async NuGet package is built as part of the Ix project.
+
+* [GitHub](https://github.com/dotnet/reactive)
+
+<!--#endif-->
+<!--#if (humanizer)-->
+## Humanizer
+
+Humanizer meets all your .NET needs for manipulating and displaying strings, enums, dates, times, timespans, numbers and quantities.
+
+* [GitHub](https://github.com/Humanizr/Humanizer)
+
+<!--#endif-->
+<!--#if (unitsnet)-->
+## Units .NET
+Written by Andreas Gullberg Larsen
+
+Add strongly typed quantities to your code and get merrily on with your life.
+
+No more magic constants found on Stack Overflow, no more second-guessing the unit of parameters and variables.
+
+* [GitHub](https://github.com/angularsen/UnitsNet)
+
+<!--#endif-->

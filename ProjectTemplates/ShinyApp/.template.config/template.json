@@ -639,6 +639,27 @@
             "description": "AUTO - Add iOS CarPlay Support",
             "displayName": "AUTO - Add iOS CarPlay Support"
         },
+        "humanizer":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "UTILITY - Add Humanizer - Documentation: https://github.com/Humanizr/Humanizer",
+            "displayName": "UTILITY - Add Humanizer"
+        },
+        "unitsnet":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "UTILITY - Add UnitsNet - Documentation: https://github.com/angularsen/UnitsNet by Andreas Gullberg Larsen",
+            "displayName": "UTILITY - Add UnitsNet"
+        },
+        "syslinqasync":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "UTILITY - Add System.Linq.Async - Documentation: https://github.com/dotnet/reactive",
+            "displayName": "UTILITY - Add System.Linq.Async"
+        },
         "HostIdentifier": {
             "type": "bind",
             "binding": "HostIdentifier"

@@ -19,6 +19,12 @@ Created by [Allan Ritchie](https://github.com/aritchie)
 
 * [Documentation](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/health-checks?view=aspnetcore-8.0)
 
+## DB UP
+
+DbUp is a .NET library that helps you to deploy changes to SQL Server databases. It tracks which SQL scripts have been run already, and runs the change scripts that are needed to get your database up to date.
+
+* [Documentation](https://dbup.readthedocs.io/en/latest/)
+
 <!--#if (orleans)-->
 ## Microsoft Orleans
 
@@ -68,10 +74,4 @@ _Powerful email templates for your apps_
 * [Documentation](http://shinylib.net/extensions/email.html)
 * [GitHub](https://github.com/shinyorg/apiservices)
 
-<!--#endif-->
-<!--#if (mediatr)-->
-## MediatR
-_MediatR is a simple, unambitious mediator implementation in .NET_
-
-* [Documentation](https://github.com/jbogard/MediatR)
 <!--#endif-->

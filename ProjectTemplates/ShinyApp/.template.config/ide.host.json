@@ -494,5 +494,23 @@
             "text": "BLAZOR - Add Radzen.Blazor"
         },
         "isVisible": true
+    },{
+        "id": "syslinqasync",
+        "name":{
+            "text": "UTILITY - Add System.Linq.Async"
+        },
+        "isVisible": true
+    },{
+        "id": "humanizer",
+        "name":{
+            "text": "UTILITY - Add Humanizer"
+        },
+        "isVisible": true
+    },{
+        "id": "unitsnet",
+        "name":{
+            "text": "UTILITY - Add UnitsNet"
+        },
+        "isVisible": true
     }]
 }
