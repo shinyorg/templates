@@ -29,7 +29,7 @@
 		<MauiVersion>8.0.80</MauiVersion>
 		<ShinyVersion>3.3.3</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>1.7.4</MediatorVersion>
+		<MediatorVersion>1.7.5</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -160,7 +160,7 @@
 		<PackageReference Include="Onion.Maui.GoogleMaps" Version="5.0.3" />
 		<!--#endif-->
 		<!--#if (shinyframework || prism)-->
-		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.401-pre" />
+		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.537" />
 		<!--#endif-->
 		<!--#if (reactiveui)-->
 		<PackageReference Include="ReactiveUI" Version="20.1.1" />
@@ -182,7 +182,7 @@
 		<PackageReference Include="Shiny.Mediator" Version="$(MediatorVersion)" />
 		<PackageReference Include="Shiny.Mediator.Maui" Version="$(MediatorVersion)" />
 		<PackageReference Include="Shiny.Mediator.Caching" Version="$(MediatorVersion)" />
-		<!-- <PackageReference Include="Shiny.Mediator.Resilience" Version="$(MediatorVersion)" /> -->
+		<PackageReference Include="Shiny.Mediator.Resilience" Version="$(MediatorVersion)" />
 		<!--#if (shinyframework || prism)-->
 		<PackageReference Include="Shiny.Mediator.Prism" Version="$(MediatorVersion)" />
 		<!--#endif-->

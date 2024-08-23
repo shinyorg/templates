@@ -317,7 +317,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "CODE - Add Refit API Client used with sample Authentication service",
-            "displayName": "CODE - Add Refit HTTP Client with Authenication Service"
+            "displayName": "CODE - Add Refit HTTP Client with Authentication Service"
         },
         "maptype": {
             "type": "parameter",
