@@ -83,8 +83,8 @@
 		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="%24(AppIdentifierPrefix)$(ApplicationId)" />
 		<!--#endif-->
 		<!--#if (usedeeplinks)-->
-		<CustomEntitlements Include="com.apple.developer.associated-domains" Type="StringArray" Value="applinks:{DEEPLINK_HOST}?mode=developer" Condition="'$(Condition)' == 'Debug'" />
-		<CustomEntitlements Include="com.apple.developer.associated-domains" Type="StringArray" Value="applinks:{DEEPLINK_HOST}" Condition="'$(Condition)' == 'Release'" />
+		<CustomEntitlements Include="com.apple.developer.associated-domains" Type="StringArray" Value="applinks:{DEEPLINK_HOST}?mode=developer" Condition="'$(Configuration)' == 'Debug'" />
+		<CustomEntitlements Include="com.apple.developer.associated-domains" Type="StringArray" Value="applinks:{DEEPLINK_HOST}" Condition="'$(Configuration)' == 'Release'" />
 		<!--#endif-->
 		<!--#if (usepush)-->
 		<CustomEntitlements Include="aps-environment" Type="string" Value="development" Condition="'$(Configuration)' == 'Debug'" />
