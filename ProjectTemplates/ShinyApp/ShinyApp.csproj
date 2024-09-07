@@ -26,10 +26,10 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<MauiVersion>8.0.80</MauiVersion>
+		<MauiVersion>8.0.82</MauiVersion>
 		<ShinyVersion>3.3.3</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>1.7.5</MediatorVersion>
+		<MediatorVersion>1.8.0</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -149,22 +149,22 @@
 		<!--#endif-->
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#if (shinyframework || communitytoolkit || speechrecognition)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.2" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.3" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
-		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.1.0" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.0.1" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.1.0" />
 		<!--#endif-->
 		<!--#if (cameraview)-->
-		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.0.3" />
+		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.0.4" />
 		<!--#endif-->
 		<!--#if (camera)-->
 		<PackageReference Include="Camera.Maui" Version="1.5.1" />
 		<!--#endif-->
 		<!--#if (usegooglemaps)-->
-		<PackageReference Include="Onion.Maui.GoogleMaps" Version="5.0.3" />
+		<PackageReference Include="Onion.Maui.GoogleMaps" Version="6.0.0" />
 		<!--#endif-->
 		<!--#if (shinyframework || prism)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.537" />
@@ -187,6 +187,7 @@
 		<!--#endif-->
 		<!--#if (shinymediator)-->
 		<PackageReference Include="Shiny.Mediator" Version="$(MediatorVersion)" />
+		<PackageReference Include="Shiny.Mediator.SourceGenerators" Version="$(MediatorVersion)" />
 		<PackageReference Include="Shiny.Mediator.Maui" Version="$(MediatorVersion)" />
 		<PackageReference Include="Shiny.Mediator.Caching" Version="$(MediatorVersion)" />
 		<PackageReference Include="Shiny.Mediator.Resilience" Version="$(MediatorVersion)" />
