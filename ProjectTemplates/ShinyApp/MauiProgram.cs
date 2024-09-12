@@ -267,10 +267,20 @@ public static class MauiProgram
         builder.Services.AddBattery();
 #endif
 #if shinymediator
-        builder.Services.AddShinyMediator(x => x
-        
+        builder.Services.AddShinyMediator(x => x 
             .AddMemoryCaching()
             .AddDataAnnotations()
+            .AddResiliencyMiddleware(
+                ("Default", pipeline =>
+                {
+                    pipeline.AddRetry(new RetryStrategyOptions
+                    {
+                        MaxRetryAttempts = 2,
+                        MaxDelay = TimeSpan.FromSeconds(1.0),
+                    });
+                    pipeline.AddTimeout(TimeSpan.FromSeconds(5));
+                })
+            )
 #if shinyframework
             .AddPrismSupport()
 #endif
