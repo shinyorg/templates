@@ -75,9 +75,9 @@
 	</PropertyGroup>
 
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
-		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.get-task-allow" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.network.client" Type="boolean" Value="true" />	
+		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" Visible="false" />
+		<CustomEntitlements Include="com.apple.security.get-task-allow" Type="boolean" Value="true" Visible="false" />
+		<CustomEntitlements Include="com.apple.security.network.client" Type="boolean" Value="true" Visible="false" />	
 	</ItemGroup>
 	
 	<!--#endif-->
@@ -85,17 +85,17 @@
 		<BundleResource Include="Platforms\iOS\PrivacyInfo.xcprivacy" LogicalName="PrivacyInfo.xcprivacy" />
 		
 		<!--#if (usemsal)-->
-		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="%24(AppIdentifierPrefix)$(ApplicationId);%24(AppIdentifierPrefix)com.microsoft.adalcache" />
+		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="%24(AppIdentifierPrefix)$(ApplicationId);%24(AppIdentifierPrefix)com.microsoft.adalcache" Visible="false" />
 		<!--#else-->
-		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="%24(AppIdentifierPrefix)$(ApplicationId)" />
+		<CustomEntitlements Include="keychain-access-groups" Type="StringArray" Value="%24(AppIdentifierPrefix)$(ApplicationId)" Visible="false" />
 		<!--#endif-->
 		<!--#if (usedeeplinks)-->
-		<CustomEntitlements Include="com.apple.developer.associated-domains" Type="StringArray" Value="applinks:{DEEPLINK_HOST}?mode=developer" Condition="'$(Configuration)' == 'Debug'" />
-		<CustomEntitlements Include="com.apple.developer.associated-domains" Type="StringArray" Value="applinks:{DEEPLINK_HOST}" Condition="'$(Configuration)' == 'Release'" />
+		<CustomEntitlements Include="com.apple.developer.associated-domains" Type="StringArray" Value="applinks:{DEEPLINK_HOST}?mode=developer" Condition="'$(Configuration)' == 'Debug'" Visible="false" />
+		<CustomEntitlements Include="com.apple.developer.associated-domains" Type="StringArray" Value="applinks:{DEEPLINK_HOST}" Condition="'$(Configuration)' == 'Release'" Visible="false" />
 		<!--#endif-->
 		<!--#if (usepush)-->
-		<CustomEntitlements Include="aps-environment" Type="string" Value="development" Condition="'$(Configuration)' == 'Debug'" />
-		<CustomEntitlements Include="aps-environment" Type="string" Value="production" Condition="'$(Configuration)' == 'Release'" />
+		<CustomEntitlements Include="aps-environment" Type="string" Value="development" Condition="'$(Configuration)' == 'Debug'" Visible="false" />
+		<CustomEntitlements Include="aps-environment" Type="string" Value="production" Condition="'$(Configuration)' == 'Release'" Visible="false" />
 		<!--#endif-->
 		<!--#if (notifications)-->
 		<!--
@@ -104,19 +104,19 @@
 		-->
 		<!--#endif-->
 		<!--#if (essentialsfilepicker)-->
-		<CustomEntitlements Include="com.apple.security.assets.movies.read-only" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.assets.music.read-only" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.assets.pictures.read-only" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.files.user-selected.read-only" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.files.downloads.read-only" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.personal-information.photos-library" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.assets.movies.read-only" Type="boolean" Value="true" Visible="false" />
+		<CustomEntitlements Include="com.apple.security.assets.music.read-only" Type="boolean" Value="true" Visible="false" />
+		<CustomEntitlements Include="com.apple.security.assets.pictures.read-only" Type="boolean" Value="true" Visible="false" />
+		<CustomEntitlements Include="com.apple.security.files.user-selected.read-only" Type="boolean" Value="true" Visible="false" />
+		<CustomEntitlements Include="com.apple.security.files.downloads.read-only" Type="boolean" Value="true" Visible="false" />
+		<CustomEntitlements Include="com.apple.security.personal-information.photos-library" Type="boolean" Value="true" Visible="false" />
 		<!--#endif-->
 		<!--#if (carplay)-->
-		<CustomEntitlements Include="com.apple.developer.carplay-driving-task" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.developer.carplay-driving-task" Type="boolean" Value="true" Visible="false" />
 		<!--#endif-->
 		<!--#if (calendar)-->
-		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" />
-		<CustomEntitlements Include="com.apple.security.personal-information.calendar" Type="boolean" Value="true" />
+		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" Visible="false" />
+		<CustomEntitlements Include="com.apple.security.personal-information.calendar" Type="boolean" Value="true" Visible="false" />
 		<!--#endif-->
 	</ItemGroup>
 
