@@ -26,10 +26,10 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<MauiVersion>8.0.82</MauiVersion>
+		<MauiVersion>8.0.90</MauiVersion>
 		<ShinyVersion>3.3.3</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>1.8.0</MediatorVersion>
+		<MediatorVersion>1.8.1</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -310,7 +310,7 @@
 		<PackageReference Include="UraniumUI.Blurs" Version="2.9.1" />
 		<!--#endif-->
 		<!--#if (ctmvvm)-->
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.1" />
 		<!--#endif-->
 		<!--#if (skeleton)-->
 		<PackageReference Include="HorusStudio.Maui.Skeleton" Version="2.0.0" />
