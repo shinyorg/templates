@@ -222,43 +222,37 @@
             "text": "Android Maps API Key (MAUI Maps)"
         },
         "isVisible": true
-    }, 
-    {
+    },{
         "id": "essentialsmedia",
         "name": {
             "text": "Setup MAUI Essentials - Media Picker"
         },
         "isVisible": true
-    },
-    {
+    },{
         "id": "essentialsfilepicker",
         "name": {
             "text": "Setup MAUI Essentials - File Picker"
         },
         "isVisible": true
-    },
-    {
+    },{
         "id": "appactions",
         "name": {
             "text": "Setup MAUI Essentials - App Actions"
         },
         "isVisible": true
-    },
-    {
+    },{
         "id": "deeplinks",
         "name": {
             "text": "Setup Deep Linking Support"
         },
         "isVisible": true
-    },
-    {
+    },{
         "id": "compiledbindings",
         "name": {
             "text": "Add Compiled Bindings"
         },
         "isVisible": true
-    },
-    {
+    },{
         "id": "binablegenerator",
         "name": {
             "text": "Add Bindable Property Generator"
@@ -285,15 +279,13 @@
             "text": "Add MAUI Community Toolkit Camera"
         },
         "isVisible": true
-    },
-    {
+    },{
         "id": "camera",
         "name": {
             "text": "Add Camera.MAUI"
         },
         "isVisible": true
-    },
-    {
+    },{
         "id": "virtuallist",
         "name":{
             "text": "Add MAUI Virtual List View"
@@ -313,15 +305,13 @@
             "text": "Add Skeleton"
         },
         "isVisible": true
-    },
-    {
+    },{
         "id": "bottomsheet",
         "name":{
             "text": "Add Bottom Sheet"
         },
         "isVisible": true
-    },
-    {
+    },{
         "id": "contextmenu",
         "name":{
             "text": "Add Context Menu"
@@ -492,6 +482,12 @@
         "id": "radzen",
         "name":{
             "text": "BLAZOR - Add Radzen.Blazor"
+        },
+        "isVisible": true
+    },{
+        "id": "fluentui",
+        "name":{
+            "text": "BLAZOR - Add Microsoft FluentUI"
         },
         "isVisible": true
     },{

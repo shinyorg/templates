@@ -26,10 +26,10 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<MauiVersion>8.0.90</MauiVersion>
+		<MauiVersion>8.0.91</MauiVersion>
 		<ShinyVersion>3.3.3</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>1.8.1</MediatorVersion>
+		<MediatorVersion>2.0.0</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -149,16 +149,16 @@
 		<!--#endif-->
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#if (shinyframework || communitytoolkit || speechrecognition)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.3" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.0" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
 		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.1.0" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.1.0" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.1.1" />
 		<!--#endif-->
 		<!--#if (cameraview)-->
-		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.0.4" />
+		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.0.5" />
 		<!--#endif-->
 		<!--#if (camera)-->
 		<PackageReference Include="Camera.Maui" Version="1.5.1" />
@@ -170,11 +170,11 @@
 		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.537" />
 		<!--#endif-->
 		<!--#if (reactiveui)-->
-		<PackageReference Include="ReactiveUI" Version="20.1.1" />
-		<PackageReference Include="ReactiveUI.Maui" Version="20.1.1" />
+		<PackageReference Include="ReactiveUI" Version="20.1.63" />
+		<PackageReference Include="ReactiveUI.Maui" Version="20.1.63" />
 		<PackageReference Include="ReactiveUI.Fody" Version="19.5.41" />
 		<!--#if (useblazor)-->
-		<PackageReference Include="ReactiveUI.Blazor" Version="20.1.1" />
+		<PackageReference Include="ReactiveUI.Blazor" Version="20.1.63" />
 		<!--#endif-->
 		<!--#endif-->
 		<!--#if (shinyframework)-->
@@ -215,7 +215,7 @@
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="4.9.0" />
+		<PackageReference Include="Sentry.Maui" Version="4.12.0" />
 		<!--#endif-->
 		<!--#if (sqlitelogging)-->
 		<PackageReference Include="Shiny.Logging.Sqlite" Version="$(ShinyVersion)" />
@@ -257,19 +257,19 @@
 		<PackageReference Include="Redth.Maui.VirtualListView" Version="0.4.0" />
 		<!--#endif-->
 		<!--#if (barcodes)-->
-		<PackageReference Include="BarcodeScanning.Native.Maui" Version="1.5.7" />
+		<PackageReference Include="BarcodeScanning.Native.Maui" Version="1.5.8" />
 		<!--#endif-->
 		<!--#if (storereview)-->
 		<PackageReference Include="Plugin.StoreReview" Version="6.2.0" />
 		<!--#endif-->
 		<!--#if (inappbilling)-->
-		<PackageReference Include="Plugin.InAppBilling" Version="7.1.0" />
+		<PackageReference Include="Plugin.InAppBilling" Version="8.0.4" />
 		<!--#endif-->
 		<!--#if (calendar)-->
 		<PackageReference Include="Plugin.Maui.CalendarStore" Version="2.0.0" />
 		<!--#endif-->
 		<!--#if (audio)-->
-		<PackageReference Include="Plugin.Maui.Audio" Version="3.0.0" />
+		<PackageReference Include="Plugin.Maui.Audio" Version="3.0.1" />
 		<!--#endif-->
 		<!--#if (ocr)-->
 		<PackageReference Include="Plugin.Maui.OCR" Version="1.0.12" />
@@ -278,7 +278,7 @@
 		<PackageReference Include="Oscore.Maui.Biometric" Version="1.0.1" />
 		<!--#endif-->
 		<!--#if usehttp-->
-		<PackageReference Include="Refit" Version="7.1.2" />
+		<PackageReference Include="Refit" Version="7.2.1" />
 		<!--#endif-->
 		<!--#if (sqlite)-->
 		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
@@ -302,15 +302,15 @@
 		<PackageReference Include="AlohaKit.Animations" Version="1.1.0" />
 		<!--#endif-->
 		<!--#if (cards)-->
-		<PackageReference Include="CardsView.Maui" Version="0.0.9" />
+		<PackageReference Include="CardsView.Maui" Version="1.0.2" />
 		<!--#endif-->
 		<!--#if (uraniumui)-->
-		<PackageReference Include="UraniumUI.Material" Version="2.9.1" />
-		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.9.1" />
-		<PackageReference Include="UraniumUI.Blurs" Version="2.9.1" />
+		<PackageReference Include="UraniumUI.Material" Version="2.10.2" />
+		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.10.2" />
+		<PackageReference Include="UraniumUI.Blurs" Version="2.10.2" />
 		<!--#endif-->
 		<!--#if (ctmvvm)-->
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.1" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
 		<!--#endif-->
 		<!--#if (skeleton)-->
 		<PackageReference Include="HorusStudio.Maui.Skeleton" Version="2.0.0" />
@@ -340,22 +340,27 @@
 		<PackageReference Include="Plugin.Maui.DebugRainbows" Version="1.2.1" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#endif-->
 		<!--#if (ffimageloading)-->
-		<PackageReference Include="FFImageLoading.Maui" Version="1.2.6" />
+		<PackageReference Include="FFImageLoading.Maui" Version="1.2.7" />
 		<!--#endif-->
 		<!--#if (embedio)-->
 		<PackageReference Include="EmbedIO" Version="3.5.2" />
 		<!--#endif-->
 		<!--#if (mudblazor)-->
-		<PackageReference Include="MudBlazor" Version="7.4.0" />
+		<PackageReference Include="MudBlazor" Version="7.8.0" />
 		<!--#endif-->
 		<!--#if (radzen)-->
-		<PackageReference Include="Radzen.Blazor" Version="5.0.4" />
+		<PackageReference Include="Radzen.Blazor" Version="5.2.9" />
+		<!--#endif-->
+		<!--#if (fluentui)-->
+		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.10.1" />
+		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.10.1" />
+		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.6.0" />
 		<!--#endif-->
 		<!--#if (syslinqasync)-->
 		<PackageReference Include="System.Linq.Async" Version="6.0.1" />
 		<!--#endif-->
 		<!--#if (unitsnet)-->
-		<PackageReference Include="UnitsNet" Version="5.56.0" />
+		<PackageReference Include="UnitsNet" Version="5.59.0" />
 		<!--#endif-->
 		<!--#if (humanizer)-->
 		<PackageReference Include="Humanizer" Version="2.14.1" />

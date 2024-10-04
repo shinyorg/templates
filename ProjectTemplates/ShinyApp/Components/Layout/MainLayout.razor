@@ -9,6 +9,13 @@
 <RadzenTheme Theme="material" @rendermode="new InteractiveAutoRenderMode()" />
 <RadzenComponents @rendermode="new InteractiveAutoRenderMode()" />
 #endif*@
+@*#if (fluentui)
+<FluentToastProvider />
+<FluentDialogProvider />
+<FluentTooltipProvider />
+<FluentMessageBarProvider />
+<FluentMenuProvider />
+#endif*@
 
 @*
 <MudLayout>

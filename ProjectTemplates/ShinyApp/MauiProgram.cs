@@ -62,6 +62,13 @@ using MudBlazor.Services;
 #if radzen
 using Radzen;
 #endif
+#if fluentui
+using Microsoft.FluentUI.AspNetCore.Components;
+#endif
+#endif
+#if shinymediator
+using Polly;
+using Polly.Retry;
 #endif
 
 namespace ShinyApp;
@@ -255,6 +262,9 @@ public static class MauiProgram
         #endif
         #if radzen
         builder.Services.AddRadzenComponents();
+        #endif
+        #if fluentui
+        builder.Services.AddFluentUIComponents();
         #endif
 //-:cnd:noEmit
 #if DEBUG

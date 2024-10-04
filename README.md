@@ -87,8 +87,6 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [Drastic Flipper](https://github.com/drasticactions/Drastic.Flipper) by Tim Miller
 	* [Embed.IO](https://unosquare.github.io/embedio/) by Unosquare
 	* [SkiaSharp](https://github.com/mono/SkiaSharp) by Matthew Leibowitz
-	* [MudBlazor](https://mudblazor.com)
-	* [Radzen Blazor](https://blazor.radzen.com/)
 	* [ACR User Dialogs](https://github.com/aritchie/userdialogs) by Allan Ritchie
 	* [Debug Rainbows](https://github.com/sthewissen/Plugin.Maui.DebugRainbows) by Steven Thewissen
 	* [Live Charts](https://livecharts.dev/) by Alberto Rodríguez
@@ -102,7 +100,10 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [System.Linq.Async](https://github.com/dotnet/reactive)
 	* [Humanizer](https://github.com/Humanizr/Humanizer)
 	* [Units .NET](https://github.com/angularsen/UnitsNet) by Andreas Gullberg Larsen
-
+	* Blazor Libraries
+		* [MudBlazor](https://mudblazor.com)
+		* [Radzen Blazor](https://blazor.radzen.com/)
+		* [Microsoft FluentUI](https://github.com/microsoft/fluentui-blazor)
 
 <img src="vs4win.png" />
 

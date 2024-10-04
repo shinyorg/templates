@@ -30,9 +30,15 @@
         <a class="dismiss">🗙</a>
     </div>
 
+    <!--#if (fluentui)-->
+    <script app-name="{APPLICATION_ID}" src="./_content/Microsoft.FluentUI.AspNetCore.Components/js/initializersLoader.webview.js"></script>
+    <!--#endif-->
     <script src="_framework/blazor.webview.js" autostart="false"></script>
     <!--#if (mudblazor)-->
     <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <!--#endif-->
+    <!--#if (fluentui)-->
+    <script src="_content/Microsoft.FluentUI.AspNetCore.Components/Microsoft.FluentUI.AspNetCore.Components.lib.module.js" type="module" async></script>
     <!--#endif-->
 </body>
 

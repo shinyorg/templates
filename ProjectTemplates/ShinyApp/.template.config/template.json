@@ -624,7 +624,14 @@
             "defaultValue": "false",
             "description": "BLAZOR - Add Radzen.Blazor",
             "displayName": "BLAZOR - Add Radzen.Blazor"  
-        },        
+        },
+        "fluentui": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "BLAZOR - Add Microsoft FluentUI",
+            "displayName": "BLAZOR - Add Microsoft FluentUI"  
+        },
         "androidauto":{
             "type": "parameter",
             "datatype": "bool",
@@ -747,7 +754,7 @@
         "useblazor":{
             "type": "computed",
             "datatype": "bool",
-            "value": "(blazor || radzen || mudblazor)"
+            "value": "(blazor || radzen || mudblazor || fluentui)"
         }
     },
     "sources": [{

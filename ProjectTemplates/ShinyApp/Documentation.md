@@ -435,7 +435,16 @@ Trusted by thousands of users, from hobby developers to large enterprises. Use M
 [Documentation](https://mudblazor.com/)
 
 <!--#endif-->
-<!--#if (useblazor && mudblazor)-->
+<!--#if (useblazor && fluentui)-->
+## Microsoft Fluent UI
+
+The Fluent UI Blazor library provides a robust and extensive set of Blazor components. Some of those components are wrappers around Microsoft's official Fluent UI Web Components. Others are components that leverage the Fluent Design System or just make it easier to work with Fluent in general.
+
+[Documentation](https://www.fluentui-blazor.net/)
+[GitHub](https://github.com/microsoft/fluentui-blazor)
+
+<!--#endif-->
+<!--#if (useblazor && radzen)-->
 ## Radzen Blazor
 
 _Rapid Application Development for Blazor_
