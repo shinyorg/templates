@@ -2,7 +2,11 @@ namespace ShinyAspNet.Handlers.Auth;
 
 
 [ScopedHandler]
-[MediatorHttpPost("/auth/signin/refresh", RequiresAuthorization = true)]
+[MediatorHttpPost(
+    "RefreshAuth",
+    "/auth/signin/refresh", 
+    RequiresAuthorization = true
+)]
 public class RefreshHandler(AppDbContext data, JwtService jwtService) : IRequestHandler<RefreshRequest, RefreshResponse>
 {
     public async Task<RefreshResponse> Handle(RefreshRequest request, CancellationToken cancellationToken)
