@@ -245,6 +245,8 @@ public static class MauiProgram
         builder.AddRemoteConfigurationMaui();
         // builder.Services.AddOptions<MyConfig>().BindConfiguration("");
 #endif
+        builder.Logging.EnableEnrichment();
+        builder.Services.AddSingleton<ILogEnricher, AppLogEnricher>();
 #if sqlitelogging
         builder.Logging.AddSqlite(Path.Combine(FileSystem.AppDataDirectory, "logging.db"));
 #endif
@@ -298,6 +300,10 @@ public static class MauiProgram
 #if useblazor
             .UseBlazor()
 #endif
+        );
+        builder.Services.AddSingleton(
+            typeof(Shiny.Mediator.Http.IHttpRequestDecorator<,>),
+            typeof(ShinyApp.Infrastructure.AppHttpRequestDecorator<,>)
         );
 #endif
 #if appaction

@@ -29,7 +29,7 @@
 		<MauiVersion>8.0.91</MauiVersion>
 		<ShinyVersion>3.3.3</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>2.0.0</MediatorVersion>
+		<MediatorVersion>2.0.2</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -147,6 +147,7 @@
 		<!--#if (useblazor)-->
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
 		<!--#endif-->
+		<PackageReference Include="Microsoft.Extensions.Telemetry" Version="8.9.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#if (shinyframework || communitytoolkit || speechrecognition)-->
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.0" />

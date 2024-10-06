@@ -873,6 +873,10 @@
             "exclude": "Services/Impl/WebAuthenticatorAuthenticationService.cs"
         },
         {
+            "condition": "(shinymediator == false)",
+            "exclude": "Infrastructure/AppHtppRequestDecorator.cs"
+        },
+        {
             "condition": "(authservice == false || refit == false)",
             "exclude": "Services/Impl/IApiClient.cs"
         },
