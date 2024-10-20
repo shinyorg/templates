@@ -105,7 +105,30 @@ builder
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt["Key"]!))
         };
     });
-    
+
+builder
+    .Services
+    .AddOpenTelemetry()
+    .WithMetrics(metrics =>
+    {
+        // metrics
+        //     .AddPrometheusExporter()
+        //     .AddMeter("Microsoft.Orleans");
+    })
+    .WithTracing(tracing =>
+    {
+        var service = ResourceBuilder.CreateDefault().AddService("WorkflowSystem", "1.0");
+        tracing.SetResourceBuilder(service);
+        
+        tracing.AddSource("Microsoft.Orleans.Runtime");
+        tracing.AddSource("Microsoft.Orleans.Application");
+        
+        // tracing.AddZipkinExporter(zipkin =>
+        // {
+        //     zipkin.Endpoint = new Uri("http://localhost:9411/api/v2/spans");
+        // });
+    });
+
 //#if (google)
 builder.Services.AddAuthentication().AddGoogle(options =>
 {
@@ -189,11 +212,49 @@ builder.Services.AddMail(mail =>
 
 #endif
 //#if (orleans)
-builder.Host.UseOrleans(x => x
-    .UseLocalhostClustering()
-    .AddBroadcastChannel("myapp", cfg => cfg.FireAndForgetDelivery = true)
-    .AddMemoryGrainStorage("myapp")
-);
+builder.Host.UseOrleans((ctx, silo) =>
+{
+    // In order to support multiple hosts forming a cluster, they must listen on different ports.
+    // Use the --InstanceId X option to launch subsequent hosts.
+    
+    // silo.AddMemoryStreams("StreamProvider");
+    // silo.AddMemoryGrainStorage("MemoryStore");
+    // var instanceId = ctx.Configuration.GetValue<int>("InstanceId");
+    // silo.UseLocalhostClustering(
+    //     siloPort: 11111 + instanceId,
+    //     gatewayPort: 30000 + instanceId,
+    //     primarySiloEndpoint: new IPEndPoint(IPAddress.Loopback, 11111)
+    // );
+    
+    silo
+        .Configure<ClusterOptions>(options =>
+        {
+            options.ClusterId = "";
+            options.ServiceId = "";
+        })
+        .UseDashboard(x => {})
+        .UseAdoNetReminderService(options =>
+        {
+            options.ConnectionString = config.GetConnectionString("Orleans"); 
+            options.Invariant = Constants.DatabaseInvariant;
+        })
+        .UseAdoNetClustering(options =>
+        {
+            options.ConnectionString = config.GetConnectionString("Orleans");
+            options.Invariant = Constants.DatabaseInvariant;
+        })
+        .AddAdoNetGrainStorage("Default", options =>
+        {
+            options.ConnectionString = config.GetConnectionString("Orleans");
+            options.Invariant = Constants.DatabaseInvariant;
+            // options.UseJsonFormat = true;
+        })
+        .AddAdoNetStreams("Default", options =>
+        {
+            options.ConnectionString = config.GetConnectionString("Orleans");
+            options.Invariant = Constants.DatabaseInvariant;
+        });
+});
 //#endif
 
 var app = builder.Build();

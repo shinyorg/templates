@@ -10,7 +10,7 @@
         <OrleansVersion>8.2.0</OrleansVersion>
         <!--#endif-->
         <!--#if (email || push)-->
-        <ShinyExtensionsVersion>2.0.0-preview-0034</ShinyExtensionsVersion>
+        <ShinyExtensionsVersion>2.0.0-preview-0036</ShinyExtensionsVersion>
         <!--#endif-->
     </PropertyGroup>
 
@@ -26,6 +26,14 @@
         <PackageReference Include="Microsoft.Orleans.Server" Version="$(OrleansVersion)" />
         <PackageReference Include="Microsoft.Orleans.Sdk" Version="$(OrleansVersion)" />
         <PackageReference Include="Microsoft.Orleans.BroadcastChannel" Version="$(OrleansVersion)" />
+        <PackageReference Include="Microsoft.Orleans.Hosting.Kubernetes" Version="$(OrleansVersion)"/>
+        <PackageReference Include="Microsoft.Orleans.Clustering.AdoNet" Version="$(OrleansVersion)"/>
+        <PackageReference Include="Microsoft.Orleans.Persistence.AdoNet" Version="$(OrleansVersion)"/>
+        <PackageReference Include="Microsoft.Orleans.Reminders" Version="$(OrleansVersion)"/>
+        <PackageReference Include="Microsoft.Orleans.Reminders.AdoNet" Version="$(OrleansVersion)" />
+        <PackageReference Include="Microsoft.Orleans.Streaming" Version="$(OrleansVersion)"/>
+        <PackageReference Include="Microsoft.Orleans.Streaming.AdoNet" Version="8.2.0-alpha.1" />
+        <PackageReference Include="OrleansDashboard" Version="8.2.0" />
         <!--#endif-->
         <!--#if (email && orleans)-->
         <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.8.0" />
@@ -41,13 +49,13 @@
         <PackageReference Include="AspNet.Security.OAuth.Apple" Version="8.1.0" />
         <!--#endif-->        
         <!--#if (efpostgres)-->
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.10" />
         <!--#endif-->
         <!--#if (efpostgres && efspatial)-->
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="8.0.4" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="8.0.10" />
         <!--#endif-->
-        <PackageReference Include="Shiny.Mediator" Version="2.0.2" />
-        <PackageReference Include="Shiny.Mediator.AspNet" Version="2.0.2" />
+        <PackageReference Include="Shiny.Mediator" Version="2.1.0" />
+        <PackageReference Include="Shiny.Mediator.AspNet" Version="2.1.0" />
         <PackageReference Include="Shiny.Extensions.WebHosting" Version="$(ShinyExtensionsVersion)" />
         <!--#if (efmssql || efpostgres)-->
         <PackageReference Include="Shiny.Extensions.EntityFramework" Version="$(ShinyExtensionsVersion)" />
