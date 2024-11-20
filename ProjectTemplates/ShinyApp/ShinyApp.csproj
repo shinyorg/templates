@@ -191,7 +191,6 @@
 		<!--#endif-->
 		<!--#if (shinymediator)-->
 		<PackageReference Include="Shiny.Mediator" Version="$(MediatorVersion)" />
-		<PackageReference Include="Shiny.Mediator.SourceGenerators" Version="$(MediatorVersion)" />
 		<PackageReference Include="Shiny.Mediator.Maui" Version="$(MediatorVersion)" />
 		<PackageReference Include="Shiny.Mediator.Caching" Version="$(MediatorVersion)" />
 		<PackageReference Include="Shiny.Mediator.Resilience" Version="$(MediatorVersion)" />
