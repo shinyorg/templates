@@ -149,11 +149,14 @@
 		<!--#endif-->
 		<PackageReference Include="Microsoft.Extensions.Telemetry" Version="8.9.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" Condition="'$(Configuration)' == 'Debug'" />
+		<!--#if (ctmvvm)-->
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+		<!--#endif-->
 		<!--#if (shinyframework || communitytoolkit || speechrecognition)-->
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.0" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
-		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.1.0" />
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.2.0" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.1.1" />
@@ -258,7 +261,7 @@
 		<PackageReference Include="Redth.Maui.VirtualListView" Version="0.4.0" />
 		<!--#endif-->
 		<!--#if (barcodes)-->
-		<PackageReference Include="BarcodeScanning.Native.Maui" Version="1.5.8" />
+		<PackageReference Include="BarcodeScanning.Native.Maui" Version="1.5.9" />
 		<!--#endif-->
 		<!--#if (storereview)-->
 		<PackageReference Include="Plugin.StoreReview" Version="6.2.0" />
@@ -291,7 +294,7 @@
 		<PackageReference Include="Sharpnado.CollectionView.Maui" Version="3.1.2" />
 		<!--#endif-->
 		<!--#if (settingsview)-->
-		<PackageReference Include="AiForms.Maui.SettingsView" Version="1.0.12" />
+		<PackageReference Include="AiForms.Maui.SettingsView" Version="1.0.15" />
 		<!--#endif-->
 		<!--#if (livecharts)-->
 		<PackageReference Include="LiveChartsCore.SkiaSharpView.Maui" Version="2.0.0-rc2" />
@@ -309,9 +312,6 @@
 		<PackageReference Include="UraniumUI.Material" Version="2.10.2" />
 		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.10.2" />
 		<PackageReference Include="UraniumUI.Blurs" Version="2.10.2" />
-		<!--#endif-->
-		<!--#if (ctmvvm)-->
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
 		<!--#endif-->
 		<!--#if (skeleton)-->
 		<PackageReference Include="HorusStudio.Maui.Skeleton" Version="2.0.0" />

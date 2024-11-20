@@ -70,6 +70,7 @@ using Microsoft.FluentUI.AspNetCore.Components;
 using Polly;
 using Polly.Retry;
 #endif
+using Microsoft.Extensions.Diagnostics.Enrichment;
 
 namespace ShinyApp;
 
