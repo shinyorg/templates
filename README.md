@@ -84,7 +84,6 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [MAUI OCR Plugin](https://github.com/kfrancis/ocr) by Kori Francis
 	* [MAUI Biometric Plugin](https://github.com/oscoreio/Maui.Biometric) by Konstantin S & Sven-Michael Stübe
 	* [CardsView MAUI](https://github.com/AndreiMisiukevich/CardView.MAUI) by Andrei Misiukevich
-	* [Drastic Flipper](https://github.com/drasticactions/Drastic.Flipper) by Tim Miller
 	* [Embed.IO](https://unosquare.github.io/embedio/) by Unosquare
 	* [SkiaSharp](https://github.com/mono/SkiaSharp) by Matthew Leibowitz
 	* [ACR User Dialogs](https://github.com/aritchie/userdialogs) by Allan Ritchie
@@ -110,8 +109,6 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 
 #### Shiny.NET Server Extensions
 
-* Email Templating
-* Push Notification Setup
 * Minimal APIs
 * Shiny Mediator Endpoint Setup
 * .NET Orleans

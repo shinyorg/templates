@@ -215,14 +215,6 @@ public static class MauiProgram
                 fonts.AddMaterialIconFonts();
 #endif
             });
-
-#if flipper
-//-:cnd:noEmit
-#if IOS && DEBUG
-        global::Flipper.FlipperProxy.Shared.InitializeProxy();
-#endif
-//+:cnd:noEmit
-#endif
 #if useconfig
         builder.Configuration.AddJsonPlatformBundle();
 #endif

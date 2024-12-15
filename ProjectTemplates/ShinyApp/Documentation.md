@@ -334,14 +334,6 @@ _CarPlay provides a user interface, generated and hosted by the system, that you
 * [CarPlay Documentation](https://developer.apple.com/documentation/carplay)
 
 <!--#endif-->
-<!--#if (flipper)-->
-## Drastic Flipper
-
-Drastic.Flipper is a .NET binding of [Flipper](https://fbflipper.com/), a library to help debug iOS, Android, and React Native layouts. This binding supports .NET iOS and Android by Tim Miller
-
-* [GitHub](https://github.com/drasticactions/Drastic.Flipper)
-
-<!--#endif-->
 <!--#if (skia)-->
 ## SkiaSharp
 

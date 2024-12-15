@@ -555,13 +555,6 @@
             "description": "SERVICE - Fingerprint Plugin by Konstantin S & Sven-Michael Stübe - Documentation https://github.com/oscoreio/Maui.Biometric",
             "displayName": "SERVICE - Add Biometric Recognition (Maui.Biometric)"
         },
-        "flipper":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "UTILITY - Add Drastic.Flipper - An amazing tool for your MAUI application by Tim Miller - Documentation: https://github.com/drasticactions/Drastic.Flipper",
-            "displayName": "UTILITY - Add Drastic Flipper"
-        },
         "skia":{
             "type": "parameter",
             "datatype": "bool",

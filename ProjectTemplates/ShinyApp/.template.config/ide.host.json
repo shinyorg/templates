@@ -443,12 +443,6 @@
         },
         "isVisible": true
     },{
-        "id": "flipper",
-        "name":{
-            "text": "Add Drastic Flipper"
-        },
-        "isVisible": true
-    },{
         "id": "skia",
         "name":{
             "text": "Add SkiaSharp"

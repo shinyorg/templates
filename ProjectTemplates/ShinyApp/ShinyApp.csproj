@@ -251,9 +251,6 @@
 		<!--#if (usepushfirebase)-->
 		<PackageReference Include="Shiny.Push.FirebaseMessaging" Version="$(ShinyVersion)" />
 		<!--#endif-->
-		<!--#if (health)-->
-		<!-- <PackageReference Include="Shiny.Health" Version="1.0.0-beta-0018" /> -->
-		<!--#endif-->
 		<!--#if (virtuallist)-->
 		<PackageReference Include="Redth.Maui.VirtualListView" Version="0.4.0" />
 		<!--#endif-->
@@ -306,9 +303,9 @@
 		<PackageReference Include="CardsView.Maui" Version="1.0.2" />
 		<!--#endif-->
 		<!--#if (uraniumui)-->
-		<PackageReference Include="UraniumUI.Material" Version="2.10.2" />
-		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.10.2" />
-		<PackageReference Include="UraniumUI.Blurs" Version="2.10.2" />
+		<PackageReference Include="UraniumUI.Material" Version="2.11.0" />
+		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.11.0" />
+		<PackageReference Include="UraniumUI.Blurs" Version="2.11.0" />
 		<!--#endif-->
 		<!--#if (skeleton)-->
 		<PackageReference Include="HorusStudio.Maui.Skeleton" Version="2.0.0" />
@@ -365,12 +362,6 @@
 		<!--#endif-->
 	</ItemGroup>
 
-	<!--#if (flipper)-->
-	<ItemGroup Condition="$(TargetFramework.Contains('android')) OR $(TargetFramework.Contains('ios'))">
-		<PackageReference Include="Drastic.Flipper" Version="1.0.6" Condition="'$(Configuration)' == 'Debug'" />
-	</ItemGroup>
-
-	<!--#endif-->
 	<!--#if (androidauto || storereview)-->
 	<ItemGroup Condition="$(TargetFramework.Contains('android'))">
 		<!--#if (androidauto)-->
