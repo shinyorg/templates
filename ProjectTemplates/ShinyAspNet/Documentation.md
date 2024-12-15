@@ -59,19 +59,3 @@ dotnet run --generateclients true
 * [Documentation](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/social/facebook-logins?view=aspnetcore-7.0)
 
 <!--#endif-->
-<!--#if (push)-->
-## Shiny Push Notification Management
-_Powerful push notification management_
-
-* [Documentation](http://shinylib.net/extensions/push/index.html)
-* [GitHub](https://github.com/shinyorg/apiservices)
-
-<!--#endif-->
-<!--#if (email)-->
-## Shiny Email Templates
-_Powerful email templates for your apps_
-
-* [Documentation](http://shinylib.net/extensions/email.html)
-* [GitHub](https://github.com/shinyorg/apiservices)
-
-<!--#endif-->

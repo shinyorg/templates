@@ -31,20 +31,6 @@
                 "text": "Entity Framework Spatial"
             },
             "isVisible": true
-        }, 
-        {
-            "id": "push",
-            "name": {
-                "text": "Add Push Notification Management (Shiny.Extensions.Push)"
-            },
-            "isVisible": true
-        },
-        {
-            "id": "email",
-            "name": {
-                "text": "Add Email Templating (Shiny.Extensions.Email)"
-            },
-            "isVisible": true
         },
         {
             "id": "signalr",
@@ -74,13 +60,6 @@
             },
             "isVisible": true
         },
-        // {
-        //     "id": "mobileauth",
-        //     "name": {
-        //         "text": "Add Mobile Authentication Endpoints"
-        //     },
-        //     "isVisible": true
-        // },
         {
             "id": "orleans",
             "name": {

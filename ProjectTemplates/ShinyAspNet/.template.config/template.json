@@ -80,20 +80,6 @@
             "description": "SignalR",
             "displayName": "SignalR"
         },
-        "push":{
-            "type": "parameter",
-            "dataType": "bool",
-            "defaultValue": "false",
-            "description": "",
-            "displayName": "Push Notification Management (Shiny.Extensions.Push)"
-        }, 
-        "email":{
-            "type": "parameter",
-            "dataType": "bool",
-            "defaultValue": "false",
-            "description": "",
-            "displayName": "Email Templating (Shiny.Extensions.Email)"
-        },
         "google":{
             "type": "parameter",
             "dataType": "bool",

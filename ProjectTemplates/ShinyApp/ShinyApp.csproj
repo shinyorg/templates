@@ -26,10 +26,10 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<MauiVersion>8.0.92</MauiVersion>
+		<MauiVersion>9.0.21</MauiVersion>
 		<ShinyVersion>3.3.3</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>2.1.0</MediatorVersion>
+		<MediatorVersion>2.1.1</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -62,7 +62,7 @@
     </PropertyGroup>
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios' OR $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
-		<SupportedOSPlatformVersion>14.2</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion>15.0</SupportedOSPlatformVersion>
 		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>	
 	</PropertyGroup>
 
@@ -147,19 +147,19 @@
 		<!--#if (useblazor)-->
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
 		<!--#endif-->
-		<PackageReference Include="Microsoft.Extensions.Telemetry" Version="8.9.1" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" Condition="'$(Configuration)' == 'Debug'" />
+		<PackageReference Include="Microsoft.Extensions.Telemetry" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#if (ctmvvm)-->
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
 		<!--#endif-->
-		<!--#if (shinyframework || communitytoolkit || speechrecognition)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.0" />
+		<!--#if (communitytoolkit || speechrecognition)-->
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.1" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
-		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.2.0" />
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="5.1.0" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.1.1" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.1.2" />
 		<!--#endif-->
 		<!--#if (cameraview)-->
 		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.0.5" />
@@ -168,33 +168,31 @@
 		<PackageReference Include="Camera.Maui" Version="1.5.1" />
 		<!--#endif-->
 		<!--#if (usegooglemaps)-->
-		<PackageReference Include="Onion.Maui.GoogleMaps" Version="6.0.0" />
+		<PackageReference Include="Onion.Maui.GoogleMaps" Version="6.1.0" />
 		<!--#endif-->
-		<!--#if (shinyframework || prism)-->
+		<!--#if (prism)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.537" />
 		<!--#endif-->
 		<!--#if (reactiveui)-->
 		<PackageReference Include="ReactiveUI" Version="20.1.63" />
 		<PackageReference Include="ReactiveUI.Maui" Version="20.1.63" />
-		<PackageReference Include="ReactiveUI.Fody" Version="19.5.41" />
+		<PackageReference Include="ReactiveUI.SourceGenerators" Version="2.0.17">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
 		<!--#if (useblazor)-->
 		<PackageReference Include="ReactiveUI.Blazor" Version="20.1.63" />
 		<!--#endif-->
 		<!--#endif-->
-		<!--#if (shinyframework)-->
-		<PackageReference Include="ReactiveUI.Fody" Version="19.5.41" />
-		<PackageReference Include="Shiny.Framework" Version="4.1.0" />
-		<!--#else-->
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
 		<PackageReference Include="Shiny.Support.DeviceMonitoring" Version="$(ShinyVersion)" />
-		<!--#endif-->
 		<!--#if (shinymediator)-->
 		<PackageReference Include="Shiny.Mediator" Version="$(MediatorVersion)" />
 		<PackageReference Include="Shiny.Mediator.Maui" Version="$(MediatorVersion)" />
 		<PackageReference Include="Shiny.Mediator.Caching" Version="$(MediatorVersion)" />
 		<PackageReference Include="Shiny.Mediator.Resilience" Version="$(MediatorVersion)" />
-		<!--#if (shinyframework || prism)-->
+		<!--#if (prism)-->
 		<PackageReference Include="Shiny.Mediator.Prism" Version="$(MediatorVersion)" />
 		<!--#endif-->
 		<!--#if (useblazor)-->
@@ -209,7 +207,7 @@
 		<PackageReference Include="M.BindableProperty.Generator" Version="0.11.1" />
 		<!--#endif-->
 		<!--#if (localization)-->
-		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.6" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.0" />
 		<!--#endif-->
 		<!--#if (usemsal)-->
 		<PackageReference Include="Microsoft.Identity.Client" Version="4.60.3" />
@@ -218,7 +216,7 @@
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="4.12.0" />
+		<PackageReference Include="Sentry.Maui" Version="4.13.0" />
 		<!--#endif-->
 		<!--#if (sqlitelogging)-->
 		<PackageReference Include="Shiny.Logging.Sqlite" Version="$(ShinyVersion)" />

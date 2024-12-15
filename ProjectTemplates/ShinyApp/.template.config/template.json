@@ -109,13 +109,6 @@
                 "format": "D"
             }
         },
-        "shinyframework": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "FRAMEWORK - Add Shiny Framework by Allan Ritchie - Documentation https://github.com/shinyorg/framework - Lots of helpful services like navigation, zero boilerplate MVVM properties, viewmodel validation, localization, viewmodel lifecycles, dialog services, and more",
-            "displayName": "FRAMEWORK - Add Shiny Framework (Shiny + ReactiveUI + Prism)"
-        },
         "prism":{
             "type": "parameter",
             "datatype": "bool",
@@ -839,10 +832,6 @@
         {
             "condition": "(sqlite == false)",
             "exclude": "Services/MySqliteConnection.cs"
-        },
-        {
-            "condition": "(shinyframework == false)",
-            "exclude": "FodyWeavers.xml"
         },
         {
             "condition": "(authservice == false)",

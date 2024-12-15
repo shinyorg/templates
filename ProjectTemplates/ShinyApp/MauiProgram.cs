@@ -52,7 +52,7 @@ using The49.Maui.ContextMenu;
 #if camera
 using Camera.MAUI;
 #endif
-#if shinyframework || communitytoolkit || mediaelement
+#if communitytoolkit || mediaelement
 using CommunityToolkit.Maui;
 #endif
 #if useblazor
@@ -82,6 +82,7 @@ public static class MauiProgram
         var builder = MauiApp
             .CreateBuilder()
             .UseMauiApp<App>()
+            .uSeShiny()
 #if userdialogs
             .UseUserDialogs()
 #endif
@@ -96,7 +97,7 @@ public static class MauiProgram
             .UseUraniumUIMaterial()
             .UseUraniumUIBlurs()
 #endif
-#if shinyframework || communitytoolkit
+#if communitytoolkit
             .UseMauiCommunityToolkit()
 #endif
 #if mediaelement
@@ -135,28 +136,11 @@ public static class MauiProgram
 #if skia || skiaextended || livecharts
             .UseSkiaSharp()
 #endif
-#if shinyframework         
-            .UseShinyFramework(
-                new DryIocContainerExtension(),
-                prism => prism.CreateWindow("NavigationPage/MainPage"),
-                new (
-//-:cnd:noEmit
-#if DEBUG
-                    ErrorAlertType.FullError
-#else
-                    ErrorAlertType.NoLocalize
-#endif
-//+:cnd:noEmit
-                )
-            )
-#elif prism
+#if prism
             .UsePrism(
                 new DryIocContainerExtension(),
                 prism => prism.CreateWindow("NavigationPage/MainPage")                
             )
-            .UseShiny()
-#else
-            .UseShiny()
 #endif
 #if screenrecord
             .UseScreenRecording()
@@ -421,11 +405,8 @@ public static class MauiProgram
 #if storereview
         builder.Services.AddSingleton(Plugin.StoreReview.CrossStoreReview.Current);
 #endif
-#if shinyframework
-        builder.Services.AddDataAnnotationValidation();
-#endif
 
-#if (shinyframework || prism)
+#if (prism)
         builder.Services.RegisterForNavigation<MainPage, MainViewModel>();
 #else
         builder.Services.AddTransient<MainPage>();

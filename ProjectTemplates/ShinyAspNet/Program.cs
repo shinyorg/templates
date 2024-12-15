@@ -158,59 +158,6 @@ builder.Services.AddAuthentication().AddApple(options =>
 });
 
 //#endif
-
-#if (push)
-var appleCfg = builder.Configuration.GetSection("Push:Apple");
-var googleCfg = builder.Configuration.GetSection("Push:Google");
-
-builder.Services.AddPushManagement(x => x
-    .AddApple(new AppleConfiguration
-    {
-        AppBundleIdentifier = appleCfg["AppBundleIdentifier"]!,
-        TeamId = appleCfg["TeamId"]!,
-        Key = appleCfg["Key"]!,
-        KeyId = appleCfg["KeyId"]!,
-        IsProduction = false
-        //JwtExpiryMinutes
-    })
-    .AddGoogleFirebase(new GoogleConfiguration
-    {
-        ServerKey = googleCfg["ServerKey"]!,
-        SenderId = googleCfg["SenderId"]!,
-        DefaultChannelId = googleCfg["DefaultChannelId"]!
-    })
-    // .UseAdoNetRepository<Microsoft.Data.SqlClient.SqlConnection>(new DbRepositoryConfig(
-    //     builder.Configuration.GetConnectionString("Main"),
-    //     "@",
-    //     "PushRegistrations",
-    //     true
-    // ))
-    .AddShinyAndroidClickAction()
-);
-
-#endif
-#if (email)
-builder.Services.AddMail(mail =>
-{
-    var cfg = builder.Configuration.GetSection("Mail");
-    mail
-        .UseSmtpSender(new SmtpConfig
-        {
-            EnableSsl = cfg.GetValue("EnableSsl", true),
-            Host = cfg["Host"],
-            Port = cfg.GetValue("Port", 587)
-        });
-        //.UseSendGridSender("SendGridApiKey")
-        //.UseFileTemplateLoader("File Path to templates")
-        // .UseAdoNetTemplateLoader<Microsoft.Data.SqlClient.SqlConnection>(
-        //     builder.Configuration.GetConnectionString("Main")!,
-        //     "@",
-        //     "MailTemplates",
-        //     true
-        // );
-});
-
-#endif
 //#if (orleans)
 builder.Host.UseOrleans((ctx, silo) =>
 {

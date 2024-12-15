@@ -1,12 +1,12 @@
 ﻿namespace ShinyApp;
 
-#if shinyframework
+#if reactiveui
 public class MainViewModel : ViewModel
 {
     public MainViewModel(BaseServices services) : base(services) {}
 
 
-    [Reactive] public string Property { get; set; }
+    [Reactive] string property;
 }
 #elif ctmvvm
 public partial class MainViewModel : ObservableObject

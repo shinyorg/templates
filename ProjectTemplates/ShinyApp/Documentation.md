@@ -6,6 +6,13 @@ _Microsoft Application User Interface Library_
 * [Documentation](https://learn.microsoft.com/en-us/dotnet/maui/)
 * [GitHub](https://github.com/dotnet/maui)
 
+## Shiny
+
+_A cross platform framework designed to make working with device services and background processes easy, testable, and consistent while bringing things like dependency injection & logging in a structured way to your code! - Written by Allan Ritchie_
+
+* [Documentation](https://shinylib.net/)
+* [GitHub](https://github.com/shinyorg/shiny)
+
 <!--#if (useblazor)-->
 ## .NET Blazor
 Blazor is a .NET frontend web framework that supports both server-side rendering and client interactivity in a single programming model:
@@ -18,13 +25,6 @@ Blazor is a .NET frontend web framework that supports both server-side rendering
 * [Documentation](https://learn.microsoft.com/en-us/aspnet/core/blazor/)
 
 <!--#endif-->
-## Shiny
-
-_A cross platform framework designed to make working with device services and background processes easy, testable, and consistent while bringing things like dependency injection & logging in a structured way to your code! - Written by Allan Ritchie_
-
-* [Documentation](https://shinylib.net/)
-* [GitHub](https://github.com/shinyorg/shiny)
-
 <!--#if (shinymediator)-->
 ## Shiny Mediator
 
@@ -65,18 +65,7 @@ Reference Implementation - Lean and performant, providing implementations for in
 
 <!--#endif-->
 
-<!--#if (shinyframework)-->
-## Prism Library
-
-_Framework combines the best of MVVM using Prism & ReactiveUI while also combining Shiny. - Written by Allan Ritchie_
-
-* [Documentation](https://github.com/shinyorg/framework)
-* Third Party Libraries
-    * [ReactiveUI](https://reactiveui.net)
-    * [Prism](https://prismlibrary.com)
-    * [DryIoc](https://github.com/dadhi/DryIoc)
-<!--#endif-->
-<!--#if (shinyframework || prism)-->
+<!--#if (prism)-->
 ## Prism Library
 
 _Empower Your XAML Applications. Leverage the power of the Prism Library to build robust and maintainable WPF, Uno Platform, .NET MAUI and Xamarin.Forms applications with ease.  Written by Dan Siegel & Brian Lagunas_
@@ -85,7 +74,7 @@ _Empower Your XAML Applications. Leverage the power of the Prism Library to buil
 * [Container Extension Library - DryIoc](https://github.com/dadhi/DryIoc)
 
 <!--#endif-->
-<!--#if (reactiveui || shinyframework)-->
+<!--#if (reactiveui)-->
 ## ReactiveUI
 
 ReactiveUI is a composable, cross-platform model-view-viewmodel framework for all .NET platforms that is inspired by functional reactive programming, which is a paradigm that allows you to abstract mutable state away from your user interfaces and express the idea around a feature in one readable place and improve the testability of your application.
@@ -94,15 +83,7 @@ ReactiveUI is a composable, cross-platform model-view-viewmodel framework for al
 * [GitHub](https://github.com/reactiveui/ReactiveUI)
 
 <!--#endif-->
-<!--#if (health)-->
-## Shiny Health
-
-_Apple Health & Google Fit for your .NET MAUI apps - Written by Allan Ritchie_
-
-* [GitHub](https://github.com/shinyorg/health)
-
-<!--#endif-->
-<!--#if (shinyframework || communitytoolkit)-->
+<!--#if (communitytoolkit)-->
 ## MAUI Community Toolkit
 
 _A collection of reusable elements for application development with .NET MAUI, including animations, behaviors, converters, effects, and helpers. It simplifies and demonstrates common developer tasks when building iOS, Android, macOS and WinUI applications._

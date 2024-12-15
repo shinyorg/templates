@@ -4,10 +4,10 @@
         <TargetFramework>{DOTNET_TFM}</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <MicrosoftVersion>8.0.6</MicrosoftVersion>
+        <MicrosoftVersion>9.0.0</MicrosoftVersion>
         <LangVersion>latest</LangVersion>
         <!--#if (orleans)-->
-        <OrleansVersion>8.2.0</OrleansVersion>
+        <OrleansVersion>9.0.1</OrleansVersion>
         <!--#endif-->
         <!--#if (email || push)-->
         <ShinyExtensionsVersion>2.0.0-preview-0036</ShinyExtensionsVersion>
@@ -32,12 +32,9 @@
         <PackageReference Include="Microsoft.Orleans.Reminders" Version="$(OrleansVersion)"/>
         <PackageReference Include="Microsoft.Orleans.Reminders.AdoNet" Version="$(OrleansVersion)" />
         <PackageReference Include="Microsoft.Orleans.Streaming" Version="$(OrleansVersion)"/>
-        <PackageReference Include="Microsoft.Orleans.Streaming.AdoNet" Version="8.2.0-alpha.1" />
+        <PackageReference Include="Microsoft.Orleans.Streaming.AdoNet" Version="$(OrleansVersion)" />
         <PackageReference Include="OrleansDashboard" Version="8.2.0" />
         <!--#endif-->
-        <!--#if (email && orleans)-->
-        <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.8.0" />
-        <!--#endif-->        
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(MicrosoftVersion)" />
         <!--#if (facebook)-->
         <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="$(MicrosoftVersion)" />
@@ -46,29 +43,22 @@
         <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="$(MicrosoftVersion)" />
         <!--#endif-->
         <!--#if (apple)-->
-        <PackageReference Include="AspNet.Security.OAuth.Apple" Version="8.1.0" />
+        <PackageReference Include="AspNet.Security.OAuth.Apple" Version="9.0.0" />
         <!--#endif-->        
         <!--#if (efpostgres)-->
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.10" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.2" />
         <!--#endif-->
         <!--#if (efpostgres && efspatial)-->
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="8.0.10" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="9.0.2" />
         <!--#endif-->
-        <PackageReference Include="Shiny.Mediator" Version="2.1.0" />
-        <PackageReference Include="Shiny.Mediator.AspNet" Version="2.1.0" />
+        <PackageReference Include="Shiny.Mediator" Version="2.1.1" />
+        <PackageReference Include="Shiny.Mediator.AspNet" Version="2.1.1" />
         <PackageReference Include="Shiny.Extensions.WebHosting" Version="$(ShinyExtensionsVersion)" />
         <!--#if (efmssql || efpostgres)-->
         <PackageReference Include="Shiny.Extensions.EntityFramework" Version="$(ShinyExtensionsVersion)" />
         <!--#endif-->
-        <!--#if (push)-->
-        <PackageReference Include="Shiny.Extensions.Push" Version="$(ShinyExtensionsVersion)" />
-        <PackageReference Include="Shiny.Extensions.Push.Endpoints" Version="$(ShinyExtensionsVersion)" />
-        <!--#endif-->
-        <!--#if (email)-->
-        <PackageReference Include="Shiny.Extensions.Mail" Version="$(ShinyExtensionsVersion)" />
-        <!--#endif-->
         <!--#if (swagger)-->
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
         <!--#endif-->
 
         <!-- <PackageReference Include="Riok.Mapperly" Version="3.6.0" /> -->
