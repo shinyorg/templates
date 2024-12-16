@@ -1,17 +1,15 @@
 ﻿namespace ShinyApp;
 
 #if reactiveui
-public class MainViewModel : ViewModel
+public class MainViewModel(BaseServices services) : ViewModel(services)
 {
-    public MainViewModel(BaseServices services) : base(services) {}
-
-
     [Reactive] string property;
 }
 #elif ctmvvm
-public partial class MainViewModel : ObservableObject
+public partial class MainViewModel(BaseServices services) : ObservableObject
 {
-    [ObservableProperty] string property;
+    [ObservableProperty] 
+    public partial string Property { get; set; }
 
     [RelayCommand]
     async Task DoSomething()

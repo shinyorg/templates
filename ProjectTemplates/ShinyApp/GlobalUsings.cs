@@ -1,4 +1,5 @@
-﻿global using Shiny;
+﻿global using ShinyApp.Services;
+global using Shiny;
 #if (shinymediator)
 global using Shiny.Mediator;
 #endif
@@ -18,7 +19,7 @@ global using Microsoft.Extensions.Localization;
 #endif
 #if reactiveui
 global using ReactiveUI;
-global using ReactiveUI.Fody.Helpers;
+global using ReactiveUI.SourceGenerators;
 #endif
 #if prism
 global using Prism.AppModel;

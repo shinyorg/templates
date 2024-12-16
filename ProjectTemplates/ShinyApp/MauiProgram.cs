@@ -82,7 +82,7 @@ public static class MauiProgram
         var builder = MauiApp
             .CreateBuilder()
             .UseMauiApp<App>()
-            .uSeShiny()
+            .UseShiny()
 #if userdialogs
             .UseUserDialogs()
 #endif
@@ -219,11 +219,11 @@ public static class MauiProgram
         builder.Configuration.AddJsonPlatformBundle();
 #endif
 #if (remoteconfig)
-        builder.AddRemoteConfigurationMaui();
+        builder.AddRemoteConfigurationMaui("https://todo");
         // builder.Services.AddOptions<MyConfig>().BindConfiguration("");
 #endif
         builder.Logging.EnableEnrichment();
-        builder.Services.AddSingleton<ILogEnricher, AppLogEnricher>();
+        builder.Services.AddSingleton<ILogEnricher, ShinyApp.Infrastructure.AppLogEnricher>();
 #if sqlitelogging
         builder.Logging.AddSqlite(Path.Combine(FileSystem.AppDataDirectory, "logging.db"));
 #endif
@@ -397,8 +397,10 @@ public static class MauiProgram
 #endif
 
 #if (prism)
+        builder.Services.AddScoped<BaseServices>();
         builder.Services.RegisterForNavigation<MainPage, MainViewModel>();
 #else
+        builder.Services.AddSingleton<BaseServices>();
         builder.Services.AddTransient<MainPage>();
         builder.Services.AddTransient<MainViewModel>();
 #endif
