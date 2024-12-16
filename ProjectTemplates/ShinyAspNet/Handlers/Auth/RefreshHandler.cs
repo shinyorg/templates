@@ -11,7 +11,10 @@ public class RefreshHandler(AppDbContext data, JwtService jwtService) : IRequest
 {
     public async Task<RefreshResponse> Handle(RefreshRequest request, CancellationToken cancellationToken)
     {
-        var result = await jwtService.ValidateRefreshToken(request.Token);
+        var result = await jwtService
+            .ValidateRefreshToken(request.Token, cancellationToken)
+            .ConfigureAwait(false);
+            
         if (!result)
             return RefreshResponse.Fail;
 

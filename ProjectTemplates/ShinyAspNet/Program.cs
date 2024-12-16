@@ -8,6 +8,10 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.FileProviders;
 using OpenTelemetry.Exporter;
 using OpenTelemetry.Logs;
+using OpenTelemetry.Trace;
+#if (orleans)
+using Orleans.Configuration;
+#endif
 #if (efpostgres)
 using Npgsql;
 #endif
@@ -39,6 +43,29 @@ builder.Logging.AddOpenTelemetry(options =>
         x.Headers = "X-Seq-ApiKey=123";
     });
 });
+
+builder
+    .Services
+    .AddOpenTelemetry()
+    .WithMetrics(metrics =>
+    {
+        // metrics
+        //     .AddPrometheusExporter()
+        //     .AddMeter("Microsoft.Orleans");
+    })
+    .WithTracing(tracing =>
+    {
+        var service = ResourceBuilder.CreateDefault().AddService("WorkflowSystem", "1.0");
+        tracing.SetResourceBuilder(service);
+        
+        tracing.AddSource("Microsoft.Orleans.Runtime");
+        tracing.AddSource("Microsoft.Orleans.Application");
+        
+        // tracing.AddZipkinExporter(zipkin =>
+        // {
+        //     zipkin.Endpoint = new Uri("http://localhost:9411/api/v2/spans");
+        // });
+    });
 
 builder.Services
     .AddHealthChecks()
@@ -103,28 +130,6 @@ builder
         };
     });
 
-builder
-    .Services
-    .AddOpenTelemetry()
-    .WithMetrics(metrics =>
-    {
-        // metrics
-        //     .AddPrometheusExporter()
-        //     .AddMeter("Microsoft.Orleans");
-    })
-    .WithTracing(tracing =>
-    {
-        var service = ResourceBuilder.CreateDefault().AddService("WorkflowSystem", "1.0");
-        tracing.SetResourceBuilder(service);
-        
-        tracing.AddSource("Microsoft.Orleans.Runtime");
-        tracing.AddSource("Microsoft.Orleans.Application");
-        
-        // tracing.AddZipkinExporter(zipkin =>
-        // {
-        //     zipkin.Endpoint = new Uri("http://localhost:9411/api/v2/spans");
-        // });
-    });
 
 //#if (google)
 builder.Services.AddAuthentication().AddGoogle(options =>
@@ -179,24 +184,24 @@ builder.Host.UseOrleans((ctx, silo) =>
         .UseDashboard(x => {})
         .UseAdoNetReminderService(options =>
         {
-            options.ConnectionString = config.GetConnectionString("Orleans"); 
+            options.ConnectionString = builder.Configuration.GetConnectionString("Orleans"); 
             options.Invariant = Constants.DatabaseInvariant;
         })
         .UseAdoNetClustering(options =>
         {
-            options.ConnectionString = config.GetConnectionString("Orleans");
-            options.Invariant = Constants.DatabaseInvariant;
+            options.ConnectionString = builder.Configuration.GetConnectionString("Orleans");
+            // options.Invariant = Constants.DatabaseInvariant;
         })
         .AddAdoNetGrainStorage("Default", options =>
         {
-            options.ConnectionString = config.GetConnectionString("Orleans");
-            options.Invariant = Constants.DatabaseInvariant;
+            options.ConnectionString = builder.Configuration.GetConnectionString("Orleans");
+            //options.Invariant = Constants.DatabaseInvariant;
             // options.UseJsonFormat = true;
         })
         .AddAdoNetStreams("Default", options =>
         {
-            options.ConnectionString = config.GetConnectionString("Orleans");
-            options.Invariant = Constants.DatabaseInvariant;
+            options.ConnectionString = builder.Configuration.GetConnectionString("Orleans");
+            //options.Invariant = Constants.DatabaseInvariant;
         });
 });
 //#endif

@@ -10,7 +10,11 @@ namespace ShinyAspNet.Handlers.Auth;
     "/auth/signin/mobile", 
     AllowAnonymous = true
 )]
-public class SignInHandler(AppDbContext data, JwtService jwtService, IHttpContextAccessor httpAccessor) : IRequestHandler<SignInRequest, SignInResponse>
+public class SignInHandler(
+    AppDbContext data, 
+    JwtService jwtService, 
+    IHttpContextAccessor httpAccessor
+) : IRequestHandler<SignInRequest, SignInResponse>
 {
     public async Task<SignInResponse> Handle(SignInRequest request, CancellationToken cancellationToken)
     {
@@ -53,18 +57,18 @@ public class SignInHandler(AppDbContext data, JwtService jwtService, IHttpContex
         }
         user.FirstName = claims!.First(x => x.Type == ClaimTypes.GivenName).Value;
         user.LastName = claims!.First(x => x.Type == ClaimTypes.Surname).Value;
-        await data.SaveChangesAsync();
+        await data.SaveChangesAsync(cancellationToken);
 
         var uri = await this.CreateTokenToApp(user, newUser, cancellationToken);
         return SignInResponse.Sucessful(uri);
     }
 
 
-    async Task<string> CreateTokenToApp(User user, bool newUser)
+    async Task<string> CreateTokenToApp(User user, bool newUser, CancellationToken cancellationToken)
     {
-        var tokens = await jwtService.CreateJwt(user);
+        var tokens = await jwtService.CreateJwt(user, cancellationToken);
         var url = $"myapp://#newuser={newUser}&access_token={tokens.Jwt}&refresh_token={tokens.RefreshToken}";
-        
+
         return url;
     }
 }

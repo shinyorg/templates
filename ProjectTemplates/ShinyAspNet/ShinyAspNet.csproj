@@ -4,17 +4,19 @@
         <TargetFramework>{DOTNET_TFM}</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <ShinyExtensionsVersion>2.0.0-preview-0036</ShinyExtensionsVersion>
         <MicrosoftVersion>9.0.0</MicrosoftVersion>
-        <LangVersion>latest</LangVersion>
         <!--#if (orleans)-->
         <OrleansVersion>9.0.1</OrleansVersion>
-        <!--#endif-->
-        <!--#if (email || push)-->
-        <ShinyExtensionsVersion>2.0.0-preview-0036</ShinyExtensionsVersion>
         <!--#endif-->
     </PropertyGroup>
 
     <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="$(MicrosoftVersion)" />
+        <PackageReference Include="Microsoft.Extensions.ApiDescription.Server" Version="$(MicrosoftVersion)">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
         <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="$(MicrosoftVersion)" />
         <!--#if (efmssql)-->
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MicrosoftVersion)" />
@@ -32,7 +34,7 @@
         <PackageReference Include="Microsoft.Orleans.Reminders" Version="$(OrleansVersion)"/>
         <PackageReference Include="Microsoft.Orleans.Reminders.AdoNet" Version="$(OrleansVersion)" />
         <PackageReference Include="Microsoft.Orleans.Streaming" Version="$(OrleansVersion)"/>
-        <PackageReference Include="Microsoft.Orleans.Streaming.AdoNet" Version="$(OrleansVersion)" />
+        <PackageReference Include="Microsoft.Orleans.Streaming.AdoNet" Version="$(OrleansVersion)-alpha.1" />
         <PackageReference Include="OrleansDashboard" Version="8.2.0" />
         <!--#endif-->
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(MicrosoftVersion)" />
@@ -62,6 +64,7 @@
         <!--#endif-->
 
         <!-- <PackageReference Include="Riok.Mapperly" Version="3.6.0" /> -->
+        <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.9.0" />
         <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.9.0" />
         <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.9.0" />
         <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.9.0" />
