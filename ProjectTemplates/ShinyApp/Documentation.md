@@ -6,13 +6,6 @@ _Microsoft Application User Interface Library_
 * [Documentation](https://learn.microsoft.com/en-us/dotnet/maui/)
 * [GitHub](https://github.com/dotnet/maui)
 
-## Shiny
-
-_A cross platform framework designed to make working with device services and background processes easy, testable, and consistent while bringing things like dependency injection & logging in a structured way to your code! - Written by Allan Ritchie_
-
-* [Documentation](https://shinylib.net/)
-* [GitHub](https://github.com/shinyorg/shiny)
-
 <!--#if (useblazor)-->
 ## .NET Blazor
 Blazor is a .NET frontend web framework that supports both server-side rendering and client interactivity in a single programming model:
@@ -25,6 +18,13 @@ Blazor is a .NET frontend web framework that supports both server-side rendering
 * [Documentation](https://learn.microsoft.com/en-us/aspnet/core/blazor/)
 
 <!--#endif-->
+## Shiny
+
+_A cross platform framework designed to make working with device services and background processes easy, testable, and consistent while bringing things like dependency injection & logging in a structured way to your code! - Written by Allan Ritchie_
+
+* [Documentation](https://shinylib.net/)
+* [GitHub](https://github.com/shinyorg/shiny)
+
 <!--#if (shinymediator)-->
 ## Shiny Mediator
 
