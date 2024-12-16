@@ -3,7 +3,7 @@
 
 public partial class MainPage : ContentPage
 {
-#if (shinyframework || prism)
+#if (prism)
 	public MainPage()
 	{
 		this.InitializeComponent();

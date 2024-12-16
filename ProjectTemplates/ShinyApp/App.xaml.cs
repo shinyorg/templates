@@ -2,7 +2,7 @@
 
 public partial class App : Application
 {
-#if (shinyframework || prism)
+#if (prism)
 	public App()
 	{
 		this.InitializeComponent();

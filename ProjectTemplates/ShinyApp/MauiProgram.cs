@@ -251,10 +251,8 @@ public static class MauiProgram
 #endif
 //+:cnd:noEmit
 #endif
-#if (!shinyframework)
         builder.Services.AddConnectivity();
         builder.Services.AddBattery();
-#endif
 #if shinymediator
         builder.Services.AddShinyMediator(x => x 
             .AddMemoryCaching()
@@ -270,10 +268,10 @@ public static class MauiProgram
                     pipeline.AddTimeout(TimeSpan.FromSeconds(5));
                 })
             )
-#if shinyframework
+            .UseMaui()
+#if prism
             .AddPrismSupport()
 #endif
-            .UseMaui()
 #if useblazor
             .UseBlazor()
 #endif
