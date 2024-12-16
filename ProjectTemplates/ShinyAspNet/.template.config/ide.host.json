@@ -11,13 +11,7 @@
         "componentType": "setupComponent" 
     }],
     "symbolInfo": [
-        {
-            "id": "ef",
-            "name": {
-                "text": "Add Entity Framework"
-            },
-            "isVisible": true
-        },
+
         {
             "id": "connectionstring",
             "name": {
@@ -25,6 +19,13 @@
             },
             "isVisible": true
         },
+        {
+            "id": "ef",
+            "name": {
+                "text": "Add Entity Framework"
+            },
+            "isVisible": true
+        }, 
         {
             "id": "efspatial",
             "name": {
