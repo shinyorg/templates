@@ -1,26 +1,23 @@
 ﻿using System.Text;
 using System.Security.Claims;
+#if (signalr)
+using Microsoft.AspNetCore.SignalR;
+#endif
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.FileProviders;
 using OpenTelemetry.Exporter;
 using OpenTelemetry.Logs;
-#if (signalr)
-using Microsoft.AspNetCore.SignalR;
-using ShinyAspNet.Hubs;
-#endif
 #if (efpostgres)
 using Npgsql;
 #endif
-#if (push)
-using Shiny.Extensions.Push;
-#endif
-#if (email)
-using Shiny.Extensions.Mail;
-#endif
 using ShinyAspNet;
+using ShinyAspNet.Data;
 using ShinyAspNet.Services;
 using ShinyAspNet.Services.Impl;
+#if (signalr)
+using ShinyAspNet.Hubs;
+#endif
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -211,9 +208,6 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
-//#if (push)
-app.MapPushEndpoints("push", true, x => x.User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-//#endif
 //#if (signalr)
 app.MapHub<BizHub>("/biz");
 //#endif
