@@ -68,7 +68,7 @@
 
 	<!--#if (usemaccatalyst)-->
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
-		<SupportedOSPlatformVersion>14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion>15.0</SupportedOSPlatformVersion>
 		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>
 
 		<UseHardenedRuntime Condition="'$(Configuration)' == 'Release'">true</UseHardenedRuntime>
@@ -150,7 +150,7 @@
 		<PackageReference Include="Microsoft.Extensions.Telemetry" Version="9.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#if (ctmvvm)-->
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<!--#endif-->
 		<!--#if (communitytoolkit || speechrecognition)-->
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.1" />
