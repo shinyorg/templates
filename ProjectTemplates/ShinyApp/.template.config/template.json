@@ -856,7 +856,7 @@
         },
         {
             "condition": "(shinymediator == false)",
-            "exclude": "Infrastructure/AppHtppRequestDecorator.cs"
+            "exclude": "Infrastructure/AppHttpRequestDecorator.cs"
         },
         {
             "condition": "(authservice == false || refit == false)",
