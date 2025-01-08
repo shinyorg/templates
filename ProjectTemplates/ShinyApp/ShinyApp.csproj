@@ -18,7 +18,9 @@
 		<!--#if (useblazor)-->
 		<EnableDefaultCssItems>false</EnableDefaultCssItems>
 		<!--#endif-->
-
+		<!--#if (ctmvvm)-->
+		<LangVersion>preview</LangVersion>
+		<!--#endif-->
 		<ApplicationTitle>ShinyApp</ApplicationTitle>
 		<ApplicationId>{APPLICATION_ID}</ApplicationId>
 		<ApplicationIdGuid>{APPLICATION_ID_GUID}</ApplicationIdGuid>

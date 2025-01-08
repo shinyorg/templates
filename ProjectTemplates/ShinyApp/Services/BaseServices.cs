@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Configuration;
+
 public record BaseServices(
     IConfiguration Configuration,
     #if prism
