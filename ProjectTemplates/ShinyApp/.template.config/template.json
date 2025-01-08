@@ -72,11 +72,11 @@
             "description": "The target framework for the project.",
             "datatype": "choice",
             "choices": [{
-                "choice": "net8.0",
-                "description": "Target .NET 8.0"
+                "choice": "net9.0",
+                "description": "Target .NET 9.0"
             }],
             "replaces": "{DOTNET_TFM}",
-            "defaultValue": "net8.0"
+            "defaultValue": "net9.0"
         },
         "blazor":{
             "type": "parameter",
