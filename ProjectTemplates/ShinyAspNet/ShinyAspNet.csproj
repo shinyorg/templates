@@ -53,8 +53,8 @@
         <!--#if (efpostgres && efspatial)-->
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="9.0.2" />
         <!--#endif-->
-        <PackageReference Include="Shiny.Mediator" Version="2.1.1" />
-        <PackageReference Include="Shiny.Mediator.AspNet" Version="2.1.1" />
+        <PackageReference Include="Shiny.Mediator" Version="3.0.0" />
+        <PackageReference Include="Shiny.Mediator.AspNet" Version="3.0.0" />
         <PackageReference Include="Shiny.Extensions.WebHosting" Version="$(ShinyExtensionsVersion)" />
         <!--#if (efmssql || efpostgres)-->
         <PackageReference Include="Shiny.Extensions.EntityFramework" Version="$(ShinyExtensionsVersion)" />

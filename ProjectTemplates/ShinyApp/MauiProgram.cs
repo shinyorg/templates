@@ -254,8 +254,9 @@ public static class MauiProgram
         builder.Services.AddConnectivity();
         builder.Services.AddBattery();
 #if shinymediator
+        // pass false as second argument if you don't want to use built-in middleware
         builder.Services.AddShinyMediator(x => x 
-            .AddMemoryCaching()
+            .AddPersistentCache()
             .AddDataAnnotations()
             .AddResiliencyMiddleware(
                 ("Default", pipeline =>
@@ -268,7 +269,7 @@ public static class MauiProgram
                     pipeline.AddTimeout(TimeSpan.FromSeconds(5));
                 })
             )
-            .UseMaui()
+            .UseMaui() // pass false here if you don't want to use built-in offline support with MAUI
 #if prism
             .AddPrismSupport()
 #endif

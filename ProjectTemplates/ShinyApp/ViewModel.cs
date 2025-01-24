@@ -1,3 +1,6 @@
+using System.Reactive.Disposables;
+
+
 #if ctmvvm
 public abstract partial class ViewModel(BaseServices services) : ObservableValidator
 #elif reactiveui
