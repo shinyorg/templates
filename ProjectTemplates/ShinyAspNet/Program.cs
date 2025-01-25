@@ -24,6 +24,7 @@ using ShinyAspNet.Hubs;
 #endif
 
 var builder = WebApplication.CreateBuilder(args);
+// .UseServiceProviderFactory(new AutofacServiceProviderFactory())
 
 builder.Logging.AddOpenTelemetry(options =>
 {
