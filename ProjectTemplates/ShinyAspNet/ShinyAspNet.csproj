@@ -6,6 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <ShinyExtensionsVersion>2.0.0-preview-0036</ShinyExtensionsVersion>
         <MicrosoftVersion>9.0.0</MicrosoftVersion>
+        <MediatorVersion>3.1.0</MediatorVersion>
         <!--#if (orleans)-->
         <OrleansVersion>9.0.1</OrleansVersion>
         <!--#endif-->
@@ -53,8 +54,12 @@
         <!--#if (efpostgres && efspatial)-->
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="9.0.2" />
         <!--#endif-->
-        <PackageReference Include="Shiny.Mediator" Version="3.0.0" />
-        <PackageReference Include="Shiny.Mediator.AspNet" Version="3.0.0" />
+        <PackageReference Include="Shiny.Mediator" Version="$(MediatorVersion)" />
+        <PackageReference Include="Shiny.Mediator.AspNet" Version="$(MediatorVersion)" />
+        <!-- 
+        Need autofac for this guy
+        <PackageReference Include="Shiny.Mediator.DapperRequests" Version="$(MediatorVersion)" /> 
+        -->
         <PackageReference Include="Shiny.Extensions.WebHosting" Version="$(ShinyExtensionsVersion)" />
         <!--#if (efmssql || efpostgres)-->
         <PackageReference Include="Shiny.Extensions.EntityFramework" Version="$(ShinyExtensionsVersion)" />
