@@ -57,7 +57,7 @@
         <PackageReference Include="Shiny.Mediator" Version="$(MediatorVersion)" />
         <PackageReference Include="Shiny.Mediator.AspNet" Version="$(MediatorVersion)" />
         <!-- 
-        Need autofac for this guy
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
         <PackageReference Include="Shiny.Mediator.DapperRequests" Version="$(MediatorVersion)" /> 
         -->
         <PackageReference Include="Shiny.Extensions.WebHosting" Version="$(ShinyExtensionsVersion)" />
