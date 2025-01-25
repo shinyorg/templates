@@ -2,6 +2,7 @@
 global using Shiny;
 #if (shinymediator)
 global using Shiny.Mediator;
+global using ICommand = System.Windows.Input.ICommand;
 #endif
 global using System;
 global using System.Windows.Input;

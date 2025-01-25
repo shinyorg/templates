@@ -228,11 +228,6 @@ app.UseCors(x => x
 //+:cnd:noEmit
 if (app.Environment.IsDevelopment())
 {
-    // if (app.Configuration.GetValue<bool>("EnsureDatabase", false))
-    // {
-    //     using (var scope = app.Services.CreateScope())
-    //         scope.ServiceProvider.GetRequiredService<AppDbContext>().Database.EnsureCreated();
-    // }
     #if (swagger)
     app.UseSwagger();
     app.UseSwaggerUI();
