@@ -106,11 +106,7 @@ builder.Services.AddDbContext<AppDbContext>(
 builder.Services.AddSignalR();
 builder.Services.AddSingleton<IUserIdProvider, UserIdProvider>();
 //#endif
-//-:cnd:noEmit
-#if DEBUG
-builder.Services.AddCors();
-#endif
-//+:cnd:noEmit
+
 builder
     .Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
