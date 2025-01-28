@@ -222,8 +222,6 @@ public static class MauiProgram
         builder.AddRemoteConfigurationMaui("https://todo");
         // builder.Services.AddOptions<MyConfig>().BindConfiguration("");
 #endif
-        builder.Logging.EnableEnrichment();
-        builder.Services.AddSingleton<ILogEnricher, ShinyApp.Infrastructure.AppLogEnricher>();
 #if sqlitelogging
         builder.Logging.AddSqlite(Path.Combine(FileSystem.AppDataDirectory, "logging.db"));
 #endif
@@ -405,6 +403,9 @@ public static class MauiProgram
         builder.Services.AddTransient<MainPage>();
         builder.Services.AddTransient<MainViewModel>();
 #endif
+        builder.Logging.EnableEnrichment();
+        builder.Services.AddSingleton<ILogEnricher, ShinyApp.Infrastructure.AppLogEnricher>();
+        builder.Services.AddSingleton(TimeProvider.System);
         var app = builder.Build();
 
         return app;
