@@ -256,6 +256,7 @@ public static class MauiProgram
         builder.Services.AddShinyMediator(x => x 
             .AddPersistentCache()
             .AddDataAnnotations()
+            .AddConnectivityBroadcaster()
             .AddResiliencyMiddleware(
                 ("Default", pipeline =>
                 {

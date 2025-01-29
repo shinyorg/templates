@@ -2,11 +2,11 @@ using System.Reactive.Disposables;
 
 
 #if ctmvvm
-public abstract partial class ViewModel(BaseServices services) : ObservableValidator
+public abstract partial class ViewModel(BaseServices services) : ObservableValidator, IEventHandler<ConnectivityChanged>
 #elif reactiveui
-public abstract partial class ViewModel(BaseServices services) : ReactiveObject
+public abstract partial class ViewModel(BaseServices services) : ReactiveObject, IEventHandler<ConnectivityChanged>
 #else
-public abstract class ViewModel(BaseServices services) : Shiny.NotifyPropertyChanged
+public abstract class ViewModel(BaseServices services) : Shiny.NotifyPropertyChanged, IEventHandler<ConnectivityChanged>
 #endif
 #if prism
     , IInitialize,
@@ -17,6 +17,16 @@ public abstract class ViewModel(BaseServices services) : Shiny.NotifyPropertyCha
     IDestructible
 #endif
 {
+    // use whatever NPC you want
+    public bool IsConnected { get; private set; }
+
+    [MainThread]
+    public Task Handle(ConnectivityChanged @event, EventContext<ConnectivityChanged> context, CancellationToken cancellationToken)
+    {
+        this.IsConnected = @event.IsConnected;
+        return Task.CompletedTask;
+    }
+
     protected BaseServices Services => services;
 
 #if prism
