@@ -254,7 +254,7 @@ public static class MauiProgram
 #if shinymediator
         // pass false as second argument if you don't want to use built-in middleware
         builder.Services.AddShinyMediator(x => x 
-            .AddPersistentCache()
+            .AddMauiPersistentCache()
             .AddDataAnnotations()
             .AddConnectivityBroadcaster()
             .AddResiliencyMiddleware(

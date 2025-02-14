@@ -1,36 +1,28 @@
+#if prism
 using System.Reactive.Disposables;
-
+#endif
 
 #if ctmvvm
-public abstract partial class ViewModel(BaseServices services) : ObservableValidator, IEventHandler<ConnectivityChanged>
+public abstract partial class ViewModel(BaseServices services) : ObservableValidator
 #elif reactiveui
-public abstract partial class ViewModel(BaseServices services) : ReactiveObject, IEventHandler<ConnectivityChanged>
+public abstract partial class ViewModel(BaseServices services) : ReactiveObject
 #else
-public abstract class ViewModel(BaseServices services) : Shiny.NotifyPropertyChanged, IEventHandler<ConnectivityChanged>
+public abstract partial class ViewModel(BaseServices services) : Shiny.NotifyPropertyChanged
 #endif
+{
+    protected BaseServices Services => services;
+}
+
 #if prism
-    , IInitialize,
+public abstract partial class ViewModel : 
+    IInitialize,
     IPageLifecycleAware, 
     IApplicationLifecycleAware, 
     INavigationAware, 
     IConfirmNavigationAsync,
     IDestructible
-#endif
 {
-    // use whatever NPC you want
-    public bool IsConnected { get; private set; }
-
-    [MainThread]
-    public Task Handle(ConnectivityChanged @event, EventContext<ConnectivityChanged> context, CancellationToken cancellationToken)
-    {
-        this.IsConnected = @event.IsConnected;
-        return Task.CompletedTask;
-    }
-
-    protected BaseServices Services => services;
-
-#if prism
-    public virtual void Initialize(INavigationParameters parameters) {}
+public virtual void Initialize(INavigationParameters parameters) {}
     public virtual void OnAppearing() {}
     public virtual void OnDisappearing() => this.Deactivate();
     
@@ -97,5 +89,20 @@ public abstract class ViewModel(BaseServices services) : Shiny.NotifyPropertyCha
         this.deactiveToken?.Dispose();
         this.deactiveToken = null;
     }
-#endif
 }
+#endif
+
+#if shinymediator
+public abstract partial class ViewModel : IEventHandler<ConnectivityChanged>
+{
+    // use whatever NPC you want
+    public bool IsConnected { get; private set; }
+
+    [MainThread]
+    public Task Handle(ConnectivityChanged @event, EventContext<ConnectivityChanged> context, CancellationToken cancellationToken)
+    {
+        this.IsConnected = @event.Connected;
+        return Task.CompletedTask;
+    }
+}
+#endif

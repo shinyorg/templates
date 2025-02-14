@@ -1,5 +1,7 @@
 using Microsoft.Extensions.Configuration;
 
+namespace ShinyApp.Services;
+
 public record BaseServices(
     IConfiguration Configuration,
     #if prism
