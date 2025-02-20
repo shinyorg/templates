@@ -31,7 +31,7 @@
 		<MauiVersion>9.0.40</MauiVersion>
 		<ShinyVersion>3.3.4</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>3.3.0</MediatorVersion>
+		<MediatorVersion>3.3.1</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -149,7 +149,7 @@
 		<!--#if (useblazor)-->
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
 		<!--#endif-->
-		<PackageReference Include="Microsoft.Extensions.Telemetry" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Telemetry" Version="9.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#if (ctmvvm)-->
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
@@ -170,7 +170,7 @@
 		<PackageReference Include="Camera.Maui" Version="1.5.1" />
 		<!--#endif-->
 		<!--#if (usegooglemaps)-->
-		<PackageReference Include="Onion.Maui.GoogleMaps" Version="6.1.0" />
+		<PackageReference Include="Onion.Maui.GoogleMaps" Version="6.2.0" />
 		<!--#endif-->
 		<!--#if (prism)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.537" />
@@ -217,7 +217,7 @@
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="5.0.1" />
+		<PackageReference Include="Sentry.Maui" Version="5.1.1" />
 		<!--#endif-->
 		<!--#if (sqlitelogging)-->
 		<PackageReference Include="Shiny.Logging.Sqlite" Version="$(ShinyVersion)" />
