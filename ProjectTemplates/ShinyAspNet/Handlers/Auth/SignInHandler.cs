@@ -16,7 +16,7 @@ public class SignInHandler(
     IHttpContextAccessor httpAccessor
 ) : IRequestHandler<SignInRequest, SignInResponse>
 {
-    public async Task<SignInResponse> Handle(SignInRequest request, CancellationToken cancellationToken)
+    public async Task<SignInResponse> Handle(SignInRequest request, IMediatorContext context, CancellationToken cancellationToken)
     {
 #if DEBUG
         if (request.Scheme.StartsWith("HACK:", StringComparison.InvariantCultureIgnoreCase))

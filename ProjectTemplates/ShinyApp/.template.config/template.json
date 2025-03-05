@@ -763,6 +763,10 @@
             ]
         },
         {
+            "condition": "(shinymediator == false)",
+            "exclude": "Handlers/**"
+        },
+        {
             "condition": "(startup == false)",
             "exclude": "AppStartup.cs"
         },

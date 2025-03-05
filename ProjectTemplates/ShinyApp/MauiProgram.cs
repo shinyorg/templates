@@ -69,6 +69,7 @@ using Microsoft.FluentUI.AspNetCore.Components;
 #if shinymediator
 using Polly;
 using Polly.Retry;
+using ShinyApp.Handlers;
 #endif
 using Microsoft.Extensions.Diagnostics.Enrichment;
 
@@ -254,6 +255,9 @@ public static class MauiProgram
 #if shinymediator
         // pass false as second argument if you don't want to use built-in middleware
         builder.Services.AddShinyMediator(x => x 
+#if (sentry)
+            .UseSentry()
+#endif
             .AddMauiPersistentCache()
             .AddDataAnnotations()
             .AddConnectivityBroadcaster()
@@ -280,6 +284,7 @@ public static class MauiProgram
             typeof(Shiny.Mediator.Http.IHttpRequestDecorator<,>),
             typeof(ShinyApp.Infrastructure.AppHttpRequestDecorator<,>)
         );
+        builder.Services.AddShinyMediatorHandlers();
 #endif
 #if appaction
         builder.Services.AddSingleton<ShinyApp.Delegates.AppActionDelegate>();

@@ -9,7 +9,7 @@ namespace ShinyAspNet.Handlers.Auth;
 )]
 public class SignOutHandler(AppDbContext data, IUserService user) : IRequestHandler<SignOutRequest>
 {
-    public async Task Handle(SignOutRequest request, CancellationToken cancellationToken)
+    public async Task Handle(SignOutRequest request, IMediatorContext context, CancellationToken cancellationToken)
     {
         var userId = user.UserId;
         await data

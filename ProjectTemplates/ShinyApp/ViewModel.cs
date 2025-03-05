@@ -93,13 +93,17 @@ public virtual void Initialize(INavigationParameters parameters) {}
 #endif
 
 #if shinymediator
-public abstract partial class ViewModel : IEventHandler<ConnectivityChanged>
+public abstract partial class ViewModel : IConnectivityEventHandler
 {
+    #if ctmvvm
+    [ObservableProperty] bool isConnected;
+    #else
     // use whatever NPC you want
     public bool IsConnected { get; private set; }
+    #endif
 
     [MainThread]
-    public Task Handle(ConnectivityChanged @event, EventContext<ConnectivityChanged> context, CancellationToken cancellationToken)
+    public Task Handle(ConnectivityChanged @event, IMediatorContext context, CancellationToken cancellationToken)
     {
         this.IsConnected = @event.Connected;
         return Task.CompletedTask;

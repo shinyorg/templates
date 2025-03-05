@@ -31,7 +31,7 @@
 		<MauiVersion>9.0.40</MauiVersion>
 		<ShinyVersion>3.3.4</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>3.3.1</MediatorVersion>
+		<MediatorVersion>4.0.1</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -217,7 +217,10 @@
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="5.1.1" />
+		<PackageReference Include="Sentry.Maui" Version="5.2.0" />
+		<!--#if (shinymediator)-->
+		<PackageReference Include="Shiny.Mediator.Sentry" Version="$(MediatorVersion)" />
+		<!--#endif-->
 		<!--#endif-->
 		<!--#if (sqlitelogging)-->
 		<PackageReference Include="Shiny.Logging.Sqlite" Version="$(ShinyVersion)" />

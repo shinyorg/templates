@@ -11,7 +11,7 @@ public class AppHttpRequestDecorator<TRequest, TResult>(
 ) : IHttpRequestDecorator<TRequest, TResult>
     where TRequest : IHttpRequest<TResult>
 {
-    public async Task Decorate(HttpRequestMessage httpMessage, TRequest request)
+    public async Task Decorate(HttpRequestMessage httpMessage, IMediatorContext context, TRequest request)
     {
         httpMessage.Headers.Add("X-App-Version", appInfo.VersionString);
         httpMessage.Headers.Add("X-App-Build", appInfo.BuildString);

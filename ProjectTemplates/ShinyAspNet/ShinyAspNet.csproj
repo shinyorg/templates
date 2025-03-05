@@ -6,7 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <ShinyExtensionsVersion>2.0.0-preview-0036</ShinyExtensionsVersion>
         <MicrosoftVersion>9.0.0</MicrosoftVersion>
-        <MediatorVersion>3.2.0</MediatorVersion>
+        <MediatorVersion>4.0.1</MediatorVersion>
         <!--#if (orleans)-->
         <OrleansVersion>9.0.1</OrleansVersion>
         <!--#endif-->

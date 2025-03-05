@@ -9,7 +9,7 @@ namespace ShinyAspNet.Handlers.Auth;
 )]
 public class RefreshHandler(AppDbContext data, JwtService jwtService) : IRequestHandler<RefreshRequest, RefreshResponse>
 {
-    public async Task<RefreshResponse> Handle(RefreshRequest request, CancellationToken cancellationToken)
+    public async Task<RefreshResponse> Handle(RefreshRequest request, IMediatorContext context, CancellationToken cancellationToken)
     {
         var result = await jwtService
             .ValidateRefreshToken(request.Token, cancellationToken)
