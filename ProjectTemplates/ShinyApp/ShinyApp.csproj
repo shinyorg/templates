@@ -199,6 +199,9 @@
 		<!--#if (useblazor)-->
 		<PackageReference Include="Shiny.Mediator.Blazor" Version="$(MediatorVersion)" />
 		<!--#endif-->
+		<!--#if (sentry)-->
+		<PackageReference Include="Shiny.Mediator.Sentry" Version="$(MediatorVersion)" />
+		<!--#endif-->
 		<!--#endif-->
 		<!--#if (remoteconfig)-->
 		<PackageReference Include="Shiny.Extensions.Configuration.Remote.Maui" Version="1.0.0-pre-0008" />
@@ -217,10 +220,7 @@
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="5.2.0" />
-		<!--#if (shinymediator)-->
-		<PackageReference Include="Shiny.Mediator.Sentry" Version="$(MediatorVersion)" />
-		<!--#endif-->
+		<PackageReference Include="Sentry.Maui" Version="5.3.0" />
 		<!--#endif-->
 		<!--#if (sqlitelogging)-->
 		<PackageReference Include="Shiny.Logging.Sqlite" Version="$(ShinyVersion)" />
