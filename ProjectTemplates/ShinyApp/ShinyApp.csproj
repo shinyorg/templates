@@ -28,7 +28,7 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<MauiVersion>9.0.40</MauiVersion>
+		<MauiVersion>9.0.50</MauiVersion>
 		<ShinyVersion>3.3.4</ShinyVersion>
 		<!--#if (shinymediator)-->
 		<MediatorVersion>4.0.1</MediatorVersion>

@@ -1,14 +1,18 @@
 ﻿using System.Text;
+#if (jwtauth)
 using System.Security.Claims;
+#endif
 #if (signalr)
 using Microsoft.AspNetCore.SignalR;
 #endif
+#if (otel)
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.FileProviders;
 using OpenTelemetry.Exporter;
 using OpenTelemetry.Logs;
 using OpenTelemetry.Trace;
+#endif
 #if (orleans)
 using Orleans.Configuration;
 #endif
@@ -16,9 +20,13 @@ using Orleans.Configuration;
 using Npgsql;
 #endif
 using ShinyAspNet;
+#if (!efnone)
 using ShinyAspNet.Data;
+#endif
+#if (jwtauth)
 using ShinyAspNet.Services;
 using ShinyAspNet.Services.Impl;
+#endif
 #if (signalr)
 using ShinyAspNet.Hubs;
 #endif
@@ -26,6 +34,7 @@ using ShinyAspNet.Hubs;
 var builder = WebApplication.CreateBuilder(args);
 // .UseServiceProviderFactory(new AutofacServiceProviderFactory())
 
+//#if (otel)
 builder.Logging.AddOpenTelemetry(options =>
 {
     // options.SetResourceBuilder(ResourceBuilder
@@ -71,9 +80,11 @@ builder
 builder.Services
     .AddHealthChecks()
     .AddDbContextCheck<AppDbContext>();
-
+//#endif
+//#if (jwtauth)
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<IUserService, UserService>();
+//#endif
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddShinyMediator();
 builder.Services.AddDiscoveredMediatorHandlersFromShinyApp();
@@ -91,6 +102,7 @@ dataSourceBuilder.UseNetTopologySuite();
 var dataSource = dataSourceBuilder.Build();
 #endif
 
+#if (!efnone)
 builder.Services.AddDbContext<AppDbContext>(
 #if (efpostgres)
 #if (efspatial) 
@@ -102,11 +114,12 @@ builder.Services.AddDbContext<AppDbContext>(
     opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("Main"))
 #endif
 );
+#endif
 //#if (signalr)
 builder.Services.AddSignalR();
 builder.Services.AddSingleton<IUserIdProvider, UserIdProvider>();
 //#endif
-
+//#if (jwtauth)
 builder
     .Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -126,7 +139,7 @@ builder
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt["Key"]!))
         };
     });
-
+//#endif
 
 //#if (google)
 builder.Services.AddAuthentication().AddGoogle(options =>
@@ -205,11 +218,17 @@ builder.Host.UseOrleans((ctx, silo) =>
 
 var app = builder.Build();
 
-app.UseShinyMediatorEndpointHandlers(builder.Services);
+#if (jwtauth)
+app.MapShinyMediatorEndpointHandlers(builder.Services);
+#else
+// uncomment when you have handlers with [ScopedHandler]
+// app.MapShinyMediatorEndpointHandlers(builder.Services);
+#endif
 app.UseHttpsRedirection();
+//#if (jwtauth)
 app.UseAuthentication();
 app.UseAuthorization();
-
+//#endif
 //#if (signalr)
 app.MapHub<BizHub>("/biz");
 //#endif
@@ -226,14 +245,13 @@ app.UseCors(x => x
 );
 #endif
 //+:cnd:noEmit
+#if (swagger)
 if (app.Environment.IsDevelopment())
 {
-    #if (swagger)
     app.UseSwagger();
     app.UseSwaggerUI();
-    #endif
 }
-
+#endif
 #if (deeplinks)
 app.UseStaticFiles(new StaticFileOptions
 {
@@ -246,8 +264,10 @@ app.UseStaticFiles(new StaticFileOptions
 });
 #endif
 
+#if (otel)
 app
     .MapHealthChecks("/health")
     .RequireHost("*:5001");
-    
+#endif
+
 app.Run();

@@ -45,10 +45,14 @@
         "ef": {
             "type": "parameter",
             "dataType": "choice",
-            "defaultValue": "SQL Server",
+            "defaultValue": "None",
             "description": "Entity Framework",
             "displayName": "Entity Framework",
             "choices": [
+                {
+                    "choice": "none",
+                    "description": "None"
+                },
                 {
                     "choice": "sqlserver",
                     "description": "SQL Server"
@@ -79,6 +83,20 @@
             "defaultValue": "false",
             "description": "SignalR",
             "displayName": "SignalR"
+        },
+        "otel":{
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "OpenTelemetry",
+            "displayName": "OpenTelemetry"
+        },
+        "jwtauth":{
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true",
+            "description": "JWT Authentication",
+            "displayName": "JWT Authentication"
         },
         "google":{
             "type": "parameter",
@@ -131,6 +149,11 @@
             "type": "computed",
             "dataType": "bool",
             "value": "(ef == \"postgresql\")"
+        },
+        "efnone":{
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(ef == \"none\")"
         }
     },
     "sources": [{
@@ -149,6 +172,10 @@
         {
             "condition": "(deeplinks == false)",
             "exclude": "wwwroot/**"
+        },
+        {
+            "condition": "(jwtauth == false)",
+            "exclude": "Handlers/**"
         },
         {
             "condition": "(signalr == false)",
