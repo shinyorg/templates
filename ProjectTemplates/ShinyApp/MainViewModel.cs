@@ -1,7 +1,7 @@
 ﻿namespace ShinyApp;
 
 #if reactiveui
-public class MainViewModel(BaseServices services) : ViewModel(services)
+public class MainViewModel(BaseServices services) : ReactiveObject
 {
     [Reactive] string property;
 }

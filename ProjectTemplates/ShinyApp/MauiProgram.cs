@@ -216,6 +216,10 @@ public static class MauiProgram
                 fonts.AddMaterialIconFonts();
 #endif
             });
+
+        builder.Logging.EnableEnrichment();
+        builder.Services.AddSingleton<ILogEnricher, ShinyApp.Infrastructure.AppLogEnricher>();
+        builder.Services.AddSingleton(TimeProvider.System);
 #if useconfig
         builder.Configuration.AddJsonPlatformBundle();
 #endif
@@ -409,9 +413,6 @@ public static class MauiProgram
         builder.Services.AddTransient<MainPage>();
         builder.Services.AddTransient<MainViewModel>();
 #endif
-        builder.Logging.EnableEnrichment();
-        builder.Services.AddSingleton<ILogEnricher, ShinyApp.Infrastructure.AppLogEnricher>();
-        builder.Services.AddSingleton(TimeProvider.System);
         var app = builder.Build();
 
         return app;

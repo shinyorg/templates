@@ -1,9 +1,9 @@
 namespace ShinyAspNet.Handlers.Auth;
 
-public record SignOutRequest(
+public record SignOutCommand(
     string RefreshToken,
     string? PushToken
-) : Shiny.Mediator.IRequest;
+) : Shiny.Mediator.ICommand;
 
 
 public record SignInRequest(string Scheme) : IRequest<SignInResponse> { }

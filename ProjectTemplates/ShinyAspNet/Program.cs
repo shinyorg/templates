@@ -1,17 +1,18 @@
 ﻿using System.Text;
 #if (jwtauth)
 using System.Security.Claims;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 #endif
 #if (signalr)
 using Microsoft.AspNetCore.SignalR;
 #endif
 #if (otel)
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.FileProviders;
 using OpenTelemetry.Exporter;
 using OpenTelemetry.Logs;
 using OpenTelemetry.Trace;
+using OpenTelemetry.Resources;
 #endif
 #if (orleans)
 using Orleans.Configuration;
@@ -76,10 +77,6 @@ builder
         //     zipkin.Endpoint = new Uri("http://localhost:9411/api/v2/spans");
         // });
     });
-
-builder.Services
-    .AddHealthChecks()
-    .AddDbContextCheck<AppDbContext>();
 //#endif
 //#if (jwtauth)
 builder.Services.AddScoped<JwtService>();
@@ -264,7 +261,7 @@ app.UseStaticFiles(new StaticFileOptions
 });
 #endif
 
-#if (otel)
+#if (efmssql || efpostgres)
 app
     .MapHealthChecks("/health")
     .RequireHost("*:5001");
