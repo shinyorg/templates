@@ -28,7 +28,7 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<MauiVersion>9.0.60</MauiVersion>
+		<MauiVersion>9.0.70</MauiVersion>
 		<ShinyVersion>3.3.4</ShinyVersion>
 		<!--#if (shinymediator)-->
 		<MediatorVersion>4.2.1</MediatorVersion>
@@ -200,7 +200,7 @@
 		<PackageReference Include="Shiny.Mediator.Blazor" Version="$(MediatorVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Shiny.Mediator.Sentry" Version="$(MediatorVersion)" />
+		<PackageReference Include="Sentry.DiagnosticSource" Version="5.8.0" />
 		<!--#endif-->
 		<!--#endif-->
 		<!--#if (remoteconfig)-->

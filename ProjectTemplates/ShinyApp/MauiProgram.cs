@@ -172,6 +172,9 @@ public static class MauiProgram
                 options.TracesSampleRate = 1.0;
 
                 // Other Sentry options can be set here.
+#if shinymediator
+                options.AddDiagnosticSourceIntegration();
+#endif
             })
 #endif
 #if usegooglemaps
@@ -259,9 +262,6 @@ public static class MauiProgram
 #if shinymediator
         // pass false as second argument if you don't want to use built-in middleware
         builder.Services.AddShinyMediator(x => x 
-#if (sentry)
-            .UseSentry()
-#endif
             .AddMauiPersistentCache()
             .AddDataAnnotations()
             .AddConnectivityBroadcaster()
