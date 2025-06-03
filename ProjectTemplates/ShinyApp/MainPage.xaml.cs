@@ -3,7 +3,7 @@
 
 public partial class MainPage : ContentPage
 {
-#if (prism)
+#if (prism || shinyshell)
 	public MainPage()
 	{
 		this.InitializeComponent();

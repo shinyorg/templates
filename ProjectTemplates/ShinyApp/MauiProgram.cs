@@ -310,16 +310,20 @@ public static class MauiProgram
 #if (usehttp)
         builder.Services.AddSingleton(sp =>
         {
+#if (authservice)
             var auth = sp.GetRequiredService<ShinyApp.Services.IAuthenticationService>();
+#endif
             return RestService.For<ShinyApp.Services.Impl.IApiClient>(
                 builder.Configuration["ApiUri"]!,
                 new RefitSettings()
                 {
+#if (authservice)
                     AuthorizationHeaderValueGetter = async (req, ct) =>
                     {
                         await auth.TryRefresh();
                         return auth.AuthenticationToken!;
                     }
+#endif
                 }
             );
         });
