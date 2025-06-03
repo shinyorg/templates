@@ -35,6 +35,14 @@ _A simple mediator pattern for .NET applications - Written by Allan Ritchie_
 * [Quick Start](https://shinylib.net/client/mediator/quick-start/)
 
 <!--#endif-->
+<!--#if (shinyshell)-->
+## Shiny MAUI Shell
+_Make .NET MAUI Shell shinier with viewmodel lifecycle management, navigation, and more! - Written by Allan Ritchie_
+
+* [Documentation](https://shinylib.net/)
+* [GitHub](https://github.com/shinyorg/shiny)
+
+<!--#endif-->
 <!--#if (ctmvvm)-->
 ## Community Toolkit MVVM
 

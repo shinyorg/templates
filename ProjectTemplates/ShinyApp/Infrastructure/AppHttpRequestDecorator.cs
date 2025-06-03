@@ -8,10 +8,9 @@ public class AppHttpRequestDecorator<TRequest, TResult>(
     // IAuthenticationService authService,
     IAppInfo appInfo,
     IDeviceInfo deviceInfo
-) : IHttpRequestDecorator<TRequest, TResult>
-    where TRequest : IHttpRequest<TResult>
+) : IHttpRequestDecorator
 {
-    public async Task Decorate(HttpRequestMessage httpMessage, IMediatorContext context, TRequest request)
+    public async Task Decorate(HttpRequestMessage httpMessage, IMediatorContext context)
     {
         httpMessage.Headers.Add("X-App-Version", appInfo.VersionString);
         httpMessage.Headers.Add("X-App-Build", appInfo.BuildString);

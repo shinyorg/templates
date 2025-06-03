@@ -31,7 +31,7 @@
 		<MauiVersion>9.0.70</MauiVersion>
 		<ShinyVersion>3.3.4</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>4.2.1</MediatorVersion>
+		<MediatorVersion>4.4.0</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -149,22 +149,21 @@
 		<!--#if (useblazor)-->
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
 		<!--#endif-->
-		<PackageReference Include="Microsoft.Extensions.Telemetry" Version="9.3.0" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.3" Condition="'$(Configuration)' == 'Debug'" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.5" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#if (ctmvvm)-->
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<!--#endif-->
 		<!--#if (communitytoolkit || speechrecognition)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="11.1.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="11.2.0" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
-		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="5.1.0" />
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="6.0.0" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="6.0.1" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="6.0.2" />
 		<!--#endif-->
 		<!--#if (cameraview)-->
-		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="2.0.2" />
+		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="2.0.3" />
 		<!--#endif-->
 		<!--#if (camera)-->
 		<PackageReference Include="Camera.Maui" Version="1.5.1" />
@@ -174,6 +173,9 @@
 		<!--#endif-->
 		<!--#if (prism)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.537" />
+		<!--#endif-->
+		<!--#if (shinyshell)-->
+		<PackageReference Include="Shiny.Maui.Shell" Version="1.0.0-beta-0021" />
 		<!--#endif-->
 		<!--#if (reactiveui)-->
 		<PackageReference Include="ReactiveUI" Version="20.2.45" />
@@ -200,18 +202,18 @@
 		<PackageReference Include="Shiny.Mediator.Blazor" Version="$(MediatorVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.DiagnosticSource" Version="5.8.0" />
+		<PackageReference Include="Sentry.DiagnosticSource" Version="5.9.0" />
 		<!--#endif-->
 		<!--#endif-->
 		<!--#if (remoteconfig)-->
 		<PackageReference Include="Shiny.Extensions.Configuration.Remote.Maui" Version="1.0.0-pre-0008" />
-		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.3" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.5" />
 		<!--#endif-->
 		<!--#if (bindablegenerator)-->
 		<PackageReference Include="M.BindableProperty.Generator" Version="0.11.1" />
 		<!--#endif-->
 		<!--#if (localization)-->
-		<PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.3" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.5" />
 		<!--#endif-->
 		<!--#if (usemsal)-->
 		<PackageReference Include="Microsoft.Identity.Client" Version="4.66.2" />
@@ -220,7 +222,7 @@
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="5.4.0" />
+		<PackageReference Include="Sentry.Maui" Version="5.9.0" />
 		<!--#endif-->
 		<!--#if (sqlitelogging)-->
 		<PackageReference Include="Shiny.Logging.Sqlite" Version="$(ShinyVersion)" />
@@ -259,7 +261,7 @@
 		<PackageReference Include="Redth.Maui.VirtualListView" Version="0.4.0" />
 		<!--#endif-->
 		<!--#if (barcodes)-->
-		<PackageReference Include="BarcodeScanning.Native.Maui" Version="2.1.7" />
+		<PackageReference Include="BarcodeScanning.Native.Maui" Version="2.2.1" />
 		<!--#endif-->
 		<!--#if (storereview)-->
 		<PackageReference Include="Plugin.StoreReview" Version="6.2.0" />
@@ -268,16 +270,16 @@
 		<PackageReference Include="Plugin.InAppBilling" Version="8.0.5" />
 		<!--#endif-->
 		<!--#if (calendar)-->
-		<PackageReference Include="Plugin.Maui.CalendarStore" Version="2.0.1" />
+		<PackageReference Include="Plugin.Maui.CalendarStore" Version="4.0.0" />
 		<!--#endif-->
 		<!--#if (audio)-->
-		<PackageReference Include="Plugin.Maui.Audio" Version="3.0.1" />
+		<PackageReference Include="Plugin.Maui.Audio" Version="4.0.0" />
 		<!--#endif-->
 		<!--#if (ocr)-->
 		<PackageReference Include="Plugin.Maui.OCR" Version="1.0.15" />
 		<!--#endif-->
 		<!--#if (fingerprint)-->
-		<PackageReference Include="Oscore.Maui.Biometric" Version="2.3.0" />
+		<PackageReference Include="Oscore.Maui.Biometric" Version="2.4.0" />
 		<!--#endif-->
 		<!--#if usehttp-->
 		<PackageReference Include="Refit" Version="8.0.0" />
@@ -307,9 +309,9 @@
 		<PackageReference Include="CardsView.Maui" Version="1.1.2" />
 		<!--#endif-->
 		<!--#if (uraniumui)-->
-		<PackageReference Include="UraniumUI.Material" Version="2.11.0" />
-		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.11.0" />
-		<PackageReference Include="UraniumUI.Blurs" Version="2.11.0" />
+		<PackageReference Include="UraniumUI.Material" Version="2.12.1" />
+		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.12.1" />
+		<PackageReference Include="UraniumUI.Blurs" Version="2.12.1" />
 		<!--#endif-->
 		<!--#if (skeleton)-->
 		<PackageReference Include="HorusStudio.Maui.Skeleton" Version="2.0.0" />
@@ -345,15 +347,15 @@
 		<PackageReference Include="EmbedIO" Version="3.5.2" />
 		<!--#endif-->
 		<!--#if (mudblazor)-->
-		<PackageReference Include="MudBlazor" Version="8.3.0" />
+		<PackageReference Include="MudBlazor" Version="8.7.0" />
 		<!--#endif-->
 		<!--#if (radzen)-->
-		<PackageReference Include="Radzen.Blazor" Version="6.3.2" />
+		<PackageReference Include="Radzen.Blazor" Version="7.0.7" />
 		<!--#endif-->
 		<!--#if (fluentui)-->
-		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.11.7" />
-		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.11.7" />
-		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.11.7" />
+		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.11.9" />
+		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.11.9" />
+		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.11.9" />
 		<!--#endif-->
 		<!--#if (syslinqasync)-->
 		<PackageReference Include="System.Linq.Async" Version="6.0.1" />

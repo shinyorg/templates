@@ -71,7 +71,6 @@ using Polly;
 using Polly.Retry;
 using ShinyApp.Handlers;
 #endif
-using Microsoft.Extensions.Diagnostics.Enrichment;
 
 namespace ShinyApp;
 
@@ -136,6 +135,12 @@ public static class MauiProgram
 #endif
 #if skia || skiaextended || livecharts
             .UseSkiaSharp()
+#endif
+#if shinyshell
+            .UseShinyShell(x => 
+            {
+                // map routes here
+            })
 #endif
 #if prism
             .UsePrism(
@@ -220,8 +225,6 @@ public static class MauiProgram
 #endif
             });
 
-        builder.Logging.EnableEnrichment();
-        builder.Services.AddSingleton<ILogEnricher, ShinyApp.Infrastructure.AppLogEnricher>();
         builder.Services.AddSingleton(TimeProvider.System);
 #if useconfig
         builder.Configuration.AddJsonPlatformBundle();
@@ -284,10 +287,11 @@ public static class MauiProgram
             .UseBlazor()
 #endif
         );
-        builder.Services.AddSingleton(
-            typeof(Shiny.Mediator.Http.IHttpRequestDecorator<,>),
-            typeof(ShinyApp.Infrastructure.AppHttpRequestDecorator<,>)
-        );
+        Make .NET MAUI Shell shinier with viewmodel lifecycle management, navigation, and more! 
+        builder.Services.AddSingleton<
+            Shiny.Mediator.Http.IHttpRequestDecorator,
+            ShinyApp.Infrastructure.AppHttpRequestDecorator
+        >();
         builder.Services.AddShinyMediatorHandlers();
 #endif
 #if appaction

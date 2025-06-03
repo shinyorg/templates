@@ -32,18 +32,10 @@
         },
         "isVisible": true
     },
-    
     {
-        "id": "prism",
+        "id": "mvvmframework",
         "name": {
-            "text": "Add Prism"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "reactiveui",
-        "name": {
-            "text": "Add ReactiveUI"
+            "text": "MVVM Framework"
         },
         "isVisible": true
     },

@@ -109,19 +109,25 @@
                 "format": "D"
             }
         },
-        "prism":{
+        "mvvmframework": {
             "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "true",
-            "description": "FRAMEWORK - Add Prism - Documentation https://prismlibrary.com",
-            "displayName": "FRAMEWORK - Add Prism"
-        },
-        "reactiveui":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "FRAMEWORK - Add ReactiveUI - Documentation https://reactiveui.net",
-            "displayName": "FRAMEWORK - Add ReactiveUI"
+            "description": "",
+            "displayName": "MVVM Framework",
+            "datatype": "choice",
+            "choices": [{
+                "choice": "None",
+                "description": "None"
+            },{
+                "choice": "Shiny MAUI Shell",
+                "description": "Shiny MAUI Shell - Documentation https://github.com/shinyorg/maui"
+            },{ 
+                "choice": "Prism",
+                "description": "Prism - Documentation https://prismlibrary.com"
+            },{               
+                "choice": "ReactiveUI",
+                "description": "ReactiveUI - Documentation https://reactiveui.net"
+            }],
+            "defaultValue": "Shiny MAUI Shell"
         },
         "ctmvvm":{
             "type": "parameter",
@@ -133,10 +139,10 @@
         "shinymediator":{
             "type": "parameter",
             "datatype": "bool",
-            "defaultValue": "false",
+            "defaultValue": "true",
             "description": "FRAMEWORK - Add Shiny Mediator - Documentation https://github.com/shinyorg/mediator",
             "displayName": "FRAMEWORK - Add Shiny Mediator"
-        },           
+        },
         "localization":{
             "type": "parameter",
             "datatype": "bool",
@@ -667,6 +673,21 @@
             "datatype": "bool",
             "value": "(authtype == \"MSAL Basic\" || authtype == \"MSAL AzureB2C\" || authtype == \"MSAL Broker\")"
         },
+        "shinyshell":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(mvvmframework == \"Shiny MAUI Shell\")"
+        },
+        "prism":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(mvvmframework == \"Prism\")"
+        },
+        "reactiveui":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(mvvmframework == \"ReactiveUI\")"
+        },
         "usemaps":{
             "type": "computed",
             "datatype": "bool",
@@ -761,6 +782,10 @@
                 "appsettings.ios.json",
                 "appsettings.maccatalyst.json"
             ]
+        },
+        {
+            "condition": "(shinyshell === false)",
+            "exclude": "AppShell.*"
         },
         {
             "condition": "(shinymediator == false)",
