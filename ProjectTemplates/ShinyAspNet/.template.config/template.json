@@ -126,12 +126,12 @@
             "description": "Microsoft Orleans",
             "displayName": "Microsoft Orleans" 
         },
-        "swagger": {
+        "scalar": {
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "true",
-            "description": "Swagger",
-            "displayName": "Swagger"
+            "description": "Scalar",
+            "displayName": "Scalar"
         },
         "deeplinks": {
             "type": "parameter",

@@ -1,4 +1,7 @@
 ﻿using System.Text;
+#if (scalar)
+using Scalar.AspNetCore;
+#endif
 #if (jwtauth)
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
@@ -86,11 +89,6 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddShinyMediator();
 builder.Services.AddDiscoveredMediatorHandlersFromShinyApp();
 
-#if (swagger)
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-#endif
-
 #if (efpostgres)
 var dataSourceBuilder = new NpgsqlDataSourceBuilder(builder.Configuration.GetConnectionString("Main"));
 #if (efspatial)
@@ -112,6 +110,7 @@ builder.Services.AddDbContext<AppDbContext>(
 #endif
 );
 #endif
+builder.Services.AddOpenApi();
 //#if (signalr)
 builder.Services.AddSignalR();
 builder.Services.AddSingleton<IUserIdProvider, UserIdProvider>();
@@ -245,8 +244,8 @@ app.UseCors(x => x
 #if (swagger)
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.MapOpenApi();
+    app.MapScalarApiReference();
 }
 #endif
 #if (deeplinks)

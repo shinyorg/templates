@@ -4,16 +4,19 @@
         <TargetFramework>{DOTNET_TFM}</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <OpenApiDocumentsDirectory>.</OpenApiDocumentsDirectory>
         <ShinyExtensionsVersion>2.0.0-preview-0036</ShinyExtensionsVersion>
-        <MicrosoftVersion>9.0.3</MicrosoftVersion>
-        <MediatorVersion>4.4.0</MediatorVersion>
+        <MicrosoftVersion>9.0.5</MicrosoftVersion>
+        <MediatorVersion>4.5.0</MediatorVersion>
         <!--#if (orleans)-->
         <OrleansVersion>9.1.2</OrleansVersion>
         <!--#endif-->
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="$(MicrosoftVersion)" />     
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="$(MicrosoftVersion)" />
+        <PackageReference Include="Microsoft.Extensions.ApiDescription.Server" Version="9.0.5"/>
+
         <!--#if (efmssql)-->
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MicrosoftVersion)" />
         <!--#if (efspatial)-->
@@ -49,7 +52,6 @@
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="9.0.4" />
         <!--#endif-->
         <!--#endif-->
-        <PackageReference Include="Shiny.Mediator" Version="$(MediatorVersion)" />
         <PackageReference Include="Shiny.Mediator.AspNet" Version="$(MediatorVersion)" />
         <!-- 
         <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
@@ -60,12 +62,12 @@
         <PackageReference Include="Shiny.Extensions.EntityFramework" Version="$(ShinyExtensionsVersion)" />
         <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="$(MicrosoftVersion)" />
         <!--#endif-->
-        <!--#if (swagger)-->
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="8.0.0" />
+        <!--#if (scalar)-->
+        <PackageReference Include="Scalar.AspNetCore" Version="2.4.13"/>
         <!--#endif-->
+        <!-- <PackageReference Include="Riok.Mapperly" Version="3.6.0" /> -->
 
         <!--#if (otel)-->
-        <!-- <PackageReference Include="Riok.Mapperly" Version="3.6.0" /> -->
         <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.11.2" />
         <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.11.2" />
         <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.11.2" />

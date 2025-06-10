@@ -31,7 +31,7 @@
 		<MauiVersion>9.0.70</MauiVersion>
 		<ShinyVersion>3.3.4</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>4.4.0</MediatorVersion>
+		<MediatorVersion>4.5.0</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -175,7 +175,7 @@
 		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.537" />
 		<!--#endif-->
 		<!--#if (shinyshell)-->
-		<PackageReference Include="Shiny.Maui.Shell" Version="1.0.0-beta-0021" />
+		<PackageReference Include="Shiny.Maui.Shell" Version="1.0.0" />
 		<!--#endif-->
 		<!--#if (reactiveui)-->
 		<PackageReference Include="ReactiveUI" Version="20.2.45" />
