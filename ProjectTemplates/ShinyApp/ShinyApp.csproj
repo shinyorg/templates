@@ -28,10 +28,10 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<MauiVersion>9.0.70</MauiVersion>
+		<MauiVersion>9.0.80</MauiVersion>
 		<ShinyVersion>3.3.4</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>4.5.0</MediatorVersion>
+		<MediatorVersion>4.6.1</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -214,6 +214,7 @@
 		<!--#endif-->
 		<!--#if (localization)-->
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.5" />
+		<PackageReference Include="Shiny.Extensions.Localization.Generator" Version="1.0.0" />
 		<!--#endif-->
 		<!--#if (usemsal)-->
 		<PackageReference Include="Microsoft.Identity.Client" Version="4.66.2" />

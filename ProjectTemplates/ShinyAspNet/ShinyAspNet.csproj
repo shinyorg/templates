@@ -6,8 +6,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <OpenApiDocumentsDirectory>.</OpenApiDocumentsDirectory>
         <ShinyExtensionsVersion>2.0.0-preview-0036</ShinyExtensionsVersion>
-        <MicrosoftVersion>9.0.5</MicrosoftVersion>
-        <MediatorVersion>4.5.0</MediatorVersion>
+        <MicrosoftVersion>9.0.6</MicrosoftVersion>
+        <MediatorVersion>4.6.1</MediatorVersion>
         <!--#if (orleans)-->
         <OrleansVersion>9.1.2</OrleansVersion>
         <!--#endif-->
