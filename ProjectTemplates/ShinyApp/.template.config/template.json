@@ -163,14 +163,14 @@
             "defaultValue": "false",
             "description": "CONFIGURATION - Add Remote Configuration (Shiny.Extensions.Configuration.Remote.Maui)",
             "displayName": "CONFIGURATION - Add Remote Configuration (Shiny.Extensions.Configuration.Remote.Maui)"
-        },        
+        },
         "sentry": {
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "false",
             "description": "LOGGING - Add Sentry.IO logging to your application",
             "displayName": "LOGGING - Sentry.IO"
-        },
+        }, 
         "bluetoothle": {
             "type": "parameter",
             "datatype": "bool",
@@ -227,19 +227,12 @@
             "description": "SERVICE - Add Local Notifications (Shiny.Notifications)",
             "displayName": "SERVICE - Add Local Notifications (Shiny.Notifications)"
         },
-        "settings":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "CODE - This creates a special reactive object that binds to the platform preferences or secure storage",
-            "displayName": "CODE - Add Bound Settings Class (Shiny.Core)"
-        },
         "push": {
             "type": "parameter",
             "datatype": "choice",
             "defaultValue": "None",
             "description": "This will wire up all of the necessary permissions & libraries required for the selected push option.  You will still need to configure any additional API keys within the appsettings.json or MauiProgram.cs files",
-            "displayName": "Add Push Notifications",
+            "displayName": "SERVICE - Add Push Notifications",
             "choices": [
                 {
                     "choice": "None",
@@ -255,10 +248,28 @@
                 }
             ]
         },
+        "maptype": {
+            "type": "parameter",
+            "description": "Maps",
+            "displayName": "SERVICE - Add Map Support",
+            "datatype": "choice",
+            "choices": [{
+                "choice": "None",
+                "description": "None"
+            },{
+                "choice": "MAUI",
+                "description": "MAUI"
+            },{
+                "choice": "Google Maps",
+                "description": "For use on Android & iOS"
+            }],
+            "defaultValue": "None"
+        },
+
         "authtype": {
             "type": "parameter",
             "description": "Authentication Setup - Microsoft Authentication Library (MSAL) - Documentation https://devblogs.microsoft.com/dotnet/authentication-in-dotnet-maui-apps-msal/  - MAUI WebAuthenticator: https://learn.microsoft.com/en-us/dotnet/maui/platform-integration/communication/authentication",
-            "displayName": "Authentication Setup",
+            "displayName": "CODE - Authentication Setup",
             "datatype": "choice",
             "choices": [{
                 "choice": "None",
@@ -278,13 +289,12 @@
             }],
             "defaultValue": "None"
         }, 
-        "msalclientid":{
+        "settings":{
             "type": "parameter",
-            "dataType": "string",
-            "description": "Microsoft Authentication Library (MSAL) Client It",
-            "displayName": "Microsoft Authentication Library (MSAL) Client ID",
-            "defaultValue": "",
-            "replaces":"{MSAL_CLIENT_ID}"
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "CODE - This creates a special reactive object that binds to the platform preferences or secure storage",
+            "displayName": "CODE - Add Bound Settings Class (Shiny.Core)"
         },
         "authservice":{
             "type": "parameter",
@@ -300,37 +310,12 @@
             "description": "CODE - Add Refit API Client used with sample Authentication service",
             "displayName": "CODE - Add Refit HTTP Client with Authentication Service"
         },
-        "maptype": {
-            "type": "parameter",
-            "description": "Maps",
-            "displayName": "Maps",
-            "datatype": "choice",
-            "choices": [{
-                "choice": "None",
-                "description": "None"
-            },{
-                "choice": "MAUI",
-                "description": "MAUI"
-            },{
-                "choice": "Google Maps",
-                "description": "For use on Android & iOS"
-            }],
-            "defaultValue": "None"
-        },
-        "mapsandroidkey":{
-            "type": "parameter",
-            "dataType": "string",
-            "description": "This is your Google Maps API Key setup within the Google Cloud Platform. Documentation https://learn.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/map/setup",
-            "displayName": "Sets your Android Maps API Key (used 'Mapping Choice' is selected)",
-            "defaultValue": "",
-            "replaces":"{MAUI_MAPS_ANDROID_KEY}"
-        },
-        "essentialsmedia":{
+         "essentialsmedia":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "SETUP all up all the necessary boilerplate for the MAUI Essentials Media Picker",
-            "displayName": "SETUP MAUI Essentials - Media Picker"
+            "displayName": "CODE - Setup MAUI Essentials - Media Picker"
         },
         "essentialsfilepicker":{
             "type": "parameter",
@@ -344,23 +329,32 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "SETUP all up all the necessary boilerplate for the MAUI App Actions",
-            "displayName": "SETUP MAUI Essentials - App Actions"
+            "displayName": "CODE - Setup MAUI Essentials - App Actions"
         },
         "deeplinks":{
             "type": "parameter",
             "description": "SETUP initial deep link support",
-            "displayName": "SETUP Deep Linking Support URI",
+            "displayName": "CODE - Setup Deep Linking Support URI",
             "defaultValue": "",
             "datatype": "string",
             "replaces": "{DEEPLINK_HOST}"
         },
-        "binablegenerator":{
+        "msalclientid":{
             "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "UTILITY - Add Maui.BindableProperty.Generator by rrmanzano - Documentation: https://github.com/rrmanzano/maui-bindableproperty-generator",
-            "displayName": "UTILITY - Add Maui.BindableProperty.Generator"
-        },      
+            "dataType": "string",
+            "description": "Microsoft Authentication Library (MSAL) Client ID",
+            "displayName": "SETUP - Microsoft Authentication Library (MSAL) Client ID",
+            "defaultValue": "",
+            "replaces":"{MSAL_CLIENT_ID}"
+        },
+        "mapsandroidkey":{
+            "type": "parameter",
+            "dataType": "string",
+            "description": "This is your Google Maps API Key setup within the Google Cloud Platform. Documentation https://learn.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/map/setup",
+            "displayName": "SETUP - Android Maps API Key (used 'Mapping Choice' is selected)",
+            "defaultValue": "",
+            "replaces":"{MAUI_MAPS_ANDROID_KEY}"
+        },   
         "communitytoolkit":{
             "type": "parameter",
             "datatype": "bool",

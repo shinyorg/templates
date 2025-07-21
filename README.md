@@ -21,14 +21,16 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 * Easy setup and choice for push notifications
 	* Full Native
 	* Azure Notification Hubs
-	* Firebase
 * Creates a best practice MAUI application with best-in-class frameworks:
     * [.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui)
+	* [Shiny.NET](https://shinylib.net)
+	* [Shiny Mediator](https://github.com/shinyorg/mediator)
+	* [Shiny MAUI Shell](https://shinylib.net/client/maui)
+	* [Shiny Extensions](https://shinylib.net/extensions/di)
 	* [Prism](https://prismlibrary.com/)
 	* [ReactiveUI](https://reactiveui.net/)
 	* [MVVM Community Toolkit](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm)
-	* [Shiny.NET](https://shinylib.net)
-	* [Shiny Mediator](https://github.com/shinyorg/mediator)
+
 * Select mutliple platform UI Markup types
 	* XAML
 	* Blazor
@@ -67,9 +69,7 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [MAUI Community Toolkit](https://github.com/CommunityToolkit/Maui) from many contributors
 	* [Virtual List View](https://github.com/Redth/Maui.VirtualListView) by Jon Dick
 	* [Uranium UI](https://github.com/enisn/UraniumUI) by Enis Necipoglu
-	* [FFImageLoading MAUI](https://github.com/microspaze/FFImageLoading.Maui) 
-	* [Sharpnado Tabs](https://github.com/roubachof/Sharpnado.Tabs) by Jean-Marie Alfonsi
-	* [Sharpnado CollectionView](https://github.com/roubachof/Sharpnado.CollectionView) by Jean-Marie Alfonsi
+	* [FFImageLoading MAUI](https://github.com/microspaze/FFImageLoading.Maui)
 	* [MAUI Google Maps](https://github.com/themronion/Maui.GoogleMaps/tree/maui) by Pavlo Lukianets
 	* [Camera.MAUI](https://github.com/hjam40/Camera.MAUI) by Hector (hjam40)
 	* [Refit](https://github.com/reactiveui/refit) by ReactiveUI Maintainers
@@ -89,13 +89,11 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [ACR User Dialogs](https://github.com/aritchie/userdialogs) by Allan Ritchie
 	* [Debug Rainbows](https://github.com/sthewissen/Plugin.Maui.DebugRainbows) by Steven Thewissen
 	* [Live Charts](https://livecharts.dev/) by Alberto Rodríguez
-	* [Compiled Bindings](https://github.com/levitali/CompiledBindings) by Vitali Lesheniuk
 	* [Settings View](https://github.com/muak/AiForms.Maui.SettingsView) by Satoshi NaKamura
 	* [AlohaKit Animations](https://github.com/jsuarezruiz/AlohaKit.Animations) by Javier Suárez
 	* [Skeleton](https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton) by Horus Software
 	* [The 49 Bottom Sheet](https://github.com/the49ltd/The49.Maui.BottomSheet) by The 49 Ltd
 	* [The 49 Context Menu](hhttps://github.com/the49ltd/The49.Maui.ContextMenu) by The 49 Ltd
-	* [Bindable Property Generator](https://github.com/rrmanzano/maui-bindableproperty-generator) by rrmanzano
 	* [System.Linq.Async](https://github.com/dotnet/reactive)
 	* [Humanizer](https://github.com/Humanizr/Humanizer)
 	* [Units .NET](https://github.com/angularsen/UnitsNet) by Andreas Gullberg Larsen
@@ -114,7 +112,6 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 * .NET Orleans
 * OpenAPI
 * DB UP
-* OpenTelemetry
 * Entity Framework Basic Setup
 * MSAL & WebAuthenticator Setup /w Google & Facebook
 * Apple Domain Association Setup

@@ -36,51 +36,7 @@ using ShinyAspNet.Hubs;
 #endif
 
 var builder = WebApplication.CreateBuilder(args);
-// .UseServiceProviderFactory(new AutofacServiceProviderFactory())
 
-//#if (otel)
-builder.Logging.AddOpenTelemetry(options =>
-{
-    // options.SetResourceBuilder(ResourceBuilder
-    //     .CreateEmpty()
-    //     .AddService(builder.Environment.ApplicationName)
-    //     .AddAttributes(new Dictionary<string, object>
-    //     {
-    //         ["environment"] = builder.Environment.EnvironmentName
-    //     })
-    // );
-    options.AddConsoleExporter();
-    options.AddOtlpExporter(x => 
-    {
-        x.Endpoint = new Uri("http://localhost:4317/ingest/otlp/v1/logs");
-        x.Protocol = OtlpExportProtocol.HttpProtobuf;
-        x.Headers = "X-Seq-ApiKey=123";
-    });
-});
-
-builder
-    .Services
-    .AddOpenTelemetry()
-    .WithMetrics(metrics =>
-    {
-        // metrics
-        //     .AddPrometheusExporter()
-        //     .AddMeter("Microsoft.Orleans");
-    })
-    .WithTracing(tracing =>
-    {
-        var service = ResourceBuilder.CreateDefault().AddService("WorkflowSystem", "1.0");
-        tracing.SetResourceBuilder(service);
-        
-        tracing.AddSource("Microsoft.Orleans.Runtime");
-        tracing.AddSource("Microsoft.Orleans.Application");
-        
-        // tracing.AddZipkinExporter(zipkin =>
-        // {
-        //     zipkin.Endpoint = new Uri("http://localhost:9411/api/v2/spans");
-        // });
-    });
-//#endif
 //#if (jwtauth)
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -258,12 +214,6 @@ app.UseStaticFiles(new StaticFileOptions
     ServeUnknownFileTypes = true,
     DefaultContentType = "text/plain"
 });
-#endif
-
-#if (efmssql || efpostgres)
-app
-    .MapHealthChecks("/health")
-    .RequireHost("*:5001");
 #endif
 
 app.Run();

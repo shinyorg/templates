@@ -218,12 +218,6 @@
             "text": "Setup Deep Linking Support"
         },
         "isVisible": true
-    },{
-        "id": "binablegenerator",
-        "name": {
-            "text": "Add Bindable Property Generator"
-        },
-        "isVisible": true
     },
     {
         "id": "communitytoolkit",

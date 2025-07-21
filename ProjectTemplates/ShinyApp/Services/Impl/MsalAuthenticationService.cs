@@ -7,7 +7,7 @@ namespace ShinyApp.Services.Impl;
 public class MsalAuthenticationService : IAuthenticationService
 {
     readonly AuthStore authStore;
-    static readonly string[] SCOPES = new[] { "User.Read" };
+    static readonly string[] SCOPES = [ "User.Read" ];
     readonly MsalOptions options;
     readonly IPublicClientApplication pca;
 //-:cnd:noEmit
@@ -120,7 +120,7 @@ public class MsalAuthenticationService : IAuthenticationService
 
     void SetAuth(AuthenticationResult result)
     {
-        this.authStore.AuthenticatetionToken = result.IdToken;
+        this.authStore.AuthenticationToken = result.IdToken;
         // TODO: refresh token and expiries and all that good stuff is for you :)
         Console.WriteLine("Token received");
     }

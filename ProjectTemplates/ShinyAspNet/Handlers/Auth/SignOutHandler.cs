@@ -1,13 +1,13 @@
 namespace ShinyAspNet.Handlers.Auth;
 
 
-[MediatorHttpPost(
-    "SignOut",
-    "/auth/signout", 
-    RequiresAuthorization = true
-)]
 public class SignOutHandler(AppDbContext data, IUserService user) : ICommandHandler<SignOutCommand>
 {
+    [MediatorHttpPost(
+        "SignOut",
+        "/auth/signout", 
+        RequiresAuthorization = true
+    )]
     public async Task Handle(SignOutCommand command, IMediatorContext context, CancellationToken cancellationToken)
     {
         var userId = user.UserId;

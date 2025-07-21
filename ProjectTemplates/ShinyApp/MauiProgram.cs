@@ -275,6 +275,7 @@ public static class MauiProgram
 #if useblazor
             .UseBlazor()
 #endif
+        );
 #endif
 #if appaction
         builder.Services.AddSingleton<ShinyApp.Delegates.AppActionDelegate>();
@@ -283,7 +284,8 @@ public static class MauiProgram
         builder.Services.AddShinyService<ShinyApp.Delegates.DeepLinkDelegate>();
 #endif
 #if (authservice)
-        builder.Services.AddPersistentService<ShinyApp.Services.Impl.AuthStore>("secure"); // leave blank or set to "settings" to use unsecured store which is good for testing
+        // leave blank or set to "settings" to use unsecured store which is good for testing
+        builder.Services.AddPersistentService<ShinyApp.Services.Impl.AuthStore>("secure"); 
 #if (usemsal)
         builder.Services.AddShinyService<ShinyApp.Services.Impl.MsalAuthenticationService>();
 #elif (usewebauthenticator)

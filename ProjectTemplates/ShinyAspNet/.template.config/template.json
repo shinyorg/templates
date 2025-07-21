@@ -84,13 +84,6 @@
             "description": "SignalR",
             "displayName": "SignalR"
         },
-        "otel":{
-            "type": "parameter",
-            "dataType": "bool",
-            "defaultValue": "false",
-            "description": "OpenTelemetry",
-            "displayName": "OpenTelemetry"
-        },
         "jwtauth":{
             "type": "parameter",
             "dataType": "bool",
