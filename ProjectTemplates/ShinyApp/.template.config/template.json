@@ -170,13 +170,6 @@
             "defaultValue": "false",
             "description": "LOGGING - Add Sentry.IO logging to your application",
             "displayName": "LOGGING - Sentry.IO"
-        },        
-        "sqlitelogging": {
-            "type": "parameter",
-            "dataType": "bool",
-            "description": "LOGGING - SQLite - (Shiny.Logging.Sqlite) - Great for logging local tests especially for background services in Shiny",
-            "displayName": "LOGGING - SQLite - (Shiny.Logging.Sqlite)",
-            "defaultValue": "false"
         },
         "bluetoothle": {
             "type": "parameter",
@@ -234,13 +227,6 @@
             "description": "SERVICE - Add Local Notifications (Shiny.Notifications)",
             "displayName": "SERVICE - Add Local Notifications (Shiny.Notifications)"
         },
-        "startup":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "CODE - Creates a class that executes immediately after Shiny is ready for action",
-            "displayName": "CODE - Add Startup Service (Shiny.Core)"
-        },
         "settings":{
             "type": "parameter",
             "datatype": "bool",
@@ -262,10 +248,6 @@
                 {
                     "choice": "Native",
                     "description": "Native (Shiny.Push)"
-                },
-                {
-                    "choice": "Firebase",
-                    "description": "Firebase Messaging - iOS/Android Only (Shiny.Push.FirebaseMessaging)"
                 },
                 {
                     "choice": "Azure Notification Hubs",
@@ -378,14 +360,7 @@
             "defaultValue": "false",
             "description": "UTILITY - Add Maui.BindableProperty.Generator by rrmanzano - Documentation: https://github.com/rrmanzano/maui-bindableproperty-generator",
             "displayName": "UTILITY - Add Maui.BindableProperty.Generator"
-        },
-        "compiledbindings":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "UTILITY - Compiled Bindings by Vitali Lesheniuk - Documentation https://github.com/levitali/CompiledBindings",
-            "displayName": "UTILITY - Add Compiled Bindings"
-        },        
+        },      
         "communitytoolkit":{
             "type": "parameter",
             "datatype": "bool",
@@ -456,20 +431,6 @@
             "description": "UI - Context Menu by The 49 Ltd - Documentation https://github.com/the49ltd/The49.Maui.ContextMenu",
             "displayName": "UI - Add Context Menu"
         },
-        "sharpnadocv":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "UI - Sharpnado CollectionView by Jean-Marie Alfonsi - Documentation https://github.com/roubachof/Sharpnado.CollectionView",
-            "displayName": "UI - Add Sharpnado CollectionView"
-        },
-        "sharpnadotabs":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "UI - Sharpnado Tabs by Jean-Marie Alfonsi - Documentation https://github.com/roubachof/Sharpnado.Tabs",
-            "displayName": "UI - Add Sharpnado Tabs"
-        },
         "alohakitanimations":{
             "type": "parameter",
             "datatype": "bool",
@@ -511,13 +472,6 @@
             "defaultValue": "false",
             "description": "SERVICE - Wire up native barcode scanning services - For documentation, go to https://github.com/afriscic/BarcodeScanning.Native.Maui",
             "displayName": "SERVICE - Add Native Barcode Scanning (BarcodeScanning.Native.Maui)"
-        },
-        "inappbilling":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "SERVICE - In-App Billing by James Montemagno - Documentation https://github.com/jamesmontemagno/InAppBillingPlugin",
-            "displayName": "SERVICE - Add In-App Billing (Plugin.InAppBilling)"
         },
         "storereview":{
             "type": "parameter",
@@ -723,11 +677,6 @@
             "datatype": "bool",
             "value": "(push == \"Native\")"
         },
-        "usepushfirebase":{
-            "type": "computed",
-            "datatype": "bool",
-            "value": "(push == \"Firebase\")"
-        },
         "usepushanh":{
             "type": "computed",
             "datatype": "bool",
@@ -747,12 +696,7 @@
             "type": "computed",
             "datatype": "bool",
             "value": "(deeplinks != \"\")"
-        },        
-        "usemaccatalyst":{
-            "type": "computed",
-            "datatype": "bool",
-            "value": "(usepushfirebase == false && usemsal == false)"
-        },    
+        }, 
         "usehttp":{
             "type": "computed",
             "datatype": "bool",
@@ -874,6 +818,10 @@
         {
             "condition": "(carplay == false)",
             "exclude": "Platforms/iOS/CarPlayImplementation/**"
+        },
+    {
+            "condition": "(authservice == false || usemsal == false)",
+            "exclude": "Services/Impl/AuthStore.cs"
         },
         {
             "condition": "(authservice == false || usemsal == false)",

@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Authentication;
 namespace ShinyAspNet.Handlers.Auth;
 
 
-[ScopedHandler]
 [MediatorHttpPost(
     "SignIn",
     "/auth/signin/mobile", 

@@ -1,16 +1,20 @@
 namespace ShinyApp.Services;
 
+[Scoped]
 public record BaseServices(
     IConfiguration Configuration,
-    #if prism
+#if prism
     INavigationService Navigator,
     IDialogService Dialogs,
-    #endif
-    #if settings
+#endif
+#if shinyshell
+    INavigator Navigator,
+#endif
+#if settings
     AppSettings Settings,
-    #endif
-    #if authservice
+#endif
+#if authservice
     IAuthenticationService Authentication,
-    #endif
+#endif
     ILoggerFactory LoggerFactory
 );

@@ -73,13 +73,6 @@
             "text": "Sentry.IO Logging"
         },
         "isVisible": true
-    },    
-    {
-        "id": "sqlitelogging",
-        "name": {
-            "text": "SQLite Logging"
-        },
-        "isVisible": true
     },
     {
         "id": "bluetoothle",
@@ -138,16 +131,9 @@
         "isVisible": true
     },
     {
-        "id": "startup",
-        "name": {
-            "text": "Add Startup Service (Shiny.Core)"
-        },
-        "isVisible": true
-    },
-    {
         "id": "settings",
         "name": {
-            "text": "Add Bound Settings Class (Shiny.Core)"
+            "text": "Add Bound Settings Class (Shiny.Extensions.Stores)"
         },
         "isVisible": true
     },
@@ -233,12 +219,6 @@
         },
         "isVisible": true
     },{
-        "id": "compiledbindings",
-        "name": {
-            "text": "Add Compiled Bindings"
-        },
-        "isVisible": true
-    },{
         "id": "binablegenerator",
         "name": {
             "text": "Add Bindable Property Generator"
@@ -305,20 +285,6 @@
         "isVisible": true
     },
     {
-        "id": "sharpnadocv",
-        "name":{
-            "text": "Add Sharpnado CollectionView"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "sharpnadotabs",
-        "name":{
-            "text": "Add Sharpnado Tabs"
-        },
-        "isVisible": true
-    }, 
-    {
         "id": "alohakitanimations",
         "name":{
             "text": "Add AlohaKit Animations"
@@ -357,13 +323,6 @@
         "id": "barcodes",
         "name":{
             "text": "Add Native Barcode Scanning (BarcodeScanning.Native.Maui)"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "inappbilling",
-        "name":{
-            "text": "Add In-App Billing (Plugin.InAppBilling)"
         },
         "isVisible": true
     },

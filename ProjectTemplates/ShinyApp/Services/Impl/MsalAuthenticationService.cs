@@ -3,24 +3,26 @@ using Microsoft.Identity.Client;
 namespace ShinyApp.Services.Impl;
 
 
-[Shiny.Stores.ObjectStoreBinder("secure")]
-public class MsalAuthenticationService : NotifyPropertyChanged, IAuthenticationService
+[Singleton]
+public class MsalAuthenticationService : IAuthenticationService
 {
-    static readonly string[] SCOPES = new [] { "User.Read" };
+    readonly AuthStore authStore;
+    static readonly string[] SCOPES = new[] { "User.Read" };
     readonly MsalOptions options;
     readonly IPublicClientApplication pca;
 //-:cnd:noEmit
 #if ANDROID
     readonly AndroidPlatform platform;
 
-    public MsalAuthenticationService(AndroidPlatform platform, IConfiguration config)
+    public MsalAuthenticationService(AuthStore authStore, AndroidPlatform platform, IConfiguration config)
     {
         this.platform = platform;
 #else
-    public MsalAuthenticationService(IConfiguration config)
+    public MsalAuthenticationService(AuthStore authStore, IConfiguration config)
     {
 #endif
-//+:cnd:noEmit
+        //+:cnd:noEmit
+        this.authStore = authStore;
         this.options = config.GetSection("Msal").Get<MsalOptions>();
 
         this.pca = PublicClientApplicationBuilder
@@ -41,14 +43,8 @@ public class MsalAuthenticationService : NotifyPropertyChanged, IAuthenticationS
             .Build();
     }
 
-    // this looks like a viewmodel type property as shiny binds it secure storage
-    string? authToken;
-    public string? AuthenticationToken
-    {
-        get => this.authToken;
-        set => this.Set(ref this.authToken, value);
-    }
-    
+
+    public string? AuthenticationToken => this.authStore.AuthenticationToken;
 
     public async Task<bool> Authenticate()
     {
@@ -57,7 +53,7 @@ public class MsalAuthenticationService : NotifyPropertyChanged, IAuthenticationS
             var result = await this.pca
                 .AcquireTokenInteractive(SCOPES)
 
-//-:cnd:noEmit
+                //-:cnd:noEmit
 #if ANDROID
                 .WithParentActivityOrWindow(this.platform.CurrentActivity)
 #elif IOS || MACCATALYST
@@ -66,7 +62,7 @@ public class MsalAuthenticationService : NotifyPropertyChanged, IAuthenticationS
                     iOSHidePrivacyPrompt = true
                 })
 #endif
-//+:cnd:noEmit
+                //+:cnd:noEmit
 #if (usemsalb2c)
                 .WithB2CAuthority(this.options.B2CSigninSignupAuthority)
 #endif
@@ -112,7 +108,7 @@ public class MsalAuthenticationService : NotifyPropertyChanged, IAuthenticationS
 
     public async Task SignOut()
     {
-        this.AuthenticationToken = null;
+        this.authStore.Reset();
         var accounts = await this.pca
             .GetAccountsAsync()
             .ConfigureAwait(false);
@@ -124,7 +120,8 @@ public class MsalAuthenticationService : NotifyPropertyChanged, IAuthenticationS
 
     void SetAuth(AuthenticationResult result)
     {
-        // this.AuthenticationToken = result.IdToken;
+        this.authStore.AuthenticatetionToken = result.IdToken;
+        // TODO: refresh token and expiries and all that good stuff is for you :)
         Console.WriteLine("Token received");
     }
 }

@@ -12,11 +12,12 @@ using Android.OS;
 namespace ShinyApp.Delegates;
 
 
+[Singleton]
 public partial class DeepLinkDelegate
 {
     //https://github.com/Redth/MAUI.AppLinks.Sample/tree/main
 
-    public void Handle(string uri) 
+    public void Handle(string uri)
     {
 
     }

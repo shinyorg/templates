@@ -18,12 +18,20 @@ Blazor is a .NET frontend web framework that supports both server-side rendering
 * [Documentation](https://learn.microsoft.com/en-us/aspnet/core/blazor/)
 
 <!--#endif-->
-## Shiny
+## Shiny Mobile
 
 _A cross platform framework designed to make working with device services and background processes easy, testable, and consistent while bringing things like dependency injection & logging in a structured way to your code! - Written by Allan Ritchie_
 
 * [Documentation](https://shinylib.net/)
 * [GitHub](https://github.com/shinyorg/shiny)
+
+## Shiny Extensions
+
+_A collection of extensions to the Shiny framework that provide additional functionality and services. These extensions are designed to enhance the capabilities of dependency injection, reflection, and application state._
+
+* [Dependency Injection](https://shinylib.net/extensions/di/)
+* [App Stores](https://shinylib.net/extensions/stores/)
+* [Reflector](https://shinylib.net/extensions/reflector/) - Reflection Source Generator - NOT installed by default
 
 <!--#if (shinymediator)-->
 ## Shiny Mediator

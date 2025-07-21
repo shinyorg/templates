@@ -1,16 +1,11 @@
 namespace ShinyApp.Services.Impl;
 
 
-[Shiny.Stores.ObjectStoreBinder("secure")]
-public class WebAuthenticatorAuthService : NotifyPropertyChanged, IAuthenticationService 
+[Singleton]
+public class WebAuthenticatorAuthService(AuthStore authStore) : NotifyPropertyChanged, IAuthenticationService 
 {
     // this looks like a viewmodel type property as shiny binds it secure storage
-    string? authToken;
-    public string? AuthenticationToken
-    {
-        get => this.authToken;
-        set => this.Set(ref this.authToken, value);
-    }
+    public string? AuthenticationToken => authStore.AuthenticationToken;
     
     public async Task<bool> Authenticate()
     {
@@ -44,6 +39,7 @@ public class WebAuthenticatorAuthService : NotifyPropertyChanged, IAuthenticatio
 
         // Note that Apple Sign In has an IdToken and not an AccessToken
         authToken += result?.AccessToken ?? result?.IdToken;
+        authStore.AuthenticationToken = authToken;
 
         return true;
     }
@@ -51,7 +47,7 @@ public class WebAuthenticatorAuthService : NotifyPropertyChanged, IAuthenticatio
 
     public Task SignOut() 
     {
-        this.AuthenticationToken = null;
+        authStore.Reset();
         return Task.CompletedTask;
     }
 

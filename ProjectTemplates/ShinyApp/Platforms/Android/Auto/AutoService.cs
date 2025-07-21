@@ -1,15 +1,14 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using AndroidX.Car.App;
 using AndroidX.Car.App.Validation;
 
 namespace ShinyApp.Platforms.Android.Auto;
 
 
-[Service(Exported = true)]
+[global::Android.App.Service(Exported = true)]
 [IntentFilter(
-	new[] { "androidx.car.app.CarAppService" },
-	Categories = new[] { "androidx.car.app.category.POI" }
+	["androidx.car.app.CarAppService"],
+	Categories = ["androidx.car.app.category.POI"]
 )]
 public class AutoService : CarAppService
 {

@@ -11,11 +11,11 @@ namespace ShinyApp;
     Exported = true
 )]
 [IntentFilter(
-    new[] { Intent.ActionView },
-    Categories = new[] { 
+    [Intent.ActionView],
+    Categories = [
         Intent.CategoryDefault, 
         Intent.CategoryBrowsable 
-    },
+    ],
     DataScheme = "myapp"
 )]
 public class WebAuthenticationCallbackActivity : WebAuthenticatorCallbackActivity

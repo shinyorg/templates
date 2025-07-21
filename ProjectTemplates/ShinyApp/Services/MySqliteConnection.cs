@@ -2,7 +2,7 @@ using SQLite;
 
 namespace ShinyApp.Services;
 
-
+[Singleton]
 public class MySqliteConnection : SQLiteAsyncConnection
 {
     public MySqliteConnection(
@@ -14,12 +14,12 @@ public class MySqliteConnection : SQLiteAsyncConnection
         // conn.CreateTable<YourModel>();
 
         conn.EnableWriteAheadLogging();
-//-:cnd:noEmit
+        //-:cnd:noEmit
 #if DEBUG
         conn.Trace = true;
         conn.Tracer = sql => logger.LogDebug("SQLite Query: " + sql);
 #endif
-//+:cnd:noEmit
+        //+:cnd:noEmit
     }
 
 

@@ -32,25 +32,25 @@ namespace ShinyApp;
         ConfigChanges.Density
 )]
 [IntentFilter(
-    new[] { 
-        Platform.Intent.ActionAppAction,
-        global::Android.Content.Intent.ActionView
-#if (usepush)        
-        , ShinyPushIntents.NotificationClickAction 
+    [
+#if (usepush)
+        ShinyPushIntents.NotificationClickAction,
 #endif
 #if (notifications)
-        , ShinyNotificationIntents.NotificationClickAction
+        ShinyNotificationIntents.NotificationClickAction,
 #endif
-    },    
+        Platform.Intent.ActionAppAction,
+        global::Android.Content.Intent.ActionView
+    ],    
 #if (usedeeplinks)
     AutoVerify = true,
     DataScheme = "https",
     DataHost = "{DEEPLINK_HOST}",
 #endif
-    Categories = new[] { 
+    Categories = [ 
         global::Android.Content.Intent.CategoryDefault,
         global::Android.Content.Intent.CategoryBrowsable
-    }
+    ]
 )]
 public class MainActivity : MauiAppCompatActivity
 {

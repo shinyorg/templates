@@ -6,10 +6,11 @@ namespace ShinyApp.Handlers;
 public record MyStreamRequest : IStreamRequest<string>;
 
 
+[Singleton]
 public class MyStreamHandler : IStreamRequestHandler<MyStreamRequest, string>
 {
     public async IAsyncEnumerable<string> Handle(
-        MyStreamRequest request, 
+        MyStreamRequest request,
         IMediatorContext context,
         [EnumeratorCancellation] CancellationToken cancellationToken
     )

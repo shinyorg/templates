@@ -1,7 +1,6 @@
 namespace ShinyAspNet.Handlers.Auth;
 
 
-[ScopedHandler]
 [MediatorHttpPost(
     "SignOut",
     "/auth/signout", 

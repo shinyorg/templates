@@ -1,10 +1,11 @@
 namespace ShinyApp.Delegates;
 
 
+[Singleton]
 public class AppActionDelegate
 {
     // dependency injection works here
-    public AppActionDelegate() 
+    public AppActionDelegate()
     {
     }
 
