@@ -1,6 +1,10 @@
 namespace ShinyApp.Services;
 
+#if prism
 [Scoped]
+#else
+[Singleton]
+#endif
 public record BaseServices(
     IConfiguration Configuration,
 #if prism

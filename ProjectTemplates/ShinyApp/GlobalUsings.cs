@@ -1,5 +1,6 @@
 ﻿global using ShinyApp.Services;
 global using Shiny;
+global using Shiny.Extensions.DependencyInjection;
 #if (shinymediator)
 global using Shiny.Mediator;
 global using ICommand = System.Windows.Input.ICommand;
@@ -12,10 +13,7 @@ global using System.Reactive;
 global using System.Reactive.Linq;
 global using System.Reactive.Threading.Tasks;
 global using Microsoft.Extensions.Logging;
-global using Shiny.Extensions.DependencyInjection;
-#if useconfig
 global using Microsoft.Extensions.Configuration;
-#endif
 #if localization
 global using Microsoft.Extensions.Localization;
 #endif
@@ -27,9 +25,6 @@ global using ReactiveUI.SourceGenerators;
 global using Prism.AppModel;
 global using Prism.Navigation;
 global using Prism.Services;
-#endif
-#if localization
-global using Microsoft.Extensions.Localization;
 #endif
 #if communitytoolkit
 global using CommunityToolkit.Maui;
