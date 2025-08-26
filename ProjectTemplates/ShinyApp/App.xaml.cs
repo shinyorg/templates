@@ -2,7 +2,16 @@
 
 public partial class App : Application
 {
-#if (prism)
+#if (shinyshell)
+	public App()
+	{
+		this.InitializeComponent();
+	}
+
+
+	protected override Window CreateWindow(IActivationState? activationState)
+        => new(new AppShell());
+#elif (prism)
 	public App()
 	{
 		this.InitializeComponent();
