@@ -730,10 +730,6 @@
             "exclude": "Handlers/**"
         },
         {
-            "condition": "(startup == false)",
-            "exclude": "AppStartup.cs"
-        },
-        {
             "condition": "(settings == false)",
             "exclude": "AppSettings.cs"
         },

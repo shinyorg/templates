@@ -280,7 +280,7 @@ public static class MauiProgram
 #if appaction
         builder.Services.AddSingleton<ShinyApp.Delegates.AppActionDelegate>();
 #endif
-#if (deeplink)
+#if (usedeeplinks)
         builder.Services.AddShinyService<ShinyApp.Delegates.DeepLinkDelegate>();
 #endif
 #if (authservice)

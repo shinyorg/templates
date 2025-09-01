@@ -20,7 +20,7 @@ namespace ShinyApp;
 #endif
     Theme = "@style/Maui.SplashTheme", 
     MainLauncher = true, 
-#if (deeplink)
+#if (usedeeplinks)
     Exported = true,
 #endif
     ConfigurationChanges = 
