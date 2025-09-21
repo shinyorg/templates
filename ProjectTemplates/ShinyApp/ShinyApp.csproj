@@ -28,10 +28,10 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<MauiVersion>9.0.100</MauiVersion>
-		<ShinyVersion>3.3.4</ShinyVersion>
+		<MauiVersion>9.0.110</MauiVersion>
+		<ShinyVersion>4.0.0-beta-0092</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>4.9.1</MediatorVersion>
+		<MediatorVersion>4.10.0-beta-0020</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -144,8 +144,9 @@
 	<ItemGroup>
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
-		<PackageReference Include="Shiny.Extensions.DependencyInjection" Version="1.2.1" />
-		<PackageReference Include="Shiny.Extensions.Stores" Version="1.2.1" />
+		<PackageReference Include="Shiny.Reflector" Version="1.7.0" />
+		<PackageReference Include="Shiny.Extensions.DependencyInjection" Version="1.3.1" />
+		<PackageReference Include="Shiny.Extensions.Stores" Version="1.3.1" />
 
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<!--#if (usemauimaps)-->
@@ -154,7 +155,7 @@
 		<!--#if (useblazor)-->
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
 		<!--#endif-->
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.7" Condition="'$(Configuration)' == 'Debug'" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.9" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#if (ctmvvm)-->
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<!--#endif-->
@@ -180,7 +181,7 @@
 		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.537" />
 		<!--#endif-->
 		<!--#if (shinyshell)-->
-		<PackageReference Include="Shiny.Maui.Shell" Version="1.0.0" />
+		<PackageReference Include="Shiny.Maui.Shell" Version="1.1.0" />
 		<!--#endif-->
 		<!--#if (reactiveui)-->
 		<PackageReference Include="ReactiveUI" Version="20.2.45" />
@@ -204,16 +205,16 @@
 		<PackageReference Include="Shiny.Mediator.Blazor" Version="$(MediatorVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.DiagnosticSource" Version="5.12.0" />
+		<PackageReference Include="Shiny.Mediator.Sentry" Version="$(MediatorVersion)" />
 		<!--#endif-->
 		<!--#endif-->
 		<!--#if (remoteconfig)-->
 		<PackageReference Include="Shiny.Extensions.Configuration.Remote.Maui" Version="1.0.0-pre-0008" />
-		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.7" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.9" />
 		<!--#endif-->
 		<!--#if (localization)-->
-		<PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.7" />
-		<PackageReference Include="Shiny.Extensions.Localization.Generator" Version="1.1.1" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.9" />
+		<PackageReference Include="Shiny.Extensions.Localization.Generator" Version="2.0.0" />
 		<!--#endif-->
 		<!--#if (usemsal)-->
 		<PackageReference Include="Microsoft.Identity.Client" Version="4.74.0" />
@@ -222,7 +223,7 @@
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="5.12.0" />
+		<PackageReference Include="Sentry.Maui" Version="5.15.0" />
 		<!--#endif-->
 		<!--#if (bluetoothle)-->
 		<PackageReference Include="Shiny.BluetoothLE" Version="$(ShinyVersion)" />
