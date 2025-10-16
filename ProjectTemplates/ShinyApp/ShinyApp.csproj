@@ -181,7 +181,7 @@
 		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.537" />
 		<!--#endif-->
 		<!--#if (shinyshell)-->
-		<PackageReference Include="Shiny.Maui.Shell" Version="1.1.0" />
+		<PackageReference Include="Shiny.Maui.Shell" Version="1.1.1" />
 		<!--#endif-->
 		<!--#if (reactiveui)-->
 		<PackageReference Include="ReactiveUI" Version="20.2.45" />
