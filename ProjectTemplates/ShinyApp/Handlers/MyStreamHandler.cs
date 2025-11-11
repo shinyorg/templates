@@ -6,7 +6,7 @@ namespace ShinyApp.Handlers;
 public record MyStreamRequest : IStreamRequest<string>;
 
 
-[Singleton]
+[MediatorSingleton]
 public class MyStreamHandler : IStreamRequestHandler<MyStreamRequest, string>
 {
     public async IAsyncEnumerable<string> Handle(

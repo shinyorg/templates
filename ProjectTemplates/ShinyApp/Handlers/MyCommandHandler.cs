@@ -4,7 +4,7 @@ namespace ShinyApp.Handlers;
 public record MyCommand : Shiny.Mediator.ICommand;
 
 
-[Singleton]
+[MediatorSingleton]
 public class MyCommandHandler : ICommandHandler<MyCommand>
 {
     public async Task Handle(MyCommand command, IMediatorContext context, CancellationToken cancellationToken)

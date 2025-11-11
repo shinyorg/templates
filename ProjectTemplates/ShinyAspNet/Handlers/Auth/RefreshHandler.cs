@@ -1,6 +1,7 @@
 namespace ShinyAspNet.Handlers.Auth;
 
 
+[MediatorScoped]
 public class RefreshHandler(AppDbContext data, JwtService jwtService) : IRequestHandler<RefreshRequest, RefreshResponse>
 {
     [MediatorHttpPost(

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication;
 namespace ShinyAspNet.Handlers.Auth;
 
 
+[MediatorScoped]
 public class SignInHandler(
     AppDbContext data, 
     JwtService jwtService, 

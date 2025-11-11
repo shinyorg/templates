@@ -28,10 +28,10 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<MauiVersion>9.0.110</MauiVersion>
-		<ShinyVersion>4.0.0-beta-0092</ShinyVersion>
+		<MauiVersion>10.0.0</MauiVersion>
+		<ShinyVersion>4.0.0-beta-0095</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>4.10.0-beta-0020</MediatorVersion>
+		<MediatorVersion>5.1.1</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -40,7 +40,7 @@
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<DefineConstants>$(DefineConstants);PLATFORM</DefineConstants>
 		<SupportedOSPlatformVersion>26.0</SupportedOSPlatformVersion>
-		<TargetPlatformVersion>35</TargetPlatformVersion>
+		<TargetPlatformVersion>36</TargetPlatformVersion>
 		<!--
 		<EmbedAssembliesIntoApk Condition="'$(Configuration)' == 'Debug'">true</EmbedAssembliesIntoApk>
 		<AndroidPackageFormats Condition="'$(Configuration)' == 'Release'">aab</AndroidPackageFormats>
@@ -223,7 +223,7 @@
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="5.15.0" />
+		<PackageReference Include="Sentry.Maui" Version="5.16.2" />
 		<!--#endif-->
 		<!--#if (bluetoothle)-->
 		<PackageReference Include="Shiny.BluetoothLE" Version="$(ShinyVersion)" />

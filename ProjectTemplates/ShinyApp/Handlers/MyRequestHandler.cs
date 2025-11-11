@@ -5,7 +5,7 @@ public record MyRequest : IRequest<MyResult>;
 public record MyResult;
 
 
-[Singleton]
+[MediatorSingleton]
 public class MyRequestHandler : IRequestHandler<MyRequest, MyResult>
 {
     public async Task<MyResult> Handle(MyRequest request, IMediatorContext context, CancellationToken cancellationToken)

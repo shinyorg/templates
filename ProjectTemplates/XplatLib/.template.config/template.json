@@ -32,11 +32,11 @@
             "description": "The target framework for the project.",
             "datatype": "choice",
             "choices": [{
-                "choice": "net8.0",
-                "description": "Target .NET 8.0"
+                "choice": "net10.0",
+                "description": "Target .NET 10.0"
             }],
             "replaces": "{DOTNET_TFM}",
-            "defaultValue": "net8.0"
+            "defaultValue": "net10.0"
         },     
         "mauilib":{
             "type": "parameter",
