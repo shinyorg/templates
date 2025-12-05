@@ -41,15 +41,6 @@ using FFImageLoading.Maui;
 #if uraniumui
 using UraniumUI;
 #endif
-#if bottomsheet
-using The49.Maui.BottomSheet;
-#endif
-#if contextmenu
-using The49.Maui.ContextMenu;
-#endif
-#if camera
-using Camera.MAUI;
-#endif
 #if communitytoolkit || mediaelement
 using CommunityToolkit.Maui;
 #endif
@@ -107,15 +98,6 @@ public static class MauiProgram
 #if cameraview
             .UseMauiCommunityToolkitCamera()
 #endif
-#if bottomsheet
-            .UseBottomSheet()
-#endif
-#if contextmenu
-            .UseContextMenu()
-#endif
-#if camera
-            .UseMauiCameraView()
-#endif
 #if fingerprint
             .UseBiometricAuthentication()
 #endif
@@ -167,11 +149,6 @@ public static class MauiProgram
                 // Set TracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
                 // We recommend adjusting this value in production.
                 options.TracesSampleRate = 1.0;
-
-                // Other Sentry options can be set here.
-#if shinymediator
-                options.AddDiagnosticSourceIntegration();
-#endif
             })
 #endif
 #if usegooglemaps
@@ -249,11 +226,10 @@ public static class MauiProgram
 #endif
 //+:cnd:noEmit
 #endif
-        builder.Services.AddConnectivity();
-        builder.Services.AddBattery();
 #if shinymediator
         // pass false as second argument if you don't want to use built-in middleware
         builder.Services.AddShinyMediator(x => x 
+            .AddMediatorRegistry() // optional - enables registration scanning 
             .AddMauiPersistentCache()
             .AddDataAnnotations()
             .AddConnectivityBroadcaster()
@@ -366,9 +342,6 @@ public static class MauiProgram
             builder.Configuration["AzureNotificationHubs:ListenerConnectionString"], 
             builder.Configuration["AzureNotificationHubs:HubName"]
         );
-#endif
-#if usepushfirebase
-        builder.Services.AddPushFirebaseMessaging<ShinyApp.Delegates.MyPushDelegate>();
 #endif
 #if speechrecognition
         builder.Services.AddSingleton(CommunityToolkit.Maui.Media.SpeechToText.Default);

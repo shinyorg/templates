@@ -47,7 +47,7 @@
 	<!--#if (bluetoothle || blehosting || beacons)-->
 	<uses-feature android:name="android.hardware.bluetooth_le" android:required="false" /> 	
 	<!--#endif-->
-	<!--#if (essentialsmedia || barcodes || camera || cameraview)-->
+	<!--#if (essentialsmedia || barcodes || cameraview)-->
 	<uses-feature android:name="android.hardware.camera" android:required="false" />
 	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
 	<!--#endif-->
@@ -83,10 +83,10 @@
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	<!--#endif-->
-	<!--#if (audio || speechrecognition || screenrecord || camera || cameraview)-->
+	<!--#if (audio || speechrecognition || screenrecord || cameraview)-->
 	<uses-permission android:name="android.permission.RECORD_AUDIO" />
 	<!--#endif-->
-	<!--#if (camera || cameraview)-->
+	<!--#if (cameraview)-->
 	<uses-permission android:name="android.permission.RECORD_VIDEO" />
 	<!--#endif-->
 	<!--#if (audio)-->
@@ -111,7 +111,7 @@
 	<!--#if (screenrecord)-->
 	<uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
 	<!--#endif-->
-	<!--#if (essentialsmedia || barcodes || camera || cameraview)-->
+	<!--#if (essentialsmedia || barcodes || cameraview)-->
 	<uses-permission android:name="android.permission.CAMERA" />
 	<uses-permission android:name="android.permission.FLASHLIGHT" />
 	<!--#endif-->

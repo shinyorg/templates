@@ -4,7 +4,7 @@ namespace ShinyApp.Handlers;
 public record MyEvent : IEvent;
 
 
-[Singleton]
+[MediatorSingleton]
 public class MyEventHandler : IEventHandler<MyEvent>
 {
     public async Task Handle(MyEvent @event, IMediatorContext context, CancellationToken cancellationToken)

@@ -1,6 +1,7 @@
 namespace ShinyAspNet.Handlers.Auth;
 
 
+[MediatorScoped]
 public class SignOutHandler(AppDbContext data, IUserService user) : ICommandHandler<SignOutCommand>
 {
     [MediatorHttpPost(

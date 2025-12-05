@@ -5,14 +5,13 @@ namespace ShinyApp.Infrastructure;
 
 
 [Singleton]
-public class AppHttpRequestDecorator<TRequest, TResult>(
-    // IAuthenticationService authService,
-    IAppInfo appInfo,
-    IDeviceInfo deviceInfo
-) : IHttpRequestDecorator
+public class AppHttpRequestDecorator : IHttpRequestDecorator
 {
     public async Task Decorate(HttpRequestMessage httpMessage, IMediatorContext context, CancellationToken cancellationToken)
     {
+        var appInfo = AppInfo.Current;
+        var deviceInfo = DeviceInfo.Current;
+        
         httpMessage.Headers.Add("X-App-Version", appInfo.VersionString);
         httpMessage.Headers.Add("X-App-Build", appInfo.BuildString);
         httpMessage.Headers.Add("X-Device-Platform", deviceInfo.Platform.ToString());

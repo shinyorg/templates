@@ -72,11 +72,11 @@
             "description": "The target framework for the project.",
             "datatype": "choice",
             "choices": [{
-                "choice": "net9.0",
-                "description": "Target .NET 9.0"
+                "choice": "net10.0",
+                "description": "Target .NET 10.0"
             }],
             "replaces": "{DOTNET_TFM}",
-            "defaultValue": "net9.0"
+            "defaultValue": "net10.0"
         },
         "blazor":{
             "type": "parameter",
@@ -383,20 +383,6 @@
             "description": "UI - MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
             "displayName": "UI - Add MAUI Community Toolkit Camera"
         },
-        "camera":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "UI - Camera.MAUI - Documentation https://github.com/hjam40/Camera.MAUI",
-            "displayName": "UI - Add Camera.MAUI"
-        },
-        "virtuallist":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "UI - MAUI Virtual List View by Jon Dick (Redth) - Documentation https://github.com/Redth/Maui.VirtualListView",
-            "displayName": "UI - Add MAUI Virtual List View"            
-        },
         "uraniumui":{
             "type": "parameter",
             "datatype": "bool",
@@ -410,20 +396,6 @@
             "defaultValue": "false",
             "description": "UI - Skeleton by Horus Software - Documentation https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton",
             "displayName": "UI - Add Skeleton"
-        },
-        "bottomsheet":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "UI - Bottom Sheet by The 49 Ltd - Documentation https://github.com/the49ltd/The49.Maui.BottomSheet",
-            "displayName": "UI - Add Bottom Sheet"
-        },
-        "contextmenu":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "UI - Context Menu by The 49 Ltd - Documentation https://github.com/the49ltd/The49.Maui.ContextMenu",
-            "displayName": "UI - Add Context Menu"
         },
         "alohakitanimations":{
             "type": "parameter",

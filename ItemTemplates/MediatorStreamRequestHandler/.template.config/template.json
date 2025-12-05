@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Shiny",
+    "classifications": [ "MAUI", "Code" ],
+    "identity": "Shiny.Templates.RequestHandler",
+    "groupIdentity": "Shiny.Templates",
+    "name": "Shiny Mediator Request Handler",
+    "shortName": "shinyjob",
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    },
+    "primaryOutputs": [
+        {
+            "path": "Job.cs"
+        }
+    ],
+    "postActions": [
+        {
+            "id": "openInEditor",
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+            "description": "Opens RequestHandler.cs in the editor.",
+            "manualInstructions": [],
+            "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+            "args": {
+                "files": "0"
+            },
+            "continueOnError": true
+        }
+    ],
+    "sourceName": "RequestHandler",
+    "defaultName": "RequestHandler",
+    "symbols": {
+        "namespace": {
+            "type": "parameter",
+            "datatype": "text",
+            "description": "Namespace for this class",
+            "replaces": "ShinyApp"
+        }
+    }
+}
