@@ -197,7 +197,7 @@ app.UseCors(x => x
 );
 #endif
 //+:cnd:noEmit
-#if (swagger)
+#if (scalar)
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();

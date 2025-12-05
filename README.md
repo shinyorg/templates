@@ -67,16 +67,13 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [Prism](https://prismlibrary.com) by Brian Lagunas & Dan Siegel
 	* [ReactiveUI](https://reactiveui.net) from many contributors
 	* [MAUI Community Toolkit](https://github.com/CommunityToolkit/Maui) from many contributors
-	* [Virtual List View](https://github.com/Redth/Maui.VirtualListView) by Jon Dick
 	* [Uranium UI](https://github.com/enisn/UraniumUI) by Enis Necipoglu
 	* [FFImageLoading MAUI](https://github.com/microspaze/FFImageLoading.Maui)
 	* [MAUI Google Maps](https://github.com/themronion/Maui.GoogleMaps/tree/maui) by Pavlo Lukianets
-	* [Camera.MAUI](https://github.com/hjam40/Camera.MAUI) by Hector (hjam40)
 	* [Refit](https://github.com/reactiveui/refit) by ReactiveUI Maintainers
 	* [SQLite.NET-pcl](https://github.com/praeclarum/sqlite-net) by Frank Krueger
 	* [BarcodeScanning.Native.Maui](https://github.com/afriscic/BarcodeScanning.Native.Maui) by afriscic
 	* [Store Review Plugin](https://github.com/jamesmontemagno/StoreReviewPlugin) by James Montemagno
-	* [In-App Billing Plugin](https://github.com/jamesmontemagno/InAppBillingPlugin) by James Montemagno
 	* [MAUI Screen Recording Plugin](https://github.com/jfversluis/Plugin.Maui.ScreenRecording) by Gerald Versluis
 	* [MAUI Audio Plugin](https://github.com/jfversluis/Plugin.Maui.Audio) by Gerald Versluis
 	* [MAUI Calendar Store Plugin](https://github.com/jfversluis/Plugin.Maui.CalendarStore) by Gerald Versluis
@@ -92,8 +89,6 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [Settings View](https://github.com/muak/AiForms.Maui.SettingsView) by Satoshi NaKamura
 	* [AlohaKit Animations](https://github.com/jsuarezruiz/AlohaKit.Animations) by Javier Suárez
 	* [Skeleton](https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton) by Horus Software
-	* [The 49 Bottom Sheet](https://github.com/the49ltd/The49.Maui.BottomSheet) by The 49 Ltd
-	* [The 49 Context Menu](hhttps://github.com/the49ltd/The49.Maui.ContextMenu) by The 49 Ltd
 	* [System.Linq.Async](https://github.com/dotnet/reactive)
 	* [Humanizer](https://github.com/Humanizr/Humanizer)
 	* [Units .NET](https://github.com/angularsen/UnitsNet) by Andreas Gullberg Larsen
@@ -111,7 +106,6 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 * Shiny Mediator Endpoint Setup
 * .NET Orleans
 * OpenAPI
-* DB UP
 * Entity Framework Basic Setup
 * MSAL & WebAuthenticator Setup /w Google & Facebook
 * Apple Domain Association Setup

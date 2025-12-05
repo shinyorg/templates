@@ -17,7 +17,7 @@ public partial class MyHttpTransferDelegate : IHttpTransferDelegate
     }
 
 
-    public Task OnError(HttpTransferRequest request, Exception ex)
+    public Task OnError(HttpTransferRequest request, int statusCode, Exception ex)
     {
         return Task.CompletedTask;
     }

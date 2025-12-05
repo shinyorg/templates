@@ -6,7 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <OpenApiDocumentsDirectory>.</OpenApiDocumentsDirectory>
         <MicrosoftVersion>10.0.0</MicrosoftVersion>
-        <MediatorVersion>5.1.1</MediatorVersion>
+        <MediatorVersion>6.0.0</MediatorVersion>
         <!--#if (orleans)-->
         <OrleansVersion>9.2.1</OrleansVersion>
         <!--#endif-->
@@ -57,10 +57,6 @@
         <!--#endif-->        
 
         <PackageReference Include="Shiny.Mediator.AspNet" Version="$(MediatorVersion)" />
-        <!-- 
-        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
-        <PackageReference Include="Shiny.Mediator.DapperRequests" Version="$(MediatorVersion)" /> 
-        -->
         <!--#if (scalar)-->
         <PackageReference Include="Scalar.AspNetCore" Version="2.4.13"/>
         <!--#endif-->

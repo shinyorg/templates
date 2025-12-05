@@ -149,11 +149,6 @@ public static class MauiProgram
                 // Set TracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
                 // We recommend adjusting this value in production.
                 options.TracesSampleRate = 1.0;
-
-                // Other Sentry options can be set here.
-#if shinymediator
-                options.AddDiagnosticSourceIntegration();
-#endif
             })
 #endif
 #if usegooglemaps
@@ -347,9 +342,6 @@ public static class MauiProgram
             builder.Configuration["AzureNotificationHubs:ListenerConnectionString"], 
             builder.Configuration["AzureNotificationHubs:HubName"]
         );
-#endif
-#if usepushfirebase
-        builder.Services.AddPushFirebaseMessaging<ShinyApp.Delegates.MyPushDelegate>();
 #endif
 #if speechrecognition
         builder.Services.AddSingleton(CommunityToolkit.Maui.Media.SpeechToText.Default);
