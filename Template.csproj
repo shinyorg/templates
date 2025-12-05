@@ -3,7 +3,7 @@
     <PropertyGroup>
         <Description>Shiny.NET Templates - One stop shop to setup almost everything you can imagine within your .NET MAUI application</Description>
         <PackageType>Template</PackageType>
-        <PackageVersion>4.1.0</PackageVersion>
+        <PackageVersion>5.0.0</PackageVersion>
         <PackageId>Shiny.Templates</PackageId>
         <Title>Shiny Templates</Title>
         <Authors>Allan Ritchie</Authors>

@@ -116,14 +116,6 @@ _Localization is an essential part of any application.  This template will auto 
 * [Documentation](https://learn.microsoft.com/en-us/dotnet/core/extensions/localization)
 
 <!--#endif-->
-<!--#if (virtuallist)-->
-## VirtualListView for .NET MAUI
-
-_This is an experiment in creating a virtualized ListView control for .NET MAUI to support simple, fast, multi-templated, uneven item sized lists by not adding too many bells and whistles and using an adapter pattern data source._  Created by Jon Dick (Redth)
-
-* [GitHub](https://github.com/Redth/Maui.VirtualListView)
-
-<!--#endif-->
 <!--#if (uraniumui)-->
 ## Uranium UI
 
@@ -155,22 +147,6 @@ _Feature rich tab control by Jean-Marie Alfonsi_
 _A performant and feature rich collection view by Jean-Marie Alfonsi_
 
 * [GitHub](https://github.com/roubachof/Sharpnado.CollectionView)
-
-<!--#endif-->
-<!--#if (bottomsheet)-->
-## BottomSheet for .NET MAUI
-
-Maui.BottomSheet is a .NET MAUI library used to display pages as Bottom Sheets by The 49 Ltd
-
-* [GitHub](https://github.com/the49ltd/The49.Maui.BottomSheet)
-
-<!--#endif-->
-<!--#if ()-->
-## Context Menu for .NET MAUI
-
-Maui.ContextMenu is a .NET MAUI library for Android and iOS used to open a native context menu on long press by The 49 Ltd
-
-* [GitHub](https://github.com/the49ltd/The49.Maui.ContextMenu)
 
 <!--#endif-->
 <!--#if (cards)-->
@@ -209,14 +185,6 @@ The CameraView provides the ability to connect to a camera, display a preview fr
 
 * [Documentation](https://learn.microsoft.com/en-ca/dotnet/communitytoolkit/maui/views/camera-view)
 * [GitHub](https://github.com/CommunityToolkit/Maui)
-
-<!--#endif-->
-<!--#if (camera)-->
-## Camera.MAUI
-
-_A Camera View control and a Barcode Endode/Decode control (based on ZXing.Net) for .NET MAUI applications by Hector (hjam40)_
-
-* [GitHub](https://github.com/hjam40/Camera.MAUI)
 
 <!--#endif-->
 <!--#if (usecsharpmarkup)-->

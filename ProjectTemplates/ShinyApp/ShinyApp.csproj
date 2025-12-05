@@ -28,10 +28,10 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<MauiVersion>10.0.0</MauiVersion>
+		<MauiVersion>10.0.11</MauiVersion>
 		<ShinyVersion>4.0.0-beta-0095</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>5.1.1</MediatorVersion>
+		<MediatorVersion>6.0.0-beta-0007</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -144,7 +144,7 @@
 	<ItemGroup>
 		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
 		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
-		<PackageReference Include="Shiny.Reflector" Version="1.7.0" />
+		<PackageReference Include="Shiny.Reflector" Version="1.7.1" />
 		<PackageReference Include="Shiny.Extensions.DependencyInjection" Version="1.3.1" />
 		<PackageReference Include="Shiny.Extensions.Stores" Version="1.3.1" />
 
@@ -155,24 +155,21 @@
 		<!--#if (useblazor)-->
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
 		<!--#endif-->
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.9" Condition="'$(Configuration)' == 'Debug'" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#if (ctmvvm)-->
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<!--#endif-->
 		<!--#if (communitytoolkit || speechrecognition)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="12.1.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="13.0.0" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
-		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="6.0.1" />
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="7.0.0" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="6.1.1" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="7.0.0" />
 		<!--#endif-->
 		<!--#if (cameraview)-->
-		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="3.0.1" />
-		<!--#endif-->
-		<!--#if (camera)-->
-		<PackageReference Include="Camera.Maui" Version="1.5.1" />
+		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="5.0.0" />
 		<!--#endif-->
 		<!--#if (usegooglemaps)-->
 		<PackageReference Include="Onion.Maui.GoogleMaps" Version="6.2.0" />
@@ -252,9 +249,6 @@
 		<!--#if (usepushanh)-->
 		<PackageReference Include="Shiny.Push.AzureNotificationHubs" Version="$(ShinyVersion)" />
 		<!--#endif-->
-		<!--#if (virtuallist)-->
-		<PackageReference Include="Redth.Maui.VirtualListView" Version="0.4.0" />
-		<!--#endif-->
 		<!--#if (barcodes)-->
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="2.2.1" />
 		<!--#endif-->
@@ -298,12 +292,6 @@
 		<!--#endif-->
 		<!--#if (skeleton)-->
 		<PackageReference Include="HorusStudio.Maui.Skeleton" Version="2.0.0" />
-		<!--#endif-->
-		<!--#if (bottomsheet)-->
-		<PackageReference Include="The49.Maui.BottomSheet" Version="8.0.3" />
-		<!--#endif-->
-		<!--#if (contextmenu)-->
-		<PackageReference Include="The49.Maui.ContextMenu" Version="1.0.0-alpha1" />
 		<!--#endif-->
 		<!--#if (screenrecord)-->
 		<PackageReference Include="Plugin.Maui.ScreenRecording" Version="1.0.0-preview2" />

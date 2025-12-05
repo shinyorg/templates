@@ -41,15 +41,6 @@ using FFImageLoading.Maui;
 #if uraniumui
 using UraniumUI;
 #endif
-#if bottomsheet
-using The49.Maui.BottomSheet;
-#endif
-#if contextmenu
-using The49.Maui.ContextMenu;
-#endif
-#if camera
-using Camera.MAUI;
-#endif
 #if communitytoolkit || mediaelement
 using CommunityToolkit.Maui;
 #endif
@@ -106,15 +97,6 @@ public static class MauiProgram
 #endif
 #if cameraview
             .UseMauiCommunityToolkitCamera()
-#endif
-#if bottomsheet
-            .UseBottomSheet()
-#endif
-#if contextmenu
-            .UseContextMenu()
-#endif
-#if camera
-            .UseMauiCameraView()
 #endif
 #if fingerprint
             .UseBiometricAuthentication()
@@ -249,12 +231,10 @@ public static class MauiProgram
 #endif
 //+:cnd:noEmit
 #endif
-        builder.Services.AddConnectivity();
-        builder.Services.AddBattery();
 #if shinymediator
         // pass false as second argument if you don't want to use built-in middleware
         builder.Services.AddShinyMediator(x => x 
-            //.AddMediatorRegistry() // optional - enables registration scanning 
+            .AddMediatorRegistry() // optional - enables registration scanning 
             .AddMauiPersistentCache()
             .AddDataAnnotations()
             .AddConnectivityBroadcaster()
