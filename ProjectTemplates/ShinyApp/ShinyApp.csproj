@@ -28,10 +28,10 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
-		<MauiVersion>10.0.11</MauiVersion>
+		<MauiVersion>10.0.20</MauiVersion>
 		<ShinyVersion>4.0.0-beta-0095</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>6.0.0</MediatorVersion>
+		<MediatorVersion>6.0.1</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -48,13 +48,6 @@
 		<AndroidLinkTool>proguard</AndroidLinkTool>
 		-->
     </PropertyGroup>
-
-	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android' AND '$(Configuration)' == 'Debug'">
-		<!--these help speed up android builds-->
-		<RuntimeIdentifier>android-arm64</RuntimeIdentifier>
-		<AndroidEnableProfiler>true</AndroidEnableProfiler>
-		<AndroidPackageFormat>aab</AndroidPackageFormat>
-	</PropertyGroup>
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios' AND '$(Configuration)' == 'Debug'">
         <!--forces the simulator to pickup entitlements-->
@@ -220,7 +213,7 @@
 		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="5.16.2" />
+		<PackageReference Include="Sentry.Maui" Version="6.0.0" />
 		<!--#endif-->
 		<!--#if (bluetoothle)-->
 		<PackageReference Include="Shiny.BluetoothLE" Version="$(ShinyVersion)" />

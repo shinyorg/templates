@@ -18,6 +18,10 @@ public partial class MainViewModel(BaseServices services) : ObservableObject
     }
 }
 #else
+#if shinyshell
+// we don't register routes in the Shell xaml as navigation will crash within MAUI
+[ShellMap<MainPage>(registerRoute: false)]
+#endif
 public class MainViewModel : NotifyPropertyChanged
 {
     string property;
