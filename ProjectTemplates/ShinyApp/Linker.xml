@@ -1,5 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <linker>
+    <assembly fullname="Microsoft.Maui.Controls" preserve="all" />
+    <assembly fullname="Microsoft.Maui.Graphics" preserve="all" />
 </linker>
 <!--
 https://learn.microsoft.com/en-us/dotnet/maui/ios/linking?view=net-maui-8.0&tabs=vs

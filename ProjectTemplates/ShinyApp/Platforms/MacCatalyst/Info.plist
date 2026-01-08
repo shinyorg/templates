@@ -33,6 +33,8 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>	
 	<!--#if (gps || geofencing || beacons || usemaps)-->
+	<key>NSLocationTemporaryUsageDescription</key>
+	<string>Say something useful here that your users will understand</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
