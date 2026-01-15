@@ -334,8 +334,11 @@
 		<!--#endif-->
 	</ItemGroup>
 
-	<!--#if (androidauto || storereview)-->
+	<!--#if (sqlite || androidauto || storereview)-->
 	<ItemGroup Condition="$(TargetFramework.Contains('android'))">
+		<!--#if (sqlite)-->
+		<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.10"/>
+		<!--#endif-->
 		<!--#if (androidauto)-->
 		<PackageReference Include="Xamarin.AndroidX.Car.App.App" Version="1.7.0.1" />
 		<!--#endif-->
