@@ -289,6 +289,10 @@ public static class MauiProgram
             );
         });
 #endif
+#if sqlite
+        // required for sqlite android 16kb fix
+        SQLitePCL.Batteries_V2.Init();
+#endif
 #if ocr
         builder.Services.AddSingleton(OcrPlugin.Default);
 #endif

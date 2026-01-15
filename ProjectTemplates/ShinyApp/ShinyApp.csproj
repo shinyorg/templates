@@ -32,7 +32,7 @@
 		<MauiVersion>10.0.20</MauiVersion>
 		<ShinyVersion>4.0.0-beta-0095</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>6.0.2</MediatorVersion>
+		<MediatorVersion>6.1.0</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
@@ -265,7 +265,8 @@
 		<PackageReference Include="Refit" Version="9.0.2" />
 		<!--#endif-->
 		<!--#if (sqlite)-->
-		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.10.196-beta" />
+		<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.10"/>
 		<!--#endif-->
 		<!--#if (settingsview)-->
 		<PackageReference Include="AiForms.Maui.SettingsView" Version="1.0.17" />
