@@ -4,17 +4,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 <!--#endif-->
 	<PropertyGroup>
-		<TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-ios</TargetFrameworks>
-		<TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-android</TargetFrameworks>
+		<BaseTargetFramework>{DOTNET_TFM}</BaseTargetFramework>
+		<TargetFrameworks>$(TargetFrameworks);$(BaseTargetFramework)-ios</TargetFrameworks>
+		<TargetFrameworks>$(TargetFrameworks);$(BaseTargetFramework)-android</TargetFrameworks>
 		<!--#if (usemaccatalyst)-->
-		<TargetFrameworks>$(TargetFrameworks);{DOTNET_TFM}-maccatalyst</TargetFrameworks>
+		<TargetFrameworks>$(TargetFrameworks);$(BaseTargetFramework)-maccatalyst</TargetFrameworks>
 		<!--#endif-->		
-		<OutputType>Exe</OutputType>
+	
 		<RootNamespace>ShinyApp</RootNamespace>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<UseMaui>true</UseMaui>
 		<!--#if (useblazor)-->
 		<EnableDefaultCssItems>false</EnableDefaultCssItems>
 		<!--#endif-->
@@ -29,14 +29,37 @@
 		<ApplicationVersion>1</ApplicationVersion>
 		
 		<MauiXamlInflator>SourceGen</MauiXamlInflator>
-		<MauiVersion>10.0.20</MauiVersion>
+		<MauiVersion>10.0.31</MauiVersion>
 		<ShinyVersion>4.0.0-beta-0095</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>6.1.0</MediatorVersion>
+		<MediatorVersion>6.1.2</MediatorVersion>
 		<!--#endif-->
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
 	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFrameworks)' != '$(BaseTargetFramework)'">
+		<OutputType>Exe</OutputType>
+		<UseMaui>true</UseMaui>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFrameworks)' == '$(BaseTargetFramework)'">
+		<OutputType>Library</OutputType>
+		<UseMaui>false</UseMaui>
+	</PropertyGroup>
+
+	<!--#if (sentry)-->
+	<PropertyGroup Condition="'$(CI)' == 'true' AND '$(Configuration)' == 'Release'">
+		<SentryOrg>your-sentryorg-slug</SentryOrg>
+		<SentryProject>your-sentryapp-slug</SentryProject>
+
+		<SentryCreateRelease>false</SentryCreateRelease>
+		<SentrySetCommits>false</SentrySetCommits>
+		<SentryUploadSymbols>true</SentryUploadSymbols>
+		<SentryUploadSources>false</SentryUploadSources>
+		<SentryUploadAndroidProguardMapping>true</SentryUploadAndroidProguardMapping>
+	</PropertyGroup>
+	<!--#endif-->
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<DefineConstants>$(DefineConstants);PLATFORM</DefineConstants>

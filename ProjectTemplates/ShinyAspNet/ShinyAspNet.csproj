@@ -6,9 +6,9 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <OpenApiDocumentsDirectory>.</OpenApiDocumentsDirectory>
         <MicrosoftVersion>10.0.2</MicrosoftVersion>
-        <MediatorVersion>6.1.0</MediatorVersion>
+        <MediatorVersion>6.1.2</MediatorVersion>
         <!--#if (orleans)-->
-        <OrleansVersion>9.2.1</OrleansVersion>
+        <OrleansVersion>10.0.0</OrleansVersion>
         <!--#endif-->
     </PropertyGroup>
 
