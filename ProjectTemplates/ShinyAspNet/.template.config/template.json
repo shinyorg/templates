@@ -163,12 +163,16 @@
             "exclude": "Grains/**"
         },
         {
-            "condition": "(deeplinks == false)",
-            "exclude": "wwwroot/**"
+            "condition": "(jwtauth == false)",
+            "exclude": "Handlers/**"
         },
         {
             "condition": "(jwtauth == false)",
-            "exclude": "Handlers/**"
+            "exclude": "Infrastructure/AuthModule"
+        },
+        {
+            "condition": "(signalr == false)",
+            "exclude": "Infrastructure/SignalrModule"
         },
         {
             "condition": "(signalr == false)",

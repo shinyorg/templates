@@ -6,9 +6,9 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <OpenApiDocumentsDirectory>.</OpenApiDocumentsDirectory>
         <MicrosoftVersion>10.0.2</MicrosoftVersion>
-        <MediatorVersion>6.1.2</MediatorVersion>
+        <MediatorVersion>6.1.3</MediatorVersion>
         <!--#if (orleans)-->
-        <OrleansVersion>10.0.0</OrleansVersion>
+        <OrleansVersion>10.0.1</OrleansVersion>
         <!--#endif-->
     </PropertyGroup>
 
@@ -58,7 +58,7 @@
 
         <PackageReference Include="Shiny.Mediator.AspNet" Version="$(MediatorVersion)" />
         <!--#if (scalar)-->
-        <PackageReference Include="Scalar.AspNetCore" Version="2.12.6"/>
+        <PackageReference Include="Scalar.AspNetCore" Version="2.12.36"/>
         <!--#endif-->
     </ItemGroup>
 </Project>

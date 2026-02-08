@@ -2,25 +2,23 @@ namespace ShinyApp.Services.Impl;
 
 public class AuthStore : NotifyPropertyChanged
 {
-    string? authToken;
     public string? AuthenticationToken
     {
-        get => this.authToken;
-        set => this.Set(ref this.authToken, value);
+        get;
+        set => this.Set(ref field, value);
     }
 
-    string? refreshToken;
+    
     public string? RefreshToken
     {
-        get => this.refreshToken;
-        set => this.Set(ref this.refreshToken, value);
+        get;
+        set => this.Set(ref field, value);
     }
-
-    DateTimeOffset? expiration;
+    
     public DateTimeOffset? Expiration
     {
-        get => this.expiration;
-        set => this.Set(ref this.expiration, value);
+        get;
+        set => this.Set(ref field, value);
     }
 
     public void Reset()

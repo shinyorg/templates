@@ -1,16 +1,4 @@
-﻿using System.Text;
-#if (scalar)
-using Scalar.AspNetCore;
-#endif
-#if (jwtauth)
-using System.Security.Claims;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-#endif
-#if (signalr)
-using Microsoft.AspNetCore.SignalR;
-#endif
-#if (otel)
+﻿#if (otel)
 using Microsoft.Extensions.FileProviders;
 using OpenTelemetry.Exporter;
 using OpenTelemetry.Logs;
@@ -27,23 +15,12 @@ using ShinyAspNet;
 #if (!efnone)
 using ShinyAspNet.Data;
 #endif
-#if (jwtauth)
-using ShinyAspNet.Services;
-using ShinyAspNet.Services.Impl;
-#endif
-#if (signalr)
-using ShinyAspNet.Hubs;
-#endif
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-//#if (jwtauth)
-builder.Services.AddScoped<JwtService>();
-builder.Services.AddScoped<IUserService, UserService>();
-//#endif
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddShinyMediator();
-builder.Services.AddDiscoveredMediatorHandlersFromShinyApp();
+builder.AddInfrastructure(typeof(Program).Assembly);
 
 #if (efpostgres)
 var dataSourceBuilder = new NpgsqlDataSourceBuilder(builder.Configuration.GetConnectionString("Main"));
@@ -66,60 +43,6 @@ builder.Services.AddDbContext<AppDbContext>(
 #endif
 );
 #endif
-builder.Services.AddOpenApi();
-//#if (signalr)
-builder.Services.AddSignalR();
-builder.Services.AddSingleton<IUserIdProvider, UserIdProvider>();
-//#endif
-//#if (jwtauth)
-builder
-    .Services
-    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        var jwt = builder.Configuration.GetSection("Authentication:Jwt");
-        options.RequireHttpsMetadata = false;
-        options.SaveToken = true;
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidAudience = jwt["Audience"],
-            ValidIssuer = jwt["Issuer"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt["Key"]!))
-        };
-    });
-//#endif
-
-//#if (google)
-builder.Services.AddAuthentication().AddGoogle(options =>
-{
-    var cfg = builder.Configuration.GetSection("Authentication:Google");
-    options.ClientId = cfg["ClientId"];
-    options.ClientSecret = cfg["ClientSecret"];
-});
-//#endif
-
-//#if (facebook)
-builder.Services.AddAuthentication().AddFacebook(options =>
-{
-    var cfg = builder.Configuration.GetSection("Authentication:Facebook");
-    options.ClientId = cfg["AppId"];
-    options.ClientSecret = cfg["AppSecret"];
-});
-
-//#endif
-//#if (apple)
-builder.Services.AddAuthentication().AddApple(options =>
-{
-    var cfg = builder.Configuration.GetSection("Authentication:Apple");
-    options.ClientId = cfg["ClientId"];
-    options.TeamId = cfg["TeamId"];
-    options.KeyId = cfg["KeyId"];
-    options.PrivateKey = (keyId, _) => Task.FromResult(cfg[$"PrivateKey"].AsMemory());
-});
 
 //#endif
 //#if (orleans)
@@ -169,51 +92,6 @@ builder.Host.UseOrleans((ctx, silo) =>
 //#endif
 
 var app = builder.Build();
-
-#if (jwtauth)
-app.MapShinyMediatorEndpointHandlers(builder.Services);
-#else
-// uncomment when you have handlers with [ScopedHandler]
-// app.MapShinyMediatorEndpointHandlers(builder.Services);
-#endif
 app.UseHttpsRedirection();
-//#if (jwtauth)
-app.UseAuthentication();
-app.UseAuthorization();
-//#endif
-//#if (signalr)
-app.MapHub<BizHub>("/biz");
-//#endif
-
-//-:cnd:noEmit
-#if DEBUG
-// easier debugging
-app.UseCors(x => x
-    .AllowAnyHeader()
-    .AllowAnyMethod()
-    .AllowAnyOrigin()
-    // .WithOrigins("https://localhost:1234")
-    //.AllowCredentials()
-);
-#endif
-//+:cnd:noEmit
-#if (scalar)
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-    app.MapScalarApiReference();
-}
-#endif
-#if (deeplinks)
-app.UseStaticFiles(new StaticFileOptions
-{
-    FileProvider = new PhysicalFileProvider(
-        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/.well-known")
-    ),
-    RequestPath = "/.well-known",
-    ServeUnknownFileTypes = true,
-    DefaultContentType = "text/plain"
-});
-#endif
-
+app.UseInfrastructure();
 app.Run();

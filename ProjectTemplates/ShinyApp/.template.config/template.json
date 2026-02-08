@@ -782,7 +782,7 @@
             "exclude": "Platforms/iOS/CarPlayImplementation/**"
         },
     {
-            "condition": "(authservice == false || usemsal == false)",
+            "condition": "(authservice == false && usemsal == false)",
             "exclude": "Services/Impl/AuthStore.cs"
         },
         {

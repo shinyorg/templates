@@ -12,8 +12,8 @@ public class SignInHandler(
 ) : IRequestHandler<SignInRequest, SignInResponse>
 {
     [MediatorHttpPost(
-        "SignIn",
         "/auth/signin/mobile", 
+        OperationId = "SignIn",
         AllowAnonymous = true
     )]
     public async Task<SignInResponse> Handle(SignInRequest request, IMediatorContext context, CancellationToken cancellationToken)

@@ -5,7 +5,6 @@ namespace ShinyAspNet.Handlers.Auth;
 public class RefreshHandler(AppDbContext data, JwtService jwtService) : IRequestHandler<RefreshRequest, RefreshResponse>
 {
     [MediatorHttpPost(
-        "RefreshAuth",
         "/auth/signin/refresh", 
         RequiresAuthorization = true
     )]
