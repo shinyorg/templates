@@ -60,6 +60,7 @@ using Polly;
 using Polly.Retry;
 #endif
 using Shiny.Extensions.Stores;
+using ShinyApp.Services;
 
 namespace ShinyApp;
 
@@ -297,6 +298,8 @@ public static class MauiProgram
 #endif
 //+:cnd:noEmit
 #endif
+#if roomsharp
+        builder.Services.AddDatabase();
 #if ocr
         builder.Services.AddSingleton(OcrPlugin.Default);
 #endif

@@ -361,6 +361,9 @@
 		<!--#if (humanizer)-->
 		<PackageReference Include="Humanizer" Version="3.0.1" />
 		<!--#endif-->
+		<!--#if (roomsharp)-->
+		<PackageReference Include="RoomSharp.DependencyInjection" Version="0.4.7" />
+		<!--#endif-->
 	</ItemGroup>
 
 	<!--#if (sqlite || androidauto || storereview)-->

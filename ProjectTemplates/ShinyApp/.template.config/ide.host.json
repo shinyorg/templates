@@ -312,7 +312,14 @@
             "text": "Add SQLite (SQLite.NET-PCL)"
         },
         "isVisible": true
-    },        
+    },  
+    {
+        "id": "roomsharp",
+        "name": {
+            "text": "Add RoomSharp (SQLite Source Generated ORM)"
+        },
+        "isVisible": true
+    },
     {
         "id": "barcodes",
         "name":{

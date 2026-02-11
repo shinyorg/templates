@@ -432,6 +432,13 @@
             "description": "SERVICE - SQLite.NET-PCL by Frank Krueger - Documentation https://github.com/praeclarum/sqlite-net",
             "displayName": "SERVICE - Add SQLite (SQLite.NET-PCL)"
         },
+        "roomsharp": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "SERVICE - RoomSharp by Safwan Abdulghani - Documentation https://roomsharp.safwan.pro/",
+            "displayName": "SERVICE - Add RoomSharp (SQLite Source Generated ORM)"
+        },
         "barcodes":{
             "type": "parameter",
             "datatype": "bool",
@@ -702,6 +709,10 @@
             "exclude": "Handlers/**"
         },
         {
+            "condition": "(roomsharp == false)",
+            "exclude": "Services/Database.cs"
+        },
+        {
             "condition": "(settings == false)",
             "exclude": "AppSettings.cs"
         },
@@ -781,7 +792,7 @@
             "condition": "(carplay == false)",
             "exclude": "Platforms/iOS/CarPlayImplementation/**"
         },
-    {
+        {
             "condition": "(authservice == false && usemsal == false)",
             "exclude": "Services/Impl/AuthStore.cs"
         },
