@@ -36,16 +36,27 @@
 		<!--#if (shinymediator)-->
 		<MediatorVersion>6.2.0</MediatorVersion>
 		<!--#endif-->
+
+		<EnableAotAnalyzer>true</EnableAotAnalyzer>
+        <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+        <EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
 		<!--slower build, faster runtime in DEBUG-->
 		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(TargetFrameworks)' != '$(BaseTargetFramework)'">
+	<!-- If you want to enable AOT for iOS, uncomment the below. Note that this will cause a significant increase in build time, but will result in faster runtime performance and smaller app size. You can also enable it for just Release builds if you prefer.
+	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios' and '$(Configuration)' == 'Release'">
+        <PublishAot>true</PublishAot>
+    </PropertyGroup>
+	-->
+
+	<PropertyGroup Condition="'$(TargetFramework)' != '$(BaseTargetFramework)'">
 		<OutputType>Exe</OutputType>
 		<UseMaui>true</UseMaui>
+		<DefineConstants>$(DefineConstants);PLATFORM</DefineConstants>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(TargetFrameworks)' == '$(BaseTargetFramework)'">
+	<PropertyGroup Condition="'$(TargetFramework)' == '$(BaseTargetFramework)'">
 		<OutputType>Library</OutputType>
 		<UseMaui>false</UseMaui>
 	</PropertyGroup>
@@ -64,7 +75,6 @@
 	<!--#endif-->
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
-		<DefineConstants>$(DefineConstants);PLATFORM</DefineConstants>
 		<SupportedOSPlatformVersion>26.0</SupportedOSPlatformVersion>
 		<TargetPlatformVersion>36</TargetPlatformVersion>
 		<!--
@@ -84,13 +94,13 @@
 
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios' OR $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
 		<SupportedOSPlatformVersion>15.0</SupportedOSPlatformVersion>
-		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>	
+		<DefineConstants>$(DefineConstants);APPLE</DefineConstants>	
 	</PropertyGroup>
 
 	<!--#if (usemaccatalyst)-->
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
 		<SupportedOSPlatformVersion>15.0</SupportedOSPlatformVersion>
-		<DefineConstants>$(DefineConstants);APPLE;PLATFORM</DefineConstants>
+		<DefineConstants>$(DefineConstants);APPLE</DefineConstants>
 
 		<UseHardenedRuntime Condition="'$(Configuration)' == 'Release'">true</UseHardenedRuntime>
 	</PropertyGroup>
