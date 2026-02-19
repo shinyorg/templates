@@ -4,7 +4,7 @@ using Foundation;
 namespace ShinyApp.iOS.CarPlayImplementation;
 
 
-[Register("DeviceSceneDelegate")]
+[Register("SceneDelegate")]
 public class DeviceSceneDelegate : MauiUISceneDelegate
 {
 }

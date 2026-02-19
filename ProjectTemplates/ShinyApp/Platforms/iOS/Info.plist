@@ -163,6 +163,8 @@
 	<!--#if (carplay)-->
 	<key>UIApplicationSceneManifest</key>
 	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<true/>
 		<key>UISceneConfigurations</key>
 		<dict>
 			<key>UIWindowSceneSessionRoleApplication</key>
@@ -173,7 +175,7 @@
 					<key>UISceneConfigurationName</key>
 					<string>__MAUI_DEFAULT_SCENE_CONFIGURATION__</string>
 					<key>UISceneDelegateClassName</key>
-					<string>DeviceSceneDelegate</string>
+					<string>SceneDelegate</string>
 				</dict>
 			</array>
 			<key>CPTemplateApplicationSceneSessionRoleApplication</key>
@@ -182,7 +184,7 @@
 					<key>UISceneClassName</key>
 					<string>CPTemplateApplicationScene</string>
 					<key>UISceneConfigurationName</key>
-					<string>ShinyApp-Car</string>
+					<string>CarPlay</string>
 					<key>UISceneDelegateClassName</key>
 					<string>CarPlaySceneDelegate</string>
 				</dict>

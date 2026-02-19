@@ -13,6 +13,22 @@ public class AppDelegate : MauiUIApplicationDelegate
     protected override MauiApp CreateMauiApp() 
         => MauiProgram.CreateMauiApp();
 
+#if carplay
+	[Export("application:configurationForConnectingSceneSession:options:")]
+	public override UISceneConfiguration GetConfiguration(UIApplication application, UISceneSession connectingSceneSession, UISceneConnectionOptions options)
+	{
+		if (connectingSceneSession.Role.GetConstant() == UIWindowSceneSessionRole.CarTemplateApplication.GetConstant())
+		{
+			var config = new UISceneConfiguration("CarPlay", connectingSceneSession.Role);
+			config.DelegateType = typeof(CarPlaySceneDelegate);
+			return config;
+		}
+		var defaultConfig = base.GetConfiguration(application, connectingSceneSession, options);
+		defaultConfig.DelegateType = typeof(SceneDelegate);
+		return defaultConfig;
+    }
+
+#endif
 #if (usepush)
     [Export("application:didRegisterForRemoteNotificationsWithDeviceToken:")]
     public void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
