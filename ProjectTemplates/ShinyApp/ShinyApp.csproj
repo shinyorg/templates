@@ -310,6 +310,9 @@
 		<!--#if (settingsview)-->
 		<PackageReference Include="AiForms.Maui.SettingsView" Version="1.0.17" />
 		<!--#endif-->
+		<!--#if (tableview)-->
+		<PackageReference Include="Shiny.Maui.TableView" Version="1.0.1" />
+		<!--#endif-->
 		<!--#if (livecharts)-->
 		<PackageReference Include="LiveChartsCore.SkiaSharpView.Maui" Version="2.0.0-rc2" />
 		<!--#endif-->

@@ -462,6 +462,14 @@ _This is a flexible TableView specialized in settings for Android / iOS by Satos
 * [GitHub](https://github.com/muak/AiForms.Maui.SettingsView)
 
 <!--#endif-->
+<!--#if (tableview)-->
+## Shiny TableView
+
+_A pure .NET MAUI settings-style TableView control with 14 cell types, cascading styles, sections, drag-sort reordering, and full MVVM/binding support - Written by Allan Ritchie_
+
+* [GitHub](https://github.com/shinyorg/tableview)
+
+<!--#endif-->
 <!--#if (syslinqasync)-->
 ## System.Linq.Async
 

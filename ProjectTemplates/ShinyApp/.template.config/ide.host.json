@@ -298,6 +298,13 @@
             "text": "Add Settings View"
         },
         "isVisible": true
+    },
+    {
+        "id": "tableview",
+        "name":{
+            "text": "Add Shiny TableView"
+        },
+        "isVisible": true
     },   
     {
         "id": "cards",

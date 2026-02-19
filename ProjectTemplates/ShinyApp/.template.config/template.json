@@ -418,6 +418,13 @@
             "description": "UI - Settings View by by Satoshi NaKamura - Documentation https://github.com/muak/AiForms.Maui.SettingsView",
             "displayName": "UI - Add Settings View"
         },
+        "tableview":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "UI - Shiny TableView by Allan Ritchie - Documentation https://github.com/shinyorg/tableview",
+            "displayName": "UI - Add Shiny TableView"
+        },
         "cards":{
             "type": "parameter",
             "datatype": "bool",

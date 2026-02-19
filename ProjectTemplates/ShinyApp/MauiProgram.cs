@@ -29,6 +29,9 @@ using Refit;
 #if settingsview
 using AiForms.Settings;
 #endif
+#if tableview
+using Shiny.Maui.TableView;
+#endif
 #if cards
 using PanCardView;
 #endif
@@ -104,6 +107,9 @@ public static class MauiProgram
 #endif
 #if (settingsview)
             .UseSettingsView()
+#endif
+#if (tableview)
+            .UseShinyTableView()
 #endif
 #if ffimageloading
             .UseFFImageLoading()
