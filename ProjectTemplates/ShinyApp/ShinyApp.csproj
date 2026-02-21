@@ -40,8 +40,6 @@
 		<EnableAotAnalyzer>true</EnableAotAnalyzer>
         <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
         <EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
-		<!--slower build, faster runtime in DEBUG-->
-		<!-- <_MauiForceXamlCForDebug Condition="'$(Configuration)' == 'Debug'">true</_MauiForceXamlCForDebug> -->
 	</PropertyGroup>
 
 	<!-- If you want to enable AOT for iOS, uncomment the below. Note that this will cause a significant increase in build time, but will result in faster runtime performance and smaller app size. You can also enable it for just Release builds if you prefer.
@@ -180,7 +178,64 @@
 		<PackageReference Include="Shiny.Reflector" Version="1.7.1" />
 		<PackageReference Include="Shiny.Extensions.DependencyInjection" Version="1.3.1" />
 		<PackageReference Include="Shiny.Extensions.Stores" Version="1.3.1" />
-
+		<!--#if (shinyshell)-->
+		<PackageReference Include="Shiny.Maui.Shell" Version="2.0.0" />
+		<!--#endif-->
+		<!--#if (tableview)-->
+		<PackageReference Include="Shiny.Maui.TableView" Version="1.0.1" />
+		<!--#endif-->
+		<!--#if (shinymediator)-->
+		<PackageReference Include="Shiny.Mediator" Version="$(MediatorVersion)" />
+		<PackageReference Include="Shiny.Mediator.Maui" Version="$(MediatorVersion)" />
+		<PackageReference Include="Shiny.Mediator.Resilience" Version="$(MediatorVersion)" />
+		<!--#if (prism)-->
+		<PackageReference Include="Shiny.Mediator.Prism" Version="$(MediatorVersion)" />
+		<!--#endif-->
+		<!--#if (useblazor)-->
+		<PackageReference Include="Shiny.Mediator.Blazor" Version="$(MediatorVersion)" />
+		<!--#endif-->
+		<!--#if (sentry)-->
+		<PackageReference Include="Shiny.Mediator.Sentry" Version="$(MediatorVersion)" />
+		<!--#endif-->
+		<!--#endif-->
+		<!--#if (remoteconfig)-->
+		<PackageReference Include="Shiny.Extensions.Configuration.Remote.Maui" Version="1.0.0-pre-0008" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.0" />
+		<!--#endif-->
+		<!--#if (localization)-->
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="10.0.0" />
+		<PackageReference Include="Shiny.Extensions.Localization.Generator" Version="2.0.0" />
+		<!--#endif-->
+		<!--#if (useconfig)-->
+		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
+		<!--#endif-->
+		<!--#if (bluetoothle)-->
+		<PackageReference Include="Shiny.BluetoothLE" Version="$(ShinyVersion)" />
+		<!--#endif-->
+		<!--#if (blehosting)-->
+		<PackageReference Include="Shiny.BluetoothLE.Hosting" Version="$(ShinyVersion)" />
+		<!--#endif-->
+		<!--#if (beacons)-->
+		<PackageReference Include="Shiny.Beacons" Version="$(ShinyVersion)" />
+		<!--#endif-->
+		<!--#if (jobs)-->
+		<PackageReference Include="Shiny.Jobs" Version="$(ShinyVersion)" />
+		<!--#endif-->
+		<!--#if (gps || geofencing)-->
+		<PackageReference Include="Shiny.Locations" Version="$(ShinyVersion)" />
+		<!--#endif-->
+		<!--#if (notifications)-->
+		<PackageReference Include="Shiny.Notifications" Version="$(ShinyVersion)" />
+		<!--#endif-->
+		<!--#if (httptransfers)-->
+		<PackageReference Include="Shiny.Net.Http" Version="$(ShinyVersion)" />
+		<!--#endif-->
+		<!--#if (usepushnative)-->
+		<PackageReference Include="Shiny.Push" Version="$(ShinyVersion)" />
+		<!--#endif-->
+		<!--#if (usepushanh)-->
+		<PackageReference Include="Shiny.Push.AzureNotificationHubs" Version="$(ShinyVersion)" />
+		<!--#endif-->
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<!--#if (usemauimaps)-->
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
@@ -210,8 +265,11 @@
 		<!--#if (prism)-->
 		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.537" />
 		<!--#endif-->
-		<!--#if (shinyshell)-->
-		<PackageReference Include="Shiny.Maui.Shell" Version="2.0.0" />
+		<!--#if (usemsal)-->
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.79.2" />
+		<!--#endif-->
+		<!--#if (sentry)-->
+		<PackageReference Include="Sentry.Maui" Version="6.0.0" />
 		<!--#endif-->
 		<!--#if (reactiveui)-->
 		<PackageReference Include="ReactiveUI" Version="20.2.45" />
@@ -223,64 +281,6 @@
 		<!--#if (useblazor)-->
 		<PackageReference Include="ReactiveUI.Blazor" Version="20.2.45" />
 		<!--#endif-->
-		<!--#endif-->
-		<!--#if (shinymediator)-->
-		<PackageReference Include="Shiny.Mediator" Version="$(MediatorVersion)" />
-		<PackageReference Include="Shiny.Mediator.Maui" Version="$(MediatorVersion)" />
-		<PackageReference Include="Shiny.Mediator.Resilience" Version="$(MediatorVersion)" />
-		<!--#if (prism)-->
-		<PackageReference Include="Shiny.Mediator.Prism" Version="$(MediatorVersion)" />
-		<!--#endif-->
-		<!--#if (useblazor)-->
-		<PackageReference Include="Shiny.Mediator.Blazor" Version="$(MediatorVersion)" />
-		<!--#endif-->
-		<!--#if (sentry)-->
-		<PackageReference Include="Shiny.Mediator.Sentry" Version="$(MediatorVersion)" />
-		<!--#endif-->
-		<!--#endif-->
-		<!--#if (remoteconfig)-->
-		<PackageReference Include="Shiny.Extensions.Configuration.Remote.Maui" Version="1.0.0-pre-0008" />
-		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.0" />
-		<!--#endif-->
-		<!--#if (localization)-->
-		<PackageReference Include="Microsoft.Extensions.Localization" Version="10.0.0" />
-		<PackageReference Include="Shiny.Extensions.Localization.Generator" Version="2.0.0" />
-		<!--#endif-->
-		<!--#if (usemsal)-->
-		<PackageReference Include="Microsoft.Identity.Client" Version="4.79.2" />
-		<!--#endif-->
-		<!--#if (useconfig)-->
-		<PackageReference Include="Shiny.Extensions.Configuration" Version="$(ShinyVersion)" />
-		<!--#endif-->
-		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="6.0.0" />
-		<!--#endif-->
-		<!--#if (bluetoothle)-->
-		<PackageReference Include="Shiny.BluetoothLE" Version="$(ShinyVersion)" />
-		<!--#endif-->
-		<!--#if (blehosting)-->
-		<PackageReference Include="Shiny.BluetoothLE.Hosting" Version="$(ShinyVersion)" />
-		<!--#endif-->
-		<!--#if (beacons)-->
-		<PackageReference Include="Shiny.Beacons" Version="$(ShinyVersion)" />
-		<!--#endif-->
-		<!--#if (jobs)-->
-		<PackageReference Include="Shiny.Jobs" Version="$(ShinyVersion)" />
-		<!--#endif-->
-		<!--#if (gps || geofencing)-->
-		<PackageReference Include="Shiny.Locations" Version="$(ShinyVersion)" />
-		<!--#endif-->
-		<!--#if (notifications)-->
-		<PackageReference Include="Shiny.Notifications" Version="$(ShinyVersion)" />
-		<!--#endif-->
-		<!--#if (httptransfers)-->
-		<PackageReference Include="Shiny.Net.Http" Version="$(ShinyVersion)" />
-		<!--#endif-->
-		<!--#if (usepushnative)-->
-		<PackageReference Include="Shiny.Push" Version="$(ShinyVersion)" />
-		<!--#endif-->
-		<!--#if (usepushanh)-->
-		<PackageReference Include="Shiny.Push.AzureNotificationHubs" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (barcodes)-->
 		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.2" />
@@ -305,13 +305,9 @@
 		<!--#endif-->
 		<!--#if (sqlite)-->
 		<PackageReference Include="sqlite-net-pcl" Version="1.10.196-beta" />
-		<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="3.0.2"/>
 		<!--#endif-->
 		<!--#if (settingsview)-->
 		<PackageReference Include="AiForms.Maui.SettingsView" Version="1.0.17" />
-		<!--#endif-->
-		<!--#if (tableview)-->
-		<PackageReference Include="Shiny.Maui.TableView" Version="1.0.1" />
 		<!--#endif-->
 		<!--#if (livecharts)-->
 		<PackageReference Include="LiveChartsCore.SkiaSharpView.Maui" Version="2.0.0-rc2" />
@@ -382,7 +378,7 @@
 	<!--#if (sqlite || androidauto || storereview)-->
 	<ItemGroup Condition="$(TargetFramework.Contains('android'))">
 		<!--#if (sqlite)-->
-		<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.10"/>
+		<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="3.0.2"/>
 		<!--#endif-->
 		<!--#if (androidauto)-->
 		<PackageReference Include="Xamarin.AndroidX.Car.App.App" Version="1.7.0.1" />
