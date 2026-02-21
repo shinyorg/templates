@@ -204,6 +204,9 @@ public static class MauiProgram
 #endif
             });
 
+        // TODO: once you have localization, add these
+        //builder.Services.AddLocalization();
+        //builder.Services.AddStronglyTypedLocalizations();
         builder.Services.AddSingleton(TimeProvider.System);
 #if useconfig
         builder.Configuration.AddJsonPlatformBundle();
