@@ -168,13 +168,7 @@
 		<!--#endif-->
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFrameworks)' != '$(BaseTargetFramework)'">
-		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
-	</ItemGroup>
-
 	<ItemGroup>
-		<PackageReference Include="Shiny.Core" Version="$(ShinyVersion)" />
-		
 		<PackageReference Include="Shiny.Reflector" Version="1.7.1" />
 		<PackageReference Include="Shiny.Extensions.DependencyInjection" Version="1.3.1" />
 		<PackageReference Include="Shiny.Extensions.Stores" Version="1.3.1" />
@@ -373,6 +367,10 @@
 		<!--#if (roomsharp)-->
 		<PackageReference Include="RoomSharp.DependencyInjection" Version="0.4.7" />
 		<!--#endif-->
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' != '$(BaseTargetFramework)'">
+		<PackageReference Include="Shiny.Hosting.Maui" Version="$(ShinyVersion)" />
 	</ItemGroup>
 
 	<!--#if (sqlite || androidauto || storereview)-->

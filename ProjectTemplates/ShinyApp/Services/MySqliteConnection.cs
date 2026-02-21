@@ -5,6 +5,7 @@ namespace ShinyApp.Services;
 [Singleton]
 public class MySqliteConnection : SQLiteAsyncConnection
 {
+#if PLATFORM
     public MySqliteConnection(
         IPlatform platform,
         ILogger<MySqliteConnection> logger
@@ -14,14 +15,22 @@ public class MySqliteConnection : SQLiteAsyncConnection
         // conn.CreateTable<YourModel>();
 
         conn.EnableWriteAheadLogging();
-        //-:cnd:noEmit
 #if DEBUG
         conn.Trace = true;
         conn.Tracer = sql => logger.LogDebug("SQLite Query: " + sql);
 #endif
-        //+:cnd:noEmit
     }
+#else
+    public MySqliteConnection() : base(":memory:")
+    {
+        var conn = this.GetConnection();
+        // conn.CreateTable<YourModel>();
 
+        conn.Trace = true;
+        conn.EnableWriteAheadLogging();
+        //conn.Tracer = sql => logger.LogDebug("SQLite Query: " + sql);
+    }
+#endif
 
     // public AsyncTableQuery<YourModel> Logs => this.Table<YourModel>();
 }

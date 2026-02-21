@@ -1,4 +1,7 @@
-﻿#if userdialogs
+﻿//-:cnd:noEmit
+#if PLATFORM
+//+:cnd:noEmit
+#if userdialogs
 using Acr.UserDialogs;
 #endif
 #if debugrainbows
@@ -389,3 +392,6 @@ public static class MauiProgram
         return app;
     }
 }
+//-:cnd:noEmit
+#endif
+//+:cnd:noEmit
