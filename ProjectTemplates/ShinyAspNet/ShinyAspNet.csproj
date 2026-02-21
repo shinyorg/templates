@@ -5,7 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <OpenApiDocumentsDirectory>.</OpenApiDocumentsDirectory>
-        <MicrosoftVersion>10.0.2</MicrosoftVersion>
+        <MicrosoftVersion>10.0.3</MicrosoftVersion>
         <MediatorVersion>6.2.0</MediatorVersion>
         <!--#if (orleans)-->
         <OrleansVersion>10.0.1</OrleansVersion>
