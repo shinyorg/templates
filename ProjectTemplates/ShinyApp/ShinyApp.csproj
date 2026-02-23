@@ -374,6 +374,9 @@
 		<PackageReference Include="Community.LiteDB.Aot" Version="1.0.0-preview.1" />
 		<PackageReference Include="Community.LiteDB.Aot.SourceGenerators" Version="1.0.0-preview.1" />
 		<!--#endif-->
+		<!--#if (geospatialdb)-->
+		<PackageReference Include="Shiny.Spatial" Version="1.0.0" />
+		<!--#endif-->
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' != '$(BaseTargetFramework)'">

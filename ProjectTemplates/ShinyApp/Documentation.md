@@ -492,6 +492,14 @@ Humanizer meets all your .NET needs for manipulating and displaying strings, enu
 * [GitHub](https://github.com/Humanizr/Humanizer)
 
 <!--#endif-->
+<!--#if (geospatialdb)-->
+## Shiny Spatial - Geospatial Database
+
+_A dependency-free, cross-platform .NET geospatial database library using SQLite R*Tree for spatial indexing with custom C# geometry algorithms. AOT compatible and trimmable. - Written by Allan Ritchie_
+
+* [GitHub](https://github.com/shinyorg/geospatialdb)
+
+<!--#endif-->
 <!--#if (unitsnet)-->
 ## Units .NET
 Written by Andreas Gullberg Larsen

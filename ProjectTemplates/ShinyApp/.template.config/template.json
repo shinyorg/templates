@@ -460,6 +460,13 @@
             "description": "SERVICE - Community LiteDB AOT by mrdevrobot - Documentation https://github.com/mrdevrobot/Community-LiteDb-AOT",
             "displayName": "SERVICE - Add Community LiteDB AOT"
         },
+        "geospatialdb": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "SERVICE - Shiny Spatial Geospatial Database by Allan Ritchie - Documentation https://github.com/shinyorg/geospatialdb",
+            "displayName": "SERVICE - Add Geospatial Database (Shiny.Spatial)"
+        },
         "barcodes":{
             "type": "parameter",
             "datatype": "bool",
