@@ -446,6 +446,20 @@
             "description": "SERVICE - RoomSharp by Safwan Abdulghani - Documentation https://roomsharp.safwan.pro/",
             "displayName": "SERVICE - Add RoomSharp (SQLite Source Generated ORM)"
         },
+        "sqlitedocumentdb": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "SERVICE - SQLite Document DB by Allan Ritchie - Documentation https://github.com/shinyorg/sqlitedocumentdb",
+            "displayName": "SERVICE - Add SQLite Document DB (Shiny.SqliteDocumentDb)"
+        },
+        "litedb": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "SERVICE - Community LiteDB AOT by mrdevrobot - Documentation https://github.com/mrdevrobot/Community-LiteDb-AOT",
+            "displayName": "SERVICE - Add Community LiteDB AOT"
+        },
         "barcodes":{
             "type": "parameter",
             "datatype": "bool",

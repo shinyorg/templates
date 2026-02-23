@@ -310,6 +310,9 @@ public static class MauiProgram
 #endif
 //+:cnd:noEmit
 #endif
+#if sqlitedocumentdb
+        builder.Services.AddSqliteDocumentStore(Path.Combine(FileSystem.AppDataDirectory, "docstore.db"));
+#endif
 #if roomsharp
         builder.Services.AddDatabase();
 #if ocr

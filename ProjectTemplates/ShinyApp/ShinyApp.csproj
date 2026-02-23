@@ -367,6 +367,13 @@
 		<!--#if (roomsharp)-->
 		<PackageReference Include="RoomSharp.DependencyInjection" Version="0.4.7" />
 		<!--#endif-->
+		<!--#if (sqlitedocumentdb)-->
+		<PackageReference Include="Shiny.SqliteDocumentDb" Version="1.0.12-beta-0001" />
+		<!--#endif-->
+		<!--#if (litedb)-->
+		<PackageReference Include="Community.LiteDB.Aot" Version="1.0.0-preview.1" />
+		<PackageReference Include="Community.LiteDB.Aot.SourceGenerators" Version="1.0.0-preview.1" />
+		<!--#endif-->
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' != '$(BaseTargetFramework)'">
