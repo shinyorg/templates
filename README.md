@@ -72,6 +72,9 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [MAUI Google Maps](https://github.com/themronion/Maui.GoogleMaps/tree/maui) by Pavlo Lukianets
 	* [Refit](https://github.com/reactiveui/refit) by ReactiveUI Maintainers
 	* [SQLite.NET-pcl](https://github.com/praeclarum/sqlite-net) by Frank Krueger
+	* [RoomSharp](https://roomsharp.safwan.pro/) by Safwan Abdulghani
+	* [Shiny SqliteDocumentDb](https://github.com/shinyorg/sqlitedocumentdb) by Allan Ritchie
+	* [Community LiteDB AOT](https://github.com/mrdevrobot/Community-LiteDb-AOT) by mrdevrobot
 	* [BarcodeScanning.Native.Maui](https://github.com/afriscic/BarcodeScanning.Native.Maui) by afriscic
 	* [Store Review Plugin](https://github.com/jamesmontemagno/StoreReviewPlugin) by James Montemagno
 	* [MAUI Screen Recording Plugin](https://github.com/jfversluis/Plugin.Maui.ScreenRecording) by Gerald Versluis
@@ -82,11 +85,14 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [MAUI Biometric Plugin](https://github.com/oscoreio/Maui.Biometric) by Konstantin S & Sven-Michael Stübe
 	* [CardsView MAUI](https://github.com/AndreiMisiukevich/CardView.MAUI) by Andrei Misiukevich
 	* [Embed.IO](https://unosquare.github.io/embedio/) by Unosquare
+	* [Sentry](https://sentry.io) by Sentry
 	* [SkiaSharp](https://github.com/mono/SkiaSharp) by Matthew Leibowitz
+	* [SkiaSharp Extended (Lottie)](https://github.com/mono/SkiaSharp.Extended) by Matthew Leibowitz
 	* [ACR User Dialogs](https://github.com/aritchie/userdialogs) by Allan Ritchie
 	* [Debug Rainbows](https://github.com/sthewissen/Plugin.Maui.DebugRainbows) by Steven Thewissen
 	* [Live Charts](https://livecharts.dev/) by Alberto Rodríguez
 	* [Settings View](https://github.com/muak/AiForms.Maui.SettingsView) by Satoshi NaKamura
+	* [Shiny TableView](https://github.com/shinyorg/tableview) by Allan Ritchie
 	* [AlohaKit Animations](https://github.com/jsuarezruiz/AlohaKit.Animations) by Javier Suárez
 	* [Skeleton](https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton) by Horus Software
 	* [System.Linq.Async](https://github.com/dotnet/reactive)
