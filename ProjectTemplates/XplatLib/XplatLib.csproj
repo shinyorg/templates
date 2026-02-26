@@ -43,9 +43,9 @@
         <None Include="Platforms\**\*.cs" />
         <Compile Remove="Platforms\**\*.cs" />
 
-		<PackageReference Include="NerdBank.GitVersioning" Version="3.7.112" PrivateAssets="All" />
+		<PackageReference Include="NerdBank.GitVersioning" Version="3.9.50" PrivateAssets="All" />
         <!--#if (mauilib)-->
-		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.11" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.41" />
         <!--#endif-->
         <!--
         <None Include="$(MSBuildThisFileDirectory)nuget.png" Pack="true" PackagePath="icon.png" />

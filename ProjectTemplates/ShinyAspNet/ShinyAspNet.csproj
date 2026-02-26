@@ -58,7 +58,7 @@
 
         <PackageReference Include="Shiny.Mediator.AspNet" Version="$(MediatorVersion)" />
         <!--#if (scalar)-->
-        <PackageReference Include="Scalar.AspNetCore" Version="2.12.36"/>
+        <PackageReference Include="Scalar.AspNetCore" Version="2.12.48"/>
         <!--#endif-->
     </ItemGroup>
 </Project>
