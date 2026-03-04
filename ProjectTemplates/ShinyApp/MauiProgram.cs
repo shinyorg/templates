@@ -121,10 +121,7 @@ public static class MauiProgram
             .UseSkiaSharp()
 #endif
 #if shinyshell
-            .UseShinyShell(x => 
-            {
-                // map routes here
-            })
+            .UseShinyShell(x => x.AddGeneratedMaps())
 #endif
 #if prism
             .UsePrism(
