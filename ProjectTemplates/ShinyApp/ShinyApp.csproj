@@ -368,14 +368,15 @@
 		<PackageReference Include="RoomSharp.DependencyInjection" Version="0.4.7" />
 		<!--#endif-->
 		<!--#if (sqlitedocumentdb)-->
-		<PackageReference Include="Shiny.SqliteDocumentDb" Version="1.0.0-beta-0015" />
+		<PackageReference Include="Shiny.SqliteDocumentDb" Version="1.0.0" />
 		<!--#endif-->
 		<!--#if (litedb)-->
 		<PackageReference Include="Community.LiteDB.Aot" Version="1.0.0-preview.1" />
 		<PackageReference Include="Community.LiteDB.Aot.SourceGenerators" Version="1.0.0-preview.1" />
 		<!--#endif-->
 		<!--#if (geospatialdb)-->
-		<PackageReference Include="Shiny.Spatial" Version="1.0.0" />
+		<PackageReference Include="Shiny.Spatial" Version="1.0.1" />
+		<PackageReference Include="Shiny.Spatial.Geofencing" Version="1.0.1" />
 		<!--#endif-->
 	</ItemGroup>
 
