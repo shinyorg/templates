@@ -91,6 +91,10 @@
 	<key>NSHealthShareUsageDescription</key>
 	<string>We need to say something useful here</string>
 	<!--#endif-->
+	<!--#if (music)-->
+	<key>NSAppleMusicUsageDescription</key>
+	<string>This app needs access to your music library to browse and play your music</string>
+	<!--#endif-->
 	<!--#if (jobs || usepush || gps || geofencing || beacons || bluetoothle || blehosting || mediaelement)-->
 	<key>UIBackgroundModes</key>
 	<array>

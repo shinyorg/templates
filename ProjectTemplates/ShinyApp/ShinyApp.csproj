@@ -288,6 +288,9 @@
 		<!--#if (audio)-->
 		<PackageReference Include="Plugin.Maui.Audio" Version="4.0.0" />
 		<!--#endif-->
+		<!--#if (music)-->
+		<PackageReference Include="Shiny.Music" Version="1.0.0" />
+		<!--#endif-->
 		<!--#if (ocr)-->
 		<PackageReference Include="Plugin.Maui.OCR" Version="1.1.1" />
 		<!--#endif-->

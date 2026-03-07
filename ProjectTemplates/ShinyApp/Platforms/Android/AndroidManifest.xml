@@ -128,6 +128,10 @@
 	<uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
 	<uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
 	<!--#endif-->
+	<!--#if (music)-->
+	<uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+	<!--#endif-->
 	<!--#if (mediaelement)-->
 	<uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
 	<uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />	

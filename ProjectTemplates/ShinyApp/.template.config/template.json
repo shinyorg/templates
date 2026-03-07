@@ -494,6 +494,13 @@
             "defaultValue": "false",
             "description": "SERVICE - Audio Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.Audio",
             "displayName": "SERVICE - Add Audio (Plugin.Maui.Audio)"
+        },
+        "music":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "SERVICE - Music Library & Player (Shiny.Music) - Documentation https://github.com/shinyorg/music",
+            "displayName": "SERVICE - Add Music Library & Player (Shiny.Music)"
         }, 
         "ocr":{
             "type": "parameter",

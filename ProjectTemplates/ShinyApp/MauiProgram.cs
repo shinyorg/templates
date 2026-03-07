@@ -29,6 +29,9 @@ using Maui.GoogleMaps.Hosting;
 #if usehttp
 using Refit;
 #endif
+#if music
+using Shiny.Music;
+#endif
 #if settingsview
 using AiForms.Settings;
 #endif
@@ -374,6 +377,9 @@ public static class MauiProgram
 #endif
 #if (audio)
         builder.Services.AddSingleton(Plugin.Maui.Audio.AudioManager.Current);
+#endif
+#if (music)
+        builder.Services.AddShinyMusic();
 #endif
 #if (calendar)
         builder.Services.AddSingleton(Plugin.Maui.CalendarStore.CalendarStore.Default);

@@ -79,6 +79,7 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [Store Review Plugin](https://github.com/jamesmontemagno/StoreReviewPlugin) by James Montemagno
 	* [MAUI Screen Recording Plugin](https://github.com/jfversluis/Plugin.Maui.ScreenRecording) by Gerald Versluis
 	* [MAUI Audio Plugin](https://github.com/jfversluis/Plugin.Maui.Audio) by Gerald Versluis
+	* [Shiny Music](https://github.com/shinyorg/music) by Allan Ritchie
 	* [MAUI Calendar Store Plugin](https://github.com/jfversluis/Plugin.Maui.CalendarStore) by Gerald Versluis
 	* [MAUI Screen Brightness Plugin](https://github.com/jfversluis/Plugin.Maui.ScreenBrightness) by Gerald Versluis
 	* [MAUI OCR Plugin](https://github.com/kfrancis/ocr) by Kori Francis
