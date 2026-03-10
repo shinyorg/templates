@@ -15,8 +15,8 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="$(MicrosoftVersion)" />
         <PackageReference Include="Microsoft.Extensions.ApiDescription.Server" Version="$(MicrosoftVersion)"/>
-        <PackageReference Include="Shiny.Extensions.DependencyInjection" Version="1.3.1"/>
-        <PackageReference Include="Shiny.Extensions.WebHosting" Version="1.3.1" />
+        <PackageReference Include="Shiny.Extensions.DependencyInjection" Version="2.0.0"/>
+        <PackageReference Include="Shiny.Extensions.WebHosting" Version="2.0.0" />
 
         <!--#if (efmssql)-->
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MicrosoftVersion)" />
@@ -43,7 +43,7 @@
         <PackageReference Include="Microsoft.Orleans.Reminders.AdoNet" Version="$(OrleansVersion)" />
         <PackageReference Include="Microsoft.Orleans.Streaming" Version="$(OrleansVersion)"/>
         <PackageReference Include="Microsoft.Orleans.Streaming.AdoNet" Version="$(OrleansVersion)-alpha.1" />
-        <PackageReference Include="OrleansDashboard" Version="8.2.0" />
+        <PackageReference Include="Microsoft.Orleans.Dashboard" Version="$(OrleansVersion)-alpha.1" />
         <!--#endif-->
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(MicrosoftVersion)" />
         <!--#if (facebook)-->

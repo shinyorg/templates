@@ -61,6 +61,7 @@ builder.Host.UseOrleans((ctx, silo) =>
     // );
     
     silo
+        .AddDashboard()
         .Configure<ClusterOptions>(options =>
         {
             options.ClusterId = "";
