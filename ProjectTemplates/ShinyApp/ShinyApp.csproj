@@ -172,7 +172,7 @@
 		<PackageReference Include="Shiny.Reflector" Version="1.7.1" />
 		<PackageReference Include="Shiny.Extensions.MauiHosting" Version="2.0.0" />
 		<!--#if (shinyshell)-->
-		<PackageReference Include="Shiny.Maui.Shell" Version="3.0.0" />
+		<PackageReference Include="Shiny.Maui.Shell" Version="3.1.0" />
 		<!--#endif-->
 		<!--#if (tableview)-->
 		<PackageReference Include="Shiny.Maui.TableView" Version="1.0.2" />
