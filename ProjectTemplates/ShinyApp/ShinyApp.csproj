@@ -31,7 +31,7 @@
 		<ApplicationVersion>1</ApplicationVersion>
 		
 		<MauiXamlInflator>SourceGen</MauiXamlInflator>
-		<MauiVersion>10.0.41</MauiVersion>
+		<MauiVersion>10.0.50</MauiVersion>
 		<ShinyVersion>4.0.0-beta-0095</ShinyVersion>
 		<!--#if (shinymediator)-->
 		<MediatorVersion>6.2.1</MediatorVersion>
@@ -170,9 +170,9 @@
 
 	<ItemGroup>
 		<PackageReference Include="Shiny.Reflector" Version="1.7.1" />
-		<PackageReference Include="Shiny.Extensions.MauiHosting" Version="2.0.0" />
+		<PackageReference Include="Shiny.Extensions.MauiHosting" Version="2.0.1" />
 		<!--#if (shinyshell)-->
-		<PackageReference Include="Shiny.Maui.Shell" Version="3.1.0" />
+		<PackageReference Include="Shiny.Maui.Shell" Version="3.1.1" />
 		<!--#endif-->
 		<!--#if (tableview)-->
 		<PackageReference Include="Shiny.Maui.TableView" Version="1.0.2" />
@@ -236,7 +236,7 @@
 		<!--#if (useblazor)-->
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
 		<!--#endif-->
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.3" Condition="'$(Configuration)' == 'Debug'" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.5" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#if (ctmvvm)-->
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<!--#endif-->
