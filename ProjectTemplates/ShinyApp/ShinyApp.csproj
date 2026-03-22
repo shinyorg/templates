@@ -370,7 +370,7 @@
 		<PackageReference Include="RoomSharp.DependencyInjection" Version="0.4.7" />
 		<!--#endif-->
 		<!--#if (sqlitedocumentdb)-->
-		<PackageReference Include="Shiny.SqliteDocumentDb" Version="1.0.0" />
+		<PackageReference Include="Shiny.SqliteDocumentDb.Extensions.DependencyInjection" Version="2.0.1" />
 		<!--#endif-->
 		<!--#if (litedb)-->
 		<PackageReference Include="Community.LiteDB.Aot" Version="1.0.0-preview.1" />
