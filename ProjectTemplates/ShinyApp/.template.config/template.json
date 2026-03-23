@@ -446,12 +446,12 @@
             "description": "SERVICE - RoomSharp by Safwan Abdulghani - Documentation https://roomsharp.safwan.pro/",
             "displayName": "SERVICE - Add RoomSharp (SQLite Source Generated ORM)"
         },
-        "sqlitedocumentdb": {
+        "documentdb": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "SERVICE - SQLite Document DB by Allan Ritchie - Documentation https://github.com/shinyorg/sqlitedocumentdb",
-            "displayName": "SERVICE - Add SQLite Document DB (Shiny.SqliteDocumentDb)"
+            "description": "SERVICE - Document DB by Allan Ritchie - Documentation https://github.com/shinyorg/documentdb",
+            "displayName": "SERVICE - Add Document DB (Shiny.DocumentDb.Sqlite)"
         },
         "litedb": {
             "type": "parameter",

@@ -29,9 +29,6 @@ using Maui.GoogleMaps.Hosting;
 #if usehttp
 using Refit;
 #endif
-#if music
-using Shiny.Music;
-#endif
 #if settingsview
 using AiForms.Settings;
 #endif
@@ -67,6 +64,13 @@ using Microsoft.FluentUI.AspNetCore.Components;
 #if shinymediator
 using Polly;
 using Polly.Retry;
+#endif
+#if music
+using Shiny.Music;
+#endif
+#if sqlitedocumentdb
+using Shiny.DocumentDb;
+using Shiny.DocumentDb.Sqlite;
 #endif
 using Shiny.Extensions.Stores;
 using ShinyApp.Services;
@@ -310,8 +314,15 @@ public static class MauiProgram
 #endif
 //+:cnd:noEmit
 #endif
-#if sqlitedocumentdb
-        builder.Services.AddSqliteDocumentStore(Path.Combine(FileSystem.AppDataDirectory, "docstore.db"));
+#if documentdb
+        builder.Services.AddDocumentStore(opts => 
+        {
+            var dbPath = Path.Combine(FileSystem.AppDataDirectory, "docstore.db");
+            opts.DatabaseProvider = new SqliteDatabaseProvider($"Data Source={dbPath}");
+            opts.UseReflectionFallback = false;
+            // TODO: JsonContext source generation so reflection is not needed
+            //opts.JsonSerializerOptions = AppJsonContext.Default.Options;
+        });
 #endif
 #if roomsharp
         builder.Services.AddDatabase();

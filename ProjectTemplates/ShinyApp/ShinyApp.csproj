@@ -369,8 +369,9 @@
 		<!--#if (roomsharp)-->
 		<PackageReference Include="RoomSharp.DependencyInjection" Version="0.4.7" />
 		<!--#endif-->
-		<!--#if (sqlitedocumentdb)-->
-		<PackageReference Include="Shiny.SqliteDocumentDb.Extensions.DependencyInjection" Version="2.0.1" />
+		<!--#if (documentdb)-->
+		<PackageReference Include="Shiny.DocumentDb.Sqlite" Version="3.0.1" />
+        <PackageReference Include="Shiny.DocumentDb.Extensions.DependencyInjection" Version="3.0.1" />
 		<!--#endif-->
 		<!--#if (litedb)-->
 		<PackageReference Include="Community.LiteDB.Aot" Version="1.0.0-preview.1" />

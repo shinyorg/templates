@@ -73,7 +73,7 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [Refit](https://github.com/reactiveui/refit) by ReactiveUI Maintainers
 	* [SQLite.NET-pcl](https://github.com/praeclarum/sqlite-net) by Frank Krueger
 	* [RoomSharp](https://roomsharp.safwan.pro/) by Safwan Abdulghani
-	* [Shiny SqliteDocumentDb](https://github.com/shinyorg/sqlitedocumentdb) by Allan Ritchie
+	* [Shiny DocumentDb](https://github.com/shinyorg/documentdb) by Allan Ritchie
 	* [Community LiteDB AOT](https://github.com/mrdevrobot/Community-LiteDb-AOT) by mrdevrobot
 	* [BarcodeScanning.Native.Maui](https://github.com/afriscic/BarcodeScanning.Native.Maui) by afriscic
 	* [Store Review Plugin](https://github.com/jamesmontemagno/StoreReviewPlugin) by James Montemagno
