@@ -25,13 +25,11 @@
 		<!--#endif-->
 		<ApplicationTitle>ShinyApp</ApplicationTitle>
 		<ApplicationId>{APPLICATION_ID}</ApplicationId>
-		<ApplicationIdGuid>{APPLICATION_ID_GUID}</ApplicationIdGuid>
-
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 		
 		<MauiXamlInflator>SourceGen</MauiXamlInflator>
-		<MauiVersion>10.0.50</MauiVersion>
+		<MauiVersion>10.0.51</MauiVersion>
 		<ShinyVersion>4.0.0-beta-0095</ShinyVersion>
 		<!--#if (shinymediator)-->
 		<MediatorVersion>6.2.1</MediatorVersion>
