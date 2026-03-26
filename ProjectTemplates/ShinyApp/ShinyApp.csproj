@@ -238,7 +238,7 @@
 		<!--#endif-->
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.5" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#if (ctmvvm)-->
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
 		<!--#endif-->
 		<!--#if (communitytoolkit || speechrecognition)-->
 		<PackageReference Include="CommunityToolkit.Maui" Version="14.0.1" />
@@ -370,8 +370,8 @@
 		<PackageReference Include="RoomSharp.DependencyInjection" Version="0.4.7" />
 		<!--#endif-->
 		<!--#if (documentdb)-->
-		<PackageReference Include="Shiny.DocumentDb.Sqlite" Version="3.0.1" />
-        <PackageReference Include="Shiny.DocumentDb.Extensions.DependencyInjection" Version="3.0.1" />
+		<PackageReference Include="Shiny.DocumentDb.Sqlite" Version="3.1.0" />
+        <PackageReference Include="Shiny.DocumentDb.Extensions.DependencyInjection" Version="3.1.0" />
 		<!--#endif-->
 		<!--#if (litedb)-->
 		<PackageReference Include="Community.LiteDB.Aot" Version="1.0.0-preview.1" />
