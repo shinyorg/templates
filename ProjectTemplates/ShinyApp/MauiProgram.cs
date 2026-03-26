@@ -68,6 +68,9 @@ using Polly.Retry;
 #if music
 using Shiny.Music;
 #endif
+#if contactstore
+using Shiny.Maui.ContactStore;
+#endif
 #if sqlitedocumentdb
 using Shiny.DocumentDb;
 using Shiny.DocumentDb.Sqlite;
@@ -394,6 +397,9 @@ public static class MauiProgram
 #endif
 #if (calendar)
         builder.Services.AddSingleton(Plugin.Maui.CalendarStore.CalendarStore.Default);
+#endif
+#if (contactstore)
+        builder.Services.AddContactStore();
 #endif
 #if (screenbrightness)
         builder.Services.AddSingleton(Plugin.Maui.ScreenBrightness.ScreenBrightness.Default);

@@ -492,6 +492,14 @@ Humanizer meets all your .NET needs for manipulating and displaying strings, enu
 * [GitHub](https://github.com/Humanizr/Humanizer)
 
 <!--#endif-->
+<!--#if (contactstore)-->
+## Shiny Contact Store
+
+_A cross-platform .NET MAUI library for accessing device contacts on Android and iOS with full CRUD operations, LINQ query support, and dependency injection integration. - Written by Allan Ritchie_
+
+* [GitHub](https://github.com/shinyorg/contactstore)
+
+<!--#endif-->
 <!--#if (geospatialdb)-->
 ## Shiny Spatial - Geospatial Database
 

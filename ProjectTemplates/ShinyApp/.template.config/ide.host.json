@@ -328,6 +328,13 @@
         "isVisible": true
     },
     {
+        "id": "contactstore",
+        "name":{
+            "text": "Add Contact Store (Shiny.Maui.ContactStore)"
+        },
+        "isVisible": true
+    },
+    {
         "id": "barcodes",
         "name":{
             "text": "Add Native Barcode Scanning (BarcodeScanning.Native.Maui)"

@@ -147,6 +147,9 @@
 		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" Visible="false" />
 		<CustomEntitlements Include="com.apple.security.personal-information.calendar" Type="boolean" Value="true" Visible="false" />
 		<!--#endif-->
+		<!--#if (contactstore)-->
+		<CustomEntitlements Include="com.apple.security.personal-information.addressbook" Type="boolean" Value="true" Visible="false" />
+		<!--#endif-->
 	</ItemGroup>
 
 	<ItemGroup>
@@ -380,6 +383,9 @@
 		<!--#if (geospatialdb)-->
 		<PackageReference Include="Shiny.Spatial" Version="1.0.1" />
 		<PackageReference Include="Shiny.Spatial.Geofencing" Version="1.0.1" />
+		<!--#endif-->
+		<!--#if (contactstore)-->
+		<PackageReference Include="Shiny.Maui.ContactStore" Version="1.0.0" />
 		<!--#endif-->
 	</ItemGroup>
 

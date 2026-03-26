@@ -85,6 +85,10 @@
 	<key>NSCalendarsFullAccessUsageDescription</key>
 	<string>We need to say something useful here</string>
 	<!--#endif-->
+	<!--#if (contactstore)-->
+	<key>NSContactsUsageDescription</key>
+	<string>Say something useful here that your users will understand</string>
+	<!--#endif-->
 	<!--#if (health)-->
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>We need to say something useful here</string>

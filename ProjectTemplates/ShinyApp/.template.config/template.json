@@ -467,6 +467,13 @@
             "description": "SERVICE - Shiny Spatial Geospatial Database by Allan Ritchie - Documentation https://github.com/shinyorg/geospatialdb",
             "displayName": "SERVICE - Add Geospatial Database (Shiny.Spatial)"
         },
+        "contactstore": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "SERVICE - Contact Store by Allan Ritchie - Full CRUD access to device contacts - Documentation https://github.com/shinyorg/contactstore",
+            "displayName": "SERVICE - Add Contact Store (Shiny.Maui.ContactStore)"
+        },
         "barcodes":{
             "type": "parameter",
             "datatype": "bool",
