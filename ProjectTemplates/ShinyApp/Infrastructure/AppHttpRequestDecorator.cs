@@ -17,8 +17,8 @@ public class AppHttpRequestDecorator(TimeProvider timeProvider) : IHttpRequestDe
         var appInfo = AppInfo.Current;
         var deviceInfo = DeviceInfo.Current;
 
-        var locale = CultureInfo.CurrentCulture?.Name ?? string.Empty;
-        var timezone = TimeZoneInfo.Local?.Id ?? string.Empty;
+        var locale = CultureInfo.CurrentCulture.Name;
+        var timezone = timeProvider.LocalTimeZone.Id;
 
         httpMessage.Headers.UserAgent.ParseAdd($"{appInfo.PackageName}/{appInfo.VersionString} ({deviceInfo.Platform}; {deviceInfo.Model}; {deviceInfo.Manufacturer})");
         httpMessage.Headers.Add("X-App-Build", appInfo.BuildString);
