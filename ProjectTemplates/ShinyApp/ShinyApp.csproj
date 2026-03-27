@@ -33,7 +33,7 @@
 		<!--<EnablePreviewFeatures>true</EnablePreviewFeatures>-->
 
 		<MauiVersion>10.0.51</MauiVersion>
-		<ShinyVersion>4.0.0</ShinyVersion>
+		<ShinyVersion>4.0.1</ShinyVersion>
 		<!--#if (shinymediator)-->
 		<MediatorVersion>6.2.1</MediatorVersion>
 		<!--#endif-->
@@ -375,8 +375,8 @@
 		<PackageReference Include="Community.LiteDB.Aot.SourceGenerators" Version="1.0.0-preview.1" />
 		<!--#endif-->
 		<!--#if (geospatialdb)-->
-		<PackageReference Include="Shiny.Spatial" Version="1.0.1" />
-		<PackageReference Include="Shiny.Spatial.Geofencing" Version="1.0.1" />
+		<PackageReference Include="Shiny.Spatial" Version="1.1.0" />
+		<PackageReference Include="Shiny.Spatial.Geofencing" Version="1.1.0" />
 		<!--#endif-->
 		<!--#if (contactstore)-->
 		<PackageReference Include="Shiny.Maui.ContactStore" Version="1.0.0" />
