@@ -76,7 +76,7 @@
                 <string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
             </array>
         </dict>
-        <!--#if (gps || geofencing || beacons)-->
+        <!--#if (gps || geofencing)-->
         <!--location-->
         <dict>
             <key>NSPrivacyCollectedDataType</key>

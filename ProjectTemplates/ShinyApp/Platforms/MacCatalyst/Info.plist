@@ -32,7 +32,7 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>	
-	<!--#if (gps || geofencing || beacons || usemaps)-->
+	<!--#if (gps || geofencing || usemaps)-->
 	<key>NSLocationTemporaryUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -78,17 +78,17 @@
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>ay something useful here that your users will understand</string>
 	<!--#endif-->
-	<!--#if (jobs || usepush || gps || geofencing || beacons || bluetoothle || blehosting || mediaelement)-->
+	<!--#if (jobs || usepush || gps || geofencing || bluetoothle || blehosting || mediaelement)-->
 	<key>UIBackgroundModes</key>
 	<array>
 		<!--#if (jobs || usepush)-->
 		<string>processing</string>
 		<string>fetch</string>
 		<!--#endif-->
-		<!--#if (gps || geofencing || beacons)-->
+		<!--#if (gps || geofencing)-->
 		<string>location</string>
 		<!--#endif-->
-		<!--#if (bluetoothle || beacons || mediaelement)-->
+		<!--#if (bluetoothle || mediaelement)-->
 		<string>bluetooth-central</string>
 		<!--#endif-->
 		<!--#if (blehosting)-->

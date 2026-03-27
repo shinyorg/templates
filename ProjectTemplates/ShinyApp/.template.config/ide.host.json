@@ -89,13 +89,6 @@
         "isVisible": true
     },
     {
-        "id": "beacons",
-        "name": {
-            "text": "Add Beacons (Shiny.Beacons)"
-        },
-        "isVisible": true
-    },
-    {
         "id": "jobs",
         "name": {
             "text": "Add Background Jobs (Shiny.Jobs)"

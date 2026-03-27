@@ -157,13 +157,6 @@
             "description": "CONFIGURATION - Add AppSettings.json (Shiny.Extensions.Configuration)",
             "displayName": "CONFIGURATION - Add AppSettings.json (Shiny.Extensions.Configuration)"
         },
-        "remoteconfig": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "CONFIGURATION - Add Remote Configuration (Shiny.Extensions.Configuration.Remote.Maui)",
-            "displayName": "CONFIGURATION - Add Remote Configuration (Shiny.Extensions.Configuration.Remote.Maui)"
-        },
         "sentry": {
             "type": "parameter",
             "dataType": "bool",
@@ -184,13 +177,6 @@
             "defaultValue": "false",
             "description": "SERVICE - Add BluetoothLE Hosting (Shiny.BluetoothLE.Hosting)",
             "displayName": "SERVICE - Add BluetoothLE Hosting (Shiny.BluetoothLE.Hosting)"
-        },
-        "beacons": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "SERVICE - Add Beacons (Shiny.Beacons)",
-            "displayName": "SERVICE - Add Beacons (Shiny.Beacons)"
         },
         "jobs": {
             "type": "parameter",
@@ -729,7 +715,10 @@
         "copyOnly": [
             "**/*.svg",
             "**/*.ttf",
-            "**/*.txt"
+            "**/*.txt",
+            ".claude-plugin/**",
+            ".github/**",
+            "skills/**"
         ],
         "modifiers": [
         {
@@ -798,10 +787,7 @@
             "condition": "(notifications == false)",
             "exclude": "Delegates/MyLocalNotificationDelegate.cs"
         },
-        {
-            "condition": "(beacons == false)",
-            "exclude": "Delegates/MyBeaconMonitoringDelegate.cs"
-        }, 
+ 
         {
             "condition": "(appactions == false)",
             "exclude": "Delegates/AppActionDelegate.cs"

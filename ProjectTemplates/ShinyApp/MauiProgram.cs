@@ -217,9 +217,7 @@ public static class MauiProgram
         builder.Services.AddSingleton(TimeProvider.System);
 #if useconfig
         builder.Configuration.AddJsonPlatformBundle();
-#endif
-#if (remoteconfig)
-        builder.AddRemoteConfigurationMaui("https://todo");
+        // builder.AddRemoteConfigurationMaui("https://todo"); // Shiny.Extensions.Configuration.Remote.Maui
         // builder.Services.AddOptions<MyConfig>().BindConfiguration("");
 #endif
 //-:cnd:noEmit
@@ -350,10 +348,6 @@ public static class MauiProgram
 #if blehosting
         builder.Services.AddBluetoothLeHosting();
         builder.Services.AddBleHostedCharacteristic<ShinyApp.Delegates.MyBleGattCharacteristic>();
-#endif
-#if beacons
-        builder.Services.AddBeaconRanging();
-        builder.Services.AddBeaconMonitoring<ShinyApp.Delegates.MyBeaconMonitorDelegate>();
 #endif
 #if gps
         builder.Services.AddGps<ShinyApp.Delegates.MyGpsDelegate>();
