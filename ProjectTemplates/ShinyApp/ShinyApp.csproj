@@ -29,8 +29,11 @@
 		<ApplicationVersion>1</ApplicationVersion>
 		
 		<MauiXamlInflator>SourceGen</MauiXamlInflator>
+		<!--uncomment below for XAML expressions in net10-->
+		<!--<EnablePreviewFeatures>true</EnablePreviewFeatures>-->
+
 		<MauiVersion>10.0.51</MauiVersion>
-		<ShinyVersion>4.0.0-beta-0095</ShinyVersion>
+		<ShinyVersion>4.0.0</ShinyVersion>
 		<!--#if (shinymediator)-->
 		<MediatorVersion>6.2.1</MediatorVersion>
 		<!--#endif-->
@@ -192,10 +195,6 @@
 		<PackageReference Include="Shiny.Mediator.Sentry" Version="$(MediatorVersion)" />
 		<!--#endif-->
 		<!--#endif-->
-		<!--#if (remoteconfig)-->
-		<PackageReference Include="Shiny.Extensions.Configuration.Remote.Maui" Version="1.0.0-pre-0008" />
-		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.3" />
-		<!--#endif-->
 		<!--#if (localization)-->
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="10.0.3" />
 		<PackageReference Include="Shiny.Extensions.Localization.Generator" Version="2.0.1" />
@@ -208,9 +207,6 @@
 		<!--#endif-->
 		<!--#if (blehosting)-->
 		<PackageReference Include="Shiny.BluetoothLE.Hosting" Version="$(ShinyVersion)" />
-		<!--#endif-->
-		<!--#if (beacons)-->
-		<PackageReference Include="Shiny.Beacons" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (jobs)-->
 		<PackageReference Include="Shiny.Jobs" Version="$(ShinyVersion)" />
