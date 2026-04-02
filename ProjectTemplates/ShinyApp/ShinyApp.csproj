@@ -35,7 +35,7 @@
 		<MauiVersion>10.0.51</MauiVersion>
 		<ShinyVersion>4.0.1</ShinyVersion>
 		<!--#if (shinymediator)-->
-		<MediatorVersion>6.3.0</MediatorVersion>
+		<MediatorVersion>6.2.1</MediatorVersion>
 		<!--#endif-->
 
 		<EnableAotAnalyzer>true</EnableAotAnalyzer>

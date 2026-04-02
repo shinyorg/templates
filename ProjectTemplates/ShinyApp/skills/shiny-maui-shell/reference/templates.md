@@ -332,6 +332,45 @@ public partial class ItemDetailViewModel(INavigator navigator, IDialogs dialogs,
 }
 ```
 
+## AppShell Template
+
+Your AppShell must inherit from `ShinyShell` (not `Shell`):
+
+### XAML
+```xml
+<!-- AppShell.xaml -->
+<shiny:ShinyShell
+    x:Class="{Namespace}.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:shiny="clr-namespace:Shiny;assembly=Shiny.Maui.Shell"
+    xmlns:local="clr-namespace:{Namespace}"
+    Title="{App Title}">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+</shiny:ShinyShell>
+```
+
+### Code-Behind
+```csharp
+// AppShell.xaml.cs
+using Shiny;
+
+namespace {Namespace};
+
+public partial class AppShell : ShinyShell
+{
+    public AppShell()
+    {
+        InitializeComponent();
+    }
+}
+```
+
 ## MauiProgram.cs Setup Template
 
 ### With Source Generation (Recommended)

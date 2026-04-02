@@ -15,6 +15,7 @@ triggers:
   - ShellMap
   - ShellProperty
   - UseShinyShell
+  - ShinyShell
   - ShinyAppBuilder
   - Shiny.Maui.Shell
   - IPageLifecycleAware
@@ -68,7 +69,7 @@ Shiny MAUI Shell wraps .NET MAUI Shell to provide:
 - Shell switching — swap the entire Shell at runtime (e.g., login → main app)
 - ViewModel lifecycle interfaces (appearing, disappearing, dispose, navigation confirmation)
 - Source generators that eliminate boilerplate route registration and produce strongly-typed navigation methods
-- No special AppShell subclass required
+- `ShinyShell` base class for deterministic initial-page BindingContext assignment
 
 Inspired by [Prism Library](https://prismlibrary.com) by Dan Siegel and Brian Lagunas.
 
@@ -109,8 +110,44 @@ builder
     .UseShinyShell(x => x.AddGeneratedMaps())
 ```
 
+### 3. AppShell must inherit from `ShinyShell`
+
+Your `AppShell` (or any Shell subclass) must inherit from `Shiny.ShinyShell` instead of `Shell`. This ensures the initial page's BindingContext is set deterministically via Shell's own `OnNavigated` lifecycle.
+
+**AppShell.xaml:**
+```xml
+<shiny:ShinyShell
+    x:Class="MyApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:shiny="clr-namespace:Shiny;assembly=Shiny.Maui.Shell"
+    xmlns:local="clr-namespace:MyApp"
+    Title="MyApp">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+</shiny:ShinyShell>
+```
+
+**AppShell.xaml.cs:**
+```csharp
+using Shiny;
+
+namespace MyApp;
+
+public partial class AppShell : ShinyShell
+{
+    public AppShell()
+    {
+        InitializeComponent();
+    }
+}
+```
+
 ### Important Notes
-- The default MAUI AppShell.xaml does not need modification to work with Shiny Shell
 - Pages defined in AppShell.xaml should use `registerRoute: false` since Shell already registers them
 - Pages navigated to programmatically need route registration (the default behavior)
 - All Pages and ViewModels are registered as Transient in DI automatically

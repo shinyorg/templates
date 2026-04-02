@@ -382,6 +382,41 @@ Disable individual generated files via MSBuild properties:
 
 `NavigationBuilderExtensions.g.cs` is always generated.
 
+## ShinyShell Base Class
+
+Your `AppShell` must inherit from `ShinyShell` instead of `Shell`. This ensures the initial page's BindingContext is set deterministically via Shell's own `OnNavigated` lifecycle — avoiding a race condition where the `Application.PageAppearing` event can fire before the handler is registered.
+
+```csharp
+// AppShell.xaml.cs
+using Shiny;
+
+public partial class AppShell : ShinyShell
+{
+    public AppShell()
+    {
+        InitializeComponent();
+    }
+}
+```
+
+```xml
+<!-- AppShell.xaml -->
+<shiny:ShinyShell
+    x:Class="MyApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:shiny="clr-namespace:Shiny;assembly=Shiny.Maui.Shell"
+    xmlns:local="clr-namespace:MyApp"
+    Title="MyApp">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+</shiny:ShinyShell>
+```
+
 ## Extension Method
 
 ### UseShinyShell
@@ -421,6 +456,7 @@ When implemented on a ViewModel, `Dispose()` is called when the page is permanen
 ## Troubleshooting
 
 ### ViewModel not bound to Page
+- Ensure your AppShell inherits from `ShinyShell`, not `Shell`
 - Ensure the Page-ViewModel pair is registered via `Add<TPage, TViewModel>()` or `[ShellMap]` + `AddGeneratedMaps()`
 - Check that `UseShinyShell()` is called in MauiProgram.cs
 
