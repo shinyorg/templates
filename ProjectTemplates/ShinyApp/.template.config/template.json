@@ -397,19 +397,26 @@
             "description": "UI - Live Charts by Alberto Rodríguez - Documentation https://livecharts.dev/",
             "displayName": "UI - Add Live Charts"
         },
-        "settingsview":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "UI - Settings View by by Satoshi NaKamura - Documentation https://github.com/muak/AiForms.Maui.SettingsView",
-            "displayName": "UI - Add Settings View"
-        },
         "tableview":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "UI - Shiny TableView by Allan Ritchie - Documentation https://github.com/shinyorg/tableview",
             "displayName": "UI - Add Shiny TableView"
+        },
+        "scheduler":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "UI - Shiny Scheduler Calendar Views by Allan Ritchie - Documentation https://github.com/shinyorg/scheduler",
+            "displayName": "UI - Add Shiny Scheduler"
+        },
+        "mermaiddiagrams":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "UI - Shiny Mermaid Diagrams - Native Mermaid JS rendering for MAUI - Documentation https://github.com/shinyorg/mauimermaiddiagrams",
+            "displayName": "UI - Add Shiny Mermaid Diagrams"
         },
         "cards":{
             "type": "parameter",

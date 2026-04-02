@@ -29,11 +29,8 @@ using Maui.GoogleMaps.Hosting;
 #if usehttp
 using Refit;
 #endif
-#if settingsview
-using AiForms.Settings;
-#endif
-#if tableview
-using Shiny.Maui.TableView;
+#if mermaiddiagrams || scheduler || tableview || music || contactstore
+using Shiny;
 #endif
 #if cards
 using PanCardView;
@@ -64,12 +61,6 @@ using Microsoft.FluentUI.AspNetCore.Components;
 #if shinymediator
 using Polly;
 using Polly.Retry;
-#endif
-#if music
-using Shiny.Music;
-#endif
-#if contactstore
-using Shiny.Maui.ContactStore;
 #endif
 #if sqlitedocumentdb
 using Shiny.DocumentDb;
@@ -117,9 +108,6 @@ public static class MauiProgram
 #endif
 #if fingerprint
             .UseBiometricAuthentication()
-#endif
-#if (settingsview)
-            .UseSettingsView()
 #endif
 #if (tableview)
             .UseShinyTableView()

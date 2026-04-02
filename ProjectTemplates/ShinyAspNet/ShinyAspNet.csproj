@@ -5,7 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <OpenApiDocumentsDirectory>.</OpenApiDocumentsDirectory>
-        <MicrosoftVersion>10.0.3</MicrosoftVersion>
+        <MicrosoftVersion>10.0.5</MicrosoftVersion>
         <MediatorVersion>6.2.1</MediatorVersion>
         <!--#if (orleans)-->
         <OrleansVersion>10.0.1</OrleansVersion>
@@ -15,8 +15,8 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="$(MicrosoftVersion)" />
         <PackageReference Include="Microsoft.Extensions.ApiDescription.Server" Version="$(MicrosoftVersion)"/>
-        <PackageReference Include="Shiny.Extensions.DependencyInjection" Version="2.0.0"/>
-        <PackageReference Include="Shiny.Extensions.WebHosting" Version="2.0.0" />
+        <PackageReference Include="Shiny.Extensions.DependencyInjection" Version="2.0.3"/>
+        <PackageReference Include="Shiny.Extensions.WebHosting" Version="2.0.3" />
 
         <!--#if (efmssql)-->
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MicrosoftVersion)" />
@@ -26,9 +26,9 @@
         <!--#endif-->
 
         <!--#if (efpostgres)-->
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.1" />
         <!--#if (efspatial)-->
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="10.0.0" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="10.0.1" />
         <!--#endif-->
         <!--#endif-->
 
@@ -43,7 +43,7 @@
         <PackageReference Include="Microsoft.Orleans.Reminders.AdoNet" Version="$(OrleansVersion)" />
         <PackageReference Include="Microsoft.Orleans.Streaming" Version="$(OrleansVersion)"/>
         <PackageReference Include="Microsoft.Orleans.Streaming.AdoNet" Version="$(OrleansVersion)-alpha.1" />
-        <PackageReference Include="Microsoft.Orleans.Dashboard" Version="$(OrleansVersion)-alpha.1" />
+        <PackageReference Include="Microsoft.Orleans.Dashboard" Version="$(OrleansVersion)" />
         <!--#endif-->
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(MicrosoftVersion)" />
         <!--#if (facebook)-->
@@ -58,7 +58,7 @@
 
         <PackageReference Include="Shiny.Mediator.AspNet" Version="$(MediatorVersion)" />
         <!--#if (scalar)-->
-        <PackageReference Include="Scalar.AspNetCore" Version="2.12.48"/>
+        <PackageReference Include="Scalar.AspNetCore" Version="2.13.18"/>
         <!--#endif-->
     </ItemGroup>
 </Project>

@@ -286,19 +286,26 @@
         "isVisible": true
     },
     {
-        "id": "settingsview",
-        "name":{
-            "text": "Add Settings View"
-        },
-        "isVisible": true
-    },
-    {
         "id": "tableview",
         "name":{
             "text": "Add Shiny TableView"
         },
         "isVisible": true
-    },   
+    },
+    {
+        "id": "scheduler",
+        "name":{
+            "text": "Add Shiny Scheduler (Shiny.Maui.Scheduler)"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "mermaiddiagrams",
+        "name":{
+            "text": "Add Shiny Mermaid Diagrams (Shiny.Maui.MermaidDiagrams)"
+        },
+        "isVisible": true
+    },
     {
         "id": "cards",
         "name":{

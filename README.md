@@ -92,8 +92,9 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [ACR User Dialogs](https://github.com/aritchie/userdialogs) by Allan Ritchie
 	* [Debug Rainbows](https://github.com/sthewissen/Plugin.Maui.DebugRainbows) by Steven Thewissen
 	* [Live Charts](https://livecharts.dev/) by Alberto Rodríguez
-	* [Settings View](https://github.com/muak/AiForms.Maui.SettingsView) by Satoshi NaKamura
 	* [Shiny TableView](https://github.com/shinyorg/tableview) by Allan Ritchie
+	* [Shiny Scheduler](https://github.com/shinyorg/scheduler) by Allan Ritchie
+	* [Shiny Mermaid Diagrams](https://github.com/shinyorg/mauimermaiddiagrams) by Allan Ritchie
 	* [AlohaKit Animations](https://github.com/jsuarezruiz/AlohaKit.Animations) by Javier Suárez
 	* [Skeleton](https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton) by Horus Software
 	* [System.Linq.Async](https://github.com/dotnet/reactive)

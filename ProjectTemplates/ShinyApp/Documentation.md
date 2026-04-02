@@ -454,20 +454,28 @@ _AlohaKit.Animations is a library designed for .NET MAUI that aims to facilitate
 * [GitHub](https://github.com/jsuarezruiz/AlohaKit.Animations)
 
 <!--#endif-->
-<!--#if (settingsview)-->
-## Settings View
-
-_This is a flexible TableView specialized in settings for Android / iOS by Satoshi NaKamura_
-
-* [GitHub](https://github.com/muak/AiForms.Maui.SettingsView)
-
-<!--#endif-->
 <!--#if (tableview)-->
 ## Shiny TableView
 
 _A pure .NET MAUI settings-style TableView control with 14 cell types, cascading styles, sections, drag-sort reordering, and full MVVM/binding support - Written by Allan Ritchie_
 
 * [GitHub](https://github.com/shinyorg/tableview)
+
+<!--#endif-->
+<!--#if (scheduler)-->
+## Shiny Scheduler
+
+_A .NET MAUI scheduling/calendar component library providing AOT-safe calendar, agenda, and event list views with unified data access via ISchedulerEventProvider - Written by Allan Ritchie_
+
+* [GitHub](https://github.com/shinyorg/scheduler)
+
+<!--#endif-->
+<!--#if (mermaiddiagrams)-->
+## Shiny Mermaid Diagrams
+
+_Renders Mermaid JS flowchart diagrams natively in .NET MAUI using pure MAUI Graphics - no WebView, no SkiaSharp, fully AOT-compliant. Supports multiple node shapes, edge styles, subgraphs, themes, and interactive pan/zoom - Written by Allan Ritchie_
+
+* [GitHub](https://github.com/shinyorg/mauimermaiddiagrams)
 
 <!--#endif-->
 <!--#if (syslinqasync)-->
