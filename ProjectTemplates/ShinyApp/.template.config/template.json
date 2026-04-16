@@ -401,22 +401,29 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "UI - Shiny TableView by Allan Ritchie - Documentation https://github.com/shinyorg/tableview",
-            "displayName": "UI - Add Shiny TableView"
+            "description": "UI - Shiny.Maui.Controls - Settings-style TableView with 14 cell types - Documentation https://github.com/shinyorg/mauicontrols",
+            "displayName": "UI - Add Shiny Controls - TableView"
         },
-        "scheduler":{
+        "shinycontrols":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "UI - Shiny Scheduler Calendar Views by Allan Ritchie - Documentation https://github.com/shinyorg/scheduler",
-            "displayName": "UI - Add Shiny Scheduler"
+            "description": "UI - Shiny.Maui.Controls - Pure .NET MAUI control suite including Scheduler (Calendar/Agenda/Events), BottomSheetView, ImageViewer (pinch/pan/zoom), PillView status badges, SecurityPin, and Fab/FabMenu - Documentation https://github.com/shinyorg/mauicontrols",
+            "displayName": "UI - Add Shiny Controls (Scheduler, BottomSheet, ImageViewer, PillView, SecurityPin, Fab)"
+        },
+        "markdown":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "UI - Shiny.Maui.Controls.Markdown - Native markdown renderer and editor (no WebView) - Documentation https://github.com/shinyorg/mauicontrols",
+            "displayName": "UI - Add Shiny Controls - Markdown (View + Editor)"
         },
         "mermaiddiagrams":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "UI - Shiny Mermaid Diagrams - Native Mermaid JS rendering for MAUI - Documentation https://github.com/shinyorg/mauimermaiddiagrams",
-            "displayName": "UI - Add Shiny Mermaid Diagrams"
+            "description": "UI - Shiny.Maui.Controls.MermaidDiagrams - Native Mermaid flowchart rendering (no WebView) - Documentation https://github.com/shinyorg/mauicontrols",
+            "displayName": "UI - Add Shiny Controls - Mermaid Diagrams"
         },
         "cards":{
             "type": "parameter",
@@ -714,6 +721,11 @@
             "type": "computed",
             "datatype": "bool",
             "value": "(blazor || radzen || mudblazor || fluentui)"
+        },
+        "usemauicontrols":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(tableview || shinycontrols)"
         }
     },
     "sources": [{

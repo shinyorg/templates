@@ -92,9 +92,14 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [ACR User Dialogs](https://github.com/aritchie/userdialogs) by Allan Ritchie
 	* [Debug Rainbows](https://github.com/sthewissen/Plugin.Maui.DebugRainbows) by Steven Thewissen
 	* [Live Charts](https://livecharts.dev/) by Alberto Rodríguez
-	* [Shiny TableView](https://github.com/shinyorg/tableview) by Allan Ritchie
-	* [Shiny Scheduler](https://github.com/shinyorg/scheduler) by Allan Ritchie
-	* [Shiny Mermaid Diagrams](https://github.com/shinyorg/mauimermaiddiagrams) by Allan Ritchie
+	* [Shiny.Maui.Controls](https://github.com/shinyorg/mauicontrols) by Allan Ritchie — unified controls package containing:
+		* TableView (settings-style with 14 cell types)
+		* Scheduler (calendar, agenda, event list views)
+		* BottomSheetView (sliding bottom sheet with detents)
+		* ImageViewer (full-screen image overlay with pinch/pan/zoom)
+		* PillView (status/tag/chip badges)
+	* [Shiny.Maui.Controls.Markdown](https://github.com/shinyorg/mauicontrols) by Allan Ritchie — native markdown renderer and editor (no WebView)
+	* [Shiny.Maui.Controls.MermaidDiagrams](https://github.com/shinyorg/mauicontrols) by Allan Ritchie — native Mermaid flowchart rendering (no WebView, AOT-safe)
 	* [AlohaKit Animations](https://github.com/jsuarezruiz/AlohaKit.Animations) by Javier Suárez
 	* [Skeleton](https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton) by Horus Software
 	* [System.Linq.Async](https://github.com/dotnet/reactive)

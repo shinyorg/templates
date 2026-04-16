@@ -455,27 +455,76 @@ _AlohaKit.Animations is a library designed for .NET MAUI that aims to facilitate
 
 <!--#endif-->
 <!--#if (tableview)-->
-## Shiny TableView
+## Shiny Controls - TableView
 
-_A pure .NET MAUI settings-style TableView control with 14 cell types, cascading styles, sections, drag-sort reordering, and full MVVM/binding support - Written by Allan Ritchie_
+_A pure .NET MAUI settings-style TableView control with 14 cell types, cascading styles, sections, drag-sort reordering, and full MVVM/binding support - part of Shiny.Maui.Controls by Allan Ritchie_
 
-* [GitHub](https://github.com/shinyorg/tableview)
+* [GitHub](https://github.com/shinyorg/mauicontrols)
+* XAML Namespace: `xmlns:shiny="http://shiny.net/maui/controls"`
 
 <!--#endif-->
-<!--#if (scheduler)-->
-## Shiny Scheduler
+<!--#if (shinycontrols)-->
+## Shiny Controls - Scheduler
 
-_A .NET MAUI scheduling/calendar component library providing AOT-safe calendar, agenda, and event list views with unified data access via ISchedulerEventProvider - Written by Allan Ritchie_
+_AOT-safe calendar, agenda, and event list views with unified data access via ISchedulerEventProvider - part of Shiny.Maui.Controls by Allan Ritchie_
 
-* [GitHub](https://github.com/shinyorg/scheduler)
+* [GitHub](https://github.com/shinyorg/mauicontrols)
+* XAML Namespace: `xmlns:shiny="http://shiny.net/maui/controls"`
+
+## Shiny Controls - BottomSheetView
+
+_A bottom sheet overlay that slides up from the bottom of the screen with configurable snap positions (detents), backdrop, animations, and keyboard handling - part of Shiny.Maui.Controls by Allan Ritchie_
+
+* [GitHub](https://github.com/shinyorg/mauicontrols)
+* XAML Namespace: `xmlns:shiny="http://shiny.net/maui/controls"`
+
+## Shiny Controls - ImageViewer
+
+_A full-screen image overlay with pinch-to-zoom, pan, double-tap zoom, and animated open/close transitions - part of Shiny.Maui.Controls by Allan Ritchie_
+
+* [GitHub](https://github.com/shinyorg/mauicontrols)
+* XAML Namespace: `xmlns:shiny="http://shiny.net/maui/controls"`
+
+## Shiny Controls - PillView
+
+_Pill/chip/tag elements for displaying categories, filters, or status indicators (Success/Info/Warning/Caution/Critical) with preset or custom color schemes - part of Shiny.Maui.Controls by Allan Ritchie_
+
+* [GitHub](https://github.com/shinyorg/mauicontrols)
+* XAML Namespace: `xmlns:shiny="http://shiny.net/maui/controls"`
+
+## Shiny Controls - SecurityPin
+
+_A PIN entry control with individually rendered cells and optional character masking - part of Shiny.Maui.Controls by Allan Ritchie_
+
+* [GitHub](https://github.com/shinyorg/mauicontrols)
+* XAML Namespace: `xmlns:shiny="http://shiny.net/maui/controls"`
+
+## Shiny Controls - Fab & FabMenu
+
+_Material Design floating action button (circular or extended pill) plus an expanding multi-action menu with staggered animation, backdrop, and two-way bindable IsOpen - part of Shiny.Maui.Controls by Allan Ritchie_
+
+* [GitHub](https://github.com/shinyorg/mauicontrols)
+* XAML Namespace: `xmlns:shiny="http://shiny.net/maui/controls"`
+
+<!--#endif-->
+<!--#if (markdown)-->
+## Shiny Controls - Markdown
+
+_Native MAUI markdown renderer and editor (MarkdownView + MarkdownEditor with formatting toolbar and live preview) - no WebView required, full Markdig support - by Allan Ritchie_
+
+* [GitHub](https://github.com/shinyorg/mauicontrols)
+* NuGet: `Shiny.Maui.Controls.Markdown`
+* XAML Namespace: `xmlns:md="http://shiny.net/maui/markdown"`
 
 <!--#endif-->
 <!--#if (mermaiddiagrams)-->
-## Shiny Mermaid Diagrams
+## Shiny Controls - Mermaid Diagrams
 
-_Renders Mermaid JS flowchart diagrams natively in .NET MAUI using pure MAUI Graphics - no WebView, no SkiaSharp, fully AOT-compliant. Supports multiple node shapes, edge styles, subgraphs, themes, and interactive pan/zoom - Written by Allan Ritchie_
+_Renders Mermaid flowchart diagrams natively in .NET MAUI using pure MAUI Graphics - no WebView, no SkiaSharp, fully AOT-compliant. Supports multiple node shapes, edge styles, subgraphs, themes, and interactive pan/zoom - by Allan Ritchie_
 
-* [GitHub](https://github.com/shinyorg/mauimermaiddiagrams)
+* [GitHub](https://github.com/shinyorg/mauicontrols)
+* NuGet: `Shiny.Maui.Controls.MermaidDiagrams`
+* XAML Namespace: `xmlns:diagram="http://shiny.net/maui/diagrams"`
 
 <!--#endif-->
 <!--#if (syslinqasync)-->

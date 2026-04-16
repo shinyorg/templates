@@ -29,7 +29,7 @@ using Maui.GoogleMaps.Hosting;
 #if usehttp
 using Refit;
 #endif
-#if mermaiddiagrams || scheduler || tableview || music || contactstore
+#if usemauicontrols || music || contactstore
 using Shiny;
 #endif
 #if cards
@@ -109,8 +109,8 @@ public static class MauiProgram
 #if fingerprint
             .UseBiometricAuthentication()
 #endif
-#if (tableview)
-            .UseShinyTableView()
+#if usemauicontrols
+            .UseShinyControls()
 #endif
 #if ffimageloading
             .UseFFImageLoading()

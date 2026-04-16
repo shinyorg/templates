@@ -259,12 +259,6 @@
         },
         "isVisible": true
     },{
-        "id": "bottomsheet",
-        "name":{
-            "text": "Add Bottom Sheet"
-        },
-        "isVisible": true
-    },{
         "id": "contextmenu",
         "name":{
             "text": "Add Context Menu"
@@ -288,21 +282,28 @@
     {
         "id": "tableview",
         "name":{
-            "text": "Add Shiny TableView"
+            "text": "Add Shiny Controls - TableView (Shiny.Maui.Controls)"
         },
         "isVisible": true
     },
     {
-        "id": "scheduler",
+        "id": "shinycontrols",
         "name":{
-            "text": "Add Shiny Scheduler (Shiny.Maui.Scheduler)"
+            "text": "Add Shiny Controls - Scheduler, BottomSheet, ImageViewer, PillView, SecurityPin, Fab (Shiny.Maui.Controls)"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "markdown",
+        "name":{
+            "text": "Add Shiny Controls - Markdown (Shiny.Maui.Controls.Markdown)"
         },
         "isVisible": true
     },
     {
         "id": "mermaiddiagrams",
         "name":{
-            "text": "Add Shiny Mermaid Diagrams (Shiny.Maui.MermaidDiagrams)"
+            "text": "Add Shiny Controls - Mermaid Diagrams (Shiny.Maui.Controls.MermaidDiagrams)"
         },
         "isVisible": true
     },

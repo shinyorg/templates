@@ -178,14 +178,14 @@
 		<!--#if (shinyshell)-->
 		<PackageReference Include="Shiny.Maui.Shell" Version="4.0.0" />
 		<!--#endif-->
-		<!--#if (tableview)-->
-		<PackageReference Include="Shiny.Maui.TableView" Version="1.1.1" />
+		<!--#if (usemauicontrols)-->
+		<PackageReference Include="Shiny.Maui.Controls" Version="1.0.0" />
 		<!--#endif-->
-		<!--#if (scheduler)-->
-		<PackageReference Include="Shiny.Maui.Scheduler" Version="1.0.0-beta-0007" />
+		<!--#if (markdown)-->
+		<PackageReference Include="Shiny.Maui.Controls.Markdown" Version="1.0.0" />
 		<!--#endif-->
 		<!--#if (mermaiddiagrams)-->
-		<PackageReference Include="Shiny.Maui.MermaidDiagrams" Version="1.0.0-beta-0009" />
+		<PackageReference Include="Shiny.Maui.Controls.MermaidDiagrams" Version="1.0.0" />
 		<!--#endif-->
 		<!--#if (shinymediator)-->
 		<PackageReference Include="Shiny.Mediator" Version="$(MediatorVersion)" />
