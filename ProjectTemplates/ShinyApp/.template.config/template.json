@@ -425,6 +425,13 @@
             "description": "UI - Shiny.Maui.Controls.MermaidDiagrams - Native Mermaid flowchart rendering (no WebView) - Documentation https://github.com/shinyorg/mauicontrols",
             "displayName": "UI - Add Shiny Controls - Mermaid Diagrams"
         },
+        "uxdivers":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "UI - Shiny.Maui.Shell.UxDiversDialogs - UX Divers Popups IDialogs implementation for Shiny MAUI Shell (requires Shiny MAUI Shell) - Documentation https://github.com/shinyorg/mauishell",
+            "displayName": "UI - Add UX Divers Dialogs for Shiny MAUI Shell (requires Shiny MAUI Shell)"
+        },
         "cards":{
             "type": "parameter",
             "datatype": "bool",
@@ -726,6 +733,11 @@
             "type": "computed",
             "datatype": "bool",
             "value": "(tableview || shinycontrols)"
+        },
+        "uxdiversdialogs":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(uxdivers && shinyshell)"
         }
     },
     "sources": [{

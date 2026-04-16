@@ -176,7 +176,10 @@
 		<PackageReference Include="Shiny.Reflector" Version="1.7.2" />
 		<PackageReference Include="Shiny.Extensions.MauiHosting" Version="2.0.3" />
 		<!--#if (shinyshell)-->
-		<PackageReference Include="Shiny.Maui.Shell" Version="4.0.0" />
+		<PackageReference Include="Shiny.Maui.Shell" Version="4.2.1" />
+		<!--#endif-->
+		<!--#if (uxdiversdialogs)-->
+		<PackageReference Include="Shiny.Maui.Shell.UxDiversDialogs" Version="4.2.1" />
 		<!--#endif-->
 		<!--#if (usemauicontrols)-->
 		<PackageReference Include="Shiny.Maui.Controls" Version="1.0.0" />

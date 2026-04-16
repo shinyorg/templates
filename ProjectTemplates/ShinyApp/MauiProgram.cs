@@ -119,7 +119,15 @@ public static class MauiProgram
             .UseSkiaSharp()
 #endif
 #if shinyshell
-            .UseShinyShell(x => x.AddGeneratedMaps())
+            .UseShinyShell(x => x
+                .AddGeneratedMaps()
+#if uxdiversdialogs
+                .UseUxDiversDialogs()
+#endif
+            )
+#endif
+#if uxdiversdialogs
+            .UseUxDiversDialogs()
 #endif
 #if prism
             .UsePrism(
