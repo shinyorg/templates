@@ -481,6 +481,13 @@
             "description": "SERVICE - Contact Store by Allan Ritchie - Full CRUD access to device contacts - Documentation https://github.com/shinyorg/contactstore",
             "displayName": "SERVICE - Add Contact Store (Shiny.Maui.ContactStore)"
         },
+        "health": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "SERVICE - Health Data by Allan Ritchie - Cross-platform health data access (HealthKit/Health Connect) - Documentation https://github.com/shinyorg/health",
+            "displayName": "SERVICE - Add Health Data (Shiny.Health)"
+        },
         "barcodes":{
             "type": "parameter",
             "datatype": "bool",

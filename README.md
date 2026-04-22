@@ -98,7 +98,8 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 		* BottomSheetView (sliding bottom sheet with detents)
 		* ImageViewer (full-screen image overlay with pinch/pan/zoom)
 		* PillView (status/tag/chip badges)
-	* [Shiny.Maui.Controls.Markdown](https://github.com/shinyorg/mauicontrols) by Allan Ritchie — native markdown renderer and editor (no WebView)
+	* [Shiny Health](https://github.com/shinyorg/health) by Allan Ritchie — cross-platform health data access (HealthKit/Health Connect)
+		* [Shiny.Maui.Controls.Markdown](https://github.com/shinyorg/mauicontrols) by Allan Ritchie — native markdown renderer and editor (no WebView)
 	* [Shiny.Maui.Controls.MermaidDiagrams](https://github.com/shinyorg/mauicontrols) by Allan Ritchie — native Mermaid flowchart rendering (no WebView, AOT-safe)
 	* [AlohaKit Animations](https://github.com/jsuarezruiz/AlohaKit.Animations) by Javier Suárez
 	* [Skeleton](https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton) by Horus Software

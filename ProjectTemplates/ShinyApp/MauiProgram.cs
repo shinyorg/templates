@@ -391,6 +391,9 @@ public static class MauiProgram
 #if (contactstore)
         builder.Services.AddContactStore();
 #endif
+#if (health)
+        builder.Services.AddHealthIntegration();
+#endif
 #if (screenbrightness)
         builder.Services.AddSingleton(Plugin.Maui.ScreenBrightness.ScreenBrightness.Default);
 #endif

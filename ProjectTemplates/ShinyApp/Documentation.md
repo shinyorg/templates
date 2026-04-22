@@ -557,6 +557,14 @@ _A cross-platform .NET MAUI library for accessing device contacts on Android and
 * [GitHub](https://github.com/shinyorg/contactstore)
 
 <!--#endif-->
+<!--#if (health)-->
+## Shiny Health
+
+_A cross-platform .NET MAUI library for accessing health data from HealthKit (iOS) and Health Connect (Android). Supports 12 health metrics including steps, heart rate, calories, sleep, and more. - Written by Allan Ritchie_
+
+* [GitHub](https://github.com/shinyorg/health)
+
+<!--#endif-->
 <!--#if (geospatialdb)-->
 ## Shiny Spatial - Geospatial Database
 
