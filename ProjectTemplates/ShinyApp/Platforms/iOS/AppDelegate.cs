@@ -3,6 +3,9 @@ using UIKit;
 #if (usemsalbroker)
 using Microsoft.Identity.Client;
 #endif
+#if carplay
+using ShinyApp.iOS.CarPlayImplementation;
+#endif
 
 namespace ShinyApp;
 

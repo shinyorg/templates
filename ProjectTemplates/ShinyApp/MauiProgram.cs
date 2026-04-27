@@ -62,11 +62,10 @@ using Microsoft.FluentUI.AspNetCore.Components;
 using Polly;
 using Polly.Retry;
 #endif
-#if sqlitedocumentdb
+#if documentdb
 using Shiny.DocumentDb;
 using Shiny.DocumentDb.Sqlite;
 #endif
-using Shiny.Extensions.Stores;
 using ShinyApp.Services;
 
 namespace ShinyApp;
@@ -120,14 +119,11 @@ public static class MauiProgram
 #endif
 #if shinyshell
             .UseShinyShell(x => x
-                .AddGeneratedMaps()
+                //.AddGeneratedMaps() // uncomment once you have shellmaps
 #if uxdiversdialogs
                 .UseUxDiversDialogs()
 #endif
             )
-#endif
-#if uxdiversdialogs
-            .UseUxDiversDialogs()
 #endif
 #if prism
             .UsePrism(
@@ -323,6 +319,7 @@ public static class MauiProgram
 #endif
 #if roomsharp
         builder.Services.AddDatabase();
+#endif
 #if ocr
         builder.Services.AddSingleton(OcrPlugin.Default);
 #endif

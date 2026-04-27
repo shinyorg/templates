@@ -1,7 +1,7 @@
 namespace ShinyApp;
 
 
-public partial class AppShell : Shell
+public partial class AppShell : ShinyShell
 {
     public AppShell()
     {

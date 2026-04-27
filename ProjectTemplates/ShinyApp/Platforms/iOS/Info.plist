@@ -47,6 +47,13 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
+	<!--#if (gps)-->
+	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+	<dict>
+		<key>shinygps</key>
+		<string>This app wants to know EXACTLY where you are</string>
+	</dict>
+	<!--#endif-->
 	<!--#if (bluetoothle || blehosting)-->
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
