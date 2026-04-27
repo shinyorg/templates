@@ -368,10 +368,13 @@ public static class MauiProgram
 #endif
 #if usepushanh
         // TODO: Please make sure to add your proper connection string and hub name to appsettings.json or this will error on startup
-        builder.Services.AddPushAzureNotificationHubs<ShinyApp.Delegates.MyPushDelegate>(                                   
-            builder.Configuration["AzureNotificationHubs:ListenerConnectionString"], 
+        builder.Services.AddPushAzureNotificationHubs<ShinyApp.Delegates.MyPushDelegate>(
+            builder.Configuration["AzureNotificationHubs:ListenerConnectionString"],
             builder.Configuration["AzureNotificationHubs:HubName"]
         );
+#endif
+#if usepushfcm
+        builder.Services.AddPushFirebaseMessaging<ShinyApp.Delegates.MyPushDelegate>();
 #endif
 #if speechrecognition
         builder.Services.AddSingleton(CommunityToolkit.Maui.Media.SpeechToText.Default);

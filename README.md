@@ -21,6 +21,7 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 * Easy setup and choice for push notifications
 	* Full Native
 	* Azure Notification Hubs
+	* Firebase Cloud Messaging
 * Creates a best practice MAUI application with best-in-class frameworks:
     * [.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui)
 	* [Shiny.NET](https://shinylib.net)

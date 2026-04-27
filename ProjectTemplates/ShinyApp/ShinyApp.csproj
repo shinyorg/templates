@@ -243,6 +243,9 @@
 		<!--#if (usepushanh)-->
 		<PackageReference Include="Shiny.Push.AzureNotificationHubs" Version="$(ShinyVersion)" />
 		<!--#endif-->
+		<!--#if (usepushfcm)-->
+		<PackageReference Include="Shiny.Push.FirebaseMessaging" Version="4.0.1" />
+		<!--#endif-->
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<!--#if (usemauimaps)-->
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="$(MauiVersion)" />
@@ -250,21 +253,21 @@
 		<!--#if (useblazor)-->
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
 		<!--#endif-->
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.5" Condition="'$(Configuration)' == 'Debug'" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.7" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#if (ctmvvm)-->
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
 		<!--#endif-->
 		<!--#if (communitytoolkit || speechrecognition)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="14.0.1" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="14.1.0" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
 		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="7.0.1" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="8.0.1" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="9.0.0" />
 		<!--#endif-->
 		<!--#if (cameraview)-->
-		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="6.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="6.0.1" />
 		<!--#endif-->
 		<!--#if (usegooglemaps)-->
 		<PackageReference Include="Onion.Maui.GoogleMaps" Version="6.4.0" />
@@ -276,17 +279,17 @@
 		<PackageReference Include="Microsoft.Identity.Client" Version="4.83.3" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="6.3.0" />
+		<PackageReference Include="Sentry.Maui" Version="6.4.1" />
 		<!--#endif-->
 		<!--#if (reactiveui)-->
-		<PackageReference Include="ReactiveUI" Version="23.1.8" />
-		<PackageReference Include="ReactiveUI.Maui" Version="23.1.8" />
-		<PackageReference Include="ReactiveUI.SourceGenerators" Version="2.6.1">
+		<PackageReference Include="ReactiveUI" Version="23.2.19" />
+		<PackageReference Include="ReactiveUI.Maui" Version="23.2.19" />
+		<PackageReference Include="ReactiveUI.SourceGenerators" Version="2.6.30">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 		</PackageReference>
 		<!--#if (useblazor)-->
-		<PackageReference Include="ReactiveUI.Blazor" Version="23.1.8" />
+		<PackageReference Include="ReactiveUI.Blazor" Version="23.2.19" />
 		<!--#endif-->
 		<!--#endif-->
 		<!--#if (barcodes)-->
@@ -302,7 +305,7 @@
 		<PackageReference Include="Plugin.Maui.Audio" Version="4.0.0" />
 		<!--#endif-->
 		<!--#if (music)-->
-		<PackageReference Include="Shiny.Music" Version="1.3.1" />
+		<PackageReference Include="Shiny.Music" Version="2.0.0" />
 		<!--#endif-->
 		<!--#if (ocr)-->
 		<PackageReference Include="Plugin.Maui.OCR" Version="1.1.1" />

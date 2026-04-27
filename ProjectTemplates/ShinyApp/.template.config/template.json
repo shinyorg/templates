@@ -231,6 +231,10 @@
                 {
                     "choice": "Azure Notification Hubs",
                     "description": "Azure Notifications Hubs (Shiny.Push.AzureNotificationHubs)"
+                },
+                {
+                    "choice": "Firebase Messaging",
+                    "description": "Firebase Cloud Messaging (Shiny.Push.FirebaseMessaging)"
                 }
             ]
         },
@@ -710,6 +714,11 @@
             "type": "computed",
             "datatype": "bool",
             "value": "(push == \"Azure Notification Hubs\")"
+        },
+        "usepushfcm":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(push == \"Firebase Messaging\")"
         },
         "usepush":{
             "type": "computed",
