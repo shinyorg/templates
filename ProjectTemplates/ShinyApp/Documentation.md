@@ -525,10 +525,11 @@ Humanizer meets all your .NET needs for manipulating and displaying strings, enu
 
 <!--#endif-->
 <!--#if (contactstore)-->
-## Shiny Contact Store
+## Shiny.Maui.ContactStore
 
-_A cross-platform .NET MAUI library for accessing device contacts on Android and iOS with full CRUD operations, LINQ query support, and dependency injection integration. - Written by Allan Ritchie_
+_A cross-platform .NET MAUI library for accessing device contacts on Android and iOS with full CRUD operations, LINQ query support, and dependency injection integration. By Allan Ritchie_
 
+* [Documentation](https://shinylib.net/contactstore/)
 * [GitHub](https://github.com/shinyorg/contactstore)
 
 <!--#endif-->

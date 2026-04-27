@@ -399,7 +399,7 @@
 		<PackageReference Include="Shiny.Maui.ContactStore" Version="1.0.1" />
 		<!--#endif-->
 		<!--#if (health)-->
-		<PackageReference Include="Shiny.Health" Version="1.0.0" />
+		<PackageReference Include="Shiny.Health" Version="1.0.0-beta-0028" />
 		<!--#endif-->
 	</ItemGroup>
 

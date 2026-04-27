@@ -471,7 +471,7 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "SERVICE - Contact Store by Allan Ritchie - Full CRUD access to device contacts - Documentation https://github.com/shinyorg/contactstore",
+            "description": "SERVICE - Contact Store by Allan Ritchie - Full CRUD access to device contacts - Documentation https://shinylib.net/contactstore/",
             "displayName": "SERVICE - Add Contact Store (Shiny.Maui.ContactStore)"
         },
         "health": {
