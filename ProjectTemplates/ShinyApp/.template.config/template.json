@@ -397,32 +397,25 @@
             "description": "UI - Live Charts by Alberto Rodríguez - Documentation https://livecharts.dev/",
             "displayName": "UI - Add Live Charts"
         },
-        "tableview":{
+"shinycontrols":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "UI - Shiny.Maui.Controls - Settings-style TableView with 14 cell types - Documentation https://github.com/shinyorg/mauicontrols",
-            "displayName": "UI - Add Shiny Controls - TableView"
-        },
-        "shinycontrols":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "UI - Shiny.Maui.Controls - Pure .NET MAUI control suite including Scheduler (Calendar/Agenda/Events), BottomSheetView, ImageViewer (pinch/pan/zoom), PillView status badges, SecurityPin, and Fab/FabMenu - Documentation https://github.com/shinyorg/mauicontrols",
+            "description": "UI - Shiny.Maui.Controls - Pure .NET MAUI control suite including Scheduler (Calendar/Agenda/Events), BottomSheetView, ImageViewer (pinch/pan/zoom), PillView status badges, SecurityPin, and Fab/FabMenu - Documentation https://shinylib.net/client/controls/",
             "displayName": "UI - Add Shiny Controls (Scheduler, BottomSheet, ImageViewer, PillView, SecurityPin, Fab)"
         },
         "markdown":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "UI - Shiny.Maui.Controls.Markdown - Native markdown renderer and editor (no WebView) - Documentation https://github.com/shinyorg/mauicontrols",
+            "description": "UI - Shiny.Maui.Controls.Markdown - Native markdown renderer and editor (no WebView) - Documentation https://shinylib.net/client/controls/markdown/",
             "displayName": "UI - Add Shiny Controls - Markdown (View + Editor)"
         },
         "mermaiddiagrams":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "UI - Shiny.Maui.Controls.MermaidDiagrams - Native Mermaid flowchart rendering (no WebView) - Documentation https://github.com/shinyorg/mauicontrols",
+            "description": "UI - Shiny.Maui.Controls.MermaidDiagrams - Native Mermaid flowchart rendering (no WebView) - Documentation https://shinylib.net/client/controls/mermaid/",
             "displayName": "UI - Add Shiny Controls - Mermaid Diagrams"
         },
         "uxdivers":{
@@ -471,7 +464,7 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "SERVICE - Shiny Spatial Geospatial Database by Allan Ritchie - Documentation https://github.com/shinyorg/geospatialdb",
+            "description": "SERVICE - Shiny Spatial Geospatial Database & Geofencing by Allan Ritchie - Documentation https://shinylib.net/client/spatial/",
             "displayName": "SERVICE - Add Geospatial Database (Shiny.Spatial)"
         },
         "contactstore": {
@@ -485,7 +478,7 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "SERVICE - Health Data by Allan Ritchie - Cross-platform health data access (HealthKit/Health Connect) - Documentation https://github.com/shinyorg/health",
+            "description": "SERVICE - Health Data by Allan Ritchie - Cross-platform health data access (HealthKit/Health Connect) - Documentation https://shinylib.net/client/health/",
             "displayName": "SERVICE - Add Health Data (Shiny.Health)"
         },
         "barcodes":{
@@ -520,7 +513,7 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "SERVICE - Music Library & Player (Shiny.Music) - Documentation https://github.com/shinyorg/music",
+            "description": "SERVICE - Music Library & Player (Shiny.Music) - Documentation https://shinylib.net/client/music/",
             "displayName": "SERVICE - Add Music Library & Player (Shiny.Music)"
         }, 
         "ocr":{
@@ -635,6 +628,13 @@
             "description": "UTILITY - Add UnitsNet - Documentation: https://github.com/angularsen/UnitsNet by Andreas Gullberg Larsen",
             "displayName": "UTILITY - Add UnitsNet"
         },
+        "msextai":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "SERVICE - Microsoft.Extensions.AI - Unified abstractions for AI services (IChatClient, IEmbeddingGenerator) - Documentation https://learn.microsoft.com/en-us/dotnet/ai/ai-extensions",
+            "displayName": "SERVICE - Add Microsoft.Extensions.AI"
+        },
         "syslinqasync":{
             "type": "parameter",
             "datatype": "bool",
@@ -739,7 +739,7 @@
         "usemauicontrols":{
             "type": "computed",
             "datatype": "bool",
-            "value": "(tableview || shinycontrols)"
+            "value": "(shinycontrols)"
         },
         "uxdiversdialogs":{
             "type": "computed",

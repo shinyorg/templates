@@ -33,7 +33,7 @@
 		<!--<EnablePreviewFeatures>true</EnablePreviewFeatures>-->
 
 		<MauiVersion>10.0.51</MauiVersion>
-		<ShinyVersion>4.0.1</ShinyVersion>
+		<ShinyVersion>4.1.0-beta-0108</ShinyVersion>
 		<!--#if (shinymediator)-->
 		<MediatorVersion>6.2.1</MediatorVersion>
 		<!--#endif-->
@@ -41,6 +41,10 @@
 		<EnableAotAnalyzer>true</EnableAotAnalyzer>
         <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
         <EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
+
+		<!--#if (msextai && shinyshell)-->
+		<ShinyMauiShell_GenerateAiExtensions>true</ShinyMauiShell_GenerateAiExtensions>
+		<!--#endif-->
 	</PropertyGroup>
 
 	<!-- If you want to enable AOT for iOS, uncomment the below. Note that this will cause a significant increase in build time, but will result in faster runtime performance and smaller app size. You can also enable it for just Release builds if you prefer.
@@ -178,21 +182,21 @@
 
 	<ItemGroup>
 		<PackageReference Include="Shiny.Reflector" Version="1.7.2" />
-		<PackageReference Include="Shiny.Extensions.MauiHosting" Version="2.0.3" />
+		<PackageReference Include="Shiny.Extensions.MauiHosting" Version="2.0.4" />
 		<!--#if (shinyshell)-->
-		<PackageReference Include="Shiny.Maui.Shell" Version="5.0.0" />
+		<PackageReference Include="Shiny.Maui.Shell" Version="6.0.0" />
 		<!--#endif-->
 		<!--#if (uxdiversdialogs)-->
-		<PackageReference Include="Shiny.Maui.Shell.UxDiversDialogs" Version="5.0.0" />
+		<PackageReference Include="Shiny.Maui.Shell.UxDiversDialogs" Version="6.0.0" />
 		<!--#endif-->
 		<!--#if (usemauicontrols)-->
-		<PackageReference Include="Shiny.Maui.Controls" Version="1.0.0" />
+		<PackageReference Include="Shiny.Maui.Controls" Version="1.0.1-beta-0045" />
 		<!--#endif-->
 		<!--#if (markdown)-->
-		<PackageReference Include="Shiny.Maui.Controls.Markdown" Version="1.0.0" />
+		<PackageReference Include="Shiny.Maui.Controls.Markdown" Version="1.0.1-beta-0045" />
 		<!--#endif-->
 		<!--#if (mermaiddiagrams)-->
-		<PackageReference Include="Shiny.Maui.Controls.MermaidDiagrams" Version="1.0.0" />
+		<PackageReference Include="Shiny.Maui.Controls.MermaidDiagrams" Version="1.0.1-beta-0045" />
 		<!--#endif-->
 		<!--#if (shinymediator)-->
 		<PackageReference Include="Shiny.Mediator" Version="$(MediatorVersion)" />
@@ -209,7 +213,7 @@
 		<!--#endif-->
 		<!--#endif-->
 		<!--#if (localization)-->
-		<PackageReference Include="Microsoft.Extensions.Localization" Version="10.0.5" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="10.0.7" />
 		<PackageReference Include="Shiny.Extensions.Localization.Generator" Version="2.0.1" />
 		<!--#endif-->
 		<!--#if (useconfig)-->
@@ -363,6 +367,9 @@
 		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.14.0" />
 		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.14.0" />
 		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.14.0" />
+		<!--#endif-->
+		<!--#if (msextai)-->
+		<PackageReference Include="Microsoft.Extensions.AI" Version="10.5.0" />
 		<!--#endif-->
 		<!--#if (syslinqasync)-->
 		<PackageReference Include="System.Linq.Async" Version="7.0.0" />

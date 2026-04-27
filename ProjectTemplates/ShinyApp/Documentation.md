@@ -454,77 +454,52 @@ _AlohaKit.Animations is a library designed for .NET MAUI that aims to facilitate
 * [GitHub](https://github.com/jsuarezruiz/AlohaKit.Animations)
 
 <!--#endif-->
-<!--#if (tableview)-->
-## Shiny Controls - TableView
+<!--#if (shinycontrols)-->
+## Shiny.Maui.Controls
 
-_A pure .NET MAUI settings-style TableView control with 14 cell types, cascading styles, sections, drag-sort reordering, and full MVVM/binding support - part of Shiny.Maui.Controls by Allan Ritchie_
+_A pure .NET MAUI control suite including Scheduler, ChatView, ImageEditor, FloatingPanel, FontPicker, FAB/FabMenu, ColorPicker, ImageViewer, SecurityPin, PillView, BottomSheetView and more — no WebView dependency, fully AOT-safe. By Allan Ritchie_
 
+* [Documentation](https://shinylib.net/client/controls/)
 * [GitHub](https://github.com/shinyorg/mauicontrols)
 * XAML Namespace: `xmlns:shiny="http://shiny.net/maui/controls"`
 
 <!--#endif-->
-<!--#if (shinycontrols)-->
-## Shiny Controls - Scheduler
+<!--#if (uxdiversdialogs)-->
+## Shiny.Maui.Shell.UxDiversDialogs
 
-_AOT-safe calendar, agenda, and event list views with unified data access via ISchedulerEventProvider - part of Shiny.Maui.Controls by Allan Ritchie_
+_UX Divers Popups IDialogs implementation for Shiny MAUI Shell — provides beautiful popup dialogs. Requires Shiny MAUI Shell. By Allan Ritchie_
 
-* [GitHub](https://github.com/shinyorg/mauicontrols)
-* XAML Namespace: `xmlns:shiny="http://shiny.net/maui/controls"`
-
-## Shiny Controls - BottomSheetView
-
-_A bottom sheet overlay that slides up from the bottom of the screen with configurable snap positions (detents), backdrop, animations, and keyboard handling - part of Shiny.Maui.Controls by Allan Ritchie_
-
-* [GitHub](https://github.com/shinyorg/mauicontrols)
-* XAML Namespace: `xmlns:shiny="http://shiny.net/maui/controls"`
-
-## Shiny Controls - ImageViewer
-
-_A full-screen image overlay with pinch-to-zoom, pan, double-tap zoom, and animated open/close transitions - part of Shiny.Maui.Controls by Allan Ritchie_
-
-* [GitHub](https://github.com/shinyorg/mauicontrols)
-* XAML Namespace: `xmlns:shiny="http://shiny.net/maui/controls"`
-
-## Shiny Controls - PillView
-
-_Pill/chip/tag elements for displaying categories, filters, or status indicators (Success/Info/Warning/Caution/Critical) with preset or custom color schemes - part of Shiny.Maui.Controls by Allan Ritchie_
-
-* [GitHub](https://github.com/shinyorg/mauicontrols)
-* XAML Namespace: `xmlns:shiny="http://shiny.net/maui/controls"`
-
-## Shiny Controls - SecurityPin
-
-_A PIN entry control with individually rendered cells and optional character masking - part of Shiny.Maui.Controls by Allan Ritchie_
-
-* [GitHub](https://github.com/shinyorg/mauicontrols)
-* XAML Namespace: `xmlns:shiny="http://shiny.net/maui/controls"`
-
-## Shiny Controls - Fab & FabMenu
-
-_Material Design floating action button (circular or extended pill) plus an expanding multi-action menu with staggered animation, backdrop, and two-way bindable IsOpen - part of Shiny.Maui.Controls by Allan Ritchie_
-
-* [GitHub](https://github.com/shinyorg/mauicontrols)
-* XAML Namespace: `xmlns:shiny="http://shiny.net/maui/controls"`
+* [Documentation](https://shinylib.net/client/maui/)
+* [GitHub](https://github.com/shinyorg/mauishell)
 
 <!--#endif-->
 <!--#if (markdown)-->
-## Shiny Controls - Markdown
+## Shiny.Maui.Controls.Markdown
 
-_Native MAUI markdown renderer and editor (MarkdownView + MarkdownEditor with formatting toolbar and live preview) - no WebView required, full Markdig support - by Allan Ritchie_
+_Native MAUI markdown renderer and editor (MarkdownView + MarkdownEditor with formatting toolbar and live preview) — no WebView required, full Markdig support. By Allan Ritchie_
 
+* [Documentation](https://shinylib.net/client/controls/markdown/)
 * [GitHub](https://github.com/shinyorg/mauicontrols)
-* NuGet: `Shiny.Maui.Controls.Markdown`
 * XAML Namespace: `xmlns:md="http://shiny.net/maui/markdown"`
 
 <!--#endif-->
 <!--#if (mermaiddiagrams)-->
-## Shiny Controls - Mermaid Diagrams
+## Shiny.Maui.Controls.MermaidDiagrams
 
-_Renders Mermaid flowchart diagrams natively in .NET MAUI using pure MAUI Graphics - no WebView, no SkiaSharp, fully AOT-compliant. Supports multiple node shapes, edge styles, subgraphs, themes, and interactive pan/zoom - by Allan Ritchie_
+_Renders Mermaid flowchart diagrams natively in .NET MAUI using pure MAUI Graphics — no WebView, no SkiaSharp, fully AOT-compliant. Supports multiple node shapes, edge styles, subgraphs, themes, and interactive pan/zoom. By Allan Ritchie_
 
+* [Documentation](https://shinylib.net/client/controls/mermaid/)
 * [GitHub](https://github.com/shinyorg/mauicontrols)
-* NuGet: `Shiny.Maui.Controls.MermaidDiagrams`
 * XAML Namespace: `xmlns:diagram="http://shiny.net/maui/diagrams"`
+
+<!--#endif-->
+<!--#if (msextai)-->
+## Microsoft.Extensions.AI
+
+_Unified abstractions for integrating AI services into .NET applications. Provides IChatClient, IEmbeddingGenerator, and IImageGenerator interfaces with middleware support for telemetry, caching, and function calling._
+
+* [Documentation](https://learn.microsoft.com/en-us/dotnet/ai/ai-extensions)
+* [Samples](https://aka.ms/meai-samples)
 
 <!--#endif-->
 <!--#if (syslinqasync)-->
@@ -558,18 +533,29 @@ _A cross-platform .NET MAUI library for accessing device contacts on Android and
 
 <!--#endif-->
 <!--#if (health)-->
-## Shiny Health
+## Shiny.Health
 
-_A cross-platform .NET MAUI library for accessing health data from HealthKit (iOS) and Health Connect (Android). Supports 12 health metrics including steps, heart rate, calories, sleep, and more. - Written by Allan Ritchie_
+_A cross-platform .NET MAUI library for accessing health data from HealthKit (iOS) and Health Connect (Android). Supports 12 health metrics including steps, heart rate, calories, sleep, and more. By Allan Ritchie_
 
+* [Documentation](https://shinylib.net/client/health/)
 * [GitHub](https://github.com/shinyorg/health)
 
 <!--#endif-->
+<!--#if (music)-->
+## Shiny Music
+
+_A unified API for accessing the device music library on Android and iOS — permission management, track querying/browsing/filtering, playback, lyrics fetching, and album artwork retrieval. - Written by Allan Ritchie_
+
+* [GitHub](https://github.com/shinyorg/music)
+* [Documentation](https://shinylib.net/client/music/)
+
+<!--#endif-->
 <!--#if (geospatialdb)-->
-## Shiny Spatial - Geospatial Database
+## Shiny.Spatial & Shiny.Spatial.Geofencing
 
-_A dependency-free, cross-platform .NET geospatial database library using SQLite R*Tree for spatial indexing with custom C# geometry algorithms. AOT compatible and trimmable. - Written by Allan Ritchie_
+_A dependency-free, cross-platform .NET geospatial database library using SQLite R*Tree for spatial indexing with custom C# geometry algorithms. Includes GPS-driven geofence monitoring that overcomes native platform limits (unlimited regions, polygon support). AOT compatible and trimmable. By Allan Ritchie_
 
+* [Documentation](https://shinylib.net/client/spatial/)
 * [GitHub](https://github.com/shinyorg/geospatialdb)
 
 <!--#endif-->

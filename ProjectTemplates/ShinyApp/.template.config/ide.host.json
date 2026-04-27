@@ -279,14 +279,7 @@
         },
         "isVisible": true
     },
-    {
-        "id": "tableview",
-        "name":{
-            "text": "Add Shiny Controls - TableView (Shiny.Maui.Controls)"
-        },
-        "isVisible": true
-    },
-    {
+{
         "id": "shinycontrols",
         "name":{
             "text": "Add Shiny Controls - Scheduler, BottomSheet, ImageViewer, PillView, SecurityPin, Fab (Shiny.Maui.Controls)"
@@ -308,11 +301,18 @@
         "isVisible": true
     },
     {
+        "id": "uxdivers",
+        "name":{
+            "text": "Add UX Divers Dialogs for Shiny MAUI Shell (Shiny.Maui.Shell.UxDiversDialogs)"
+        },
+        "isVisible": true
+    },
+    {
         "id": "cards",
         "name":{
             "text": "Add CardsView.Maui"
         },
-        "isVisible": true        
+        "isVisible": true
     },
     {
         "id": "sqlite",
@@ -332,6 +332,27 @@
         "id": "contactstore",
         "name":{
             "text": "Add Contact Store (Shiny.Maui.ContactStore)"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "health",
+        "name":{
+            "text": "Add Health Data (Shiny.Health)"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "music",
+        "name":{
+            "text": "Add Music Library & Player (Shiny.Music)"
+        },
+        "isVisible": true
+    },
+    {
+        "id": "geospatialdb",
+        "name":{
+            "text": "Add Geospatial Database & Geofencing (Shiny.Spatial)"
         },
         "isVisible": true
     },
@@ -443,6 +464,12 @@
         "id": "fluentui",
         "name":{
             "text": "BLAZOR - Add Microsoft FluentUI"
+        },
+        "isVisible": true
+    },{
+        "id": "msextai",
+        "name":{
+            "text": "Add Microsoft.Extensions.AI"
         },
         "isVisible": true
     },{

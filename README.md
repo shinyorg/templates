@@ -92,21 +92,19 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [ACR User Dialogs](https://github.com/aritchie/userdialogs) by Allan Ritchie
 	* [Debug Rainbows](https://github.com/sthewissen/Plugin.Maui.DebugRainbows) by Steven Thewissen
 	* [Live Charts](https://livecharts.dev/) by Alberto Rodríguez
-	* [Shiny.Maui.Controls](https://github.com/shinyorg/mauicontrols) by Allan Ritchie — unified controls package containing:
-		* TableView (settings-style with 14 cell types)
-		* Scheduler (calendar, agenda, event list views)
-		* BottomSheetView (sliding bottom sheet with detents)
-		* ImageViewer (full-screen image overlay with pinch/pan/zoom)
-		* PillView (status/tag/chip badges)
-	* [Shiny Health](https://github.com/shinyorg/health) by Allan Ritchie — cross-platform health data access (HealthKit/Health Connect)
-		* [Shiny.Maui.Controls.Markdown](https://github.com/shinyorg/mauicontrols) by Allan Ritchie — native markdown renderer and editor (no WebView)
-	* [Shiny.Maui.Controls.MermaidDiagrams](https://github.com/shinyorg/mauicontrols) by Allan Ritchie — native Mermaid flowchart rendering (no WebView, AOT-safe)
+	* [Shiny.Maui.Controls](https://shinylib.net/client/controls/) by Allan Ritchie — unified controls package (Scheduler, BottomSheet, ImageViewer, PillView, SecurityPin, Fab, and more)
+		* [Shiny.Maui.Controls.Markdown](https://shinylib.net/client/controls/markdown/) by Allan Ritchie — native markdown renderer and editor (no WebView)
+		* [Shiny.Maui.Controls.MermaidDiagrams](https://shinylib.net/client/controls/mermaid/) by Allan Ritchie — native Mermaid flowchart rendering (no WebView, AOT-safe)
+		* [Shiny.Health](https://shinylib.net/client/health/) by Allan Ritchie — cross-platform health data access (HealthKit/Health Connect)
+		* [Shiny.Music](https://shinylib.net/client/music/) by Allan Ritchie — unified music library & player API
+		* [Shiny.Spatial.Geofencing](https://shinylib.net/client/spatial/) by Allan Ritchie — GPS-driven geofence monitoring with R*Tree spatial indexing
 	* [AlohaKit Animations](https://github.com/jsuarezruiz/AlohaKit.Animations) by Javier Suárez
 	* [Skeleton](https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton) by Horus Software
 	* [System.Linq.Async](https://github.com/dotnet/reactive)
 	* [Humanizer](https://github.com/Humanizr/Humanizer)
 	* [Units .NET](https://github.com/angularsen/UnitsNet) by Andreas Gullberg Larsen
-	* Blazor Libraries
+	* [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/ai-extensions) — unified AI service abstractions (IChatClient, IEmbeddingGenerator)
+		* Blazor Libraries
 		* [MudBlazor](https://mudblazor.com)
 		* [Radzen Blazor](https://blazor.radzen.com/)
 		* [Microsoft FluentUI](https://github.com/microsoft/fluentui-blazor)
