@@ -75,10 +75,40 @@ public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
-        var builder = MauiApp
-            .CreateBuilder()
+        var builder = MauiApp.CreateBuilder();
+#if useconfig
+        builder.Configuration.AddJsonPlatformBundle();
+#endif
+
+        builder    
             .UseMauiApp<App>()
             .UseShiny()
+#if shinymediator
+            // pass false as second argument if you don't want to use built-in middleware
+            .AddShinyMediator(x => x 
+                .AddMediatorRegistry() // optional - enables registration scanning 
+                .AddMauiPersistentCache()
+                .AddDataAnnotations()
+                .AddConnectivityBroadcaster()
+#if prism
+                .AddPrismSupport()
+#endif
+#if useblazor
+                .UseBlazor()
+#endif
+            )
+#endif
+#if shinyshell
+            .UseShinyShell(x => x
+                //.AddGeneratedMaps() // uncomment once you have shellmaps
+#if uxdiversdialogs
+                .UseUxDiversDialogs()
+#endif
+            )
+#endif
+#if usemauicontrols
+            .UseShinyControls()
+#endif
 #if userdialogs
             .UseUserDialogs()
 #endif
@@ -108,22 +138,11 @@ public static class MauiProgram
 #if fingerprint
             .UseBiometricAuthentication()
 #endif
-#if usemauicontrols
-            .UseShinyControls()
-#endif
 #if ffimageloading
             .UseFFImageLoading()
 #endif
 #if skia || skiaextended || livecharts
             .UseSkiaSharp()
-#endif
-#if shinyshell
-            .UseShinyShell(x => x
-                //.AddGeneratedMaps() // uncomment once you have shellmaps
-#if uxdiversdialogs
-                .UseUxDiversDialogs()
-#endif
-            )
 #endif
 #if prism
             .UsePrism(
@@ -207,11 +226,6 @@ public static class MauiProgram
         //builder.Services.AddLocalization();
         //builder.Services.AddStronglyTypedLocalizations();
         builder.Services.AddSingleton(TimeProvider.System);
-#if useconfig
-        builder.Configuration.AddJsonPlatformBundle();
-        // builder.AddRemoteConfigurationMaui("https://todo"); // Shiny.Extensions.Configuration.Remote.Maui
-        // builder.Services.AddOptions<MyConfig>().BindConfiguration("");
-#endif
 //-:cnd:noEmit
 #if DEBUG
         builder.Logging.SetMinimumLevel(LogLevel.Trace);
@@ -235,33 +249,6 @@ public static class MauiProgram
         builder.Services.AddBlazorWebViewDeveloperTools();
 #endif
 //+:cnd:noEmit
-#endif
-#if shinymediator
-        // pass false as second argument if you don't want to use built-in middleware
-        builder.Services.AddShinyMediator(x => x 
-            .AddMediatorRegistry() // optional - enables registration scanning 
-            .AddMauiPersistentCache()
-            .AddDataAnnotations()
-            .AddConnectivityBroadcaster()
-            .AddResiliencyMiddleware(
-                ("Default", pipeline =>
-                {
-                    pipeline.AddRetry(new RetryStrategyOptions
-                    {
-                        MaxRetryAttempts = 2,
-                        MaxDelay = TimeSpan.FromSeconds(1.0),
-                    });
-                    pipeline.AddTimeout(TimeSpan.FromSeconds(5));
-                })
-            )
-            .UseMaui() // pass false here if you don't want to use built-in offline support with MAUI
-#if prism
-            .AddPrismSupport()
-#endif
-#if useblazor
-            .UseBlazor()
-#endif
-        );
 #endif
 #if appaction
         builder.Services.AddSingleton<ShinyApp.Delegates.AppActionDelegate>();
