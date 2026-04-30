@@ -6,7 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <OpenApiDocumentsDirectory>.</OpenApiDocumentsDirectory>
         <MicrosoftVersion>10.0.5</MicrosoftVersion>
-        <MediatorVersion>6.2.1</MediatorVersion>
+        <MediatorVersion>6.3.1</MediatorVersion>
         <!--#if (orleans)-->
         <OrleansVersion>10.0.1</OrleansVersion>
         <!--#endif-->
@@ -15,8 +15,8 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="$(MicrosoftVersion)" />
         <PackageReference Include="Microsoft.Extensions.ApiDescription.Server" Version="$(MicrosoftVersion)"/>
-        <PackageReference Include="Shiny.Extensions.DependencyInjection" Version="2.0.4"/>
-        <PackageReference Include="Shiny.Extensions.WebHosting" Version="2.0.4" />
+        <PackageReference Include="Shiny.Extensions.DependencyInjection" Version="3.0.0"/>
+        <PackageReference Include="Shiny.Extensions.WebHosting" Version="3.0.0" />
 
         <!--#if (efmssql)-->
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MicrosoftVersion)" />

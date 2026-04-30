@@ -34,15 +34,18 @@
 
 		<MauiVersion>10.0.60</MauiVersion>
 		<ShinyVersion>4.1.0-beta-0108</ShinyVersion>
-		<!--#if (shinymediator)-->
-		<MediatorVersion>6.3.0</MediatorVersion>
+		<!--#if (useshinymediator)-->
+		<MediatorVersion>6.3.1</MediatorVersion>
+		<!--#endif-->
+		<!--#if (aimediator)-->
+		<ShinyMediatorGenerateAITools>true</ShinyMediatorGenerateAITools>
 		<!--#endif-->
 
 		<EnableAotAnalyzer>true</EnableAotAnalyzer>
         <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
         <EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
 
-		<!--#if (msextai && shinyshell)-->
+		<!--#if (aishinyshell)-->
 		<ShinyMauiShell_GenerateAiExtensions>true</ShinyMauiShell_GenerateAiExtensions>
 		<!--#endif-->
 	</PropertyGroup>
@@ -182,7 +185,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="Shiny.Reflector" Version="1.7.2" />
-		<PackageReference Include="Shiny.Extensions.MauiHosting" Version="2.0.4" />
+		<PackageReference Include="Shiny.Extensions.MauiHosting" Version="3.0.0" />
+		<PackageReference Include="Shiny.Extensions.DependencyInjection" Version="3.0.0" />
 		<!--#if (shinyshell)-->
 		<PackageReference Include="Shiny.Maui.Shell" Version="6.0.3" />
 		<!--#endif-->
@@ -198,7 +202,7 @@
 		<!--#if (mermaiddiagrams)-->
 		<PackageReference Include="Shiny.Maui.Controls.MermaidDiagrams" Version="1.0.1-beta-0045" />
 		<!--#endif-->
-		<!--#if (shinymediator)-->
+		<!--#if (useshinymediator)-->
 		<PackageReference Include="Shiny.Mediator" Version="$(MediatorVersion)" />
 		<PackageReference Include="Shiny.Mediator.Maui" Version="$(MediatorVersion)" />
 		<PackageReference Include="Shiny.Mediator.Resilience" Version="$(MediatorVersion)" />
@@ -371,7 +375,7 @@
 		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.14.0" />
 		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.14.0" />
 		<!--#endif-->
-		<!--#if (msextai)-->
+		<!--#if (usemsextai)-->
 		<PackageReference Include="Microsoft.Extensions.AI" Version="10.5.0" />
 		<!--#endif-->
 		<!--#if (syslinqasync)-->
@@ -386,9 +390,12 @@
 		<!--#if (roomsharp)-->
 		<PackageReference Include="RoomSharp.DependencyInjection" Version="0.4.7" />
 		<!--#endif-->
-		<!--#if (documentdb)-->
+		<!--#if (usedocumentdb)-->
 		<PackageReference Include="Shiny.DocumentDb.Sqlite" Version="3.2.0" />
         <PackageReference Include="Shiny.DocumentDb.Extensions.DependencyInjection" Version="3.2.0" />
+		<!--#endif-->
+		<!--#if (aidocumentdb)-->
+		<PackageReference Include="Shiny.DocumentDb.Extensions.AI" Version="3.2.0" />
 		<!--#endif-->
 		<!--#if (litedb)-->
 		<PackageReference Include="Community.LiteDB.Aot" Version="1.0.0-preview.1" />

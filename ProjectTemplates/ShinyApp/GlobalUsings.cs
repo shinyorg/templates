@@ -1,6 +1,6 @@
 ﻿global using ShinyApp.Services;
 global using Shiny;
-#if (shinymediator)
+#if (useshinymediator)
 global using Shiny.Mediator;
 global using ICommand = System.Windows.Input.ICommand;
 #endif

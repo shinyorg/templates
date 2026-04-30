@@ -33,7 +33,7 @@ _A collection of extensions to the Shiny framework that provide additional funct
 * [App Stores](https://shinylib.net/extensions/stores/)
 * [Reflector](https://shinylib.net/extensions/reflector/) - Reflection Source Generator - NOT installed by default
 
-<!--#if (shinymediator)-->
+<!--#if (useshinymediator)-->
 ## Shiny Mediator
 
 _A simple mediator pattern for .NET applications - Written by Allan Ritchie_
@@ -500,6 +500,30 @@ _Unified abstractions for integrating AI services into .NET applications. Provid
 
 * [Documentation](https://learn.microsoft.com/en-us/dotnet/ai/ai-extensions)
 * [Samples](https://aka.ms/meai-samples)
+
+<!--#endif-->
+<!--#if (aimediator)-->
+## Shiny Mediator AI Tools
+
+_Source generates AI tools from your Shiny Mediator contracts. Decorate your IRequest/ICommand contracts with [Description] attributes and the source generator produces AITool instances automatically._
+
+* [Documentation](https://shinylib.net/mediator/extensions/ai/)
+
+<!--#endif-->
+<!--#if (aishinyshell)-->
+## Shiny MAUI Shell AI Tools
+
+_Source generates AI navigation tools from your Shell maps. Enables AI-driven navigation by exposing routes and parameters as AITool instances._
+
+* [Documentation](https://shinylib.net/mauishell/ai/)
+
+<!--#endif-->
+<!--#if (aidocumentdb)-->
+## Shiny DocumentDB AI Tools
+
+_Exposes document store operations (query, insert, update, delete) as AI tools. Configure per-entity capabilities, property descriptions, and access control._
+
+* [Documentation](https://shinylib.net/documentdb/ai-tools/)
 
 <!--#endif-->
 <!--#if (syslinqasync)-->

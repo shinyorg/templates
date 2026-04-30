@@ -92,7 +92,7 @@ public virtual void Initialize(INavigationParameters parameters) {}
 }
 #endif
 
-#if shinymediator
+#if useshinymediator
 public abstract partial class ViewModel : IConnectivityEventHandler
 {
     #if ctmvvm

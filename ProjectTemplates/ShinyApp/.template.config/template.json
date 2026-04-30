@@ -639,6 +639,27 @@
             "description": "SERVICE - Microsoft.Extensions.AI - Unified abstractions for AI services (IChatClient, IEmbeddingGenerator) - Documentation https://learn.microsoft.com/en-us/dotnet/ai/ai-extensions",
             "displayName": "SERVICE - Add Microsoft.Extensions.AI"
         },
+        "aimediator":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "AI - Shiny Mediator AI Tools - Source generates AI tools from mediator contracts - Documentation https://shinylib.net/mediator/extensions/ai/",
+            "displayName": "AI - Shiny Mediator AI Tools"
+        },
+        "aishinyshell":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "AI - Shiny MAUI Shell AI Tools - Source generates AI navigation tools from shell maps - Documentation https://shinylib.net/mauishell/ai/",
+            "displayName": "AI - Shiny MAUI Shell AI Tools"
+        },
+        "aidocumentdb":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "AI - Shiny DocumentDB AI Tools - Exposes document store operations as AI tools - Documentation https://shinylib.net/documentdb/ai-tools/",
+            "displayName": "AI - Shiny DocumentDB AI Tools"
+        },
         "syslinqasync":{
             "type": "parameter",
             "datatype": "bool",
@@ -754,6 +775,21 @@
             "type": "computed",
             "datatype": "bool",
             "value": "(uxdivers && shinyshell)"
+        },
+        "useshinymediator":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(shinymediator || aimediator)"
+        },
+        "usedocumentdb":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(documentdb || aidocumentdb)"
+        },
+        "usemsextai":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(msextai || aimediator || aishinyshell || aidocumentdb)"
         }
     },
     "sources": [{
@@ -783,7 +819,7 @@
             "exclude": "AppShell.*"
         },
         {
-            "condition": "(shinymediator == false)",
+            "condition": "(useshinymediator == false)",
             "exclude": "Handlers/**"
         },
         {
@@ -880,7 +916,7 @@
             "exclude": "Services/Impl/WebAuthenticatorAuthenticationService.cs"
         },
         {
-            "condition": "(shinymediator == false)",
+            "condition": "(useshinymediator == false)",
             "exclude": "Infrastructure/AppHttpRequestDecorator.cs"
         },
         {

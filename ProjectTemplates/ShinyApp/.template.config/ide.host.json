@@ -473,6 +473,24 @@
         },
         "isVisible": true
     },{
+        "id": "aimediator",
+        "name":{
+            "text": "AI - Shiny Mediator AI Tools"
+        },
+        "isVisible": true
+    },{
+        "id": "aishinyshell",
+        "name":{
+            "text": "AI - Shiny MAUI Shell AI Tools"
+        },
+        "isVisible": true
+    },{
+        "id": "aidocumentdb",
+        "name":{
+            "text": "AI - Shiny DocumentDB AI Tools"
+        },
+        "isVisible": true
+    },{
         "id": "syslinqasync",
         "name":{
             "text": "UTILITY - Add System.Linq.Async"
