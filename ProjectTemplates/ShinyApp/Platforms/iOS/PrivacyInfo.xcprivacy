@@ -128,7 +128,7 @@
                 <string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
             </array>
         </dict>
-        <!--#if (audio || essentialsmedia)-->
+        <!--#if (audio || essentialsmedia || shinyspeech || aiconversation)-->
         <dict>
             <key>NSPrivacyCollectedDataType</key>
             <string>NSPrivacyCollectedDataTypeAudio</string>

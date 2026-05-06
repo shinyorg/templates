@@ -485,6 +485,20 @@
             "description": "SERVICE - Health Data by Allan Ritchie - Cross-platform health data access (HealthKit/Health Connect) - Documentation https://shinylib.net/client/health/",
             "displayName": "SERVICE - Add Health Data (Shiny.Health)"
         },
+        "shinyspeech": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "SERVICE - Speech-to-text, text-to-speech, and audio playback (Shiny.Speech) - Documentation https://shinylib.net/speech/",
+            "displayName": "SERVICE - Add Speech (Shiny.Speech)"
+        },
+        "aiconversation": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "SERVICE - AI Conversation with speech recognition and text-to-speech (Shiny.AiConversation) - Documentation https://shinylib.net/aiconversation/",
+            "displayName": "SERVICE - Add AI Conversation (Shiny.AiConversation)"
+        },
         "barcodes":{
             "type": "parameter",
             "datatype": "bool",
@@ -789,7 +803,7 @@
         "usemsextai":{
             "type": "computed",
             "datatype": "bool",
-            "value": "(msextai || aimediator || aishinyshell || aidocumentdb)"
+            "value": "(msextai || aimediator || aishinyshell || aidocumentdb || aiconversation)"
         }
     },
     "sources": [{

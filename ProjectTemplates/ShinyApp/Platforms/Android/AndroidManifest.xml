@@ -80,7 +80,7 @@
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	<!--#endif-->
-	<!--#if (audio || speechrecognition || screenrecord || cameraview)-->
+	<!--#if (audio || speechrecognition || screenrecord || cameraview || shinyspeech || aiconversation)-->
 	<uses-permission android:name="android.permission.RECORD_AUDIO" />
 	<!--#endif-->
 	<!--#if (cameraview)-->

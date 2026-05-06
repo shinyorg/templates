@@ -194,13 +194,14 @@
 		<PackageReference Include="Shiny.Maui.Shell.UxDiversDialogs" Version="6.0.3" />
 		<!--#endif-->
 		<!--#if (usemauicontrols)-->
-		<PackageReference Include="Shiny.Maui.Controls" Version="1.0.1-beta-0045" />
+		<PackageReference Include="Shiny.Maui.Controls" Version="1.0.1-beta-0071" />
+		<PackageReference Include="Shiny.Maui.Controls.SpeechAddins" Version="1.0.1-beta-0071" />
 		<!--#endif-->
 		<!--#if (markdown)-->
-		<PackageReference Include="Shiny.Maui.Controls.Markdown" Version="1.0.1-beta-0045" />
+		<PackageReference Include="Shiny.Maui.Controls.Markdown" Version="1.0.1-beta-0071" />
 		<!--#endif-->
 		<!--#if (mermaiddiagrams)-->
-		<PackageReference Include="Shiny.Maui.Controls.MermaidDiagrams" Version="1.0.1-beta-0045" />
+		<PackageReference Include="Shiny.Maui.Controls.MermaidDiagrams" Version="1.0.1-beta-0071" />
 		<!--#endif-->
 		<!--#if (useshinymediator)-->
 		<PackageReference Include="Shiny.Mediator" Version="$(MediatorVersion)" />
@@ -309,7 +310,7 @@
 		<PackageReference Include="Plugin.Maui.Audio" Version="4.0.0" />
 		<!--#endif-->
 		<!--#if (music)-->
-		<PackageReference Include="Shiny.Music" Version="2.0.0" />
+		<PackageReference Include="Shiny.Music" Version="3.0.0" />
 		<!--#endif-->
 		<!--#if (ocr)-->
 		<PackageReference Include="Plugin.Maui.OCR" Version="1.1.1" />
@@ -376,7 +377,7 @@
 		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.14.0" />
 		<!--#endif-->
 		<!--#if (usemsextai)-->
-		<PackageReference Include="Microsoft.Extensions.AI" Version="10.5.0" />
+		<PackageReference Include="Microsoft.Extensions.AI" Version="10.5.2" />
 		<!--#endif-->
 		<!--#if (syslinqasync)-->
 		<PackageReference Include="System.Linq.Async" Version="7.0.0" />
@@ -391,11 +392,11 @@
 		<PackageReference Include="RoomSharp.DependencyInjection" Version="0.4.7" />
 		<!--#endif-->
 		<!--#if (usedocumentdb)-->
-		<PackageReference Include="Shiny.DocumentDb.Sqlite" Version="3.2.0" />
-        <PackageReference Include="Shiny.DocumentDb.Extensions.DependencyInjection" Version="3.2.0" />
+		<PackageReference Include="Shiny.DocumentDb.Sqlite" Version="5.0.0" />
+        <PackageReference Include="Shiny.DocumentDb.Extensions.DependencyInjection" Version="5.0.0" />
 		<!--#endif-->
 		<!--#if (aidocumentdb)-->
-		<PackageReference Include="Shiny.DocumentDb.Extensions.AI" Version="3.2.0" />
+		<PackageReference Include="Shiny.DocumentDb.Extensions.AI" Version="5.0.0" />
 		<!--#endif-->
 		<!--#if (litedb)-->
 		<PackageReference Include="Community.LiteDB.Aot" Version="1.0.0-preview.1" />
@@ -409,7 +410,13 @@
 		<PackageReference Include="Shiny.Maui.ContactStore" Version="1.0.1" />
 		<!--#endif-->
 		<!--#if (health)-->
-		<PackageReference Include="Shiny.Health" Version="1.0.0-beta-0028" />
+		<PackageReference Include="Shiny.Health" Version="1.0.0" />
+		<!--#endif-->
+		<!--#if (shinyspeech)-->
+		<PackageReference Include="Shiny.Speech" Version="1.2.0" />
+		<!--#endif-->
+		<!--#if (aiconversation)-->
+		<PackageReference Include="Shiny.AiConversation" Version="1.0.0-beta-0015" />
 		<!--#endif-->
 	</ItemGroup>
 

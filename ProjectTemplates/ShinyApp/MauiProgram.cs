@@ -113,7 +113,10 @@ public static class MauiProgram
             )
 #endif
 #if usemauicontrols
-            .UseShinyControls()
+            .UseShinyControls(cfg => 
+            {
+                cfg.AddDefaultMauiControlFeedback();
+            })
 #endif
 #if userdialogs
             .UseUserDialogs()
@@ -393,6 +396,19 @@ public static class MauiProgram
 #endif
 #if (health)
         builder.Services.AddHealthIntegration();
+#endif
+#if (shinyspeech)
+        builder.Services.AddSpeechServices();
+#endif
+#if (aiconversation)
+        // TODO: make sure IChatClientProvider is implemented or an IChatClient is registered in the DI container before enabling this
+        // TODO: message store is optional and allow you to save user/AI conversations
+        builder.Services.AddShinyAiConversation(opts =>
+        {
+            // TODO: implement IChatClientProvider and set it here
+            // opts.SetChatClientProvider<MyChatClientProvider>();
+            // opts.SetMessageStore<MyMessageStore>(addAiLookupTool: true); // optional
+        });
 #endif
 #if (screenbrightness)
         builder.Services.AddSingleton(Plugin.Maui.ScreenBrightness.ScreenBrightness.Default);
