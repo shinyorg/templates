@@ -117,7 +117,28 @@
             "dataType": "bool",
             "defaultValue": "true",
             "description": "Microsoft Orleans",
-            "displayName": "Microsoft Orleans" 
+            "displayName": "Microsoft Orleans"
+        },
+        "shinymediator": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true",
+            "description": "Shiny Mediator (Shiny.Mediator.AspNet)",
+            "displayName": "Shiny Mediator"
+        },
+        "localization": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Shiny.Extensions.Localization.Generator",
+            "displayName": "Localization"
+        },
+        "reflector": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Shiny.Extensions.Reflector",
+            "displayName": "Reflector"
         },
         "scalar": {
             "type": "parameter",
@@ -177,6 +198,10 @@
         {
             "condition": "(signalr == false)",
             "exclude": "Hubs/**"
+        },
+        {
+            "condition": "(shinymediator == false)",
+            "exclude": "Infrastructure/MediatorModule.cs"
         }]
     }]    
 }

@@ -1,0 +1,177 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Shiny .NET",
+    "classifications": [ "Shiny", "Blazor", "WebAssembly" ],
+    "name": "Shiny Blazor WebAssembly Application",
+    "shortName": "shinyblazor",
+    "description": "A starting template for a standalone Blazor WebAssembly application wired with the Shiny ecosystem.",
+    "identity": "Shiny.Templates.Blazor",
+    "sourceName": "ShinyBlazor",
+    "preferNameDirectory": true,
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "primaryOutputs": [{
+        "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+        "path": "Program.cs"
+    }],
+    "guids": [
+        "C3F1A0A8-5C7C-4D6E-9B72-1A1E0B7F1B11"
+    ],
+    "symbols": {
+        "Framework": {
+            "type": "parameter",
+            "description": "The target framework for the project.",
+            "dataType": "choice",
+            "choices": [{
+                "choice": "net10.0",
+                "description": "Target .NET 10.0"
+            }],
+            "replaces": "{DOTNET_TFM}",
+            "defaultValue": "net10.0"
+        },
+        "uilibrary": {
+            "type": "parameter",
+            "dataType": "choice",
+            "defaultValue": "None",
+            "description": "UI Component Library",
+            "displayName": "UI Component Library",
+            "choices": [
+                { "choice": "None",      "description": "No UI component library" },
+                { "choice": "MudBlazor", "description": "MudBlazor" },
+                { "choice": "Radzen",    "description": "Radzen.Blazor" },
+                { "choice": "FluentUI",  "description": "Microsoft FluentUI" }
+            ]
+        },
+        "localization": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Extensions.Localization.Generator",
+            "displayName": "Localization"
+        },
+        "stores": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Extensions.Stores",
+            "displayName": "Stores"
+        },
+        "reflector": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Extensions.Reflector",
+            "displayName": "Reflector"
+        },
+        "di": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Extensions.DependencyInjection (source-generated DI registration)",
+            "displayName": "Shiny DI"
+        },
+        "shinymediator": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true",
+            "description": "Add Shiny.Mediator.Blazor",
+            "displayName": "Shiny Mediator"
+        },
+        "shinycontrols": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Blazor.Controls",
+            "displayName": "Shiny Blazor Controls"
+        },
+        "bluetoothle": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.BluetoothLE.Blazor (Web Bluetooth)",
+            "displayName": "Bluetooth LE"
+        },
+        "gps": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Locations.Blazor",
+            "displayName": "GPS"
+        },
+        "push": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Push.Blazor",
+            "displayName": "Push Notifications"
+        },
+        "markdown": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Blazor.Controls.Markdown",
+            "displayName": "Markdown"
+        },
+        "mermaiddiagrams": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Blazor.Controls.MermaidDiagrams",
+            "displayName": "Mermaid Diagrams"
+        },
+        "shinyspeech": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Speech (Blazor support built-in)",
+            "displayName": "Speech (STT/TTS)"
+        },
+        "aiconversation": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.AiConversation (Blazor support built-in via Shiny.Speech)",
+            "displayName": "AI Conversation"
+        },
+        "documentdb": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.DocumentDb.IndexedDb",
+            "displayName": "Document DB (IndexedDB)"
+        },
+        "mudblazor": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(uilibrary == \"MudBlazor\")"
+        },
+        "radzen": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(uilibrary == \"Radzen\")"
+        },
+        "fluentui": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(uilibrary == \"FluentUI\")"
+        },
+        "useui": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(uilibrary != \"None\")"
+        }
+    },
+    "sources": [{
+        "source": "./",
+        "target": "./",
+        "copyOnly": [
+            "**/*.svg",
+            "**/*.ttf",
+            "**/*.txt",
+            "**/*.png",
+            "**/*.ico"
+        ]
+    }]
+}

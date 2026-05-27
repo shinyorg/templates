@@ -86,8 +86,8 @@
 	<!--#if (cameraview)-->
 	<uses-permission android:name="android.permission.RECORD_VIDEO" />
 	<!--#endif-->
-	<!--#if (audio)-->
-	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />	
+	<!--#if (audio || shinyspeech || aiconversation)-->
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 	<!--#endif-->
 	<!--#if (notifications || usepush || gps || httptransfers || mediaelement)-->
 	<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />

@@ -5,18 +5,27 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <OpenApiDocumentsDirectory>.</OpenApiDocumentsDirectory>
-        <MicrosoftVersion>10.0.5</MicrosoftVersion>
-        <MediatorVersion>6.3.1</MediatorVersion>
+        <MicrosoftVersion>10.0.8</MicrosoftVersion>
+        <ShinyVersion>4.0.1</ShinyVersion>
+        <MediatorVersion>6.4.0</MediatorVersion>
         <!--#if (orleans)-->
-        <OrleansVersion>10.0.1</OrleansVersion>
+        <OrleansVersion>10.1.0</OrleansVersion>
         <!--#endif-->
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="$(MicrosoftVersion)" />
         <PackageReference Include="Microsoft.Extensions.ApiDescription.Server" Version="$(MicrosoftVersion)"/>
-        <PackageReference Include="Shiny.Extensions.DependencyInjection" Version="3.0.0"/>
-        <PackageReference Include="Shiny.Extensions.WebHosting" Version="3.0.0" />
+        <PackageReference Include="Shiny.Extensions.DependencyInjection" Version="$(ShinyVersion)"/>
+        <PackageReference Include="Shiny.Extensions.WebHosting" Version="$(ShinyVersion)" />
+
+        <!--#if (localization)-->
+        <PackageReference Include="Shiny.Extensions.Localization.Generator" Version="$(ShinyVersion)" />
+        <!--#endif-->
+
+        <!--#if (reflector)-->
+        <PackageReference Include="Shiny.Extensions.Reflector" Version="$(ShinyVersion)" />
+        <!--#endif-->
 
         <!--#if (efmssql)-->
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MicrosoftVersion)" />
@@ -26,9 +35,9 @@
         <!--#endif-->
 
         <!--#if (efpostgres)-->
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.1" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="$(MicrosoftVersion)" />
         <!--#if (efspatial)-->
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="10.0.1" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="$(MicrosoftVersion)" />
         <!--#endif-->
         <!--#endif-->
 
@@ -45,20 +54,25 @@
         <PackageReference Include="Microsoft.Orleans.Streaming.AdoNet" Version="$(OrleansVersion)-alpha.1" />
         <PackageReference Include="Microsoft.Orleans.Dashboard" Version="$(OrleansVersion)" />
         <!--#endif-->
+
+        <!--#if (jwtauth)-->
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(MicrosoftVersion)" />
+        <!--#endif-->
         <!--#if (facebook)-->
         <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="$(MicrosoftVersion)" />
         <!--#endif-->
-        <!--#if (facebook)-->
+        <!--#if (google)-->
         <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="$(MicrosoftVersion)" />
         <!--#endif-->
         <!--#if (apple)-->
         <PackageReference Include="AspNet.Security.OAuth.Apple" Version="10.0.0" />
-        <!--#endif-->        
+        <!--#endif-->
 
+        <!--#if (shinymediator)-->
         <PackageReference Include="Shiny.Mediator.AspNet" Version="$(MediatorVersion)" />
+        <!--#endif-->
         <!--#if (scalar)-->
-        <PackageReference Include="Scalar.AspNetCore" Version="2.13.18"/>
+        <PackageReference Include="Scalar.AspNetCore" Version="2.14.14"/>
         <!--#endif-->
     </ItemGroup>
 </Project>

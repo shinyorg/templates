@@ -1,0 +1,85 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+    <PropertyGroup>
+        <TargetFramework>{DOTNET_TFM}</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <MicrosoftVersion>10.0.8</MicrosoftVersion>
+        <ShinyVersion>4.0.1</ShinyVersion>
+        <MediatorVersion>6.4.0</MediatorVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="$(MicrosoftVersion)" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="$(MicrosoftVersion)" PrivateAssets="all" />
+
+        <!--#if (localization)-->
+        <PackageReference Include="Shiny.Extensions.Localization.Generator" Version="$(ShinyVersion)" />
+        <!--#endif-->
+
+        <!--#if (stores)-->
+        <PackageReference Include="Shiny.Extensions.Stores" Version="$(ShinyVersion)" />
+        <!--#endif-->
+
+        <!--#if (reflector)-->
+        <PackageReference Include="Shiny.Extensions.Reflector" Version="$(ShinyVersion)" />
+        <!--#endif-->
+
+        <!--#if (di)-->
+        <PackageReference Include="Shiny.Extensions.DependencyInjection" Version="$(ShinyVersion)" />
+        <!--#endif-->
+
+        <!--#if (shinymediator)-->
+        <PackageReference Include="Shiny.Mediator.Blazor" Version="$(MediatorVersion)" />
+        <!--#endif-->
+
+        <!--#if (shinycontrols)-->
+        <PackageReference Include="Shiny.Blazor.Controls" Version="$(ShinyVersion)" />
+        <!--#endif-->
+
+        <!--#if (markdown)-->
+        <PackageReference Include="Shiny.Blazor.Controls.Markdown" Version="$(ShinyVersion)" />
+        <!--#endif-->
+
+        <!--#if (mermaiddiagrams)-->
+        <PackageReference Include="Shiny.Blazor.Controls.MermaidDiagrams" Version="$(ShinyVersion)" />
+        <!--#endif-->
+
+        <!--#if (bluetoothle)-->
+        <PackageReference Include="Shiny.BluetoothLE.Blazor" Version="$(ShinyVersion)" />
+        <!--#endif-->
+
+        <!--#if (gps)-->
+        <PackageReference Include="Shiny.Locations.Blazor" Version="$(ShinyVersion)" />
+        <!--#endif-->
+
+        <!--#if (push)-->
+        <PackageReference Include="Shiny.Push.Blazor" Version="$(ShinyVersion)" />
+        <!--#endif-->
+
+        <!--#if (shinyspeech)-->
+        <PackageReference Include="Shiny.Speech" Version="2.0.0" />
+        <!--#endif-->
+
+        <!--#if (aiconversation)-->
+        <PackageReference Include="Shiny.AiConversation" Version="1.0.0-beta-0043" />
+        <!--#endif-->
+
+        <!--#if (documentdb)-->
+        <PackageReference Include="Shiny.DocumentDb.IndexedDb" Version="5.0.1" />
+        <!--#endif-->
+
+        <!--#if (mudblazor)-->
+        <PackageReference Include="MudBlazor" Version="9.4.0" />
+        <!--#endif-->
+
+        <!--#if (radzen)-->
+        <PackageReference Include="Radzen.Blazor" Version="10.4.4" />
+        <!--#endif-->
+
+        <!--#if (fluentui)-->
+        <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.14.2" />
+        <!--#endif-->
+    </ItemGroup>
+
+</Project>
