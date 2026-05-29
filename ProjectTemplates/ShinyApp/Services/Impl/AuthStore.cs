@@ -1,25 +1,17 @@
+using Shiny.Extensions.Stores;
+
 namespace ShinyApp.Services.Impl;
 
-public class AuthStore : NotifyPropertyChanged
+public partial class AuthStore
 {
-    public string? AuthenticationToken
-    {
-        get;
-        set => this.Set(ref field, value);
-    }
+    [Bind(StoreKeys.Secure)]
+    public partial string? AuthenticationToken { get; set; }
 
-    
-    public string? RefreshToken
-    {
-        get;
-        set => this.Set(ref field, value);
-    }
-    
-    public DateTimeOffset? Expiration
-    {
-        get;
-        set => this.Set(ref field, value);
-    }
+    [Bind(StoreKeys.Secure)]
+    public partial string? RefreshToken { get; set; }
+
+    [Bind(StoreKeys.Secure)]
+    public partial DateTimeOffset? Expiration { get; set; }
 
     public void Reset()
     {

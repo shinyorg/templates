@@ -352,13 +352,6 @@
             "description": "UI - MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
             "displayName": "UI - Add MAUI Community Toolkit"
         },
-        "speechrecognition": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "SETUP Community Toolkit Speech-to-Text",
-            "displayName": "SETUP Community Toolkit Speech-to-Text"
-        },        
         "mediaelement":{
             "type": "parameter",
             "datatype": "bool",

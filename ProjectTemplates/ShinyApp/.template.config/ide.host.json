@@ -131,14 +131,6 @@
         "isVisible": true
     },
     {
-        "id": "speechrecognition",
-        "name": {
-            "text": "Setup Community Toolkit Speech-to-Text"
-        },
-        "isVisible": true,
-        "defaultValue": "None"
-    },
-    {
         "id": "push",
         "name": {
             "text": "Add Push Notifications"

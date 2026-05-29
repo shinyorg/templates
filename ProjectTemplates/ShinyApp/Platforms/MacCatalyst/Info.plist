@@ -57,11 +57,11 @@
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
-	<!--#if (speechrecognition)-->
-	<key>NSSpeechRecognitionUsageDescription</key>  
+	<!--#if (shinyspeech || aiconversation)-->
+	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
-	<!--#if (audio || essentialsmedia || speechrecognition || cameraview)-->
+	<!--#if (audio || essentialsmedia || cameraview)-->
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
