@@ -300,7 +300,7 @@
             "description": "CODE - Add Refit API Client used with sample Authentication service",
             "displayName": "CODE - Add Refit HTTP Client with Authentication Service"
         },
-         "essentialsmedia":{
+        "essentialsmedia":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
@@ -394,7 +394,7 @@
             "description": "UI - Live Charts by Alberto Rodríguez - Documentation https://livecharts.dev/",
             "displayName": "UI - Add Live Charts"
         },
-"shinycontrols":{
+        "shinycontrols":{
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
@@ -442,13 +442,6 @@
             "defaultValue": "false",
             "description": "SERVICE - Document DB by Allan Ritchie - Documentation https://github.com/shinyorg/documentdb",
             "displayName": "SERVICE - Add Document DB (Shiny.DocumentDb.Sqlite)"
-        },
-        "litedb": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "SERVICE - Community LiteDB AOT by mrdevrobot - Documentation https://github.com/mrdevrobot/Community-LiteDb-AOT",
-            "displayName": "SERVICE - Add Community LiteDB AOT"
         },
         "geospatialdb": {
             "type": "parameter",

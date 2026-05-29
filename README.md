@@ -24,23 +24,29 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* Firebase Cloud Messaging
 * Creates a best practice MAUI application with best-in-class frameworks:
     * [.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui)
+	* [MVVM Community Toolkit](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm)
 	* [Shiny.NET](https://shinylib.net)
 	* [Shiny Mediator](https://github.com/shinyorg/mediator)
 	* [Shiny MAUI Shell](https://shinylib.net/client/maui)
-	* [Shiny Extensions](https://shinylib.net/extensions/di)
-	* [Prism](https://prismlibrary.com/)
-	* [ReactiveUI](https://reactiveui.net/)
-	* [MVVM Community Toolkit](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm)
+	* [Shiny Extensions](https://shinylib.net/extensions)
+	* [Shiny.Maui.Controls](https://shinylib.net/client/controls/)
+	* [Shiny DocumentDb](https://github.com/shinyorg/documentdb) by Allan Ritchie
 
 * Select mutliple platform UI Markup types
 	* XAML
 	* Blazor
 	* C# Markup (courtesy of .NET MAUI Community Toolkit) [Documentation](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup)
-* [.NET MAUI Community Toolkit](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/) Setup Including:
-	* [Media Element](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/)
-	* [C# Markup](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup)
-	* [Camera View](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/camera-view)
-	* [MVVM](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm)
+* All The Shiny Libraries
+	* [Shiny.Maui.Controls](https://shinylib.net/client/controls/) by Allan Ritchie — unified controls package (Scheduler, BottomSheet, ImageViewer, PillView, SecurityPin, Fab, and more)
+	* [Shiny.Maui.Controls.Markdown](https://shinylib.net/client/controls/markdown/) by Allan Ritchie — native markdown renderer and editor (no WebView)
+	* [Shiny.Maui.Controls.MermaidDiagrams](https://shinylib.net/client/controls/mermaid/) by Allan Ritchie — native Mermaid flowchart rendering (no WebView, AOT-safe)
+	* [Shiny.Health](https://shinylib.net/client/health/) by Allan Ritchie — cross-platform health data access (HealthKit/Health Connect)
+	* [Shiny.Music](https://shinylib.net/client/music/) by Allan Ritchie — unified music library & player API
+	* [Shiny.Spatial.Geofencing](https://shinylib.net/client/spatial/) by Allan Ritchie — GPS-driven geofence monitoring with R*Tree spatial indexing
+	* [.NET MAUI Community Toolkit](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/) Setup Including:
+		* [Media Element](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/)
+		* [C# Markup](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup)
+		* [Camera View](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/camera-view)
 * Entitlements for iOS/MacCatalyst if necessary (ie. Push, MSAL)
 * Info.plist & Entitlement permissions for iOS/MacCatalyst
 * Helps generate Apple's "fun" PrivacyInfo.xcprivacy
@@ -74,18 +80,14 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [Refit](https://github.com/reactiveui/refit) by ReactiveUI Maintainers
 	* [SQLite.NET-pcl](https://github.com/praeclarum/sqlite-net) by Frank Krueger
 	* [RoomSharp](https://roomsharp.dev/) by Safwan Abdulghani
-	* [Shiny DocumentDb](https://github.com/shinyorg/documentdb) by Allan Ritchie
-	* [Community LiteDB AOT](https://github.com/mrdevrobot/Community-LiteDb-AOT) by mrdevrobot
 	* [BarcodeScanning.Native.Maui](https://github.com/afriscic/BarcodeScanning.Native.Maui) by afriscic
 	* [Store Review Plugin](https://github.com/jamesmontemagno/StoreReviewPlugin) by James Montemagno
 	* [MAUI Screen Recording Plugin](https://github.com/jfversluis/Plugin.Maui.ScreenRecording) by Gerald Versluis
 	* [MAUI Audio Plugin](https://github.com/jfversluis/Plugin.Maui.Audio) by Gerald Versluis
-	* [Shiny Music](https://github.com/shinyorg/music) by Allan Ritchie
 	* [MAUI Calendar Store Plugin](https://github.com/jfversluis/Plugin.Maui.CalendarStore) by Gerald Versluis
 	* [MAUI Screen Brightness Plugin](https://github.com/jfversluis/Plugin.Maui.ScreenBrightness) by Gerald Versluis
 	* [MAUI OCR Plugin](https://github.com/kfrancis/ocr) by Kori Francis
 	* [MAUI Biometric Plugin](https://github.com/oscoreio/Maui.Biometric) by Konstantin S & Sven-Michael Stübe
-	* [CardsView MAUI](https://github.com/AndreiMisiukevich/CardView.MAUI) by Andrei Misiukevich
 	* [Embed.IO](https://unosquare.github.io/embedio/) by Unosquare
 	* [Sentry](https://sentry.io) by Sentry
 	* [SkiaSharp](https://github.com/mono/SkiaSharp) by Matthew Leibowitz
@@ -93,14 +95,7 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [ACR User Dialogs](https://github.com/aritchie/userdialogs) by Allan Ritchie
 	* [Debug Rainbows](https://github.com/sthewissen/Plugin.Maui.DebugRainbows) by Steven Thewissen
 	* [Live Charts](https://livecharts.dev/) by Alberto Rodríguez
-	* [Shiny.Maui.Controls](https://shinylib.net/client/controls/) by Allan Ritchie — unified controls package (Scheduler, BottomSheet, ImageViewer, PillView, SecurityPin, Fab, and more)
-		* [Shiny.Maui.Controls.Markdown](https://shinylib.net/client/controls/markdown/) by Allan Ritchie — native markdown renderer and editor (no WebView)
-		* [Shiny.Maui.Controls.MermaidDiagrams](https://shinylib.net/client/controls/mermaid/) by Allan Ritchie — native Mermaid flowchart rendering (no WebView, AOT-safe)
-		* [Shiny.Health](https://shinylib.net/client/health/) by Allan Ritchie — cross-platform health data access (HealthKit/Health Connect)
-		* [Shiny.Music](https://shinylib.net/client/music/) by Allan Ritchie — unified music library & player API
-		* [Shiny.Spatial.Geofencing](https://shinylib.net/client/spatial/) by Allan Ritchie — GPS-driven geofence monitoring with R*Tree spatial indexing
 	* [AlohaKit Animations](https://github.com/jsuarezruiz/AlohaKit.Animations) by Javier Suárez
-	* [Skeleton](https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton) by Horus Software
 	* [System.Linq.Async](https://github.com/dotnet/reactive)
 	* [Humanizer](https://github.com/Humanizr/Humanizer)
 	* [Units .NET](https://github.com/angularsen/UnitsNet) by Andreas Gullberg Larsen
