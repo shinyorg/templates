@@ -32,9 +32,6 @@ using Refit;
 #if usemauicontrols || music || contactstore
 using Shiny;
 #endif
-#if cards
-using PanCardView;
-#endif
 #if skia || skiaextended || livecharts
 using SkiaSharp.Views.Maui.Controls.Hosting;
 #endif
@@ -164,9 +161,6 @@ public static class MauiProgram
 #endif
 #if usemauimaps
             .UseMauiMaps()
-#endif
-#if cards
-            .UseCardsView()
 #endif
 #if ocr
             .UseOcr()

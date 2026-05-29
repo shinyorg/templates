@@ -253,12 +253,6 @@
         "isVisible": true
     },
     {
-        "id": "skeleton",
-        "name":{
-            "text": "Add Skeleton"
-        },
-        "isVisible": true
-    },{
         "id": "contextmenu",
         "name":{
             "text": "Add Context Menu"
@@ -304,13 +298,6 @@
         "id": "uxdivers",
         "name":{
             "text": "Add UX Divers Dialogs for Shiny MAUI Shell (Shiny.Maui.Shell.UxDiversDialogs)"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "cards",
-        "name":{
-            "text": "Add CardsView.Maui"
         },
         "isVisible": true
     },

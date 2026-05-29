@@ -33,7 +33,7 @@
 		<!--<EnablePreviewFeatures>true</EnablePreviewFeatures>-->
 
 		<MauiVersion>10.0.60</MauiVersion>
-		<ShinyVersion>4.0.1</ShinyVersion>
+		<ShinyVersion>5.0.0-beta-0113</ShinyVersion>
 		<!--#if (useshinymediator)-->
 		<MediatorVersion>6.4.0</MediatorVersion>
 		<!--#endif-->
@@ -184,24 +184,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Shiny.Reflector" Version="1.7.2" />
-		<PackageReference Include="Shiny.Extensions.MauiHosting" Version="3.0.0" />
-		<PackageReference Include="Shiny.Extensions.DependencyInjection" Version="3.0.0" />
+		<PackageReference Include="Shiny.Extensions.MauiHosting" Version="4.0.0" />
 		<!--#if (shinyshell)-->
-		<PackageReference Include="Shiny.Maui.Shell" Version="6.1.0" />
+		<PackageReference Include="Shiny.Maui.Shell" Version="6.1.1" />
 		<!--#endif-->
 		<!--#if (uxdiversdialogs)-->
-		<PackageReference Include="Shiny.Maui.Shell.UxDiversDialogs" Version="6.1.0" />
+		<PackageReference Include="Shiny.Maui.Shell.UxDiversDialogs" Version="6.1.1" />
 		<!--#endif-->
 		<!--#if (usemauicontrols)-->
-		<PackageReference Include="Shiny.Maui.Controls" Version="1.0.1-beta-0078" />
-		<PackageReference Include="Shiny.Maui.Controls.SpeechAddins" Version="1.0.1-beta-0078" />
+		<PackageReference Include="Shiny.Maui.Controls" Version="1.0.1-beta-0081" />
+		<PackageReference Include="Shiny.Maui.Controls.SpeechAddins" Version="1.0.1-beta-0081" />
 		<!--#endif-->
 		<!--#if (markdown)-->
-		<PackageReference Include="Shiny.Maui.Controls.Markdown" Version="1.0.1-beta-0078" />
+		<PackageReference Include="Shiny.Maui.Controls.Markdown" Version="1.0.1-beta-0081" />
 		<!--#endif-->
 		<!--#if (mermaiddiagrams)-->
-		<PackageReference Include="Shiny.Maui.Controls.MermaidDiagrams" Version="1.0.1-beta-0078" />
+		<PackageReference Include="Shiny.Maui.Controls.MermaidDiagrams" Version="1.0.1-beta-0081" />
 		<!--#endif-->
 		<!--#if (useshinymediator)-->
 		<PackageReference Include="Shiny.Mediator" Version="$(MediatorVersion)" />
@@ -330,16 +328,10 @@
 		<!--#if (alohakitanimations)-->
 		<PackageReference Include="AlohaKit.Animations" Version="1.1.0" />
 		<!--#endif-->
-		<!--#if (cards)-->
-		<PackageReference Include="CardsView.Maui" Version="1.1.2" />
-		<!--#endif-->
 		<!--#if (uraniumui)-->
 		<PackageReference Include="UraniumUI.Material" Version="2.15.0" />
 		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.15.0" />
 		<PackageReference Include="UraniumUI.Blurs" Version="2.15.0" />
-		<!--#endif-->
-		<!--#if (skeleton)-->
-		<PackageReference Include="HorusStudio.Maui.Skeleton" Version="2.0.0" />
 		<!--#endif-->
 		<!--#if (screenrecord)-->
 		<PackageReference Include="Plugin.Maui.ScreenRecording" Version="1.0.0-preview5" />
@@ -392,15 +384,11 @@
 		<PackageReference Include="RoomSharp.DependencyInjection" Version="0.5.5" />
 		<!--#endif-->
 		<!--#if (usedocumentdb)-->
-		<PackageReference Include="Shiny.DocumentDb.Sqlite" Version="5.0.1" />
-        <PackageReference Include="Shiny.DocumentDb.Extensions.DependencyInjection" Version="5.0.1" />
+		<PackageReference Include="Shiny.DocumentDb.Sqlite" Version="5.2.0" />
+        <PackageReference Include="Shiny.DocumentDb.Extensions.DependencyInjection" Version="5.2.0" />
 		<!--#endif-->
 		<!--#if (aidocumentdb)-->
-		<PackageReference Include="Shiny.DocumentDb.Extensions.AI" Version="5.0.1" />
-		<!--#endif-->
-		<!--#if (litedb)-->
-		<PackageReference Include="Community.LiteDB.Aot" Version="1.0.0-preview.1" />
-		<PackageReference Include="Community.LiteDB.Aot.SourceGenerators" Version="1.0.0-preview.1" />
+		<PackageReference Include="Shiny.DocumentDb.Extensions.AI" Version="5.2.0" />
 		<!--#endif-->
 		<!--#if (geospatialdb)-->
 		<PackageReference Include="Shiny.Spatial" Version="1.1.0" />
@@ -413,10 +401,10 @@
 		<PackageReference Include="Shiny.Health" Version="1.0.0" />
 		<!--#endif-->
 		<!--#if (shinyspeech)-->
-		<PackageReference Include="Shiny.Speech" Version="2.0.0" />
+		<PackageReference Include="Shiny.Speech" Version="2.1.0" />
 		<!--#endif-->
 		<!--#if (aiconversation)-->
-		<PackageReference Include="Shiny.AiConversation" Version="1.0.0-beta-0043" />
+		<PackageReference Include="Shiny.AiConversation" Version="1.0.0-beta-0047" />
 		<!--#endif-->
 	</ItemGroup>
 

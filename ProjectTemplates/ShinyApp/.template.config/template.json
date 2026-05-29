@@ -380,13 +380,6 @@
             "description": "UI - Uranium UI by Enis Necipoglu - Documentation https://enisn-projects.io/docs/en/uranium/latest",
             "displayName": "UI - Add Uranium UI"
         },
-        "skeleton":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "UI - Skeleton by Horus Software - Documentation https://github.com/HorusSoftwareUY/Xamarin.Forms.Skeleton",
-            "displayName": "UI - Add Skeleton"
-        },
         "alohakitanimations":{
             "type": "parameter",
             "datatype": "bool",
@@ -428,13 +421,6 @@
             "defaultValue": "false",
             "description": "UI - Shiny.Maui.Shell.UxDiversDialogs - UX Divers Popups IDialogs implementation for Shiny MAUI Shell (requires Shiny MAUI Shell) - Documentation https://github.com/shinyorg/mauishell",
             "displayName": "UI - Add UX Divers Dialogs for Shiny MAUI Shell (requires Shiny MAUI Shell)"
-        },
-        "cards":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "UI - CardsView.Maui by Andrei Misiukevich - Documentation https://www.nuget.org/packages/CardsView.Maui",
-            "displayName": "UI - Add CardsView.Maui"
         },
         "sqlite": {
             "type": "parameter",
