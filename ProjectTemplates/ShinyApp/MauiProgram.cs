@@ -110,10 +110,20 @@ public static class MauiProgram
             )
 #endif
 #if usemauicontrols
-            .UseShinyControls(cfg => 
+            .UseShinyControls(cfg =>
             {
                 cfg.AddDefaultMauiControlFeedback();
             })
+#endif
+#if shinydesktopcontrols
+            .UseShinyDesktopControls()
+#endif
+#if devflow
+//-:cnd:noEmit
+#if DEBUG
+            .UseMauiDevFlow()
+#endif
+//+:cnd:noEmit
 #endif
 #if userdialogs
             .UseUserDialogs()
@@ -350,6 +360,18 @@ public static class MauiProgram
         builder.Services.AddShinyService<Shiny.Net.Http.PerTransferNotificationStrategy>();
 #endif
 //+:cnd:noEmit
+#endif
+#if datasync
+        // Picks the right transport per target: NSURLSession on Apple, foreground service on Android, HttpClient elsewhere.
+        // Implement IDataSyncDelegate, then register one endpoint per ISyncEntity type.
+        // Docs: https://shinylib.net/datasync/
+        builder.Services.AddDataSync<ShinyApp.Delegates.MyDataSyncDelegate>(opts =>
+        {
+            // opts.RegisterEndpoint<ShinyApp.Models.TodoItem>("https://api.example.com/todos");
+        });
+        builder.Services.AddHttpClient(Shiny.Data.Sync.Infrastructure.RestSyncTransport.HttpClientName, c =>
+            c.BaseAddress = new Uri("https://api.example.com")
+        );
 #endif
 #if notifications
         builder.Services.AddNotifications<ShinyApp.Delegates.MyLocalNotificationDelegate>();

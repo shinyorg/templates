@@ -5,8 +5,16 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <MicrosoftVersion>10.0.8</MicrosoftVersion>
-        <ShinyVersion>4.0.1</ShinyVersion>
-        <MediatorVersion>6.4.0</MediatorVersion>
+        <ShinyClientVersion>5.0.0-beta-0135</ShinyClientVersion>
+        <ShinyControlsVersion>1.0.1-beta-0102</ShinyControlsVersion>
+        <ShinyExtensionsLocalizationVersion>2.0.1</ShinyExtensionsLocalizationVersion>
+        <ShinyExtensionsStoresVersion>5.0.0</ShinyExtensionsStoresVersion>
+        <ShinyExtensionsReflectorVersion>5.0.0</ShinyExtensionsReflectorVersion>
+        <ShinyExtensionsDIVersion>5.0.0</ShinyExtensionsDIVersion>
+        <ShinySpeechVersion>2.1.0</ShinySpeechVersion>
+        <ShinyAiConversationVersion>1.0.0-beta-0050</ShinyAiConversationVersion>
+        <ShinyDocumentDbVersion>6.1.0</ShinyDocumentDbVersion>
+        <MediatorVersion>6.6.1</MediatorVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,19 +22,19 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="$(MicrosoftVersion)" PrivateAssets="all" />
 
         <!--#if (localization)-->
-        <PackageReference Include="Shiny.Extensions.Localization.Generator" Version="$(ShinyVersion)" />
+        <PackageReference Include="Shiny.Extensions.Localization.Generator" Version="$(ShinyExtensionsLocalizationVersion)" />
         <!--#endif-->
 
         <!--#if (stores)-->
-        <PackageReference Include="Shiny.Extensions.Stores" Version="$(ShinyVersion)" />
+        <PackageReference Include="Shiny.Extensions.Stores" Version="$(ShinyExtensionsStoresVersion)" />
         <!--#endif-->
 
         <!--#if (reflector)-->
-        <PackageReference Include="Shiny.Extensions.Reflector" Version="$(ShinyVersion)" />
+        <PackageReference Include="Shiny.Extensions.Reflector" Version="$(ShinyExtensionsReflectorVersion)" />
         <!--#endif-->
 
         <!--#if (di)-->
-        <PackageReference Include="Shiny.Extensions.DependencyInjection" Version="$(ShinyVersion)" />
+        <PackageReference Include="Shiny.Extensions.DependencyInjection" Version="$(ShinyExtensionsDIVersion)" />
         <!--#endif-->
 
         <!--#if (shinymediator)-->
@@ -34,47 +42,55 @@
         <!--#endif-->
 
         <!--#if (shinycontrols)-->
-        <PackageReference Include="Shiny.Blazor.Controls" Version="$(ShinyVersion)" />
+        <PackageReference Include="Shiny.Blazor.Controls" Version="$(ShinyControlsVersion)" />
         <!--#endif-->
 
         <!--#if (markdown)-->
-        <PackageReference Include="Shiny.Blazor.Controls.Markdown" Version="$(ShinyVersion)" />
+        <PackageReference Include="Shiny.Blazor.Controls.Markdown" Version="$(ShinyControlsVersion)" />
         <!--#endif-->
 
         <!--#if (mermaiddiagrams)-->
-        <PackageReference Include="Shiny.Blazor.Controls.MermaidDiagrams" Version="$(ShinyVersion)" />
+        <PackageReference Include="Shiny.Blazor.Controls.MermaidDiagrams" Version="$(ShinyControlsVersion)" />
+        <!--#endif-->
+
+        <!--#if (shinybarcodes)-->
+        <PackageReference Include="Shiny.Blazor.Controls.Barcodes" Version="$(ShinyControlsVersion)" />
+        <!--#endif-->
+
+        <!--#if (shinykiosk)-->
+        <PackageReference Include="Shiny.Blazor.Controls.Kiosk" Version="$(ShinyControlsVersion)" />
         <!--#endif-->
 
         <!--#if (bluetoothle)-->
-        <PackageReference Include="Shiny.BluetoothLE.Blazor" Version="$(ShinyVersion)" />
+        <PackageReference Include="Shiny.BluetoothLE.Blazor" Version="$(ShinyClientVersion)" />
         <!--#endif-->
 
         <!--#if (gps)-->
-        <PackageReference Include="Shiny.Locations.Blazor" Version="$(ShinyVersion)" />
+        <PackageReference Include="Shiny.Locations.Blazor" Version="$(ShinyClientVersion)" />
         <!--#endif-->
 
         <!--#if (push)-->
-        <PackageReference Include="Shiny.Push.Blazor" Version="$(ShinyVersion)" />
+        <PackageReference Include="Shiny.Push.Blazor" Version="$(ShinyClientVersion)" />
         <!--#endif-->
 
-        <!--#if (shinyspeech)-->
-        <PackageReference Include="Shiny.Speech" Version="2.0.0" />
+        <!--#if (useshinyspeech)-->
+        <PackageReference Include="Shiny.Speech" Version="$(ShinySpeechVersion)" />
         <!--#endif-->
 
         <!--#if (aiconversation)-->
-        <PackageReference Include="Shiny.AiConversation" Version="1.0.0-beta-0043" />
+        <PackageReference Include="Shiny.AiConversation" Version="$(ShinyAiConversationVersion)" />
         <!--#endif-->
 
         <!--#if (documentdb)-->
-        <PackageReference Include="Shiny.DocumentDb.IndexedDb" Version="5.0.1" />
+        <PackageReference Include="Shiny.DocumentDb.IndexedDb" Version="$(ShinyDocumentDbVersion)" />
         <!--#endif-->
 
         <!--#if (mudblazor)-->
-        <PackageReference Include="MudBlazor" Version="9.4.0" />
+        <PackageReference Include="MudBlazor" Version="9.5.0" />
         <!--#endif-->
 
         <!--#if (radzen)-->
-        <PackageReference Include="Radzen.Blazor" Version="10.4.4" />
+        <PackageReference Include="Radzen.Blazor" Version="10.4.7" />
         <!--#endif-->
 
         <!--#if (fluentui)-->

@@ -78,6 +78,55 @@
             "replaces": "{DOTNET_TFM}",
             "defaultValue": "net10.0"
         },
+        "useios": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "PROJECT - Target iOS",
+            "displayName": "PROJECT - Target iOS"
+        },
+        "useandroid": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "PROJECT - Target Android",
+            "displayName": "PROJECT - Target Android"
+        },
+        "usemaccatalyst": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "PROJECT - Target Mac Catalyst",
+            "displayName": "PROJECT - Target Mac Catalyst"
+        },
+        "usewindows": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "PROJECT - Target Windows",
+            "displayName": "PROJECT - Target Windows"
+        },
+        "devflow": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "true",
+            "description": "PROJECT - Add the MAUI DevFlow debug-only toolkit (visual tree, profiling, network monitoring, AI agent automation) - https://github.com/dotnet/maui-labs",
+            "displayName": "PROJECT - Add MAUI DevFlow"
+        },
+        "shinydesktopcontrols": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "UI - Shiny.Maui.Controls.Desktop - Tray Icon, VS-style Docking, Touch/Kiosk On-Screen Keyboard for Windows/macOS/MacCatalyst/Linux - https://shinylib.net/controls/",
+            "displayName": "UI - Add Shiny Desktop Controls (Tray, Docking, Kiosk)"
+        },
+        "shinybarcodes": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "UI - Shiny.Maui.Controls.Barcodes - Pure-managed 1D/2D barcode & QR code renderer (ZXing.Net, no SkiaSharp) - https://shinylib.net/controls/barcodes/",
+            "displayName": "UI - Add Shiny Barcodes & QR Codes"
+        },
         "blazor":{
             "type": "parameter",
             "datatype": "bool",
@@ -205,6 +254,13 @@
             "defaultValue": "false",
             "description": "SERVICE - Add Background HTTP Uploads & Downloads (Shiny.Net.Http)",
             "displayName": "SERVICE - Add Background HTTP Uploads & Downloads (Shiny.Net.Http)"
+        },
+        "datasync": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "SERVICE - Add Bidirectional JSON Sync (Shiny.Data.Sync) — outbox/inbox over HTTP with platform-tier background transports",
+            "displayName": "SERVICE - Add Bidirectional JSON Sync (Shiny.Data.Sync)"
         },
         "notifications": {
             "type": "parameter",
@@ -837,6 +893,10 @@
             "exclude": "Delegates/MyHttpTransferDelegate.cs"
         },
         {
+            "condition": "(datasync == false)",
+            "exclude": "Delegates/MyDataSyncDelegate.cs"
+        },
+        {
             "condition": "(gps == false)",
             "exclude": "Delegates/MyGpsDelegate.cs"
         },        
@@ -888,6 +948,18 @@
         {
             "condition": "(carplay == false)",
             "exclude": "Platforms/iOS/CarPlayImplementation/**"
+        },
+        {
+            "condition": "(useios == false)",
+            "exclude": "Platforms/iOS/**"
+        },
+        {
+            "condition": "(useandroid == false)",
+            "exclude": "Platforms/Android/**"
+        },
+        {
+            "condition": "(usemaccatalyst == false)",
+            "exclude": "Platforms/MacCatalyst/**"
         },
         {
             "condition": "(authservice == false && usemsal == false)",

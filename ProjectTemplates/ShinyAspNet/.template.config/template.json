@@ -7,11 +7,11 @@
     "description": "A project for creating a good starting templates for ASP.NET",
     "identity": "Shiny.Templates.AspNet",
     "sourceName": "ShinyAspNet",
-    "preferNameDirectory": true,    
+    "preferNameDirectory": true,
     "tags": {
         "language": "C#",
         "type": "project"
-    },    
+    },
     "primaryOutputs": [{
         "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
         "path": "Program.cs"
@@ -29,7 +29,7 @@
     "guids": [
         "07CD65EF-6238-4365-AF5D-F6D433967F48",
         "8B51DC95-6D07-4C39-BC6C-3BFE96E8A7EA"
-    ],   
+    ],
     "symbols":{
         "Framework": {
             "type": "parameter",
@@ -45,23 +45,47 @@
         "ef": {
             "type": "parameter",
             "dataType": "choice",
-            "defaultValue": "None",
-            "description": "Entity Framework",
+            "defaultValue": "none",
+            "description": "Entity Framework Core provider",
             "displayName": "Entity Framework",
             "choices": [
-                {
-                    "choice": "none",
-                    "description": "None"
-                },
-                {
-                    "choice": "sqlserver",
-                    "description": "SQL Server"
-                },
-                {
-                    "choice": "postgresql",
-                    "description": "PostgreSQL"
-                }                
+                { "choice": "none",       "description": "None" },
+                { "choice": "sqlserver",  "description": "SQL Server" },
+                { "choice": "postgresql", "description": "PostgreSQL" }
             ]
+        },
+        "efspatial": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Adds NetTopologySuite spatial support to the EF Core provider",
+            "displayName": "EF Spatial (NetTopologySuite)"
+        },
+        "documentdb": {
+            "type": "parameter",
+            "dataType": "choice",
+            "defaultValue": "none",
+            "description": "Adds Shiny.DocumentDb with the chosen storage provider",
+            "displayName": "Shiny.DocumentDb Provider",
+            "choices": [
+                { "choice": "none",       "description": "No DocumentDb provider" },
+                { "choice": "sqlite",     "description": "Shiny.DocumentDb.Sqlite" },
+                { "choice": "sqlcipher",  "description": "Shiny.DocumentDb.Sqlite.SqlCipher" },
+                { "choice": "sqlserver",  "description": "Shiny.DocumentDb.SqlServer" },
+                { "choice": "mysql",      "description": "Shiny.DocumentDb.MySql" },
+                { "choice": "postgresql", "description": "Shiny.DocumentDb.PostgreSql" },
+                { "choice": "cosmosdb",   "description": "Shiny.DocumentDb.CosmosDb" },
+                { "choice": "mongodb",    "description": "Shiny.DocumentDb.MongoDb" },
+                { "choice": "litedb",     "description": "Shiny.DocumentDb.LiteDb" },
+                { "choice": "duckdb",     "description": "Shiny.DocumentDb.DuckDb" }
+            ]
+        },
+        "aidocumentdb": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Adds Shiny.DocumentDb.Extensions.AI — exposes document store operations as AI tools",
+            "displayName": "DocumentDB AI Tools"
         },
         "connectionstring": {
             "type": "parameter",
@@ -70,89 +94,82 @@
             "defaultValue": "",
             "replaces":"{CONNECTION_STRING}"
         },
-        "efspatial":{
+        "signalr": {
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "false",
-            "description": "Entity Framework Spatial",
-            "displayName": "Entity Framework Spatial"
-        },        
-        "signalr":{
-            "type": "parameter",
-            "dataType": "bool",
-            "defaultValue": "false",
-            "description": "SignalR",
+            "description": "SignalR — real-time messaging with sample hub",
             "displayName": "SignalR"
         },
-        "jwtauth":{
+        "jwtauth": {
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "true",
-            "description": "JWT Authentication",
+            "description": "JWT bearer authentication with refresh tokens & sample sign-in/out handlers",
             "displayName": "JWT Authentication"
         },
-        "google":{
+        "google": {
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "false",
-            "description": "Google Authentication",
+            "description": "Microsoft.AspNetCore.Authentication.Google",
             "displayName": "Google Authentication"
         },
-        "facebook":{
+        "facebook": {
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "false",
-            "description": "Facebook Authentication",
+            "description": "Microsoft.AspNetCore.Authentication.Facebook",
             "displayName": "Facebook Authentication"
         },
-        "apple":{
+        "apple": {
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "false",
-            "description": "Apple Authentication",
+            "description": "AspNet.Security.OAuth.Apple",
             "displayName": "Apple Authentication"
         },
         "orleans": {
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "true",
-            "description": "Microsoft Orleans",
+            "description": "Microsoft Orleans distributed actor model framework with sample grain",
             "displayName": "Microsoft Orleans"
         },
         "shinymediator": {
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "true",
-            "description": "Shiny Mediator (Shiny.Mediator.AspNet)",
+            "description": "Source-generated mediator with endpoints, middleware, and handlers (Shiny.Mediator.AspNet)",
             "displayName": "Shiny Mediator"
         },
         "localization": {
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "false",
-            "description": "Shiny.Extensions.Localization.Generator",
+            "description": "Source-generated localization (Shiny.Extensions.Localization.Generator)",
             "displayName": "Localization"
         },
         "reflector": {
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "false",
-            "description": "Shiny.Extensions.Reflector",
+            "description": "AOT-compatible source-generated reflection (Shiny.Extensions.Reflector)",
             "displayName": "Reflector"
         },
         "scalar": {
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "true",
-            "description": "Scalar",
-            "displayName": "Scalar"
+            "description": "Scalar OpenAPI documentation UI",
+            "displayName": "Scalar API Docs"
         },
         "deeplinks": {
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "true",
-            "description": "Include Sample Apple Domain Association File and Android Asset Links",
-            "displayName": "Include Sample Apple Domain Association File and Android Asset Links" 
+            "description": "Include sample apple-app-site-association and assetlinks.json under wwwroot/.well-known",
+            "displayName": "Mobile Deep Link Files"
         },
         "efmssql":{
             "type": "computed",
@@ -168,6 +185,71 @@
             "type": "computed",
             "dataType": "bool",
             "value": "(ef == \"none\")"
+        },
+        "docdbnone": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(documentdb == \"none\")"
+        },
+        "usedocumentdb": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(documentdb != \"none\")"
+        },
+        "docdbsqlite": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(documentdb == \"sqlite\")"
+        },
+        "docdbsqlcipher": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(documentdb == \"sqlcipher\")"
+        },
+        "docdbsqlserver": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(documentdb == \"sqlserver\")"
+        },
+        "docdbmysql": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(documentdb == \"mysql\")"
+        },
+        "docdbpostgres": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(documentdb == \"postgresql\")"
+        },
+        "docdbcosmos": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(documentdb == \"cosmosdb\")"
+        },
+        "docdbmongo": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(documentdb == \"mongodb\")"
+        },
+        "docdblitedb": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(documentdb == \"litedb\")"
+        },
+        "docdbduckdb": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(documentdb == \"duckdb\")"
+        },
+        "useanydata": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(ef != \"none\" || documentdb != \"none\")"
+        },
+        "usemediator": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(shinymediator || jwtauth)"
         }
     },
     "sources": [{
@@ -189,19 +271,43 @@
         },
         {
             "condition": "(jwtauth == false)",
-            "exclude": "Infrastructure/AuthModule"
+            "exclude": "Infrastructure/AuthModule.cs"
+        },
+        {
+            "condition": "(jwtauth == false)",
+            "exclude": "Infrastructure/AuthOptions.cs"
+        },
+        {
+            "condition": "(jwtauth == false)",
+            "exclude": "Services/JwtService.cs"
+        },
+        {
+            "condition": "(jwtauth == false)",
+            "exclude": "Services/IUserService.cs"
+        },
+        {
+            "condition": "(jwtauth == false)",
+            "exclude": "Services/Impl/UserService.cs"
         },
         {
             "condition": "(signalr == false)",
-            "exclude": "Infrastructure/SignalrModule"
+            "exclude": "Infrastructure/SignalrModule.cs"
         },
         {
             "condition": "(signalr == false)",
             "exclude": "Hubs/**"
         },
         {
-            "condition": "(shinymediator == false)",
+            "condition": "(usemediator == false)",
             "exclude": "Infrastructure/MediatorModule.cs"
+        },
+        {
+            "condition": "(efnone)",
+            "exclude": "Data/AppDbContext.cs"
+        },
+        {
+            "condition": "(deeplinks == false)",
+            "exclude": "wwwroot/**"
         }]
-    }]    
+    }]
 }

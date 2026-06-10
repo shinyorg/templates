@@ -6,8 +6,13 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <OpenApiDocumentsDirectory>.</OpenApiDocumentsDirectory>
         <MicrosoftVersion>10.0.8</MicrosoftVersion>
-        <ShinyVersion>4.0.1</ShinyVersion>
-        <MediatorVersion>6.4.0</MediatorVersion>
+        <ShinyExtensionsLocalizationVersion>2.0.1</ShinyExtensionsLocalizationVersion>
+        <ShinyExtensionsReflectorVersion>5.0.0</ShinyExtensionsReflectorVersion>
+        <ShinyExtensionsDIVersion>5.0.0</ShinyExtensionsDIVersion>
+        <ShinyExtensionsWebHostingVersion>5.0.0</ShinyExtensionsWebHostingVersion>
+        <ShinyDocumentDbVersion>6.1.0</ShinyDocumentDbVersion>
+        <MediatorVersion>6.6.1</MediatorVersion>
+        <ScalarVersion>2.16.2</ScalarVersion>
         <!--#if (orleans)-->
         <OrleansVersion>10.1.0</OrleansVersion>
         <!--#endif-->
@@ -16,15 +21,15 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="$(MicrosoftVersion)" />
         <PackageReference Include="Microsoft.Extensions.ApiDescription.Server" Version="$(MicrosoftVersion)"/>
-        <PackageReference Include="Shiny.Extensions.DependencyInjection" Version="$(ShinyVersion)"/>
-        <PackageReference Include="Shiny.Extensions.WebHosting" Version="$(ShinyVersion)" />
+        <PackageReference Include="Shiny.Extensions.DependencyInjection" Version="$(ShinyExtensionsDIVersion)"/>
+        <PackageReference Include="Shiny.Extensions.WebHosting" Version="$(ShinyExtensionsWebHostingVersion)" />
 
         <!--#if (localization)-->
-        <PackageReference Include="Shiny.Extensions.Localization.Generator" Version="$(ShinyVersion)" />
+        <PackageReference Include="Shiny.Extensions.Localization.Generator" Version="$(ShinyExtensionsLocalizationVersion)" />
         <!--#endif-->
 
         <!--#if (reflector)-->
-        <PackageReference Include="Shiny.Extensions.Reflector" Version="$(ShinyVersion)" />
+        <PackageReference Include="Shiny.Extensions.Reflector" Version="$(ShinyExtensionsReflectorVersion)" />
         <!--#endif-->
 
         <!--#if (efmssql)-->
@@ -39,6 +44,37 @@
         <!--#if (efspatial)-->
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="$(MicrosoftVersion)" />
         <!--#endif-->
+        <!--#endif-->
+
+        <!--#if (docdbsqlite)-->
+        <PackageReference Include="Shiny.DocumentDb.Sqlite" Version="$(ShinyDocumentDbVersion)" />
+        <!--#endif-->
+        <!--#if (docdbsqlcipher)-->
+        <PackageReference Include="Shiny.DocumentDb.Sqlite.SqlCipher" Version="$(ShinyDocumentDbVersion)" />
+        <!--#endif-->
+        <!--#if (docdbsqlserver)-->
+        <PackageReference Include="Shiny.DocumentDb.SqlServer" Version="$(ShinyDocumentDbVersion)" />
+        <!--#endif-->
+        <!--#if (docdbmysql)-->
+        <PackageReference Include="Shiny.DocumentDb.MySql" Version="$(ShinyDocumentDbVersion)" />
+        <!--#endif-->
+        <!--#if (docdbpostgres)-->
+        <PackageReference Include="Shiny.DocumentDb.PostgreSql" Version="$(ShinyDocumentDbVersion)" />
+        <!--#endif-->
+        <!--#if (docdbcosmos)-->
+        <PackageReference Include="Shiny.DocumentDb.CosmosDb" Version="$(ShinyDocumentDbVersion)" />
+        <!--#endif-->
+        <!--#if (docdbmongo)-->
+        <PackageReference Include="Shiny.DocumentDb.MongoDb" Version="$(ShinyDocumentDbVersion)" />
+        <!--#endif-->
+        <!--#if (docdblitedb)-->
+        <PackageReference Include="Shiny.DocumentDb.LiteDb" Version="$(ShinyDocumentDbVersion)" />
+        <!--#endif-->
+        <!--#if (docdbduckdb)-->
+        <PackageReference Include="Shiny.DocumentDb.DuckDb" Version="$(ShinyDocumentDbVersion)" />
+        <!--#endif-->
+        <!--#if (aidocumentdb)-->
+        <PackageReference Include="Shiny.DocumentDb.Extensions.AI" Version="$(ShinyDocumentDbVersion)" />
         <!--#endif-->
 
         <!--#if (orleans)-->
@@ -68,11 +104,11 @@
         <PackageReference Include="AspNet.Security.OAuth.Apple" Version="10.0.0" />
         <!--#endif-->
 
-        <!--#if (shinymediator)-->
+        <!--#if (usemediator)-->
         <PackageReference Include="Shiny.Mediator.AspNet" Version="$(MediatorVersion)" />
         <!--#endif-->
         <!--#if (scalar)-->
-        <PackageReference Include="Scalar.AspNetCore" Version="2.14.14"/>
+        <PackageReference Include="Scalar.AspNetCore" Version="$(ScalarVersion)"/>
         <!--#endif-->
     </ItemGroup>
 </Project>

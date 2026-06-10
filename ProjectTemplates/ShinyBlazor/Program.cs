@@ -1,6 +1,10 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using ShinyBlazor;
+//#if (documentdb)
+using Shiny.DocumentDb;
+using Shiny.DocumentDb.IndexedDb;
+//#endif
 //#if (mudblazor)
 using MudBlazor.Services;
 //#endif
@@ -23,6 +27,53 @@ builder.Services.AddShinyMediator(cfg => cfg.UseBlazor());
 
 //#if (shinycontrols)
 builder.Services.AddShinyBlazorControls();
+//#endif
+
+//#if (shinykiosk)
+builder.Services.AddShinyDocking();
+//#endif
+
+//#if (bluetoothle)
+builder.Services.AddBluetoothLE();
+//#endif
+
+//#if (gps)
+builder.Services.AddGps();
+//#endif
+
+//#if (push)
+// TODO: replace ApplicationServerKey with your VAPID public key — see https://shinylib.net/client/push/
+builder.Services.AddPush(new Shiny.Push.WebPushOptions
+{
+    ApplicationServerKey = "REPLACE_WITH_VAPID_PUBLIC_KEY"
+});
+//#endif
+
+//#if (useshinyspeech)
+builder.Services.AddSpeechServices();
+//#endif
+
+//#if (aiconversation)
+// TODO: register an IChatClient or IChatClientProvider before this — see https://shinylib.net/aiconversation/
+builder.Services.AddShinyAiConversation(opts =>
+{
+    // opts.SetChatClientProvider<MyChatClientProvider>();
+    // opts.SetMessageStore<MyMessageStore>(addAiLookupTool: true); // optional
+});
+//#endif
+
+//#if (documentdb)
+var documentDbOptions = new IndexedDbDocumentStoreOptions
+{
+    DatabaseName = "ShinyBlazor",
+    UseReflectionFallback = true
+};
+builder.Services.AddSingleton(documentDbOptions);
+builder.Services.AddSingleton<IDocumentStore, IndexedDbDocumentStore>();
+//#endif
+
+//#if (stores)
+builder.Services.AddShinyStores();
 //#endif
 
 //#if (mudblazor)

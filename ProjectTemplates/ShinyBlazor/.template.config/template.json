@@ -121,6 +121,20 @@
             "description": "Add Shiny.Blazor.Controls.MermaidDiagrams",
             "displayName": "Mermaid Diagrams"
         },
+        "shinybarcodes": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Blazor.Controls.Barcodes (pure-managed 1D/2D barcode & QR code renderer, SVG/PNG data-URI)",
+            "displayName": "Shiny Barcodes & QR Codes"
+        },
+        "shinykiosk": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Blazor.Controls.Kiosk (touch / kiosk on-screen keyboard and docking)",
+            "displayName": "Shiny Blazor Kiosk Controls"
+        },
         "shinyspeech": {
             "type": "parameter",
             "dataType": "bool",
@@ -161,6 +175,11 @@
             "type": "computed",
             "dataType": "bool",
             "value": "(uilibrary != \"None\")"
+        },
+        "useshinyspeech": {
+            "type": "computed",
+            "dataType": "bool",
+            "value": "(shinyspeech || aiconversation)"
         }
     },
     "sources": [{

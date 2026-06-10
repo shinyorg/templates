@@ -5,10 +5,17 @@
 <!--#endif-->
 	<PropertyGroup>
 		<BaseTargetFramework>{DOTNET_TFM}</BaseTargetFramework>
+		<!--#if (useios)-->
 		<TargetFrameworks>$(TargetFrameworks);$(BaseTargetFramework)-ios</TargetFrameworks>
+		<!--#endif-->
+		<!--#if (useandroid)-->
 		<TargetFrameworks>$(TargetFrameworks);$(BaseTargetFramework)-android</TargetFrameworks>
+		<!--#endif-->
 		<!--#if (usemaccatalyst)-->
 		<TargetFrameworks>$(TargetFrameworks);$(BaseTargetFramework)-maccatalyst</TargetFrameworks>
+		<!--#endif-->
+		<!--#if (usewindows)-->
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);$(BaseTargetFramework)-windows10.0.19041.0</TargetFrameworks>
 		<!--#endif-->
 		<!--useful for unit testing - not enabled by default since it can cause issues and callout projects that don't support target-->
 		<!--<TargetFrameworks Condition="'$(CI)' != 'true'">$(TargetFrameworks);$(BaseTargetFramework)</TargetFrameworks>-->
@@ -33,9 +40,13 @@
 		<!--<EnablePreviewFeatures>true</EnablePreviewFeatures>-->
 
 		<MauiVersion>10.0.60</MauiVersion>
-		<ShinyVersion>5.0.0-beta-0113</ShinyVersion>
+		<ShinyVersion>5.0.0-beta-0135</ShinyVersion>
+		<ShinyControlsVersion>1.0.1-beta-0102</ShinyControlsVersion>
+		<ShinyShellVersion>6.2.0</ShinyShellVersion>
+		<ShinyDocumentDbVersion>6.1.0</ShinyDocumentDbVersion>
+		<ShinyMauiHostingVersion>5.0.0</ShinyMauiHostingVersion>
 		<!--#if (useshinymediator)-->
-		<MediatorVersion>6.4.0</MediatorVersion>
+		<MediatorVersion>6.6.1</MediatorVersion>
 		<!--#endif-->
 		<!--#if (aimediator)-->
 		<ShinyMediatorGenerateAITools>true</ShinyMediatorGenerateAITools>
@@ -184,22 +195,31 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Shiny.Extensions.MauiHosting" Version="4.0.0" />
+		<PackageReference Include="Shiny.Extensions.MauiHosting" Version="$(ShinyMauiHostingVersion)" />
+		<!--#if (devflow)-->
+		<PackageReference Include="MauiDevFlow.Maui" Version="0.1.0-preview.10.26274.3" Condition="'$(Configuration)' == 'Debug'" />
+		<!--#endif-->
 		<!--#if (shinyshell)-->
-		<PackageReference Include="Shiny.Maui.Shell" Version="6.1.1" />
+		<PackageReference Include="Shiny.Maui.Shell" Version="$(ShinyShellVersion)" />
 		<!--#endif-->
 		<!--#if (uxdiversdialogs)-->
-		<PackageReference Include="Shiny.Maui.Shell.UxDiversDialogs" Version="6.1.1" />
+		<PackageReference Include="Shiny.Maui.Shell.UxDiversDialogs" Version="$(ShinyShellVersion)" />
 		<!--#endif-->
 		<!--#if (usemauicontrols)-->
-		<PackageReference Include="Shiny.Maui.Controls" Version="1.0.1-beta-0081" />
-		<PackageReference Include="Shiny.Maui.Controls.SpeechAddins" Version="1.0.1-beta-0081" />
+		<PackageReference Include="Shiny.Maui.Controls" Version="$(ShinyControlsVersion)" />
+		<PackageReference Include="Shiny.Maui.Controls.SpeechAddins" Version="$(ShinyControlsVersion)" />
 		<!--#endif-->
 		<!--#if (markdown)-->
-		<PackageReference Include="Shiny.Maui.Controls.Markdown" Version="1.0.1-beta-0081" />
+		<PackageReference Include="Shiny.Maui.Controls.Markdown" Version="$(ShinyControlsVersion)" />
 		<!--#endif-->
 		<!--#if (mermaiddiagrams)-->
-		<PackageReference Include="Shiny.Maui.Controls.MermaidDiagrams" Version="1.0.1-beta-0081" />
+		<PackageReference Include="Shiny.Maui.Controls.MermaidDiagrams" Version="$(ShinyControlsVersion)" />
+		<!--#endif-->
+		<!--#if (shinybarcodes)-->
+		<PackageReference Include="Shiny.Maui.Controls.Barcodes" Version="$(ShinyControlsVersion)" />
+		<!--#endif-->
+		<!--#if (shinydesktopcontrols)-->
+		<PackageReference Include="Shiny.Maui.Controls.Desktop" Version="$(ShinyControlsVersion)" />
 		<!--#endif-->
 		<!--#if (useshinymediator)-->
 		<PackageReference Include="Shiny.Mediator" Version="$(MediatorVersion)" />
@@ -240,6 +260,9 @@
 		<!--#if (httptransfers)-->
 		<PackageReference Include="Shiny.Net.Http" Version="$(ShinyVersion)" />
 		<!--#endif-->
+		<!--#if (datasync)-->
+		<PackageReference Include="Shiny.Data.Sync" Version="$(ShinyVersion)" />
+		<!--#endif-->
 		<!--#if (usepushnative)-->
 		<PackageReference Include="Shiny.Push" Version="$(ShinyVersion)" />
 		<!--#endif-->
@@ -247,7 +270,7 @@
 		<PackageReference Include="Shiny.Push.AzureNotificationHubs" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (usepushfcm)-->
-		<PackageReference Include="Shiny.Push.FirebaseMessaging" Version="4.0.1" />
+		<PackageReference Include="Shiny.Push.FirebaseMessaging" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<!--#if (usemauimaps)-->
@@ -358,10 +381,10 @@
 		<PackageReference Include="EmbedIO" Version="3.5.2" />
 		<!--#endif-->
 		<!--#if (mudblazor)-->
-		<PackageReference Include="MudBlazor" Version="9.4.0" />
+		<PackageReference Include="MudBlazor" Version="9.5.0" />
 		<!--#endif-->
 		<!--#if (radzen)-->
-		<PackageReference Include="Radzen.Blazor" Version="10.4.4" />
+		<PackageReference Include="Radzen.Blazor" Version="10.4.7" />
 		<!--#endif-->
 		<!--#if (fluentui)-->
 		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.14.2" />
@@ -369,7 +392,7 @@
 		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.14.2" />
 		<!--#endif-->
 		<!--#if (usemsextai)-->
-		<PackageReference Include="Microsoft.Extensions.AI" Version="10.6.0" />
+		<PackageReference Include="Microsoft.Extensions.AI" Version="10.7.0" />
 		<!--#endif-->
 		<!--#if (syslinqasync)-->
 		<PackageReference Include="System.Linq.Async" Version="7.0.1" />
@@ -384,11 +407,11 @@
 		<PackageReference Include="RoomSharp.DependencyInjection" Version="0.5.5" />
 		<!--#endif-->
 		<!--#if (usedocumentdb)-->
-		<PackageReference Include="Shiny.DocumentDb.Sqlite" Version="5.2.0" />
-        <PackageReference Include="Shiny.DocumentDb.Extensions.DependencyInjection" Version="5.2.0" />
+		<PackageReference Include="Shiny.DocumentDb.Sqlite" Version="$(ShinyDocumentDbVersion)" />
+		<PackageReference Include="Shiny.DocumentDb.Extensions.DependencyInjection" Version="$(ShinyDocumentDbVersion)" />
 		<!--#endif-->
 		<!--#if (aidocumentdb)-->
-		<PackageReference Include="Shiny.DocumentDb.Extensions.AI" Version="5.2.0" />
+		<PackageReference Include="Shiny.DocumentDb.Extensions.AI" Version="$(ShinyDocumentDbVersion)" />
 		<!--#endif-->
 		<!--#if (geospatialdb)-->
 		<PackageReference Include="Shiny.Spatial" Version="1.1.0" />
@@ -404,7 +427,7 @@
 		<PackageReference Include="Shiny.Speech" Version="2.1.0" />
 		<!--#endif-->
 		<!--#if (aiconversation)-->
-		<PackageReference Include="Shiny.AiConversation" Version="1.0.0-beta-0047" />
+		<PackageReference Include="Shiny.AiConversation" Version="1.0.0-beta-0050" />
 		<!--#endif-->
 	</ItemGroup>
 
