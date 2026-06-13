@@ -126,6 +126,11 @@ builder.Services.AddSingleton<IDocumentStore, MongoDbDocumentStore>();
 //     // tools.AddType(jsonContext.SomeType, capabilities: DocumentAICapabilities.ReadOnly);
 // });
 #endif
+#if (documentdbdiagnostics)
+// OpenTelemetry metrics + tracing — registered after the store.
+// Subscribe from your OTel pipeline with .AddMeter("Shiny.DocumentDb") / .AddSource("Shiny.DocumentDb")
+builder.Services.AddDocumentStoreInstrumentation();
+#endif
 #endif
 
 #if (orleans)

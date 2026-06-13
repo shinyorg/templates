@@ -5,6 +5,9 @@ using ShinyBlazor;
 using Shiny.DocumentDb;
 using Shiny.DocumentDb.IndexedDb;
 //#endif
+//#if (blazorhost)
+using Shiny;
+//#endif
 //#if (mudblazor)
 using MudBlazor.Services;
 //#endif
@@ -23,6 +26,12 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 //#if (shinymediator)
 builder.Services.AddShinyMediator(cfg => cfg.UseBlazor());
+//#endif
+
+//#if (blazorhost)
+// Device/browser info + culture & time-zone change notifications (IAppSupport).
+// Requires the shiny-appsupport.js script in wwwroot/index.html.
+builder.Services.AddAppSupport(ThisAssembly.AssemblyVersion);
 //#endif
 
 //#if (shinycontrols)
@@ -70,6 +79,11 @@ var documentDbOptions = new IndexedDbDocumentStoreOptions
 };
 builder.Services.AddSingleton(documentDbOptions);
 builder.Services.AddSingleton<IDocumentStore, IndexedDbDocumentStore>();
+//#if (documentdbdiagnostics)
+// OpenTelemetry metrics + tracing — registered after the store.
+// Subscribe from your OTel pipeline with .AddMeter("Shiny.DocumentDb") / .AddSource("Shiny.DocumentDb")
+builder.Services.AddDocumentStoreInstrumentation();
+//#endif
 //#endif
 
 //#if (stores)

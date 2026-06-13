@@ -40,10 +40,10 @@
 		<!--<EnablePreviewFeatures>true</EnablePreviewFeatures>-->
 
 		<MauiVersion>10.0.60</MauiVersion>
-		<ShinyVersion>5.0.0-beta-0135</ShinyVersion>
-		<ShinyControlsVersion>1.0.1-beta-0102</ShinyControlsVersion>
+		<ShinyVersion>5.0.0-beta-0137</ShinyVersion>
+		<ShinyControlsVersion>1.0.1-beta-0110</ShinyControlsVersion>
 		<ShinyShellVersion>6.2.0</ShinyShellVersion>
-		<ShinyDocumentDbVersion>6.1.0</ShinyDocumentDbVersion>
+		<ShinyDocumentDbVersion>7.0.0</ShinyDocumentDbVersion>
 		<ShinyMauiHostingVersion>5.0.0</ShinyMauiHostingVersion>
 		<!--#if (useshinymediator)-->
 		<MediatorVersion>6.6.1</MediatorVersion>
@@ -409,6 +409,9 @@
 		<!--#if (usedocumentdb)-->
 		<PackageReference Include="Shiny.DocumentDb.Sqlite" Version="$(ShinyDocumentDbVersion)" />
 		<PackageReference Include="Shiny.DocumentDb.Extensions.DependencyInjection" Version="$(ShinyDocumentDbVersion)" />
+		<!--#endif-->
+		<!--#if (documentdbdiagnostics)-->
+		<PackageReference Include="Shiny.DocumentDb.Diagnostics" Version="$(ShinyDocumentDbVersion)" />
 		<!--#endif-->
 		<!--#if (aidocumentdb)-->
 		<PackageReference Include="Shiny.DocumentDb.Extensions.AI" Version="$(ShinyDocumentDbVersion)" />

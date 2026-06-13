@@ -10,7 +10,7 @@
         <ShinyExtensionsReflectorVersion>5.0.0</ShinyExtensionsReflectorVersion>
         <ShinyExtensionsDIVersion>5.0.0</ShinyExtensionsDIVersion>
         <ShinyExtensionsWebHostingVersion>5.0.0</ShinyExtensionsWebHostingVersion>
-        <ShinyDocumentDbVersion>6.1.0</ShinyDocumentDbVersion>
+        <ShinyDocumentDbVersion>7.0.0</ShinyDocumentDbVersion>
         <MediatorVersion>6.6.1</MediatorVersion>
         <ScalarVersion>2.16.2</ScalarVersion>
         <!--#if (orleans)-->
@@ -75,6 +75,9 @@
         <!--#endif-->
         <!--#if (aidocumentdb)-->
         <PackageReference Include="Shiny.DocumentDb.Extensions.AI" Version="$(ShinyDocumentDbVersion)" />
+        <!--#endif-->
+        <!--#if (documentdbdiagnostics)-->
+        <PackageReference Include="Shiny.DocumentDb.Diagnostics" Version="$(ShinyDocumentDbVersion)" />
         <!--#endif-->
 
         <!--#if (orleans)-->

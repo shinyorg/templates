@@ -5,15 +5,16 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <MicrosoftVersion>10.0.8</MicrosoftVersion>
-        <ShinyClientVersion>5.0.0-beta-0135</ShinyClientVersion>
-        <ShinyControlsVersion>1.0.1-beta-0102</ShinyControlsVersion>
+        <ShinyClientVersion>5.0.0-beta-0137</ShinyClientVersion>
+        <ShinyControlsVersion>1.0.1-beta-0110</ShinyControlsVersion>
         <ShinyExtensionsLocalizationVersion>2.0.1</ShinyExtensionsLocalizationVersion>
         <ShinyExtensionsStoresVersion>5.0.0</ShinyExtensionsStoresVersion>
         <ShinyExtensionsReflectorVersion>5.0.0</ShinyExtensionsReflectorVersion>
         <ShinyExtensionsDIVersion>5.0.0</ShinyExtensionsDIVersion>
+        <ShinyExtensionsBlazorHostingVersion>5.1.0-beta-0052</ShinyExtensionsBlazorHostingVersion>
         <ShinySpeechVersion>2.1.0</ShinySpeechVersion>
         <ShinyAiConversationVersion>1.0.0-beta-0050</ShinyAiConversationVersion>
-        <ShinyDocumentDbVersion>6.1.0</ShinyDocumentDbVersion>
+        <ShinyDocumentDbVersion>7.0.0</ShinyDocumentDbVersion>
         <MediatorVersion>6.6.1</MediatorVersion>
     </PropertyGroup>
 
@@ -35,6 +36,10 @@
 
         <!--#if (di)-->
         <PackageReference Include="Shiny.Extensions.DependencyInjection" Version="$(ShinyExtensionsDIVersion)" />
+        <!--#endif-->
+
+        <!--#if (blazorhost)-->
+        <PackageReference Include="Shiny.Extensions.BlazorHosting" Version="$(ShinyExtensionsBlazorHostingVersion)" />
         <!--#endif-->
 
         <!--#if (shinymediator)-->
@@ -83,6 +88,9 @@
 
         <!--#if (documentdb)-->
         <PackageReference Include="Shiny.DocumentDb.IndexedDb" Version="$(ShinyDocumentDbVersion)" />
+        <!--#if (documentdbdiagnostics)-->
+        <PackageReference Include="Shiny.DocumentDb.Diagnostics" Version="$(ShinyDocumentDbVersion)" />
+        <!--#endif-->
         <!--#endif-->
 
         <!--#if (mudblazor)-->

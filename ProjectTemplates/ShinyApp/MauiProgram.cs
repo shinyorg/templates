@@ -59,8 +59,10 @@ using Microsoft.FluentUI.AspNetCore.Components;
 using Polly;
 using Polly.Retry;
 #endif
-#if usedocumentdb
+#if usedocumentdb || documentdbdiagnostics
 using Shiny.DocumentDb;
+#endif
+#if usedocumentdb
 using Shiny.DocumentDb.Sqlite;
 #endif
 using ShinyApp.Services;
@@ -316,6 +318,11 @@ public static class MauiProgram
             // TODO: JsonContext source generation so reflection is not needed
             //opts.JsonSerializerOptions = AppJsonContext.Default.Options;
         });
+#endif
+#if documentdbdiagnostics
+        // OpenTelemetry metrics + tracing — call AFTER registering a store.
+        // Subscribe from your OTel pipeline with .AddMeter("Shiny.DocumentDb") / .AddSource("Shiny.DocumentDb")
+        builder.Services.AddDocumentStoreInstrumentation();
 #endif
 #if aidocumentdb
         // For AI tools setup, see https://shinylib.net/documentdb/ai-tools/

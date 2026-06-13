@@ -87,6 +87,13 @@
             "description": "Adds Shiny.DocumentDb.Extensions.AI — exposes document store operations as AI tools",
             "displayName": "DocumentDB AI Tools"
         },
+        "documentdbdiagnostics": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Adds Shiny.DocumentDb.Diagnostics — OpenTelemetry-native metrics and distributed tracing for the document store",
+            "displayName": "DocumentDB Telemetry & Diagnostics"
+        },
         "connectionstring": {
             "type": "parameter",
             "dataType": "string",

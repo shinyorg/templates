@@ -702,6 +702,13 @@
             "description": "AI - Shiny DocumentDB AI Tools - Exposes document store operations as AI tools - Documentation https://shinylib.net/documentdb/ai-tools/",
             "displayName": "AI - Shiny DocumentDB AI Tools"
         },
+        "documentdbdiagnostics":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "SERVICE - Shiny DocumentDB Telemetry & Diagnostics - OpenTelemetry-native metrics and distributed tracing for the document store - Documentation https://shinylib.net/documentdb/diagnostics/",
+            "displayName": "SERVICE - Add Document DB Telemetry & Diagnostics (Shiny.DocumentDb.Diagnostics)"
+        },
         "syslinqasync":{
             "type": "parameter",
             "datatype": "bool",

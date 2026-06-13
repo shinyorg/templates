@@ -72,6 +72,13 @@
             "description": "Add Shiny.Extensions.DependencyInjection (source-generated DI registration)",
             "displayName": "Shiny DI"
         },
+        "blazorhost": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Add Shiny.Extensions.BlazorHosting — device/browser info + culture & time-zone change notifications (IAppSupport)",
+            "displayName": "Blazor App Support"
+        },
         "shinymediator": {
             "type": "parameter",
             "dataType": "bool",
@@ -155,6 +162,13 @@
             "defaultValue": "false",
             "description": "Add Shiny.DocumentDb.IndexedDb",
             "displayName": "Document DB (IndexedDB)"
+        },
+        "documentdbdiagnostics": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false",
+            "description": "Adds Shiny.DocumentDb.Diagnostics — OpenTelemetry-native metrics and distributed tracing for the document store",
+            "displayName": "DocumentDB Telemetry & Diagnostics"
         },
         "mudblazor": {
             "type": "computed",
