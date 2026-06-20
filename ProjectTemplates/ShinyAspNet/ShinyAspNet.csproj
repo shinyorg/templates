@@ -5,16 +5,16 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <OpenApiDocumentsDirectory>.</OpenApiDocumentsDirectory>
-        <MicrosoftVersion>10.0.8</MicrosoftVersion>
+        <MicrosoftVersion>10.0.9</MicrosoftVersion>
         <ShinyExtensionsLocalizationVersion>2.0.1</ShinyExtensionsLocalizationVersion>
-        <ShinyExtensionsReflectorVersion>5.0.0</ShinyExtensionsReflectorVersion>
-        <ShinyExtensionsDIVersion>5.0.0</ShinyExtensionsDIVersion>
-        <ShinyExtensionsWebHostingVersion>5.0.0</ShinyExtensionsWebHostingVersion>
-        <ShinyDocumentDbVersion>7.0.0</ShinyDocumentDbVersion>
-        <MediatorVersion>6.6.1</MediatorVersion>
-        <ScalarVersion>2.16.2</ScalarVersion>
+        <ShinyExtensionsReflectorVersion>5.1.0</ShinyExtensionsReflectorVersion>
+        <ShinyExtensionsDIVersion>5.1.0</ShinyExtensionsDIVersion>
+        <ShinyExtensionsWebHostingVersion>5.1.0</ShinyExtensionsWebHostingVersion>
+        <ShinyDocumentDbVersion>8.0.0</ShinyDocumentDbVersion>
+        <MediatorVersion>6.6.2</MediatorVersion>
+        <ScalarVersion>2.16.4</ScalarVersion>
         <!--#if (orleans)-->
-        <OrleansVersion>10.1.0</OrleansVersion>
+        <OrleansVersion>10.2.0</OrleansVersion>
         <!--#endif-->
     </PropertyGroup>
 

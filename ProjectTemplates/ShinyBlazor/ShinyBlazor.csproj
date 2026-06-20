@@ -4,18 +4,18 @@
         <TargetFramework>{DOTNET_TFM}</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <MicrosoftVersion>10.0.8</MicrosoftVersion>
-        <ShinyClientVersion>5.0.0-beta-0137</ShinyClientVersion>
-        <ShinyControlsVersion>1.0.1-beta-0110</ShinyControlsVersion>
+        <MicrosoftVersion>10.0.9</MicrosoftVersion>
+        <ShinyClientVersion>5.0.0-beta-0140</ShinyClientVersion>
+        <ShinyControlsVersion>1.0.1-beta-0123</ShinyControlsVersion>
         <ShinyExtensionsLocalizationVersion>2.0.1</ShinyExtensionsLocalizationVersion>
-        <ShinyExtensionsStoresVersion>5.0.0</ShinyExtensionsStoresVersion>
-        <ShinyExtensionsReflectorVersion>5.0.0</ShinyExtensionsReflectorVersion>
-        <ShinyExtensionsDIVersion>5.0.0</ShinyExtensionsDIVersion>
+        <ShinyExtensionsStoresVersion>5.1.0</ShinyExtensionsStoresVersion>
+        <ShinyExtensionsReflectorVersion>5.1.0</ShinyExtensionsReflectorVersion>
+        <ShinyExtensionsDIVersion>5.1.0</ShinyExtensionsDIVersion>
         <ShinyExtensionsBlazorHostingVersion>5.1.0-beta-0052</ShinyExtensionsBlazorHostingVersion>
         <ShinySpeechVersion>2.1.0</ShinySpeechVersion>
         <ShinyAiConversationVersion>1.0.0-beta-0050</ShinyAiConversationVersion>
-        <ShinyDocumentDbVersion>7.0.0</ShinyDocumentDbVersion>
-        <MediatorVersion>6.6.1</MediatorVersion>
+        <ShinyDocumentDbVersion>8.0.0</ShinyDocumentDbVersion>
+        <MediatorVersion>6.6.2</MediatorVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -98,7 +98,7 @@
         <!--#endif-->
 
         <!--#if (radzen)-->
-        <PackageReference Include="Radzen.Blazor" Version="10.4.7" />
+        <PackageReference Include="Radzen.Blazor" Version="10.4.9" />
         <!--#endif-->
 
         <!--#if (fluentui)-->
