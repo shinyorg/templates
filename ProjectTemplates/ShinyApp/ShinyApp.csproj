@@ -40,11 +40,11 @@
 		<!--<EnablePreviewFeatures>true</EnablePreviewFeatures>-->
 
 		<MauiVersion>10.0.71</MauiVersion>
-		<ShinyVersion>5.0.0-beta-0140</ShinyVersion>
-		<ShinyControlsVersion>1.0.1-beta-0123</ShinyControlsVersion>
-		<ShinyShellVersion>6.2.0</ShinyShellVersion>
-		<ShinyDocumentDbVersion>8.0.0</ShinyDocumentDbVersion>
-		<ShinyMauiHostingVersion>5.1.0</ShinyMauiHostingVersion>
+		<ShinyVersion>5.0.0</ShinyVersion>
+		<ShinyControlsVersion>1.0.1-beta-0127</ShinyControlsVersion>
+		<ShinyShellVersion>6.3.0</ShinyShellVersion>
+		<ShinyDocumentDbVersion>8.2.0</ShinyDocumentDbVersion>
+		<ShinyMauiHostingVersion>5.1.1</ShinyMauiHostingVersion>
 		<!--#if (useshinymediator)-->
 		<MediatorVersion>6.6.2</MediatorVersion>
 		<!--#endif-->

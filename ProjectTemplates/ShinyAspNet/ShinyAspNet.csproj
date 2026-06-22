@@ -7,12 +7,12 @@
         <OpenApiDocumentsDirectory>.</OpenApiDocumentsDirectory>
         <MicrosoftVersion>10.0.9</MicrosoftVersion>
         <ShinyExtensionsLocalizationVersion>2.0.1</ShinyExtensionsLocalizationVersion>
-        <ShinyExtensionsReflectorVersion>5.1.0</ShinyExtensionsReflectorVersion>
-        <ShinyExtensionsDIVersion>5.1.0</ShinyExtensionsDIVersion>
-        <ShinyExtensionsWebHostingVersion>5.1.0</ShinyExtensionsWebHostingVersion>
-        <ShinyDocumentDbVersion>8.0.0</ShinyDocumentDbVersion>
+        <ShinyExtensionsReflectorVersion>5.1.1</ShinyExtensionsReflectorVersion>
+        <ShinyExtensionsDIVersion>5.1.1</ShinyExtensionsDIVersion>
+        <ShinyExtensionsWebHostingVersion>5.1.1</ShinyExtensionsWebHostingVersion>
+        <ShinyDocumentDbVersion>8.2.0</ShinyDocumentDbVersion>
         <MediatorVersion>6.6.2</MediatorVersion>
-        <ScalarVersion>2.16.4</ScalarVersion>
+        <ScalarVersion>2.16.5</ScalarVersion>
         <!--#if (orleans)-->
         <OrleansVersion>10.2.0</OrleansVersion>
         <!--#endif-->
