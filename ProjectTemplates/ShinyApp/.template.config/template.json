@@ -702,6 +702,13 @@
             "description": "AI - Shiny DocumentDB AI Tools - Exposes document store operations as AI tools - Documentation https://shinylib.net/documentdb/ai-tools/",
             "displayName": "AI - Shiny DocumentDB AI Tools"
         },
+        "aihealth":{
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "AI - Shiny Health AI Tools - Exposes an opt-in slice of health data (HealthKit/Health Connect) as Microsoft.Extensions.AI tools (implies Health Data) - Documentation https://shinylib.net/health/ai-tools/",
+            "displayName": "AI - Shiny Health AI Tools (implies Health Data)"
+        },
         "documentdbdiagnostics":{
             "type": "parameter",
             "datatype": "bool",
@@ -835,10 +842,15 @@
             "datatype": "bool",
             "value": "(documentdb || aidocumentdb)"
         },
+        "usehealth":{
+            "type": "computed",
+            "datatype": "bool",
+            "value": "(health || aihealth)"
+        },
         "usemsextai":{
             "type": "computed",
             "datatype": "bool",
-            "value": "(msextai || aimediator || aishinyshell || aidocumentdb || aiconversation)"
+            "value": "(msextai || aimediator || aishinyshell || aidocumentdb || aihealth || aiconversation)"
         }
     },
     "sources": [{

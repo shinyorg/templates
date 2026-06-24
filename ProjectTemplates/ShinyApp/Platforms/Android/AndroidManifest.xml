@@ -124,7 +124,7 @@
 	<uses-permission android:name="android.permission.READ_CONTACTS" />
 	<uses-permission android:name="android.permission.WRITE_CONTACTS" />
 	<!--#endif-->
-	<!--#if (health)-->
+	<!--#if (usehealth)-->
 	<uses-permission android:name="android.permission.health.READ_STEPS" />
 	<uses-permission android:name="android.permission.health.READ_HEART_RATE" />
 	<uses-permission android:name="android.permission.health.READ_TOTAL_ENERGY_BURNED" />
@@ -166,7 +166,7 @@
 		</intent>
 	</queries>
 	<!--#endif-->
-	<!--#if (health)-->
+	<!--#if (usehealth)-->
 	<queries>
 		<package android:name="com.google.android.apps.healthdata" />
 	</queries>

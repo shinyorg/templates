@@ -541,12 +541,21 @@ _A cross-platform .NET MAUI library for accessing device contacts on Android and
 * [GitHub](https://github.com/shinyorg/contactstore)
 
 <!--#endif-->
-<!--#if (health)-->
+<!--#if (usehealth)-->
 ## Shiny.Health
 
 _A cross-platform .NET MAUI library for accessing health data from HealthKit (iOS) and Health Connect (Android). Supports 12 health metrics including steps, heart rate, calories, sleep, and more. By Allan Ritchie_
 
 * [Documentation](https://shinylib.net/client/health/)
+* [GitHub](https://github.com/shinyorg/health)
+
+<!--#endif-->
+<!--#if (aihealth)-->
+## Shiny.Health.Extensions.AI
+
+_Exposes an opt-in slice of the health store to an LLM as Microsoft.Extensions.AI tools. Configure the allowed metrics/areas (read and/or write) via `AddHealthAITools(...)` in `MauiProgram.cs`, then resolve `HealthAITools` from DI and pass its `Tools` to your `IChatClient` (`ChatOptions.Tools`). The tools assume permissions are already granted — call `IHealthService.RequestPermissions` from your app first._
+
+* [Documentation](https://shinylib.net/health/ai-tools/)
 * [GitHub](https://github.com/shinyorg/health)
 
 <!--#endif-->

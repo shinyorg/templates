@@ -470,6 +470,12 @@
         },
         "isVisible": true
     },{
+        "id": "aihealth",
+        "name":{
+            "text": "AI - Shiny Health AI Tools (implies Health Data)"
+        },
+        "isVisible": true
+    },{
         "id": "syslinqasync",
         "name":{
             "text": "UTILITY - Add System.Linq.Async"

@@ -65,6 +65,9 @@ using Shiny.DocumentDb;
 #if usedocumentdb
 using Shiny.DocumentDb.Sqlite;
 #endif
+#if aihealth
+using Shiny.Health.Extensions.AI;
+#endif
 using ShinyApp.Services;
 
 namespace ShinyApp;
@@ -411,8 +414,21 @@ public static class MauiProgram
 #if (contactstore)
         builder.Services.AddContactStore();
 #endif
-#if (health)
+#if (usehealth)
         builder.Services.AddHealthIntegration();
+#endif
+#if (aihealth)
+        // Exposes an opt-in slice of the health store to an LLM as Microsoft.Extensions.AI tools.
+        // Resolve HealthAITools from DI and pass its Tools to your IChatClient (ChatOptions.Tools).
+        // Tools assume permissions are already granted - call IHealthService.RequestPermissions first.
+        // Docs: https://shinylib.net/health/ai-tools/
+        builder.Services.AddHealthAITools(tools => tools
+            .AddMetric(Shiny.Health.DataType.StepCount)
+            .AddMetric(Shiny.Health.DataType.HeartRate)
+            .AddWorkouts()
+            // .AddBloodPressure()
+            // .AddNutrition(Shiny.Health.Extensions.AI.HealthAICapabilities.ReadWrite)
+        );
 #endif
 #if (shinyspeech)
         builder.Services.AddSpeechServices();

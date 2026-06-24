@@ -169,7 +169,7 @@
 		<!--#if (contactstore)-->
 		<CustomEntitlements Include="com.apple.security.personal-information.addressbook" Type="boolean" Value="true" Visible="false" />
 		<!--#endif-->
-		<!--#if (health)-->
+		<!--#if (usehealth)-->
 		<CustomEntitlements Include="com.apple.developer.healthkit" Type="boolean" Value="true" Visible="false" />
 		<CustomEntitlements Include="com.apple.developer.healthkit.background-delivery" Type="boolean" Value="true" Visible="false" />
 		<!--#endif-->
@@ -423,8 +423,11 @@
 		<!--#if (contactstore)-->
 		<PackageReference Include="Shiny.Maui.ContactStore" Version="1.0.1" />
 		<!--#endif-->
-		<!--#if (health)-->
+		<!--#if (usehealth)-->
 		<PackageReference Include="Shiny.Health" Version="2.0.0-beta-0004" />
+		<!--#endif-->
+		<!--#if (aihealth)-->
+		<PackageReference Include="Shiny.Health.Extensions.AI" Version="2.0.0-beta-0004" />
 		<!--#endif-->
 		<!--#if (shinyspeech)-->
 		<PackageReference Include="Shiny.Speech" Version="2.1.0" />

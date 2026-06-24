@@ -18,7 +18,7 @@
 		<!--#if (gps)-->
 		<string>gps</string>
 		<!--#endif-->
-		<!--#if (health)-->
+		<!--#if (usehealth)-->
 		<string>healthkit</string>
 		<!--#endif-->
 	</array>
@@ -96,7 +96,7 @@
 	<key>NSContactsUsageDescription</key>
 	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
-	<!--#if (health)-->
+	<!--#if (usehealth)-->
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>We need to say something useful here</string>
 	<key>NSHealthShareUsageDescription</key>
