@@ -10,7 +10,7 @@
         <ShinyExtensionsReflectorVersion>5.1.1</ShinyExtensionsReflectorVersion>
         <ShinyExtensionsDIVersion>5.1.1</ShinyExtensionsDIVersion>
         <ShinyExtensionsWebHostingVersion>5.1.1</ShinyExtensionsWebHostingVersion>
-        <ShinyDocumentDbVersion>8.2.0</ShinyDocumentDbVersion>
+        <ShinyDocumentDbVersion>9.1.0</ShinyDocumentDbVersion>
         <MediatorVersion>6.6.2</MediatorVersion>
         <ScalarVersion>2.16.5</ScalarVersion>
         <!--#if (orleans)-->
