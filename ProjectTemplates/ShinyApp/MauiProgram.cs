@@ -11,6 +11,13 @@ using Plugin.Maui.DebugRainbows;
 #endif
 //+:cnd:noEmit
 #endif
+#if devflow
+//-:cnd:noEmit
+#if DEBUG
+using Microsoft.Maui.DevFlow.Agent;
+#endif
+//+:cnd:noEmit
+#endif
 #if screenrecord
 using Plugin.Maui.ScreenRecording;
 #endif
@@ -126,7 +133,7 @@ public static class MauiProgram
 #if devflow
 //-:cnd:noEmit
 #if DEBUG
-            .UseMauiDevFlow()
+            .AddMauiDevFlowAgent()
 #endif
 //+:cnd:noEmit
 #endif
