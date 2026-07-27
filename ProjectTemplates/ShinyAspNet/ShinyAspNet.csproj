@@ -5,16 +5,17 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <OpenApiDocumentsDirectory>.</OpenApiDocumentsDirectory>
-        <MicrosoftVersion>10.0.9</MicrosoftVersion>
+        <MicrosoftVersion>10.0.10</MicrosoftVersion>
         <ShinyExtensionsLocalizationVersion>2.0.1</ShinyExtensionsLocalizationVersion>
-        <ShinyExtensionsReflectorVersion>5.1.1</ShinyExtensionsReflectorVersion>
-        <ShinyExtensionsDIVersion>5.1.1</ShinyExtensionsDIVersion>
-        <ShinyExtensionsWebHostingVersion>5.1.1</ShinyExtensionsWebHostingVersion>
-        <ShinyDocumentDbVersion>9.1.0</ShinyDocumentDbVersion>
-        <MediatorVersion>6.6.2</MediatorVersion>
-        <ScalarVersion>2.16.5</ScalarVersion>
+        <ShinyExtensionsReflectorVersion>5.1.4</ShinyExtensionsReflectorVersion>
+        <ShinyExtensionsDIVersion>5.1.4</ShinyExtensionsDIVersion>
+        <ShinyExtensionsWebHostingVersion>5.1.4</ShinyExtensionsWebHostingVersion>
+        <ShinyDocumentDbVersion>12.2.1</ShinyDocumentDbVersion>
+        <MediatorVersion>6.8.0</MediatorVersion>
+        <NpgsqlVersion>10.0.3</NpgsqlVersion>
+        <ScalarVersion>2.16.16</ScalarVersion>
         <!--#if (orleans)-->
-        <OrleansVersion>10.2.0</OrleansVersion>
+        <OrleansVersion>10.2.2</OrleansVersion>
         <!--#endif-->
     </PropertyGroup>
 
@@ -40,9 +41,9 @@
         <!--#endif-->
 
         <!--#if (efpostgres)-->
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="$(MicrosoftVersion)" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="$(NpgsqlVersion)" />
         <!--#if (efspatial)-->
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="$(MicrosoftVersion)" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="$(NpgsqlVersion)" />
         <!--#endif-->
         <!--#endif-->
 
@@ -75,9 +76,6 @@
         <!--#endif-->
         <!--#if (aidocumentdb)-->
         <PackageReference Include="Shiny.DocumentDb.Extensions.AI" Version="$(ShinyDocumentDbVersion)" />
-        <!--#endif-->
-        <!--#if (documentdbdiagnostics)-->
-        <PackageReference Include="Shiny.DocumentDb.Diagnostics" Version="$(ShinyDocumentDbVersion)" />
         <!--#endif-->
 
         <!--#if (orleans)-->

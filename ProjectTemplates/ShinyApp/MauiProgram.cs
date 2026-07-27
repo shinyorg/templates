@@ -29,7 +29,7 @@ using Maui.GoogleMaps.Hosting;
 #if usehttp
 using Refit;
 #endif
-#if usemauicontrols || music || contactstore
+#if usemauicontrols || music || contactstore || calendar
 using Shiny;
 #endif
 #if skia || skiaextended || livecharts
@@ -323,9 +323,8 @@ public static class MauiProgram
         });
 #endif
 #if documentdbdiagnostics
-        // OpenTelemetry metrics + tracing — call AFTER registering a store.
+        // OpenTelemetry metrics + tracing are always-on and embedded in Shiny.DocumentDb.
         // Subscribe from your OTel pipeline with .AddMeter("Shiny.DocumentDb") / .AddSource("Shiny.DocumentDb")
-        builder.Services.AddDocumentStoreInstrumentation();
 #endif
 #if aidocumentdb
         // For AI tools setup, see https://shinylib.net/documentdb/ai-tools/
@@ -402,14 +401,11 @@ public static class MauiProgram
 #if (screenrecord)
         builder.Services.AddSingleton(ScreenRecording.Default);
 #endif
-#if (audio)
-        builder.Services.AddSingleton(Plugin.Maui.Audio.AudioManager.Current);
-#endif
 #if (music)
         builder.Services.AddShinyMusic();
 #endif
 #if (calendar)
-        builder.Services.AddSingleton(Plugin.Maui.CalendarStore.CalendarStore.Default);
+        builder.Services.AddCalendarStore();
 #endif
 #if (contactstore)
         builder.Services.AddContactStore();

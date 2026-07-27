@@ -91,7 +91,7 @@
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "false",
-            "description": "Adds Shiny.DocumentDb.Diagnostics — OpenTelemetry-native metrics and distributed tracing for the document store",
+            "description": "Emits OpenTelemetry wiring guidance for the document store — metrics and tracing are always-on inside Shiny.DocumentDb",
             "displayName": "DocumentDB Telemetry & Diagnostics"
         },
         "connectionstring": {

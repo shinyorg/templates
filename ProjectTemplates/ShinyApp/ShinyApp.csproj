@@ -39,14 +39,14 @@
 		<!--uncomment below for XAML expressions in net10-->
 		<!--<EnablePreviewFeatures>true</EnablePreviewFeatures>-->
 
-		<MauiVersion>10.0.71</MauiVersion>
-		<ShinyVersion>5.0.0</ShinyVersion>
-		<ShinyControlsVersion>1.0.1-beta-0129</ShinyControlsVersion>
-		<ShinyShellVersion>6.3.0</ShinyShellVersion>
-		<ShinyDocumentDbVersion>9.1.0</ShinyDocumentDbVersion>
-		<ShinyMauiHostingVersion>5.1.1</ShinyMauiHostingVersion>
+		<MauiVersion>10.0.90</MauiVersion>
+		<ShinyVersion>5.4.0-beta-0074</ShinyVersion>
+		<ShinyControlsVersion>1.0.1-beta-0148</ShinyControlsVersion>
+		<ShinyShellVersion>6.3.2</ShinyShellVersion>
+		<ShinyDocumentDbVersion>12.2.1</ShinyDocumentDbVersion>
+		<ShinyMauiHostingVersion>5.1.4</ShinyMauiHostingVersion>
 		<!--#if (useshinymediator)-->
-		<MediatorVersion>6.6.2</MediatorVersion>
+		<MediatorVersion>6.8.0</MediatorVersion>
 		<!--#endif-->
 		<!--#if (aimediator)-->
 		<ShinyMediatorGenerateAITools>true</ShinyMediatorGenerateAITools>
@@ -164,7 +164,7 @@
 		<!--#endif-->
 		<!--#if (calendar)-->
 		<CustomEntitlements Include="com.apple.security.app-sandbox" Type="boolean" Value="true" Visible="false" />
-		<CustomEntitlements Include="com.apple.security.personal-information.calendar" Type="boolean" Value="true" Visible="false" />
+		<CustomEntitlements Include="com.apple.security.personal-information.calendars" Type="boolean" Value="true" Visible="false" />
 		<!--#endif-->
 		<!--#if (contactstore)-->
 		<CustomEntitlements Include="com.apple.security.personal-information.addressbook" Type="boolean" Value="true" Visible="false" />
@@ -236,7 +236,7 @@
 		<!--#endif-->
 		<!--#endif-->
 		<!--#if (localization)-->
-		<PackageReference Include="Microsoft.Extensions.Localization" Version="10.0.9" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="10.0.10" />
 		<PackageReference Include="Shiny.Extensions.Localization.Generator" Version="2.0.1" />
 		<!--#endif-->
 		<!--#if (useconfig)-->
@@ -279,15 +279,15 @@
 		<!--#if (useblazor)-->
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
 		<!--#endif-->
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.9" Condition="'$(Configuration)' == 'Debug'" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.10" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#if (ctmvvm)-->
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
 		<!--#endif-->
 		<!--#if (communitytoolkit)-->
-		<PackageReference Include="CommunityToolkit.Maui" Version="14.2.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="15.0.0" />
 		<!--#endif-->
 		<!--#if (usecsharpmarkup)-->
-		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="7.0.1" />
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="8.0.0" />
 		<!--#endif-->
 		<!--#if (mediaelement)-->
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="10.0.0" />
@@ -302,36 +302,33 @@
 		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.537" />
 		<!--#endif-->
 		<!--#if (usemsal)-->
-		<PackageReference Include="Microsoft.Identity.Client" Version="4.85.1" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.87.0" />
 		<!--#endif-->
 		<!--#if (sentry)-->
-		<PackageReference Include="Sentry.Maui" Version="6.6.0" />
+		<PackageReference Include="Sentry.Maui" Version="6.8.0" />
 		<!--#endif-->
 		<!--#if (reactiveui)-->
-		<PackageReference Include="ReactiveUI" Version="23.2.28" />
-		<PackageReference Include="ReactiveUI.Maui" Version="23.2.28" />
+		<PackageReference Include="ReactiveUI" Version="24.0.0" />
+		<PackageReference Include="ReactiveUI.Maui" Version="24.0.0" />
 		<PackageReference Include="ReactiveUI.SourceGenerators" Version="3.1.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 		</PackageReference>
 		<!--#if (useblazor)-->
-		<PackageReference Include="ReactiveUI.Blazor" Version="23.2.28" />
+		<PackageReference Include="ReactiveUI.Blazor" Version="24.0.0" />
 		<!--#endif-->
 		<!--#endif-->
 		<!--#if (barcodes)-->
-		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.4" />
+		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.6" />
 		<!--#endif-->
 		<!--#if (storereview)-->
 		<PackageReference Include="Plugin.StoreReview" Version="6.2.0" />
 		<!--#endif-->
 		<!--#if (calendar)-->
-		<PackageReference Include="Plugin.Maui.CalendarStore" Version="5.0.0" />
-		<!--#endif-->
-		<!--#if (audio)-->
-		<PackageReference Include="Plugin.Maui.Audio" Version="4.0.0" />
+		<PackageReference Include="Shiny.Calendar" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (music)-->
-		<PackageReference Include="Shiny.Music" Version="3.0.1" />
+		<PackageReference Include="Shiny.Music" Version="4.1.0-beta-0005" />
 		<!--#endif-->
 		<!--#if (ocr)-->
 		<PackageReference Include="Plugin.Maui.OCR" Version="1.1.1" />
@@ -340,10 +337,10 @@
 		<PackageReference Include="Oscore.Maui.Biometric" Version="2.5.1" />
 		<!--#endif-->
 		<!--#if usehttp-->
-		<PackageReference Include="Refit" Version="12.0.0" />
+		<PackageReference Include="Refit" Version="14.0.1" />
 		<!--#endif-->
 		<!--#if (sqlite)-->
-		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.11.285" />
 		<!--#endif-->
 		<!--#if (livecharts)-->
 		<PackageReference Include="LiveChartsCore.SkiaSharpView.Maui" Version="2.0.5" />
@@ -363,7 +360,7 @@
 		<PackageReference Include="Plugin.Maui.ScreenBrightness" Version="1.0.0" />
 		<!--#endif-->
 		<!--#if (skia)-->
-		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="3.119.4" />
+		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="4.150.1" />
 		<!--#endif-->
 		<!--#if (skiaextended)-->
 		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="3.0.0" />
@@ -381,10 +378,10 @@
 		<PackageReference Include="EmbedIO" Version="3.5.2" />
 		<!--#endif-->
 		<!--#if (mudblazor)-->
-		<PackageReference Include="MudBlazor" Version="9.5.0" />
+		<PackageReference Include="MudBlazor" Version="9.7.0" />
 		<!--#endif-->
 		<!--#if (radzen)-->
-		<PackageReference Include="Radzen.Blazor" Version="11.0.3" />
+		<PackageReference Include="Radzen.Blazor" Version="11.1.8" />
 		<!--#endif-->
 		<!--#if (fluentui)-->
 		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.14.3" />
@@ -392,13 +389,13 @@
 		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.14.3" />
 		<!--#endif-->
 		<!--#if (usemsextai)-->
-		<PackageReference Include="Microsoft.Extensions.AI" Version="10.7.0" />
+		<PackageReference Include="Microsoft.Extensions.AI" Version="10.8.1" />
 		<!--#endif-->
 		<!--#if (syslinqasync)-->
 		<PackageReference Include="System.Linq.Async" Version="7.0.1" />
 		<!--#endif-->
 		<!--#if (unitsnet)-->
-		<PackageReference Include="UnitsNet" Version="5.75.0" />
+		<PackageReference Include="UnitsNet" Version="5.75.1" />
 		<!--#endif-->
 		<!--#if (humanizer)-->
 		<PackageReference Include="Humanizer" Version="3.0.10" />
@@ -408,10 +405,6 @@
 		<!--#endif-->
 		<!--#if (usedocumentdb)-->
 		<PackageReference Include="Shiny.DocumentDb.Sqlite" Version="$(ShinyDocumentDbVersion)" />
-		<PackageReference Include="Shiny.DocumentDb.Extensions.DependencyInjection" Version="$(ShinyDocumentDbVersion)" />
-		<!--#endif-->
-		<!--#if (documentdbdiagnostics)-->
-		<PackageReference Include="Shiny.DocumentDb.Diagnostics" Version="$(ShinyDocumentDbVersion)" />
 		<!--#endif-->
 		<!--#if (aidocumentdb)-->
 		<PackageReference Include="Shiny.DocumentDb.Extensions.AI" Version="$(ShinyDocumentDbVersion)" />
@@ -421,19 +414,19 @@
 		<PackageReference Include="Shiny.Spatial.Geofencing" Version="2.0.0" />
 		<!--#endif-->
 		<!--#if (contactstore)-->
-		<PackageReference Include="Shiny.Maui.ContactStore" Version="1.0.1" />
+		<PackageReference Include="Shiny.Contacts" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (usehealth)-->
-		<PackageReference Include="Shiny.Health" Version="2.0.0-beta-0004" />
+		<PackageReference Include="Shiny.Health" Version="2.0.0" />
 		<!--#endif-->
 		<!--#if (aihealth)-->
-		<PackageReference Include="Shiny.Health.Extensions.AI" Version="2.0.0-beta-0004" />
+		<PackageReference Include="Shiny.Health.Extensions.AI" Version="2.0.0" />
 		<!--#endif-->
 		<!--#if (shinyspeech)-->
-		<PackageReference Include="Shiny.Speech" Version="2.1.0" />
+		<PackageReference Include="Shiny.Speech" Version="3.0.0-beta-0018" />
 		<!--#endif-->
 		<!--#if (aiconversation)-->
-		<PackageReference Include="Shiny.AiConversation" Version="1.0.0-beta-0050" />
+		<PackageReference Include="Shiny.AiConversation" Version="3.0.0-beta-0018" />
 		<!--#endif-->
 	</ItemGroup>
 
@@ -444,10 +437,10 @@
 	<!--#if (sqlite || androidauto || storereview)-->
 	<ItemGroup Condition="$(TargetFramework.Contains('android'))">
 		<!--#if (sqlite)-->
-		<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="3.0.3"/>
+		<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="3.0.5"/>
 		<!--#endif-->
 		<!--#if (androidauto)-->
-		<PackageReference Include="Xamarin.AndroidX.Car.App.App" Version="1.7.0.3" />
+		<PackageReference Include="Xamarin.AndroidX.Car.App.App" Version="1.7.0.4" />
 		<!--#endif-->
 		<!--#if (storereview)-->
 		<ProguardConfiguration Include="Platforms/Android/proguard.cfg" />

@@ -4,18 +4,18 @@
         <TargetFramework>{DOTNET_TFM}</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <MicrosoftVersion>10.0.9</MicrosoftVersion>
-        <ShinyClientVersion>5.0.0</ShinyClientVersion>
-        <ShinyControlsVersion>1.0.1-beta-0129</ShinyControlsVersion>
+        <MicrosoftVersion>10.0.10</MicrosoftVersion>
+        <ShinyClientVersion>5.4.0-beta-0074</ShinyClientVersion>
+        <ShinyControlsVersion>1.0.1-beta-0148</ShinyControlsVersion>
         <ShinyExtensionsLocalizationVersion>2.0.1</ShinyExtensionsLocalizationVersion>
-        <ShinyExtensionsStoresVersion>5.1.1</ShinyExtensionsStoresVersion>
-        <ShinyExtensionsReflectorVersion>5.1.1</ShinyExtensionsReflectorVersion>
-        <ShinyExtensionsDIVersion>5.1.1</ShinyExtensionsDIVersion>
-        <ShinyExtensionsBlazorHostingVersion>5.1.1</ShinyExtensionsBlazorHostingVersion>
-        <ShinySpeechVersion>2.1.0</ShinySpeechVersion>
-        <ShinyAiConversationVersion>1.0.0-beta-0050</ShinyAiConversationVersion>
-        <ShinyDocumentDbVersion>9.1.0</ShinyDocumentDbVersion>
-        <MediatorVersion>6.6.2</MediatorVersion>
+        <ShinyExtensionsStoresVersion>5.1.4</ShinyExtensionsStoresVersion>
+        <ShinyExtensionsReflectorVersion>5.1.4</ShinyExtensionsReflectorVersion>
+        <ShinyExtensionsDIVersion>5.1.4</ShinyExtensionsDIVersion>
+        <ShinyExtensionsBlazorHostingVersion>5.1.4</ShinyExtensionsBlazorHostingVersion>
+        <ShinySpeechVersion>3.0.0-beta-0018</ShinySpeechVersion>
+        <ShinyAiConversationVersion>3.0.0-beta-0018</ShinyAiConversationVersion>
+        <ShinyDocumentDbVersion>12.2.1</ShinyDocumentDbVersion>
+        <MediatorVersion>6.8.0</MediatorVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -88,17 +88,14 @@
 
         <!--#if (documentdb)-->
         <PackageReference Include="Shiny.DocumentDb.IndexedDb" Version="$(ShinyDocumentDbVersion)" />
-        <!--#if (documentdbdiagnostics)-->
-        <PackageReference Include="Shiny.DocumentDb.Diagnostics" Version="$(ShinyDocumentDbVersion)" />
-        <!--#endif-->
         <!--#endif-->
 
         <!--#if (mudblazor)-->
-        <PackageReference Include="MudBlazor" Version="9.5.0" />
+        <PackageReference Include="MudBlazor" Version="9.7.0" />
         <!--#endif-->
 
         <!--#if (radzen)-->
-        <PackageReference Include="Radzen.Blazor" Version="11.0.3" />
+        <PackageReference Include="Radzen.Blazor" Version="11.1.8" />
         <!--#endif-->
 
         <!--#if (fluentui)-->

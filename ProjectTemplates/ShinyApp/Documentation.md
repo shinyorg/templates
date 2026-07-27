@@ -213,11 +213,12 @@ _A simple In-App Purchase plugin for .NET MAUI, Xamarin, and Windows to query it
 
 <!--#endif-->
 <!--#if (calendar)-->
-## MAUI Calendar Store Plugin
+## Shiny.Calendar
 
-_Plugin.Maui.CalendarStore provides the ability to access the device calendar information in your .NET MAUI application - Written by Gerald Versluis_
+_Full CRUD access to device calendars and events with fluent async querying, on iOS, Android and Mac Catalyst. By Allan Ritchie_
 
-* [GitHub](https://github.com/jfversluis/Plugin.Maui.CalendarStore)
+* [Documentation](https://shinylib.net/calendarstore/)
+* [GitHub](https://github.com/shinyorg/shiny)
 
 <!--#endif-->
 <!--#if (calendar)-->
@@ -226,14 +227,6 @@ _Plugin.Maui.CalendarStore provides the ability to access the device calendar in
 _Plugin.Maui.ScreenBrightness provides the ability to get or set the screen brightness inside a .NET MAUI application. - Written by Gerald Versluis_
 
 * [GitHub](https://github.com/jfversluis/Plugin.Maui.ScreenBrightness)
-
-<!--#endif-->
-<!--#if (audio)-->
-## MAUI Audio Plugin
-
-_Provides the ability to play audio inside a .NET MAUI application. - Written by Gerald Versluis_
-
-* [GitHub](https://github.com/jfversluis/Plugin.Maui.Audio)
 
 <!--#endif-->
 <!--#if (screenrecord)-->
@@ -533,12 +526,12 @@ Humanizer meets all your .NET needs for manipulating and displaying strings, enu
 
 <!--#endif-->
 <!--#if (contactstore)-->
-## Shiny.Maui.ContactStore
+## Shiny.Contacts
 
-_A cross-platform .NET MAUI library for accessing device contacts on Android and iOS with full CRUD operations, LINQ query support, and dependency injection integration. By Allan Ritchie_
+_A cross-platform library for accessing device contacts on Android and iOS with full CRUD operations, fluent async querying, and dependency injection integration. By Allan Ritchie_
 
 * [Documentation](https://shinylib.net/contactstore/)
-* [GitHub](https://github.com/shinyorg/contactstore)
+* [GitHub](https://github.com/shinyorg/shiny)
 
 <!--#endif-->
 <!--#if (usehealth)-->

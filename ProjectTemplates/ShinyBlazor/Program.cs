@@ -80,9 +80,8 @@ var documentDbOptions = new IndexedDbDocumentStoreOptions
 builder.Services.AddSingleton(documentDbOptions);
 builder.Services.AddSingleton<IDocumentStore, IndexedDbDocumentStore>();
 //#if (documentdbdiagnostics)
-// OpenTelemetry metrics + tracing — registered after the store.
+// OpenTelemetry metrics + tracing are always-on and embedded in Shiny.DocumentDb.
 // Subscribe from your OTel pipeline with .AddMeter("Shiny.DocumentDb") / .AddSource("Shiny.DocumentDb")
-builder.Services.AddDocumentStoreInstrumentation();
 //#endif
 //#endif
 

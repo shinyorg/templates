@@ -504,7 +504,7 @@
             "datatype": "bool",
             "defaultValue": "false",
             "description": "SERVICE - Contact Store by Allan Ritchie - Full CRUD access to device contacts - Documentation https://shinylib.net/contactstore/",
-            "displayName": "SERVICE - Add Contact Store (Shiny.Maui.ContactStore)"
+            "displayName": "SERVICE - Add Contact Store (Shiny.Contacts)"
         },
         "health": {
             "type": "parameter",
@@ -545,15 +545,8 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "SERVICE - Calendar Store Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.CalendarStore",
-            "displayName": "SERVICE - Add Calendar Store (Plugin.Maui.CalendarStore)"
-        },
-        "audio":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "SERVICE - Audio Plugin by Gerald Versluis - Documentation https://github.com/jfversluis/Plugin.Maui.Audio",
-            "displayName": "SERVICE - Add Audio (Plugin.Maui.Audio)"
+            "description": "SERVICE - Calendar Store by Allan Ritchie - Full CRUD access to device calendars & events with LINQ querying - Documentation https://shinylib.net/calendarstore/",
+            "displayName": "SERVICE - Add Calendar Store (Shiny.Calendar)"
         },
         "music":{
             "type": "parameter",
@@ -713,8 +706,8 @@
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
-            "description": "SERVICE - Shiny DocumentDB Telemetry & Diagnostics - OpenTelemetry-native metrics and distributed tracing for the document store - Documentation https://shinylib.net/documentdb/diagnostics/",
-            "displayName": "SERVICE - Add Document DB Telemetry & Diagnostics (Shiny.DocumentDb.Diagnostics)"
+            "description": "SERVICE - Shiny DocumentDB Telemetry & Diagnostics - metrics and tracing are always-on inside Shiny.DocumentDb; this emits the OpenTelemetry wiring guidance - Documentation https://shinylib.net/documentdb/diagnostics/",
+            "displayName": "SERVICE - Add Document DB Telemetry & Diagnostics"
         },
         "syslinqasync":{
             "type": "parameter",

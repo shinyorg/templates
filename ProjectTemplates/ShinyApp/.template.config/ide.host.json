@@ -310,7 +310,7 @@
     {
         "id": "contactstore",
         "name":{
-            "text": "Add Contact Store (Shiny.Maui.ContactStore)"
+            "text": "Add Contact Store (Shiny.Contacts)"
         },
         "isVisible": true
     },
@@ -352,13 +352,7 @@
     {
         "id": "calendar",
         "name":{
-            "text": "Add Calendar Store (Plugin.Maui.CalendarStore)"
-        },
-        "isVisible": true
-    },{
-        "id": "audio",
-        "name":{
-            "text": "Add Audio (Plugin.Maui.Audio)"
+            "text": "Add Calendar Store (Shiny.Calendar)"
         },
         "isVisible": true
     },{
