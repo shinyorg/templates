@@ -39,6 +39,20 @@
 			</intent-filter>
 		</service>
 	<!--#endif-->
+	<!--#if (usehealth)-->
+		<!-- Android 14+ (API 34) ships Health Connect in the platform and will not grant health
+		     permissions unless the app exposes this alias -->
+		<activity-alias
+			android:name="ViewPermissionUsageActivity"
+			android:exported="true"
+			android:targetActivity="ShinyApp.MainActivity"
+			android:permission="android.permission.START_VIEW_PERMISSION_USAGE">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW_PERMISSION_USAGE" />
+				<category android:name="android.intent.category.HEALTH_PERMISSIONS" />
+			</intent-filter>
+		</activity-alias>
+	<!--#endif-->
 	</application>
 	<!--#if (notifications || gps || geofencing || usemaps)-->
     <uses-feature android:name="android.hardware.location.gps" android:required="false" />
@@ -125,9 +139,10 @@
 	<uses-permission android:name="android.permission.WRITE_CONTACTS" />
 	<!--#endif-->
 	<!--#if (usehealth)-->
+	<!-- trim these to the data types your app actually uses -->
 	<uses-permission android:name="android.permission.health.READ_STEPS" />
 	<uses-permission android:name="android.permission.health.READ_HEART_RATE" />
-	<uses-permission android:name="android.permission.health.READ_TOTAL_ENERGY_BURNED" />
+	<uses-permission android:name="android.permission.health.READ_TOTAL_CALORIES_BURNED" />
 	<uses-permission android:name="android.permission.health.READ_DISTANCE" />
 	<uses-permission android:name="android.permission.health.READ_WEIGHT" />
 	<uses-permission android:name="android.permission.health.READ_HEIGHT" />
@@ -137,7 +152,59 @@
 	<uses-permission android:name="android.permission.health.READ_OXYGEN_SATURATION" />
 	<uses-permission android:name="android.permission.health.READ_SLEEP" />
 	<uses-permission android:name="android.permission.health.READ_HYDRATION" />
+	<uses-permission android:name="android.permission.health.READ_MENSTRUATION" />
+	<uses-permission android:name="android.permission.health.READ_BLOOD_GLUCOSE" />
+	<uses-permission android:name="android.permission.health.READ_BODY_TEMPERATURE" />
+	<uses-permission android:name="android.permission.health.READ_BASAL_BODY_TEMPERATURE" />
+	<uses-permission android:name="android.permission.health.READ_RESPIRATORY_RATE" />
+	<uses-permission android:name="android.permission.health.READ_VO2_MAX" />
+	<uses-permission android:name="android.permission.health.READ_HEART_RATE_VARIABILITY" />
+	<uses-permission android:name="android.permission.health.READ_LEAN_BODY_MASS" />
+	<uses-permission android:name="android.permission.health.READ_BASAL_METABOLIC_RATE" />
+	<uses-permission android:name="android.permission.health.READ_ACTIVE_CALORIES_BURNED" />
+	<uses-permission android:name="android.permission.health.READ_FLOORS_CLIMBED" />
+	<uses-permission android:name="android.permission.health.READ_WHEELCHAIR_PUSHES" />
+	<uses-permission android:name="android.permission.health.READ_SPEED" />
+	<uses-permission android:name="android.permission.health.READ_POWER" />
+	<uses-permission android:name="android.permission.health.READ_SEXUAL_ACTIVITY" />
+	<uses-permission android:name="android.permission.health.READ_OVULATION_TEST" />
+	<uses-permission android:name="android.permission.health.READ_CERVICAL_MUCUS" />
+	<uses-permission android:name="android.permission.health.READ_INTERMENSTRUAL_BLEEDING" />
+	<uses-permission android:name="android.permission.health.READ_EXERCISE" />
+	<uses-permission android:name="android.permission.health.READ_NUTRITION" />
 	<uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+	<uses-permission android:name="android.permission.health.WRITE_STEPS" />
+	<uses-permission android:name="android.permission.health.WRITE_HEART_RATE" />
+	<uses-permission android:name="android.permission.health.WRITE_TOTAL_CALORIES_BURNED" />
+	<uses-permission android:name="android.permission.health.WRITE_DISTANCE" />
+	<uses-permission android:name="android.permission.health.WRITE_WEIGHT" />
+	<uses-permission android:name="android.permission.health.WRITE_HEIGHT" />
+	<uses-permission android:name="android.permission.health.WRITE_BODY_FAT" />
+	<uses-permission android:name="android.permission.health.WRITE_RESTING_HEART_RATE" />
+	<uses-permission android:name="android.permission.health.WRITE_BLOOD_PRESSURE" />
+	<uses-permission android:name="android.permission.health.WRITE_OXYGEN_SATURATION" />
+	<uses-permission android:name="android.permission.health.WRITE_SLEEP" />
+	<uses-permission android:name="android.permission.health.WRITE_HYDRATION" />
+	<uses-permission android:name="android.permission.health.WRITE_MENSTRUATION" />
+	<uses-permission android:name="android.permission.health.WRITE_BLOOD_GLUCOSE" />
+	<uses-permission android:name="android.permission.health.WRITE_BODY_TEMPERATURE" />
+	<uses-permission android:name="android.permission.health.WRITE_BASAL_BODY_TEMPERATURE" />
+	<uses-permission android:name="android.permission.health.WRITE_RESPIRATORY_RATE" />
+	<uses-permission android:name="android.permission.health.WRITE_VO2_MAX" />
+	<uses-permission android:name="android.permission.health.WRITE_HEART_RATE_VARIABILITY" />
+	<uses-permission android:name="android.permission.health.WRITE_LEAN_BODY_MASS" />
+	<uses-permission android:name="android.permission.health.WRITE_BASAL_METABOLIC_RATE" />
+	<uses-permission android:name="android.permission.health.WRITE_ACTIVE_CALORIES_BURNED" />
+	<uses-permission android:name="android.permission.health.WRITE_FLOORS_CLIMBED" />
+	<uses-permission android:name="android.permission.health.WRITE_WHEELCHAIR_PUSHES" />
+	<uses-permission android:name="android.permission.health.WRITE_SPEED" />
+	<uses-permission android:name="android.permission.health.WRITE_POWER" />
+	<uses-permission android:name="android.permission.health.WRITE_SEXUAL_ACTIVITY" />
+	<uses-permission android:name="android.permission.health.WRITE_OVULATION_TEST" />
+	<uses-permission android:name="android.permission.health.WRITE_CERVICAL_MUCUS" />
+	<uses-permission android:name="android.permission.health.WRITE_INTERMENSTRUAL_BLEEDING" />
+	<uses-permission android:name="android.permission.health.WRITE_EXERCISE" />
+	<uses-permission android:name="android.permission.health.WRITE_NUTRITION" />
 	<!--#endif-->
 	<!--#if (essentialsmedia || essentialsfilepicker)-->
 	<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />

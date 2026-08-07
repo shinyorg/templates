@@ -12,6 +12,10 @@ namespace ShinyApp;
 
 
 [Activity(
+#if (usehealth)
+    // the ViewPermissionUsageActivity activity-alias targets this by name
+    Name = "ShinyApp.MainActivity",
+#endif
 #if (usepush || notifications || mediaelement)
     LaunchMode = LaunchMode.SingleTop,
 #endif
@@ -38,6 +42,11 @@ namespace ShinyApp;
 #endif
 #if (notifications)
         ShinyNotificationIntents.NotificationClickAction,
+#endif
+#if (usehealth)
+        // Health Connect links to your privacy policy from the permission dialog and will not grant
+        // health permissions unless this activity handles the rationale action
+        "androidx.health.ACTION_SHOW_PERMISSIONS_RATIONALE",
 #endif
         Platform.Intent.ActionAppAction,
         global::Android.Content.Intent.ActionView
