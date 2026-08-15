@@ -116,15 +116,6 @@ _Localization is an essential part of any application.  This template will auto 
 * [Documentation](https://learn.microsoft.com/en-us/dotnet/core/extensions/localization)
 
 <!--#endif-->
-<!--#if (uraniumui)-->
-## Uranium UI
-
-_Uranium is a Free & Open-Source UI Kit for .NET MAUI. It provides a set of controls and utilities to build modern applications. It is built on top of the .NET MAUI infrastructure and provides a set of controls and layouts to build modern UIs. It also provides infrastructure for building custom controls and themes on it._  Created by Enis Necipoglu
-
-* [Documentation](https://enisn-projects.io/docs/en/uranium/latest)
-* [GitHub](https://github.com/enisn/UraniumUI)
-
-<!--#endif>
 <!--#if (sharpnadotabs)-->
 ## Sharpnado Tabs
 
@@ -161,7 +152,7 @@ MediaElement is a view for playing video and audio in your .NET MAUI app.
 * [Documentation](https://learn.microsoft.com/en-ca/dotnet/communitytoolkit/maui/views/mediaelement)
 * [GitHub](https://github.com/CommunityToolkit/Maui)
 
-<!--#endif>
+<!--#endif-->
 <!--#if (cameraview)-->
 ## MAUI Community Toolkit - Camera View
 
@@ -171,29 +162,12 @@ The CameraView provides the ability to connect to a camera, display a preview fr
 * [GitHub](https://github.com/CommunityToolkit/Maui)
 
 <!--#endif-->
-<!--#if (usecsharpmarkup)-->
-## .NET MAUI Community Toolkit - C# Markup
-
-_The C# Markup Extensions for .NET MAUI Community Toolkit is a set of extensions that allow you to write XAML in C#._
-
-* [Documentation](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup)
-* [GitHub](https://github.com/CommunityToolkit/Maui)
-
-<!--#endif-->
 <!--#if (usemsal)-->
 ### Microsoft Authentication Library (MSAL)
 
 * [Microsoft Blog](https://devblogs.microsoft.com/dotnet/authentication-in-dotnet-maui-apps-msal/)
 * [Documentation](https://github.com/Azure-Samples/active-directory-xamarin-native-v2/blob/main/MauiApps.md)
 * [GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)
-
-<!--#endif-->
-<!--#if (barcodes)-->
-## Native Barcode Scanner (MAUI)
-
-_Native barcode scanning using ML and on-device APIs_
-
-* [GitHub](https://github.com/afriscic/BarcodeScanning.Native.Maui)
 
 <!--#endif-->
 <!--#if (storereview)-->
@@ -235,14 +209,6 @@ _Plugin.Maui.ScreenBrightness provides the ability to get or set the screen brig
 _Provides the ability to record the screen from within your .NET MAUI app - Written by Gerald Versluis_
 
 * [GitHub](https://github.com/jfversluis/Plugin.Maui.ScreenRecording)
-
-<!--#endif-->
-<!--#if (ocr)-->
-## MAUI OCR Plugin
-
-_Provides the ability to perform OCR (Optical Character Recognition) on images in your .NET MAUI app - Written by Kori Francis_
-
-* [GitHub](https://github.com/kfrancis/ocr)
 
 <!--#endif-->
 <!--#if (fingerprint)-->
@@ -345,20 +311,6 @@ A tiny, cross-platform, module based, MIT-licensed web server for .NET Framework
 * [GitHub](https://github.com/unosquare/embedio/)
 
 <!--#endif-->
-<!--#if (ffimageloading)-->
-## FFImageLoading
-_Fast & Furious Image Loading for .NET MAUI_
-
-Forked from the amazingly popular original FFImageLoading Library, this Compat version FFImageLoading.Compat aims to ease your migration from Xamarin.Forms to .NET MAUI with a compatible implementation to get you up and running without rewriting the parts of your app that relied on the original library.
-
-This Maui version which merges all Transformations & SVG library parts into ONE and is migrated from FFImageLoading.Compat aims to fix some critical bugs and gives you a place to submit Maui releated issues.
-
-The Google webp format image support. (It works in Xamarin.Forms version, but not in FFImageLoading.Compat)
-Thanks to the Original Authors: Daniel Luberda, Fabien Molinet & Redth.
-
-* [GitHub](https://github.com/microspaze/FFImageLoading.Maui)
-
-<!--#endif-->
 <!--#if (useblazor && mudblazor)-->
 ## MudBlazor
 
@@ -421,14 +373,6 @@ _Beautiful, animated, mv* friendly, automatically updated, cross-platform and ea
 
 * [GitHub](https://github.com/beto-rodriguez/LiveCharts2)
 * [Documentation](https://livecharts.dev/)
-
-<!--#endif-->
-<!--#if (alohakitanimations)-->
-## AlohaKit Animations
-
-_AlohaKit.Animations is a library designed for .NET MAUI that aims to facilitate the use of animations to developers. Very simple use from C# and XAML code by Javier Suárez_
-
-* [GitHub](https://github.com/jsuarezruiz/AlohaKit.Animations)
 
 <!--#endif-->
 <!--#if (shinycontrols)-->

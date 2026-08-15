@@ -5,16 +5,16 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <MicrosoftVersion>10.0.10</MicrosoftVersion>
-        <ShinyClientVersion>5.4.0-beta-0074</ShinyClientVersion>
-        <ShinyControlsVersion>1.0.1-beta-0148</ShinyControlsVersion>
+        <ShinyClientVersion>5.4.0</ShinyClientVersion>
+        <ShinyControlsVersion>1.0.1-beta-0175</ShinyControlsVersion>
         <ShinyExtensionsLocalizationVersion>2.0.1</ShinyExtensionsLocalizationVersion>
-        <ShinyExtensionsStoresVersion>5.1.4</ShinyExtensionsStoresVersion>
-        <ShinyExtensionsReflectorVersion>5.1.4</ShinyExtensionsReflectorVersion>
-        <ShinyExtensionsDIVersion>5.1.4</ShinyExtensionsDIVersion>
-        <ShinyExtensionsBlazorHostingVersion>5.1.4</ShinyExtensionsBlazorHostingVersion>
-        <ShinySpeechVersion>3.0.0-beta-0018</ShinySpeechVersion>
-        <ShinyAiConversationVersion>3.0.0-beta-0018</ShinyAiConversationVersion>
-        <ShinyDocumentDbVersion>12.2.1</ShinyDocumentDbVersion>
+        <ShinyExtensionsStoresVersion>5.1.5</ShinyExtensionsStoresVersion>
+        <ShinyExtensionsReflectorVersion>5.1.5</ShinyExtensionsReflectorVersion>
+        <ShinyExtensionsDIVersion>5.1.5</ShinyExtensionsDIVersion>
+        <ShinyExtensionsBlazorHostingVersion>5.1.5</ShinyExtensionsBlazorHostingVersion>
+        <ShinySpeechVersion>3.0.0-beta-0028</ShinySpeechVersion>
+        <ShinyAiConversationVersion>3.0.0-beta-0028</ShinyAiConversationVersion>
+        <ShinyDocumentDbVersion>13.1.2</ShinyDocumentDbVersion>
         <MediatorVersion>6.8.0</MediatorVersion>
     </PropertyGroup>
 
@@ -91,15 +91,15 @@
         <!--#endif-->
 
         <!--#if (mudblazor)-->
-        <PackageReference Include="MudBlazor" Version="9.7.0" />
+        <PackageReference Include="MudBlazor" Version="9.8.0" />
         <!--#endif-->
 
         <!--#if (radzen)-->
-        <PackageReference Include="Radzen.Blazor" Version="11.1.8" />
+        <PackageReference Include="Radzen.Blazor" Version="11.2.2" />
         <!--#endif-->
 
         <!--#if (fluentui)-->
-        <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.14.3" />
+        <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.14.4" />
         <!--#endif-->
     </ItemGroup>
 

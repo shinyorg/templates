@@ -1,22 +1,13 @@
-﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<?xml version = "1.0" encoding = "UTF-8" ?>
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:ShinyApp"             
-<!--#if (uraniumui)-->
-            xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
-<!--#endif-->
+             xmlns:local="clr-namespace:ShinyApp"
              x:Class="ShinyApp.App">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!--#if (uraniumui)-->
-                <ResourceDictionary x:Name="appColors" Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary x:Name="appStyles" Source="Resources/Styles/Styles.xaml" />
-                <material:StyleResource BasedOn="{x:Reference appStyles}" ColorsOverride="{x:Reference appColors}" />
-                <!--#else-->
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
-                <!--#endif-->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

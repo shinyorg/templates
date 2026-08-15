@@ -19,13 +19,6 @@
         "isVisible": true        
     }, 
     {
-        "id": "usecsharpmarkup",
-        "name":{
-            "text": "Add C# Markup - MAUI Community Toolkit"
-        },
-        "isVisible": true
-    }, 
-    {
         "id": "applicationId",
         "name": {
             "text": "Set the ApplicationId"
@@ -238,23 +231,9 @@
         "isVisible": true
     },     
     {
-        "id": "uraniumui",
-        "name":{
-            "text": "Add Uranium UI"
-        },
-        "isVisible": true
-    },
-    {
         "id": "contextmenu",
         "name":{
             "text": "Add Context Menu"
-        },
-        "isVisible": true
-    },
-    {
-        "id": "alohakitanimations",
-        "name":{
-            "text": "Add AlohaKit Animations"
         },
         "isVisible": true
     },
@@ -336,13 +315,6 @@
         "isVisible": true
     },
     {
-        "id": "barcodes",
-        "name":{
-            "text": "Add Native Barcode Scanning (BarcodeScanning.Native.Maui)"
-        },
-        "isVisible": true
-    },
-    {
         "id": "storereview",
         "name":{
             "text": "Add Store Review (Plugin.StoreReview)"
@@ -362,12 +334,6 @@
         },
         "isVisible": true
     },{
-        "id": "ocr",
-        "name":{
-            "text": "Add OCR  (Plugin.Maui.OCR)"
-        },
-        "isVisible": true        
-    },{
         "id": "userdialogs",
         "name":{
             "text": "Add ACR User Dialogs (Acr.UserDialogs)"
@@ -377,12 +343,6 @@
         "id": "debugrainbows",
         "name":{
             "text": "Add Debug Rainbows (Plugin.Maui.DebugRainbows)"
-        },
-        "isVisible": true
-    },{        
-        "id": "ffimageloading",
-        "name":{
-            "text": "Add FFImageLoading MAUI (FFImageLoading.Maui)"
         },
         "isVisible": true
     },{        
@@ -419,6 +379,12 @@
         "id": "embedio",
         "name":{
             "text": "Add EmbedIO Tiny Web Server"
+        },
+        "isVisible": true
+    },{
+        "id": "shinyblazorcontrols",
+        "name":{
+            "text": "BLAZOR - Add Shiny Blazor Controls (Blazor Hybrid)"
         },
         "isVisible": true
     },{

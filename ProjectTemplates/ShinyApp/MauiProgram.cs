@@ -21,14 +21,8 @@ using Microsoft.Maui.DevFlow.Agent;
 #if screenrecord
 using Plugin.Maui.ScreenRecording;
 #endif
-#if ocr
-using Plugin.Maui.OCR;
-#endif
 #if fingerprint
 using Maui.Biometric;
-#endif
-#if barcodes
-using BarcodeScanning;
 #endif
 #if usegooglemaps
 using Maui.GoogleMaps.Hosting;
@@ -41,12 +35,6 @@ using Shiny;
 #endif
 #if skia || skiaextended || livecharts
 using SkiaSharp.Views.Maui.Controls.Hosting;
-#endif
-#if ffimageloading
-using FFImageLoading.Maui;
-#endif
-#if uraniumui
-using UraniumUI;
 #endif
 #if communitytoolkit || mediaelement
 using CommunityToolkit.Maui;
@@ -65,6 +53,10 @@ using Microsoft.FluentUI.AspNetCore.Components;
 #if useshinymediator
 using Polly;
 using Polly.Retry;
+#endif
+#if httpserver
+using System.Net;
+using Shiny.Net.HttpServer;
 #endif
 #if usedocumentdb || documentdbdiagnostics
 using Shiny.DocumentDb;
@@ -143,31 +135,17 @@ public static class MauiProgram
 #if virtuallist
             .UseVirtualListView()
 #endif
-#if barcodes
-            .UseBarcodeScanning()
-#endif
-#if uraniumui
-            .UseUraniumUI()
-            .UseUraniumUIMaterial()
-            .UseUraniumUIBlurs()
-#endif
 #if communitytoolkit
             .UseMauiCommunityToolkit()
 #endif
 #if mediaelement
             .UseMauiCommunityToolkitMediaElement()
 #endif
-#if usecsharpmarkup
-            .UseMauiCommunityToolkitMarkup()
-#endif
 #if cameraview
             .UseMauiCommunityToolkitCamera()
 #endif
 #if fingerprint
             .UseBiometricAuthentication()
-#endif
-#if ffimageloading
-            .UseFFImageLoading()
 #endif
 #if skia || skiaextended || livecharts
             .UseSkiaSharp()
@@ -183,9 +161,6 @@ public static class MauiProgram
 #endif
 #if usemauimaps
             .UseMauiMaps()
-#endif
-#if ocr
-            .UseOcr()
 #endif
 #if sentry
             .UseSentry(options =>
@@ -242,9 +217,6 @@ public static class MauiProgram
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-#if uraniumui
-                fonts.AddMaterialIconFonts();
-#endif
             });
 
         // TODO: once you have localization, add these
@@ -343,9 +315,6 @@ public static class MauiProgram
 #if roomsharp
         builder.Services.AddDatabase();
 #endif
-#if ocr
-        builder.Services.AddSingleton(OcrPlugin.Default);
-#endif
 #if essentialsmedia
         builder.Services.AddSingleton(MediaPicker.Default);
 #endif
@@ -367,6 +336,27 @@ public static class MauiProgram
 #endif
 #if geofencing
         builder.Services.AddGeofencing<ShinyApp.Delegates.MyGeofenceDelegate>();
+#endif
+#if httpserver
+        // ASP.NET Core does not run here; this does. iOS suspends the app in the background, so the
+        // server only answers while you are in the foreground. Docs: https://shinylib.net/httpserver/maui/
+        builder.Services.AddHttpServer(
+            options =>
+            {
+                // Any, not loopback - the point is for another device to reach this one.
+                // Port 0 lets the OS pick, so two copies of the app never collide.
+                options.Address = IPAddress.Any;
+                options.Port = 0;
+            },
+            server =>
+            {
+                server.MapGet("/ping", ctx => ctx.Response.WriteTextAsync("pong"));
+            },
+
+            // Started from your UI instead, so the app does not open a port before anyone asked it
+            // to. Inject HttpServer and call StartAsync() / StopAsync().
+            autoStart: false
+        );
 #endif
 #if httptransfers
         builder.Services.AddHttpTransfers<ShinyApp.Delegates.MyHttpTransferDelegate>();

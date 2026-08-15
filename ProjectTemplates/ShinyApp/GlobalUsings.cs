@@ -28,9 +28,6 @@ global using Prism.Services;
 #if communitytoolkit
 global using CommunityToolkit.Maui;
 #endif
-#if usecsharpmarkup
-global using CommunityToolkit.Maui.Markup;
-#endif
 #if ctmvvm
 global using CommunityToolkit.Mvvm.ComponentModel;
 global using CommunityToolkit.Mvvm.Input;

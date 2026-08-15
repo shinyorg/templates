@@ -60,7 +60,13 @@
 	<!--#endif-->
 	<!--#if (bluetoothle)-->
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Say something useful here that your users will understand</string>	
+	<string>Say something useful here that your users will understand</string>
+	<!--#endif-->
+	<!--#if (httpserver)-->
+	<!-- iOS 14+ gates anything touching the local network, and that includes SERVING on it.
+	     Without this key the app is denied without ever being asked. -->
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Say something useful here that your users will understand</string>
 	<!--#endif-->
 	<!--#if (shinyspeech || aiconversation)-->
 	<key>NSSpeechRecognitionUsageDescription</key>

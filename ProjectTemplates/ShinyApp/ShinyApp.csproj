@@ -40,11 +40,12 @@
 		<!--<EnablePreviewFeatures>true</EnablePreviewFeatures>-->
 
 		<MauiVersion>10.0.90</MauiVersion>
-		<ShinyVersion>5.4.0-beta-0074</ShinyVersion>
-		<ShinyControlsVersion>1.0.1-beta-0148</ShinyControlsVersion>
+		<ShinyVersion>5.4.0</ShinyVersion>
+		<ShinyControlsVersion>1.0.1-beta-0175</ShinyControlsVersion>
 		<ShinyShellVersion>6.3.2</ShinyShellVersion>
-		<ShinyDocumentDbVersion>12.2.1</ShinyDocumentDbVersion>
-		<ShinyMauiHostingVersion>5.1.4</ShinyMauiHostingVersion>
+		<ShinyDocumentDbVersion>13.1.2</ShinyDocumentDbVersion>
+		<ShinyMauiHostingVersion>5.1.5</ShinyMauiHostingVersion>
+		<ShinyHttpServerVersion>1.0.0-beta.9</ShinyHttpServerVersion>
 		<!--#if (useshinymediator)-->
 		<MediatorVersion>6.8.0</MediatorVersion>
 		<!--#endif-->
@@ -173,6 +174,11 @@
 		<CustomEntitlements Include="com.apple.developer.healthkit" Type="boolean" Value="true" Visible="false" />
 		<CustomEntitlements Include="com.apple.developer.healthkit.background-delivery" Type="boolean" Value="true" Visible="false" />
 		<!--#endif-->
+		<!--#if (httpserver)-->
+		<!-- The sandbox grants OUTGOING connections only. Without this the bind is refused and the
+		     server simply never appears - no error, no log. -->
+		<CustomEntitlements Include="com.apple.security.network.server" Type="boolean" Value="true" Visible="false" />
+		<!--#endif-->
 	</ItemGroup>
 
 	<ItemGroup>
@@ -260,6 +266,9 @@
 		<!--#if (httptransfers)-->
 		<PackageReference Include="Shiny.Net.Http" Version="$(ShinyVersion)" />
 		<!--#endif-->
+		<!--#if (httpserver)-->
+		<PackageReference Include="Shiny.Net.HttpServer" Version="$(ShinyHttpServerVersion)" />
+		<!--#endif-->
 		<!--#if (datasync)-->
 		<PackageReference Include="Shiny.Data.Sync" Version="$(ShinyVersion)" />
 		<!--#endif-->
@@ -286,9 +295,6 @@
 		<!--#if (communitytoolkit)-->
 		<PackageReference Include="CommunityToolkit.Maui" Version="15.0.0" />
 		<!--#endif-->
-		<!--#if (usecsharpmarkup)-->
-		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="8.0.0" />
-		<!--#endif-->
 		<!--#if (mediaelement)-->
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="10.0.0" />
 		<!--#endif-->
@@ -308,18 +314,15 @@
 		<PackageReference Include="Sentry.Maui" Version="6.8.0" />
 		<!--#endif-->
 		<!--#if (reactiveui)-->
-		<PackageReference Include="ReactiveUI" Version="24.0.0" />
-		<PackageReference Include="ReactiveUI.Maui" Version="24.0.0" />
-		<PackageReference Include="ReactiveUI.SourceGenerators" Version="3.1.0">
+		<PackageReference Include="ReactiveUI" Version="24.1.0" />
+		<PackageReference Include="ReactiveUI.Maui" Version="24.1.0" />
+		<PackageReference Include="ReactiveUI.SourceGenerators" Version="3.2.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 		</PackageReference>
 		<!--#if (useblazor)-->
-		<PackageReference Include="ReactiveUI.Blazor" Version="24.0.0" />
+		<PackageReference Include="ReactiveUI.Blazor" Version="24.1.0" />
 		<!--#endif-->
-		<!--#endif-->
-		<!--#if (barcodes)-->
-		<PackageReference Include="BarcodeScanning.Native.Maui" Version="3.0.6" />
 		<!--#endif-->
 		<!--#if (storereview)-->
 		<PackageReference Include="Plugin.StoreReview" Version="6.2.0" />
@@ -328,30 +331,19 @@
 		<PackageReference Include="Shiny.Calendar" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (music)-->
-		<PackageReference Include="Shiny.Music" Version="4.1.0-beta-0005" />
-		<!--#endif-->
-		<!--#if (ocr)-->
-		<PackageReference Include="Plugin.Maui.OCR" Version="1.1.1" />
+		<PackageReference Include="Shiny.Music" Version="4.1.0" />
 		<!--#endif-->
 		<!--#if (fingerprint)-->
 		<PackageReference Include="Oscore.Maui.Biometric" Version="2.5.1" />
 		<!--#endif-->
 		<!--#if usehttp-->
-		<PackageReference Include="Refit" Version="14.0.1" />
+		<PackageReference Include="Refit" Version="15.0.0" />
 		<!--#endif-->
 		<!--#if (sqlite)-->
 		<PackageReference Include="sqlite-net-pcl" Version="1.11.285" />
 		<!--#endif-->
 		<!--#if (livecharts)-->
 		<PackageReference Include="LiveChartsCore.SkiaSharpView.Maui" Version="2.0.5" />
-		<!--#endif-->
-		<!--#if (alohakitanimations)-->
-		<PackageReference Include="AlohaKit.Animations" Version="1.1.0" />
-		<!--#endif-->
-		<!--#if (uraniumui)-->
-		<PackageReference Include="UraniumUI.Material" Version="3.0.0" />
-		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="3.0.0" />
-		<PackageReference Include="UraniumUI.Blurs" Version="3.0.0" />
 		<!--#endif-->
 		<!--#if (screenrecord)-->
 		<PackageReference Include="Plugin.Maui.ScreenRecording" Version="1.0.0-preview5" />
@@ -360,7 +352,7 @@
 		<PackageReference Include="Plugin.Maui.ScreenBrightness" Version="1.0.0" />
 		<!--#endif-->
 		<!--#if (skia)-->
-		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="4.150.1" />
+		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="4.151.1" />
 		<!--#endif-->
 		<!--#if (skiaextended)-->
 		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="3.0.0" />
@@ -371,25 +363,25 @@
 		<!--#if (debugrainbows)-->
 		<PackageReference Include="Plugin.Maui.DebugRainbows" Version="1.2.2" Condition="'$(Configuration)' == 'Debug'" />
 		<!--#endif-->
-		<!--#if (ffimageloading)-->
-		<PackageReference Include="FFImageLoading.Maui" Version="1.3.2" />
-		<!--#endif-->
 		<!--#if (embedio)-->
 		<PackageReference Include="EmbedIO" Version="3.5.2" />
 		<!--#endif-->
+		<!--#if (shinyblazorcontrols)-->
+		<PackageReference Include="Shiny.Blazor.Controls" Version="$(ShinyControlsVersion)" />
+		<!--#endif-->
 		<!--#if (mudblazor)-->
-		<PackageReference Include="MudBlazor" Version="9.7.0" />
+		<PackageReference Include="MudBlazor" Version="9.8.0" />
 		<!--#endif-->
 		<!--#if (radzen)-->
-		<PackageReference Include="Radzen.Blazor" Version="11.1.8" />
+		<PackageReference Include="Radzen.Blazor" Version="11.2.2" />
 		<!--#endif-->
 		<!--#if (fluentui)-->
-		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.14.3" />
-		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.14.3" />
-		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.14.3" />
+		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.14.4" />
+		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.14.4" />
+		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.14.4" />
 		<!--#endif-->
 		<!--#if (usemsextai)-->
-		<PackageReference Include="Microsoft.Extensions.AI" Version="10.8.1" />
+		<PackageReference Include="Microsoft.Extensions.AI" Version="10.8.3" />
 		<!--#endif-->
 		<!--#if (syslinqasync)-->
 		<PackageReference Include="System.Linq.Async" Version="7.0.1" />
@@ -417,16 +409,16 @@
 		<PackageReference Include="Shiny.Contacts" Version="$(ShinyVersion)" />
 		<!--#endif-->
 		<!--#if (usehealth)-->
-		<PackageReference Include="Shiny.Health" Version="2.0.0" />
+		<PackageReference Include="Shiny.Health" Version="2.0.1" />
 		<!--#endif-->
 		<!--#if (aihealth)-->
-		<PackageReference Include="Shiny.Health.Extensions.AI" Version="2.0.0" />
+		<PackageReference Include="Shiny.Health.Extensions.AI" Version="2.0.1" />
 		<!--#endif-->
 		<!--#if (shinyspeech)-->
-		<PackageReference Include="Shiny.Speech" Version="3.0.0-beta-0018" />
+		<PackageReference Include="Shiny.Speech" Version="3.0.0-beta-0028" />
 		<!--#endif-->
 		<!--#if (aiconversation)-->
-		<PackageReference Include="Shiny.AiConversation" Version="3.0.0-beta-0018" />
+		<PackageReference Include="Shiny.AiConversation" Version="3.0.0-beta-0028" />
 		<!--#endif-->
 	</ItemGroup>
 

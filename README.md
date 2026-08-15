@@ -35,7 +35,6 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 * Select mutliple platform UI Markup types
 	* XAML
 	* Blazor
-	* C# Markup (courtesy of .NET MAUI Community Toolkit) [Documentation](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup)
 * All The Shiny Libraries
 	* [Shiny.Maui.Controls](https://shinylib.net/client/controls/) by Allan Ritchie — unified controls package (Scheduler, BottomSheet, ImageViewer, PillView, SecurityPin, Fab, and more)
 	* [Shiny.Maui.Controls.Markdown](https://shinylib.net/client/controls/markdown/) by Allan Ritchie — native markdown renderer and editor (no WebView)
@@ -45,7 +44,6 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [Shiny.Spatial.Geofencing](https://shinylib.net/client/spatial/) by Allan Ritchie — GPS-driven geofence monitoring with R*Tree spatial indexing
 	* [.NET MAUI Community Toolkit](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/) Setup Including:
 		* [Media Element](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/)
-		* [C# Markup](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup)
 		* [Camera View](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/camera-view)
 * Entitlements for iOS/MacCatalyst if necessary (ie. Push, MSAL)
 * Info.plist & Entitlement permissions for iOS/MacCatalyst
@@ -74,19 +72,15 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [Prism](https://prismlibrary.com) by Brian Lagunas & Dan Siegel
 	* [ReactiveUI](https://reactiveui.net) from many contributors
 	* [MAUI Community Toolkit](https://github.com/CommunityToolkit/Maui) from many contributors
-	* [Uranium UI](https://github.com/enisn/UraniumUI) by Enis Necipoglu
-	* [FFImageLoading MAUI](https://github.com/microspaze/FFImageLoading.Maui)
 	* [MAUI Google Maps](https://github.com/themronion/Maui.GoogleMaps/tree/maui) by Pavlo Lukianets
 	* [Refit](https://github.com/reactiveui/refit) by ReactiveUI Maintainers
 	* [SQLite.NET-pcl](https://github.com/praeclarum/sqlite-net) by Frank Krueger
 	* [RoomSharp](https://roomsharp.dev/) by Safwan Abdulghani
-	* [BarcodeScanning.Native.Maui](https://github.com/afriscic/BarcodeScanning.Native.Maui) by afriscic
 	* [Store Review Plugin](https://github.com/jamesmontemagno/StoreReviewPlugin) by James Montemagno
 	* [MAUI Screen Recording Plugin](https://github.com/jfversluis/Plugin.Maui.ScreenRecording) by Gerald Versluis
 	* [MAUI Audio Plugin](https://github.com/jfversluis/Plugin.Maui.Audio) by Gerald Versluis
 	* [MAUI Calendar Store Plugin](https://github.com/jfversluis/Plugin.Maui.CalendarStore) by Gerald Versluis
 	* [MAUI Screen Brightness Plugin](https://github.com/jfversluis/Plugin.Maui.ScreenBrightness) by Gerald Versluis
-	* [MAUI OCR Plugin](https://github.com/kfrancis/ocr) by Kori Francis
 	* [MAUI Biometric Plugin](https://github.com/oscoreio/Maui.Biometric) by Konstantin S & Sven-Michael Stübe
 	* [Embed.IO](https://unosquare.github.io/embedio/) by Unosquare
 	* [Sentry](https://sentry.io) by Sentry
@@ -95,7 +89,6 @@ Works with Visual Studio 2022 & JetBrains Rider 2024+
 	* [ACR User Dialogs](https://github.com/aritchie/userdialogs) by Allan Ritchie
 	* [Debug Rainbows](https://github.com/sthewissen/Plugin.Maui.DebugRainbows) by Steven Thewissen
 	* [Live Charts](https://livecharts.dev/) by Alberto Rodríguez
-	* [AlohaKit Animations](https://github.com/jsuarezruiz/AlohaKit.Animations) by Javier Suárez
 	* [System.Linq.Async](https://github.com/dotnet/reactive)
 	* [Humanizer](https://github.com/Humanizr/Humanizer)
 	* [Units .NET](https://github.com/angularsen/UnitsNet) by Andreas Gullberg Larsen

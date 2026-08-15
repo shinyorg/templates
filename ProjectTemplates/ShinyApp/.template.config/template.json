@@ -134,13 +134,6 @@
             "description": "MARKUP - Add Blazor Hybrid Support",
             "displayName": "MARKUP - Add Blazor Hybrid Support"
         },
-        "usecsharpmarkup":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "MARKUP - Add C# Markup - MAUI Community Toolkit",
-            "displayName": "MARKUP - Add C# Markup - MAUI Community Toolkit"
-        },
         "applicationId": {
             "type": "parameter",
             "description": "Set the Application Identifier",
@@ -254,6 +247,13 @@
             "defaultValue": "false",
             "description": "SERVICE - Add Background HTTP Uploads & Downloads (Shiny.Net.Http)",
             "displayName": "SERVICE - Add Background HTTP Uploads & Downloads (Shiny.Net.Http)"
+        },
+        "httpserver": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "SERVICE - Add HTTP Server (Shiny.Net.HttpServer) - host HTTP/1.1, HTTP/2 & HTTP/3, WebSockets and SSE inside the app, where ASP.NET Core cannot run",
+            "displayName": "SERVICE - Add HTTP Server (Shiny.Net.HttpServer)"
         },
         "datasync": {
             "type": "parameter",
@@ -422,20 +422,6 @@
             "description": "UI - MAUI Community Toolkit - Documentation https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/",
             "displayName": "UI - Add MAUI Community Toolkit Camera"
         },
-        "uraniumui":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "UI - Uranium UI by Enis Necipoglu - Documentation https://enisn-projects.io/docs/en/uranium/latest",
-            "displayName": "UI - Add Uranium UI"
-        },
-        "alohakitanimations":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "UI - AlohaKit Animations by Javier Suárez - Documentation https://github.com/jsuarezruiz/AlohaKit.Animations/",
-            "displayName": "UI - Add AlohaKit Animations"
-        },
         "livecharts":{
             "type": "parameter",
             "datatype": "bool",
@@ -527,13 +513,6 @@
             "description": "SERVICE - AI Conversation with speech recognition and text-to-speech (Shiny.AiConversation) - Documentation https://shinylib.net/aiconversation/",
             "displayName": "SERVICE - Add AI Conversation (Shiny.AiConversation)"
         },
-        "barcodes":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "SERVICE - Wire up native barcode scanning services - For documentation, go to https://github.com/afriscic/BarcodeScanning.Native.Maui",
-            "displayName": "SERVICE - Add Native Barcode Scanning (BarcodeScanning.Native.Maui)"
-        },
         "storereview":{
             "type": "parameter",
             "datatype": "bool",
@@ -554,14 +533,7 @@
             "defaultValue": "false",
             "description": "SERVICE - Music Library & Player (Shiny.Music) - Documentation https://shinylib.net/client/music/",
             "displayName": "SERVICE - Add Music Library & Player (Shiny.Music)"
-        }, 
-        "ocr":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "SERVICE - OCR Plugin by Kori Francis - Documentation https://github.com/kfrancis/ocr",
-            "displayName": "SERVICE - Add OCR (Plugin.Maui.OCR)"
-        },         
+        },          
         "screenrecord":{
             "type": "parameter",
             "datatype": "bool",
@@ -604,19 +576,19 @@
             "description": "UTILITY - Add Debug Rainbows - Documentation: https://github.com/sthewissen/Plugin.Maui.DebugRainbows",
             "displayName": "UTILITY - Add Debug Rainbows" 
         },
-        "ffimageloading":{
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "UI - Add FFImageLoading MAUI - Documentation: https://github.com/microspaze/FFImageLoading.Maui",
-            "displayName": "UI - Add FFImageLoading MAUI" 
-        },
         "embedio": {
             "type": "parameter",
             "datatype": "bool",
             "defaultValue": "false",
             "description": "SERVICE - Add EmbedIO Tiny Web Server - Documentation: https://unosquare.github.io/embedio/",
             "displayName": "SERVICE - Add EmbedIO Tiny Web Server"  
+        },
+        "shinyblazorcontrols": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "BLAZOR - Add Shiny Blazor Controls (works in Blazor Hybrid)",
+            "displayName": "BLAZOR - Add Shiny Blazor Controls"
         },
         "mudblazor": {
             "type": "parameter",
@@ -992,10 +964,6 @@
         {
             "condition": "(authservice == false || refit == false)",
             "exclude": "Services/Impl/IApiClient.cs"
-        },
-        {
-            "condition": "(usecsharpmarkup == false)",
-            "exclude": "CSharpMarkupPage.cs"
         },
         {
             "condition": "(storereview == false)",
