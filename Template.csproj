@@ -9,6 +9,7 @@
         <Authors>Allan Ritchie</Authors>
         <Owners>aritchie;shinylib</Owners>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Copyright>Copyright (c) $([System.DateTime]::Now.Year) Allan Ritchie</Copyright>
         <PackageProjectUrl>https://github.com/shinyorg/templates</PackageProjectUrl>
         <PackageReleaseNotes>https://shinylib.net/release-notes/templates</PackageReleaseNotes>
         <PackageTags>dotnet-new;templates;shiny</PackageTags>        
