@@ -3,6 +3,10 @@ description: You have an idea for an enhancement within Shiny
 title: "[Feature Request]: "
 labels: [feature request, unverified]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        > ⭐ **Finding this library useful? Please give the repository a [Star](https://github.com/shinyorg/templates) - it's free and it's how the project gets seen.**
   - type: textarea
     attributes:
       label: Summary

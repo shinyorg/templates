@@ -8,6 +8,8 @@ body:
       value: |
         Thank you for filing an issue.  Please only file issues against the LATEST STABLE version of Shiny.Templates from Nuget.  If you are a sponsor, you can discuss issues with preview releases in the SponsorConnect Discord channel
         If you have questions, please post them in GitHub discussions
+
+        > ⭐ **Finding this library useful? Please give the repository a [Star](https://github.com/shinyorg/templates) - it's free and it's how the project gets seen.**
   - type: textarea
     validations:
       required: true
